@@ -20,12 +20,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -33,7 +33,7 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.getBlockRlp\(number\)
 
-Adds given node to the static nodes TEST
+Adds given node to the static nodes
 
 #### **Parameters**
 
@@ -50,12 +50,12 @@ Adds given node to the static nodes TEST
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -80,12 +80,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -110,12 +110,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -140,12 +140,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -170,12 +170,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -200,12 +200,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -230,12 +230,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -260,12 +260,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -290,12 +290,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -320,12 +320,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -350,12 +350,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
@@ -380,12 +380,12 @@ Adds given node to the static nodes
 {% tabs %}
 {% tab title="Request" %}
 ```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
