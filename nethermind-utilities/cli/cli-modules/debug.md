@@ -33,7 +33,7 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.getBlockRlp\(number\)
 
-Adds given node to the static nodes
+Adds given node to the static nodes TEST
 
 #### **Parameters**
 
