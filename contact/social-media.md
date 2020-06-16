@@ -16,5 +16,9 @@ description: Social media channels where you can reach the Team
 
 {% embed url="https://github.com/NethermindEth/nethermind/issues" caption="GitHub Issues" %}
 
+## Twitter
+
+{% embed url="https://twitter.com/nethermindeth" %}
+
 
 
