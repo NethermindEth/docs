@@ -10,33 +10,11 @@ After startup the node will display the estimated max memory usage but not every
 
 Minimum requirements can be found below.
 
-### Goerli Fast Sync
-
-| Disk space | Memory | Cores |
-| :--- | :--- | :--- |
-| 10+ GB | 1 GB | 1 |
-
-### Mainnet Fast Sync
-
-| Disk space | Memory | Cores |
-| :--- | :--- | :--- |
-| 350+ GB | 4 GB | 2 |
-
-### Rinkeby Fast Sync
-
-| Disk space | Memory | Cores |
-| :--- | :--- | :--- |
-| 50+ GB | 4 GB | 2 |
-
-### Ropsten Fast Sync
-
-| Disk space | Memory | Cores |
-| :--- | :--- | :--- |
-| 100+ GB | 8 GB | 4 |
-
-### Mainnet Full Archive
-
-| Disk space | Memory | Cores |
-| :--- | :--- | :--- |
-| 4.3+ TB | 16 GB | 4 |
+| Network | Disk space | Memory | Cores |
+| :--- | :--- | :--- | :--- |
+| **Goerli Fast Sync** | 10+ GB | 1 GB | 1 |
+| **Mainnet Fast Sync** | 350+ GB | 4 GB | 2 |
+| **Rinkeby Fast Sync** | 50+ GB | 4 GB | 2 |
+| **Ropsten Fast Sync** | 100+ GB | 8 GB | 4 |
+| **Mainnet Full Archive** | 4.3+ TB | 16 GB | 4 |
 
