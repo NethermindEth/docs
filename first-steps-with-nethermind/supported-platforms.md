@@ -1,5 +1,5 @@
 ---
-description: Run Nethermind from any platforms of your choice
+description: Run Nethermind from any platform of your choice
 ---
 
 # Supported platforms
