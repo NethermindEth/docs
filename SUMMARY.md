@@ -26,6 +26,7 @@
 * [Sync modes](ethereum-client/sync-modes.md)
 * [Networks](ethereum-client/networks.md)
 * [Private Networks](ethereum-client/private-networks.md)
+* [How to setup a Nethermind only Clique based chain](ethereum-client/how-to-setup-a-nethermind-only-clique-based-chain.md)
 * [Metrics](ethereum-client/metrics.md)
 * [Configuration](ethereum-client/configuration/README.md)
   * [Modules](ethereum-client/configuration/modules/README.md)
