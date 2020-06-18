@@ -14,23 +14,29 @@ Minimum requirements can be found below.
 
 | Disk space | Memory | Cores |
 | :--- | :--- | :--- |
-| 10 GB | 1 GB | 1 |
+| 10+ GB | 1 GB | 1 |
 
 ### Mainnet Fast Sync
 
 | Disk space | Memory | Cores |
 | :--- | :--- | :--- |
-| 350 GB | 4 GB | 2 |
+| 350+ GB | 4 GB | 2 |
 
 ### Rinkeby Fast Sync
 
 | Disk space | Memory | Cores |
 | :--- | :--- | :--- |
-| 50 GB | 4 GB | 2 |
+| 50+ GB | 4 GB | 2 |
+
+### Ropsten Fast Sync
+
+| Disk space | Memory | Cores |
+| :--- | :--- | :--- |
+| 100+ GB | 4 GB | 2 |
 
 ### Mainnet Full Archive
 
 | Disk space | Memory | Cores |
 | :--- | :--- | :--- |
-| 4,2 TB | 16 GB | 4 |
+| 4.3+ TB | 16 GB | 4 |
 
