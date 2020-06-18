@@ -32,7 +32,7 @@ Minimum requirements can be found below.
 
 | Disk space | Memory | Cores |
 | :--- | :--- | :--- |
-| 100+ GB | 4 GB | 2 |
+| 100+ GB | 8 GB | 4 |
 
 ### Mainnet Full Archive
 
