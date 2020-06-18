@@ -1,7 +1,7 @@
 # Init
 
 | Property Name | Description | Default |
-| :--- | :--- | :--- |
+| :--- | :--- | ---: |
 | `BaseDbPath` | Base directoy path for all the nethermind databases | `db` |
 | `ChainSpecPath` | Path to the chain definition file \(Parity chainspec or Geth genesis file\). | `null` |
 | `DiscoveryEnabled` | If `false` then the node does not try to find nodes beyond the bootnodes configured. | `true` |

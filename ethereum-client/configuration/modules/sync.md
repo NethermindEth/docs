@@ -1,7 +1,7 @@
 # Sync
 
 | Property Name | Description | Default |
-| :--- | :--- | :--- |
+| :--- | :--- | ---: |
 | `BeamSync` | Beam Sync - only for DEBUG / DEV - not working in prod yet | `false` |
 | `DownloadBodiesInFastSync` | If set to `true` then the block bodies will be downloaded in the Fast Sync mode | `true` |
 | `DownloadReceiptsInFastSync` | If set to `true` then the receipts will be downloaded in the Fast Sync mode. This will slow down the process by a few hours but will allow you to interact with dApps that execute extensive historical logs searches \(like Maker CDPs\) | `true` |

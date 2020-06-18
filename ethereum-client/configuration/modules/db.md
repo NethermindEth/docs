@@ -3,7 +3,7 @@
 {% embed url="https://github.com/facebook/rocksdb/wiki/Memory-usage-in-RocksDB" %}
 
 | Property Name | Description | Default |
-| :--- | :--- | :--- |
+| :--- | :--- | ---: |
 | `BlockCacheSize` | None | `null` |
 | `BlockInfosDbBlockCacheSize` | None | `null` |
 | `BlockInfosDbCacheIndexAndFilterBlocks` | None | `null` |

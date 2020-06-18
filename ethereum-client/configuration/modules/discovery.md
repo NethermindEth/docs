@@ -1,7 +1,7 @@
 # Discovery
 
 | Property Name | Description | Default |
-| :--- | :--- | :--- |
+| :--- | :--- | ---: |
 | `BitsPerHop` | None | `null` |
 | `BootnodePongTimeout` | None | `null` |
 | `Bootnodes` | None | `null` |
