@@ -16,11 +16,15 @@ examples:
 
 {% tabs %}
 {% tab title="Windows" %}
-D:\Workspace\Demerzel\ndm\src\Nethermind\Nethermind.Runner\bin\Debug\netcoreapp3.1\nethermind\_db\ndm\_consumer\local
+```text
+D:\Workspace\Demerzel\ndm\src\Nethermind\Nethermind.Runner\bin\Debug\netcoreapp3.1\nethermind_db\ndm_consumer\local
+```
 {% endtab %}
 
 {% tab title="MacOS" %}
-/Users/katarzynaturbiarz/Workspace/Demerzel/ndm/src/nethermind/src/Nethermind/Nethermind.Runner/bin/Debug/netcoreapp3.1/nethermind\_db/ndm\_consumer/local
+```
+/Users/katarzynaturbiarz/Workspace/Demerzel/ndm/src/nethermind/src/Nethermind/Nethermind.Runner/bin/Debug/netcoreapp3.1/nethermind_db/ndm_consumer/local
+```
 {% endtab %}
 {% endtabs %}
 
