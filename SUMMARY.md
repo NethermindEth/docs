@@ -89,6 +89,7 @@
   * [AWS](guides-and-helpers/cloud-providers/aws.md)
   * [Google Cloud](guides-and-helpers/cloud-providers/google-cloud.md)
 * [FAQs](guides-and-helpers/faq.md)
+* [RocksDbExtractor](guides-and-helpers/rocksdbextractor.md)
 
 ## Enterprise
 
