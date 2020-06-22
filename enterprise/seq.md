@@ -1,7 +1,7 @@
 ---
 description: >-
   Nethermind supports clients through monitoring their Ethereum Nodes with a
-  nice and handy tools such as Grafana or Seq.
+  nice and handy tools such as Grafana or Seq
 ---
 
 # Seq
