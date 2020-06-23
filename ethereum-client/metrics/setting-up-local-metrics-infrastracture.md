@@ -16,15 +16,7 @@ Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to th
 
 `Metrics.PushGatewayUrl` will need to be amended if pushgateway endpoint is not default.
 
-### Setting up Prometheus, Pushgateway and Grafana
-
-{% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
-
-{% embed url="https://github.com/prometheus/pushgateway" caption="Pushgateway GitHub" %}
-
-{% embed url="https://github.com/grafana/grafana" caption="Grafana GitHub" %}
-
-#### Sample configuration
+### Running sample configuration
 
 * [x] clone [metrics-infrastructure](https://github.com/NethermindEth/metrics-infrastructure) repository
 
@@ -100,4 +92,12 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 * [x] you can now explore metrics and monitor your Nethermind node
 
 ![](../../.gitbook/assets/image%20%2829%29.png)
+
+### Prometheus, Pushgateway and Grafana sources
+
+{% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
+
+{% embed url="https://github.com/prometheus/pushgateway" caption="Pushgateway GitHub" %}
+
+{% embed url="https://github.com/grafana/grafana" caption="Grafana GitHub" %}
 
