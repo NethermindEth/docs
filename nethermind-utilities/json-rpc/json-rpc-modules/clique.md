@@ -4,17 +4,17 @@
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | signer | `address` |
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -34,15 +34,15 @@ None
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -58,19 +58,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_getSignersAnnotated()
+## clique\_getSignersAnnotated\(\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -86,21 +86,21 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_getSignersAtHash(hash)
+## clique\_getSignersAtHash\(hash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | hash | `hex` |
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -116,21 +116,21 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_getSignersAtHashAnnotated(hash)
+## clique\_getSignersAtHashAnnotated\(hash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | hash | `hex` |
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -146,21 +146,21 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_getSignersAtNumber(number)
+## clique\_getSignersAtNumber\(number\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | number | `hex` |
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -176,19 +176,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_getSnapshot()
+## clique\_getSnapshot\(\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -204,21 +204,21 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_getSnapshotAtHash(hash)
+## clique\_getSnapshotAtHash\(hash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | number | `hex` |
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -234,19 +234,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## clique_propose(signer, vote)
+## clique\_propose\(signer, vote\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -261,3 +261,4 @@ None
 ```
 {% endtab %}
 {% endtabs %}
+
