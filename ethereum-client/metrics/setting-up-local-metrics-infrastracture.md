@@ -26,116 +26,46 @@ Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to th
 
 #### Sample configuration
 
-* [x] create prometheus directory and save below file
+* [x] clone [metrics-infrastructure](https://github.com/NethermindEth/metrics-infrastructure) repository
 
 ```bash
-mkdir prometheus
-cd prometheus/
+git clone https://github.com/NethermindEth/metrics-infrastructure.git
 ```
 
-{% tabs %}
-{% tab title="prometheus.yml" %}
-```yaml
-global:
-  scrape_interval:     5s
-  evaluation_interval: 5s
-
-scrape_configs:
-  - job_name: 'pushgateway'
-    honor_labels: true
-    static_configs:
-    - targets: ['pushgateway:9091']
-```
-{% endtab %}
-{% endtabs %}
-
-* [x] create grafana directory with dashboards and datasources subfolders
+1. [x] go to `metrics-infrastructure` directory
 
 ```bash
-mkdir grafana/
-mkdir grafana/dashboards
-mkdir grafana/datasources
+cd metrics-infrastructure
 ```
 
-* [x] create `docker-compose.yml` file outside `prometheus` directory
+1. [x] run docker stack
 
 ```bash
-cd ..
-nano docker-compose.yml
+docker-compose up -d
 ```
-
-Example of `docker-compose.yml` file running _Prometheus, Pushgateway_ and _Grafana_ services:
-
-{% tabs %}
-{% tab title="docker-compose.yml" %}
-```yaml
-version: "3.5"
-
-services:
-
-    prometheus:
-        image: prom/prometheus
-        container_name: prometheus
-        volumes:
-            - ./prometheus/:/etc/prometheus/
-            - prometheus_data:/prometheus
-        command:
-            - '--config.file=/etc/prometheus/prometheus.yml'
-            - '--storage.tsdb.path=/prometheus'
-            - '--web.console.libraries=/etc/prometheus/console_libraries'
-            - '--web.console.templates=/etc/prometheus/consoles'
-            - '--storage.tsdb.retention=200h'
-            - '--web.enable-lifecycle'
-        restart: unless-stopped
-        expose:
-            - 9090
-        ports:
-            - "9090:9090"
-        networks:
-            - metrics
-
-
-    pushgateway:
-        image: prom/pushgateway
-        container_name: pushgateway
-        restart: unless-stopped
-        expose:
-            - 9091
-        ports:
-            - "9091:9091"
-        networks:
-            - metrics
-
-    grafana:
-        image: grafana/grafana
-        container_name: grafana
-        restart: unless-stopped
-        expose:
-            - 3000
-        ports:
-            - "3000:3000"
-        networks:
-            - metrics
-        volumes:
-            - ./grafana/:/etc/grafana/provisioning/
-
-networks:
-    metrics:
-        driver: bridge
-
-volumes:
-    prometheus_data: {}
-```
-{% endtab %}
-{% endtabs %}
-
-1. [x] run `docker-compose up -d`
 
 * _Prometheus_ instance should be now running on [`http://localhost:9090/`](http://localhost:9090/)
 * _Pushgateway_ on [`http://localhost:9091/`](http://localhost:9091/)
 * _Grafana on_ [`http://localhost:3000/`](http://localhost:3000/)\`\`
 
 1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on _Pushgateway_ [url](http://localhost:9091/)
+
+{% hint style="info" %}
+You can add nethermind service to the `docker-compose.yml` file so that it runs with the whole stack
+
+```yaml
+nethermind:
+    image: nethermind/nethermind:alpine
+    container_name: nethermind
+    restart: unless-stopped
+    command: '--config goerli --Metrics.Enabled true'
+    network_mode: host
+    volumes:
+        - ./nethermind_db/:/nethermind/nethermind_db/
+        - ./keystore/:/nethermind/keystore/
+        - ./logs/:/nethermind/logs/
+```
+{% endhint %}
 
 {% tabs %}
 {% tab title="Runner" %}
