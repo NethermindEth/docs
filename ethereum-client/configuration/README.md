@@ -13,7 +13,7 @@ Another way is to setup each configuration property by passing flags to either `
 ```
 
 {% hint style="warning" %}
-When passing a flag, each property needs to be prefixed with its respective [**Module**](modules/), followed by the **property name** and its **value** e.g `--Init.IsMining true`
+When passing a flag, each property needs to be prefixed with its respective [**Module**](), followed by the **property name** and its **value** e.g `--Init.IsMining true`
 {% endhint %}
 
 {% hint style="info" %}

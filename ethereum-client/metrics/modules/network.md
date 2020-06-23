@@ -1,7 +1,5 @@
 # Network
 
-
-
 | Metric Name | Description |
 | :--- | :--- |
 | `nethermind_already_connected_disconnects` | Number of received disconnects due to already connected |
@@ -49,3 +47,4 @@
 | `nethermind_too_many_peers_disconnects` | Number of received disconnects due to too many peers |
 | `nethermind_unexpected_identity_disconnects` | Number of received disconnects due to peer identity information mismatch |
 | `nethermind_useless_peer_disconnects` | Number of received disconnects due to useless peer |
+
