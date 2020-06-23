@@ -1,6 +1,6 @@
 # Admin
 
-admin\_addPeer\(enode, addToStaticNodes\)
+### admin\_addPeer\(enode, addToStaticNodes\)
 
 Adds given node to the static nodes
 
