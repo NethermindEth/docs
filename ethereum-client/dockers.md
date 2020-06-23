@@ -156,7 +156,13 @@ For example:
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
+{% hint style="warning" %}
 Environment variables are to be passed before docker image tag while parameteres should be passed right after the docker image tag.
+{% endhint %}
+
+{% hint style="info" %}
+Environment variables ****can be easily used within **docker-compose.yml** files in environment section
+{% endhint %}
 
 ### **JSON RPC**
 
