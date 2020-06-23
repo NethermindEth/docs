@@ -1,6 +1,12 @@
+---
+description: Metrics then can be used to monitor your running Nethermind nodes
+---
+
 # Setting up local Metrics infrastracture
 
-Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Metrics configuration category](../configuration/modules/metrics.md). Metrics then can be used to monitor running nodes.
+## Metrics Configuration
+
+Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Metrics configuration category](../configuration/modules/metrics.md).
 
 ## Metrics infrastracture
 
