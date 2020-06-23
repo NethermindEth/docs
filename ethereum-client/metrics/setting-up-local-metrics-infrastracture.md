@@ -10,19 +10,28 @@ Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Met
 
 ## Metrics infrastracture
 
+### Enabling Metrics in Nethermind
+
 Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`. 
 
 `Metrics.PushGatewayUrl` will need to be amended if pushgateway endpoint is not default.
 
-### Setting up Prometheus and Pushgateway
+### Setting up Prometheus, Pushgateway and Grafana
 
 {% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
 
 {% embed url="https://github.com/prometheus/pushgateway" caption="Pushgateway GitHub" %}
 
-#### Basic configuration for Prometheus:
+{% embed url="https://github.com/grafana/grafana" caption="Grafana GitHub" %}
+
+#### Sample configuration
 
 * [x] create prometheus directory and save below file
+
+```bash
+mkdir prometheus
+cd prometheus/
+```
 
 {% tabs %}
 {% tab title="prometheus.yml" %}
@@ -35,14 +44,27 @@ scrape_configs:
   - job_name: 'pushgateway'
     honor_labels: true
     static_configs:
-    - targets: ['localhost:9091']
+    - targets: ['pushgateway:9091']
 ```
 {% endtab %}
 {% endtabs %}
 
-* [x] create `docker-compose` file outside `prometheus` directory
+* [x] create grafana directory with dashboards and datasources subfolders
 
-Example of `docker-compose` file running both _Prometheus_ and _Pushgateway_:
+```bash
+mkdir grafana/
+mkdir grafana/dashboards
+mkdir grafana/datasources
+```
+
+* [x] create `docker-compose.yml` file outside `prometheus` directory
+
+```bash
+cd ..
+nano docker-compose.yml
+```
+
+Example of `docker-compose.yml` file running _Prometheus, Pushgateway_ and _Grafana_ services:
 
 {% tabs %}
 {% tab title="docker-compose.yml" %}
@@ -68,7 +90,7 @@ services:
         expose:
             - 9090
         ports:
-            - "127.0.0.1:9090:9090"
+            - "9090:9090"
         networks:
             - metrics
 
@@ -84,6 +106,19 @@ services:
         networks:
             - metrics
 
+    grafana:
+        image: grafana/grafana
+        container_name: grafana
+        restart: unless-stopped
+        expose:
+            - 3000
+        ports:
+            - "3000:3000"
+        networks:
+            - metrics
+        volumes:
+            - ./grafana/:/etc/grafana/provisioning/
+
 networks:
     metrics:
         driver: bridge
@@ -94,15 +129,45 @@ volumes:
 {% endtab %}
 {% endtabs %}
 
-1. [x] run `docker-compose up`
+1. [x] run `docker-compose up -d`
 
-_Prometheus_ instance should be now running on `http://localhost:9090/`.
+* _Prometheus_ instance should be now running on [`http://localhost:9090/`](http://localhost:9090/)
+* _Pushgateway_ on [`http://localhost:9091/`](http://localhost:9091/)
+* _Grafana on_ [`http://localhost:3000/`](http://localhost:3000/)\`\`
 
-_Pushgateway_ on `http://localhost:9091/`.
+1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on _Pushgateway_ [url](http://localhost:9091/)
 
-1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing
+{% tabs %}
+{% tab title="Runner" %}
+```bash
+./Nethermind.Runner --Metrics.Enabled true
+```
+{% endtab %}
 
-![](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
+{% tab title="Launcher" %}
+```bash
+./Nethermind.Launcher --Metrics.Enabled true
+```
+{% endtab %}
 
-1. [x] You can now use this data and create some awesome dashboards in your favourite data visualization tool e.g. _Grafana_, _Splunk_ etc.
+{% tab title="Docker" %}
+```bash
+docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
+```
+{% endtab %}
+{% endtabs %}
+
+![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
+
+1. [x] open _Grafana_ [url](http://localhost:3000) and login with default login \(admin\) and password \(admin\), skip password change if you want
+
+![](../../.gitbook/assets/image%20%2828%29.png)
+
+* [x] go to dashboards management [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards)and click `Nethermind` 
+
+![](../../.gitbook/assets/image%20%2826%29.png)
+
+* [x] you can now explore metrics and monitor your Nethermind node
+
+![](../../.gitbook/assets/image%20%2829%29.png)
 
