@@ -22,6 +22,7 @@
   * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
 * [Running Nethermind](ethereum-client/running-nethermind/README.md)
   * [Running the client](ethereum-client/running-nethermind/running-the-client.md)
+  * [Runtime](ethereum-client/running-nethermind/runtime.md)
 * [Building Nethermind](ethereum-client/building-nethermind.md)
 * [Sync modes](ethereum-client/sync-modes.md)
 * [Networks](ethereum-client/networks.md)
