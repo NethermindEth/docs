@@ -2,19 +2,25 @@
 
 ### IDE \(optional\)
 
-* JetBrains Rider [https://www.jetbrains.com/rider/](https://www.jetbrains.com/rider/)
-* VS Code [https://code.visualstudio.com/docs/other/dotnet](https://code.visualstudio.com/docs/other/dotnet)
+* [JetBrains Rider](https://www.jetbrains.com/rider/)
+* [VS Code](https://code.visualstudio.com/docs/other/dotnet)
 
 ### SDKs
 
-You will need .NET SDK 3.1 &lt;
+To build Nethermind you will need **.NET SDK 3.1**. You can download it here \(make sure you select correct platform and distribution\):
 
-* Windows [https://www.microsoft.com/net/download?initial-os=windows](https://www.microsoft.com/net/download?initial-os=windows)
-* Linux [https://www.microsoft.com/net/download?initial-os=linux](https://www.microsoft.com/net/download?initial-os=linux) \(make sure to select the right distribution\)
-* Mac [https://www.microsoft.com/net/download?initial-os=macos](https://www.microsoft.com/net/download?initial-os=macos)
+{% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
 
-### Linux \(Ubuntu 16.04\)
+### Linux
 
+{% tabs %}
+{% tab title="Linux \(Ubuntu 18.04+/Debian 10\)" %}
+```
+sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
+```
+{% endtab %}
+
+{% tab title="Linux \(Ubuntu 16.04\)" %}
 ```text
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 && \
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test && \
@@ -22,32 +28,24 @@ sudo apt-get update && \
 sudo apt-get install gcc-6 g++-6 && \
 sudo apt install libzstd1
 ```
+{% endtab %}
 
-### Linux \(Ubuntu 18.04+/Debian 10\)
+{% tab title="Linux \(CentOS 8\)" %}
+    sudo yum install -y glibc-devel && \
+    sudo yum install bzip2-devel && \
+    sudo yum install -y libzstd && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
+{% endtab %}
 
-```text
-sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
-```
-
-### Linux \(CentOS 8\)
-
-```text
-sudo yum install -y glibc-devel && \
-sudo yum install bzip2-devel && \
-sudo yum install -y libzstd && \
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
-```
-
-### Linux \(Fedora 31\)
-
-```text
-sudo yum install -y glibc-devel && \
-sudo yum install -y snappy && \
-sudo yum install -y libzstd && \
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
-```
+{% tab title="Linux \(Fedora 31\)" %}
+    sudo yum install -y glibc-devel && \
+    sudo yum install -y snappy && \
+    sudo yum install -y libzstd && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
+{% endtab %}
+{% endtabs %}
 
 ### MacOS
 
@@ -61,9 +59,15 @@ You may need to install [https://support.microsoft.com/en-us/help/2977003/the-la
 
 ### All Platforms
 
-If dotnet command is not found then probably you forgot to install SDK \(see instructions above\).
+{% hint style="warning" %}
+If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
+{% endhint %}
 
-On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on.
+{% hint style="info" %}
+On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
+{% endhint %}
+
+Clone the Nethermind repository and its submodules, then build Nethermind in `Release` or `Debug` mode.
 
 ```bash
 git clone https://github.com/NethermindEth/nethermind.git --recursive
@@ -78,9 +82,11 @@ cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config goerli
 ```
 
-You can confirm the latest block of the Goerli tetsnet here: [https://blockscout.com/eth/goerli/](https://blockscout.com/eth/goerli/)
+You can confirm the latest block of the Goerli tetsnet here:
 
-or \(mainnet\)
+{% embed url="https://blockscout.com/eth/goerli/" %}
+
+or to run Ethereum Mainnet:
 
 ```text
 cd Nethermind.Runner
