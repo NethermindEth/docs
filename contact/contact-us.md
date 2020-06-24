@@ -8,9 +8,9 @@ description: E-mail addresses of Nethermind Team
 
 | Team | E-mail address |
 | :--- | :--- |
-| Nethermind Main | _hello@nethermind.io_ |
-| DevOps | _devops@nethermind.io_ |
-| Security | _security@nethermind.io_ |
+| Nethermind Main | hello@nethermind.io |
+| DevOps | devops@nethermind.io |
+| Security | security@nethermind.io |
 
 
 
