@@ -23,6 +23,7 @@
 * [Running Nethermind](ethereum-client/running-nethermind/README.md)
   * [Running the client](ethereum-client/running-nethermind/running-the-client.md)
   * [Runtime](ethereum-client/running-nethermind/runtime.md)
+* [Dockers](ethereum-client/dockers.md)
 * [Building Nethermind](ethereum-client/building-nethermind.md)
 * [Sync modes](ethereum-client/sync-modes.md)
 * [Networks](ethereum-client/networks.md)
@@ -51,7 +52,6 @@
     * [Metrics](ethereum-client/configuration/modules/metrics.md)
     * [Hive](ethereum-client/configuration/modules/hive.md)
   * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
-* [Dockers](ethereum-client/dockers.md)
 
 ## Nethermind utilities
 

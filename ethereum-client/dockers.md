@@ -10,7 +10,7 @@ Docker repository can be found here:
 
 {% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
 
-## Supported platforms
+## Supported architectures
 
 We are currently supporting docker images for the following CPU architectures:
 
