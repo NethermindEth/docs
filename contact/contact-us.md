@@ -1,16 +1,16 @@
 ---
-description: E-mail addresses of Nethermind Team
+description: Nethermind团队的电子邮件地址
 ---
 
-# Contact us
+# 联系我们
 
-## 📬 E-mails
+## 电子邮件
 
-| Team | E-mail address |
+| 团队 | 电子邮件地址 |
 | :--- | :--- |
-| Nethermind Main | hello@nethermind.io |
-| DevOps | devops@nethermind.io |
-| Security | security@nethermind.io |
+| Nethermind主要电子邮件地址 | hello@nethermind.io |
+| 开发运维 | devops@nethermind.io |
+| 安全 | security@nethermind.io |
 
 
 

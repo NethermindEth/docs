@@ -32,7 +32,7 @@ docker pull nethermind/nethermind:alpine
 {% endtab %}
 
 {% tab title="Debian" %}
-```text
+```
 docker pull nethermind/nethermind
 ```
 {% endtab %}
@@ -66,7 +66,7 @@ docker run -it nethermind/nethermind:alpine
 {% endtab %}
 
 {% tab title="Debian" %}
-```text
+```
 docker run -it nethermind/nethermind
 ```
 {% endtab %}
@@ -100,7 +100,7 @@ docker run -it nethermind/nethermind:alpine --help
 {% endtab %}
 
 {% tab title="Debian" %}
-```text
+```
 docker run -it nethermind/nethermind --help
 ```
 {% endtab %}
@@ -152,7 +152,7 @@ docker run -it --network host nethermind/nethermind:alpine --JsonRpc.Enabled tru
 {% endtab %}
 
 {% tab title="Debian" %}
-```text
+```
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
 {% endtab %}
@@ -186,7 +186,7 @@ docker run -it -p 8545:8545 nethermind/nethermind:alpine --JsonRpc.Enabled true 
 {% endtab %}
 
 {% tab title="Debian" %}
-```text
+```
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
