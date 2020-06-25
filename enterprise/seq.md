@@ -10,7 +10,7 @@ With [Seq](https://datalust.co/seq) you can quickly identify and diagnose proble
 
 Clients can entrust monitoring and support of the nodes to us or configure their own dashboard and Seq tools. Nethermind team can use Seq dashboards and alerts to quickly address any production issues and outages.
 
-### Dashboards and Alerts
+## Dashboards and Alerts
 
 In Seq we are able to visualize events data with simple charts. They’re very useful when it comes to alert the Team when something wrong happens with nodes.
 
@@ -32,13 +32,13 @@ We can also view them in a nice HTML format which can be also configured in Seq.
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/alert-message.png)
 
-### Logs
+## Logs
 
 With the power of structured logging we can quickly check the source of an event. It’s useful when diagnosing problems with Ethereum nodes, we can verify the source of an error in a second. It is very easy to create some handy filters and queries which can be reused.
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/seq-logs.png)
 
-### SQL queries
+## SQL queries
 
 The most popular database query language can be used to query over application logs.
 
