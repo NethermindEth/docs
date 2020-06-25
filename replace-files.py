@@ -1,5 +1,8 @@
 import os
 
+# rename readme
+os.rename("README.zh_CN.md", "README.md")
+
 search_path = '.' 
 root, dirs, files = next(os.walk(search_path), ([],[],[]))
 
@@ -12,10 +15,7 @@ for directory in dirs:
         for file in files:
             fileRaw = os.path.join(subdir, file)
             fileName = os.path.basename(fileRaw)
-            print(fileRaw)
-            print(fileName)
             fileNameOrigin = os.path.splitext(fileName)[0].replace(".zh_CN", "")
-            print(fileNameOrigin)
             os.rename(fileRaw, f"{subdir}/{fileNameOrigin}.md")
             countFiles += 1
             

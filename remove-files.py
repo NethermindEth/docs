@@ -1,5 +1,8 @@
 import os
 
+# remove readme
+os.remove("README.md")
+
 search_path = '.' 
 root, dirs, files = next(os.walk(search_path), ([],[],[]))
 
@@ -12,10 +15,9 @@ for directory in dirs:
         for file in files:
             fileRaw = os.path.join(subdir, file)
             fileName = os.path.basename(fileRaw)
-            print(fileName)
             if not ("zh_CN" in fileName):
                 os.remove(fileRaw)
-                print("removed" + fileRaw)
+                print("Removed: " + fileRaw)
                 countFiles += 1
                 
 print(f"Number of removed files: {countFiles}")
