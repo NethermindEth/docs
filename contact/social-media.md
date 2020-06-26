@@ -20,5 +20,11 @@ description: Social media channels where you can reach the Team
 
 {% embed url="https://twitter.com/nethermindeth" %}
 
+## Weibo
+
+
+
+![](../.gitbook/assets/1845600783.jpg)
+
 
 
