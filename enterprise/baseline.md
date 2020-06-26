@@ -20,7 +20,7 @@ Launch node B \(the test node keys are consistent with Data/static-nodes-baselin
 
 ![Send transaction to one node and the new block will be created and synchronized](../.gitbook/assets/image%20%2832%29.png)
 
-
+![Sample interaction with the newly deployed Baseline Merkle Tree contract \(errors kept to answer FAQ\)](../.gitbook/assets/image%20%2834%29.png)
 
 
 
