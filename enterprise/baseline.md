@@ -24,5 +24,5 @@ Launch node B \(the test node keys are consistent with Data/static-nodes-baselin
 
 ![Here we add some data to the tree and ask for Merkle proofs \(sibling paths\)](../.gitbook/assets/image%20%2835%29.png)
 
-
+![Verification of a leaf against the root and the siblings path.](../.gitbook/assets/image%20%2836%29.png)
 
