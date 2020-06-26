@@ -22,7 +22,7 @@ Launch node B \(the test node keys are consistent with Data/static-nodes-baselin
 
 ![Sample interaction with the newly deployed Baseline Merkle Tree contract \(errors kept to answer FAQ\)](../.gitbook/assets/image%20%2834%29.png)
 
-
+![Here we add some data to the tree and ask for Merkle proofs \(sibling paths\)](../.gitbook/assets/image%20%2835%29.png)
 
 
 
