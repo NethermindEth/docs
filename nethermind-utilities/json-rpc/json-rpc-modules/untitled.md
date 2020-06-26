@@ -1,20 +1,20 @@
 # Admin
 
-### admin\_addPeer\(enode, addToStaticNodes\)
+## admin\_addPeer\(enode, addToStaticNodes\)
 
 Adds given node to the static nodes
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `string` |
 
-#### **Returns**
+### **Returns**
 
 `String` - The enode just added to the static nodes
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -30,19 +30,19 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_addPeer","params":["enode:
 {% endtab %}
 {% endtabs %}
 
-### admin\_dataDir\(\)
+## admin\_dataDir\(\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -58,22 +58,22 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_dataDir","params":[],"id":
 {% endtab %}
 {% endtabs %}
 
-### admin\_removePeer\(enode, removeFromStaticNodes\)
+## admin\_removePeer\(enode, removeFromStaticNodes\)
 
 Removes given node from the static nodes
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | enode | `string` |
 | removeFromStaticNodes | `boolean` |
 
-#### **Returns**
+### **Returns**
 
 `String` - The enode just removed from the static nodes
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -89,19 +89,19 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_removePeer","params":["eno
 {% endtab %}
 {% endtabs %}
 
-### admin\_setSolc\(\)
+## admin\_setSolc\(\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

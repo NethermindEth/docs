@@ -1,18 +1,18 @@
 # Eth
 
-### eth\_accounts\(\)
+## eth\_accounts\(\)
 
 Returns accounts
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_blockNumber\(\)
+## eth\_blockNumber\(\)
 
 Returns current block number
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,25 +50,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_call\(transactionCall, blockParameter\)
+## eth\_call\(transactionCall, blockParameter\)
 
 Executes a tx call \(does not create a transaction\)
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -78,25 +78,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_chainId\(\)
+## eth\_chainId\(\)
 
 Returns ChainID
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -106,25 +106,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_coinbase\(\)
+## eth\_coinbase\(\)
 
 Returns miner’s coinbase
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -134,25 +134,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_estimateGas\(transactionCall\)
+## eth\_estimateGas\(transactionCall\)
 
 Executes a tx call and returns gas used \(does not create a transaction\)
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -162,25 +162,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_gasPrice\(\)
+## eth\_gasPrice\(\)
 
 Returns miner’s gas price
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -190,25 +190,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getBalance\(address, blockParameter\)
+## eth\_getBalance\(address, blockParameter\)
 
 Returns account balance
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -218,25 +218,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getBlockByHash\(blockHash, returnFullTransactionObjects\)
+## eth\_getBlockByHash\(blockHash, returnFullTransactionObjects\)
 
 Retrieves a block by hash
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -246,25 +246,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
+## eth\_getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
 
 Retrieves a block by number
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -274,25 +274,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getBlockTransactionCountByHash\(blockHash\)
+## eth\_getBlockTransactionCountByHash\(blockHash\)
 
 Returns number of transactions in the block block hash
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -302,25 +302,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getBlockTransactionCountByNumber\(blockParameter\)
+## eth\_getBlockTransactionCountByNumber\(blockParameter\)
 
 Returns number of transactions in the block by block number
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -330,25 +330,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getCode\(address, blockParameter\)
+## eth\_getCode\(address, blockParameter\)
 
 Returns account code at given address and block
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -358,25 +358,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getFilterChanges\(filterId\)
+## eth\_getFilterChanges\(filterId\)
 
 Reads filter changes
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -386,25 +386,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getFilterLogs\(filterId\)
+## eth\_getFilterLogs\(filterId\)
 
 Reads filter changes
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -414,25 +414,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getLogs\(filter\)
+## eth\_getLogs\(filter\)
 
 Reads logs
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -442,25 +442,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getProof\(accountAddress, hashRate, blockParameter\)
+## eth\_getProof\(accountAddress, hashRate, blockParameter\)
 
 [https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -470,25 +470,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getStorageAt\(address, positionIndex, blockParameter\)
+## eth\_getStorageAt\(address, positionIndex, blockParameter\)
 
 Returns storage data at address. storage\_index
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -498,25 +498,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getTransactionByBlockHashAndIndex\(blockHash, positionIndex\)
+## eth\_getTransactionByBlockHashAndIndex\(blockHash, positionIndex\)
 
 Retrieves a transaction by block hash and index
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -526,25 +526,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getTransactionByBlockNumberAndIndex\(blockParameter, positionIndex\)
+## eth\_getTransactionByBlockNumberAndIndex\(blockParameter, positionIndex\)
 
 Retrieves a transaction by block number and index
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -554,25 +554,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getTransactionByHash\(transactionHash\)
+## eth\_getTransactionByHash\(transactionHash\)
 
 Retrieves a transaction by hash
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -582,25 +582,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getTransactionCount\(address, blockParameter\)
+## eth\_getTransactionCount\(address, blockParameter\)
 
 Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -610,25 +610,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getTransactionReceipt\(txHashData\)
+## eth\_getTransactionReceipt\(txHashData\)
 
 Retrieves a transaction receipt by tx hash
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -638,25 +638,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getUncleByBlockHashAndIndex\(blockHashData, positionIndex\)
+## eth\_getUncleByBlockHashAndIndex\(blockHashData, positionIndex\)
 
 Retrieves an uncle block header by block hash and uncle index
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -666,25 +666,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getUncleByBlockNumberAndIndex\(blockParameter, positionIndex\)
+## eth\_getUncleByBlockNumberAndIndex\(blockParameter, positionIndex\)
 
 Retrieves an uncle block header by block number and uncle index
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -694,25 +694,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getUncleCountByBlockHash\(blockHash\)
+## eth\_getUncleCountByBlockHash\(blockHash\)
 
 Returns number of uncles in the block by block hash
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -722,25 +722,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getUncleCountByBlockNumber\(blockParameter\)
+## eth\_getUncleCountByBlockNumber\(blockParameter\)
 
 Returns number of uncles in the block by block number
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -750,25 +750,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_getWork\(\)
+## eth\_getWork\(\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -778,25 +778,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_hashrate\(\)
+## eth\_hashrate\(\)
 
 Returns mining hashrate
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -806,25 +806,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_mining\(\)
+## eth\_mining\(\)
 
 Returns mining status
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -834,25 +834,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_newBlockFilter\(\)
+## eth\_newBlockFilter\(\)
 
 Creates an update filter
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -862,25 +862,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_newFilter\(filter\)
+## eth\_newFilter\(filter\)
 
 Creates an update filter
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -890,25 +890,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_newPendingTransactionFilter\(\)
+## eth\_newPendingTransactionFilter\(\)
 
 Creates an update filter
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -918,25 +918,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_pendingTransactions\(\)
+## eth\_pendingTransactions\(\)
 
 Returns the pending transactions list
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -946,25 +946,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_protocolVersion\(\)
+## eth\_protocolVersion\(\)
 
 Returns ETH protocol version
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -974,25 +974,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_sendRawTransaction\(transaction\)
+## eth\_sendRawTransaction\(transaction\)
 
 Send a raw transaction to the tx pool and broadcasting
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1002,25 +1002,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_sendTransaction\(transactionForRpc\)
+## eth\_sendTransaction\(transactionForRpc\)
 
 Send a transaction to the tx pool and broadcasting
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1030,25 +1030,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_sign\(addressData, message\)
+## eth\_sign\(addressData, message\)
 
 Signs a transaction
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1058,25 +1058,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_snapshot\(\)
+## eth\_snapshot\(\)
 
 Returns full state snapshot
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1086,25 +1086,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_submitHashrate\(hashRate, id\)
+## eth\_submitHashrate\(hashRate, id\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1114,25 +1114,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_submitWork\(nonce, headerPowHash, mixDigest\)
+## eth\_submitWork\(nonce, headerPowHash, mixDigest\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1142,25 +1142,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_syncing\(\)
+## eth\_syncing\(\)
 
 Returns syncing status
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1170,25 +1170,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### eth\_uninstallFilter\(filterId\)
+## eth\_uninstallFilter\(filterId\)
 
 Creates an update filter
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1198,11 +1198,9 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

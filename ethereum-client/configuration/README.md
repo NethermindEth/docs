@@ -13,7 +13,7 @@ Another way is to setup each configuration property by passing flags to either `
 ```
 
 {% hint style="warning" %}
-When passing a flag, each property needs to be prefixed with its respective [**Module**](), followed by the **property name** and its **value** e.g `--Init.IsMining true`
+When passing a flag, each property needs to be prefixed with its respective [**Module**](./), followed by the **property name** and its **value** e.g `--Init.IsMining true`
 {% endhint %}
 
 {% hint style="info" %}
@@ -23,6 +23,4 @@ Use `/` as the path separator so the configs can be shared between all platforms
 {% hint style="info" %}
 `--config`, `--baseDbPath`, and `--log` options are available from the command line to select config file, base DB directory prefix and log level respectively.
 {% endhint %}
-
-
 

@@ -12,7 +12,7 @@ Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Met
 
 ### Enabling Metrics in Nethermind
 
-Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`. 
+Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher` e.g. `./Nethermind.Runner --Metrics.Enabled true`.
 
 `Metrics.PushGatewayUrl` will need to be amended if pushgateway endpoint is not default.
 
@@ -39,8 +39,7 @@ docker-compose up -d
 * _Prometheus_ instance should be now running on [`http://localhost:9090/`](http://localhost:9090/)
 * _Pushgateway_ on [`http://localhost:9091/`](http://localhost:9091/)
 * _Grafana on_ [`http://localhost:3000/`](http://localhost:3000/)\`\`
-
-1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on _Pushgateway_ [url](http://localhost:9091/)
+* [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on _Pushgateway_ [url](http://localhost:9091/)
 
 {% hint style="info" %}
 You can add nethermind service to the `docker-compose.yml` file so that it runs with the whole stack
