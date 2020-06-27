@@ -4,6 +4,8 @@ description: Sample local Baseline setup
 
 # Baseline
 
+To launch the local nodes to experiment with some Baseline commands try the example below:
+
 Launch node A \(the test node keys are consistent with Data/static-nodes-baseline.json\)
 
 ```text
@@ -25,4 +27,12 @@ Launch node B \(the test node keys are consistent with Data/static-nodes-baselin
 ![Here we add some data to the tree and ask for Merkle proofs \(sibling paths\)](../.gitbook/assets/image%20%2835%29.png)
 
 ![Verification of a leaf against the root and the siblings path.](../.gitbook/assets/image%20%2836%29.png)
+
+Find below a high-level overview of the Baseline Protocol Atomic Workflow Step with Provide infrastructure and Nethermind node serving as a gateway to Ethereum mainnet and maintaining data from the Baseline Merkle trees.
+
+![](../.gitbook/assets/provide_neth%20%281%29.png)
+
+
+
+
 
