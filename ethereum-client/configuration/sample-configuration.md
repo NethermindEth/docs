@@ -1,8 +1,8 @@
 ---
-description: Sample Mainnet Fast Sync configuration for Nethermind
+description: 对于Nethermind的示例Mainnet快速同步配置
 ---
 
-# Sample configuration
+# 样本配置
 
 {% tabs %}
 {% tab title="mainnet.cfg" %}

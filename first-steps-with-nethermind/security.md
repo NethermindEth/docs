@@ -1,7 +1,6 @@
 ---
-description: >-
-  Security measures that should be taken before running Nethermind Node on
-  Ethereum Mainnet
+description: Security measures that should be taken before running Nethermind Node on Ethereum Mainnet
+
 ---
 
 # Security

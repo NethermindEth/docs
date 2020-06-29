@@ -1,6 +1,6 @@
 # Discovery
 
-| Property Name | Description | Default |
+| 属性名称 | 说明 | 默认值 |
 | :--- | :--- | ---: |
 | `BitsPerHop` | None | `null` |
 | `BootnodePongTimeout` | None | `null` |

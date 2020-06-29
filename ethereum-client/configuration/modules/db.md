@@ -2,7 +2,7 @@
 
 {% embed url="https://github.com/facebook/rocksdb/wiki/Memory-usage-in-RocksDB" %}
 
-| Property Name | Description | Default |
+| 属性名称 | 说明 | 默认值 |
 | :--- | :--- | ---: |
 | `BlockCacheSize` | None | `null` |
 | `BlockInfosDbBlockCacheSize` | None | `null` |

@@ -1,9 +1,9 @@
 # Bloom
 
-| Property Name | Description | Default |
+| 属性名称 | 说明 | 默认值 |
 | :--- | :--- | ---: |
-| `Index` | Defines whether the Bloom index is used. Bloom index speeds up rpc log searches | `null` |
-| `IndexLevelBucketSizes` | Defines multipliers for index levels. Can be tweaked per chain to boost performance | `[4, 8, 8]` |
-| `Migration` | Defines if migration of previously downloaded blocks to Bloom index will be done | `false` |
-| `MigrationStatistics` | Defines if migration statistics are to be calculated and output | `false` |
+| `Index` | 定义是否使用Bloom索引。 Bloom索引加快，rpc日志搜索的速度。 | `null` |
+| `IndexLevelBucketSizes` | 定义索引级别的乘数。可以对每个链进行调整以提高性能。 | `[4, 8, 8]` |
+| `Migration` | 定义索引级别的乘数。可以对每个链进行调整以提高性能。 | `false` |
+| `MigrationStatistics` | 定义索引级别的乘数。可以对每个链进行调整以提高性能。 | `false` |
 

@@ -31,12 +31,6 @@ source_file = nethermind-utilities/json-rpc/json-rpc-modules/README.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-untitled-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/untitled.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/untitled.md
-source_lang = en
-type = GITHUBMARKDOWN
-
 [nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-personal-md]
 file_filter = nethermind-utilities/json-rpc/json-rpc-modules/personal.<lang>.md
 source_file = nethermind-utilities/json-rpc/json-rpc-modules/personal.md

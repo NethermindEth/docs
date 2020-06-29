@@ -1,8 +1,8 @@
 # Hive
 
-| Property Name | Description | Default |
+| 属性名称 | 说明 | 默认值 |
 | :--- | :--- | ---: |
-| `BlocksDir` | Path to a directory with additional blocks | `/blocks` |
-| `ChainFile` | Path to a file with a test chain definition | `/chain.rlp` |
-| `KeysDir` | Path to a test key store directory | `/keys` |
+| `BlocksDir` | 具有其他块的目录的路径。 | `/blocks` |
+| `ChainFile` | 具有测试链定义的文件的路径。 | `/chain.rlp` |
+| `KeysDir` | 测试密钥库目录的路径。 | `/keys` |
 

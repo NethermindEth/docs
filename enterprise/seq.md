@@ -1,46 +1,45 @@
 ---
-description: >-
-  Nethermind supports clients through monitoring their Ethereum Nodes with a
-  nice and handy tools such as Grafana or Seq
+description: Nethermind使用便捷的工具（例如Grafana或Seq）监控其以太坊节点，为客户提供支持
+
 ---
 
 # Seq
 
-With [Seq](https://datalust.co/seq) you can quickly identify and diagnose problems with your Nethermind nodes. You can setup dashboards to monitor node’s behaviour and also send alerts whenever critical errors occur. With the help of NLog logging the application logs are being sent over to a Seq instance to enable monitoring. You can easily search through the events by simply writing SQL queries.
+[Seq](https://datalust.co/seq) ，让您快速识别和诊断Nethermind节点的问题。可设置仪表板来监视节点的行为，并在发生严重错误时发送警报。借助NLog日志记录，将应用程序日志发送到Seq实例以启用监视。您只需编写SQL查询即可轻松搜索事件
 
-Clients can entrust monitoring and support of the nodes to us or configure their own dashboard and Seq tools. Nethermind team can use Seq dashboards and alerts to quickly address any production issues and outages.
+客户可以将对节点的监视和支持委托给我们，或者配置自己的仪表板和Seq工具。 Nethermind团队可以使用Seq仪表板和警报来快速解决任何生产问题和停机。
 
-## Dashboards and Alerts
+## 仪表板和警报
 
-In Seq we are able to visualize events data with simple charts. They’re very useful when it comes to alert the Team when something wrong happens with nodes.
+Seq让我们能够使用简单的图表可视化事件数据。当节点发生问题时，这些图表提醒团队确实很有用。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/seq-dashboard1.png)
 
-The Alert is set up to trigger when the Validator node stops sealing blocks in a specified measurement window.
+警报设置为，在指定的测量窗口中验证节点停止密封块，时触发。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/seq-alerts.png)
 
-The Alert is being sent to our [OpsGenie](https://www.atlassian.com/software/opsgenie) instance over the SMTP server configured via one of the Apps which are plug-ins that process events and alerts, or ingest events from an external source. There are many of them created and provided by the community. In our example we use an `Email+` 2.0.92 provided by Datalust and Contributors.
+警报将通过其中一种应用程序配置的SMTP服务器发送到我们的[OpsGenie](https://www.atlassian.com/software/opsgenie) 实例. 应用程序是处理事件和警报或从外部来源获取事件的插件。其中有许多是由社区创建和提供的。在我们的示例中，我们使用由Datalust和Contributors提供的`Email +`2.0.92。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/seq-email.png)
 
-When the alert reaches the OpsGenie, phone notfications are being sent to our on-call Teams.
+警报到达OpsGenie时，电话通知将发送给我们的待命团队。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/opsgenie.png)
 
-We can also view them in a nice HTML format which can be also configured in Seq.
+我们还可以使用HTML格式查看警报（在Seq中对其进行配置）。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/alert-message.png)
 
-## Logs
+## 日志
 
-With the power of structured logging we can quickly check the source of an event. It’s useful when diagnosing problems with Ethereum nodes, we can verify the source of an error in a second. It is very easy to create some handy filters and queries which can be reused.
+借助结构化日志功能，我们可以快速检查事件的来源。在诊断以太坊节点问题时非常有用，我们可以在一秒钟内验证错误的来源。创建一些可重复使用的便捷过滤器和查询非常容易
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/seq-logs.png)
 
-## SQL queries
+## SQL查询
 
-The most popular database query language can be used to query over application logs.
+查询应用程序日志可用最受欢迎的数据库查询语言
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/seq-sql.png)
 

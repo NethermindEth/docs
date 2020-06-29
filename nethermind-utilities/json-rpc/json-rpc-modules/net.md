@@ -1,18 +1,18 @@
 # Net
 
-## net\_listening\(\)
+### net\_listening\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## net\_localAddress\(\)
+### net\_localAddress\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,25 +50,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## net\_localEnode\(\)
+### net\_localEnode\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -78,25 +78,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## net\_peerCount\(\)
+### net\_peerCount\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -106,25 +106,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## net\_version\(\)
+### net\_version\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -134,9 +134,11 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
+
+
 

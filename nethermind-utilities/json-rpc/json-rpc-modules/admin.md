@@ -1,19 +1,6 @@
-admin_addPeer(enode, addToStaticNodes)
-
-admin_dataDir()
-[NOT IMPLEMENTED]
-admin_nodeInfo()
-[NOT IMPLEMENTED]
-admin_peers()
-
-admin_removePeer(enode, removeFromStaticNodes)
-
-admin_setSolc()
-[NOT IMPLEMENTED]
-
 # Admin
 
-## admin_addPeer\(enode, addToStaticNodes\)
+### admin\_addPeer\(enode, addToStaticNodes\)
 
 Adds given node to the static nodes
 
@@ -38,11 +25,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_addPeer","params":["enode:
 
 {% tab title="Response" %}
 ```bash
+
 ```
 {% endtab %}
 {% endtabs %}
 
-## admin_dataDir()
+### admin\_dataDir\(\)
 
 None
 
@@ -65,11 +53,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_dataDir","params":[],"id":
 
 {% tab title="Response" %}
 ```bash
+
 ```
 {% endtab %}
 {% endtabs %}
 
-## admin_removePeer\(enode, removeFromStaticNodes\)
+### admin\_removePeer\(enode, removeFromStaticNodes\)
 
 Removes given node from the static nodes
 
@@ -95,11 +84,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_removePeer","params":["eno
 
 {% tab title="Response" %}
 ```bash
+
 ```
 {% endtab %}
 {% endtabs %}
 
-## admin_setSolc()
+### admin\_setSolc\(\)
 
 None
 
@@ -122,6 +112,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_setSolc","params":[],"id":
 
 {% tab title="Response" %}
 ```bash
+
 ```
 {% endtab %}
 {% endtabs %}
+

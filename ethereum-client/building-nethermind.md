@@ -1,21 +1,21 @@
-# Building Nethermind
+# 建立 Nethermind
 
-## IDE \(optional\)
+### IDE ( 可选）
 
 * [JetBrains Rider](https://www.jetbrains.com/rider/)
 * [VS Code](https://code.visualstudio.com/docs/other/dotnet)
 
-## SDKs
+### 微软软件开发工具包 （SDKs）
 
-To build Nethermind you will need **.NET SDK 3.1**. You can download it here \(make sure you select correct platform and distribution\):
+要构建Nethermind，您将需要** .NET SDK 3.1 **。您可以在此处下载\（确保选择正确的平台和发行版\）：
 
 {% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
 
-## Linux
+### Linux
 
 {% tabs %}
 {% tab title="Linux \(Ubuntu 18.04+/Debian 10\)" %}
-```text
+```
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
 ```
 {% endtab %}
@@ -31,37 +31,33 @@ sudo apt install libzstd1
 {% endtab %}
 
 {% tab title="Linux \(CentOS 8\)" %}
-```text
-sudo yum install -y glibc-devel && \
-sudo yum install bzip2-devel && \
-sudo yum install -y libzstd && \
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
-```
+    sudo yum install -y glibc-devel && \
+    sudo yum install bzip2-devel && \
+    sudo yum install -y libzstd && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
 {% endtab %}
 
 {% tab title="Linux \(Fedora 31\)" %}
-```text
-sudo yum install -y glibc-devel && \
-sudo yum install -y snappy && \
-sudo yum install -y libzstd && \
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
-```
+    sudo yum install -y glibc-devel && \
+    sudo yum install -y snappy && \
+    sudo yum install -y libzstd && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
+    sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
 {% endtab %}
 {% endtabs %}
 
-## MacOS
+### MacOS
 
 ```text
 brew install gmp && brew install snappy && brew install lz4
 ```
 
-## Windows
+### Windows
 
-You may need to install [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+可能需要安装 [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
-## All Platforms
+### 所有平台
 
 {% hint style="warning" %}
 If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
@@ -71,7 +67,7 @@ If dotnet command is not found then probably you forgot to install SDK \(see ins
 On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
 {% endhint %}
 
-Clone the Nethermind repository and its submodules, then build Nethermind in `Release` or `Debug` mode.
+克隆Nethermind存储库及其子模块，然后以 `Release`或`Debug`模式构建Nethermind。
 
 ```bash
 git clone https://github.com/NethermindEth/nethermind.git --recursive
@@ -79,25 +75,25 @@ cd nethermind/src/Nethermind
 dotnet build Nethermind.sln -c Release
 ```
 
-Launch goerli testnet for quick sync and testing
+以进行快速同步和测试，启动goerli testnet
 
 ```bash
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config goerli
 ```
 
-You can confirm the latest block of the Goerli tetsnet here:
+在此处可以确认Goerli tetsnet 的最新块
 
-{% embed url="https://blockscout.com/eth/goerli/" caption="" %}
+{% embed url="https://blockscout.com/eth/goerli/" %}
 
-or to run Ethereum Mainnet:
+或运行以太坊主网:
 
 ```text
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config mainnet
 ```
 
-## Potential Issues
+### 可能产生的问 题
 
-If you have some previous pre-release versions of .NET Core installed they may cause conflicts. Your case might be quite unique so best to search for help online.
+如果您安装了某些.NET Core的预发行版本，则这些预发行版本可能会导致一些冲突。您怎样的情况可能非常独特，因此最好在线寻求帮助。
 

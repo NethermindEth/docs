@@ -1,8 +1,8 @@
 ---
-description: Social media channels where you can reach the Team
+description: 可以与团队联系的社交媒体渠道
 ---
 
-# Social Media
+# 社交媒体
 
 ## Discord
 
@@ -19,6 +19,12 @@ description: Social media channels where you can reach the Team
 ## Twitter
 
 {% embed url="https://twitter.com/nethermindeth" %}
+
+## 微波
+
+
+
+![](../.gitbook/assets/1845600783.jpg)
 
 
 
