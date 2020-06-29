@@ -100,7 +100,6 @@
 * [RocksDbExtractor](guides-and-helpers/rocksdbextractor.md)
 * [Aura Validator setup](guides-and-helpers/validator-setup/README.md)
   * [With docker-compose](guides-and-helpers/validator-setup/with-docker-compose.md)
-  * [From source](guides-and-helpers/validator-setup/from-source.md)
 
 ## Enterprise
 

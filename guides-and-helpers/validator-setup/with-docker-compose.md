@@ -60,7 +60,7 @@ volumes:
 {% endtab %}
 {% endtabs %}
 
-Configure Nethermind node via environment variables or use local config file and map it to the one existing inside container \(`xdai.cfg` file in above example\).
+Configure Nethermind node via environment variables or use local config file and map it to the one, existing inside container \(`xdai.cfg` file in above example\).
 
 {% hint style="info" %}
 Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, otherwise you might lose database or keys
