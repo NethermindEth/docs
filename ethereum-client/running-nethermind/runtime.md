@@ -20,6 +20,19 @@ Database by default is located in:
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ```
 
+## Static nodes
+
+Static nodes are a pre-configured array of nodes you can trust. They can be defined with a simple `static-nodes.json` file containing a list of `enodes` separated with comma.
+
+```bash
+[
+  "enode://c1c3a604950119f82d78189792b73f5a96bd09017c77465e3c32fc51c1d758a9a772ffddd58436d465342f2cfa6d4a442a49e526743f4d8354d7c5ce794c3ee5@127.0.0.1:30303",
+  "enode://2784b947df025df9911875e68ccfcb0627ad4ae1dfb9f77634435692e8626508d9a6a04adff7719d3d73b25e72cbedee8d8e431492afbbd5fb4082e78c52d934@127.0.0.1:30303"
+]
+```
+
+By default `static-nodes.json` file is stored in `Data/` folder included in Nethermind packages. Path to `static-nodes` file can be configured via [`StaticNodesPath`](../configuration/modules/init.md) parameter.
+
 ## NLog config
 
 You can change the level of logging in file and in the console by choosing one of the levels \(Error, Warn, Info, Debug, Trace\):
