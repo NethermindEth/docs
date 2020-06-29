@@ -87,7 +87,7 @@ The `keyfile` should be then stored inside `keystore` volume.
 
 Things to be configured:
 
-* [ ] `IsMining` true
+* [ ] `Init.IsMining` true
 * [ ] `Init.MemoryHint` can be left default, recommended to configure it accordingly to the machine hardware setup \(for `xdai` 1000000000 is enough\)
 * [ ] `EthStats` section if you wish to report node status to the ethstats page for a given network
 * [ ] `Metrics` section if running local/remote [Metrics infrastructure](../../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
