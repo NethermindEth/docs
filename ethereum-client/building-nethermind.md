@@ -1,21 +1,21 @@
-# 建立 Nethermind
+# Building Nethermind
 
-### IDE ( 可选）
+## IDE \( 可选）
 
 * [JetBrains Rider](https://www.jetbrains.com/rider/)
 * [VS Code](https://code.visualstudio.com/docs/other/dotnet)
 
-### 微软软件开发工具包 （SDKs）
+## 微软软件开发工具包 （SDKs）
 
-要构建Nethermind，您将需要** .NET SDK 3.1 **。您可以在此处下载\（确保选择正确的平台和发行版\）：
+要构建Nethermind，您将需要 **.NET SDK 3.1** 。您可以在此处下载\（确保选择正确的平台和发行版\）：
 
 {% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
 
-### Linux
+## Linux
 
 {% tabs %}
 {% tab title="Linux \(Ubuntu 18.04+/Debian 10\)" %}
-```
+```text
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
 ```
 {% endtab %}
@@ -31,33 +31,37 @@ sudo apt install libzstd1
 {% endtab %}
 
 {% tab title="Linux \(CentOS 8\)" %}
-    sudo yum install -y glibc-devel && \
-    sudo yum install bzip2-devel && \
-    sudo yum install -y libzstd && \
-    sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-    sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
+```text
+sudo yum install -y glibc-devel && \
+sudo yum install bzip2-devel && \
+sudo yum install -y libzstd && \
+sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
+sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
+```
 {% endtab %}
 
 {% tab title="Linux \(Fedora 31\)" %}
-    sudo yum install -y glibc-devel && \
-    sudo yum install -y snappy && \
-    sudo yum install -y libzstd && \
-    sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-    sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
+```text
+sudo yum install -y glibc-devel && \
+sudo yum install -y snappy && \
+sudo yum install -y libzstd && \
+sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
+sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
+```
 {% endtab %}
 {% endtabs %}
 
-### MacOS
+## MacOS
 
 ```text
 brew install gmp && brew install snappy && brew install lz4
 ```
 
-### Windows
+## Windows
 
 可能需要安装 [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
-### 所有平台
+## 所有平台
 
 {% hint style="warning" %}
 If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
@@ -84,7 +88,7 @@ dotnet run --no-build -c Release -- --config goerli
 
 在此处可以确认Goerli tetsnet 的最新块
 
-{% embed url="https://blockscout.com/eth/goerli/" %}
+{% embed url="https://blockscout.com/eth/goerli/" caption="" %}
 
 或运行以太坊主网:
 
@@ -93,7 +97,7 @@ cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config mainnet
 ```
 
-### 可能产生的问 题
+## 可能产生的问 题
 
 如果您安装了某些.NET Core的预发行版本，则这些预发行版本可能会导致一些冲突。您怎样的情况可能非常独特，因此最好在线寻求帮助。
 

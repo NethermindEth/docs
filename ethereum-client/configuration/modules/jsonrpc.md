@@ -10,5 +10,5 @@
 | `Port` | JSON RPC调用的端口号。启用JSON RPC时，确保已配置防火墙。 | `8545` |
 | `RpcRecorderBaseFilePath` | 诊断JSON RPC记录器的基本文件路径。 | `logs/rpc.log_1.txt` |
 | `RpcRecorderEnabled` | 定义是否在节点启动时启用JSON RPC诊断记录。除非您是诊断JSON-RPC问题的开发人员，否则不要启用。 | `false` |
-| `WebSocketsPort` |  JSON RPC web sockets 调用的端口号。默认情况下，相同的端口用作常规 JSON RPC 。启用 JSON RPCC 时，确保已配置防火墙。 | `8545` |
+| `WebSocketsPort` | JSON RPC web sockets 调用的端口号。默认情况下，相同的端口用作常规 JSON RPC 。启用 JSON RPCC 时，确保已配置防火墙。 | `8545` |
 

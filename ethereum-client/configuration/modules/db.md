@@ -1,6 +1,6 @@
 # Db
 
-{% embed url="https://github.com/facebook/rocksdb/wiki/Memory-usage-in-RocksDB" %}
+{% embed url="https://github.com/facebook/rocksdb/wiki/Memory-usage-in-RocksDB" caption="" %}
 
 | 属性名称 | 说明 | 默认值 |
 | :--- | :--- | ---: |

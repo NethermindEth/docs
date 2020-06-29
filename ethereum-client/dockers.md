@@ -32,7 +32,7 @@ We are currently supporting docker images for the following CPU architectures:
 
 To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
 
-For example if you wish to use version `1.7.4` of **Nethermind Alpine** image, the image name would be `1.7.4-alpine` , for **Nethermind ARM64 Alpine** `1.7.4-alpine-arm64` ****and so on and so forth. 
+For example if you wish to use version `1.7.4` of **Nethermind Alpine** image, the image name would be `1.7.4-alpine` , for **Nethermind ARM64 Alpine** `1.7.4-alpine-arm64` _\*\*_and so on and so forth.
 
 All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
 
@@ -52,25 +52,25 @@ docker pull nethermind/nethermind:alpine
 {% endtab %}
 
 {% tab title="Debian" %}
-```
+```text
 docker pull nethermind/nethermind
 ```
 {% endtab %}
 
 {% tab title="Alpine ARM64" %}
-```
+```text
 docker pull nethermind/nethermind:alpine-arm64
 ```
 {% endtab %}
 
 {% tab title="Debian ARM64" %}
-```
+```text
 docker pull nethermind/nethermind:arm64
 ```
 {% endtab %}
 
 {% tab title="Debian ARM32" %}
-```
+```text
 docker pull nethermind/nethermind:arm32
 ```
 {% endtab %}
@@ -86,25 +86,25 @@ docker run -it nethermind/nethermind:alpine
 {% endtab %}
 
 {% tab title="Debian" %}
-```
+```text
 docker run -it nethermind/nethermind
 ```
 {% endtab %}
 
 {% tab title="Alpine ARM64" %}
-```
+```text
 docker run -it nethermind/nethermind:alpine-arm64
 ```
 {% endtab %}
 
 {% tab title="Debian ARM64" %}
-```
+```text
 docker run -it nethermind/nethermind:arm64
 ```
 {% endtab %}
 
 {% tab title="Debian ARM32" %}
-```
+```text
 docker run -it nethermind/nethermind:arm32
 ```
 {% endtab %}
@@ -120,25 +120,25 @@ docker run -it nethermind/nethermind:alpine --help
 {% endtab %}
 
 {% tab title="Debian" %}
-```
+```text
 docker run -it nethermind/nethermind --help
 ```
 {% endtab %}
 
 {% tab title="Alpine ARM64" %}
-```
+```text
 docker run -it nethermind/nethermind:alpine-arm64 --help
 ```
 {% endtab %}
 
 {% tab title="Debian ARM64" %}
-```
+```text
 docker run -it nethermind/nethermind:arm64 --help
 ```
 {% endtab %}
 
 {% tab title="Debian ARM32" %}
-```
+```text
 docker run -it nethermind/nethermind:arm32 --help
 ```
 {% endtab %}
@@ -161,7 +161,7 @@ Environment variables are to be passed before docker image tag while parameteres
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables ****can be easily used within **docker-compose.yml** files in environment section
+Environment variables **\*\*can be easily used within** docker-compose.yml\*\* files in environment section
 {% endhint %}
 
 ### **JSON RPC**
@@ -178,25 +178,25 @@ docker run -it --network host nethermind/nethermind:alpine --JsonRpc.Enabled tru
 {% endtab %}
 
 {% tab title="Debian" %}
-```
+```text
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
 {% endtab %}
 
 {% tab title="Alpine ARM64" %}
-```
+```text
 docker run -it --network host nethermind/nethermind:alpine-arm64 --JsonRpc.Enabled true
 ```
 {% endtab %}
 
 {% tab title="Debian ARM64" %}
-```
+```text
 docker run -it --network host nethermind/nethermind:arm64 --JsonRpc.Enabled true
 ```
 {% endtab %}
 
 {% tab title="Debian ARM32" %}
-```
+```text
 docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
 ```
 {% endtab %}
@@ -212,25 +212,25 @@ docker run -it -p 8545:8545 nethermind/nethermind:alpine --JsonRpc.Enabled true 
 {% endtab %}
 
 {% tab title="Debian" %}
-```
+```text
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
 {% tab title="Alpine ARM64" %}
-```
+```text
 docker run -it -p 8545:8545 nethermind/nethermind:alpine-arm64 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
 {% tab title="Debian ARM64" %}
-```
+```text
 docker run -it -p 8545:8545 nethermind/nethermind:arm64 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
 {% tab title="Debian ARM32" %}
-```
+```text
 docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
@@ -261,25 +261,25 @@ docker run -it nethermind/nethermind:alpine --config goerli
 {% endtab %}
 
 {% tab title="Debian" %}
-```
+```text
 docker run -it nethermind/nethermind --config goerli
 ```
 {% endtab %}
 
 {% tab title="Alpine ARM64" %}
-```
+```text
 docker run -it nethermind/nethermind:alpine-arm64 --config goerli
 ```
 {% endtab %}
 
 {% tab title="Debian ARM64" %}
-```
+```text
 docker run -it nethermind/nethermind:arm64 --config goerli
 ```
 {% endtab %}
 
 {% tab title="Debian ARM32" %}
-```
+```text
 docker run -it nethermind/nethermind:arm32 --config goerli
 ```
 {% endtab %}

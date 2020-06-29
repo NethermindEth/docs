@@ -2,7 +2,7 @@
 description: 对于Nethermind的示例Mainnet快速同步配置
 ---
 
-# 样本配置
+# Sample configuration
 
 {% tabs %}
 {% tab title="mainnet.cfg" %}

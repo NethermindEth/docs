@@ -73,7 +73,7 @@
     * [Web3](nethermind-utilities/cli/cli-modules/web3.md)
 * [JSON RPC](nethermind-utilities/json-rpc/README.md)
   * [JSON RPC Modules](nethermind-utilities/json-rpc/json-rpc-modules/README.md)
-    * [Admin](nethermind-utilities/json-rpc/json-rpc-modules/untitled.md)
+    * [Admin](nethermind-utilities/json-rpc/json-rpc-modules/admin.md)
     * [Clique](nethermind-utilities/json-rpc/json-rpc-modules/clique.md)
     * [Debug](nethermind-utilities/json-rpc/json-rpc-modules/debug.md)
     * [Eth](nethermind-utilities/json-rpc/json-rpc-modules/eth.md)

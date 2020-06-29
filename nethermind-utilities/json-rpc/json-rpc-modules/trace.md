@@ -1,18 +1,18 @@
 # Trace
 
-### trace\_block\(numberOrTag\)
+## trace\_block\(numberOrTag\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_call\(message, traceTypes, numberOrTag\)
+## trace\_call\(message, traceTypes, numberOrTag\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,25 +50,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_callMany\(calls\)
+## trace\_callMany\(calls\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -78,25 +78,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_filter\(fromBlock, toBlock, toAddress, after, count\)
+## trace\_filter\(fromBlock, toBlock, toAddress, after, count\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -106,25 +106,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_get\(txHash, positions\)
+## trace\_get\(txHash, positions\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -134,25 +134,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_rawTransaction\(data, traceTypes\)
+## trace\_rawTransaction\(data, traceTypes\)
 
 Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -162,25 +162,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_replayBlockTransactions\(numberOrTag, traceTypes\)
+## trace\_replayBlockTransactions\(numberOrTag, traceTypes\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -190,25 +190,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_replayTransaction\(txHash, traceTypes\)
+## trace\_replayTransaction\(txHash, traceTypes\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -218,25 +218,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### trace\_transaction\(txHash\)
+## trace\_transaction\(txHash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -246,11 +246,9 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```
+```text
 
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
