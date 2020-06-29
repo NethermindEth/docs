@@ -1,2 +1,2 @@
-# Validator setup
+# Aura Validator setup
 

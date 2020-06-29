@@ -98,7 +98,7 @@
   * [Google Cloud](guides-and-helpers/cloud-providers/google-cloud.md)
 * [FAQs](guides-and-helpers/faq.md)
 * [RocksDbExtractor](guides-and-helpers/rocksdbextractor.md)
-* [Validator setup](guides-and-helpers/validator-setup/README.md)
+* [Aura Validator setup](guides-and-helpers/validator-setup/README.md)
   * [With docker-compose](guides-and-helpers/validator-setup/with-docker-compose.md)
   * [From source](guides-and-helpers/validator-setup/from-source.md)
 
