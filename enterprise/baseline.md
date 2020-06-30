@@ -6,6 +6,8 @@ description: Sample local Baseline setup
 
 To launch the local nodes to experiment with some Baseline commands try the example below:
 
+Baseline configuration files have network discovery processes disabled and in the example we use static nodes instead. The static nodes configuration can be found in the `Data/static-nodes-baseline.json` files. Each static node there has an enode entry with a public key derived from the private key of the node \(the `TestNodeKey` settings in our example\), IP addresses, and port.
+
 Launch node A \(the test node keys are consistent with Data/static-nodes-baseline.json\)
 
 ```text
