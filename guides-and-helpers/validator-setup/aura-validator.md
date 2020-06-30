@@ -20,6 +20,38 @@ If you chose not to use docker-compose, you can skip docker-compose related sect
 sudo apt-get install docker docker-compose -y
 ```
 
+## Clock synchronization
+
+You system clock needs to be synchronized otherwise you might encounter skipping block sealing. By default `stepDuration` is configured to `5s`.
+
+Verify if your system clock is synchronized, type `timedatectl status` and you should see similar output:
+
+```bash
+Local time: Tue 2020-06-30 17:16:19 UTC
+Universal time: Tue 2020-06-30 17:16:19 UTC
+RTC time: Tue 2020-06-30 17:16:19
+Time zone: Etc/UTC (UTC, +0000)
+System clock synchronized: yes
+systemd-timesyncd.service active: yes
+RTC in local TZ: no
+```
+
+If `System clock synchronized` displays `yes` you are all set, otherwise you may need to either:
+
+* [x] synchronize clock with NTP servers \(allow **UDP** port **123** for both incoming and outgoing traffic\)
+* [x] use below script to sync with google.com:
+
+Create `fixtime.sh` script and run it with `watch -n 60` command in a `screen`
+
+```bash
+echo sudo date -s '"$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"' > fixtime.sh
+chmod +x fixtime.sh
+screen -S time
+watch -n 60 ./fixtime.sh
+```
+
+Press `Ctrl+A+D` to leave the `screen`
+
 ## Docker-compose file sample
 
 Create and edit`docker-compose.yml` file
