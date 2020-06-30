@@ -17,7 +17,7 @@ Launch node A \(the test node keys are consistent with Data/static-nodes-baselin
 Launch node B \(the test node keys are consistent with Data/static-nodes-baseline.json\)
 
 ```text
-./Nethermind.Runner --config baseline --JsonRpc.Enabled true --JsonRpc.Port 8522 --Network.DiscoveryPort 30222 --Network.P2PPort 30111 --KeyStore.TestNodeKey 020102030405060708090a0b0c0d0e0f000102030405060708090a0b0c0d0e0f
+./Nethermind.Runner --config baseline --JsonRpc.Enabled true --JsonRpc.Port 8522 --Network.DiscoveryPort 30222 --Network.P2PPort 30222 --KeyStore.TestNodeKey 020102030405060708090a0b0c0d0e0f000102030405060708090a0b0c0d0e0f
 ```
 
 ![Initial connectivity to both nodes and deployment of the baseline tree contract](../.gitbook/assets/image%20%2833%29.png)
