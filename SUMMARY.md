@@ -84,7 +84,7 @@
     * [Trace](nethermind-utilities/json-rpc/json-rpc-modules/trace.md)
     * [TxPool](nethermind-utilities/json-rpc/json-rpc-modules/txpool.md)
     * [Web3](nethermind-utilities/json-rpc/json-rpc-modules/web3.md)
-  * [JSON RPC WIKI](https://github.com/ethereum/wiki/wiki/JSON-RPC)
+  * [JSON RPC WIKI](https://eth.wiki/json-rpc/API)
 
 ## Guides and Helpers
 
