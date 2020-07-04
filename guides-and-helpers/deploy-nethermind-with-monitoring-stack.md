@@ -89,7 +89,7 @@ Copy part starting after first colon and ending before your username and paste t
 ssh_fingerprint = "64:7f:e2:2d:15:dd:88:2b:c5:69:a8:61:64:69:cb:0d"
 ```
 
-## Run the stack
+## Running the stack
 
 Confirm that terraform can be initialized, run this command from within terraform-templates directory
 
@@ -123,7 +123,7 @@ Wait until terraform is done deploying and if everything went good you should se
 
 ![](../.gitbook/assets/image%20%2844%29.png)
 
-## Explore the stack
+## Exploring the stack
 
 Grab the IP of your new Droplet from the DigitalOcean panel
 
