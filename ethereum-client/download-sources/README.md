@@ -1,8 +1,7 @@
 ---
-description: >-
-  Nethermind packages are available in either Github Releases Page or our
-  Downloads Page.
+description: Nethermind软件包可在Github发布页面或我们的下载页面中找到。
+
 ---
 
-# Download sources
+# 下载资源
 

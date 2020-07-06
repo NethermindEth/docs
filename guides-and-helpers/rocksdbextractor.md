@@ -1,18 +1,18 @@
 # RocksDbExtractor
 
-## Running application
+## 正在运行的应用程序
 
-1. Run application
+1. 运行的应用程序
 
 ```
 dotnet run
 ```
 
-2. Enter path to your rocksdb database
+2. 输入您的rocksdb数据库的路径
 
 ![](https://lh5.googleusercontent.com/r9u-RIpCLqpMhtWuel4jaDRbkeXMAI1sT-OqhqSKlERoxXmVVvvC-y9b0V4Jy0s-PcShIy1jRvfEvjDmsQaT2UxTZwIPvWixzB2H4pJMZGxbojc0q95Ivcf96et25MIGv1JjhUSu)
 
-examples:
+例如：
 
 {% tabs %}
 {% tab title="Windows" %}
@@ -28,23 +28,23 @@ D:\Workspace\Demerzel\ndm\src\Nethermind\Nethermind.Runner\bin\Debug\netcoreapp3
 {% endtab %}
 {% endtabs %}
 
-3. Confirm your folder selection with `Enter`
+3. 按`Enter` 确认您的文件夹选择
 
 ![](../.gitbook/assets/image%20%2825%29.png)
 
-4. Select the record with `Enter` to see the details
+4. 按 `Enter` 选择记录以查看详细信息
 
 ![](../.gitbook/assets/image%20%2822%29.png)
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
-## Back to the previous window
+## 返回上一个视窗
 
-If you want to go back to the previous window. You can do it by using the `q` key.
+按 `q` 键只能返回上一个视窗。
 
-## Warnings
+## 警告
 
-If there is no data in the directory, you will see this message box. You can close this box by pressing the `Esc` key.
+如果目录中没有数据，您将看到此消息框,  关闭此框按`Esc`键。
 
 ![](../.gitbook/assets/image%20%2824%29.png)
 

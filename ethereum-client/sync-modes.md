@@ -1,4 +1,4 @@
-# Sync modes
+# 同步模式
 
-TODO
+得做
 

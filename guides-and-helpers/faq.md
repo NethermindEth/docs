@@ -1,12 +1,12 @@
-# FAQs
+# 常见问题
 
-## Can I become who I want to be?
+## 我能当我想当的人吗？
 
-That's a tough question but thankfully, our team is on it. Please bear with us while we're investigating.
+这是一个很难回答的问题，但值得庆幸的是，我们的团队已经解决了这个问题。我们正在调查，请耐心等待。
 
-## Have you had a chance to answer the previous question?
+##  您有机会回答上一个问题吗？
 
-Yes, after a few months we finally found the answer. Sadly, Mike is on vacations right now so I'm afraid we are not able to provide the answer at this point.
+是的，几个月后我们终于找到了答案。遗憾的是，迈克现在正在休假，所以恐怕我们不能在这一点上提供答案。
 
 
 

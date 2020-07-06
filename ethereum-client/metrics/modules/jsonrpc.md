@@ -1,10 +1,10 @@
 # JsonRpc
 
-| Metric Name | Description |
+| 度量名称 | 说明 |
 | :--- | :--- |
-| `nethermind_json_rpc_errors` | Number of JSON RPC requests processed with errors |
-| `nethermind_json_rpc_invalid_requests` | Number of JSON RPC requests that were invalid |
-| `nethermind_json_rpc_request_deserialization_failures` | Number of JSON RPC requests that failed JSON deserialization |
-| `nethermind_json_rpc_requests` | Total number of JSON RPC requests received by the node |
-| `nethermind_json_rpc_successes` | Number of JSON RPC requests processed succesfully |
+| `nethermind_json_rpc_errors` | 错误处理的JSON RPC请求数。 |
+| `nethermind_json_rpc_invalid_requests` | 无效的JSON RPC请求数。 |
+| `nethermind_json_rpc_request_deserialization_failures` | JSON反序列化失败的JSON RPC请求数。 |
+| `nethermind_json_rpc_requests` | 节点接收的JSON RPC请求总数。 |
+| `nethermind_json_rpc_successes` | 成功处理的JSON RPC请求数 |
 

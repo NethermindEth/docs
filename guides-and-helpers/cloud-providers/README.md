@@ -1,8 +1,7 @@
 ---
-description: >-
-  Cloud providers which are useful for getting started with creating your own
-  Ethereum node outside your local machine.
+description:  云提供商，对于开始在本地计算机之外创建自己的以太坊节点很有用。
+
 ---
 
-# Cloud Providers
+# 云提供商
 

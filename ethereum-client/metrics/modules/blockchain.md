@@ -1,16 +1,16 @@
-# Blockchain
+# 区块链
 
-| Metric Name | Description |
+| 度量名称 | 说明 |
 | :--- | :--- |
-| `nethermind_blocks` | Total number of blocks processed |
-| `nethermind_mgas` | Total MGas processed |
-| `nethermind_pending_transactions_discarded` | Number of pending transactions received that were ignored |
-| `nethermind_pending_transactions_known` | Number of known pending transactions |
-| `nethermind_pending_transactions_received` | Number of pending transactions received from peers |
-| `nethermind_pending_transactions_sent` | Number of pending transactions broadcasted to peers |
-| `nethermind_processing_queue_size` | Number of blocks awaiting for processing |
-| `nethermind_recovery_queue_size` | Number of blocks awaiting for recovery of public keys from signatures |
-| `nethermind_reorganizations` | Total number of chain reorganizations |
-| `nethermind_sync_peers` | Number of sync peers |
-| `nethermind_transactions` | Total number of transactions processed |
+| `nethermind_blocks` | 已处理的块总数 |
+| `nethermind_mgas` | 已处理的MGas总数 |
+| `nethermind_pending_transactions_discarded` | 收到的被忽略的未决事务数。 |
+| `nethermind_pending_transactions_known` | 已知的未决交易数。 |
+| `nethermind_pending_transactions_received` | 从对等方收到的未决事务数。 |
+| `nethermind_pending_transactions_sent` | 广播给对等体的未决事务数。 |
+| `nethermind_processing_queue_size` | 等待处理的块数。 |
+| `nethermind_recovery_queue_size` | 等待从签名中恢复公钥的块数。 |
+| `nethermind_reorganizations` | 连锁重组总数 |
+| `nethermind_sync_peers` | 同步对等体数。 |
+| `nethermind_transactions` | 已处理的交易总数 |
 

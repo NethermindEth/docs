@@ -1,18 +1,18 @@
 # Personal
 
-## personal\_ecRecover\(message, signature\)
+### personal\_ecRecover\(message, signature\)
 
 ecRecover returns the address associated with the private key that was used to calculate the signature in `personal_sign`
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_importRawKey\(keyData, passphrase\)
+### personal\_importRawKey\(keyData, passphrase\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,25 +50,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_listAccounts\(\)
+### personal\_listAccounts\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -78,25 +78,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_lockAccount\(address\)
+### personal\_lockAccount\(address\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -106,25 +106,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_newAccount\(passphrase\)
+### personal\_newAccount\(passphrase\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -134,25 +134,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_sendTransaction\(transaction, passphrase\)
+### personal\_sendTransaction\(transaction, passphrase\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -162,29 +162,29 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_sign\(message, address, passphrase\)
+### personal\_sign\(message, address, passphrase\)
 
-The sign method calculates an Ethereum specific signature with:
+The sign method calculates an Ethereum specific signature with: 
 
 ```bash
 sign(keccack256("Ethereum Signed Message:" + len(message) + message)))
 ```
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -194,25 +194,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## personal\_unlockAccount\(address, passphrase\)
+### personal\_unlockAccount\(address, passphrase\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -222,9 +222,11 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
+
+
 

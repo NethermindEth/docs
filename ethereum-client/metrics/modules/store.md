@@ -1,30 +1,30 @@
 # Store
 
-| Metric Name | Description |
+| 度量名称 | 说明 |
 | :--- | :--- |
-| `nethermind_block_infos_db_reads` | Number of Block Infos DB reads |
-| `nethermind_block_infos_db_writes` | Number of Block Infos DB writes |
-| `nethermind_blocks_db_reads` | Number of Blocks DB reads |
-| `nethermind_blocks_db_writes` | Number of Blocks DB writes |
-| `nethermind_code_db_reads` | Number of Code DB reads |
-| `nethermind_code_db_writes` | Number of Code DB writes |
-| `nethermind_eth_requests_db_reads` | Number of Eth Request \(faucet\) DB reads |
-| `nethermind_eth_requests_db_writes` | Number of Eth Request \(faucet\) DB writes |
-| `nethermind_header_db_reads` | Number of Headers DB reads |
-| `nethermind_header_db_writes` | Number of Headers DB writes |
-| `nethermind_other_db_reads` | Number of other DB reads |
-| `nethermind_other_db_writes` | Number of other DB writes |
-| `nethermind_pending_txs_db_reads` | Number of Pending Tx DB reads |
-| `nethermind_pending_txs_db_writes` | Number of Pending Tx DB writes |
-| `nethermind_receipts_db_reads` | Number of Receipts DB reads |
-| `nethermind_receipts_db_writes` | Number of Receipts DB writes |
-| `nethermind_state_db_reads` | Number of State DB reads |
-| `nethermind_state_db_writes` | Number of State DB writes |
-| `nethermind_state_tree_reads` | Number of State Trie reads |
-| `nethermind_state_tree_writes` | Number of Blocks Trie writes |
-| `nethermind_storage_tree_reads` | Number of storge trie reads |
-| `nethermind_storage_tree_writes` | Number of storage trie writes |
-| `nethermind_tree_node_hash_calculations` | Number of trie node hash calculations |
-| `nethermind_tree_node_rlp_decodings` | Number of trie node RLP decodings |
-| `nethermind_tree_node_rlp_encodings` | Number of trie node RLP encodings |
+| `nethermind_block_infos_db_reads` | DB读取块信息的次数。 |
+| `nethermind_block_infos_db_writes` | DB写入块信息的次数。 |
+| `nethermind_blocks_db_reads` | DB读取的块数。 |
+| `nethermind_blocks_db_writes` | DB写入的块数。 |
+| `nethermind_code_db_reads` | DB读取的代码数。 |
+| `nethermind_code_db_writes` | 代码DB写入次数。 |
+| `nethermind_eth_requests_db_reads` | Eth请求 \(水龙头\) DB读取的次数。 |
+| `nethermind_eth_requests_db_writes` | Eth请求 \(水龙头t\) DB写入的次数。 |
+| `nethermind_header_db_reads` | DB读取的Headers 数量。 |
+| `nethermind_header_db_writes` | DB写入Headers 数量。 |
+| `nethermind_other_db_reads` | 其他DB读取数。 |
+| `nethermind_other_db_writes` | 其他DB写入的次数 |
+| `nethermind_pending_txs_db_reads` | 待处理的Tx DB读取数。 |
+| `nethermind_pending_txs_db_writes` | 待处理的Tx DB写入数。 |
+| `nethermind_receipts_db_reads` | DB读取的回执数。 |
+| `nethermind_receipts_db_writes` | DB写入的收据数。 |
+| `nethermind_state_db_reads` | DB读取State数量。 |
+| `nethermind_state_db_writes` | DB写入State的数量。 |
+| `nethermind_state_tree_reads` | Trie库读取State的数量。 |
+| `nethermind_state_tree_writes` | Trie写入的块数。 |
+| `nethermind_storage_tree_reads` | Trie读取的存储次数。 |
+| `nethermind_storage_tree_writes` | Trie写入的存储次数。 |
+| `nethermind_tree_node_hash_calculations` | Trie节点哈希计算的数量。 |
+| `nethermind_tree_node_rlp_decodings` | Trie节点RLP解码的数量。 |
+| `nethermind_tree_node_rlp_encodings` | Trie节点RLP编码的数量。 |
 

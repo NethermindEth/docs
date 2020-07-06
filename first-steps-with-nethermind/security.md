@@ -1,10 +1,9 @@
 ---
-description: >-
-  Security measures that should be taken before running Nethermind Node on
-  Ethereum Mainnet
+description: 在以太坊主网上运行Nethermind节点之前应采取的安全措施
+
 ---
 
-# Security
+# 安全
 
 {% hint style="danger" %}
 📢 **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!

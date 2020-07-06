@@ -1,6 +1,6 @@
 ---
-description: Tutorial on how to run Nethermind client on different Operating Systems
+description: 有关如何在不同操作系统上运行Nethermind客户端的教程
 ---
 
-# Running Nethermind
+# 运行Nethermind
 

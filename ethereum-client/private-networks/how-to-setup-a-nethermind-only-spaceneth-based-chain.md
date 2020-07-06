@@ -1,8 +1,8 @@
-# How to setup a Nethermind only Spaceneth based chain
+# 如何设置仅基于Nethermind的Spaceneth链
 
-Spaceneth private network setup looks very similar to the above Clique setup. However, there are few major differences and will be described below.
+Spaceneth专用网络设置看起来与上述Clique设置非常相似。主要差异不大，下面将进行描述
 
-### Prerequisites
+### 先决条件
 
 * Linux bash shell
 * Docker-compose
@@ -14,37 +14,37 @@ Spaceneth private network setup looks very similar to the above Clique setup. Ho
 sudo apt-get install -y docker-compose docker.io jq
 ```
 
-### Setup
+### 设置
 
-In this setup we will create a private network of 3 Nethermind nodes running a simple testing NethDev consensus algorithm.
+在此设置中，我们将创建一个由3个Nethermind节点组成的专用网络，运行一个简单的测试NethDev共识算法。
 
-* create separate directory where we will store all files
+* 创建一个单独的目录，我们将在其中存储所有文件
 
 ```text
 mkdir private-networking
 cd private-networking
 ```
 
-* create folders for each node and genesis
+* 为每个节点和起源创建文件夹
 
 ```text
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* download [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json) file with clique engine and place it in `genesis` folder.
+* 使用自动引擎下载 [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json)文件并放置在``genesis''文件夹中。
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json
 cp spaceneth.json genesis/spaceneth.json
 ```
 
-* create subfolders in each node folder
+* 在每个节点文件夹中创建子文件夹
 
 ```bash
 mkdir node_1/configs node_1/staticNodes node_2/configs node_2/staticNodes node_3/configs node_3/staticNodes
 ```
 
-* create a `static-nodes.json` file and place it in `node_1/staticNodes` subfolders \(do this for node\_2 and node\_3 as well\)
+* 创建一个 `static-nodes.json` 文件，并放置在 `node_1/staticNodes`  子文件夹中 \( 也对node\_2 和 node\_3 进行此操作\)
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -54,7 +54,7 @@ cat <<EOF > node_1/staticNodes/static-nodes.json
 EOF
 ```
 
-* create `config.cfg` file and place it in `node_1/configs` subfolders \(do this for node\_2 and node\_3 as well\)
+* 创建 `config.cfg` 文件，并放置在 `node_1/configs` 子文件夹中 \( 也对node\_2和node\_3 进行此操作\)
 
 ```bash
 cat <<EOF > node_1/configs/config.cfg
@@ -84,13 +84,13 @@ cat <<EOF > node_1/configs/config.cfg
 EOF
 ```
 
-For each node you will need to change following items in configuration:
+对于每个节点，需要更改配置中的以下项目：
 
-* `LocalIp`, `ExternalIp` and `Host` should have the same value and be incremented for each node e.g. 10.5.0.3, 10.5.0.4 and so on and so forth.
+* `LocalIp`，`ExternalIp` 和`Host` 应具有相同的值，并针对每个节点递增，例如 10.5.0.3, 10.5.0.4 等。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/configs-spaceneth.png)
 
-* copy `docker-compose` file and place it in working directory
+* 复制 `docker-compose`文件并放置在工作目录中
 
 ```yaml
 version: "3.5"
@@ -149,13 +149,13 @@ networks:
                 - subnet: 10.5.0.0/16
 ```
 
-* run each node separately so that we can copy `Enode` for each node, we will use them later
+* 分别运行每个节点，以便我们能够为每个节点复制`Enode` ，我们稍后就会使用。
 
 ```bash
 docker-compose run node_1
 ```
 
-Stop the node when Nethermind initialization completes `Ctrl +C`. Copy `This node` values to a text file. Continue with node\_2 and node\_3.
+当Nethermind初始化完成 `Ctrl +C`.  时停止节点。将 `This node`  值复制到文本文件中。继续执行node\_2和node\_3。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization-spaceneth.png)
 
@@ -169,7 +169,7 @@ node.switch("http://localhost:8547")
 node.enode
 ```
 
-* the file should look similar to this:
+* 该文件应该跟以下内容相同：
 
 ```bash
 STATIC_NODE_1="enode://2281549869465d98e90cebc45e1d6834a01465a990add7bcf07a49287e7e66b50ca27f9c70a46190cef7ad746dd5d5b6b9dfee0c9954104c8e9bd0d42758ec58@10.5.0.2:30300"
@@ -177,8 +177,8 @@ STATIC_NODE_2="enode://37878ec16a5ed87c9c80b4648e5428f5c768eddd79483be118319c49d
 STATIC_NODE_3="enode://6067f06d84c207e6233dacf1f3ef961bd7231f71d5425cbaf843cf19cfd5f7e13b024d234e4e5f6175bdb37c0bbccd14488b481b2280efb66d0631a20ae13ea3@10.5.0.4:30300"
 ```
 
-* copy & paste above variables into your terminal
-* for each node modify previously created empty `static-nodes.json` files by appending `Enodes` to them
+* 以上变量复制粘贴到终端中
+* 对于每个节点，通过向其附加`Enodes`，修改先前创建的空`static-nodes.json` 文件
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -192,29 +192,29 @@ EOF
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/staticNodes-spaceneth.png)
 
-* remove databases for each node
+* 删除每个节点的数据库
 
 ```bash
 sudo rm -rf node_1/db/spaceneth node_2/db/spaceneth node_3/db/spaceneth
 ```
 
-* run `docker-compose` file
+* 运行`docker-compose`文件
 
 ```text
 docker-compose up
 ```
 
-You should see the private network working. We now need to send transactions in order to start producing blocks.
+应该看到专用网络正在运行。现在，为了开始生产区块，我们需要发送事务。
 
-* run `Nethermind.Cli`
-* run `node.switch("http://localhost:8547")`
-* run `personal.listAccounts`
-* create new account `personal.newAccount("test")`
+* 运行`Nethermind.Cli`
+* 运行  `node.switch("http://localhost:8547")`
+* 运行`personal.listAccounts`
+* 创建新帐户 `personal.newAccount("test")`
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/cli-spaceneth.png)
 
-* re-run `personal.listAccounts` and copy your account address
-* trigger blocks producing by sending transaction using `eth_sendTransaction`JSON RPC method or `Nethermind.Cli`. Change `from` property to your account address
+* 重新运行`personal.listAccounts`并复制帐户地址
+*  使用  `eth_sendTransaction`JSON RPC  或 `Nethermind.Cli` 方法发送事务来触发生产块。`from` ''属性更改为您的帐户地址
 
 ```bash
 curl --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{

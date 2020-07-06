@@ -1,18 +1,18 @@
 ---
-description: Networks currently supported by Nethermind Client
+description: Nethermind客户端当前支持的网络
 ---
 
-# Networks
+# 网络
 
-By default Nethermind launches with mainnet network configuration but you can sync any of the below networks by adding a command line switch:
+默认情况下，Nethermind使用主网网络配置启动，但是您也可以添加命令行，开关来同步以下任意网络：：
 
 ```text
 --config [NETWORK_NAME]
 ```
 
-Network name can be any of the following
+网络名称可以是以下任何一个
 
-* mainnet
+* mainnet （主网）
 * goerli
 * rinkeby
 * ropsten
@@ -21,9 +21,9 @@ Network name can be any of the following
 * sokol
 * volta
 
-### Mainnet
+### mainnet （主网）
 
-This is the main public Ethereum network secured by the ethash PoW algorithm.
+这是由ethash PoW算法保护的主要公共以太坊网络。
 
 ```text
 Nethermind.Runner --config mainnet
@@ -33,7 +33,7 @@ Nethermind.Runner --config mainnet
 
 ### Görli \(goerli\)
 
-This is a Clique-PoA based testnet supported by all major clients. It has a 15 seconds delay between blocks that are sealed by Goerli validators.
+这是所有主要客户支持的, 基于Clique-PoA的testnet。由Goerli验证程序密封的块之间有15秒的延迟。
 
 ```text
 Nethermind.Runner --config goerli
@@ -45,7 +45,7 @@ Nethermind.Runner --config goerli
 
 ### Ropsten
 
-This is a test network secured by ethash PoW algorithm which resembles mainnet most closely but is prone to hashrate-based attacks.
+这是一个受ethash PoW算法保护的测试网络，该算法最接近主网 ( mainnet )，但容易受到基于哈希率的攻击
 
 ```text
 Nethermind.Runner --config ropsten
@@ -55,7 +55,7 @@ Nethermind.Runner --config ropsten
 
 ### Rinkeby
 
-This is a Clique-PoA based testnet supported by Geth and Nethermind. It has a 15 seconds delay between blocks.
+这是Geth和Nethermind支持的基于Clique-PoA的testnet。块之间有15秒的延迟。
 
 ```text
 Nethermind.Runner --config rinkeby

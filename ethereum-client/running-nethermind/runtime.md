@@ -1,53 +1,53 @@
-# Runtime
+# 运行
 
-## Directories
+## 目录
 
-If you built the application locally then the entry point will be located in:
+ 如果您在本地构建应用程序，入口点将位于:
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/
 ```
 
-Log files by default are located in:
+默认情况下，日志文件位于：
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/logs
 ```
 
-Database by default is located in:
+默认情况下，数据库位于：
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ```
 
-## NLog config
+## NLog 配置
 
-You can change the level of logging in file and in the console by choosing one of the levels \(Error, Warn, Info, Debug, Trace\):
+您可以通过选择以下级别之一 \(错误(Error)，警告(Warn)，信息(Info)，调试(Debug)，跟踪(Trace) \) 来更改文件和控制台中的登录级别：
 
 ```bash
 <logger name="*" minlevel="Info" writeTo="file-async"/>
 <logger name="*" minlevel="Info" writeTo="auto-colored-console-async"/>
 ```
 
-More detailed NLog configuration can be found [here](https://github.com/NLog/NLog/wiki/Configuration-file).
+更多详细的NLog 配置就在[这里](https://github.com/NLog/NLog/wiki/Configuration-file).
 
-### Building from repository
+### 从存储库构建
 
-Logging level can be controlled in `NLog.config` file located in:
+日志记录级别可以在`NLog.config` 文件中控制，在此处:
 
 ```text
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 ```
 
-### Downloading package from Github/Downloads package
+### 从 Github/Downloads package下载程序包
 
-`NLog.config` file is supplied with the package and can be found in extraction directory.
+`NLog.config` 文件随软件包一起提供，可以在提取目录中找到。
 
 ![](../../.gitbook/assets/image%20%2830%29.png)
 
-### Running Nethermind with docker image
+### 使用Docker镜像运行Nethermind
 
-`NLog.config` file is located at `/nethermind/NLog.config` path inside the docker container. The volume can be then mapped with a simple command:
+`NLog.config` f文件位于Docker容器内的 `/nethermind/NLog.config` 路径中。可以使用一个简单的命令来映射该卷：
 
 ```bash
 -v /home/user/NLog.config:/nethermind/NLog.config
