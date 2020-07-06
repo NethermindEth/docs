@@ -24,52 +24,34 @@ We are currently supporting docker images for the following CPU architectures:
 
 | **Tag** | Description | Architecture |
 | :--- | :--- | :--- |
-| `latest` | The latest **Nethermind Debian** based image | x86\_64 |
-| `alpine` | The latest **Nethermind Alpine** based image **\(recommended\)** | x86\_64 |
-| `arm64` | The latest **Nethermind ARM64 Debian** based image | ARM64 |
-| `alpine-arm64` | The latest **Nethermind ARM64 Alpine** based image **\(recommended\)** | ARM64 |
+| `latest` | The latest **Nethermind Alpine** based image | x86\_64 |
+| `arm64` | The latest **Nethermind ARM64 Alpine** based image | ARM64 |
 | `arm32` | The latest **Nethermind ARM32 Debian** based image | ARM32 |
 
 To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
 
-For example if you wish to use version `1.7.4` of **Nethermind Alpine** image, the image name would be `1.7.4-alpine` , for **Nethermind ARM64 Alpine** `1.7.4-alpine-arm64` ****and so on and so forth. 
+For example if you wish to use version `1.7.4` of **Nethermind Alpine** image, the image name would be `1.7.4` , for **Nethermind ARM64 Alpine** `1.7.4-arm64` ****and so on and so forth. 
 
 All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
-
-{% hint style="info" %}
-We highly encourage to use a lighter container which is Alpine based, tagged as `alpine` or `1.8.50-alpine` \(Possible benefit of less memory consumption\)
-{% endhint %}
 
 ### **Running Nethermind** Container
 
 Docker pull command:
 
 {% tabs %}
-{% tab title="Alpine" %}
-```text
-docker pull nethermind/nethermind:alpine
-```
-{% endtab %}
-
-{% tab title="Debian" %}
+{% tab title="AMD64" %}
 ```
 docker pull nethermind/nethermind
 ```
 {% endtab %}
 
-{% tab title="Alpine ARM64" %}
-```
-docker pull nethermind/nethermind:alpine-arm64
-```
-{% endtab %}
-
-{% tab title="Debian ARM64" %}
+{% tab title="ARM64" %}
 ```
 docker pull nethermind/nethermind:arm64
 ```
 {% endtab %}
 
-{% tab title="Debian ARM32" %}
+{% tab title="ARM32" %}
 ```
 docker pull nethermind/nethermind:arm32
 ```
@@ -79,31 +61,19 @@ docker pull nethermind/nethermind:arm32
 In order to start `Nethermind.Runner`, simply run:
 
 {% tabs %}
-{% tab title="Alpine" %}
-```text
-docker run -it nethermind/nethermind:alpine
-```
-{% endtab %}
-
-{% tab title="Debian" %}
+{% tab title="AMD64" %}
 ```
 docker run -it nethermind/nethermind
 ```
 {% endtab %}
 
-{% tab title="Alpine ARM64" %}
-```
-docker run -it nethermind/nethermind:alpine-arm64
-```
-{% endtab %}
-
-{% tab title="Debian ARM64" %}
+{% tab title="ARM64" %}
 ```
 docker run -it nethermind/nethermind:arm64
 ```
 {% endtab %}
 
-{% tab title="Debian ARM32" %}
+{% tab title="ARM32" %}
 ```
 docker run -it nethermind/nethermind:arm32
 ```
@@ -113,31 +83,19 @@ docker run -it nethermind/nethermind:arm32
 You can use `--help` to get a list of possible start parameters for Nethermind or you can find them all [here](configuration/).
 
 {% tabs %}
-{% tab title="Alpine" %}
-```text
-docker run -it nethermind/nethermind:alpine --help
-```
-{% endtab %}
-
-{% tab title="Debian" %}
+{% tab title="AMD64" %}
 ```
 docker run -it nethermind/nethermind --help
 ```
 {% endtab %}
 
-{% tab title="Alpine ARM64" %}
-```
-docker run -it nethermind/nethermind:alpine-arm64 --help
-```
-{% endtab %}
-
-{% tab title="Debian ARM64" %}
+{% tab title="ARM64" %}
 ```
 docker run -it nethermind/nethermind:arm64 --help
 ```
 {% endtab %}
 
-{% tab title="Debian ARM32" %}
+{% tab title="ARM32" %}
 ```
 docker run -it nethermind/nethermind:arm32 --help
 ```
@@ -171,31 +129,19 @@ To enable JSON RPC, share the host’s networking namespace with `--network host
 If running locally:
 
 {% tabs %}
-{% tab title="Alpine" %}
-```text
-docker run -it --network host nethermind/nethermind:alpine --JsonRpc.Enabled true
-```
-{% endtab %}
-
-{% tab title="Debian" %}
+{% tab title="AMD64" %}
 ```
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
 {% endtab %}
 
-{% tab title="Alpine ARM64" %}
-```
-docker run -it --network host nethermind/nethermind:alpine-arm64 --JsonRpc.Enabled true
-```
-{% endtab %}
-
-{% tab title="Debian ARM64" %}
+{% tab title="ARM64" %}
 ```
 docker run -it --network host nethermind/nethermind:arm64 --JsonRpc.Enabled true
 ```
 {% endtab %}
 
-{% tab title="Debian ARM32" %}
+{% tab title="ARM32" %}
 ```
 docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
 ```
@@ -205,31 +151,19 @@ docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
 or with port-mapping
 
 {% tabs %}
-{% tab title="Alpine" %}
-```text
-docker run -it -p 8545:8545 nethermind/nethermind:alpine --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
-```
-{% endtab %}
-
-{% tab title="Debian" %}
+{% tab title="AMD64" %}
 ```
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
-{% tab title="Alpine ARM64" %}
-```
-docker run -it -p 8545:8545 nethermind/nethermind:alpine-arm64 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
-```
-{% endtab %}
-
-{% tab title="Debian ARM64" %}
+{% tab title="ARM64" %}
 ```
 docker run -it -p 8545:8545 nethermind/nethermind:arm64 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
-{% tab title="Debian ARM32" %}
+{% tab title="ARM32" %}
 ```
 docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
@@ -254,31 +188,19 @@ To switch the network use `--config {network}` flag \(default value is `mainnet`
 For example to run Nethermind on `goerli` network:
 
 {% tabs %}
-{% tab title="Alpine" %}
-```text
-docker run -it nethermind/nethermind:alpine --config goerli
-```
-{% endtab %}
-
-{% tab title="Debian" %}
+{% tab title="AMD64" %}
 ```
 docker run -it nethermind/nethermind --config goerli
 ```
 {% endtab %}
 
-{% tab title="Alpine ARM64" %}
-```
-docker run -it nethermind/nethermind:alpine-arm64 --config goerli
-```
-{% endtab %}
-
-{% tab title="Debian ARM64" %}
+{% tab title="ARM64" %}
 ```
 docker run -it nethermind/nethermind:arm64 --config goerli
 ```
 {% endtab %}
 
-{% tab title="Debian ARM32" %}
+{% tab title="ARM32" %}
 ```
 docker run -it nethermind/nethermind:arm32 --config goerli
 ```
@@ -325,12 +247,10 @@ Dockerfile can be found in the repository [root](https://github.com/NethermindEt
 
 | File Name | Description | Architecture |
 | :--- | :--- | :--- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build a Debian based image | x86\_64 |
-| [Dockerfile\_alpine](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_alpine) | requires to have a cloned repository in order to build an Alpine based image | x86\_64 |
+| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build an Alpine based image | x86\_64 |
 | [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | doesn’t require to have a cloned repository, as it will download it during the first step | x86\_64 |
-| [Dockerfile\_arm64](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_arm64) | requires to have a cloned repository in order to build an ARM64 Debian based image | ARM64 |
-| [Dockerfile\_alpine\_arm64](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_alpine_arm64) | requires to have a cloned repository in order to build an ARM64 Alpine based image | ARM64 |
-| [Dockerfile\_arm32](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_arm32) | requires to have a cloned repository in order to build an ARM32 Debian based image | ARM32 |
+| [Dockerfile.arm64](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_arm64) | requires to have a cloned repository in order to build an ARM64 Alpine based image | ARM64 |
+| [Dockerfile.arm32](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_arm32) | requires to have a cloned repository in order to build an ARM32 Debian based image | ARM32 |
 
 In order to build the images, run either:
 
