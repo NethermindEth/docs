@@ -37,7 +37,7 @@ Nethermind使用可用于在Parity中设置专用网络的相同格式chainspec�
 
 * 共识引擎及其参数\(Ethash，Clique，AuRa或NethDev之间进行选择\)
 * 起源块规范
-*  EIP 转换
+* EIP 转换
 * 初始帐户分配
 * 引导节点
 
@@ -52,6 +52,4 @@ Nethermind使用可用于在Parity中设置专用网络的相同格式chainspec�
 * [rinkeby](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/rinkeby.json) - 基于原始集团的测试网
 * [goerli](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json) - 基于Clique的新测试网
 * [spaceneth](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/spaceneth.json) - 专用网络示例NethDev
-
-
 

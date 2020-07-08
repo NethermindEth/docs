@@ -93,14 +93,14 @@
 * [Web3.py](guides-and-helpers/web3.py.md)
 * [云提供商](guides-and-helpers/cloud-providers/README.md)
   * [UpCloud](guides-and-helpers/cloud-providers/upcloud.md)
-  * [数字海洋 （Digital Ocean ) ](guides-and-helpers/cloud-providers/digital-ocean.md)
+  * [数字海洋 （Digital Ocean \)](guides-and-helpers/cloud-providers/digital-ocean.md)
   * [Azure](guides-and-helpers/cloud-providers/azure.md)
   * [AWS](guides-and-helpers/cloud-providers/aws.md)
   * [Google云](guides-and-helpers/cloud-providers/google-cloud.md)
 * [常见问题](guides-and-helpers/faq.md)
 * [RocksDbExtractor](guides-and-helpers/rocksdbextractor.md)
-* [验证器设置](guides-and-helpers/validator-setup/README.md)
-  * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
+* [验证器设置](guides-and-helpers/yan-zheng-qi-she-zhi/README.md)
+  * [Aura Validator](guides-and-helpers/yan-zheng-qi-she-zhi/aura-validator.md)
 
 ## Enterprise
 

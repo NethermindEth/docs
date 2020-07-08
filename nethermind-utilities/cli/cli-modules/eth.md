@@ -1,46 +1,18 @@
 # Eth
 
-### eth.blockNumber
+## eth.blockNumber
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth.getProof\(address, storageKeys, blockParameter\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,47 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.call\(tx, blockParameter\)
+## eth.getProof\(address, storageKeys, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth.chainId
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -112,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.estimateGas\(json\)
+## eth.call\(tx, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -140,19 +84,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getBalance\(address, blockParameter\)
+## eth.chainId
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -168,19 +112,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getBlockByHash\(hash, returnFullTransactionObjects\)
+## eth.estimateGas\(json\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -196,19 +140,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
+## eth.getBalance\(address, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -224,19 +168,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getBlockTransactionCountByHash\(hash\)
+## eth.getBlockByHash\(hash, returnFullTransactionObjects\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -252,19 +196,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getBlockTransactionCountByNumber\(blockParameter\)
+## eth.getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -280,19 +224,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getCode\(address, blockParameter\)
+## eth.getBlockTransactionCountByHash\(hash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -308,19 +252,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getLogs\(filter\)
+## eth.getBlockTransactionCountByNumber\(blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -336,19 +280,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getStorageAt\(address, positionIndex, blockParameter\)
+## eth.getCode\(address, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -364,19 +308,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getTransactionByBlockNumberAndIndex\(blockParameter, index\)
+## eth.getLogs\(filter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -392,19 +336,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getTransactionByHash\(txHash\)
+## eth.getStorageAt\(address, positionIndex, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -420,19 +364,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getTransactionCount\(address, blockParameter\)
+## eth.getTransactionByBlockNumberAndIndex\(blockParameter, index\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -448,19 +392,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getTransactionReceipt\(txHash\)
+## eth.getTransactionByHash\(txHash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -476,19 +420,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.getUncleCountByBlockNumber\(blockParameter\)
+## eth.getTransactionCount\(address, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -504,19 +448,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.pendingTransactions
+## eth.getTransactionReceipt\(txHash\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -532,19 +476,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.protocolVersion
+## eth.getUncleCountByBlockNumber\(blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -560,19 +504,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.sendEth\(from, to, amountInEth\)
+## eth.pendingTransactions
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -588,19 +532,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.sendRawTransaction\(txRlp\)
+## eth.protocolVersion
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -616,19 +560,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.sendTransaction\(tx\)
+## eth.sendEth\(from, to, amountInEth\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -644,19 +588,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### eth.sendWei\(from, to, amountInWei\)
+## eth.sendRawTransaction\(txRlp\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -672,5 +616,59 @@ None
 {% endtab %}
 {% endtabs %}
 
-## 
+## eth.sendTransaction\(tx\)
+
+None
+
+### **Parameters**
+
+None
+
+### **Returns**
+
+None
+
+### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```text
+
+```
+{% endtab %}
+{% endtabs %}
+
+## eth.sendWei\(from, to, amountInWei\)
+
+None
+
+### **Parameters**
+
+None
+
+### **Returns**
+
+None
+
+### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```text
+
+```
+{% endtab %}
+{% endtabs %}
 

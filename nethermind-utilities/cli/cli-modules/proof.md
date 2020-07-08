@@ -1,18 +1,18 @@
 # Proof
 
-### proof.call\(tx, blockParameter\)
+## proof.call\(tx, blockParameter\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### proof.getTransactionByHash\(transactionHash, includeHeader\)
+## proof.getTransactionByHash\(transactionHash, includeHeader\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### proof.getTransactionReceipt\(transactionHash, includeHeader\)
+## proof.getTransactionReceipt\(transactionHash, includeHeader\)
 
 None
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

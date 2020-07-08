@@ -4,7 +4,7 @@ description: UpCloud云托管
 
 # UpCloud
 
-##  部署服务器
+## 部署服务器
 
 部署新服务器
 
@@ -30,7 +30,7 @@ description: UpCloud云托管
 
 ## 操作系统
 
-选择操作系统（乌班图 ( Ubuntu ) 18.04）
+选择操作系统（乌班图 \( Ubuntu \) 18.04）
 
 ![Operating system](../../.gitbook/assets/image%20%289%29.png)
 

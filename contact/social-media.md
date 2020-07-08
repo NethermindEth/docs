@@ -18,15 +18,9 @@ description: 可以与团队联系的社交媒体渠道
 
 ## Twitter
 
-{% embed url="https://twitter.com/nethermindeth" %}
+{% embed url="https://twitter.com/nethermindeth" caption="" %}
 
 ## 微波
 
-
-
 ![](../.gitbook/assets/1845600783.jpg)
 
-
-## Weibo
-
-{% embed url="https://www.weibo.com/u/7459226854?refer_flag=1005055013_&is_all=1" %}

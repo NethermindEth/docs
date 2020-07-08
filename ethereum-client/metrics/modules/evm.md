@@ -3,11 +3,11 @@
 | 度量名称 | 说明 |
 | :--- | :--- |
 | `nethermind_blockhash_opcode` | 执行的BLOCKHASH操作码数。 |
-| `nethermind_bn128add_precompile` | BN128_ADD预编译调用数。 |
-| `nethermind_bn128mul_precompile` | BN128_MUL预编译调用数。 |
-| `nethermind_bn128pairing_precompile` | BN128_PAIRING预编译调用数。 |
+| `nethermind_bn128add_precompile` | BN128\_ADD预编译调用数。 |
+| `nethermind_bn128mul_precompile` | BN128\_MUL预编译调用数。 |
+| `nethermind_bn128pairing_precompile` | BN128\_PAIRING预编译调用数。 |
 | `nethermind_calls` | 调用其他合同的次数。 |
-| `nethermind_ec_recover_precompile` | EC_RECOVERY预编译调用数。 |
+| `nethermind_ec_recover_precompile` | EC\_RECOVERY预编译调用数。 |
 | `nethermind_evm_exceptions` | 合同引发的EVM异常数。 |
 | `nethermind_mod_exp_opcode` | 执行的MODEXP预编译数。 |
 | `nethermind_mod_exp_precompile` | MODEXP预编译调用数。 |

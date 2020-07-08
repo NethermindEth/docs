@@ -2,7 +2,7 @@
 
 Spaceneth专用网络设置看起来与上述Clique设置非常相似。主要差异不大，下面将进行描述
 
-### 先决条件
+## 先决条件
 
 * Linux bash shell
 * Docker-compose
@@ -14,7 +14,7 @@ Spaceneth专用网络设置看起来与上述Clique设置非常相似。主要�
 sudo apt-get install -y docker-compose docker.io jq
 ```
 
-### 设置
+## 设置
 
 在此设置中，我们将创建一个由3个Nethermind节点组成的专用网络，运行一个简单的测试NethDev共识算法。
 
@@ -31,7 +31,7 @@ cd private-networking
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* 使用自动引擎下载 [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json)文件并放置在``genesis''文件夹中。
+* 使用自动引擎下载 [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json)文件并放置在\`\`genesis''文件夹中。
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json
@@ -155,7 +155,7 @@ networks:
 docker-compose run node_1
 ```
 
-当Nethermind初始化完成 `Ctrl +C`.  时停止节点。将 `This node`  值复制到文本文件中。继续执行node\_2和node\_3。
+当Nethermind初始化完成 `Ctrl +C`. 时停止节点。将 `This node` 值复制到文本文件中。继续执行node\_2和node\_3。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization-spaceneth.png)
 
@@ -214,7 +214,7 @@ docker-compose up
 ![](https://nethermind.readthedocs.io/en/latest/_images/cli-spaceneth.png)
 
 * 重新运行`personal.listAccounts`并复制帐户地址
-*  使用  `eth_sendTransaction`JSON RPC  或 `Nethermind.Cli` 方法发送事务来触发生产块。`from` ''属性更改为您的帐户地址
+* 使用  `eth_sendTransaction`JSON RPC  或 `Nethermind.Cli` 方法发送事务来触发生产块。`from` ''属性更改为您的帐户地址
 
 ```bash
 curl --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{

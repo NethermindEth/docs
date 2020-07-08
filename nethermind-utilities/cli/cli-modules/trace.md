@@ -1,18 +1,18 @@
 # Trace
 
-### trace.replayBlockTransactions\(blockNumber, traceTypes\)
+## trace.replayBlockTransactions\(blockNumber, traceTypes\)
 
 Replays all transactions in a block returning the requested traces for each transaction
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,7 +28,7 @@ None
 {% endtab %}
 {% endtabs %}
 
-### trace.replayTransaction\(txHash, traceTypes\)
+## trace.replayTransaction\(txHash, traceTypes\)
 
 Replays a transaction, returning the traces
 
@@ -36,11 +36,11 @@ Replays a transaction, returning the traces
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### trace.block\(blockNumber\)
+## trace.block\(blockNumber\)
 
 Returns traces created at given block
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -84,19 +84,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### trace.rawTransaction\(txData, traceTypes\)
+## trace.rawTransaction\(txData, traceTypes\)
 
 Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -112,19 +112,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-### trace.transaction\(txHash\)
+## trace.transaction\(txHash\)
 
 Returns all traces of given transaction
 
-#### **Parameters**
+### **Parameters**
 
 None
 
-#### **Returns**
+### **Returns**
 
 None
 
-#### **Example**
+### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

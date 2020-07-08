@@ -1,6 +1,6 @@
 # 如何设置Nethermind仅基于Clique的链
 
-### 先决条件
+## 先决条件
 
 * Linux bash shell
 * Docker-compose
@@ -11,7 +11,7 @@
 sudo apt-get install -y docker-compose docker.io jq
 ```
 
-### 设置
+## 设置
 
 在此设置中，我们创建一个由3个运行Clique共识算法的Nethermind节点组成的专用网络。
 
@@ -189,7 +189,7 @@ EXTRA_VANITY="0x22466c6578692069732061207468696e6722202d204166726900000000000000
 EXTRA_SEAL="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 ```
 
-* 根据 https://eips.ethereum.org/EIPS/eip-225 创建`EXTRA_DATA`变量
+* 根据 [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225) 创建`EXTRA_DATA`变量
 
 ```bash
 EXTRA_DATA=${EXTRA_VANITY}${SIGNER_1}${SIGNER_2}${SIGNER_3}${EXTRA_SEAL}
@@ -231,7 +231,7 @@ sudo rm -rf node_1/db/clique node_2/db/clique node_3/db/clique
 docker-compose up
 ```
 
-在Clique共识算法中应该能看到专用网络的工作和节点密封块 🎉 
+在Clique共识算法中应该能看到专用网络的工作和节点密封块 🎉
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/finalization.png)
 
