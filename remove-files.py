@@ -2,6 +2,7 @@ import os
 
 # remove readme
 os.remove("README.md")
+os.remove("SUMMARY.md")
 
 search_path = '.' 
 root, dirs, files = next(os.walk(search_path), ([],[],[]))

@@ -1,11 +1,11 @@
 # Web3.py
 
-It is possible to connect to the Nethermind node using **web3.py** \(python web3.js implementation\). You will need to have `web3.py` installed using following guides:
+连接到Nethermind节点，可以使用**web3.py**\(python web3.js 实现\). 通过以下指南安装 `web3.py`：
 
 * [https://github.com/ethereum/web3.py](https://github.com/ethereum/web3.py)
 * [https://web3py.readthedocs.io/en/stable/quickstart.html](https://web3py.readthedocs.io/en/stable/quickstart.html)
 
-You may use below script in order to check your connection. Please make sure you have enabled JSON RPC module, this can be done by passing flag `--JsonRpc.Enabled true` to either Nethermind.Launcher or Nethermind.Runner
+来检查连接设置，可以使用以下脚本。 请确保已启用JSON RPC模块，（通过将标记`--JsonRpc.Enabled true`  传递给Nethermind.Launcher或Nethermind.Runner来完成。）
 
 ```python
 from web3.auto import w3
@@ -22,7 +22,7 @@ else:
     print(client)
 ```
 
-You should see the following output \(depends on the node version\):
+取决于节点版本，您应该看到以下输出
 
 ```bash
 True

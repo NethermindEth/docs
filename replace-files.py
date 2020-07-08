@@ -2,6 +2,7 @@ import os
 
 # rename readme
 os.rename("README.zh_CN.md", "README.md")
+os.rename("SUMMARY.zh_CN.md", "SUMMARY.md")
 
 search_path = '.' 
 root, dirs, files = next(os.walk(search_path), ([],[],[]))

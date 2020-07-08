@@ -1,16 +1,16 @@
 ---
-description: There are several known issues with the current version of Nethermind
+description: 当前版本的Nethermind存在几个已知问题。
 ---
 
-# Known Issues
+# 已知的问题
 
-## Leaking Socket Descriptors
+## 泄漏套接字描述符（Socket Descriptors）
 
-On Linux our networking library is not closing socket descriptors properly. This results in the number of open files for the process growing indefinitely. Limits for the number of open files per process are different for root and other users. For root the limits are usually very high and the socket descriptors would probably not cause much trouble. Many of the cloud operators are launching VMs with root user access by default. If Nethermind process is frequently killed by OS then you may need to change the configuration for the maximum number of open files.
+在Linux上，我们的网络库未正确关闭套接字描述符。这导致该进程的打开文件数无限期增长。对于root用户和其他用户，每个进程打开文件的数量限制是不同的。 对于root来说，限制通常很高，套接字描述符不应该造成太大的麻烦。默认情况下，许多云运营商启动具有root用户访问权限的虚拟机( VM )。如果Nethermind进程经常被操作系统终止，可能需要更改最大打开文件数的配置。
 
-## RocksDB on macOS
+## macOS上的RocksDB
 
-RocksDB library does not always load properly on macOS. One \(hacky\) workaround is to install the latest version of RocksDB by running brew install rocksdb.
+RocksDB库不是每一次都能在macOS上正确加载。运行brew installrocksdb来安装最新版本的RocksDB，这就是一种很好的解决方法。
 
 ## Skipping consensus issues blocks
 

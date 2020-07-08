@@ -20,6 +20,19 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/logs
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ```
 
+## 静态节点
+
+静态节点是可以信任的预配置节点阵列。定义静态节点用一个简单的`static-nodes.json` 文件，该文件包含用逗号分隔的`enodes`列表。
+
+```bash
+[
+  "enode://c1c3a604950119f82d78189792b73f5a96bd09017c77465e3c32fc51c1d758a9a772ffddd58436d465342f2cfa6d4a442a49e526743f4d8354d7c5ce794c3ee5@127.0.0.1:30303",
+  "enode://2784b947df025df9911875e68ccfcb0627ad4ae1dfb9f77634435692e8626508d9a6a04adff7719d3d73b25e72cbedee8d8e431492afbbd5fb4082e78c52d934@127.0.0.1:30303"
+]
+```
+
+默认情况下，`static-nodes.json` 文件存储在Nethermind软件包的`Data/`文件夹中。 `静态节点 ` 文件的路径可以通过[`静态节点路径`](../configuration/modules/init.md) 参数配置。
+
 ## NLog 配置
 
 您可以通过选择以下级别之一 \(错误(Error)，警告(Warn)，信息(Info)，调试(Debug)，跟踪(Trace) \) 来更改文件和控制台中的登录级别：

@@ -8,9 +8,9 @@ description: Nethermind团队的电子邮件地址
 
 | 团队 | 电子邮件地址 |
 | :--- | :--- |
-| Nethermind主要电子邮件地址 | hello@nethermind.io |
+| Nethermind Team | team@nethermind.io |
 | 开发运维 | devops@nethermind.io |
-| 安全 | security@nethermind.io |
-
-
+| Marketing | marketing@nethermind.io |
+| PR | pr@nethermind.io |
+| UI | ui@nethermind.io |
 

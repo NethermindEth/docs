@@ -20,6 +20,15 @@ with open(".tx/config", "a") as file:
                 file.write("source_lang = en\n")
                 file.write("type = GITHUBMARKDOWN\n")
                 file.write("\n")
+                
+with open(".tx/config", "a") as file:
+                file.write(f"[{project_slug}.SUMMARY-md]\n")
+                file.write(f"file_filter = SUMMARY.<lang>.md\n")
+                file.write(f"source_file = SUMMARY.md\n")
+                file.write("source_lang = en\n")
+                file.write("type = GITHUBMARKDOWN\n")
+                file.write("\n")
+
 
 for directory in dirs:
     rootdir = directory
