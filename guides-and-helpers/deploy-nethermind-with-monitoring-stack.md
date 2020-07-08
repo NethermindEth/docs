@@ -151,8 +151,6 @@ Click on the **Nethermind** Dashboard and you should see charts with Nethermind 
 
 Go to the `YOUR_DROPLET_IP:9090`
 
-![](../.gitbook/assets/image%20%2849%29.png)
-
 Explore Nethermind metrics, visualize and analyse using prometheus syntax, a list of available metrics with their descriptions can be found here:
 
 {% page-ref page="../ethereum-client/metrics/modules/" %}
@@ -162,8 +160,6 @@ Explore Nethermind metrics, visualize and analyse using prometheus syntax, a lis
 ### Pushgateway
 
 Go to the `YOUR_DROPLET_IP:9091` and verify if metrics are inflowing
-
-![](../.gitbook/assets/image%20%2846%29.png)
 
 ![](../.gitbook/assets/image%20%2845%29.png)
 
