@@ -7,6 +7,12 @@ source_file = README.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.SUMMARY-md]
+file_filter = SUMMARY.<lang>.md
+source_file = SUMMARY.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.nethermind-utilities-json-rpc-README-md]
 file_filter = nethermind-utilities/json-rpc/README.<lang>.md
 source_file = nethermind-utilities/json-rpc/README.md
@@ -28,12 +34,6 @@ type = GITHUBMARKDOWN
 [nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-README-md]
 file_filter = nethermind-utilities/json-rpc/json-rpc-modules/README.<lang>.md
 source_file = nethermind-utilities/json-rpc/json-rpc-modules/README.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-untitled-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/untitled.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/untitled.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -451,6 +451,12 @@ source_file = guides-and-helpers/faq.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.guides-and-helpers-deploy-nethermind-with-monitoring-stack-md]
+file_filter = guides-and-helpers/deploy-nethermind-with-monitoring-stack.<lang>.md
+source_file = guides-and-helpers/deploy-nethermind-with-monitoring-stack.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.guides-and-helpers-web3-py-md]
 file_filter = guides-and-helpers/web3.py.<lang>.md
 source_file = guides-and-helpers/web3.py.md
@@ -466,6 +472,18 @@ type = GITHUBMARKDOWN
 [nethermind-docs.guides-and-helpers-known-issues-md]
 file_filter = guides-and-helpers/known-issues.<lang>.md
 source_file = guides-and-helpers/known-issues.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-validator-setup-README-md]
+file_filter = guides-and-helpers/validator-setup/README.<lang>.md
+source_file = guides-and-helpers/validator-setup/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-validator-setup-aura-validator-md]
+file_filter = guides-and-helpers/validator-setup/aura-validator.<lang>.md
+source_file = guides-and-helpers/validator-setup/aura-validator.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -508,6 +526,12 @@ type = GITHUBMARKDOWN
 [nethermind-docs.enterprise-seq-md]
 file_filter = enterprise/seq.<lang>.md
 source_file = enterprise/seq.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.enterprise-baseline-md]
+file_filter = enterprise/baseline.<lang>.md
+source_file = enterprise/baseline.md
 source_lang = en
 type = GITHUBMARKDOWN
 
