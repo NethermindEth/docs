@@ -107,9 +107,13 @@ terraform plan -out myplan
 
 You can now provide some basic configuration to your VM/Nethermind Node
 
-![](../.gitbook/assets/image%20%2853%29.png)
+![](../.gitbook/assets/image%20%2855%29.png)
 
 A list of available `configs` can be found [here](../ethereum-client/networks.md)
+
+{% hint style="warning" %}
+🧯 If you chose to enable JsonRpc \(it will run on port `8545` by default\) make sure that you set up [Firewall rules](../first-steps-with-nethermind/firewall-configuration.md) either in Digital Ocean or by using Linux `iptables`
+{% endhint %}
 
 Let's apply our plan and start deploying whole stack \(it should take no longer than 3 minutes\)
 
