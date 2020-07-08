@@ -31,14 +31,26 @@ Let's move to the cloned directory
 cd terraform-nethermind/
 ```
 
-Create a `terraform.tfvars` file and add these 3 variables
+Create a `terraform.tfvars` file and add these 2 variables
 
 {% tabs %}
 {% tab title="terraform.tfvars" %}
 ```bash
 do_token = "Your DigitalOcean token goes here"
 pvt_key = "path/to/your/private_ssh_key"
-ssh_fingerprint = "Finger print of that ssh key"
+```
+{% endtab %}
+{% endtabs %}
+
+Make sure that the `public_key` variable in `main.tf` file points to your Public key path
+
+{% tabs %}
+{% tab title="main.tf" %}
+```bash
+resource "digitalocean_ssh_key" "key" {
+  name       = "SSH Key Example for "
+  public_key = file("./private.key.pub")
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -75,20 +87,6 @@ ssh-keygen -t ed25519 -a 100 -f private.key
 pvt_key = "./private.key"
 ```
 
-#### ssh\_fingerprint
-
-Use below command to get the MD5 ssh key fingerprint
-
-```bash
-ssh-keygen -E md5 -lf private.key
-```
-
-Copy part starting after first colon and ending before your username and paste to `terraform.tfvars` file
-
-```bash
-ssh_fingerprint = "64:7f:e2:2d:15:dd:88:2b:c5:69:a8:61:64:69:cb:0d"
-```
-
 ## Running the stack
 
 Confirm that terraform can be initialized, run this command from within terraform-templates directory
@@ -119,9 +117,9 @@ Let's apply our plan and start deploying whole stack \(it should take no longer 
 terraform apply myplan
 ```
 
-Wait until terraform is done deploying and if everything went good you should see
+Wait until terraform is done deploying and if everything went smooth you should see
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 ## Exploring the stack
 
