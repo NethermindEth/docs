@@ -22,3 +22,13 @@ You can try much lower setups with smaller networks. You can also downgrade the 
 | **Ropsten Fast Sync** | 100+ GB | 6 GB | 4 |
 | **Mainnet Full Archive** | 4.5+ TB | 16 GB | 6 |
 
+Disk space requirements:
+
+A freshly fast synced mainnet disk space usage \(as of July 2020\):
+
+![If you sync without receipts the 160GB space can be saved. Without bodies - 99GB more.](../.gitbook/assets/image%20%2856%29.png)
+
+
+
+
+
