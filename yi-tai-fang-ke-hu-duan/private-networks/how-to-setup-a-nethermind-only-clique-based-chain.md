@@ -161,8 +161,7 @@ docker-compose run node_1
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization.png)
 
 {% hint style="info" %}
-You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.  
-`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io/).
+可以使用`Nethermind.Cli`通过执行以下操作从节点获取这些值。 `Nethermind.Cli`可以在[Github Releases](https://github.com/NethermindEth/nethermind/releases)或下[Download Page](http://downloads.nethermind.io/).的软件包中找到。
 {% endhint %}
 
 ```bash
