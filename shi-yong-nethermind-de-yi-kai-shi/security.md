@@ -9,18 +9,18 @@ description: 在以太坊主网上运行Nethermind节点之前应采取的安全
 {% endhint %}
 
 {% hint style="danger" %}
-📢 JSON RPC endpoint \(port `8545`\) should **NOT** be exposed publicly \(should be behind the firewall\).
+📢 JSON RPC端点（端口8545）不应公开暴露（应在防火墙后面）。
 {% endhint %}
 
 {% hint style="danger" %}
-📢The private key from which the node ID is derived is stored on disk \(**NOT** protected by password\).
+📢 派生节点ID的私钥存储在磁盘上（不受密码保护）
 {% endhint %}
 
 {% hint style="warning" %}
-Nethermind is thoroughly tested but the more popular it will get the more likely it will be the target of client-specific attacks. Generally you should always consider running backup client nodes implemented by a different team for any critical operations.
+Nethermind经过了全面的测试，但是越受欢迎，它就越有可能成为特定于客户端的攻击的目标。一般来说，对于任何关键操作，应该始终考虑运行由不同团队实现的备份客户机节点。
 {% endhint %}
 
 {% hint style="info" %}
-For non-mainnet signing you can use dev wallet configurations.
+对于非主网签名，您可以使用开发钱包配置。
 {% endhint %}
 
