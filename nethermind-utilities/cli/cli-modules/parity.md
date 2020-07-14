@@ -1,18 +1,18 @@
 # Parity
 
-## parity.getBlockReceipts\(blockParameter\)
+### parity.getBlockReceipts\(blockParameter\)
 
 Returns receipts from all transactions from particular block
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## parity.pendingTransactions\(\)
+### parity.pendingTransactions\(\)
 
 Returns the pending transactions using Parity format
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

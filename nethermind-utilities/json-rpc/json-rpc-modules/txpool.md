@@ -1,18 +1,18 @@
 # TxPool
 
-## txpool\_content\(\)
+### txpool\_content\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## txpool\_inspect\(\)
+### txpool\_inspect\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,25 +50,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## txpool\_status\(\)
+### txpool\_status\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -78,7 +78,7 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}

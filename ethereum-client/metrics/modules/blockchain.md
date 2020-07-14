@@ -1,6 +1,6 @@
 # 区块链
 
-| 度量名称 | 说明 |
+| 度量值 | 说明 |
 | :--- | :--- |
 | `nethermind_blocks` | 已处理的块总数 |
 | `nethermind_mgas` | 已处理的MGas总数 |

@@ -1,13 +1,13 @@
-# Table of contents
+# 目录
 
 * [欢迎来到Nethermind](README.md)
 
-## Contact
+## 联系方式
 
 * [社交媒体](contact/social-media.md)
 * [联系我们](contact/contact-us.md)
 
-## First steps with Nethermind
+## 使用Nethermind的一开始
 
 * [入门指南](first-steps-with-nethermind/getting-started.md)
 * [支持的操作系统](first-steps-with-nethermind/supported-platforms.md)
@@ -15,11 +15,11 @@
 * [硬体需求](first-steps-with-nethermind/hardware-requirements.md)
 * [安全](first-steps-with-nethermind/security.md)
 
-## Ethereum client
+## 以太坊客户端
 
 * [下载资源](ethereum-client/download-sources/README.md)
-  * [Downloads Page](http://downloads.nethermind.io/)
-  * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
+  * [下载页面](http://downloads.nethermind.io/)
+  * [Github发布页面](https://github.com/NethermindEth/nethermind/releases)
 * [运行Nethermind](ethereum-client/running-nethermind/README.md)
   * [运行客户端](ethereum-client/running-nethermind/running-the-client.md)
   * [运行](ethereum-client/running-nethermind/runtime.md)
@@ -53,17 +53,17 @@
     * [Hive](ethereum-client/configuration/modules/hive.md)
   * [样本配置](ethereum-client/configuration/sample-configuration.md)
 
-## Nethermind utilities
+## Nethermind实用程序
 
 * [CLI](nethermind-utilities/cli/README.md)
-  * [CLI Modules](nethermind-utilities/cli/cli-modules/README.md)
+  * [CLI 模块](nethermind-utilities/cli/cli-modules/README.md)
     * [Admin](nethermind-utilities/cli/cli-modules/admin.md)
     * [Clique](nethermind-utilities/cli/cli-modules/clique.md)
     * [Debug](nethermind-utilities/cli/cli-modules/debug.md)
     * [Diag](nethermind-utilities/cli/cli-modules/diag.md)
     * [Eth](nethermind-utilities/cli/cli-modules/eth.md)
     * [Net](nethermind-utilities/cli/cli-modules/net.md)
-    * [Node](nethermind-utilities/cli/cli-modules/node.md)
+    * [节点](nethermind-utilities/cli/cli-modules/node.md)
     * [Parity](nethermind-utilities/cli/cli-modules/parity.md)
     * [Personal](nethermind-utilities/cli/cli-modules/personal.md)
     * [Proof](nethermind-utilities/cli/cli-modules/proof.md)
@@ -72,7 +72,7 @@
     * [TxPool](nethermind-utilities/cli/cli-modules/txpool.md)
     * [Web3](nethermind-utilities/cli/cli-modules/web3.md)
 * [JSON RPC](nethermind-utilities/json-rpc/README.md)
-  * [JSON RPC Modules](nethermind-utilities/json-rpc/json-rpc-modules/README.md)
+  * [JSON RPC模块](nethermind-utilities/json-rpc/json-rpc-modules/README.md)
     * [Admin](nethermind-utilities/json-rpc/json-rpc-modules/admin.md)
     * [Clique](nethermind-utilities/json-rpc/json-rpc-modules/clique.md)
     * [Debug](nethermind-utilities/json-rpc/json-rpc-modules/debug.md)
@@ -86,23 +86,23 @@
     * [Web3](nethermind-utilities/json-rpc/json-rpc-modules/web3.md)
   * [JSON RPC WIKI](https://eth.wiki/json-rpc/API)
 
-## Guides and Helpers
+## 指南和助手
 
-* [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
+* [部署Nethermind以太坊客户端带有监控堆栈](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
 * [已知的问题](guides-and-helpers/known-issues.md)
 * [Web3.py](guides-and-helpers/web3.py.md)
 * [云提供商](guides-and-helpers/cloud-providers/README.md)
   * [UpCloud](guides-and-helpers/cloud-providers/upcloud.md)
-  * [数字海洋 （Digital Ocean \)](guides-and-helpers/cloud-providers/digital-ocean.md)
+  * [数字海洋 （Digital Ocean ) ](guides-and-helpers/cloud-providers/digital-ocean.md)
   * [Azure](guides-and-helpers/cloud-providers/azure.md)
   * [AWS](guides-and-helpers/cloud-providers/aws.md)
   * [Google云](guides-and-helpers/cloud-providers/google-cloud.md)
 * [常见问题](guides-and-helpers/faq.md)
 * [RocksDbExtractor](guides-and-helpers/rocksdbextractor.md)
-* [验证器设置](guides-and-helpers/yan-zheng-qi-she-zhi/README.md)
-  * [Aura Validator](guides-and-helpers/yan-zheng-qi-she-zhi/aura-validator.md)
+* [验证器设置](guides-and-helpers/validator-setup/README.md)
+  * [Aura 验证器](guides-and-helpers/validator-setup/aura-validator.md)
 
-## Enterprise
+## 事业
 
 * [Baseline](enterprise/baseline.md)
 * [Seq](enterprise/seq.md)

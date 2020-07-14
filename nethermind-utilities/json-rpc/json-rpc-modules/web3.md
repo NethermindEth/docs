@@ -1,18 +1,18 @@
 # Web3
 
-## web3\_clientVersion\(\)
+### web3\_clientVersion\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## web3\_sha3\(data\)
+### web3\_sha3\(data\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,7 +50,7 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}

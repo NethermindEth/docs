@@ -1,6 +1,6 @@
 # Store
 
-| 度量名称 | 说明 |
+| 度量值 | 说明 |
 | :--- | :--- |
 | `nethermind_block_infos_db_reads` | DB读取块信息的次数。 |
 | `nethermind_block_infos_db_writes` | DB写入块信息的次数。 |

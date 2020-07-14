@@ -1,6 +1,6 @@
 # 网络
 
-| 度量名称 | 说明 |
+| 度量值 | 说明 |
 | :--- | :--- |
 | `nethermind_already_connected_disconnects` | 由于已连接而收到的断开连接数 |
 | `nethermind_breach_of_protocol_disconnects` | 违反协议收到的断开连接数 |

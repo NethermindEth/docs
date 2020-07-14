@@ -1,18 +1,18 @@
 # Admin
 
-## admin\_addPeer\(enode, addToStaticNodes\)
+### admin\_addPeer\(enode, addToStaticNodes\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## admin\_dataDir\(\)
+### admin\_dataDir\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## admin\_nodeInfo\(\)
+### admin\_nodeInfo\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -84,19 +84,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## admin\_peers\(\)
+### admin\_peers\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -112,19 +112,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## admin\_removePeer\(enode, removeFromStaticNodes\)
+### admin\_removePeer\(enode, removeFromStaticNodes\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -140,19 +140,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## admin\_setSolc\(\)
+### admin\_setSolc\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

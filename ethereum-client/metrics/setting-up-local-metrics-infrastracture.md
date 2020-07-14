@@ -1,16 +1,16 @@
 ---
-description: 指标可用于监视正在运行的Nethermind节点
+description: 度量可用于监视正在运行的Nethermind节点
 ---
 
-# 设置本地指标基础架构
+# 设置本地度量基础架构
 
-## 指标配置
+## 度量配置
 
 如果在[度量标准配置类别](../configuration/modules/metrics.md).中进行配置，_Prometheus/Grafana_可以使用Nethermind度量标准
 
-## 指标基础架构
+## 度量基础架构
 
-### Nethermind启用指标
+### Nethermind启用度量
 
 可以使用简单地参数 `--Metrics.Enabled true` 传递给Docker容器，`Nethermind.Runner`或`Nethermind.Launcher` 来启用 度量。 例如 `./Nethermind.Runner --Metrics.Enabled true`. 。
 
@@ -24,7 +24,7 @@ description: 指标可用于监视正在运行的Nethermind节点
 git clone https://github.com/NethermindEth/metrics-infrastructure.git
 ```
 
-1. [x] 转到`度量基础结构`目录
+1. [x] 转到` 度量基础结构`目录
 
 ```bash
 cd metrics-infrastructure
@@ -39,7 +39,8 @@ docker-compose up -d
 * _Prometheus_实例现在应该在 [`http://localhost:9090/`](http://localhost:9090/) 运行
 * _Pushgateway_ 在 [`http://localhost:9091/`](http://localhost:9091/) 运行
 * _Grafana 在_ [`http://localhost:3000/`](http://localhost:3000/)\`\` 运行
-* \[x\]在启用`指标` 的情况下运行 `Nethermind` 节点，您应该看到有指标流入_Pushgateway_ [url](http://localhost:9091/)
+
+1. [x]在启用`度量` 的情况下运行 `Nethermind` 节点，您应该看到有度量流入_Pushgateway_ [url](http://localhost:9091/)
 
 {% hint style="info" %}
 可以将Nethermind服务添加到 `docker-compose.yml`文件中，以便与整个堆栈一起运行
@@ -88,7 +89,7 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 
 ![](../../.gitbook/assets/image%20%2826%29.png)
 
-* [x] 现在可以探索指标并监控自己的的Nethermind节点
+* [x] 现在可以探索度量并监控自己的的Nethermind节点
 
 ![](../../.gitbook/assets/image%20%2829%29.png)
 
