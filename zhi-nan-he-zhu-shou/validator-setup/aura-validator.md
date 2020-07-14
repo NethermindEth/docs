@@ -99,7 +99,7 @@ volumes:
 通过环境变量配置Nethermind节点，或者使用本地配置文件并将其映射到容器 \(在上面的示例中的`xdai.cfg`文件\)中存在的那个节点。
 
 {% hint style="info" %}
-Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, otherwise you might lose database or keys
+确保已映射`nethermind_db`，`keystore`\(`logs` - optional \)，否则可能会丢失数据库或密钥
 {% endhint %}
 
 [`NLog.config`](../../yi-tai-fang-ke-hu-duan/running-nethermind/runtime.md#nlog-config)可选文件。 [`static-nodes.json`](../../yi-tai-fang-ke-hu-duan/running-nethermind/runtime.md#static-nodes) 可以填充一个enode数组（可选 ）
