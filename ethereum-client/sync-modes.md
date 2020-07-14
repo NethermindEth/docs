@@ -45,6 +45,8 @@ Mainnet sync, at the time of writing \(July 2020\), takes around 6 hours on an U
 
 State sync log messages have multiple values displayed. First `dd.HH:mm:ss` total state sync time is displayed, followed by an estimated sync progress \(percentage of total database data synced\), then the current download speed is displayed \(there will be times when it will slow down to 0 or single digit numbers, especially towards the end of the sync\). In general 6 hours sync times that we achieve are with around 2000 kB/s \(kilobytes per second\). You can calculate it on the example as ~45GB / \(2MB/s\) ~ 22500 seconds ~6.25 hours. We also display the number of state accounts synced, number of trie nodes synced and a diagnostic message in the format of _\[number\_of\_pending\_requests\].\[average time spent in response handler displayed as milliseconds\]_. So `5.6.20ms` means that we are awaiting responses to 5 requests that have been sent to peers and the average time it takes us to process a single response is 6.20ms. The response handling times will differ depending on how many trie nodes are already cached \(so they will be significantly slower for a while after the node restart when cache has to be rebuilt\) and based on how fast the database IO is \(SSD vs NVMe vs cloud drives\). For a reasonable sync time you probably should expect these values to be below 15ms \(but they may be as high as 700ms for a while after restarting the node\).
 
+![](../.gitbook/assets/image%20%2864%29.png)
+
 ![](../.gitbook/assets/image%20%2862%29.png)
 
 ## Beam Sync
@@ -55,5 +57,5 @@ The simplest way of explaining beam sync is by saying that the beam sync is exac
 
 When the _'Beam sync is ON'_ message is displayed then it generally means that you can ask about the latest headers, latest transactions, you can as about `eth_getBalance`, `eth_getCode`, `eth_call`, `debug_trace`, `trace_replayTransactions`, etc. You cannot ask about transaction receipts or logs as most of them are not processed yet. With beam sync it is possible to create and broadcast an Ether or token transfer transactions from the node.
 
-![](../.gitbook/assets/image%20%2864%29.png)
+![](../.gitbook/assets/image%20%2865%29.png)
 
