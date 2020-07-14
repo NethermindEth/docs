@@ -30,6 +30,7 @@
 * [Private Networks](ethereum-client/private-networks/README.md)
   * [How to setup a Nethermind only Clique based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md)
   * [How to setup a Nethermind only Spaceneth based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-spaceneth-based-chain.md)
+* [Database](ethereum-client/database.md)
 * [Metrics](ethereum-client/metrics/README.md)
   * [Setting up local Metrics infrastructure](ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
   * [Modules](ethereum-client/metrics/modules/README.md)
