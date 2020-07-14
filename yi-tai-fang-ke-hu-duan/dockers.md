@@ -115,172 +115,10 @@ NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
 {% hint style="warning" %}
-  
-&lt;!--  
- /\* Font Definitions \*/  
- @font-face  
-	{font-family:SimSun;  
-	panose-1:2 1 6 0 3 1 1 1 1 1;  
-	mso-font-alt:宋体;  
-	mso-font-charset:134;  
-	mso-generic-font-family:auto;  
-	mso-font-pitch:variable;  
-	mso-font-signature:3 680460288 22 0 262145 0;}  
-@font-face  
-	{font-family:SimSun;  
-	panose-1:2 1 6 0 3 1 1 1 1 1;  
-	mso-font-alt:宋体;  
-	mso-font-charset:134;  
-	mso-generic-font-family:auto;  
-	mso-font-pitch:variable;  
-	mso-font-signature:3 680460288 22 0 262145 0;}  
-@font-face  
-	{font-family:Calibri;  
-	panose-1:2 15 5 2 2 2 4 3 2 4;  
-	mso-font-charset:238;  
-	mso-generic-font-family:swiss;  
-	mso-font-pitch:variable;  
-	mso-font-signature:-536870145 1073786111 1 0 415 0;}  
-@font-face  
-	{font-family:"\@SimSun";  
-	panose-1:2 1 6 0 3 1 1 1 1 1;  
-	mso-font-charset:134;  
-	mso-generic-font-family:auto;  
-	mso-font-pitch:variable;  
-	mso-font-signature:3 680460288 22 0 262145 0;}  
- /\* Style Definitions \*/  
- p.MsoNormal, li.MsoNormal, div.MsoNormal  
-	{mso-style-unhide:no;  
-	mso-style-qformat:yes;  
-	mso-style-parent:"";  
-	margin-top:0cm;  
-	margin-right:0cm;  
-	margin-bottom:10.0pt;  
-	margin-left:0cm;  
-	line-height:115%;  
-	mso-pagination:widow-orphan;  
-	font-size:11.0pt;  
-	font-family:"Calibri","sans-serif";  
-	mso-ascii-font-family:Calibri;  
-	mso-ascii-theme-font:minor-latin;  
-	mso-fareast-font-family:SimSun;  
-	mso-fareast-theme-font:minor-fareast;  
-	mso-hansi-font-family:Calibri;  
-	mso-hansi-theme-font:minor-latin;  
-	mso-bidi-font-family:"Times New Roman";  
-	mso-bidi-theme-font:minor-bidi;}  
-.MsoChpDefault  
-	{mso-style-type:export-only;  
-	mso-default-props:yes;  
-	font-family:"Calibri","sans-serif";  
-	mso-ascii-font-family:Calibri;  
-	mso-ascii-theme-font:minor-latin;  
-	mso-fareast-font-family:SimSun;  
-	mso-fareast-theme-font:minor-fareast;  
-	mso-hansi-font-family:Calibri;  
-	mso-hansi-theme-font:minor-latin;  
-	mso-bidi-font-family:"Times New Roman";  
-	mso-bidi-theme-font:minor-bidi;}  
-.MsoPapDefault  
-	{mso-style-type:export-only;  
-	margin-bottom:10.0pt;  
-	line-height:115%;}  
-@page WordSection1  
-	{size:612.0pt 792.0pt;  
-	margin:70.85pt 70.85pt 70.85pt 70.85pt;  
-	mso-header-margin:35.4pt;  
-	mso-footer-margin:35.4pt;  
-	mso-paper-source:0;}  
-div.WordSection1  
-	{page:WordSection1;}  
---&gt;  
-
-
-环境变量将在docker镜像标签之前传递，而参数应在docker镜像标签之后传递。
+环境变量将在docker镜像标签之前传递，而参数应在docker镜像标签之后传递。
 {% endhint %}
 
 {% hint style="info" %}
-  
-&lt;!--  
- /\* Font Definitions \*/  
- @font-face  
-	{font-family:SimSun;  
-	panose-1:2 1 6 0 3 1 1 1 1 1;  
-	mso-font-alt:宋体;  
-	mso-font-charset:134;  
-	mso-generic-font-family:auto;  
-	mso-font-pitch:variable;  
-	mso-font-signature:3 680460288 22 0 262145 0;}  
-@font-face  
-	{font-family:SimSun;  
-	panose-1:2 1 6 0 3 1 1 1 1 1;  
-	mso-font-alt:宋体;  
-	mso-font-charset:134;  
-	mso-generic-font-family:auto;  
-	mso-font-pitch:variable;  
-	mso-font-signature:3 680460288 22 0 262145 0;}  
-@font-face  
-	{font-family:Calibri;  
-	panose-1:2 15 5 2 2 2 4 3 2 4;  
-	mso-font-charset:238;  
-	mso-generic-font-family:swiss;  
-	mso-font-pitch:variable;  
-	mso-font-signature:-536870145 1073786111 1 0 415 0;}  
-@font-face  
-	{font-family:"\@SimSun";  
-	panose-1:2 1 6 0 3 1 1 1 1 1;  
-	mso-font-charset:134;  
-	mso-generic-font-family:auto;  
-	mso-font-pitch:variable;  
-	mso-font-signature:3 680460288 22 0 262145 0;}  
- /\* Style Definitions \*/  
- p.MsoNormal, li.MsoNormal, div.MsoNormal  
-	{mso-style-unhide:no;  
-	mso-style-qformat:yes;  
-	mso-style-parent:"";  
-	margin-top:0cm;  
-	margin-right:0cm;  
-	margin-bottom:10.0pt;  
-	margin-left:0cm;  
-	line-height:115%;  
-	mso-pagination:widow-orphan;  
-	font-size:11.0pt;  
-	font-family:"Calibri","sans-serif";  
-	mso-ascii-font-family:Calibri;  
-	mso-ascii-theme-font:minor-latin;  
-	mso-fareast-font-family:SimSun;  
-	mso-fareast-theme-font:minor-fareast;  
-	mso-hansi-font-family:Calibri;  
-	mso-hansi-theme-font:minor-latin;  
-	mso-bidi-font-family:"Times New Roman";  
-	mso-bidi-theme-font:minor-bidi;}  
-.MsoChpDefault  
-	{mso-style-type:export-only;  
-	mso-default-props:yes;  
-	font-family:"Calibri","sans-serif";  
-	mso-ascii-font-family:Calibri;  
-	mso-ascii-theme-font:minor-latin;  
-	mso-fareast-font-family:SimSun;  
-	mso-fareast-theme-font:minor-fareast;  
-	mso-hansi-font-family:Calibri;  
-	mso-hansi-theme-font:minor-latin;  
-	mso-bidi-font-family:"Times New Roman";  
-	mso-bidi-theme-font:minor-bidi;}  
-.MsoPapDefault  
-	{mso-style-type:export-only;  
-	margin-bottom:10.0pt;  
-	line-height:115%;}  
-@page WordSection1  
-	{size:612.0pt 792.0pt;  
-	margin:70.85pt 70.85pt 70.85pt 70.85pt;  
-	mso-header-margin:35.4pt;  
-	mso-footer-margin:35.4pt;  
-	mso-paper-source:0;}  
-div.WordSection1  
-	{page:WordSection1;}  
---&gt;  
-
-
 环境变量\*\*可以在环境部分的docker-compose.yml\*\*文件中使用
 {% endhint %}
 
