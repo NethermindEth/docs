@@ -10,7 +10,9 @@ We have prepared default archive sync configurations and they can be launched fr
 
 While for some smaller networks archive sync can complete very quickly \(in minutes or hours\) mainnet sync would take 2 - 6 weeks depending on the speed of your IO \(whether you use SSD or NVMe or depending on the cloud provider IOPS\). Database size in archive sync is the biggest from all modes as you will store all the historical data.
 
-![Example of the archive sync logs](../.gitbook/assets/image%20%2857%29.png)
+![Example of the archive sync logs](../.gitbook/assets/image%20%2858%29.png)
+
+![](../.gitbook/assets/image%20%2857%29.png)
 
 Explanation of some data in the logs:
 
@@ -22,6 +24,24 @@ Explanation of some data in the logs:
 * `mgasps`, `tps`, `bps` values should not be treated as comparable as they may differ massively on different parts of the chain. For example when blocks are empty you may see very high `bps` values with very low \(or even zero\) `tps` and `mgasps` values as there are no transactions and no gas for EVM processing and blocks are very light. On the other hand when blocks are filled with very heavy transactions then `bps` might be very low while `mgasps` will be very high. It is even possible that you will see a lot of very light transactions where `tps` will be high while `bps` and `mgasps` will be average.
 
 ## Fast Sync
+
+Fast sync is probably the most popular method of syncing. After completing the fast sync your node will have the ability to answer questions like _'what is my account balance **now**'_, _'how many XYZ tokens SomeExchange holds **at the moment**'_.
+
+Fast sync is the default syncing method in Nethermind so whenever you launch standard configs you will end up using Fast Sync.
+
+`./Nethermind.Runner --config mainnet`
+
+`./Nethermind.Runner --config goerli`
+
+Fast sync has multiple stages. Nethermind uses a `pivot block` number to improve fast sync performance. The `pivot block` data is provided in the configuration file and consists of the `block number`, `block hash` and `block total difficulty` \(please not that `total difficulty` is different than `difficulty`\). Please note that the meaning of `pivot block` is different in Nethermind than in other clients, for example. Before synchronizing state data Nethermind synchronizes in two directions - backwards from `pivot block` to 0 for headers and forward to the head of the chain for headers, blocks and receipts. Forward sync might be very slow \(5 - 50 bps\) so it is important that you use the latest config or update your config before synchronization.
+
+After downloading the block data Nethermind will start state sync \(downloading the latest state trie nodes\). We are providing an estimate for the download size and progress but the real value may be different than the estimate \(especially if you are using an old version of Nethermind\).
+
+After the state sync finishes you will see the _'Processed...'_ messages like in archive sync - it means that your node is in sync and is processing the latest blocks.
+
+Mainnet sync, at the time of writing \(July 2020\), takes around 6 hours on an UpCloud $40 VM \(and then syncs receipts and bodies in the background if you enabled them in the configuration. Goerli sync should take around 40 minutes.
+
+![Fast sync logs example for mainnet.](../.gitbook/assets/image%20%2859%29.png)
 
 ## Beam Sync
 
