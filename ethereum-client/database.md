@@ -8,7 +8,7 @@ Nethermind uses the [RocksDB](https://rocksdb.org) database to store state. By d
 
 After Nethermind is started, you will see multiple directories appearing in the _baseDbPath_ directory.
 
-![Example of the DB directory on a freshly deployed Ubuntu VM with Nethermind.](../.gitbook/assets/image%20%2857%29.png)
+![Example of the DB directory on a freshly deployed Ubuntu VM with Nethermind.](../.gitbook/assets/image%20%2858%29.png)
 
 | DB Directory | Content |
 | :--- | :--- |
