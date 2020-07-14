@@ -5,14 +5,14 @@ description: 应该添加到计算机防火墙的规则
 # 防火墙配置
 
 {% hint style="info" %}
-Keep `8545` \(or `8000-9000`\) closed except for the trusted machines - this is the JSON RPC port which gives admin access to the node.
+除非受信任的机器外，保持`8545` \(or `8000-9000`\) 关闭，这是JSON RPC端口，它允许管理员访问节点。
 {% endhint %}
 
 {% hint style="info" %}
-Keep TCP `30303` \(or `30300-30400`\) open for the outside world so other nodes can connect to your node.
+保持TCP 30303 \(`30300-30400`\)对外开放，以便其他节点可以连接到您的节点。
 {% endhint %}
 
 {% hint style="info" %}
-Keep UDP `30303` \(or `30300-30400`\) open for the outside world so other nodes can discover your node.
+保持UDP `30303` \( 或`30300-30400`\) 对外开放，以便其他节点可以发现您的节点。
 {% endhint %}
 
