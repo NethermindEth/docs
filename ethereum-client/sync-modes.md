@@ -45,3 +45,9 @@ Mainnet sync, at the time of writing \(July 2020\), takes around 6 hours on an U
 
 ## Beam Sync
 
+The simplest way of explaining beam sync is by saying that the beam sync is exactly the same as fast sync but additionally it downloads the state data \(witnesses\) for the latest blocks. It also allows to execute some queries about the current state via JSON RPC much before the actual fast sync finishes. Currently beam sync takes more resources than fast sync and slows the fast sync down significantly but it allows you the query blockchain within a few minutes from starting.
+
+![Beam sync logs example.](../.gitbook/assets/image%20%2860%29.png)
+
+When the _'Beam sync is ON'_ message is displayed then it generally means that you can ask about the latest headers, latest transactions, you can as about `eth_getBalance`, `eth_getCode`, `eth_call`, `debug_trace`, `trace_replayTransactions`, etc. You cannot ask about transaction receipts or logs as most of them are not processed yet. With beam sync it is possible to create and broadcast an Ether or token transfer transactions from the node.
+
