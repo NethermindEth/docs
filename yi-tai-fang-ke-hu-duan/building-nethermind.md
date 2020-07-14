@@ -64,11 +64,11 @@ brew install gmp && brew install snappy && brew install lz4
 ## 所有平台
 
 {% hint style="warning" %}
-If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
+如果未找到dotnet命令，可能没有安装SDK（请参阅上面的说明）
 {% endhint %}
 
 {% hint style="info" %}
-On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
+在Linux发行版上，我们建议在此阶段启动`screen`，以便稍后使用`screen -rd`命令返回会话。
 {% endhint %}
 
 克隆Nethermind存储库及其子模块，然后以 `Release`或`Debug`模式构建Nethermind。
