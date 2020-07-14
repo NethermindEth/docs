@@ -34,6 +34,13 @@ for directory in dirs:
     rootdir = directory
     for subdir, dirs, files in os.walk(rootdir):
         for file in files:
+            subdir = subdir.replace("lian-xi-fang-shi", "contact") if "lian-xi-fang-shi" in subdir else subdir
+            subdir = subdir.replace("shi-yong-nethermind-de-yi-kai-shi", "first-steps-with-nethermind") if "shi-yong-nethermind-de-yi-kai-shi" in subdir else subdir
+            subdir = subdir.replace("shi-ye", "enterprise") if "shi-ye" in subdir else subdir
+            subdir = subdir.replace("nethermind-shi-yong-cheng-xu", "nethermind-utilities") if "nethermind-shi-yong-cheng-xu" in subdir else subdir
+            subdir = subdir.replace("yi-tai-fang-ke-hu-duan", "ethereum-client") if "yi-tai-fang-ke-hu-duan" in subdir else subdir
+            subdir = subdir.replace("zhi-nan-he-zhu-shou", "guides-and-helpers") if "zhi-nan-he-zhu-shou" in subdir else subdir
+            
             filePath = os.path.join(subdir, file).replace("/","-").replace(".", "-")
             fileRaw = os.path.join(subdir, file)
             fileName = os.path.basename(fileRaw)

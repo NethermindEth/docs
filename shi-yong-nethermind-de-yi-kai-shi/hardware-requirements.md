@@ -28,3 +28,7 @@ A freshly fast synced mainnet disk space usage \(as of July 2020\):
 
 ![If you sync without receipts the 160GB space can be saved. Without bodies - 99GB more.](../.gitbook/assets/image%20%2856%29.png)
 
+
+
+
+

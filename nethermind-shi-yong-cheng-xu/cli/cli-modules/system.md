@@ -1,18 +1,18 @@
 # System
 
-## system.getVariable\(name, defaultValue\)
+### system.getVariable\(name, defaultValue\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## system.memory
+### system.memory
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

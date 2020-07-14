@@ -2,7 +2,7 @@
 
 ## 目录
 
-如果您在本地构建应用程序，入口点将位于:
+ 如果您在本地构建应用程序，入口点将位于:
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/
@@ -31,11 +31,11 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ]
 ```
 
-默认情况下，`static-nodes.json` 文件存储在Nethermind软件包的`Data/`文件夹中。 `静态节点` 文件的路径可以通过[`静态节点路径`](../configuration/modules/init.md) 参数配置。
+默认情况下，`static-nodes.json` 文件存储在Nethermind软件包的`Data/`文件夹中。 `静态节点 ` 文件的路径可以通过[`静态节点路径`](../configuration/modules/init.md) 参数配置。
 
 ## NLog 配置
 
-您可以通过选择以下级别之一 \(错误\(Error\)，警告\(Warn\)，信息\(Info\)，调试\(Debug\)，跟踪\(Trace\) \) 来更改文件和控制台中的登录级别：
+您可以通过选择以下级别之一 \(错误(Error)，警告(Warn)，信息(Info)，调试(Debug)，跟踪(Trace) \) 来更改文件和控制台中的登录级别：
 
 ```bash
 <logger name="*" minlevel="Info" writeTo="file-async"/>

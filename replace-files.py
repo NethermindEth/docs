@@ -12,6 +12,12 @@ countFiles = 0
                 
 for directory in dirs:
     rootdir = directory
+    # os.rename("contact", "lian-xi-fang-shi") if "contact" in directory else directory
+    # os.rename("first-steps-with-nethermind", "shi-yong-nethermind-de-yi-kai-shi") if "first-steps-with-nethermind" in directory else directory
+    # os.rename("enterprise", "shi-ye") if "enterprise" in directory else directory
+    # os.rename("nethermind-utilities", "nethermind-shi-yong-cheng-xu") if "nethermind-utilities" in directory else directory
+    # os.rename("ethereum-client", "yi-tai-fang-ke-hu-duan") if "ethereum-client" in directory else directory
+    # os.rename("guides-and-helpers", "zhi-nan-he-zhu-shou") if "guides-and-helpers" in directory else directory
     for subdir, dirs, files in os.walk(rootdir):
         for file in files:
             fileRaw = os.path.join(subdir, file)

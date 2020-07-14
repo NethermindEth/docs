@@ -1,18 +1,18 @@
 # Personal
 
-## personal.listAccounts
+### personal.listAccounts
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## personal.lockAccount\(addressHex\)
+### personal.lockAccount\(addressHex\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## personal.newAccount\(password\)
+### personal.newAccount\(password\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -84,19 +84,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## personal.unlockAccount\(addressHex, password\)
+### personal.unlockAccount\(addressHex, password\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

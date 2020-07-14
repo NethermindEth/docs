@@ -1,18 +1,18 @@
 # Parity
 
-## parity\_getBlockReceipts\(blockParameter\)
+### parity\_getBlockReceipts\(blockParameter\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,25 +22,25 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}
 {% endtabs %}
 
-## parity\_pendingTransactions\(\)
+### parity\_pendingTransactions\(\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -50,7 +50,7 @@ None
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 
 ```
 {% endtab %}

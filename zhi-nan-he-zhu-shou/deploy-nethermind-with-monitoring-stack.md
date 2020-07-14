@@ -1,5 +1,6 @@
 ---
 description: 快速简便地部署Nethermind客户端和监视堆栈的配方（Grafana / Prometheus / Seq）
+
 ---
 
 # 部署Nethermind以太坊客户端带有监控堆栈
@@ -107,10 +108,10 @@ You can now provide some basic configuration to your VM/Nethermind Node
 
 ![](../.gitbook/assets/image%20%2855%29.png)
 
-A list of available `configs` can be found [here](../yi-tai-fang-ke-hu-duan/networks.md)
+A list of available `configs` can be found [here](../ethereum-client/networks.md)
 
 {% hint style="warning" %}
-🧯 If you chose to enable JsonRpc \(it will run on port `8545` by default\) make sure that you set up [Firewall rules](../shi-yong-nethermind-de-yi-kai-shi/firewall-configuration.md) either in DigitalOcean or by using Linux `iptables`
+🧯 If you chose to enable JsonRpc \(it will run on port `8545` by default\) make sure that you set up [Firewall rules](../first-steps-with-nethermind/firewall-configuration.md) either in DigitalOcean or by using Linux `iptables`
 {% endhint %}
 
 Let's apply our plan and start deploying whole stack \(it should take no longer than 3 minutes\)
@@ -151,7 +152,7 @@ Go to the `YOUR_DROPLET_IP:9090`
 
 Explore Nethermind metrics, visualize and analyse using prometheus syntax, a list of available metrics with their descriptions can be found here:
 
-{% page-ref page="../yi-tai-fang-ke-hu-duan/metrics/modules/" %}
+{% page-ref page="../ethereum-client/metrics/modules/" %}
 
 ![](../.gitbook/assets/image%20%2851%29.png)
 

@@ -13,6 +13,84 @@ source_file = SUMMARY.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.guides-and-helpers-faq-md]
+file_filter = guides-and-helpers/faq.<lang>.md
+source_file = guides-and-helpers/faq.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-deploy-nethermind-with-monitoring-stack-md]
+file_filter = guides-and-helpers/deploy-nethermind-with-monitoring-stack.<lang>.md
+source_file = guides-and-helpers/deploy-nethermind-with-monitoring-stack.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-web3-py-md]
+file_filter = guides-and-helpers/web3.py.<lang>.md
+source_file = guides-and-helpers/web3.py.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-rocksdbextractor-md]
+file_filter = guides-and-helpers/rocksdbextractor.<lang>.md
+source_file = guides-and-helpers/rocksdbextractor.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-known-issues-md]
+file_filter = guides-and-helpers/known-issues.<lang>.md
+source_file = guides-and-helpers/known-issues.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-validator-setup-README-md]
+file_filter = guides-and-helpers/validator-setup/README.<lang>.md
+source_file = guides-and-helpers/validator-setup/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-validator-setup-aura-validator-md]
+file_filter = guides-and-helpers/validator-setup/aura-validator.<lang>.md
+source_file = guides-and-helpers/validator-setup/aura-validator.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-cloud-providers-google-cloud-md]
+file_filter = guides-and-helpers/cloud-providers/google-cloud.<lang>.md
+source_file = guides-and-helpers/cloud-providers/google-cloud.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-cloud-providers-README-md]
+file_filter = guides-and-helpers/cloud-providers/README.<lang>.md
+source_file = guides-and-helpers/cloud-providers/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-cloud-providers-azure-md]
+file_filter = guides-and-helpers/cloud-providers/azure.<lang>.md
+source_file = guides-and-helpers/cloud-providers/azure.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-cloud-providers-digital-ocean-md]
+file_filter = guides-and-helpers/cloud-providers/digital-ocean.<lang>.md
+source_file = guides-and-helpers/cloud-providers/digital-ocean.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-cloud-providers-aws-md]
+file_filter = guides-and-helpers/cloud-providers/aws.<lang>.md
+source_file = guides-and-helpers/cloud-providers/aws.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-cloud-providers-upcloud-md]
+file_filter = guides-and-helpers/cloud-providers/upcloud.<lang>.md
+source_file = guides-and-helpers/cloud-providers/upcloud.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.nethermind-utilities-json-rpc-README-md]
 file_filter = nethermind-utilities/json-rpc/README.<lang>.md
 source_file = nethermind-utilities/json-rpc/README.md
@@ -187,9 +265,27 @@ source_file = nethermind-utilities/cli/cli-modules/diag.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.ethereum-client-metrics-md]
-file_filter = ethereum-client/metrics.<lang>.md
-source_file = ethereum-client/metrics.md
+[nethermind-docs.contact-social-media-md]
+file_filter = contact/social-media.<lang>.md
+source_file = contact/social-media.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.contact-contact-us-md]
+file_filter = contact/contact-us.<lang>.md
+source_file = contact/contact-us.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.enterprise-seq-md]
+file_filter = enterprise/seq.<lang>.md
+source_file = enterprise/seq.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.enterprise-baseline-md]
+file_filter = enterprise/baseline.<lang>.md
+source_file = enterprise/baseline.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -214,30 +310,6 @@ type = GITHUBMARKDOWN
 [nethermind-docs.ethereum-client-dockers-md]
 file_filter = ethereum-client/dockers.<lang>.md
 source_file = ethereum-client/dockers.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.ethereum-client-dockers-README-md]
-file_filter = ethereum-client/dockers/README.<lang>.md
-source_file = ethereum-client/dockers/README.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.ethereum-client-dockers-docker-debian-alpine-md]
-file_filter = ethereum-client/dockers/docker-debian-alpine.<lang>.md
-source_file = ethereum-client/dockers/docker-debian-alpine.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.ethereum-client-dockers-docker-debian-alpine-arm64-md]
-file_filter = ethereum-client/dockers/docker-debian-alpine-arm64.<lang>.md
-source_file = ethereum-client/dockers/docker-debian-alpine-arm64.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.ethereum-client-dockers-docker-debian-arm32-md]
-file_filter = ethereum-client/dockers/docker-debian-arm32.<lang>.md
-source_file = ethereum-client/dockers/docker-debian-arm32.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -442,108 +514,6 @@ type = GITHUBMARKDOWN
 [nethermind-docs.first-steps-with-nethermind-firewall-configuration-md]
 file_filter = first-steps-with-nethermind/firewall-configuration.<lang>.md
 source_file = first-steps-with-nethermind/firewall-configuration.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-faq-md]
-file_filter = guides-and-helpers/faq.<lang>.md
-source_file = guides-and-helpers/faq.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-deploy-nethermind-with-monitoring-stack-md]
-file_filter = guides-and-helpers/deploy-nethermind-with-monitoring-stack.<lang>.md
-source_file = guides-and-helpers/deploy-nethermind-with-monitoring-stack.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-web3-py-md]
-file_filter = guides-and-helpers/web3.py.<lang>.md
-source_file = guides-and-helpers/web3.py.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-rocksdbextractor-md]
-file_filter = guides-and-helpers/rocksdbextractor.<lang>.md
-source_file = guides-and-helpers/rocksdbextractor.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-known-issues-md]
-file_filter = guides-and-helpers/known-issues.<lang>.md
-source_file = guides-and-helpers/known-issues.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-cloud-providers-google-cloud-md]
-file_filter = guides-and-helpers/cloud-providers/google-cloud.<lang>.md
-source_file = guides-and-helpers/cloud-providers/google-cloud.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-cloud-providers-README-md]
-file_filter = guides-and-helpers/cloud-providers/README.<lang>.md
-source_file = guides-and-helpers/cloud-providers/README.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-cloud-providers-azure-md]
-file_filter = guides-and-helpers/cloud-providers/azure.<lang>.md
-source_file = guides-and-helpers/cloud-providers/azure.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-cloud-providers-digital-ocean-md]
-file_filter = guides-and-helpers/cloud-providers/digital-ocean.<lang>.md
-source_file = guides-and-helpers/cloud-providers/digital-ocean.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-cloud-providers-aws-md]
-file_filter = guides-and-helpers/cloud-providers/aws.<lang>.md
-source_file = guides-and-helpers/cloud-providers/aws.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-cloud-providers-upcloud-md]
-file_filter = guides-and-helpers/cloud-providers/upcloud.<lang>.md
-source_file = guides-and-helpers/cloud-providers/upcloud.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-validator-setup-README-md]
-file_filter = guides-and-helpers/validator-setup/README.<lang>.md
-source_file = guides-and-helpers/validator-setup/README.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-validator-setup-aura-validator-md]
-file_filter = guides-and-helpers/validator-setup/aura-validator.<lang>.md
-source_file = guides-and-helpers/validator-setup/aura-validator.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.enterprise-seq-md]
-file_filter = enterprise/seq.<lang>.md
-source_file = enterprise/seq.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.enterprise-baseline-md]
-file_filter = enterprise/baseline.<lang>.md
-source_file = enterprise/baseline.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.contact-social-media-md]
-file_filter = contact/social-media.<lang>.md
-source_file = contact/social-media.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.contact-contact-us-md]
-file_filter = contact/contact-us.<lang>.md
-source_file = contact/contact-us.md
 source_lang = en
 type = GITHUBMARKDOWN
 

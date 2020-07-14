@@ -1,5 +1,6 @@
 ---
 description: Nethermind使用便捷的工具（例如Grafana或Seq）监控其以太坊节点，为客户提供支持
+
 ---
 
 # Seq

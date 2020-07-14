@@ -1,10 +1,11 @@
 ---
 description: 如何在Aura（权威回合）共识算法中设置Nethermind验证程序
+
 ---
 
 # Aura 验证器
 
-本文将引导您完成docker-compose **Nethermind Aura 验证器**  设置\(在此示例中为xDai链/\)。通过[下载](../../yi-tai-fang-ke-hu-duan/download-sources/) 后[运行Nethermind](../../yi-tai-fang-ke-hu-duan/running-nethermind/running-the-client.md)程序包,或从源代码[构建Nethermind](../../yi-tai-fang-ke-hu-duan/building-nethermind.md)可以获得相同的结果。
+本文将引导您完成docker-compose** Nethermind Aura 验证器 ** 设置\(在此示例中为xDai链/)。通过[下载](../../ethereum-client/download-sources/) 后[运行Nethermind](../../ethereum-client/running-nethermind/running-the-client.md)程序包,或从源代码[构建Nethermind](../../ethereum-client/building-nethermind.md)可以获得相同的结果。
 
 如果选择不使用docker-compose，可以跳过docker-compose的相关部分，而仅阅读 [配置文件](aura-validator.md#config-file)和 [私钥配置](aura-validator.md#mining-private-key)
 
@@ -12,7 +13,7 @@ description: 如何在Aura（权威回合）共识算法中设置Nethermind验�
 
 * [x] docker-compose
 * [x] docker
-* \[x\]建议使用至少4GB RAM的计算机
+* [x]建议使用至少4GB RAM的计算机
 
 ```bash
 sudo apt-get install docker docker-compose -y
@@ -22,7 +23,7 @@ sudo apt-get install docker docker-compose -y
 
 系统时钟需要同步，否则可能会遇到跳过块密封的情况。默认情况下，`stepDuration`配置为`5s`。
 
-验证系统时钟是否同步，键入 `timedatectl status`，后应该看到类似的输出：
+验证系统时钟是否同步，键入 `timedatectl status `，后应该看到类似的输出：
 
 ```bash
 Local time: Tue 2020-06-30 17:16:19 UTC
@@ -37,7 +38,7 @@ RTC in local TZ: no
 如果`System clock synchronized` （已同步系统时钟）显示`yes`（是），这说明一切就绪，否则，可能需要：
 
 * [x] 同步时钟和NTP服务器 \(允许**UDP**端口**123**用于传入和传出流量\)
-* \[x\]使用以下脚本与google.com同步：
+* [x]使用以下脚本与google.com同步：
 
 创建 `fixtime.sh` 脚本并在 `屏幕` 中使用 `watch -n 60` 命令运行它
 
@@ -102,7 +103,8 @@ volumes:
 Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, otherwise you might lose database or keys
 {% endhint %}
 
-[`NLog.config`](../../yi-tai-fang-ke-hu-duan/running-nethermind/runtime.md#nlog-config)可选文件。 [`static-nodes.json`](../../yi-tai-fang-ke-hu-duan/running-nethermind/runtime.md#static-nodes) 可以填充一个enode数组（可选 ）
+[`NLog.config`](../../ethereum-client/running-nethermind/runtime.md#nlog-config)可选文件。
+[`static-nodes.json`](../../ethereum-client/running-nethermind/runtime.md#static-nodes) 可以填充一个enode数组（可选 ）
 
 ## 挖矿**私钥**
 
@@ -111,7 +113,7 @@ Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, oth
 
 `密钥文件`正确命名 : **key-a5237f7f43cc46cba43ac212dabd0c45e3e3050a**
 
-然后，`密钥文件` 该存储在`密钥库卷` 中。
+然后，` 密钥文件` 该存储在` 密钥库卷` 中。
 {% endhint %}
 
 ## 配置文件
@@ -121,11 +123,11 @@ Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, oth
 * [ ] `Init.IsMining` 为 true
 * [ ] `Init.MemoryHint` 可以保留为默认值，建议根据机器硬件设置对其进行相应配置 \(对于`xdai`1000000000已足够\)
 * [ ] `EthStats` ，要将给定网络的节点状态报告给ethstats页面
-* [ ] `Metrics`  如果运行本地/远程 [度量基础结构](../../yi-tai-fang-ke-hu-duan/metrics/setting-up-local-metrics-infrastracture.md)
+* [ ] `Metrics`  如果运行本地/远程 [度量基础结构](../../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
 * [ ] `KeyStore.PasswordFiles` 包含用于**挖掘私钥**的密码的文件的路径
-* [ ] `KeyStore.UnlockAccounts`  **\*\*一系列帐户，在此处提供**挖掘公共地址\*\*
+* [ ] `KeyStore.UnlockAccounts`  ****一系列帐户，在此处提供**挖掘公共地址**
 * [ ] `KeyStore.BlockAuthorAccount` **挖掘公共地址**也应在此处提供
-* [ ] `Aura.ForceSealing`  设置为true
+* [ ] `Aura.ForceSealing`  设置为true
 
 {% tabs %}
 {% tab title="xdai.cfg" %}
@@ -196,6 +198,7 @@ Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, oth
     ]
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -217,4 +220,6 @@ docker-compose logs -f nethermind-validator
 ```
 
 ![](../../.gitbook/assets/image%20%2837%29.png)
+
+
 

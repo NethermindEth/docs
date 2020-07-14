@@ -1,18 +1,18 @@
 # Web3
 
-## web3.abi\(name\)
+### web3.abi\(name\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## web3.clientVersion
+### web3.clientVersion
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## web3.sha3\(data\)
+### web3.sha3\(data\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -84,19 +84,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## web3.toDecimal\(hex\)
+### web3.toDecimal\(hex\)
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}

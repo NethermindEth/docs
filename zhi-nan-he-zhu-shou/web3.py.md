@@ -5,7 +5,7 @@
 * [https://github.com/ethereum/web3.py](https://github.com/ethereum/web3.py)
 * [https://web3py.readthedocs.io/en/stable/quickstart.html](https://web3py.readthedocs.io/en/stable/quickstart.html)
 
-来检查连接设置，可以使用以下脚本。 请确保已启用JSON RPC模块，（通过将标记`--JsonRpc.Enabled true` 传递给Nethermind.Launcher或Nethermind.Runner来完成。）
+来检查连接设置，可以使用以下脚本。 请确保已启用JSON RPC模块，（通过将标记`--JsonRpc.Enabled true`  传递给Nethermind.Launcher或Nethermind.Runner来完成。）
 
 ```python
 from web3.auto import w3

@@ -12,5 +12,5 @@ description: Nethermind团队的电子邮件地址
 | 开发运维 | devops@nethermind.io |
 | 营销部门 | marketing@nethermind.io |
 | 公关部 | pr@nethermind.io |
-| UI  \( 用户界面 \) | ui@nethermind.io |
+| UI  ( 用户界面 ) | ui@nethermind.io |
 

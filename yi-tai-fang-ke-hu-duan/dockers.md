@@ -28,53 +28,53 @@ Docker仓库可以在此处找到
 | `arm64` | 基于**Nethermind ARM64 Alpine** 的最新镜像 | ARM64 |
 | `arm32` | 基于**Nethermind ARM32 Debian** 的最新镜像 | ARM32 |
 
-要使用之前的版本，您可以传递`{tag}` ，例如`1.8.50` 主镜像名称前“
+要使用之前的版本，您可以传递`{tag}` ，例如`1.8.50` 主镜像名称前“ 
 
-例如，如果您想使用**Nethermind Alpine**镜像`1.7.4`的版本 ，则镜像名称应为 `1.7.4-alpine`，对于**Nethermind ARM64 Alpine** `1.7.4-arm64` _\*\*_，依此类推。
+例如，如果您想使用**Nethermind Alpine**镜像`1.7.4`的版本 ，则镜像名称应为 `1.7.4-alpine`，对于**Nethermind ARM64  Alpine**  `1.7.4-arm64` ****，依此类推。
 
 所有版本都可以在[标签历史](https://github.com/NethermindEth/nethermind/tags).中找到。
 
-### **运行Nethermind** 容器
+### **运行Nethermind **容器
 
 Docker pull命令：
 
 {% tabs %}
 {% tab title="AMD64" %}
-```text
+```
 docker pull nethermind/nethermind
 ```
 {% endtab %}
 
 {% tab title="ARM64" %}
-```text
+```
 docker pull nethermind/nethermind:arm64
 ```
 {% endtab %}
 
 {% tab title="ARM32" %}
-```text
+```
 docker pull nethermind/nethermind:arm32
 ```
 {% endtab %}
 {% endtabs %}
 
-为了启动`Nethermind.Runner`, 只需运行：
+为了启动`Nethermind.Runner`,  只需运行：
 
 {% tabs %}
 {% tab title="AMD64" %}
-```text
+```
 docker run -it nethermind/nethermind
 ```
 {% endtab %}
 
 {% tab title="ARM64" %}
-```text
+```
 docker run -it nethermind/nethermind:arm64
 ```
 {% endtab %}
 
 {% tab title="ARM32" %}
-```text
+```
 docker run -it nethermind/nethermind:arm32
 ```
 {% endtab %}
@@ -84,19 +84,19 @@ docker run -it nethermind/nethermind:arm32
 
 {% tabs %}
 {% tab title="AMD64" %}
-```text
+```
 docker run -it nethermind/nethermind --help
 ```
 {% endtab %}
 
 {% tab title="ARM64" %}
-```text
+```
 docker run -it nethermind/nethermind:arm64 --help
 ```
 {% endtab %}
 
 {% tab title="ARM32" %}
-```text
+```
 docker run -it nethermind/nethermind:arm32 --help
 ```
 {% endtab %}
@@ -119,7 +119,7 @@ Environment variables are to be passed before docker image tag while parameteres
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables **\*\*can be easily used within** docker-compose.yml\*\* files in environment section
+Environment variables ****can be easily used within **docker-compose.yml** files in environment section
 {% endhint %}
 
 ### **JSON RPC**
@@ -130,19 +130,19 @@ Environment variables **\*\*can be easily used within** docker-compose.yml\*\* f
 
 {% tabs %}
 {% tab title="AMD64" %}
-```text
+```
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
 {% endtab %}
 
 {% tab title="ARM64" %}
-```text
+```
 docker run -it --network host nethermind/nethermind:arm64 --JsonRpc.Enabled true
 ```
 {% endtab %}
 
 {% tab title="ARM32" %}
-```text
+```
 docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
 ```
 {% endtab %}
@@ -152,25 +152,25 @@ docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
 
 {% tabs %}
 {% tab title="AMD64" %}
-```text
+```
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
 {% tab title="ARM64" %}
-```text
+```
 docker run -it -p 8545:8545 nethermind/nethermind:arm64 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 
 {% tab title="ARM32" %}
-```text
+```
 docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
 {% endtabs %}
 
-如果从VM运行，可能需要通过 `--JsonRpc.Host {hostmachine_ip}` \(`127.0.0.1` is set by default\)。 如果仍然无法连接JSON RPC，则可以设置`--JsonRpc.Host 0.0.0.0`
+如果从VM运行，可能需要通过 `--JsonRpc.Host {hostmachine_ip}` \(`127.0.0.1` is set by default\)。 如果仍然无法连接JSON RPC，则可以设置`--JsonRpc.Host 0.0.0.0` 
 
 ### **可用配置**
 
@@ -189,19 +189,19 @@ docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true -
 
 {% tabs %}
 {% tab title="AMD64" %}
-```text
+```
 docker run -it nethermind/nethermind --config goerli
 ```
 {% endtab %}
 
 {% tab title="ARM64" %}
-```text
+```
 docker run -it nethermind/nethermind:arm64 --config goerli
 ```
 {% endtab %}
 
 {% tab title="ARM32" %}
-```text
+```
 docker run -it nethermind/nethermind:arm32 --config goerli
 ```
 {% endtab %}

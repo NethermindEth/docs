@@ -1,18 +1,18 @@
 # Net
 
-## net.localEnode
+### net.localEnode
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -28,19 +28,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## net.peerCount
+### net.peerCount
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,19 +56,19 @@ None
 {% endtab %}
 {% endtabs %}
 
-## net.version
+### net.version
 
 None
 
-### **Parameters**
+#### **Parameters**
 
 None
 
-### **Returns**
+#### **Returns**
 
 None
 
-### **Example**
+#### **Example**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -83,4 +83,6 @@ None
 ```
 {% endtab %}
 {% endtabs %}
+
+### 
 
