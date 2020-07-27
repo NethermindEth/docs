@@ -89,6 +89,7 @@
 
 ## Guides and Helpers
 
+* [Beam wallet](guides-and-helpers/beam-wallet.md)
 * [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
 * [Known Issues](guides-and-helpers/known-issues.md)
 * [Web3.py](guides-and-helpers/web3.py.md)
