@@ -1,122 +1,132 @@
-#eth
+# Eth
 
 eth\_chainId
 
-Returns ChainID 
+Returns ChainID
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_protocolVersion
 
-Returns ETH protocol version 
+Returns ETH protocol version
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_syncing
 
-Returns syncing status 
+Returns syncing status
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_coinbase
 
-Returns miner's coinbase 
+Returns miner's coinbase
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_mining
 
-Returns mining status 
+Returns mining status
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_snapshot
 
-Returns full state snapshot 
+Returns full state snapshot
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_hashrate
 
-Returns mining hashrate 
+Returns mining hashrate
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_gasPrice
 
-Returns miner's gas price 
+Returns miner's gas price
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_accounts
 
-Returns accounts 
+Returns accounts
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_blockNumber
 
-Returns current block number 
+Returns current block number
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 eth\_getBalance
 
-Returns account balance 
+Returns account balance
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -125,11 +135,11 @@ Is implemented : True
 
 eth\_getStorageAt
 
-Returns storage data at address. storage_index 
+Returns storage data at address. storage\_index
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -139,11 +149,11 @@ Is implemented : True
 
 eth\_getTransactionCount
 
-Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
+Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -152,11 +162,11 @@ Is implemented : True
 
 eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash 
+Returns number of transactions in the block block hash
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -164,11 +174,11 @@ Is implemented : True
 
 eth\_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number 
+Returns number of transactions in the block by block number
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -176,11 +186,11 @@ Is implemented : True
 
 eth\_getUncleCountByBlockHash
 
-Returns number of uncles in the block by block hash 
+Returns number of uncles in the block by block hash
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -188,11 +198,11 @@ Is implemented : True
 
 eth\_getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number 
+Returns number of uncles in the block by block number
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -200,11 +210,11 @@ Is implemented : True
 
 eth\_getCode
 
-Returns account code at given address and block 
+Returns account code at given address and block
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -213,24 +223,24 @@ Is implemented : True
 
 eth\_sign
 
-Signs a transaction 
+Signs a transaction
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | addressData | Nethermind.Core.Address |
-| message | System.Byte[] |
+| message | System.Byte\[\] |
 
 eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting 
+Send a transaction to the tx pool and broadcasting
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -238,23 +248,23 @@ Is implemented : True
 
 eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting 
+Send a raw transaction to the tx pool and broadcasting
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| transaction | System.Byte[] |
+| transaction | System.Byte\[\] |
 
 eth\_call
 
-Executes a tx call (does not create a transaction) 
+Executes a tx call \(does not create a transaction\)
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -263,11 +273,11 @@ Is implemented : True
 
 eth\_estimateGas
 
-Executes a tx call and returns gas used (does not create a transaction) 
+Executes a tx call and returns gas used \(does not create a transaction\)
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -276,11 +286,11 @@ Is implemented : True
 
 eth\_getBlockByHash
 
-Retrieves a block by hash 
+Retrieves a block by hash
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -289,11 +299,11 @@ Is implemented : True
 
 eth\_getBlockByNumber
 
-Retrieves a block by number 
+Retrieves a block by number
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -302,11 +312,11 @@ Is implemented : True
 
 eth\_getTransactionByHash
 
-Retrieves a transaction by hash 
+Retrieves a transaction by hash
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -314,22 +324,23 @@ Is implemented : True
 
 eth\_pendingTransactions
 
-Returns the pending transactions list 
+Returns the pending transactions list
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index 
+Retrieves a transaction by block hash and index
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -338,11 +349,11 @@ Is implemented : True
 
 eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index 
+Retrieves a transaction by block number and index
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -351,11 +362,11 @@ Is implemented : True
 
 eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash 
+Retrieves a transaction receipt by tx hash
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -363,11 +374,11 @@ Is implemented : True
 
 eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index 
+Retrieves an uncle block header by block hash and uncle index
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -376,11 +387,11 @@ Is implemented : True
 
 eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index 
+Retrieves an uncle block header by block number and uncle index
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -389,11 +400,11 @@ Is implemented : True
 
 eth\_newFilter
 
-Creates an update filter 
+Creates an update filter
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -401,33 +412,35 @@ Is implemented : True
 
 eth\_newBlockFilter
 
-Creates an update filter 
+Creates an update filter
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_newPendingTransactionFilter
 
-Creates an update filter 
+Creates an update filter
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 eth\_uninstallFilter
 
-Creates an update filter 
+Creates an update filter
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -435,11 +448,11 @@ Is implemented : True
 
 eth\_getFilterChanges
 
-Reads filter changes 
+Reads filter changes
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -447,11 +460,11 @@ Is implemented : True
 
 eth\_getFilterLogs
 
-Reads filter changes 
+Reads filter changes
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -459,11 +472,11 @@ Is implemented : True
 
 eth\_getLogs
 
-Reads logs 
+Reads logs
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -471,36 +484,31 @@ Is implemented : True
 
 eth\_getWork
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 eth\_submitWork
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| nonce | System.Byte[] |
+| nonce | System.Byte\[\] |
 | headerPowHash | Nethermind.Core.Crypto.Keccak |
-| mixDigest | System.Byte[] |
+| mixDigest | System.Byte\[\] |
 
 eth\_submitHashrate
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -509,15 +517,15 @@ Is implemented : False
 
 eth\_getProof
 
-https://github.com/ethereum/EIPs/issues/1186 
+[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | accountAddress | Nethermind.Core.Address |
-| hashRate | System.Byte[][] |
+| hashRate | System.Byte\[\]\[\] |
 | blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 

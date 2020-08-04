@@ -1,23 +1,24 @@
-#parity
+# Parity
 
 parity\_pendingTransactions
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 parity\_getBlockReceipts
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -25,22 +26,23 @@ Is implemented : True
 
 parity\_enode
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 parity\_setEngineSigner
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -49,11 +51,11 @@ Is implemented : True
 
 parity\_setEngineSignerSecret
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -61,12 +63,13 @@ Is implemented : True
 
 parity\_clearEngineSigner
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
