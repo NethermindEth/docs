@@ -1,3 +1,3 @@
 [submodule "nethermind"]
 	path = nethermind
-	url = git@github.com:NethermindEth/nethermind.git
+	url = https://github.com/NethermindEth/nethermind.git
