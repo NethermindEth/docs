@@ -1,12 +1,10 @@
-#admin
+# Admin
 
 admin\_addPeer
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -15,11 +13,9 @@ Is implemented : True
 
 admin\_removePeer
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -28,45 +24,47 @@ Is implemented : True
 
 admin\_peers
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 admin\_nodeInfo
 
-Relevant information about this node 
+Relevant information about this node
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 admin\_dataDir
 
-Base data directory path 
+Base data directory path
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 
 admin\_setSolc
 
-[DEPRECATED] 
+\[DEPRECATED\]
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+
 

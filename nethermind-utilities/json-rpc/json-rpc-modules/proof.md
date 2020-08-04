@@ -1,12 +1,12 @@
-#proof
+# Proof
 
 proof\_call
 
-This function returns the same result as `eth_getTransactionByHash` and also a tx proof and a serialized block header. 
+This function returns the same result as `eth_getTransactionByHash` and also a tx proof and a serialized block header.
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -15,11 +15,11 @@ Is implemented : False
 
 proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -28,11 +28,11 @@ Is implemented : True
 
 proof\_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |

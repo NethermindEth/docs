@@ -1,12 +1,10 @@
-#personal
+# Personal
 
 personal\_importRawKey
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -15,22 +13,23 @@ Is implemented : False
 
 personal\_listAccounts
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 personal\_lockAccount
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -38,11 +37,11 @@ Is implemented : True
 
 personal\_unlockAccount
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -51,11 +50,11 @@ Is implemented : True
 
 personal\_newAccount
 
-_description missing_ 
+_description missing_
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -63,11 +62,9 @@ Is implemented : True
 
 personal\_sendTransaction
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -76,29 +73,28 @@ Is implemented : False
 
 personal\_ecRecover
 
-ecRecover returns the address associated with the private key that was used to calculate the signature in personal_sign 
+ecRecover returns the address associated with the private key that was used to calculate the signature in personal\_sign
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| message | System.Byte[] |
-| signature | System.Byte[] |
+| message | System.Byte\[\] |
+| signature | System.Byte\[\] |
 
 personal\_sign
 
-The sign method calculates an Ethereum specific signature with: sign(keccack256("ƞthereum Signed Message:
-" + len(message) + message))). 
+The sign method calculates an Ethereum specific signature with: sign\(keccack256\("ƞthereum Signed Message: " + len\(message\) + message\)\)\).
 
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| message | System.Byte[] |
+| message | System.Byte\[\] |
 | address | Nethermind.Core.Address |
 | passphrase | System.String |
 

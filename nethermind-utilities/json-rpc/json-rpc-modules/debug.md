@@ -1,12 +1,12 @@
-#debug
+# Debug
 
 debug\_getChainLevel
 
-Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
+Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -14,11 +14,11 @@ Is implemented : True
 
 debug\_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
+Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -26,11 +26,11 @@ Is implemented : True
 
 debug\_resetHead
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -38,11 +38,9 @@ Is implemented : True
 
 debug\_traceTransaction
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -51,11 +49,9 @@ Is implemented : True
 
 debug\_traceTransactionByBlockAndIndex
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -65,11 +61,9 @@ Is implemented : True
 
 debug\_traceTransactionByBlockhashAndIndex
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -79,24 +73,20 @@ Is implemented : True
 
 debug\_traceBlock
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | System.Byte[] |
+| blockRlp | System.Byte\[\] |
 | options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
 debug\_traceBlockByNumber
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -105,11 +95,9 @@ Is implemented : True
 
 debug\_traceBlockByHash
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -118,11 +106,9 @@ Is implemented : True
 
 debug\_traceBlockFromFile
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -131,11 +117,9 @@ Is implemented : False
 
 debug\_dumpBlock
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -143,22 +127,21 @@ Is implemented : False
 
 debug\_gcStats
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 
+
 debug\_getBlockRlp
 
-Retrieves a block in the RLP-serialized form. 
+Retrieves a block in the RLP-serialized form.
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -166,11 +149,11 @@ Is implemented : True
 
 debug\_getBlockRlpByHash
 
-Retrieves a block in the RLP-serialized form. 
+Retrieves a block in the RLP-serialized form.
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -178,11 +161,9 @@ Is implemented : True
 
 debug\_memStats
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -190,11 +171,9 @@ Is implemented : False
 
 debug\_seedHash
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -202,11 +181,9 @@ Is implemented : False
 
 debug\_setHead
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -214,24 +191,22 @@ Is implemented : False
 
 debug\_getFromDb
 
- 
-
 Is implemented : False
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | dbName | System.String |
-| key | System.Byte[] |
+| key | System.Byte\[\] |
 
 debug\_getConfigValue
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -240,39 +215,35 @@ Is implemented : True
 
 debug\_traceTransactionInBlockByHash
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | System.Byte[] |
+| blockRlp | System.Byte\[\] |
 | transactionHash | Nethermind.Core.Crypto.Keccak |
 | options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
 debug\_traceTransactionInBlockByIndex
 
- 
-
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | System.Byte[] |
+| blockRlp | System.Byte\[\] |
 | txIndex | System.Int32 |
 | options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
 debug\_migrateReceipts
 
-Sets the block number up to which receipts will be migrated to (Nethermind specific). 
+Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
 
 Is implemented : True
 
-### **Parameters**
+## **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
