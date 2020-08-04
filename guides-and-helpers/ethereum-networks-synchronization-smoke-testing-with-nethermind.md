@@ -2,7 +2,7 @@
 
 ### Intro
 
-A software release for production often includes a series of tests and build steps throughout the CI/CD process. In this article, we will show you how to get the potential of different monitoring/infrastructure building tools combined and use the smoke tests for your projects. Please note that this article is a simple overview and will not go into specific details, but rather will allow you to pick a tech stack of your choice that meets your project's needs.  
+A software release for production often includes a series of tests and build steps throughout the CI/CD process. In this article, I will show you how to get the potential of different monitoring/infrastructure building tools combined and use the smoke tests for your projects. Please note that this article is a simple overview and will not go into specific details, but rather will allow you to pick a tech stack of your choice that meets your project's needs.  
 
 Tools and technologies used in this project:
 
@@ -14,7 +14,7 @@ Tools and technologies used in this project:
 * [Portainer ](https://www.portainer.io/)\(to manage dockers from a single point\)
 * [Pushgateway/Prometheus](https://prometheus.io/)/[Grafana](https://grafana.com/) \(to consume the node's metrics and monitor them\)
 
-In _Nethermind_, one of the global tests to verify the correct operation of our application is the synchronization test with the Ethereum Mainnet and many other networks currently supported by _Nethermind_, such as rinkeby, ropsten, xdai, sokol, etc. 
+In _Nethermind_, one of the core tests to verify the correct operation of our application is the synchronization test with the Ethereum Mainnet and many other networks currently supported by _Nethermind_, such as rinkeby, ropsten, xdai, sokol, etc. 
 
 ### Components
 
@@ -185,9 +185,9 @@ If something goes wrong and one or more chains do not sync correctly, we can qui
 
 ### Summary
 
-There are many useful tools that you can use to leverage the power of fast deployment and monitoring your apps on the pre-release stages. The tools used in this project were a combination of different projects that we are using on a regular basis such as[ this one](https://docs.nethermind.io/nethermind/guides-and-helpers/deploy-nethermind-with-monitoring-stack). We used _DigitalOcean_ as the _terraform_ provider in our case, obviously, you can pick one of your choices e.g. _UpCloud, Google,_ or _AWS_. 
+There are many useful tools that you can use to leverage the power of fast deployment and monitoring your apps on the pre-release stages. The tools used in this project were a combination of different projects that I am using on a regular basis such as[ this one](https://docs.nethermind.io/nethermind/guides-and-helpers/deploy-nethermind-with-monitoring-stack). I used _DigitalOcean_ as the _terraform_ provider in our case, obviously, you can pick one of your choices e.g. _UpCloud, Google,_ or _AWS_. 
 
-The most challenging thing was to design a script that properly checks the synchronization stages for each chain. However, this was possible thanks to _node.js_ and _Svelte/Sapper_ giving us the ability to display these stages live on the dashboard. All of this would not be that useful should we have not been able to see what is actually happening to our nodes, and this is where the monitoring tools shine - by enabling the possibility to see live logs from a single point on a web and the application performance and synchronization status on designated _Grafana_ dashboards. 
+The most challenging thing was to design a script that properly checks the synchronization stages for each chain. However, this was possible thanks to _node.js_ and _Svelte/Sapper_ giving us the ability to display these stages live on the dashboard. All of this would not be that useful if we would have not been able to see what is actually happening to our nodes, and this is where the monitoring tools shine - by enabling the possibility to see live logs from a single point on a web and the application performance and synchronization status on designated _Grafana_ dashboards. 
 
 Having the UI is not mandatory, as everything can be also run via scripts written in the language you feel comfortable with. We still lack one thing in this project and that is the proper alerting system that will inform us when something goes wrong on the backend side and which then we can use to keep us notified via _Slack,_ e-mails, __or even phone calls.
 
