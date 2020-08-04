@@ -1,114 +1,25 @@
-# Web3
+#web3
 
-### web3.abi\(name\)
+web3\_clientVersion
 
-None
+_description missing_ 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+web3\_sha3
 
-#### **Example**
+_description missing_ 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-### web3.clientVersion
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-### web3.sha3\(data\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-### web3.toDecimal\(hex\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| data | System.Byte[] |
 

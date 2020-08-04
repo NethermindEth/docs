@@ -1,38 +1,86 @@
 # TxPool
 
-txpool\_status
+### txpool\_content\(\)
 
-_description missing_
+None
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
+#### **Returns**
 
+None
 
-txpool\_content
+#### **Example**
 
-_description missing_
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-Is implemented : True
+```
+{% endtab %}
 
-## **Parameters**
+{% tab title="Response" %}
+```
 
-| Parameter name | Type |
-| :--- | :--- |
+```
+{% endtab %}
+{% endtabs %}
 
+### txpool\_inspect\(\)
 
-txpool\_inspect
+None
 
-_description missing_
+#### **Parameters**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Returns**
 
-| Parameter name | Type |
-| :--- | :--- |
+None
 
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### txpool\_status\(\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
 

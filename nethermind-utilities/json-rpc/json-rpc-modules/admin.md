@@ -1,70 +1,170 @@
 # Admin
 
-admin\_addPeer
+### admin\_addPeer\(enode, addToStaticNodes\)
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
-| enode | System.String |
-| addToStaticNodes | System.Boolean |
+None
 
-admin\_removePeer
+#### **Returns**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Example**
 
-| Parameter name | Type |
-| :--- | :--- |
-| enode | System.String |
-| removeFromStaticNodes | System.Boolean |
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-admin\_peers
+```
+{% endtab %}
 
-Is implemented : True
+{% tab title="Response" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
+{% endtabs %}
 
-| Parameter name | Type |
-| :--- | :--- |
+### admin\_dataDir\(\)
 
+None
 
-admin\_nodeInfo
+#### **Parameters**
 
-Relevant information about this node
+None
 
-Is implemented : True
+#### **Returns**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
+#### **Example**
 
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-admin\_dataDir
+```
+{% endtab %}
 
-Base data directory path
+{% tab title="Response" %}
+```bash
 
-Is implemented : False
+```
+{% endtab %}
+{% endtabs %}
 
-## **Parameters**
+### admin\_nodeInfo\(\)
 
-| Parameter name | Type |
-| :--- | :--- |
+None
 
+#### **Parameters**
 
-admin\_setSolc
+None
 
-\[DEPRECATED\]
+#### **Returns**
 
-Is implemented : False
+None
 
-## **Parameters**
+#### **Example**
 
-| Parameter name | Type |
-| :--- | :--- |
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+
+```
+{% endtab %}
+{% endtabs %}
+
+### admin\_peers\(\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+
+```
+{% endtab %}
+{% endtabs %}
+
+### admin\_removePeer\(enode, removeFromStaticNodes\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+
+```
+{% endtab %}
+{% endtabs %}
+
+### admin\_setSolc\(\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+
+```
+{% endtab %}
+{% endtabs %}
 

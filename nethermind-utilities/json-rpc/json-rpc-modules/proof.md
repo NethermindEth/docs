@@ -1,41 +1,88 @@
 # Proof
 
-proof\_call
+### proof\_call\(tx, blockParameter\)
 
-This function returns the same result as `eth_getTransactionByHash` and also a tx proof and a serialized block header.
+This function returns the same result as eth\_getTransactionByHash and also a tx proof and a serialized block header
 
-Is implemented : False
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| tx | Nethermind.JsonRpc.Data.TransactionForRpc |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+#### **Returns**
 
-proof\_getTransactionByHash
+None
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+#### **Example**
 
-Is implemented : True
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| includeHeader | System.Boolean |
+{% tab title="Response" %}
+```
 
-proof\_getTransactionReceipt
+```
+{% endtab %}
+{% endtabs %}
+
+### proof\_getTransactionByHash\(txHash, includeHeader\)
+
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### proof\_getTransactionReceipt\(txHash, includeHeader\)
 
 This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| includeHeader | System.Boolean |
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### 
 

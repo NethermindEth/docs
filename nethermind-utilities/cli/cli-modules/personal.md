@@ -1,114 +1,104 @@
-# Personal
+#personal
 
-### personal.listAccounts
+personal\_importRawKey
 
-None
+ 
 
-#### **Parameters**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
+| keyData | System.Byte |
+| passphrase | System.String |
 
-None
+personal\_listAccounts
 
-#### **Example**
+_description missing_ 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```text
+| Parameter name | Type |
+| :--- | :--- |
 
-```
-{% endtab %}
-{% endtabs %}
+personal\_lockAccount
 
-### personal.lockAccount\(addressHex\)
+_description missing_ 
 
-None
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
 
-#### **Returns**
+personal\_unlockAccount
 
-None
+_description missing_ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| passphrase | System.String |
 
-{% tab title="Response" %}
-```text
+personal\_newAccount
 
-```
-{% endtab %}
-{% endtabs %}
+_description missing_ 
 
-### personal.newAccount\(password\)
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
+| passphrase | System.String |
 
-None
+personal\_sendTransaction
 
-#### **Returns**
+ 
 
-None
+Is implemented : False
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
+| transaction | Nethermind.JsonRpc.Data.TransactionForRpc |
+| passphrase | System.String |
 
-```
-{% endtab %}
+personal\_ecRecover
 
-{% tab title="Response" %}
-```text
+ecRecover returns the address associated with the private key that was used to calculate the signature in personal_sign 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : False
 
-### personal.unlockAccount\(addressHex, password\)
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| message | System.Byte[] |
+| signature | System.Byte[] |
 
-#### **Parameters**
+personal\_sign
 
-None
+The sign method calculates an Ethereum specific signature with: sign(keccack256("ƞthereum Signed Message:
+" + len(message) + message))). 
 
-#### **Returns**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| message | System.Byte[] |
+| address | Nethermind.Core.Address |
+| passphrase | System.String |
 
