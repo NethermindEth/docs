@@ -1,88 +1,41 @@
-# Proof
+#proof
 
-### proof\_call\(tx, blockParameter\)
+proof\_call
 
-This function returns the same result as eth\_getTransactionByHash and also a tx proof and a serialized block header
+This function returns the same result as `eth_getTransactionByHash` and also a tx proof and a serialized block header. 
 
-#### **Parameters**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
+| tx | Nethermind.JsonRpc.Data.TransactionForRpc |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-None
+proof\_getTransactionByHash
 
-#### **Example**
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | Nethermind.Core.Crypto.Keccak |
+| includeHeader | System.Boolean |
 
-```
-{% endtab %}
-{% endtabs %}
+proof\_getTransactionReceipt
 
-### proof\_getTransactionByHash\(txHash, includeHeader\)
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### proof\_getTransactionReceipt\(txHash, includeHeader\)
-
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### 
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | Nethermind.Core.Crypto.Keccak |
+| includeHeader | System.Boolean |
 

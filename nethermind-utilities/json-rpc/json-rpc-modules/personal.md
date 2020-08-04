@@ -1,232 +1,104 @@
-# Personal
+#personal
 
-### personal\_ecRecover\(message, signature\)
+personal\_importRawKey
 
-ecRecover returns the address associated with the private key that was used to calculate the signature in `personal_sign`
+ 
 
-#### **Parameters**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
+| keyData | System.Byte |
+| passphrase | System.String |
 
-None
+personal\_listAccounts
 
-#### **Example**
+_description missing_ 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
+| Parameter name | Type |
+| :--- | :--- |
 
-```
-{% endtab %}
-{% endtabs %}
+personal\_lockAccount
 
-### personal\_importRawKey\(keyData, passphrase\)
+_description missing_ 
 
-None
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
 
-#### **Returns**
+personal\_unlockAccount
 
-None
+_description missing_ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| passphrase | System.String |
 
-{% tab title="Response" %}
-```
+personal\_newAccount
 
-```
-{% endtab %}
-{% endtabs %}
+_description missing_ 
 
-### personal\_listAccounts\(\)
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
+| passphrase | System.String |
 
-None
+personal\_sendTransaction
 
-#### **Returns**
+ 
 
-None
+Is implemented : False
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
+| transaction | Nethermind.JsonRpc.Data.TransactionForRpc |
+| passphrase | System.String |
 
-```
-{% endtab %}
+personal\_ecRecover
 
-{% tab title="Response" %}
-```
+ecRecover returns the address associated with the private key that was used to calculate the signature in personal_sign 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : False
 
-### personal\_lockAccount\(address\)
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| message | System.Byte[] |
+| signature | System.Byte[] |
 
-#### **Parameters**
+personal\_sign
 
-None
+The sign method calculates an Ethereum specific signature with: sign(keccack256("ƞthereum Signed Message:
+" + len(message) + message))). 
 
-#### **Returns**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### personal\_newAccount\(passphrase\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### personal\_sendTransaction\(transaction, passphrase\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### personal\_sign\(message, address, passphrase\)
-
-The sign method calculates an Ethereum specific signature with: 
-
-```bash
-sign(keccack256("Ethereum Signed Message:" + len(message) + message)))
-```
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### personal\_unlockAccount\(address, passphrase\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-
+| Parameter name | Type |
+| :--- | :--- |
+| message | System.Byte[] |
+| address | Nethermind.Core.Address |
+| passphrase | System.String |
 

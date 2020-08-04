@@ -1,58 +1,25 @@
-# Web3
+#web3
 
-### web3\_clientVersion\(\)
+web3\_clientVersion
 
-None
+_description missing_ 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+web3\_sha3
 
-#### **Example**
+_description missing_ 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### web3\_sha3\(data\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| data | System.Byte[] |
 

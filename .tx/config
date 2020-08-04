@@ -199,6 +199,12 @@ source_file = ethereum-client/sync-modes.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.ethereum-client-database-md]
+file_filter = ethereum-client/database.<lang>.md
+source_file = ethereum-client/database.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.ethereum-client-building-nethermind-md]
 file_filter = ethereum-client/building-nethermind.<lang>.md
 source_file = ethereum-client/building-nethermind.md
@@ -448,6 +454,12 @@ type = GITHUBMARKDOWN
 [nethermind-docs.guides-and-helpers-faq-md]
 file_filter = guides-and-helpers/faq.<lang>.md
 source_file = guides-and-helpers/faq.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-beam-wallet-md]
+file_filter = guides-and-helpers/beam-wallet.<lang>.md
+source_file = guides-and-helpers/beam-wallet.md
 source_lang = en
 type = GITHUBMARKDOWN
 

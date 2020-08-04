@@ -1,1208 +1,523 @@
-# Eth
+#eth
 
-### eth\_accounts\(\)
+eth\_chainId
 
-Returns accounts
+Returns ChainID 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+eth\_protocolVersion
 
-#### **Example**
+Returns ETH protocol version 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
+| Parameter name | Type |
+| :--- | :--- |
 
-```
-{% endtab %}
-{% endtabs %}
+eth\_syncing
 
-### eth\_blockNumber\(\)
+Returns syncing status 
 
-Returns current block number
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
 
-#### **Returns**
+eth\_coinbase
 
-None
+Returns miner's coinbase 
 
-#### **Example**
+Is implemented : False
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
 
-{% tab title="Response" %}
-```
+eth\_mining
 
-```
-{% endtab %}
-{% endtabs %}
+Returns mining status 
 
-### eth\_call\(transactionCall, blockParameter\)
+Is implemented : False
 
-Executes a tx call \(does not create a transaction\)
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+eth\_snapshot
 
-#### **Returns**
+Returns full state snapshot 
 
-None
+Is implemented : False
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
 
-```
-{% endtab %}
+eth\_hashrate
 
-{% tab title="Response" %}
-```
+Returns mining hashrate 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : False
 
-### eth\_chainId\(\)
+### **Parameters**
 
-Returns ChainID
+| Parameter name | Type |
+| :--- | :--- |
 
-#### **Parameters**
+eth\_gasPrice
 
-None
+Returns miner's gas price 
 
-#### **Returns**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Example**
+| Parameter name | Type |
+| :--- | :--- |
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+eth\_accounts
 
-```
-{% endtab %}
+Returns accounts 
 
-{% tab title="Response" %}
-```
+Is implemented : False
 
-```
-{% endtab %}
-{% endtabs %}
+### **Parameters**
 
-### eth\_coinbase\(\)
+| Parameter name | Type |
+| :--- | :--- |
 
-Returns miner’s coinbase
+eth\_blockNumber
 
-#### **Parameters**
+Returns current block number 
 
-None
+Is implemented : True
 
-#### **Returns**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
 
-#### **Example**
+eth\_getBalance
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Returns account balance 
 
-```
-{% endtab %}
+Is implemented : True
 
-{% tab title="Response" %}
-```
+### **Parameters**
 
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-### eth\_estimateGas\(transactionCall\)
+eth\_getStorageAt
 
-Executes a tx call and returns gas used \(does not create a transaction\)
+Returns storage data at address. storage_index 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-None
+eth\_getTransactionCount
 
-#### **Example**
+Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-```
-{% endtab %}
-{% endtabs %}
+eth\_getBlockTransactionCountByHash
 
-### eth\_gasPrice\(\)
+Returns number of transactions in the block block hash 
 
-Returns miner’s gas price
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| blockHash | Nethermind.Core.Crypto.Keccak |
 
-#### **Returns**
+eth\_getBlockTransactionCountByNumber
 
-None
+Returns number of transactions in the block by block number 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-{% tab title="Response" %}
-```
+eth\_getUncleCountByBlockHash
 
-```
-{% endtab %}
-{% endtabs %}
+Returns number of uncles in the block by block hash 
 
-### eth\_getBalance\(address, blockParameter\)
+Is implemented : True
 
-Returns account balance
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
+| blockHash | Nethermind.Core.Crypto.Keccak |
 
-None
+eth\_getUncleCountByBlockNumber
 
-#### **Returns**
+Returns number of uncles in the block by block number 
 
-None
+Is implemented : True
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-```
-{% endtab %}
+eth\_getCode
 
-{% tab title="Response" %}
-```
+Returns account code at given address and block 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : True
 
-### eth\_getBlockByHash\(blockHash, returnFullTransactionObjects\)
+### **Parameters**
 
-Retrieves a block by hash
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-#### **Parameters**
+eth\_sign
 
-None
+Signs a transaction 
 
-#### **Returns**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Example**
+| Parameter name | Type |
+| :--- | :--- |
+| addressData | Nethermind.Core.Address |
+| message | System.Byte[] |
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+eth\_sendTransaction
 
-```
-{% endtab %}
+Send a transaction to the tx pool and broadcasting 
 
-{% tab title="Response" %}
-```
+Is implemented : True
 
-```
-{% endtab %}
-{% endtabs %}
+### **Parameters**
 
-### eth\_getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
+| Parameter name | Type |
+| :--- | :--- |
+| transactionForRpc | Nethermind.JsonRpc.Data.TransactionForRpc |
 
-Retrieves a block by number
+eth\_sendRawTransaction
 
-#### **Parameters**
+Send a raw transaction to the tx pool and broadcasting 
 
-None
+Is implemented : True
 
-#### **Returns**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| transaction | System.Byte[] |
 
-#### **Example**
+eth\_call
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Executes a tx call (does not create a transaction) 
 
-```
-{% endtab %}
+Is implemented : True
 
-{% tab title="Response" %}
-```
+### **Parameters**
 
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| transactionCall | Nethermind.JsonRpc.Data.TransactionForRpc |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-### eth\_getBlockTransactionCountByHash\(blockHash\)
+eth\_estimateGas
 
-Returns number of transactions in the block block hash
+Executes a tx call and returns gas used (does not create a transaction) 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
+| transactionCall | Nethermind.JsonRpc.Data.TransactionForRpc |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-None
+eth\_getBlockByHash
 
-#### **Example**
+Retrieves a block by hash 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
+| Parameter name | Type |
+| :--- | :--- |
+| blockHash | Nethermind.Core.Crypto.Keccak |
+| returnFullTransactionObjects | System.Boolean |
 
-```
-{% endtab %}
-{% endtabs %}
+eth\_getBlockByNumber
 
-### eth\_getBlockTransactionCountByNumber\(blockParameter\)
+Retrieves a block by number 
 
-Returns number of transactions in the block by block number
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| returnFullTransactionObjects | System.Boolean |
 
-#### **Returns**
+eth\_getTransactionByHash
 
-None
+Retrieves a transaction by hash 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| transactionHash | Nethermind.Core.Crypto.Keccak |
 
-{% tab title="Response" %}
-```
+eth\_pendingTransactions
 
-```
-{% endtab %}
-{% endtabs %}
+Returns the pending transactions list 
 
-### eth\_getCode\(address, blockParameter\)
+Is implemented : True
 
-Returns account code at given address and block
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+eth\_getTransactionByBlockHashAndIndex
 
-#### **Returns**
+Retrieves a transaction by block hash and index 
 
-None
+Is implemented : True
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
+| blockHash | Nethermind.Core.Crypto.Keccak |
+| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
 
-```
-{% endtab %}
+eth\_getTransactionByBlockNumberAndIndex
 
-{% tab title="Response" %}
-```
+Retrieves a transaction by block number and index 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : True
 
-### eth\_getFilterChanges\(filterId\)
+### **Parameters**
 
-Reads filter changes
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
 
-#### **Parameters**
+eth\_getTransactionReceipt
 
-None
+Retrieves a transaction receipt by tx hash 
 
-#### **Returns**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Example**
+| Parameter name | Type |
+| :--- | :--- |
+| txHashData | Nethermind.Core.Crypto.Keccak |
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+eth\_getUncleByBlockHashAndIndex
 
-```
-{% endtab %}
+Retrieves an uncle block header by block hash and uncle index 
 
-{% tab title="Response" %}
-```
+Is implemented : True
 
-```
-{% endtab %}
-{% endtabs %}
+### **Parameters**
 
-### eth\_getFilterLogs\(filterId\)
+| Parameter name | Type |
+| :--- | :--- |
+| blockHashData | Nethermind.Core.Crypto.Keccak |
+| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
 
-Reads filter changes
+eth\_getUncleByBlockNumberAndIndex
 
-#### **Parameters**
+Retrieves an uncle block header by block number and uncle index 
 
-None
+Is implemented : True
 
-#### **Returns**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
 
-#### **Example**
+eth\_newFilter
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Creates an update filter 
 
-```
-{% endtab %}
+Is implemented : True
 
-{% tab title="Response" %}
-```
+### **Parameters**
 
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| filter | Nethermind.JsonRpc.Modules.Eth.Filter |
 
-### eth\_getLogs\(filter\)
+eth\_newBlockFilter
 
-Reads logs
+Creates an update filter 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+eth\_newPendingTransactionFilter
 
-#### **Example**
+Creates an update filter 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```
+| Parameter name | Type |
+| :--- | :--- |
 
-```
-{% endtab %}
-{% endtabs %}
+eth\_uninstallFilter
 
-### eth\_getProof\(accountAddress, hashRate, blockParameter\)
+Creates an update filter 
 
-[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | Nethermind.Dirichlet.Numerics.UInt256 |
 
-#### **Returns**
+eth\_getFilterChanges
 
-None
+Reads filter changes 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | Nethermind.Dirichlet.Numerics.UInt256 |
 
-{% tab title="Response" %}
-```
+eth\_getFilterLogs
 
-```
-{% endtab %}
-{% endtabs %}
+Reads filter changes 
 
-### eth\_getStorageAt\(address, positionIndex, blockParameter\)
+Is implemented : True
 
-Returns storage data at address. storage\_index
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | Nethermind.Dirichlet.Numerics.UInt256 |
 
-None
+eth\_getLogs
 
-#### **Returns**
+Reads logs 
 
-None
+Is implemented : True
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
+| filter | Nethermind.JsonRpc.Modules.Eth.Filter |
 
-```
-{% endtab %}
+eth\_getWork
 
-{% tab title="Response" %}
-```
+ 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : False
 
-### eth\_getTransactionByBlockHashAndIndex\(blockHash, positionIndex\)
+### **Parameters**
 
-Retrieves a transaction by block hash and index
+| Parameter name | Type |
+| :--- | :--- |
 
-#### **Parameters**
+eth\_submitWork
 
-None
+ 
 
-#### **Returns**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Example**
+| Parameter name | Type |
+| :--- | :--- |
+| nonce | System.Byte[] |
+| headerPowHash | Nethermind.Core.Crypto.Keccak |
+| mixDigest | System.Byte[] |
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+eth\_submitHashrate
 
-```
-{% endtab %}
+ 
 
-{% tab title="Response" %}
-```
+Is implemented : False
 
-```
-{% endtab %}
-{% endtabs %}
+### **Parameters**
 
-### eth\_getTransactionByBlockNumberAndIndex\(blockParameter, positionIndex\)
+| Parameter name | Type |
+| :--- | :--- |
+| hashRate | System.String |
+| id | System.String |
 
-Retrieves a transaction by block number and index
+eth\_getProof
 
-#### **Parameters**
+https://github.com/ethereum/EIPs/issues/1186 
 
-None
+Is implemented : True
 
-#### **Returns**
+### **Parameters**
 
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getTransactionByHash\(transactionHash\)
-
-Retrieves a transaction by hash
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getTransactionCount\(address, blockParameter\)
-
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getTransactionReceipt\(txHashData\)
-
-Retrieves a transaction receipt by tx hash
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getUncleByBlockHashAndIndex\(blockHashData, positionIndex\)
-
-Retrieves an uncle block header by block hash and uncle index
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getUncleByBlockNumberAndIndex\(blockParameter, positionIndex\)
-
-Retrieves an uncle block header by block number and uncle index
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getUncleCountByBlockHash\(blockHash\)
-
-Returns number of uncles in the block by block hash
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getUncleCountByBlockNumber\(blockParameter\)
-
-Returns number of uncles in the block by block number
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_getWork\(\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_hashrate\(\)
-
-Returns mining hashrate
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_mining\(\)
-
-Returns mining status
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_newBlockFilter\(\)
-
-Creates an update filter
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_newFilter\(filter\)
-
-Creates an update filter
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_newPendingTransactionFilter\(\)
-
-Creates an update filter
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_pendingTransactions\(\)
-
-Returns the pending transactions list
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_protocolVersion\(\)
-
-Returns ETH protocol version
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_sendRawTransaction\(transaction\)
-
-Send a raw transaction to the tx pool and broadcasting
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_sendTransaction\(transactionForRpc\)
-
-Send a transaction to the tx pool and broadcasting
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_sign\(addressData, message\)
-
-Signs a transaction
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_snapshot\(\)
-
-Returns full state snapshot
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_submitHashrate\(hashRate, id\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_submitWork\(nonce, headerPowHash, mixDigest\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_syncing\(\)
-
-Returns syncing status
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-### eth\_uninstallFilter\(filterId\)
-
-Creates an update filter
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-
-```
-{% endtab %}
-{% endtabs %}
-
-
+| Parameter name | Type |
+| :--- | :--- |
+| accountAddress | Nethermind.Core.Address |
+| hashRate | System.Byte[][] |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
