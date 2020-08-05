@@ -481,6 +481,12 @@ source_file = guides-and-helpers/rocksdbextractor.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.guides-and-helpers-ethereum-networks-synchronization-smoke-testing-with-nethermind-md]
+file_filter = guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.<lang>.md
+source_file = guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.guides-and-helpers-known-issues-md]
 file_filter = guides-and-helpers/known-issues.<lang>.md
 source_file = guides-and-helpers/known-issues.md
