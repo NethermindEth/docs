@@ -14,13 +14,13 @@ Tools and technologies used in this project:
 * [Portainer ](https://www.portainer.io/)\(to manage dockers from a single point\)
 * [Pushgateway/Prometheus](https://prometheus.io/)/[Grafana](https://grafana.com/) \(to consume the node's metrics and monitor them\)
 
-In _Nethermind_, one of the core tests to verify the correct operation of our application is the synchronization test with the Ethereum Mainnet and many other networks currently supported by _Nethermind_, such as rinkeby, ropsten, xdai, sokol, etc. 
+In _Nethermind_, one of the core tests to verify the correct operation of our application is the synchronization test with the Ethereum Mainnet and many other [networks](https://docs.nethermind.io/nethermind/ethereum-client/networks) currently supported by _Nethermind_, such as Rinkeby, Ropsten, xDai, Sokol, etc. The synchronization of an Ethereum node is generally required if you wish to have access to the current state of the network. In my example I will be testing the default synchronization method which is the`fast sync`, more on that can be found [here](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes#fast-sync).
 
 ### Components
 
 To achieve this goal, we will use the creation of complete infrastructure using tools such as _terraform_ and its wrapper _terragrunt_. Each network will be tested separately on a separate virtual machine hosted on _DigitalOcean_ which provides a very easy to use API. We will also wrap everything into a simple UI that will allow us to manage and monitor the status of our smoke tests.
 
-As a first step, we are going to create folders containing _terraform_ and _terragrunt_ files for each network.
+As a first step, we are going to create folders containing _terraform_ and _terragrunt_ files for each network. In your case, there might be some different configurations of your app which behavior you would like to test in a separate environment.
 
 ```text
 module/
@@ -104,7 +104,7 @@ EOF
 done
 ```
 
-Next, we can use the below script which also goes over each module \(Ethereum chains in our case\) and sets up a `TF_VAR_tag` a variable that defines the Nethermind version for which smoke tests will be running and then uses the power of _terragrunt_ to begin creating virtual machines with the Nethermind node already running.
+Next, we can use the below script which also goes over each module \(Ethereum chains in our case\) and sets up a `TF_VAR_tag` a variable that defines the application version for which smoke tests will be running and then uses the power of _terragrunt_ to begin creating virtual machines with the app already configured and running.
 
 ```bash
 #!/bin/bash
@@ -153,7 +153,7 @@ In the second tab, we can set up terraform variables, it is a form that will tri
 
 The third tab is used to control our infrastructure as well as the current version that is being smoke tested and the core point of our application which is the button that runs the synchronization checker \(this one changes the state and updates the dashboard on the first page\). 
 
-The fourth tab is also a form that will save the data needed for clearing Pushgateway metrics, querying Etherscan API to fetch the current head block number and path to the private key we used in `terraform.tfvars` , as we will be connecting to each VM to get the logs upon synchronization finish or on request.
+The fourth tab is also a form that will save the data needed for clearing Pushgateway metrics, querying Etherscan API to fetch the current head block number \(refers to the current number block in a blockchain\) and path to the private key we used in `terraform.tfvars` , as we will be connecting to each VM to get the logs upon synchronization finish or on request.
 
 Great! Now we have some overview of the contents of our smoke testing app. Let's go through it step by step and take a quick look behind the scenes as well.
 
@@ -161,7 +161,7 @@ Creating infrastructure can be triggered with a single button. It applies all th
 
 ![](../.gitbook/assets/creation-infra.gif)
 
-Once we have our infrastructure running, we can start the synchronization checker and watch the progress of our smoke tests. It runs the _node.js_ script which queries over JSON RPC, Etherscan and Blockscout 
+Once we have our infrastructure running, we can start the synchronization checker and watch the progress of our smoke tests. It runs the _node.js_ script which queries over JSON RPC, [Etherscan](https://etherscan.io/) and [Blockscout](https://blockscout.com/poa/sokol/) 
 
 ![](../.gitbook/assets/sync-checker.gif)
 
@@ -177,7 +177,7 @@ On the Tools tab, we may also run the [_Portainer_](https://www.portainer.io/) _
 
 ![](../.gitbook/assets/image%20%2878%29.png)
 
-Once all tests have passed, the whole infrastructure should be cleaned automatically, and we can then check the logs on the server-side if needed and look into the _Grafana_ dashboard to see how the node performed throughout the test.
+Once all tests have passed, the whole infrastructure should be cleaned automatically, and we can then check the logs on the server-side if needed and look into the _Grafana_ dashboard to see how the application performed throughout the test.
 
 ![](../.gitbook/assets/image%20%2877%29.png)
 
