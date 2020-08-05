@@ -14,7 +14,7 @@ Tools and technologies used in this project:
 * [Portainer ](https://www.portainer.io/)\(to manage dockers from a single point\)
 * [Pushgateway/Prometheus](https://prometheus.io/)/[Grafana](https://grafana.com/) \(to consume the node's metrics and monitor them\)
 
-In _Nethermind_, one of the core tests to verify the correct operation of our application is the synchronization test with the Ethereum Mainnet and many other [networks](https://docs.nethermind.io/nethermind/ethereum-client/networks) currently supported by _Nethermind_, such as Rinkeby, Ropsten, xDai, Sokol, etc. The synchronization of an Ethereum node is generally required if you wish to have access to the current state of the network. In my example I will be testing the default synchronization method which is the`fast sync`, more on that can be found [here](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes#fast-sync).
+In _Nethermind_, one of the core tests to verify the correct operation of our application is the synchronization test with the Ethereum Mainnet and many other [networks](https://docs.nethermind.io/nethermind/ethereum-client/networks) currently supported by _Nethermind_, such as Rinkeby, Ropsten, xDai, Sokol, etc. The synchronization of an Ethereum node is generally required if you wish to have access to the current state of the network. In my example, I will be testing the default synchronization method which is the`fast sync`, more on that can be found [here](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes#fast-sync).
 
 ### Components
 
