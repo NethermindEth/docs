@@ -6,7 +6,7 @@
 
 To get started you will need:
 
-* you wallet data:
+* your wallet data:
 
   * **address,**
   * **passphrase,**
