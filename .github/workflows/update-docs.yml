@@ -14,6 +14,7 @@ jobs:
           git submodule update --init
       - name: Generate new docs
         run: |
+          git clone https://github.com/NethermindEth/nethermind.git --recursive
           cd nethermind/
           git submodule update --init
           cd src/Nethermind/Nethermind.GitBook
