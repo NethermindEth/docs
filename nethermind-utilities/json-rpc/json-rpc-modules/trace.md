@@ -1,104 +1,65 @@
-# Trace
+#trace
 
-trace\_call
+##trace\_rawTransaction
 
-Is implemented : False
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| message | Nethermind.JsonRpc.Data.TransactionForRpc |
-| traceTypes | System.String\[\] |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-
-trace\_callMany
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| calls | System.ValueTuple\`3\[Nethermind.JsonRpc.Data.TransactionForRpc,System.String\[\],Nethermind.Blockchain.Find.BlockParameter\]\[\] |
+| data | `Object` |
+| traceTypes | `Object` |
 
-trace\_rawTransaction
+Return type: ``
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+##trace\_replayTransaction
 
-Is implemented : True
+ 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| data | System.Byte\[\] |
-| traceTypes | System.String\[\] |
-
-trace\_replayTransaction
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| traceTypes | System.String\[\] |
+| txHash | `Object` |
+| traceTypes | `Object` |
 
-trace\_replayBlockTransactions
+Return type: ``
 
-Is implemented : True
+##trace\_replayBlockTransactions
 
-## **Parameters**
+ 
 
-| Parameter name | Type |
-| :--- | :--- |
-| numberOrTag | Nethermind.Blockchain.Find.BlockParameter |
-| traceTypes | System.String\[\] |
-
-trace\_filter
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| fromBlock | Nethermind.Blockchain.Find.BlockParameter |
-| toBlock | Nethermind.Blockchain.Find.BlockParameter |
-| toAddress | Nethermind.Core.Address |
-| after | System.Int32 |
-| count | System.Int32 |
+| numberOrTag | `Object` |
+| traceTypes | `Object` |
 
-trace\_block
+Return type: ``
 
-Is implemented : True
+##trace\_block
 
-## **Parameters**
+ 
 
-| Parameter name | Type |
-| :--- | :--- |
-| numberOrTag | Nethermind.Blockchain.Find.BlockParameter |
-
-trace\_get
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| positions | System.Int32\[\] |
+| numberOrTag | `Object` |
 
-trace\_transaction
+Return type: ``
 
-Is implemented : True
+##trace\_transaction
 
-## **Parameters**
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
+| txHash | `Object` |
+
+Return type: ``
 

@@ -1,100 +1,49 @@
-# Personal
+#personal
 
-personal\_importRawKey
+##personal\_listAccounts
 
-Is implemented : False
+_description missing_ 
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
-| keyData | System.Byte |
-| passphrase | System.String |
+_None_
 
-personal\_listAccounts
+Return type: ``
 
-_description missing_
+##personal\_lockAccount
 
-Is implemented : True
+_description missing_ 
 
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| address | `Object` |
 
+Return type: ``
 
-personal\_lockAccount
+##personal\_unlockAccount
 
-_description missing_
+_description missing_ 
 
-Is implemented : True
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | Nethermind.Core.Address |
-
-personal\_unlockAccount
-
-_description missing_
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | Nethermind.Core.Address |
-| passphrase | System.String |
+| address | `Object` |
+| passphrase | `Object` |
 
-personal\_newAccount
+Return type: ``
 
-_description missing_
+##personal\_newAccount
 
-Is implemented : True
+_description missing_ 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| passphrase | System.String |
-
-personal\_sendTransaction
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| transaction | Nethermind.JsonRpc.Data.TransactionForRpc |
-| passphrase | System.String |
+| passphrase | `Object` |
 
-personal\_ecRecover
-
-ecRecover returns the address associated with the private key that was used to calculate the signature in personal\_sign
-
-Is implemented : False
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| message | System.Byte\[\] |
-| signature | System.Byte\[\] |
-
-personal\_sign
-
-The sign method calculates an Ethereum specific signature with: sign\(keccack256\("ƞthereum Signed Message: " + len\(message\) + message\)\)\).
-
-Is implemented : False
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| message | System.Byte\[\] |
-| address | Nethermind.Core.Address |
-| passphrase | System.String |
+Return type: ``
 

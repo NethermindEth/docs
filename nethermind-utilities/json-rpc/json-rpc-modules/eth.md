@@ -1,531 +1,399 @@
-# Eth
+#eth
 
-eth\_chainId
+##eth\_chainId
 
-Returns ChainID
+Returns ChainID 
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+_None_
 
-| Parameter name | Type |
-| :--- | :--- |
+Return type: `Quantity`
 
+##eth\_protocolVersion
 
-eth\_protocolVersion
+Returns ETH protocol version 
 
-Returns ETH protocol version
+#### **Parameters**
 
-Is implemented : True
+_None_
 
-## **Parameters**
+Return type: `String`
 
-| Parameter name | Type |
-| :--- | :--- |
+##eth\_syncing
 
+Returns syncing status 
 
-eth\_syncing
+#### **Parameters**
 
-Returns syncing status
+_None_
 
-Is implemented : True
+Return type: `Object`
 
-## **Parameters**
+##eth\_blockNumber
 
-| Parameter name | Type |
-| :--- | :--- |
+Returns current block number 
 
+#### **Parameters**
 
-eth\_coinbase
+_None_
 
-Returns miner's coinbase
+Return type: `Quantity`
 
-Is implemented : False
+##eth\_getBalance
 
-## **Parameters**
+Returns account balance 
 
-| Parameter name | Type |
-| :--- | :--- |
-
-
-eth\_mining
-
-Returns mining status
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| address | `Object` |
+| blockParameter | `Object` |
 
+Return type: `Quantity`
 
-eth\_snapshot
+##eth\_getStorageAt
 
-Returns full state snapshot
+Returns storage data at address. storage_index 
 
-Is implemented : False
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-
-
-eth\_hashrate
-
-Returns mining hashrate
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| address | `Object` |
+| positionIndex | `Object` |
+| blockParameter | `Object` |
 
+Return type: `Data`
 
-eth\_gasPrice
+##eth\_getTransactionCount
 
-Returns miner's gas price
+Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
 
-Is implemented : False
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-
-
-eth\_accounts
-
-Returns accounts
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| address | `Object` |
+| blockParameter | `Object` |
 
+Return type: `Quantity`
 
-eth\_blockNumber
+##eth\_getBlockTransactionCountByHash
 
-Returns current block number
+Returns number of transactions in the block block hash 
 
-Is implemented : True
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-
-
-eth\_getBalance
-
-Returns account balance
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | Nethermind.Core.Address |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockHash | `Object` |
 
-eth\_getStorageAt
+Return type: `Quantity`
 
-Returns storage data at address. storage\_index
+##eth\_getBlockTransactionCountByNumber
 
-Is implemented : True
+Returns number of transactions in the block by block number 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | Nethermind.Core.Address |
-| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-
-eth\_getTransactionCount
-
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | Nethermind.Core.Address |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockParameter | `Object` |
 
-eth\_getBlockTransactionCountByHash
+Return type: `Quantity`
 
-Returns number of transactions in the block block hash
+##eth\_getUncleCountByBlockHash
 
-Is implemented : True
+Returns number of uncles in the block by block hash 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-
-eth\_getBlockTransactionCountByNumber
-
-Returns number of transactions in the block by block number
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockHash | `Object` |
 
-eth\_getUncleCountByBlockHash
+Return type: `Quantity`
 
-Returns number of uncles in the block by block hash
+##eth\_getUncleCountByBlockNumber
 
-Is implemented : True
+Returns number of uncles in the block by block number 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-
-eth\_getUncleCountByBlockNumber
-
-Returns number of uncles in the block by block number
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockParameter | `Object` |
 
-eth\_getCode
+Return type: `Quantity`
 
-Returns account code at given address and block
+##eth\_getCode
 
-Is implemented : True
+Returns account code at given address and block 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | Nethermind.Core.Address |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-
-eth\_sign
-
-Signs a transaction
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| addressData | Nethermind.Core.Address |
-| message | System.Byte\[\] |
+| address | `Object` |
+| blockParameter | `Object` |
 
-eth\_sendTransaction
+Return type: `Data`
 
-Send a transaction to the tx pool and broadcasting
+##eth\_sendTransaction
 
-Is implemented : True
+Send a transaction to the tx pool and broadcasting 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transactionForRpc | Nethermind.JsonRpc.Data.TransactionForRpc |
-
-eth\_sendRawTransaction
-
-Send a raw transaction to the tx pool and broadcasting
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| transaction | System.Byte\[\] |
+| transactionForRpc | `Object` |
 
-eth\_call
+Return type: `Data`
 
-Executes a tx call \(does not create a transaction\)
+##eth\_sendRawTransaction
 
-Is implemented : True
+Send a raw transaction to the tx pool and broadcasting 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transactionCall | Nethermind.JsonRpc.Data.TransactionForRpc |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-
-eth\_estimateGas
-
-Executes a tx call and returns gas used \(does not create a transaction\)
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| transactionCall | Nethermind.JsonRpc.Data.TransactionForRpc |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| transaction | `Object` |
 
-eth\_getBlockByHash
+Return type: `Data`
 
-Retrieves a block by hash
+##eth\_call
 
-Is implemented : True
+Executes a tx call (does not create a transaction) 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-| returnFullTransactionObjects | System.Boolean |
-
-eth\_getBlockByNumber
-
-Retrieves a block by number
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-| returnFullTransactionObjects | System.Boolean |
+| transactionCall | `Object` |
+| blockParameter | `Object` |
 
-eth\_getTransactionByHash
+Return type: `String`
 
-Retrieves a transaction by hash
+##eth\_estimateGas
 
-Is implemented : True
+Executes a tx call and returns gas used (does not create a transaction) 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transactionHash | Nethermind.Core.Crypto.Keccak |
-
-eth\_pendingTransactions
-
-Returns the pending transactions list
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| transactionCall | `Object` |
+| blockParameter | `Object` |
 
+Return type: `Quantity`
 
-eth\_getTransactionByBlockHashAndIndex
+##eth\_getBlockByHash
 
-Retrieves a transaction by block hash and index
+Retrieves a block by hash 
 
-Is implemented : True
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
-
-eth\_getTransactionByBlockNumberAndIndex
-
-Retrieves a transaction by block number and index
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
+| blockHash | `Object` |
+| returnFullTransactionObjects | `Object` |
 
-eth\_getTransactionReceipt
+Return type: `Quantity`
 
-Retrieves a transaction receipt by tx hash
+##eth\_getBlockByNumber
 
-Is implemented : True
+Retrieves a block by number 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHashData | Nethermind.Core.Crypto.Keccak |
-
-eth\_getUncleByBlockHashAndIndex
-
-Retrieves an uncle block header by block hash and uncle index
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockHashData | Nethermind.Core.Crypto.Keccak |
-| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
+| blockParameter | `Object` |
+| returnFullTransactionObjects | `Object` |
 
-eth\_getUncleByBlockNumberAndIndex
+Return type: `Object`
 
-Retrieves an uncle block header by block number and uncle index
+##eth\_getTransactionByHash
 
-Is implemented : True
+Retrieves a transaction by hash 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-| positionIndex | Nethermind.Dirichlet.Numerics.UInt256 |
-
-eth\_newFilter
-
-Creates an update filter
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| filter | Nethermind.JsonRpc.Modules.Eth.Filter |
+| transactionHash | `Object` |
 
-eth\_newBlockFilter
+Return type: `Object`
 
-Creates an update filter
+##eth\_pendingTransactions
 
-Is implemented : True
+Returns the pending transactions list 
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
+_None_
 
+Return type: `Array`
 
-eth\_newPendingTransactionFilter
+##eth\_getTransactionByBlockHashAndIndex
 
-Creates an update filter
+Retrieves a transaction by block hash and index 
 
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| blockHash | `Object` |
+| positionIndex | `Object` |
 
+Return type: `Object`
 
-eth\_uninstallFilter
+##eth\_getTransactionByBlockNumberAndIndex
 
-Creates an update filter
+Retrieves a transaction by block number and index 
 
-Is implemented : True
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | Nethermind.Dirichlet.Numerics.UInt256 |
-
-eth\_getFilterChanges
-
-Reads filter changes
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| filterId | Nethermind.Dirichlet.Numerics.UInt256 |
+| blockParameter | `Object` |
+| positionIndex | `Object` |
 
-eth\_getFilterLogs
+Return type: `Object`
 
-Reads filter changes
+##eth\_getTransactionReceipt
 
-Is implemented : True
+Retrieves a transaction receipt by tx hash 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | Nethermind.Dirichlet.Numerics.UInt256 |
-
-eth\_getLogs
-
-Reads logs
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| filter | Nethermind.JsonRpc.Modules.Eth.Filter |
+| txHashData | `Object` |
 
-eth\_getWork
+Return type: `Object`
 
-Is implemented : False
+##eth\_getUncleByBlockHashAndIndex
 
-## **Parameters**
+Retrieves an uncle block header by block hash and uncle index 
 
-| Parameter name | Type |
-| :--- | :--- |
-
-
-eth\_submitWork
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| nonce | System.Byte\[\] |
-| headerPowHash | Nethermind.Core.Crypto.Keccak |
-| mixDigest | System.Byte\[\] |
+| blockHashData | `Object` |
+| positionIndex | `Object` |
 
-eth\_submitHashrate
+Return type: `Object`
 
-Is implemented : False
+##eth\_getUncleByBlockNumberAndIndex
 
-## **Parameters**
+Retrieves an uncle block header by block number and uncle index 
 
-| Parameter name | Type |
-| :--- | :--- |
-| hashRate | System.String |
-| id | System.String |
-
-eth\_getProof
-
-[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| accountAddress | Nethermind.Core.Address |
-| hashRate | System.Byte\[\]\[\] |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockParameter | `Object` |
+| positionIndex | `Object` |
+
+Return type: `Object`
+
+##eth\_newFilter
+
+Creates an update filter 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filter | `Object` |
+
+Return type: `Quantity`
+
+##eth\_newBlockFilter
+
+Creates an update filter 
+
+#### **Parameters**
+
+_None_
+
+Return type: `Quantity`
+
+##eth\_newPendingTransactionFilter
+
+Creates an update filter 
+
+#### **Parameters**
+
+_None_
+
+Return type: `Quantity`
+
+##eth\_uninstallFilter
+
+Creates an update filter 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | `Object` |
+
+Return type: `Boolean`
+
+##eth\_getFilterChanges
+
+Reads filter changes 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | `Object` |
+
+Return type: `Array`
+
+##eth\_getFilterLogs
+
+Reads filter changes 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | `Object` |
+
+Return type: `Array`
+
+##eth\_getLogs
+
+Reads logs 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filter | `Object` |
+
+Return type: `Array`
+
+##eth\_getProof
+
+https://github.com/ethereum/EIPs/issues/1186 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| accountAddress | `Object` |
+| hashRate | `Object` |
+| blockParameter | `Object` |
+
+Return type: `Object`
 

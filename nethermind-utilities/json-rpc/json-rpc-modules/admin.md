@@ -1,70 +1,48 @@
-# Admin
+#admin
 
-admin\_addPeer
+##admin\_addPeer
 
-Is implemented : True
+ 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| enode | System.String |
-| addToStaticNodes | System.Boolean |
-
-admin\_removePeer
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| enode | System.String |
-| removeFromStaticNodes | System.Boolean |
+| enode | `Object` |
+| addToStaticNodes | `Object` |
 
-admin\_peers
+Return type: `String`
 
-Is implemented : True
+##admin\_removePeer
 
-## **Parameters**
+ 
 
-| Parameter name | Type |
-| :--- | :--- |
-
-
-admin\_nodeInfo
-
-Relevant information about this node
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| enode | `Object` |
+| removeFromStaticNodes | `Object` |
 
+Return type: `String`
 
-admin\_dataDir
+##admin\_peers
 
-Base data directory path
+ 
 
-Is implemented : False
+#### **Parameters**
 
-## **Parameters**
+_None_
 
-| Parameter name | Type |
-| :--- | :--- |
+Return type: `Array`
 
+##admin\_nodeInfo
 
-admin\_setSolc
+Relevant information about this node 
 
-\[DEPRECATED\]
+#### **Parameters**
 
-Is implemented : False
+_None_
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-
+Return type: `Object`
 

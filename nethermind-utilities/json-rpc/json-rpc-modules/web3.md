@@ -1,26 +1,24 @@
-# Web3
+#web3
 
-web3\_clientVersion
+##web3\_clientVersion
 
-_description missing_
+Returns the current client version. 
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+_None_
 
-| Parameter name | Type |
-| :--- | :--- |
+Return type: `String`
 
+##web3\_sha3
 
-web3\_sha3
+Returns Keccak of the given data. 
 
-_description missing_
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| data | System.Byte\[\] |
+| data | `Object` |
+
+Return type: `Data`
 

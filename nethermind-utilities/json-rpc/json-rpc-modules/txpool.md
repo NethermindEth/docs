@@ -1,38 +1,32 @@
-# TxPool
+#txpool
 
-txpool\_status
+##txpool\_status
 
-_description missing_
+_description missing_ 
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+_None_
 
-| Parameter name | Type |
-| :--- | :--- |
+Return type: ``
 
+##txpool\_content
 
-txpool\_content
+_description missing_ 
 
-_description missing_
+#### **Parameters**
 
-Is implemented : True
+_None_
 
-## **Parameters**
+Return type: ``
 
-| Parameter name | Type |
-| :--- | :--- |
+##txpool\_inspect
 
+_description missing_ 
 
-txpool\_inspect
+#### **Parameters**
 
-_description missing_
+_None_
 
-Is implemented : True
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-
+Return type: ``
 

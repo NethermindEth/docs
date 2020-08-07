@@ -1,41 +1,28 @@
-# Proof
+#proof
 
-proof\_call
+##proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionByHash` and also a tx proof and a serialized block header.
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
 
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| tx | Nethermind.JsonRpc.Data.TransactionForRpc |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| txHash | `Object` |
+| includeHeader | `Object` |
 
-proof\_getTransactionByHash
+Return type: ``
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+##proof\_getTransactionReceipt
 
-Is implemented : True
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| includeHeader | System.Boolean |
-
-proof\_getTransactionReceipt
-
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| includeHeader | System.Boolean |
+| txHash | `Object` |
+| includeHeader | `Object` |
+
+Return type: ``
 

@@ -1,75 +1,69 @@
-# Parity
+#parity
 
-parity\_pendingTransactions
+##parity\_pendingTransactions
 
-_description missing_
+Returns a list of transactions currently in the queue. 
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+_None_
 
-| Parameter name | Type |
-| :--- | :--- |
+Return type: `Array`
 
+##parity\_getBlockReceipts
 
-parity\_getBlockReceipts
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
 
-_description missing_
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockParameter | `Object` |
 
-parity\_enode
+Return type: `Array`
 
-_description missing_
+##parity\_enode
 
-Is implemented : True
+Returns the node enode URI. 
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
+_None_
 
+Return type: `String`
 
-parity\_setEngineSigner
+##parity\_setEngineSigner
 
-_description missing_
+ 
 
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | Nethermind.Core.Address |
-| password | System.String |
+| address | `Object` |
+| password | `Object` |
 
-parity\_setEngineSignerSecret
+Return type: `Boolean`
 
-_description missing_
+##parity\_setEngineSignerSecret
 
-Is implemented : True
+ 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| privateKey | System.String |
-
-parity\_clearEngineSigner
-
-_description missing_
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
+| privateKey | `Object` |
 
+Return type: `Boolean`
+
+##parity\_clearEngineSigner
+
+ 
+
+#### **Parameters**
+
+_None_
+
+Return type: `Boolean`
 

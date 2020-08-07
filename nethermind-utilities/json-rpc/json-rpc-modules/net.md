@@ -1,62 +1,52 @@
-# Net
+#net
 
-net\_localAddress
+##net\_localAddress
 
-_description missing_
+_description missing_ 
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+_None_
 
-| Parameter name | Type |
-| :--- | :--- |
+Return type: ``
 
+##net\_localEnode
 
-net\_localEnode
+_description missing_ 
 
-_description missing_
+#### **Parameters**
 
-Is implemented : True
+_None_
 
-## **Parameters**
+Return type: ``
 
-| Parameter name | Type |
-| :--- | :--- |
+##net\_version
 
+_description missing_ 
 
-net\_version
+#### **Parameters**
 
-_description missing_
+_None_
 
-Is implemented : True
+Return type: ``
 
-## **Parameters**
+##net\_listening
 
-| Parameter name | Type |
-| :--- | :--- |
+_description missing_ 
 
+#### **Parameters**
 
-net\_listening
+_None_
 
-_description missing_
+Return type: ``
 
-Is implemented : True
+##net\_peerCount
 
-## **Parameters**
+_description missing_ 
 
-| Parameter name | Type |
-| :--- | :--- |
+#### **Parameters**
 
+_None_
 
-net\_peerCount
-
-_description missing_
-
-Is implemented : True
-
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-
+Return type: ``
 

@@ -1,251 +1,195 @@
-# Debug
+#debug
 
-debug\_getChainLevel
+##debug\_getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
 
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | System.Int64& |
+| number | `Object` |
 
-debug\_deleteChainSlice
+Return type: `Object`
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+##debug\_deleteChainSlice
 
-Is implemented : True
+Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| startNumber | System.Int64& |
-
-debug\_resetHead
-
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
+| startNumber | `Object` |
 
-debug\_traceTransaction
+Return type: `Quantity`
 
-Is implemented : True
+##debug\_resetHead
 
-## **Parameters**
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
 
-| Parameter name | Type |
-| :--- | :--- |
-| transactionHash | Nethermind.Core.Crypto.Keccak |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
-
-debug\_traceTransactionByBlockAndIndex
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-| txIndex | System.Int32 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+| blockHash | `Object` |
 
-debug\_traceTransactionByBlockhashAndIndex
+Return type: `Boolean`
 
-Is implemented : True
+##debug\_traceTransaction
 
-## **Parameters**
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-| txIndex | System.Int32 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
-
-debug\_traceBlock
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | System.Byte\[\] |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+| transactionHash | `Object` |
+| options | `Object` |
 
-debug\_traceBlockByNumber
+Return type: `Object`
 
-Is implemented : True
+##debug\_traceTransactionByBlockAndIndex
 
-## **Parameters**
+ 
 
-| Parameter name | Type |
-| :--- | :--- |
-| number | Nethermind.Dirichlet.Numerics.UInt256 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
-
-debug\_traceBlockByHash
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+| blockParameter | `Object` |
+| txIndex | `Object` |
+| options | `Object` |
 
-debug\_traceBlockFromFile
+Return type: ``
 
-Is implemented : False
+##debug\_traceTransactionByBlockhashAndIndex
 
-## **Parameters**
+ 
 
-| Parameter name | Type |
-| :--- | :--- |
-| fileName | System.String |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
-
-debug\_dumpBlock
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockHash | `Object` |
+| txIndex | `Object` |
+| options | `Object` |
 
-debug\_gcStats
+Return type: ``
 
-Is implemented : False
+##debug\_traceBlock
 
-## **Parameters**
+Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
 
-| Parameter name | Type |
-| :--- | :--- |
-
-
-debug\_getBlockRlp
-
-Retrieves a block in the RLP-serialized form.
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | System.Int64 |
+| blockRlp | `Object` |
+| options | `Object` |
 
-debug\_getBlockRlpByHash
+Return type: `Array`
 
-Retrieves a block in the RLP-serialized form.
+##debug\_traceBlockByNumber
 
-Is implemented : True
+ 
 
-## **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | Nethermind.Core.Crypto.Keccak |
-
-debug\_memStats
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| number | `Object` |
+| options | `Object` |
 
-debug\_seedHash
+Return type: ``
 
-Is implemented : False
+##debug\_traceBlockByHash
 
-## **Parameters**
+ 
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-
-debug\_setHead
-
-Is implemented : False
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| blockHash | `Object` |
+| options | `Object` |
 
-debug\_getFromDb
+Return type: ``
 
-Is implemented : False
+##debug\_getBlockRlp
 
-## **Parameters**
+Retrieves a block in the RLP-serialized form. 
 
-| Parameter name | Type |
-| :--- | :--- |
-| dbName | System.String |
-| key | System.Byte\[\] |
-
-debug\_getConfigValue
-
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| category | System.String |
-| name | System.String |
+| number | `Object` |
 
-debug\_traceTransactionInBlockByHash
+Return type: ``
 
-Is implemented : True
+##debug\_getBlockRlpByHash
 
-## **Parameters**
+Retrieves a block in the RLP-serialized form. 
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockRlp | System.Byte\[\] |
-| transactionHash | Nethermind.Core.Crypto.Keccak |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
-
-debug\_traceTransactionInBlockByIndex
-
-Is implemented : True
-
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | System.Byte\[\] |
-| txIndex | System.Int32 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+| hash | `Object` |
 
-debug\_migrateReceipts
+Return type: ``
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+##debug\_getConfigValue
 
-Is implemented : True
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
 
-## **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockNumber | System.Int64 |
+| category | `Object` |
+| name | `Object` |
+
+Return type: ``
+
+##debug\_traceTransactionInBlockByHash
+
+ 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockRlp | `Object` |
+| transactionHash | `Object` |
+| options | `Object` |
+
+Return type: ``
+
+##debug\_traceTransactionInBlockByIndex
+
+ 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockRlp | `Object` |
+| txIndex | `Object` |
+| options | `Object` |
+
+Return type: ``
+
+##debug\_migrateReceipts
+
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockNumber | `Object` |
+
+Return type: ``
 
