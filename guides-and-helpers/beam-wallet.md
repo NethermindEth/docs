@@ -36,9 +36,7 @@ After that you should be able to see this window:
 
 ![](../.gitbook/assets/image%20%2889%29.png)
 
-After a while caption "Syncing... Please wait for the updated balance." should change to your wallet balance and also the **QUIT** and **TRANSFER** buttons will appear.
-
-
+After a while caption "Syncing... Please wait for the updated balance." should change to your wallet balance and also the **QUIT** and **TRANSFER** buttons will appear. This may take a few minutes.
 
 ![](../.gitbook/assets/image%20%2887%29.png)
 
