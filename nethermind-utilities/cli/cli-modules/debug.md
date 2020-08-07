@@ -1,393 +1,280 @@
-# Debug
+#debug
 
-## debug.deleteChainSlice\(startNumber, endNumber\)
+debug\_getChainLevel
 
-Adds given node to the static nodes
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
 
-#### **Parameters**
+Is implemented : True
 
-| Parameter name | Type |
-| :--- | :--- |
-| startNumber | `int` |
-| endNumber | `int` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.getBlockRlp\(number\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| number | System.Int64& |
 
-#### **Returns**
+debug\_deleteChainSlice
 
-`String` - The enode just added to the static nodes
+Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.getBlockRlpByHash\(hash\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| startNumber | System.Int64& |
 
-#### **Returns**
+debug\_resetHead
 
-`String` - The enode just added to the static nodes
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.getChainlevel\(number\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| blockHash | Nethermind.Core.Crypto.Keccak |
 
-#### **Returns**
+debug\_traceTransaction
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.config\(category, name\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| transactionHash | Nethermind.Core.Crypto.Keccak |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_traceTransactionByBlockAndIndex
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceBlock\(rlp, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+| txIndex | System.Int32 |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_traceTransactionByBlockhashAndIndex
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceBlockByHash\(hash, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| blockHash | Nethermind.Core.Crypto.Keccak |
+| txIndex | System.Int32 |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_traceBlock
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceBlockByNumber\(number, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| blockRlp | System.Byte[] |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_traceBlockByNumber
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceTransaction\(hash, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| number | Nethermind.Dirichlet.Numerics.UInt256 |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_traceBlockByHash
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceTransactionByBlockAndIndex\(hash, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| blockHash | Nethermind.Core.Crypto.Keccak |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_traceBlockFromFile
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : False
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceTransactionByBlockhashAndIndex\(hash, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| fileName | System.String |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
 
-#### **Returns**
+debug\_dumpBlock
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : False
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceTransactionInBlockByHash\(rlp, hash, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-#### **Returns**
+debug\_gcStats
 
-`String` - The enode just added to the static nodes
+ 
 
-#### **Example**
+Is implemented : False
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
-
-## debug.traceTransactionInBlockByIndex\(rlp, index, options\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `string` |
 
-#### **Returns**
+debug\_getBlockRlp
 
-`String` - The enode just added to the static nodes
+Retrieves a block in the RLP-serialized form. 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```text
+| Parameter name | Type |
+| :--- | :--- |
+| number | System.Int64 |
 
-```
-{% endtab %}
-{% endtabs %}
+debug\_getBlockRlpByHash
+
+Retrieves a block in the RLP-serialized form. 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| hash | Nethermind.Core.Crypto.Keccak |
+
+debug\_memStats
+
+ 
+
+Is implemented : False
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+
+debug\_seedHash
+
+ 
+
+Is implemented : False
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+
+debug\_setHead
+
+ 
+
+Is implemented : False
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+
+debug\_getFromDb
+
+ 
+
+Is implemented : False
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| dbName | System.String |
+| key | System.Byte[] |
+
+debug\_getConfigValue
+
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| category | System.String |
+| name | System.String |
+
+debug\_traceTransactionInBlockByHash
+
+ 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockRlp | System.Byte[] |
+| transactionHash | Nethermind.Core.Crypto.Keccak |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+
+debug\_traceTransactionInBlockByIndex
+
+ 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockRlp | System.Byte[] |
+| txIndex | System.Int32 |
+| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+
+debug\_migrateReceipts
+
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockNumber | System.Int64 |
 

@@ -1,104 +1,256 @@
 # Trace
 
-trace\_call
+### trace\_block\(numberOrTag\)
 
-Is implemented : False
+None
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
-| message | Nethermind.JsonRpc.Data.TransactionForRpc |
-| traceTypes | System.String\[\] |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+None
 
-trace\_callMany
+#### **Returns**
 
-Is implemented : False
+None
 
-## **Parameters**
+#### **Example**
 
-| Parameter name | Type |
-| :--- | :--- |
-| calls | System.ValueTuple\`3\[Nethermind.JsonRpc.Data.TransactionForRpc,System.String\[\],Nethermind.Blockchain.Find.BlockParameter\]\[\] |
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-trace\_rawTransaction
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### trace\_call\(message, traceTypes, numberOrTag\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### trace\_callMany\(calls\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### trace\_filter\(fromBlock, toBlock, toAddress, after, count\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### trace\_get\(txHash, positions\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### trace\_rawTransaction\(data, traceTypes\)
 
 Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| data | System.Byte\[\] |
-| traceTypes | System.String\[\] |
+#### **Returns**
 
-trace\_replayTransaction
+None
 
-Is implemented : True
+#### **Example**
 
-## **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| traceTypes | System.String\[\] |
+```
+{% endtab %}
 
-trace\_replayBlockTransactions
+{% tab title="Response" %}
+```
 
-Is implemented : True
+```
+{% endtab %}
+{% endtabs %}
 
-## **Parameters**
+### trace\_replayBlockTransactions\(numberOrTag, traceTypes\)
 
-| Parameter name | Type |
-| :--- | :--- |
-| numberOrTag | Nethermind.Blockchain.Find.BlockParameter |
-| traceTypes | System.String\[\] |
+None
 
-trace\_filter
+#### **Parameters**
 
-Is implemented : False
+None
 
-## **Parameters**
+#### **Returns**
 
-| Parameter name | Type |
-| :--- | :--- |
-| fromBlock | Nethermind.Blockchain.Find.BlockParameter |
-| toBlock | Nethermind.Blockchain.Find.BlockParameter |
-| toAddress | Nethermind.Core.Address |
-| after | System.Int32 |
-| count | System.Int32 |
+None
 
-trace\_block
+#### **Example**
 
-Is implemented : True
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| numberOrTag | Nethermind.Blockchain.Find.BlockParameter |
+{% tab title="Response" %}
+```
 
-trace\_get
+```
+{% endtab %}
+{% endtabs %}
 
-Is implemented : False
+### trace\_replayTransaction\(txHash, traceTypes\)
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
-| positions | System.Int32\[\] |
+#### **Parameters**
 
-trace\_transaction
+None
 
-Is implemented : True
+#### **Returns**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | Nethermind.Core.Crypto.Keccak |
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### trace\_transaction\(txHash\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+
 

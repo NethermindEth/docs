@@ -1,62 +1,144 @@
 # Net
 
-net\_localAddress
+### net\_listening\(\)
 
-_description missing_
+None
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
+#### **Returns**
 
+None
 
-net\_localEnode
+#### **Example**
 
-_description missing_
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-Is implemented : True
+```
+{% endtab %}
 
-## **Parameters**
+{% tab title="Response" %}
+```
 
-| Parameter name | Type |
-| :--- | :--- |
+```
+{% endtab %}
+{% endtabs %}
 
+### net\_localAddress\(\)
 
-net\_version
+None
 
-_description missing_
+#### **Parameters**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Returns**
 
-| Parameter name | Type |
-| :--- | :--- |
+None
 
+#### **Example**
 
-net\_listening
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-_description missing_
+```
+{% endtab %}
 
-Is implemented : True
+{% tab title="Response" %}
+```
 
-## **Parameters**
+```
+{% endtab %}
+{% endtabs %}
 
-| Parameter name | Type |
-| :--- | :--- |
+### net\_localEnode\(\)
 
+None
 
-net\_peerCount
+#### **Parameters**
 
-_description missing_
+None
 
-Is implemented : True
+#### **Returns**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### net\_peerCount\(\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### net\_version\(\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
 
 

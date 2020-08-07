@@ -1,251 +1,616 @@
 # Debug
 
-debug\_getChainLevel
+### debug\_deleteChainSlice\(startNumber, endNumber\)
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Deletes a slice of a chain from the tree on all branches \(Nethermind specific\)
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| number | System.Int64& |
+#### **Returns**
 
-debug\_deleteChainSlice
+None
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+#### **Example**
 
-Is implemented : True
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| startNumber | System.Int64& |
+{% tab title="Response" %}
+```bash
 
-debug\_resetHead
+```
+{% endtab %}
+{% endtabs %}
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
+### debug\_dumpBlock\(blockParameter\)
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
+None
 
-debug\_traceTransaction
+#### **Returns**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Example**
 
-| Parameter name | Type |
-| :--- | :--- |
-| transactionHash | Nethermind.Core.Crypto.Keccak |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-debug\_traceTransactionByBlockAndIndex
+```
+{% endtab %}
 
-Is implemented : True
+{% tab title="Response" %}
+```
 
-## **Parameters**
+```
+{% endtab %}
+{% endtabs %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
-| txIndex | System.Int32 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+### debug\_deleteChainSlice\(startNumber, endNumber\)
 
-debug\_traceTransactionByBlockhashAndIndex
+Deletes a slice of a chain from the tree on all branches \(Nethermind specific\)
 
-Is implemented : True
+#### **Parameters**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-| txIndex | System.Int32 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+#### **Returns**
 
-debug\_traceBlock
+None
 
-Is implemented : True
+#### **Example**
 
-## **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockRlp | System.Byte\[\] |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+```
+{% endtab %}
 
-debug\_traceBlockByNumber
+{% tab title="Response" %}
+```bash
 
-Is implemented : True
+```
+{% endtab %}
+{% endtabs %}
 
-## **Parameters**
+### debug\_deleteChainSlice\(startNumber, endNumber\)
 
-| Parameter name | Type |
-| :--- | :--- |
-| number | Nethermind.Dirichlet.Numerics.UInt256 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+Deletes a slice of a chain from the tree on all branches \(Nethermind specific\)
 
-debug\_traceBlockByHash
+#### **Parameters**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Returns**
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | Nethermind.Core.Crypto.Keccak |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+None
 
-debug\_traceBlockFromFile
+#### **Example**
 
-Is implemented : False
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| fileName | System.String |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+{% tab title="Response" %}
+```bash
 
-debug\_dumpBlock
+```
+{% endtab %}
+{% endtabs %}
 
-Is implemented : False
+### debug\_gcStats\(\)
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+#### **Parameters**
 
-debug\_gcStats
+None
 
-Is implemented : False
+#### **Returns**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
+#### **Example**
 
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-debug\_getBlockRlp
+```
+{% endtab %}
 
-Retrieves a block in the RLP-serialized form.
+{% tab title="Response" %}
+```bash
 
-Is implemented : True
+```
+{% endtab %}
+{% endtabs %}
 
-## **Parameters**
+### debug\_getBlockRlp\(number\)
 
-| Parameter name | Type |
-| :--- | :--- |
-| number | System.Int64 |
+Retrieves a block in the RLP-serialized form
 
-debug\_getBlockRlpByHash
+#### **Parameters**
 
-Retrieves a block in the RLP-serialized form.
+None
 
-Is implemented : True
+#### **Returns**
 
-## **Parameters**
+None
 
-| Parameter name | Type |
-| :--- | :--- |
-| hash | Nethermind.Core.Crypto.Keccak |
+#### **Example**
 
-debug\_memStats
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-Is implemented : False
+```
+{% endtab %}
 
-## **Parameters**
+{% tab title="Response" %}
+```bash
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+```
+{% endtab %}
+{% endtabs %}
 
-debug\_seedHash
+### debug\_getBlockRlpByHash\(hash\)
 
-Is implemented : False
+Retrieves a block in the RLP-serialized form
 
-## **Parameters**
+#### **Parameters**
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+None
 
-debug\_setHead
+#### **Returns**
 
-Is implemented : False
+None
 
-## **Parameters**
+#### **Example**
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-debug\_getFromDb
+```
+{% endtab %}
 
-Is implemented : False
+{% tab title="Response" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
+{% endtabs %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| dbName | System.String |
-| key | System.Byte\[\] |
+### debug\_getChainLevel\(number\)
 
-debug\_getConfigValue
+Retrieves a representation of tree branches on a given chain level \(Nethermind specific\)
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+#### **Parameters**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Returns**
 
-| Parameter name | Type |
-| :--- | :--- |
-| category | System.String |
-| name | System.String |
+None
 
-debug\_traceTransactionInBlockByHash
+#### **Example**
 
-Is implemented : True
+{% tabs %}
+{% tab title="Request" %}
+```bash
 
-## **Parameters**
+```
+{% endtab %}
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockRlp | System.Byte\[\] |
-| transactionHash | Nethermind.Core.Crypto.Keccak |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+{% tab title="Response" %}
+```bash
 
-debug\_traceTransactionInBlockByIndex
+```
+{% endtab %}
+{% endtabs %}
 
-Is implemented : True
+### debug\_getConfigValue\(category, name\)
 
-## **Parameters**
+Retrieves the Nethermind configuration value, e.g. `JsonRpc.Enabled`
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockRlp | System.Byte\[\] |
-| txIndex | System.Int32 |
-| options | Nethermind.Evm.Tracing.GethStyle.GethTraceOptions |
+#### **Parameters**
 
-debug\_migrateReceipts
+None
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+#### **Returns**
 
-Is implemented : True
+None
 
-## **Parameters**
+#### **Example**
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockNumber | System.Int64 |
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_getFromDb\(dbName, key\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_memStats\(blockParameter\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_seedHash\(blockParameter\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_setHead\(blockParameter\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceBlock\(blockRlp, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceBlockByHash\(blockHash, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceBlockByNumber\(number, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceBlockFromFile\(fileName, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceTransaction\(transactionHash, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceTransactionByBlockAndIndex\(blockParameter, txIndex, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceTransactionByBlockhashAndIndex\(blockHash, txIndex, options\)
+
+None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceTransactionInBlockByHash\(blockRlp, transactionHash, options\)None
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+### debug\_traceTransactionInBlockByIndex\(blockRlp, txIndex, options\)
+
+#### **Parameters**
+
+None
+
+#### **Returns**
+
+None
+
+#### **Example**
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+
+```
+{% endtab %}
+{% endtabs %}
+
+
 

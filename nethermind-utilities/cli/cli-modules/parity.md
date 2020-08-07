@@ -1,58 +1,72 @@
-# Parity
+#parity
 
-### parity.getBlockReceipts\(blockParameter\)
+parity\_pendingTransactions
 
-Returns receipts from all transactions from particular block
+_description missing_ 
 
-#### **Parameters**
+Is implemented : True
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
 
-None
+parity\_getBlockReceipts
 
-#### **Example**
+_description missing_ 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : True
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```text
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-```
-{% endtab %}
-{% endtabs %}
+parity\_enode
 
-### parity.pendingTransactions\(\)
+_description missing_ 
 
-Returns the pending transactions using Parity format
+Is implemented : True
 
-#### **Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
 
-#### **Returns**
+parity\_setEngineSigner
 
-None
+_description missing_ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| address | Nethermind.Core.Address |
+| password | System.String |
 
-{% tab title="Response" %}
-```text
+parity\_setEngineSignerSecret
 
-```
-{% endtab %}
-{% endtabs %}
+_description missing_ 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| privateKey | System.String |
+
+parity\_clearEngineSigner
+
+_description missing_ 
+
+Is implemented : True
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
 

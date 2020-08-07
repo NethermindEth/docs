@@ -1,142 +1,120 @@
-# Trace
+#trace
 
-### trace.replayBlockTransactions\(blockNumber, traceTypes\)
+trace\_call
 
-Replays all transactions in a block returning the requested traces for each transaction
+ 
 
-#### **Parameters**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Returns**
+| Parameter name | Type |
+| :--- | :--- |
+| message | Nethermind.JsonRpc.Data.TransactionForRpc |
+| traceTypes | System.String[] |
+| blockParameter | Nethermind.Blockchain.Find.BlockParameter |
 
-None
+trace\_callMany
 
-#### **Example**
+ 
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+Is implemented : False
 
-```
-{% endtab %}
+### **Parameters**
 
-{% tab title="Response" %}
-```text
+| Parameter name | Type |
+| :--- | :--- |
+| calls | System.ValueTuple`3[Nethermind.JsonRpc.Data.TransactionForRpc,System.String[],Nethermind.Blockchain.Find.BlockParameter][] |
 
-```
-{% endtab %}
-{% endtabs %}
+trace\_rawTransaction
 
-### trace.replayTransaction\(txHash, traceTypes\)
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
-Replays a transaction, returning the traces
+Is implemented : True
 
-**Parameters**
+### **Parameters**
 
-None
+| Parameter name | Type |
+| :--- | :--- |
+| data | System.Byte[] |
+| traceTypes | System.String[] |
 
-#### **Returns**
+trace\_replayTransaction
 
-None
+ 
 
-#### **Example**
+Is implemented : True
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
-{% endtab %}
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | Nethermind.Core.Crypto.Keccak |
+| traceTypes | System.String[] |
 
-{% tab title="Response" %}
-```text
+trace\_replayBlockTransactions
 
-```
-{% endtab %}
-{% endtabs %}
+ 
 
-### trace.block\(blockNumber\)
+Is implemented : True
 
-Returns traces created at given block
+### **Parameters**
 
-#### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
+| numberOrTag | Nethermind.Blockchain.Find.BlockParameter |
+| traceTypes | System.String[] |
 
-None
+trace\_filter
 
-#### **Returns**
+ 
 
-None
+Is implemented : False
 
-#### **Example**
+### **Parameters**
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+| Parameter name | Type |
+| :--- | :--- |
+| fromBlock | Nethermind.Blockchain.Find.BlockParameter |
+| toBlock | Nethermind.Blockchain.Find.BlockParameter |
+| toAddress | Nethermind.Core.Address |
+| after | System.Int32 |
+| count | System.Int32 |
 
-```
-{% endtab %}
+trace\_block
 
-{% tab title="Response" %}
-```text
+ 
 
-```
-{% endtab %}
-{% endtabs %}
+Is implemented : True
 
-### trace.rawTransaction\(txData, traceTypes\)
+### **Parameters**
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+| Parameter name | Type |
+| :--- | :--- |
+| numberOrTag | Nethermind.Blockchain.Find.BlockParameter |
 
-#### **Parameters**
+trace\_get
 
-None
+ 
 
-#### **Returns**
+Is implemented : False
 
-None
+### **Parameters**
 
-#### **Example**
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | Nethermind.Core.Crypto.Keccak |
+| positions | System.Int32[] |
 
-{% tabs %}
-{% tab title="Request" %}
-```bash
+trace\_transaction
 
-```
-{% endtab %}
+ 
 
-{% tab title="Response" %}
-```text
+Is implemented : True
 
-```
-{% endtab %}
-{% endtabs %}
+### **Parameters**
 
-### trace.transaction\(txHash\)
-
-Returns all traces of given transaction
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```text
-
-```
-{% endtab %}
-{% endtabs %}
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | Nethermind.Core.Crypto.Keccak |
 
