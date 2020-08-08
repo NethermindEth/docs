@@ -124,6 +124,11 @@ And here you will find an example of a tree visitor that sums up all the account
 
         public void VisitLeaf(TrieNode node, TrieVisitContext trieVisitContext, byte[] value = null)
         {
+            if (trieVisitContext.IsStorage)
+            {
+                return;
+            }
+        
             AccountDecoder accountDecoder = new AccountDecoder();
             Account account = accountDecoder.Decode(node.Value.AsRlpStream());
             _balance += account.Balance;
