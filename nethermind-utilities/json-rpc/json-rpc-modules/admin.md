@@ -1,10 +1,8 @@
-#admin
+# Admin
 
-##admin\_addPeer
+## admin\_addPeer
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -13,11 +11,9 @@
 
 Return type: `String`
 
-##admin\_removePeer
+## admin\_removePeer
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -26,21 +22,19 @@ Return type: `String`
 
 Return type: `String`
 
-##admin\_peers
+## admin\_peers
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Array`
 
-##admin\_nodeInfo
+## admin\_nodeInfo
 
-Relevant information about this node 
+Relevant information about this node
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 

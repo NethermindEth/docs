@@ -1,20 +1,20 @@
-#parity
+# Parity
 
-##parity\_pendingTransactions
+## parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue. 
+Returns a list of transactions currently in the queue.
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Array`
 
-##parity\_getBlockReceipts
+## parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -22,21 +22,19 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 Return type: `Array`
 
-##parity\_enode
+## parity\_enode
 
-Returns the node enode URI. 
+Returns the node enode URI.
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `String`
 
-##parity\_setEngineSigner
+## parity\_setEngineSigner
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -45,11 +43,9 @@ Return type: `String`
 
 Return type: `Boolean`
 
-##parity\_setEngineSignerSecret
+## parity\_setEngineSignerSecret
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -57,11 +53,9 @@ Return type: `Boolean`
 
 Return type: `Boolean`
 
-##parity\_clearEngineSigner
+## parity\_clearEngineSigner
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 _None_
 

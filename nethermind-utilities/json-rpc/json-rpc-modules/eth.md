@@ -1,50 +1,50 @@
-#eth
+# Eth
 
-##eth\_chainId
+## eth\_chainId
 
-Returns ChainID 
+Returns ChainID
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Quantity`
 
-##eth\_protocolVersion
+## eth\_protocolVersion
 
-Returns ETH protocol version 
+Returns ETH protocol version
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `String`
 
-##eth\_syncing
+## eth\_syncing
 
-Returns syncing status 
+Returns syncing status
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Object`
 
-##eth\_blockNumber
+## eth\_blockNumber
 
-Returns current block number 
+Returns current block number
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Quantity`
 
-##eth\_getBalance
+## eth\_getBalance
 
-Returns account balance 
+Returns account balance
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -53,11 +53,11 @@ Returns account balance
 
 Return type: `Quantity`
 
-##eth\_getStorageAt
+## eth\_getStorageAt
 
-Returns storage data at address. storage_index 
+Returns storage data at address. storage\_index
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -67,11 +67,11 @@ Returns storage data at address. storage_index
 
 Return type: `Data`
 
-##eth\_getTransactionCount
+## eth\_getTransactionCount
 
-Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
+Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -80,35 +80,11 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 
 Return type: `Quantity`
 
-##eth\_getBlockTransactionCountByHash
+## eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash 
+Returns number of transactions in the block block hash
 
-#### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Object` |
-
-Return type: `Quantity`
-
-##eth\_getBlockTransactionCountByNumber
-
-Returns number of transactions in the block by block number 
-
-#### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `Object` |
-
-Return type: `Quantity`
-
-##eth\_getUncleCountByBlockHash
-
-Returns number of uncles in the block by block hash 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -116,11 +92,11 @@ Returns number of uncles in the block by block hash
 
 Return type: `Quantity`
 
-##eth\_getUncleCountByBlockNumber
+## eth\_getBlockTransactionCountByNumber
 
-Returns number of uncles in the block by block number 
+Returns number of transactions in the block by block number
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -128,11 +104,35 @@ Returns number of uncles in the block by block number
 
 Return type: `Quantity`
 
-##eth\_getCode
+## eth\_getUncleCountByBlockHash
 
-Returns account code at given address and block 
+Returns number of uncles in the block by block hash
 
-#### **Parameters**
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockHash | `Object` |
+
+Return type: `Quantity`
+
+## eth\_getUncleCountByBlockNumber
+
+Returns number of uncles in the block by block number
+
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `Object` |
+
+Return type: `Quantity`
+
+## eth\_getCode
+
+Returns account code at given address and block
+
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -141,11 +141,11 @@ Returns account code at given address and block
 
 Return type: `Data`
 
-##eth\_sendTransaction
+## eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting 
+Send a transaction to the tx pool and broadcasting
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -153,11 +153,11 @@ Send a transaction to the tx pool and broadcasting
 
 Return type: `Data`
 
-##eth\_sendRawTransaction
+## eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting 
+Send a raw transaction to the tx pool and broadcasting
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -165,11 +165,11 @@ Send a raw transaction to the tx pool and broadcasting
 
 Return type: `Data`
 
-##eth\_call
+## eth\_call
 
-Executes a tx call (does not create a transaction) 
+Executes a tx call \(does not create a transaction\)
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -178,11 +178,11 @@ Executes a tx call (does not create a transaction)
 
 Return type: `String`
 
-##eth\_estimateGas
+## eth\_estimateGas
 
-Executes a tx call and returns gas used (does not create a transaction) 
+Executes a tx call and returns gas used \(does not create a transaction\)
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -191,11 +191,11 @@ Executes a tx call and returns gas used (does not create a transaction)
 
 Return type: `Quantity`
 
-##eth\_getBlockByHash
+## eth\_getBlockByHash
 
-Retrieves a block by hash 
+Retrieves a block by hash
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -204,11 +204,11 @@ Retrieves a block by hash
 
 Return type: `Quantity`
 
-##eth\_getBlockByNumber
+## eth\_getBlockByNumber
 
-Retrieves a block by number 
+Retrieves a block by number
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -217,11 +217,11 @@ Retrieves a block by number
 
 Return type: `Object`
 
-##eth\_getTransactionByHash
+## eth\_getTransactionByHash
 
-Retrieves a transaction by hash 
+Retrieves a transaction by hash
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -229,21 +229,21 @@ Retrieves a transaction by hash
 
 Return type: `Object`
 
-##eth\_pendingTransactions
+## eth\_pendingTransactions
 
-Returns the pending transactions list 
+Returns the pending transactions list
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Array`
 
-##eth\_getTransactionByBlockHashAndIndex
+## eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index 
+Retrieves a transaction by block hash and index
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -252,11 +252,11 @@ Retrieves a transaction by block hash and index
 
 Return type: `Object`
 
-##eth\_getTransactionByBlockNumberAndIndex
+## eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index 
+Retrieves a transaction by block number and index
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -265,11 +265,11 @@ Retrieves a transaction by block number and index
 
 Return type: `Object`
 
-##eth\_getTransactionReceipt
+## eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash 
+Retrieves a transaction receipt by tx hash
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -277,11 +277,11 @@ Retrieves a transaction receipt by tx hash
 
 Return type: `Object`
 
-##eth\_getUncleByBlockHashAndIndex
+## eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index 
+Retrieves an uncle block header by block hash and uncle index
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -290,11 +290,11 @@ Retrieves an uncle block header by block hash and uncle index
 
 Return type: `Object`
 
-##eth\_getUncleByBlockNumberAndIndex
+## eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index 
+Retrieves an uncle block header by block number and uncle index
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -303,11 +303,11 @@ Retrieves an uncle block header by block number and uncle index
 
 Return type: `Object`
 
-##eth\_newFilter
+## eth\_newFilter
 
-Creates an update filter 
+Creates an update filter
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -315,31 +315,31 @@ Creates an update filter
 
 Return type: `Quantity`
 
-##eth\_newBlockFilter
+## eth\_newBlockFilter
 
-Creates an update filter 
+Creates an update filter
 
-#### **Parameters**
-
-_None_
-
-Return type: `Quantity`
-
-##eth\_newPendingTransactionFilter
-
-Creates an update filter 
-
-#### **Parameters**
+### **Parameters**
 
 _None_
 
 Return type: `Quantity`
 
-##eth\_uninstallFilter
+## eth\_newPendingTransactionFilter
 
-Creates an update filter 
+Creates an update filter
 
-#### **Parameters**
+### **Parameters**
+
+_None_
+
+Return type: `Quantity`
+
+## eth\_uninstallFilter
+
+Creates an update filter
+
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -347,23 +347,11 @@ Creates an update filter
 
 Return type: `Boolean`
 
-##eth\_getFilterChanges
+## eth\_getFilterChanges
 
-Reads filter changes 
+Reads filter changes
 
-#### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Object` |
-
-Return type: `Array`
-
-##eth\_getFilterLogs
-
-Reads filter changes 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -371,11 +359,23 @@ Reads filter changes
 
 Return type: `Array`
 
-##eth\_getLogs
+## eth\_getFilterLogs
 
-Reads logs 
+Reads filter changes
 
-#### **Parameters**
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | `Object` |
+
+Return type: `Array`
+
+## eth\_getLogs
+
+Reads logs
+
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -383,11 +383,11 @@ Reads logs
 
 Return type: `Array`
 
-##eth\_getProof
+## eth\_getProof
 
-https://github.com/ethereum/EIPs/issues/1186 
+[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
