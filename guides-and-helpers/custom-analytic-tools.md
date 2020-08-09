@@ -26,19 +26,22 @@ Just to execute the code I have added one new initialization step that invokes t
                 {
                     logger.Info("Genesis supply:");
                     SupplyVerifier supplyVerifier = new SupplyVerifier(logger);
-                    _context.StateProvider!.Accept(supplyVerifier, _context.BlockTree!.Genesis.StateRoot);
+                    StateDb stateDb = new StateDb(_context.DbProvider.StateDb.Innermost);
+                    StateDb codeDb = new StateDb(_context.DbProvider.StateDb.Innermost);
+                    StateReader stateReader = new StateReader(stateDb, codeDb, _context.LogManager);
+                    stateReader.RunTreeVisitor(supplyVerifier, _context.BlockTree!.Genesis.StateRoot);
 
                     Block head = _context.BlockTree!.Head;
                     logger.Info($"Head ({head.Number}) block supply:");
                     supplyVerifier = new SupplyVerifier(logger);
-                    _context.StateProvider.Accept(supplyVerifier, head.StateRoot);
+                    stateReader.RunTreeVisitor(supplyVerifier, head.StateRoot);
                     break;
                 }
                 case DiagnosticMode.VerifyRewards:
                     _context.BlockTree!.Accept(new RewardsVerifier(_context.LogManager), cancellationToken);
                     break;
             }
-
+    
             return Task.CompletedTask;
         }
     }
