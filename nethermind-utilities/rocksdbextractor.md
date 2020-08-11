@@ -1,4 +1,10 @@
+---
+description: This guide is targeting node developers.
+---
+
 # RocksDbExtractor
+
+This guide is targeting node developers.
 
 ## Running application
 

@@ -88,9 +88,11 @@
     * [TxPool](nethermind-utilities/cli/cli-modules/txpool.md)
     * [Web3](nethermind-utilities/cli/cli-modules/web3.md)
 * [Beam wallet](nethermind-utilities/beam-wallet.md)
+* [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
 
 ## Guides and Helpers
 
+* [FAQs](guides-and-helpers/faq.md)
 * [Custom Analytic Tools](guides-and-helpers/custom-analytic-tools.md)
 * [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
 * [Known Issues](guides-and-helpers/known-issues.md)
@@ -101,8 +103,6 @@
   * [Azure](guides-and-helpers/cloud-providers/azure.md)
   * [AWS](guides-and-helpers/cloud-providers/aws.md)
   * [Google Cloud](guides-and-helpers/cloud-providers/google-cloud.md)
-* [FAQs](guides-and-helpers/faq.md)
-* [RocksDbExtractor](guides-and-helpers/rocksdbextractor.md)
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
 * [Ethereum Networks Synchronization: Smoke Testing with Nethermind Ethereum Client](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
