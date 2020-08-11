@@ -4,10 +4,13 @@
 
 * fast sync
   * downloads only the latest state, headers, and optionally bodies and receipts
+  * you can run it like this: `./Nethermind.Runner --config mainnet`
 * beam sync
   * same as fast sync but also allows to query the chain within the first few minutes from starting
+  * you can run it like this: `./Nethermind.Runner --config mainnet_beam`
 * archive sync
   * heavy historical sync verifying all the transactions and keeping all the historical state
+  * you can run it like this `./Nethermind.Runner --config mainnet_archive`
 
 ## Fast Sync
 
