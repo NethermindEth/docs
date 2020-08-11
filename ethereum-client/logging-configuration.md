@@ -12,3 +12,13 @@ Logging in Nethermind is done via NLog library that can be configured by editing
 
 Detailed NLog configuration options can be found here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
 
+Additionally there are global logging override that you can use temporarily:
+
+| Command line override | Log level |
+| :--- | :--- |
+| ./Nethermind.Runner --config mainnet --log TRACE | TRACE |
+| ./Nethermind.Runner --config mainnet --log DEBUG | DEBUG |
+| ./Nethermind.Runner --config mainnet --log INFO | INFO |
+| ./Nethermind.Runner --config mainnet --log WARN | WARN |
+| ./Nethermind.Runner --config mainnet --log ERROR | ERROR |
+
