@@ -4,5 +4,5 @@ description: >-
   Downloads Page.
 ---
 
-# Download sources
+# Download
 
