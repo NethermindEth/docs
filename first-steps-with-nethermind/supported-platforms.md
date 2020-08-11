@@ -3,6 +3,9 @@ description: Run Nethermind from any platform of your choice
 ---
 
 # Supported platforms
+{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-windows" caption="Supported operating systems" %}
+{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-macos" caption="Supported operating systems" %}
+{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-linux" caption="Supported operating systems" %}
 
 ## Linux
 
