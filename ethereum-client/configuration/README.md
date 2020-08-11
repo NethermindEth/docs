@@ -16,7 +16,7 @@ The last way is to set the values in the environment variables, e.g. `set NETHER
 
 ### Command line
 
-Another way is to setup each configuration property by passing flags to either `Nethermind.Runner` or `Nethermind.Launcher`. For example:
+Another way is to setup each configuration property by passing flags to either `Nethermind.Runner` or `Nethermind.Launcher`. You can see the list of all config option by running `./Nethermind.Runner --help` For example:
 
 ```text
 ./Nethermind.Runner --config ropsten --JsonRpc.Enabled true --Init.ProcessingEnabled false
