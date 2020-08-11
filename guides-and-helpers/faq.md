@@ -16,7 +16,15 @@ You can find more details on running validators in the docs -&gt; for [AuRa](htt
 
 Try changing the config to a lower number \(`--Network.ActivePeersMaxCount 25`\)
 
-## 
+## Is my node synced?
+
+Your node is synced when it shows log lines starting with:
+
+`Processed ...` 
+
+And the block numbers shows are at the head of the chain.
+
+_In blockchain any node can never be 100% sure it is synced because there is no central source of truth - so your node is generally not able to tell you that it is synced but it is able to tell you that it believes it is synced based on what it know from the peers that it talks to\)._
 
 
 
