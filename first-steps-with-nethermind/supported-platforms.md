@@ -4,9 +4,9 @@ description: Run Nethermind from any platform of your choice
 
 # Supported platforms
 
-{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31" caption="Supported operating systems" %}
-
 ## Linux
+
+{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/linux?tabs=netcore31&pivots=os-linux" caption="Supported operating systems" %}
 
 | Operating System | Architecture | Tested by us |
 | :--- | :---: | :---: |
@@ -25,6 +25,8 @@ description: Run Nethermind from any platform of your choice
 
 ## Windows
 
+{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/windows?tabs=netcore31&pivots=os-windows" caption="Supported operating systems" %}
+
 | Operating System | Architecture | Tested by us |
 | :--- | :---: | :---: |
 | Windows 10 | x64 | ✔ |
@@ -33,6 +35,8 @@ description: Run Nethermind from any platform of your choice
 | Windows Vista | x64 | ✔ |
 
 ## MacOS
+
+{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/macos?tabs=netcore31&pivots=os-macos" caption="Supported operating systems" %}
 
 | Operating System | Architect**ure** | **Tested by us** |
 | :--- | :---: | :---: |
