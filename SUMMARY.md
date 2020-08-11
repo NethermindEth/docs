@@ -17,6 +17,7 @@
 
 ## Ethereum client
 
+* [Logging Configuration](ethereum-client/logging-configuration.md)
 * [Download sources](ethereum-client/download-sources/README.md)
   * [Downloads Page](http://downloads.nethermind.io/)
   * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
