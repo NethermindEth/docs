@@ -13,6 +13,8 @@ Logging in Nethermind is done via NLog library that can be configured by editing
 | from [GitHub releases page](https://github.com/NethermindEth/nethermind/releases) | top level directory after unzipping the package |
 | dAppNode | ? \[to be documented\] |
 
+#### Log config file syntax
+
 Detailed NLog configuration options can be found here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
 
 #### Global logging override
