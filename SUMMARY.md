@@ -105,7 +105,7 @@
   * [Google Cloud](guides-and-helpers/cloud-providers/google-cloud.md)
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
-* [Ethereum Networks Synchronization: Smoke Testing with Nethermind Ethereum Client](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
+* [Smoke Testing Example](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
 
 ## Enterprise
 

@@ -1,4 +1,4 @@
-# Ethereum Networks Synchronization: Smoke Testing with Nethermind Ethereum Client
+# Smoke Testing Example
 
 ### Intro
 
