@@ -50,3 +50,5 @@ Each release of Nethermind is going through the following test procedure:
 | Volta | archive | AuRa | SOON |
 | Volta | beam sync | AuRa | NO |
 
+![Example of sync test results](../.gitbook/assets/image%20%2893%29.png)
+
