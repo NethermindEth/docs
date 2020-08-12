@@ -12,6 +12,17 @@
   * heavy historical sync verifying all the transactions and keeping all the historical state
   * you can run it like this `./Nethermind.Runner --config mainnet_archive`
 
+| Sync Mode | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| archive | ~5TB | YES | YES | YES | ~3 weeks | ~3 weeks |
+| fast sync | ~300GB | YES | NO | YES | ~15 hours | ~15 hours |
+| fast sync without receipts | ~120GB | YES | NO | YES | ~10 hours | ~10 hours |
+| fast sync without bodies and receipts | ~60GB | YES | NO | NO | ~6 hours | ~6 hours |
+| beam sync | ~320GB | YES | NO | YES | ~30 hours | ~20 minutes |
+| beam sync without receipts | ~140GB | YES | NO | YES | ~20 hours | ~20 minutes |
+| beam sync without bodies and receipts | ~80GB | YES | NO | NO | ~10 hours | ~20 minutes |
+| beam sync without historical headers | ~60GB | YES | NO | NO | ~9 hours | ~5 minutes |
+
 ## Fast Sync
 
 Fast sync is probably the most popular method of syncing. After completing the fast sync your node will have the ability to answer questions like _'what is my account balance **now**'_, _'how many XYZ tokens SomeExchange holds **at the moment**'_.
