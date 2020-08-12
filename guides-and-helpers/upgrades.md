@@ -16,6 +16,7 @@ Each release of Nethermind is going through the following test procedure:
 * Ethereum tests are executed for EVM, fork choice, RLP, Trie
 * Legacy \(old network versions\) Ethereum tests are executed for EVM, fork choice, RLP, Trie
 * Hive tests for networking, sync and consensus are executed
+* Deployment of an ERC20 contract from Truffle to Nethermind spaceneth network
 * Smoke Tests are Executed for each of the following syncs:
 
 {% page-ref page="ethereum-networks-synchronization-smoke-testing-with-nethermind.md" %}
