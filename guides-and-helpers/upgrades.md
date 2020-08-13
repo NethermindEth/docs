@@ -44,11 +44,11 @@ Each release of Nethermind is going through the following test procedure:
 | xDAI | fast sync | POSDAO | YES |
 | xDAI | archive | POSDAO | YES |
 | xDAI | beam sync | POSDAO | NO |
-| EnergyWeb | fast sync | AuRa | SOON |
-| EnergyWeb | archive | AuRa | SOON |
+| EnergyWeb | fast sync | AuRa | YES |
+| EnergyWeb | archive | AuRa | YES |
 | EnergyWeb | beam sync | AuRA | NO |
-| Volta | fast sync | AuRa | SOON |
-| Volta | archive | AuRa | SOON |
+| Volta | fast sync | AuRa | YES |
+| Volta | archive | AuRa | YES |
 | Volta | beam sync | AuRa | NO |
 
 ![Example of sync test results](../.gitbook/assets/image%20%2893%29.png)
