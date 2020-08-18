@@ -5,6 +5,7 @@
 * fast sync
   * downloads only the latest state, headers, and optionally bodies and receipts
   * you can run it like this: `./Nethermind.Runner --config mainnet`
+  * if you have a good connection and a reasonable machine then setting MaxActiveSyncpeers to 256 (see SyncConfig secion in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)
 * beam sync
   * same as fast sync but also allows to query the chain within the first few minutes from starting
   * you can run it like this: `./Nethermind.Runner --config mainnet_beam`
