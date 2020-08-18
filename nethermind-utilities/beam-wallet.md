@@ -6,8 +6,6 @@
 
 ### Already have a wallet?
 
-
-
 You can use your own wallet - in that case you will need your wallet data:
 
 * **address**
