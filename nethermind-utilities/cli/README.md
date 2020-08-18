@@ -36,5 +36,5 @@ For more advanced operations with the node use [Web3](https://nethermind.readthe
 
 Below you will find the available list of CLI operations and you can find more information about each call in JSON RPC section.
 
-{% page-ref page="../../ethereum-client/json-rpc/" %}
+{% page-ref page="../json-rpc/" %}
 
