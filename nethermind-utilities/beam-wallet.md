@@ -6,7 +6,9 @@
 
 ### Already have a wallet?
 
-You can use your own wallet, in that case you will need your wallet data:
+
+
+You can use your own wallet - in that case you will need your wallet data:
 
 * **address**
 * **passphrase**
@@ -15,7 +17,7 @@ You can use your own wallet, in that case you will need your wallet data:
 {% hint style="warning" %}
 **Copy keystore file**
 
-Copy keystore file of your wallet into the **keystore** folder. It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
+Before we start, please, copy keystore file of your wallet into the **keystore** folder. It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
 {% endhint %}
 
 ### **Don't have a wallet?**
@@ -32,13 +34,17 @@ After that you should be able to see this window:
 
 ![](../.gitbook/assets/image%20%2898%29.png)
 
-* **Choose one of the two options using TAB key or Up and Down arrows.**
+* Choose one of the two options using TAB key or Up and Down arrows.
 
-### Create new wallet
+### Set an address
+
+{% tabs %}
+{% tab title="Create new wallet" %}
+**Create new wallet**
 
 ![](../.gitbook/assets/image%20%2897%29.png)
 
-* **Create a wallet by providing the passphrase in the first input and confirmation passphrase in the second one.**
+* Create a wallet by providing the passphrase in the first input and confirmation passphrase in the second one.
 
 {% hint style="warning" %}
 **Passphrase**
@@ -56,8 +62,10 @@ Never give your passphrase to anyone. Your founds can be stolen.
 Set a strong passphrase. We recommend writing it down on a paper. If you lose your passphrase we will not be able to help you. Your whole money will be gone.
 {% endhint %}
 
-* **Using the TAB key, move to the OK button and press Enter.** 
+* Using the TAB key, move to the **OK** button and press Enter. 
+{% endtab %}
 
+{% tab title="Provide an address" %}
 ### Provide an address
 
 * After choosing "Provide an address" option you will see that window:
@@ -68,19 +76,23 @@ Set a strong passphrase. We recommend writing it down on a paper. If you lose yo
 
 ![](../.gitbook/assets/image%20%28100%29.png)
 
+### 
+{% endtab %}
+{% endtabs %}
+
 ### Syncing 
 
 * After a while caption "Syncing... Please wait for the balance." should change to your wallet balance and also the **BACK** and **TRANSFER** buttons will appear. This may take a few minutes.
 
 ![](../.gitbook/assets/image%20%28103%29.png)
 
-* The first comes your ETH balance. If you are not interested in the balance of tokens \(DAI, USDT, USDC\), you can skip waiting for their balance and proceed to the transfer.
+* The first comes your ETH balance. If you are not interested in the balance of your tokens \(DAI, USDT, USDC\), you can skip it and proceed to the transfer.
 
 ![](../.gitbook/assets/image%20%2899%29.png)
 
 ![](../.gitbook/assets/image%20%2896%29.png)
 
-* Use the TAB key, move to the **TRANSFER** button and press Enter.
+* Use the TAB key, move to the **TRANSFER** button \(or **SKIP GETTING TOKEN BALANCE AND TRANSFER**\) and press Enter.
 
 ## Making transaction
 
