@@ -1,49 +1,49 @@
-# Personal
+#personal
 
-## personal\_listAccounts
+##personal\_listAccounts
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-Return type: \`\`
+Return type: ``
 
-## personal\_lockAccount
+##personal\_lockAccount
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Object` |
 
-Return type: \`\`
+Return type: ``
 
-## personal\_unlockAccount
+##personal\_unlockAccount
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Object` |
 | passphrase | `Object` |
 
-Return type: \`\`
+Return type: ``
 
-## personal\_newAccount
+##personal\_newAccount
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | passphrase | `Object` |
 
-Return type: \`\`
+Return type: ``
 
