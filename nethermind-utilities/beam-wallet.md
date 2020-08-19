@@ -10,7 +10,7 @@ Select the appropriate package based on operating system and download it.
 
 **Beam wallet** is a simple console application that allows you easily **make transactions** between two wallets.
 
-### Already have a wallet?
+### Already have a wallet
 
 You can use your own wallet - in that case you will need your wallet data:
 
@@ -24,9 +24,15 @@ You can use your own wallet - in that case you will need your wallet data:
 Before we start, please, copy keystore file of your wallet into the **keystore** folder. It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
 {% endhint %}
 
-### **Don't have a wallet?**
+### **Create new wallet**
 
 If you don't have a wallet, you can create one using **Beam wallet** application.
+
+Creating a new wallet creates a keystore file. You can find it in the **keystore** folder.
+
+![](../.gitbook/assets/image%20%28114%29.png)
+
+Copy your keystore file if you wish to use your account in the future.
 
 ## Running application
 
@@ -117,7 +123,23 @@ You will see a different window where you can provide data to make a transfer.
 
 ![](../.gitbook/assets/image%20%28101%29.png)
 
-\*\*\*\*
+## Database
 
-\*\*\*\*
+You can find database in the folder **nethermind\_db** in the downloaded package:
+
+![](../.gitbook/assets/image%20%28113%29.png)
+
+In **nethermind\_db** directory you will find folders with networks that were run using Netherming package.
+
+Choose the one that interests you
+
+![](../.gitbook/assets/image%20%28110%29.png)
+
+Inside you will find example folders:
+
+![](../.gitbook/assets/image%20%28108%29.png)
+
+
+
+
 
