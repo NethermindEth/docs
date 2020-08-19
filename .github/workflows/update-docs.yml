@@ -21,7 +21,7 @@ jobs:
           dotnet run Nethermind.GitBook.csproj
       - name: Copy updated content to root
         run: |
-          cp -r nethermind/gitbook/docs/ethereum-client/json-rpc/json-rpc-modules/* .
+          cp nethermind/gitbook/docs/ethereum-client/json-rpc/json-rpc-modules/* ethereum-client/json-rpc/json-rpc-modules/
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2.4.4
         with:
