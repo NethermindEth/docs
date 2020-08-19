@@ -4,7 +4,7 @@ description: Guide for Nethermind.Cli project which is useful for managing your 
 
 # CLI
 
-After launching `./Nethermind.Launcher` you have two options - `Ethereum Node` and `CLI`. 
+After launching `./Nethermind.Launcher` you have two options - `Ethereum Node` and `CLI`.
 
 If you launch the Node in one process and then launch the CLI in another process you will see available commands inside the CLI.
 
@@ -15,8 +15,6 @@ You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enablin
 CLI will display available options \(functions and properties\) when started.
 
 ![Nethermind.Cli view](../../.gitbook/assets/image%20%286%29.png)
-
-
 
 CLI will allow you to query the most basic info about the node quickly.
 

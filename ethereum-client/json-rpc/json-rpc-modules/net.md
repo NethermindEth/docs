@@ -1,52 +1,52 @@
-#net
+# Net
 
-##net\_localAddress
+## net\_localAddress
 
-_description missing_ 
+_description missing_
 
-#### **Parameters**
-
-_None_
-
-Return type: ``
-
-##net\_localEnode
-
-_description missing_ 
-
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-Return type: ``
+Return type: \`\`
 
-##net\_version
+## net\_localEnode
 
-_description missing_ 
+_description missing_
 
-#### **Parameters**
-
-_None_
-
-Return type: ``
-
-##net\_listening
-
-_description missing_ 
-
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-Return type: ``
+Return type: \`\`
 
-##net\_peerCount
+## net\_version
 
-_description missing_ 
+_description missing_
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-Return type: ``
+Return type: \`\`
+
+## net\_listening
+
+_description missing_
+
+### **Parameters**
+
+_None_
+
+Return type: \`\`
+
+## net\_peerCount
+
+_description missing_
+
+### **Parameters**
+
+_None_
+
+Return type: \`\`
 

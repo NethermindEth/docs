@@ -1,65 +1,57 @@
-#trace
+# Trace
 
-##trace\_rawTransaction
+## trace\_rawTransaction
 
-Traces a call to eth_sendRawTransaction without making the call, returning the traces 
+Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | data | `Object` |
 | traceTypes | `Object` |
 
-Return type: ``
+Return type: \`\`
 
-##trace\_replayTransaction
+## trace\_replayTransaction
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHash | `Object` |
 | traceTypes | `Object` |
 
-Return type: ``
+Return type: \`\`
 
-##trace\_replayBlockTransactions
+## trace\_replayBlockTransactions
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | numberOrTag | `Object` |
 | traceTypes | `Object` |
 
-Return type: ``
+Return type: \`\`
 
-##trace\_block
+## trace\_block
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | numberOrTag | `Object` |
 
-Return type: ``
+Return type: \`\`
 
-##trace\_transaction
+## trace\_transaction
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHash | `Object` |
 
-Return type: ``
+Return type: \`\`
 

@@ -9,7 +9,7 @@ Just to execute the code I have added one new initialization step that invokes t
     public class RunCustomTools : IStep
     {
         private readonly EthereumRunnerContext _context;
-        
+
         public RunCustomTools(EthereumRunnerContext context)
         {
             _context = context;
@@ -19,7 +19,7 @@ Just to execute the code I have added one new initialization step that invokes t
         {
             ILogger logger = _context.LogManager.GetClassLogger();
             IInitConfig initConfig = _context.Config<IInitConfig>();
-            
+
             switch (initConfig.DiagnosticMode)
             {
                 case DiagnosticMode.VerifySupply:
@@ -41,7 +41,7 @@ Just to execute the code I have added one new initialization step that invokes t
                     _context.BlockTree!.Accept(new RewardsVerifier(_context.LogManager), cancellationToken);
                     break;
             }
-    
+
             return Task.CompletedTask;
         }
     }
@@ -95,7 +95,7 @@ Below you will see an example of using ITreeVisitor that allows to check all the
 
         public Task<bool> VisitHeader(BlockHeader header, CancellationToken cancellationToken)
             => Task.FromResult(true);
-        
+
         public Task<LevelVisitOutcome> VisitLevelEnd(CancellationToken cancellationToken)
             => Task.FromResult(LevelVisitOutcome.None);
     }
@@ -114,7 +114,7 @@ And here you will find an example of a tree visitor that sums up all the account
         {
             _logger = logger;
         }
-            
+
         public bool ShouldVisit(Keccak nextNode) { return true; }
 
         public void VisitTree(Keccak rootHash, TrieVisitContext trieVisitContext) { }
@@ -131,12 +131,12 @@ And here you will find an example of a tree visitor that sums up all the account
             {
                 return;
             }
-        
+
             AccountDecoder accountDecoder = new AccountDecoder();
             Account account = accountDecoder.Decode(node.Value.AsRlpStream());
             _balance += account.Balance;
             _accountsVisited++;
-                
+
             _logger.Info($"Balance after visiting {_accountsVisited}: {_balance}");
         }
 

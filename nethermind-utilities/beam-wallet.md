@@ -1,8 +1,14 @@
 # Beam wallet
 
-## Description 
+## Download
 
-**Beam wallet** is a simple console application that allows you easily **make transactions** between two wallets. 
+You can find Beam wallet **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
+
+Select the appropriate package based on operating system and download it.
+
+## Description
+
+**Beam wallet** is a simple console application that allows you easily **make transactions** between two wallets.
 
 ### Already have a wallet?
 
@@ -26,7 +32,7 @@ If you don't have a wallet, you can create one using **Beam wallet** application
 
 To run application open **Nethermind.BeamWallet** file.
 
-After that you should be able to see this window: 
+After that you should be able to see this window:
 
 \(Colors of the application may vary from those shown in the pictures - it depends on your command line settings.\)
 
@@ -47,15 +53,15 @@ After that you should be able to see this window:
 {% hint style="warning" %}
 **Passphrase**
 
-**Keep it safe**  
+**Keep it safe**
 
 Do not lose your passphrase. We don't have an access to your passphrase so there is no chance of getting it back.
 
- **Do not share it**  
+**Do not share it**
 
 Never give your passphrase to anyone. Your founds can be stolen.
 
-**Write it down**  
+**Write it down**
 
 Set a strong passphrase. We recommend writing it down on a paper. If you lose your passphrase we will not be able to help you. Your whole money will be gone.
 {% endhint %}
@@ -73,12 +79,10 @@ Set a strong passphrase. We recommend writing it down on a paper. If you lose yo
 * Provide your wallet address then move to the **OK** button and press Enter
 
 ![](../.gitbook/assets/image%20%28100%29.png)
-
-### 
 {% endtab %}
 {% endtabs %}
 
-### Syncing 
+### Syncing
 
 * After a while caption "Syncing... Please wait for the balance." should change to your wallet balance and also the **BACK** and **TRANSFER** buttons will appear. This may take a few minutes.
 
@@ -113,17 +117,7 @@ You will see a different window where you can provide data to make a transfer.
 
 ![](../.gitbook/assets/image%20%28101%29.png)
 
-
-
 \*\*\*\*
 
-
-
 \*\*\*\*
-
-
-
-
-
-
 

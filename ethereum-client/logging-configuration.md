@@ -1,6 +1,6 @@
 # Logging Configuration
 
-### Log config file location
+## Log config file location
 
 Logging in Nethermind is done via NLog library that can be configured by editing the NLog.config file.
 
@@ -13,11 +13,11 @@ Logging in Nethermind is done via NLog library that can be configured by editing
 | from [GitHub releases page](https://github.com/NethermindEth/nethermind/releases) | top level directory after unzipping the package |
 | dAppNode | ? \[to be documented\] |
 
-### Log config file syntax
+## Log config file syntax
 
 Detailed NLog configuration options can be found here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
 
-### Global logging override
+## Global logging override
 
 Additionally there are global logging override that you can use temporarily:
 
@@ -29,7 +29,7 @@ Additionally there are global logging override that you can use temporarily:
 | ./Nethermind.Runner --config mainnet --log WARN | WARN |
 | ./Nethermind.Runner --config mainnet --log ERROR | ERROR |
 
-### JSON RPC logging level
+## JSON RPC logging level
 
 This can be done by including these lines in the logging configuration file:
 
@@ -39,7 +39,7 @@ This can be done by including these lines in the logging configuration file:
 <logger name="JsonRpc.*" final="true"/>
 ```
 
-### Enterprise Logging
+## Enterprise Logging
 
 See how to configure Seq [here](https://docs.nethermind.io/nethermind/enterprise/seq)
 
