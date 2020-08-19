@@ -1,5 +1,14 @@
 # Beam wallet
 
+## Features
+
+Using Beam wallet you can:
+
+* create new wallet
+* check your ETH balance
+* check your tokens balance \(DAI, USDT, USDC\)
+* make transaction
+
 ## Download
 
 You can find Beam wallet **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
