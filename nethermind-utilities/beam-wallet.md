@@ -1,47 +1,14 @@
 # Beam wallet
 
-## Features
+## Description
 
-Using Beam wallet you can:
-
-* create new wallet
-* check your ETH balance
-* check your tokens balance \(DAI, USDT, USDC\)
-* make transaction
+Beam Wallet is a proof of concept Ethereum Wallet with a console UI that lets users harness the power of beam sync. Beam Wallet is running without any external dependencies \(it automatically launches a Nethermind Node in the background\) and allows to check account balances and make simple transactions on mainnet just 5 minutes after launching.
 
 ## Download
 
 You can find Beam wallet **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
 
 Select the appropriate package based on operating system and download it.
-
-## Description
-
-**Beam wallet** is a simple console application that allows you easily **make transactions** between two wallets.
-
-### Already have a wallet
-
-You can use your own wallet - in that case you will need your wallet data:
-
-* **address**
-* **passphrase**
-* **keystore file**
-
-{% hint style="warning" %}
-**Copy keystore file**
-
-Before we start, please, copy keystore file of your wallet into the **keystore** folder. It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
-{% endhint %}
-
-### **Create new wallet**
-
-If you don't have a wallet, you can create one using **Beam wallet** application.
-
-Creating a new wallet creates a keystore file. You can find it in the **keystore** folder.
-
-![](../.gitbook/assets/image%20%28114%29.png)
-
-Copy your keystore file if you wish to use your account in the future.
 
 ## Running application
 
@@ -51,19 +18,43 @@ After that you should be able to see this window:
 
 \(Colors of the application may vary from those shown in the pictures - it depends on your command line settings.\)
 
-![](../.gitbook/assets/image%20%2898%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 * Choose one of the two options using TAB key or Up and Down arrows.
+
+### Already have an account
+
+If you already have and account you can use it - in that case you will need:
+
+* **your address**
+* **your passphrase**
+* **your keystore file**
+
+{% hint style="warning" %}
+**Copy keystore file**
+
+Before we start, please, copy keystore file of your wallet into the **keystore** folder. It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
+{% endhint %}
+
+### **Create new account**
+
+If you don't have an account, you can create one using **Beam wallet** application.
+
+Creating a new account creates a keystore file. You can find it in the **keystore** folder.
+
+![](../.gitbook/assets/image%20%28114%29.png)
+
+Copy your keystore file if you wish to use your account in the future.
 
 ### Set an address
 
 {% tabs %}
-{% tab title="Create new wallet" %}
-**Create new wallet**
+{% tab title="Create new account" %}
+**Create new account**
 
 ![](../.gitbook/assets/image%20%2897%29.png)
 
-* Create a wallet by providing the passphrase in the first input and confirmation passphrase in the second one.
+* Create an account by providing the passphrase in the first input and confirmation passphrase in the second one.
 
 {% hint style="warning" %}
 **Passphrase**
@@ -91,9 +82,11 @@ Set a strong passphrase. We recommend writing it down on a paper. If you lose yo
 
 ![](../.gitbook/assets/image%20%28107%29.png)
 
-* Provide your wallet address then move to the **OK** button and press Enter
+* Provide your wallet address.
 
 ![](../.gitbook/assets/image%20%28100%29.png)
+
+* Using the TAB key, move to the **OK** button and press Enter. 
 {% endtab %}
 {% endtabs %}
 
