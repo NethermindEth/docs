@@ -1,20 +1,20 @@
-# Web3
+#web3
 
-## web3\_clientVersion
+##web3\_clientVersion
 
-Returns the current client version.
+Returns the current client version. 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
 Return type: `String`
 
-## web3\_sha3
+##web3\_sha3
 
-Returns Keccak of the given data.
+Returns Keccak of the given data. 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
