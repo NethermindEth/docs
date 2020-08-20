@@ -50,8 +50,6 @@ Copy your keystore file if you wish to use your account in the future.
 
 {% tabs %}
 {% tab title="Create new account" %}
-**Create new account**
-
 ![](../.gitbook/assets/image%20%2897%29.png)
 
 * Create an account by providing the passphrase in the first input and confirmation passphrase in the second one.
@@ -76,8 +74,6 @@ Set a strong passphrase. We recommend writing it down on a paper. If you lose yo
 {% endtab %}
 
 {% tab title="Provide an address" %}
-### Provide an address
-
 * After choosing "Provide an address" option you will see that window:
 
 ![](../.gitbook/assets/image%20%28107%29.png)
