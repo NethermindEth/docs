@@ -133,7 +133,7 @@ You can find database in the folder **nethermind\_db** in the downloaded package
 
 In **nethermind\_db** directory you will find folders with networks that were run using Netherming package.
 
-Choose the one that interests you
+Choose the one that interests you.
 
 ![](../.gitbook/assets/image%20%28110%29.png)
 
