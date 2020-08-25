@@ -39,20 +39,6 @@ remove the no more need package **\(optional\)**
 rm [LINUX_PACKAGE_FILENAME]
 ```
 
-switch directory
-
-```text
-cd nethermind
-```
-
-start the Nethermind launcher
-
-```text
-./Nethermind.Launcher
-```
-
-to exit Nethermind press `ctrl + c`
-
 ### Manage Nethermind with systemd
 
 exit the session as user `nethermind` if still active
