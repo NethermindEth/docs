@@ -14,6 +14,7 @@
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
 * [Hardware Requirements](first-steps-with-nethermind/hardware-requirements.md)
 * [Security](first-steps-with-nethermind/security.md)
+* [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 
 ## Ethereum client
 
