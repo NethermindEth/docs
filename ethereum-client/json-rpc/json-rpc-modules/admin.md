@@ -2,13 +2,13 @@
 
 ## admin\_addPeer
 
-{% api-method method="get" host="" path="" %}
+{% api-method method="post" host="http://localhost:8545" path="" %}
 {% api-method-summary %}
 admin\_addPeer
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Does something
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -18,6 +18,18 @@ admin\_addPeer
 Means something
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+aaa
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="aaa" type="string" required=false %}
+tests
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
