@@ -1,183 +1,417 @@
-# Debug
+#debug
 
-## debug\_getChainLevel
+##debug\_getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
 
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| number | `Object` |
-
-Return type: `Object`
-
-## debug\_deleteChainSlice
-
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| startNumber | `Object` |
+| number | `Int64& object` |
 
-Return type: `Quantity`
+#### Return type
+`ChainLevelForRpc object`
 
-## debug\_resetHead
+#### Objects definition
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
+`Int64&`
+| Fields name | Type |
+| :--- | :--- |
 
-### **Parameters**
+`ChainLevelForRpc`
+| Fields name | Type |
+| :--- | :--- |
+| BlockInfos | `BlockInfoForRpc[] object` |
+| HasBlockOnMainChain | `Boolean` |
+
+##debug\_deleteChainSlice
+
+Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockHash | `Object` |
+| startNumber | `Int64& object` |
 
-Return type: `Boolean`
+#### Return type
+`Quantity`
 
-## debug\_traceTransaction
+#### Objects definition
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+`Int64&`
+| Fields name | Type |
+| :--- | :--- |
 
-### **Parameters**
+##debug\_resetHead
+
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| transactionHash | `Object` |
-| options | `Object` |
+| blockHash | `Hash` |
 
-Return type: `Object`
+#### Return type
+`Boolean`
 
-## debug\_traceTransactionByBlockAndIndex
+##debug\_traceTransaction
 
-### **Parameters**
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `Object` |
-| txIndex | `Object` |
-| options | `Object` |
-
-Return type: \`\`
-
-## debug\_traceTransactionByBlockhashAndIndex
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockHash | `Object` |
-| txIndex | `Object` |
-| options | `Object` |
+| transactionHash | `Hash` |
+| options | `GethTraceOptions object` |
 
-Return type: \`\`
+#### Return type
+`GethLikeTxTrace object`
 
-## debug\_traceBlock
+#### Objects definition
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
 
-### **Parameters**
+`GethLikeTxTrace`
+| Fields name | Type |
+| :--- | :--- |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
+
+##debug\_traceTransactionByBlockAndIndex
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | `Object` |
-| options | `Object` |
+| blockParameter | `BlockParameter object` |
+| txIndex | `Quantity` |
+| options | `GethTraceOptions object` |
 
-Return type: `Array`
+#### Return type
+`GethLikeTxTrace object`
 
-## debug\_traceBlockByNumber
+#### Objects definition
 
-### **Parameters**
+`BlockParameter`
+| Fields name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Nullable`1 object` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
+
+`GethLikeTxTrace`
+| Fields name | Type |
+| :--- | :--- |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
+
+##debug\_traceTransactionByBlockhashAndIndex
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `Object` |
-| options | `Object` |
+| blockHash | `Hash` |
+| txIndex | `Quantity` |
+| options | `GethTraceOptions object` |
 
-Return type: \`\`
+#### Return type
+`GethLikeTxTrace object`
 
-## debug\_traceBlockByHash
+#### Objects definition
 
-### **Parameters**
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
+
+`GethLikeTxTrace`
+| Fields name | Type |
+| :--- | :--- |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
+
+##debug\_traceBlock
+
+Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockHash | `Object` |
-| options | `Object` |
+| blockRlp | `Data` |
+| options | `GethTraceOptions object` |
 
-Return type: \`\`
+#### Return type
+`GethLikeTxTrace[] object`
 
-## debug\_getBlockRlp
+#### Objects definition
 
-Retrieves a block in the RLP-serialized form.
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
 
-### **Parameters**
+`GethLikeTxTrace[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+##debug\_traceBlockByNumber
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `Object` |
+| number | `Quantity` |
+| options | `GethTraceOptions object` |
 
-Return type: \`\`
+#### Return type
+`GethLikeTxTrace[] object`
 
-## debug\_getBlockRlpByHash
+#### Objects definition
 
-Retrieves a block in the RLP-serialized form.
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
 
-### **Parameters**
+`GethLikeTxTrace[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+##debug\_traceBlockByHash
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| hash | `Object` |
+| blockHash | `Hash` |
+| options | `GethTraceOptions object` |
 
-Return type: \`\`
+#### Return type
+`GethLikeTxTrace[] object`
 
-## debug\_getConfigValue
+#### Objects definition
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
 
-### **Parameters**
+`GethLikeTxTrace[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+##debug\_getBlockRlp
+
+Retrieves a block in the RLP-serialized form. 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| category | `Object` |
-| name | `Object` |
+| number | `Quantity` |
 
-Return type: \`\`
+#### Return type
+`Data`
 
-## debug\_traceTransactionInBlockByHash
+##debug\_getBlockRlpByHash
 
-### **Parameters**
+Retrieves a block in the RLP-serialized form. 
 
-| Parameter name | Type |
-| :--- | :--- |
-| blockRlp | `Object` |
-| transactionHash | `Object` |
-| options | `Object` |
-
-Return type: \`\`
-
-## debug\_traceTransactionInBlockByIndex
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockRlp | `Object` |
-| txIndex | `Object` |
-| options | `Object` |
+| hash | `Hash` |
 
-Return type: \`\`
+#### Return type
+`Data`
 
-## debug\_migrateReceipts
+##debug\_getConfigValue
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| blockNumber | `Object` |
+| category | `String` |
+| name | `String` |
 
-Return type: \`\`
+#### Return type
+`Object object`
+
+#### Objects definition
+
+`Object`
+| Fields name | Type |
+| :--- | :--- |
+
+##debug\_traceTransactionInBlockByHash
+
+ 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockRlp | `Data` |
+| transactionHash | `Hash` |
+| options | `GethTraceOptions object` |
+
+#### Return type
+`GethLikeTxTrace object`
+
+#### Objects definition
+
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
+
+`GethLikeTxTrace`
+| Fields name | Type |
+| :--- | :--- |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
+
+##debug\_traceTransactionInBlockByIndex
+
+ 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockRlp | `Data` |
+| txIndex | `Quantity` |
+| options | `GethTraceOptions object` |
+
+#### Return type
+`GethLikeTxTrace object`
+
+#### Objects definition
+
+`GethTraceOptions`
+| Fields name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
+
+`GethLikeTxTrace`
+| Fields name | Type |
+| :--- | :--- |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
+
+##debug\_migrateReceipts
+
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockNumber | `Quantity` |
+
+#### Return type
+`ResultWrapper`1 object`
+
+#### Objects definition
+
+`ResultWrapper`1`
+| Fields name | Type |
+| :--- | :--- |
+| Data | `Boolean` |
+| Result | `Result object` |
+| ErrorCode | `Quantity` |
 

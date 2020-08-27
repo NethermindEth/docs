@@ -1,57 +1,147 @@
-# Trace
+#trace
 
-## trace\_rawTransaction
+##trace\_rawTransaction
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| data | `Object` |
-| traceTypes | `Object` |
-
-Return type: \`\`
-
-## trace\_replayTransaction
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| txHash | `Object` |
-| traceTypes | `Object` |
+| data | `Data` |
+| traceTypes | `Array` |
 
-Return type: \`\`
+#### Return type
+`ParityTxTraceFromReplay object`
 
-## trace\_replayBlockTransactions
+#### Objects definition
 
-### **Parameters**
+`ParityTxTraceFromReplay`
+| Fields name | Type |
+| :--- | :--- |
+| Output | `Data` |
+| TransactionHash | `Hash` |
+| VmTrace | `ParityVmTrace object` |
+| Action | `ParityTraceAction object` |
+| StateChanges | `Dictionary`2 object` |
+
+##trace\_replayTransaction
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| numberOrTag | `Object` |
-| traceTypes | `Object` |
+| txHash | `Hash` |
+| traceTypes | `Array` |
 
-Return type: \`\`
+#### Return type
+`ParityTxTraceFromReplay object`
 
-## trace\_block
+#### Objects definition
 
-### **Parameters**
+`ParityTxTraceFromReplay`
+| Fields name | Type |
+| :--- | :--- |
+| Output | `Data` |
+| TransactionHash | `Hash` |
+| VmTrace | `ParityVmTrace object` |
+| Action | `ParityTraceAction object` |
+| StateChanges | `Dictionary`2 object` |
+
+##trace\_replayBlockTransactions
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| numberOrTag | `Object` |
+| numberOrTag | `BlockParameter object` |
+| traceTypes | `Array` |
 
-Return type: \`\`
+#### Return type
+`ParityTxTraceFromReplay[] object`
 
-## trace\_transaction
+#### Objects definition
 
-### **Parameters**
+`BlockParameter`
+| Fields name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Nullable`1 object` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`ParityTxTraceFromReplay[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+##trace\_block
+
+ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| txHash | `Object` |
+| numberOrTag | `BlockParameter object` |
 
-Return type: \`\`
+#### Return type
+`ParityTxTraceFromStore[] object`
+
+#### Objects definition
+
+`BlockParameter`
+| Fields name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Nullable`1 object` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`ParityTxTraceFromStore[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+##trace\_transaction
+
+ 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | `Hash` |
+
+#### Return type
+`ParityTxTraceFromStore[] object`
+
+#### Objects definition
+
+`ParityTxTraceFromStore[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 
