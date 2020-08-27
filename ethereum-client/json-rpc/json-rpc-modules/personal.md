@@ -1,49 +1,66 @@
-# Personal
+#personal
 
-## personal\_listAccounts
+##personal\_listAccounts
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-Return type: \`\`
+#### Return type
+`Address[] object`
 
-## personal\_lockAccount
+#### Objects definition
 
-_description missing_
+`Address[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 
-### **Parameters**
+##personal\_lockAccount
+
+_description missing_ 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| address | `Object` |
+| address | `Address` |
 
-Return type: \`\`
+#### Return type
+`Boolean`
 
-## personal\_unlockAccount
+##personal\_unlockAccount
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `Object` |
-| passphrase | `Object` |
-
-Return type: \`\`
-
-## personal\_newAccount
-
-_description missing_
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| passphrase | `Object` |
+| address | `Address` |
+| passphrase | `String` |
 
-Return type: \`\`
+#### Return type
+`Boolean`
+
+##personal\_newAccount
+
+_description missing_ 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| passphrase | `String` |
+
+#### Return type
+`Address`
 
