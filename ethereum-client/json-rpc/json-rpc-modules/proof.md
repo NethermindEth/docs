@@ -1,45 +1,49 @@
-#proof
+# Proof
 
-##proof\_getTransactionByHash
+## proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
 
-#### Return type
+### Return type
+
 `TransactionWithProof object`
 
-#### Objects definition
+### Objects definition
 
 `TransactionWithProof`
+
 | Fields name | Type |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
 | TxProof | `Byte[][] object` |
 | BlockHeader | `Data` |
 
-##proof\_getTransactionReceipt
+## proof\_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
 
-#### Return type
+### Return type
+
 `ReceiptWithProof object`
 
-#### Objects definition
+### Objects definition
 
 `ReceiptWithProof`
+
 | Fields name | Type |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |

@@ -1,19 +1,21 @@
-#parity
+# Parity
 
-##parity\_pendingTransactions
+## parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue. 
+Returns a list of transactions currently in the queue.
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-#### Return type
+### Return type
+
 `ParityTransaction[] object`
 
-#### Objects definition
+### Objects definition
 
 `ParityTransaction[]`
+
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -24,30 +26,33 @@ _None_
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
 
-##parity\_getBlockReceipts
+## parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
 
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 
-#### Return type
+### Return type
+
 `ReceiptForRpc[] object`
 
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object` |
+| BlockNumber | `Nullable`1 object\` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `ReceiptForRpc[]`
+
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -58,52 +63,50 @@ Get receipts from all transactions from particular block, more efficient than fe
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
 
-##parity\_enode
+## parity\_enode
 
-Returns the node enode URI. 
+Returns the node enode URI.
 
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-#### Return type
+### Return type
+
 `String`
 
-##parity\_setEngineSigner
+## parity\_setEngineSigner
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Address` |
 | password | `String` |
 
-#### Return type
+### Return type
+
 `Boolean`
 
-##parity\_setEngineSignerSecret
+## parity\_setEngineSignerSecret
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | privateKey | `String` |
 
-#### Return type
+### Return type
+
 `Boolean`
 
-##parity\_clearEngineSigner
+## parity\_clearEngineSigner
 
- 
-
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-#### Return type
+### Return type
+
 `Boolean`
 
