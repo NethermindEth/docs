@@ -1,45 +1,41 @@
-# Eth
+#eth
 
-## eth\_chainId
+##eth\_chainId
 
-Returns ChainID
+Returns ChainID 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
-
+#### Return type
 `Quantity`
 
-## eth\_protocolVersion
+##eth\_protocolVersion
 
-Returns ETH protocol version
+Returns ETH protocol version 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
-
+#### Return type
 `String`
 
-## eth\_syncing
+##eth\_syncing
 
-Returns syncing status
+Returns syncing status 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
-
+#### Return type
 `SyncingResult object`
 
-### Objects definition
+#### Objects definition
 
 `SyncingResult`
-
 | Fields name | Type |
 | :--- | :--- |
 | IsSyncing | `Boolean` |
@@ -47,67 +43,62 @@ _None_
 | CurrentBlock | `Quantity` |
 | HighestBlock | `Quantity` |
 
-## eth\_blockNumber
+##eth\_blockNumber
 
-Returns current block number
+Returns current block number 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
+#### Return type
+`ResultWrapper`1 object`
 
-`ResultWrapper`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`ResultWrapper`1\`
-
+`ResultWrapper`1`
 | Fields name | Type |
 | :--- | :--- |
-| Data | `Nullable`1 object\` |
+| Data | `Nullable`1 object` |
 | Result | `Result object` |
 | ErrorCode | `Quantity` |
 
-## eth\_getBalance
+##eth\_getBalance
 
-Returns account balance
+Returns account balance 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
+#### Return type
+`ResultWrapper`1 object`
 
-`ResultWrapper`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`ResultWrapper`1\`
-
+`ResultWrapper`1`
 | Fields name | Type |
 | :--- | :--- |
-| Data | `Nullable`1 object\` |
+| Data | `Nullable`1 object` |
 | Result | `Result object` |
 | ErrorCode | `Quantity` |
 
-## eth\_getStorageAt
+##eth\_getStorageAt
 
-Returns storage data at address. storage\_index
+Returns storage data at address. storage_index 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -115,377 +106,346 @@ Returns storage data at address. storage\_index
 | positionIndex | `Quantity` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
-
+#### Return type
 `Data`
 
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-## eth\_getTransactionCount
+##eth\_getTransactionCount
 
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
+Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
+#### Return type
+`ResultWrapper`1 object`
 
-`ResultWrapper`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`ResultWrapper`1\`
-
+`ResultWrapper`1`
 | Fields name | Type |
 | :--- | :--- |
-| Data | `Nullable`1 object\` |
+| Data | `Nullable`1 object` |
 | Result | `Result object` |
 | ErrorCode | `Quantity` |
 
-## eth\_getBlockTransactionCountByHash
+##eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash
+Returns number of transactions in the block block hash 
 
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Hash` |
-
-### Return type
-
-`Nullable`1 object\`
-
-### Objects definition
-
-`Nullable`1\`
-
-| Fields name | Type |
-| :--- | :--- |
-| HasValue | `Boolean` |
-| Value | `Quantity` |
-
-## eth\_getBlockTransactionCountByNumber
-
-Returns number of transactions in the block by block number
-
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
-
-### Return type
-
-`Nullable`1 object\`
-
-### Objects definition
-
-`BlockParameter`
-
-| Fields name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
-
-`Nullable`1\`
-
-| Fields name | Type |
-| :--- | :--- |
-| HasValue | `Boolean` |
-| Value | `Quantity` |
-
-## eth\_getUncleCountByBlockHash
-
-Returns number of uncles in the block by block hash
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHash | `Hash` |
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Quantity` |
 
-## eth\_getUncleCountByBlockNumber
+##eth\_getBlockTransactionCountByNumber
 
-Returns number of uncles in the block by block number
+Returns number of transactions in the block by block number 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Quantity` |
 
-## eth\_getCode
+##eth\_getUncleCountByBlockHash
 
-Returns account code at given address and block
+Returns number of uncles in the block by block hash 
 
-### **Parameters**
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockHash | `Hash` |
+
+#### Return type
+`Nullable`1 object`
+
+#### Objects definition
+
+`Nullable`1`
+| Fields name | Type |
+| :--- | :--- |
+| HasValue | `Boolean` |
+| Value | `Quantity` |
+
+##eth\_getUncleCountByBlockNumber
+
+Returns number of uncles in the block by block number 
+
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `BlockParameter object` |
+
+#### Return type
+`Nullable`1 object`
+
+#### Objects definition
+
+`BlockParameter`
+| Fields name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Nullable`1 object` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`Nullable`1`
+| Fields name | Type |
+| :--- | :--- |
+| HasValue | `Boolean` |
+| Value | `Quantity` |
+
+##eth\_getCode
+
+Returns account code at given address and block 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
-
+#### Return type
 `Data`
 
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-## eth\_sendTransaction
+##eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting
+Send a transaction to the tx pool and broadcasting 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | transactionForRpc | `TransactionForRpc object` |
 
-### Return type
+#### Return type
+`ResultWrapper`1 object`
 
-`ResultWrapper`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `TransactionForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
-| Nonce | `Nullable`1 object\` |
+| Nonce | `Nullable`1 object` |
 | BlockHash | `Hash` |
-| BlockNumber | `Nullable`1 object\` |
-| TransactionIndex | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
+| TransactionIndex | `Nullable`1 object` |
 | From | `Address` |
 | To | `Address` |
-| Value | `Nullable`1 object\` |
-| GasPrice | `Nullable`1 object\` |
-| Gas | `Nullable`1 object\` |
+| Value | `Nullable`1 object` |
+| GasPrice | `Nullable`1 object` |
+| Gas | `Nullable`1 object` |
 | Data | `Data` |
 | Input | `Data` |
-| V | `Nullable`1 object\` |
+| V | `Nullable`1 object` |
 | S | `Data` |
 | R | `Data` |
 
-`ResultWrapper`1\`
-
+`ResultWrapper`1`
 | Fields name | Type |
 | :--- | :--- |
 | Data | `Hash` |
 | Result | `Result object` |
 | ErrorCode | `Quantity` |
 
-## eth\_sendRawTransaction
+##eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting
+Send a raw transaction to the tx pool and broadcasting 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | transaction | `Data` |
 
-### Return type
+#### Return type
+`ResultWrapper`1 object`
 
-`ResultWrapper`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`ResultWrapper`1\`
-
+`ResultWrapper`1`
 | Fields name | Type |
 | :--- | :--- |
 | Data | `Hash` |
 | Result | `Result object` |
 | ErrorCode | `Quantity` |
 
-## eth\_call
+##eth\_call
 
-Executes a tx call \(does not create a transaction\)
+Executes a tx call (does not create a transaction) 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
-
+#### Return type
 `String`
 
-### Objects definition
+#### Objects definition
 
 `TransactionForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
-| Nonce | `Nullable`1 object\` |
+| Nonce | `Nullable`1 object` |
 | BlockHash | `Hash` |
-| BlockNumber | `Nullable`1 object\` |
-| TransactionIndex | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
+| TransactionIndex | `Nullable`1 object` |
 | From | `Address` |
 | To | `Address` |
-| Value | `Nullable`1 object\` |
-| GasPrice | `Nullable`1 object\` |
-| Gas | `Nullable`1 object\` |
+| Value | `Nullable`1 object` |
+| GasPrice | `Nullable`1 object` |
+| Gas | `Nullable`1 object` |
 | Data | `Data` |
 | Input | `Data` |
-| V | `Nullable`1 object\` |
+| V | `Nullable`1 object` |
 | S | `Data` |
 | R | `Data` |
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-## eth\_estimateGas
+##eth\_estimateGas
 
-Executes a tx call and returns gas used \(does not create a transaction\)
+Executes a tx call and returns gas used (does not create a transaction) 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `TransactionForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
-| Nonce | `Nullable`1 object\` |
+| Nonce | `Nullable`1 object` |
 | BlockHash | `Hash` |
-| BlockNumber | `Nullable`1 object\` |
-| TransactionIndex | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
+| TransactionIndex | `Nullable`1 object` |
 | From | `Address` |
 | To | `Address` |
-| Value | `Nullable`1 object\` |
-| GasPrice | `Nullable`1 object\` |
-| Gas | `Nullable`1 object\` |
+| Value | `Nullable`1 object` |
+| GasPrice | `Nullable`1 object` |
+| Gas | `Nullable`1 object` |
 | Data | `Data` |
 | Input | `Data` |
-| V | `Nullable`1 object\` |
+| V | `Nullable`1 object` |
 | S | `Data` |
 | R | `Data` |
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Quantity` |
 
-## eth\_getBlockByHash
+##eth\_getBlockByHash
 
-Retrieves a block by hash
+Retrieves a block by hash 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHash | `Hash` |
 | returnFullTransactionObjects | `Boolean` |
 
-### Return type
-
+#### Return type
 `BlockForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `BlockForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -498,48 +458,45 @@ Retrieves a block by hash
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
-| Number | `Nullable`1 object\` |
+| Number | `Nullable`1 object` |
 | ParentHash | `Hash` |
 | ReceiptsRoot | `Hash` |
 | Sha3Uncles | `Hash` |
 | Signature | `Data` |
 | Size | `Quantity` |
 | StateRoot | `Hash` |
-| Step | `Nullable`1 object\` |
+| Step | `Nullable`1 object` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object\` |
+| Transactions | `IEnumerable`1 object` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object\` |
+| Uncles | `IEnumerable`1 object` |
 
-## eth\_getBlockByNumber
+##eth\_getBlockByNumber
 
-Retrieves a block by number
+Retrieves a block by number 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | returnFullTransactionObjects | `Boolean` |
 
-### Return type
-
+#### Return type
 `BlockForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -552,72 +509,68 @@ Retrieves a block by number
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
-| Number | `Nullable`1 object\` |
+| Number | `Nullable`1 object` |
 | ParentHash | `Hash` |
 | ReceiptsRoot | `Hash` |
 | Sha3Uncles | `Hash` |
 | Signature | `Data` |
 | Size | `Quantity` |
 | StateRoot | `Hash` |
-| Step | `Nullable`1 object\` |
+| Step | `Nullable`1 object` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object\` |
+| Transactions | `IEnumerable`1 object` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object\` |
+| Uncles | `IEnumerable`1 object` |
 
-## eth\_getTransactionByHash
+##eth\_getTransactionByHash
 
-Retrieves a transaction by hash
+Retrieves a transaction by hash 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | transactionHash | `Hash` |
 
-### Return type
-
+#### Return type
 `TransactionForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `TransactionForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
-| Nonce | `Nullable`1 object\` |
+| Nonce | `Nullable`1 object` |
 | BlockHash | `Hash` |
-| BlockNumber | `Nullable`1 object\` |
-| TransactionIndex | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
+| TransactionIndex | `Nullable`1 object` |
 | From | `Address` |
 | To | `Address` |
-| Value | `Nullable`1 object\` |
-| GasPrice | `Nullable`1 object\` |
-| Gas | `Nullable`1 object\` |
+| Value | `Nullable`1 object` |
+| GasPrice | `Nullable`1 object` |
+| Gas | `Nullable`1 object` |
 | Data | `Data` |
 | Input | `Data` |
-| V | `Nullable`1 object\` |
+| V | `Nullable`1 object` |
 | S | `Data` |
 | R | `Data` |
 
-## eth\_pendingTransactions
+##eth\_pendingTransactions
 
-Returns the pending transactions list
+Returns the pending transactions list 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
-
+#### Return type
 `TransactionForRpc[] object`
 
-### Objects definition
+#### Objects definition
 
 `TransactionForRpc[]`
-
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -628,132 +581,123 @@ _None_
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
 
-## eth\_getTransactionByBlockHashAndIndex
+##eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index
+Retrieves a transaction by block hash and index 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHash | `Hash` |
 | positionIndex | `Quantity` |
 
-### Return type
-
+#### Return type
 `TransactionForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `TransactionForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
-| Nonce | `Nullable`1 object\` |
+| Nonce | `Nullable`1 object` |
 | BlockHash | `Hash` |
-| BlockNumber | `Nullable`1 object\` |
-| TransactionIndex | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
+| TransactionIndex | `Nullable`1 object` |
 | From | `Address` |
 | To | `Address` |
-| Value | `Nullable`1 object\` |
-| GasPrice | `Nullable`1 object\` |
-| Gas | `Nullable`1 object\` |
+| Value | `Nullable`1 object` |
+| GasPrice | `Nullable`1 object` |
+| Gas | `Nullable`1 object` |
 | Data | `Data` |
 | Input | `Data` |
-| V | `Nullable`1 object\` |
+| V | `Nullable`1 object` |
 | S | `Data` |
 | R | `Data` |
 
-## eth\_getTransactionByBlockNumberAndIndex
+##eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index
+Retrieves a transaction by block number and index 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
 
-### Return type
-
+#### Return type
 `TransactionForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `TransactionForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
-| Nonce | `Nullable`1 object\` |
+| Nonce | `Nullable`1 object` |
 | BlockHash | `Hash` |
-| BlockNumber | `Nullable`1 object\` |
-| TransactionIndex | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
+| TransactionIndex | `Nullable`1 object` |
 | From | `Address` |
 | To | `Address` |
-| Value | `Nullable`1 object\` |
-| GasPrice | `Nullable`1 object\` |
-| Gas | `Nullable`1 object\` |
+| Value | `Nullable`1 object` |
+| GasPrice | `Nullable`1 object` |
+| Gas | `Nullable`1 object` |
 | Data | `Data` |
 | Input | `Data` |
-| V | `Nullable`1 object\` |
+| V | `Nullable`1 object` |
 | S | `Data` |
 | R | `Data` |
 
-## eth\_getTransactionReceipt
+##eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash
+Retrieves a transaction receipt by tx hash 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHashData | `Hash` |
 
-### Return type
+#### Return type
+`ResultWrapper`1 object`
 
-`ResultWrapper`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`ResultWrapper`1\`
-
+`ResultWrapper`1`
 | Fields name | Type |
 | :--- | :--- |
 | Data | `ReceiptForRpc object` |
 | Result | `Result object` |
 | ErrorCode | `Quantity` |
 
-## eth\_getUncleByBlockHashAndIndex
+##eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index
+Retrieves an uncle block header by block hash and uncle index 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHashData | `Hash` |
 | positionIndex | `Quantity` |
 
-### Return type
-
+#### Return type
 `BlockForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `BlockForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -766,48 +710,45 @@ Retrieves an uncle block header by block hash and uncle index
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
-| Number | `Nullable`1 object\` |
+| Number | `Nullable`1 object` |
 | ParentHash | `Hash` |
 | ReceiptsRoot | `Hash` |
 | Sha3Uncles | `Hash` |
 | Signature | `Data` |
 | Size | `Quantity` |
 | StateRoot | `Hash` |
-| Step | `Nullable`1 object\` |
+| Step | `Nullable`1 object` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object\` |
+| Transactions | `IEnumerable`1 object` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object\` |
+| Uncles | `IEnumerable`1 object` |
 
-## eth\_getUncleByBlockNumberAndIndex
+##eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index
+Retrieves an uncle block header by block number and uncle index 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
 
-### Return type
-
+#### Return type
 `BlockForRpc object`
 
-### Objects definition
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -820,197 +761,178 @@ Retrieves an uncle block header by block number and uncle index
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
-| Number | `Nullable`1 object\` |
+| Number | `Nullable`1 object` |
 | ParentHash | `Hash` |
 | ReceiptsRoot | `Hash` |
 | Sha3Uncles | `Hash` |
 | Signature | `Data` |
 | Size | `Quantity` |
 | StateRoot | `Hash` |
-| Step | `Nullable`1 object\` |
+| Step | `Nullable`1 object` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object\` |
+| Transactions | `IEnumerable`1 object` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object\` |
+| Uncles | `IEnumerable`1 object` |
 
-## eth\_newFilter
+##eth\_newFilter
 
-Creates an update filter
+Creates an update filter 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | filter | `Filter object` |
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `Filter`
-
 | Fields name | Type |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
 | Address | `Object object` |
-| Topics | `IEnumerable`1 object\` |
+| Topics | `IEnumerable`1 object` |
 
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Quantity` |
 
-## eth\_newBlockFilter
+##eth\_newBlockFilter
 
-Creates an update filter
+Creates an update filter 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Quantity` |
 
-## eth\_newPendingTransactionFilter
+##eth\_newPendingTransactionFilter
 
-Creates an update filter
+Creates an update filter 
 
-### **Parameters**
+#### **Parameters**
 
 _None_
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Quantity` |
 
-## eth\_uninstallFilter
+##eth\_uninstallFilter
 
-Creates an update filter
+Creates an update filter 
 
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | filterId | `Quantity` |
 
-### Return type
+#### Return type
+`Nullable`1 object`
 
-`Nullable`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`Nullable`1\`
-
+`Nullable`1`
 | Fields name | Type |
 | :--- | :--- |
 | HasValue | `Boolean` |
 | Value | `Boolean` |
 
-## eth\_getFilterChanges
+##eth\_getFilterChanges
 
-Reads filter changes
+Reads filter changes 
 
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Quantity` |
-
-### Return type
-
-`IEnumerable`1 object\`
-
-### Objects definition
-
-`IEnumerable`1\`
-
-| Fields name | Type |
-| :--- | :--- |
-
-
-## eth\_getFilterLogs
-
-Reads filter changes
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | filterId | `Quantity` |
 
-### Return type
+#### Return type
+`IEnumerable`1 object`
 
-`IEnumerable`1 object\`
+#### Objects definition
 
-### Objects definition
-
-`IEnumerable`1\`
-
+`IEnumerable`1`
 | Fields name | Type |
 | :--- | :--- |
 
+##eth\_getFilterLogs
 
-## eth\_getLogs
+Reads filter changes 
 
-Reads logs
+#### **Parameters**
 
-### **Parameters**
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | `Quantity` |
+
+#### Return type
+`IEnumerable`1 object`
+
+#### Objects definition
+
+`IEnumerable`1`
+| Fields name | Type |
+| :--- | :--- |
+
+##eth\_getLogs
+
+Reads logs 
+
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | filter | `Filter object` |
 
-### Return type
+#### Return type
+`IEnumerable`1 object`
 
-`IEnumerable`1 object\`
-
-### Objects definition
+#### Objects definition
 
 `Filter`
-
 | Fields name | Type |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
 | Address | `Object object` |
-| Topics | `IEnumerable`1 object\` |
+| Topics | `IEnumerable`1 object` |
 
-`IEnumerable`1\`
-
+`IEnumerable`1`
 | Fields name | Type |
 | :--- | :--- |
 
+##eth\_getProof
 
-## eth\_getProof
+https://github.com/ethereum/EIPs/issues/1186 
 
-[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
-
-### **Parameters**
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -1018,14 +940,12 @@ Reads logs
 | hashRate | `Byte[][] object` |
 | blockParameter | `BlockParameter object` |
 
-### Return type
-
+#### Return type
 `AccountProof object`
 
-### Objects definition
+#### Objects definition
 
 `Byte[][]`
-
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -1037,16 +957,14 @@ Reads logs
 | IsSynchronized | `Boolean` |
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Nullable`1 object` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `AccountProof`
-
 | Fields name | Type |
 | :--- | :--- |
 | Address | `Address` |
