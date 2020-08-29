@@ -88,7 +88,7 @@
     * [Trace](nethermind-utilities/cli/cli-modules/trace.md)
     * [TxPool](nethermind-utilities/cli/cli-modules/txpool.md)
     * [Web3](nethermind-utilities/cli/cli-modules/web3.md)
-* [Beam wallet](nethermind-utilities/beam-wallet.md)
+* [Beam Wallet](nethermind-utilities/beam-wallet.md)
 * [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
 
 ## Guides and Helpers

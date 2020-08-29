@@ -1,30 +1,100 @@
-# Beam wallet
+# Beam Wallet
 
 ## Description
 
 Beam Wallet is a proof of concept Ethereum Wallet with a console UI that lets users harness the power of beam sync. Beam Wallet is running without any external dependencies \(it automatically launches a Nethermind Node in the background\) and allows to check account balances and make simple transactions on mainnet just 5 minutes after launching.
 
-## Download
+## Download and run
 
 You can find Beam wallet **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
 
 Select the appropriate package based on operating system and download it.
 
+### **Prerequisites**
+
+#### Linux
+
+#### **- Ubuntu**
+
+```text
+# Activate Microsoft repository
+wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo apt install -y ./packages-microsoft-prod.deb apt-transport-https && sudo apt update
+
+# Install dependencies
+sudo apt install -y dotnet-sdk-3.1 libsnappy-dev libc6-dev libc6
+```
+
+_Tested on Ubuntu 20.04 LTS and 18.04 LTS_
+
+#### **- Debian**
+
+```text
+# Activate Microsoft repository
+wget https://packages.microsoft.com/config/debian/$(lsb_release -rs | cut -d. -f1)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo apt install -y ./packages-microsoft-prod.deb apt-transport-https && sudo apt update
+
+# Install dependencies
+sudo apt install -y dotnet-sdk-3.1 libsnappy-dev libc6-dev libc6
+```
+
+_Tested on Debian 10 \(9 not working\)_
+
+#### **- CentOS**
+
+```text
+# Install dependencies
+sudo yum install --enablerepo=PowerTools -y dotnet-sdk-3.1 gcc snappy-devel glibc-devel bzip2-devel libzstd
+
+# Link libraries
+sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so 
+sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
+```
+
+_Tested on CentOS 8_
+
+#### **- Fedora**
+
+```text
+# Install dependencies
+sudo dnf install -y dotnet-sdk-3.1 gcc snappy-devel glibc-devel bzip2-devel libzstd
+
+# Link libraries
+sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
+```
+
+_Tested on Fedora 32_
+
+#### Mac
+
+* Install deps `brew install gmp snappy lz4 zstd`
+* Additionally, if you have problems with startup `brew install rocksdb`
+
 ## Running application
 
 To run application open **Nethermind.BeamWallet** file.
 
-After that you should be able to see this window:
+{% hint style="warning" %}
+**Mac**
+
+If your operating system is a macOS you will be asked to **Allow access** in your **System Preferences-&gt;Security & Privacy,** twice - for Nethermind.BeamWallet and Nethermind.Runner.
+{% endhint %}
+
+After starting the application you should be able to see this window:
 
 \(Colors of the application may vary from those shown in the pictures - it depends on your command line settings.\)
 
-![](../.gitbook/assets/image%20%28115%29.png)
+* The first step is to select a network. 
 
-* Choose one of the two options using TAB key or Up and Down arrows.
+![](../.gitbook/assets/image%20%28129%29.png)
+
+* Then choose one of the two options **Create new account**  or **Provide an address** using TAB key or Up and Down arrows.
+
+![](../.gitbook/assets/image%20%28131%29.png)
 
 ### Already have an account
 
-If you already have and account you can use it - in that case you will need:
+If you already have and account you can use it by selecting a **Provide an address** option - in that case you will need:
 
 * **your address**
 * **your passphrase**
@@ -33,7 +103,7 @@ If you already have and account you can use it - in that case you will need:
 {% hint style="warning" %}
 **Copy keystore file**
 
-Before we start, please, copy keystore file of your wallet into the **keystore** folder. It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
+Before we start, please, copy keystore file of your wallet into the **keystore** folder. \(directory of the keystore folder will be shown in the image below\). It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
 {% endhint %}
 
 ### **Create new account**
@@ -42,17 +112,17 @@ If you don't have an account, you can create one using **Beam wallet** applicati
 
 Creating a new account creates a keystore file. You can find it in the **keystore** folder.
 
-![](../.gitbook/assets/image%20%28114%29.png)
+Copy your keystore file if you wish to use an account in the future.
 
-Copy your keystore file if you wish to use your account in the future.
+![](../.gitbook/assets/image%20%28118%29.png)
 
 ### Set an address
 
 {% tabs %}
 {% tab title="Create new account" %}
-![](../.gitbook/assets/image%20%2897%29.png)
-
 * Create an account by providing the passphrase in the first input and confirmation passphrase in the second one.
+
+![](../.gitbook/assets/image%20%28123%29.png)
 
 {% hint style="warning" %}
 **Passphrase**
@@ -74,15 +144,13 @@ Set a strong passphrase. We recommend writing it down on a paper. If you lose yo
 {% endtab %}
 
 {% tab title="Provide an address" %}
-* After choosing "Provide an address" option you will see that window:
+* After choosing "Provide an address" option you will see that window. Provide your wallet address.
 
 ![](../.gitbook/assets/image%20%28107%29.png)
 
-* Provide your wallet address.
+* Using the TAB key, move to the **OK** button and press Enter. 
 
 ![](../.gitbook/assets/image%20%28100%29.png)
-
-* Using the TAB key, move to the **OK** button and press Enter. 
 {% endtab %}
 {% endtabs %}
 
@@ -90,36 +158,38 @@ Set a strong passphrase. We recommend writing it down on a paper. If you lose yo
 
 * After a while caption "Syncing... Please wait for the balance." should change to your wallet balance and also the **BACK** and **TRANSFER** buttons will appear. This may take a few minutes.
 
-![](../.gitbook/assets/image%20%28103%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 * The first comes your ETH balance. If you are not interested in the balance of your tokens \(DAI, USDT, USDC\), you can skip it and proceed to the transfer.
 
-![](../.gitbook/assets/image%20%2899%29.png)
+![](../.gitbook/assets/image%20%28132%29.png)
 
-![](../.gitbook/assets/image%20%2896%29.png)
+![](../.gitbook/assets/image%20%28121%29.png)
 
-* Use the TAB key, move to the **TRANSFER** button \(or **SKIP GETTING TOKEN BALANCE AND TRANSFER**\) and press Enter.
+* Use the TAB key, move to the **TRANSFER** button and press Enter.
 
 ## Making transaction
 
 You will see a different window where you can provide data to make a transfer.
-
-![](../.gitbook/assets/image%20%2895%29.png)
 
 * In the first input provide the **address** to which you want to send ETH.
 * In the input below enter the **value** of ETH that you want to transfer.
 * And in the last input enter the **passphrase** of your wallet.
 * Move to the **TRANSFER** button and press ENTER. \(This is not the last step, you will be asked to confirm the transaction.\)
 
-![](../.gitbook/assets/image%20%28106%29.png)
+![](../.gitbook/assets/image%20%28122%29.png)
 
-* After that, a modal with summary of the transaction will appear. Confirm \(or not\) sending the transaction.
+\(Example data\)
 
-![](../.gitbook/assets/image%20%2894%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
+
+* After you press Enter on **Transfer** button, a modal with summary of the transaction will appear. Confirm \(or not\) sending the transaction.
+
+![](../.gitbook/assets/image%20%28130%29.png)
 
 * The steps that will be taken to send the transaction will be listed below.
 
-![](../.gitbook/assets/image%20%28101%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
 ## Database
 
