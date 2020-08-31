@@ -24,6 +24,19 @@ TAG OR QUANTITY
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
 
+
+{% api-method-test %}
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="TestParameter" type="object" required=false %}
+Object of some type 
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="BlockParameter" type="string" required=false %}
+TAG OR QUANTITY
+{% endapi-method-parameter %}
+{% endapi-method-form-data-parameters %}
+{% endapi-method-test %} 
+
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
