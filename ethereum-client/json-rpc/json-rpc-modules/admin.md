@@ -13,43 +13,25 @@ Does something
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="param1" type="string" required=true %}
-Means something
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="TestParameter" type="object" required=false %}
+Object of some type 
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-aaa
+{% api-method-parameter name="BlockParameter" type="string" required=false %}
+TAG OR QUANTITY
 {% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="aaa" type="string" required=false %}
-tests
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
+{% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+When request is OK 
 {% endapi-method-response-example-description %}
 
 ```
-
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=302 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
+{"jsonrpc":"2.0"}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
