@@ -2,6 +2,48 @@
 
 ## admin\_addPeer
 
+{% tabs %}
+{% tab title="Request" %}
+BlockParameter 
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | Hash |
+| BlockNumber | Quantity |
+
+```text
+curld --data {"jsonrpc":"2.0"}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+Response object
+
+| Field name | Type |
+| :--- | :--- |
+| Id | Quantity |
+| Hash | Hash |
+| Some string | String |
+
+```text
+{"Id":21,"Hash":"0xqowejdq123414","Somestring":"string"}
+```
+{% endtab %}
+
+{% tab title="Object definitions" %}
+#### Some additional object 
+
+| Field name | Type |
+| :--- | :--- |
+| X | X-type |
+| Y | Y-type |
+{% endtab %}
+{% endtabs %}
+
+
+
+
+
 {% api-method method="post" host="http://localhost:8545" path="" %}
 {% api-method-summary %}
 admin\_addPeer
@@ -15,7 +57,7 @@ Does something
 {% api-method-request %}
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="TestParameter" type="object" required=false %}
-Object of some type 
+Object of some type
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BlockParameter" type="string" required=false %}
@@ -24,26 +66,13 @@ TAG OR QUANTITY
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
 
-
-{% api-method-test %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="TestParameter" type="object" required=false %}
-Object of some type 
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="BlockParameter" type="string" required=false %}
-TAG OR QUANTITY
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-test %} 
-
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-When request is OK 
+When request is OK
 {% endapi-method-response-example-description %}
 
-```
+```text
 {"jsonrpc":"2.0"}
 ```
 {% endapi-method-response-example %}
