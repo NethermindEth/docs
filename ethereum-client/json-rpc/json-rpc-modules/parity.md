@@ -1,112 +1,163 @@
-# Parity
+#parity
 
-## parity\_pendingTransactions
+##parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue.
+Returns a list of transactions currently in the queue. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`ParityTransaction object`
 
-`ParityTransaction[] object`
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
-### Objects definition
-
-`ParityTransaction[]`
-
+`ParityTransaction`
 | Fields name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Input | `Data` |
+| Raw | `Data` |
+| Creates | `Address` |
+| PublicKey | `PublicKey object` |
+| ChainId | `Quantity` |
+| Condition | `Object object` |
+| R | `Data` |
+| S | `Data` |
+| V | `Quantity` |
+| StandardV | `Quantity` |
 
-## parity\_getBlockReceipts
+{% endtab %}
+##parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`ReceiptForRpc object`
 
-`ReceiptForRpc[] object`
-
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`ReceiptForRpc[]`
-
+`ReceiptForRpc`
 | Fields name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| TransactionHash | `Hash` |
+| TransactionIndex | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| CumulativeGasUsed | `Quantity` |
+| GasUsed | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| ContractAddress | `Address` |
+| Logs | `LogEntryForRpc[] object` |
+| LogsBloom | `Bloom object` |
+| Root | `Hash` |
+| Status | `Quantity` |
+| Error | `String` |
 
-## parity\_enode
+{% endtab %}
+##parity\_enode
 
-Returns the node enode URI.
+Returns the node enode URI. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `String`
 
-## parity\_setEngineSigner
+{% endtab %}
+##parity\_setEngineSigner
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | address | `Address` |
 | password | `String` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Boolean`
 
-## parity\_setEngineSignerSecret
+{% endtab %}
+##parity\_setEngineSignerSecret
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | privateKey | `String` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Boolean`
 
-## parity\_clearEngineSigner
+{% endtab %}
+##parity\_clearEngineSigner
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Boolean`
 
+{% endtab %}

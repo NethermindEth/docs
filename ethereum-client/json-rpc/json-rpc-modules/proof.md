@@ -1,49 +1,58 @@
-# Proof
+#proof
 
-## proof\_getTransactionByHash
+##proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `TransactionWithProof object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `TransactionWithProof`
-
 | Fields name | Type |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
 | TxProof | `Byte[][] object` |
 | BlockHeader | `Data` |
 
-## proof\_getTransactionReceipt
+{% endtab %}
+##proof\_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `ReceiptWithProof object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `ReceiptWithProof`
-
 | Fields name | Type |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |
@@ -51,3 +60,4 @@ This function should return the same result as `eth_call` and also proofs of all
 | ReceiptProof | `Byte[][] object` |
 | BlockHeader | `Data` |
 
+{% endtab %}

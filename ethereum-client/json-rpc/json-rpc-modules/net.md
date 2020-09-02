@@ -1,62 +1,82 @@
-# Net
+#net
 
-## net\_localAddress
+##net\_localAddress
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Address`
 
-## net\_localEnode
+{% endtab %}
+##net\_localEnode
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `String`
 
-## net\_version
+{% endtab %}
+##net\_version
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `String`
 
-## net\_listening
+{% endtab %}
+##net\_listening
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Boolean`
 
-## net\_peerCount
+{% endtab %}
+##net\_peerCount
 
-_description missing_
+_description missing_ 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Quantity`
 
+{% endtab %}
