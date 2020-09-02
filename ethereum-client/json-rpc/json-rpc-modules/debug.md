@@ -1,89 +1,104 @@
-# Debug
+#debug
 
-## debug\_getChainLevel
+##debug\_getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | number | `Int64& object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `ChainLevelForRpc object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `Int64&`
-
 | Fields name | Type |
 | :--- | :--- |
 
-
 `ChainLevelForRpc`
-
 | Fields name | Type |
 | :--- | :--- |
 | BlockInfos | `BlockInfoForRpc[] object` |
 | HasBlockOnMainChain | `Boolean` |
 
-## debug\_deleteChainSlice
+{% endtab %}
+##debug\_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | startNumber | `Int64& object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Quantity`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `Int64&`
-
 | Fields name | Type |
 | :--- | :--- |
 
+{% endtab %}
+##debug\_resetHead
 
-## debug\_resetHead
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
-
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHash | `Hash` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Boolean`
 
-## debug\_traceTransaction
+{% endtab %}
+##debug\_traceTransaction
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | transactionHash | `Hash` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `GethLikeTxTrace object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -93,42 +108,47 @@ This method will attempt to run the transaction in the exact same manner as it w
 | Timeout | `String` |
 
 `GethLikeTxTrace`
-
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object\` |
+| StoragesByDepth | `Stack`1 object` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object\` |
+| Entries | `List`1 object` |
 
-## debug\_traceTransactionByBlockAndIndex
+{% endtab %}
+##debug\_traceTransactionByBlockAndIndex
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `GethLikeTxTrace object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `BlockParameter`
-
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
-| BlockNumber | `Nullable`1 object\` |
+| BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -138,33 +158,39 @@ This method will attempt to run the transaction in the exact same manner as it w
 | Timeout | `String` |
 
 `GethLikeTxTrace`
-
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object\` |
+| StoragesByDepth | `Stack`1 object` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object\` |
+| Entries | `List`1 object` |
 
-## debug\_traceTransactionByBlockhashAndIndex
+{% endtab %}
+##debug\_traceTransactionByBlockhashAndIndex
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHash | `Hash` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `GethLikeTxTrace object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -174,34 +200,38 @@ This method will attempt to run the transaction in the exact same manner as it w
 | Timeout | `String` |
 
 `GethLikeTxTrace`
-
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object\` |
+| StoragesByDepth | `Stack`1 object` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object\` |
+| Entries | `List`1 object` |
 
-## debug\_traceBlock
+{% endtab %}
+##debug\_traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockRlp | `Data` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`GethLikeTxTrace object`
 
-`GethLikeTxTrace[] object`
-
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -210,35 +240,39 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | Tracer | `String` |
 | Timeout | `String` |
 
-`GethLikeTxTrace[]`
-
+`GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
 
-## debug\_traceBlockByNumber
+{% endtab %}
+##debug\_traceBlockByNumber
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | number | `Quantity` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`GethLikeTxTrace object`
 
-`GethLikeTxTrace[] object`
-
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -247,35 +281,39 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | Tracer | `String` |
 | Timeout | `String` |
 
-`GethLikeTxTrace[]`
-
+`GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
 
-## debug\_traceBlockByHash
+{% endtab %}
+##debug\_traceBlockByHash
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockHash | `Hash` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`GethLikeTxTrace object`
 
-`GethLikeTxTrace[] object`
-
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -284,87 +322,119 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | Tracer | `String` |
 | Timeout | `String` |
 
-`GethLikeTxTrace[]`
-
+`GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| StoragesByDepth | `Stack`1 object` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `List`1 object` |
 
-## debug\_getBlockRlp
+{% endtab %}
+##debug\_getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | number | `Quantity` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`Byte object`
 
-`Data`
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
-## debug\_getBlockRlpByHash
+`Byte`
+| Fields name | Type |
+| :--- | :--- |
 
-Retrieves a block in the RLP-serialized form.
+{% endtab %}
+##debug\_getBlockRlpByHash
 
-### **Parameters**
+Retrieves a block in the RLP-serialized form. 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | hash | `Hash` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`Byte object`
 
-`Data`
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
-## debug\_getConfigValue
+`Byte`
+| Fields name | Type |
+| :--- | :--- |
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+{% endtab %}
+##debug\_getConfigValue
 
-### **Parameters**
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | category | `String` |
 | name | `String` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Object object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `Object`
-
 | Fields name | Type |
 | :--- | :--- |
 
+{% endtab %}
+##debug\_traceTransactionInBlockByHash
 
-## debug\_traceTransactionInBlockByHash
+ 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockRlp | `Data` |
 | transactionHash | `Hash` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `GethLikeTxTrace object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -374,33 +444,39 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | Timeout | `String` |
 
 `GethLikeTxTrace`
-
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object\` |
+| StoragesByDepth | `Stack`1 object` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object\` |
+| Entries | `List`1 object` |
 
-## debug\_traceTransactionInBlockByIndex
+{% endtab %}
+##debug\_traceTransactionInBlockByIndex
 
-### **Parameters**
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockRlp | `Data` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `GethLikeTxTrace object`
 
-### Objects definition
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
 `GethTraceOptions`
-
 | Fields name | Type |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
@@ -410,36 +486,72 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | Timeout | `String` |
 
 `GethLikeTxTrace`
-
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object\` |
+| StoragesByDepth | `Stack`1 object` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object\` |
+| Entries | `List`1 object` |
 
-## debug\_migrateReceipts
+{% endtab %}
+##debug\_migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | blockNumber | `Quantity` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
+#### Return type
+`Boolean`
 
-`ResultWrapper`1 object\`
+{% endtab %}
+##debug\_insertReceipts
 
-### Objects definition
+Insert receipts for the block after verifying receipts root correctness. 
 
-`ResultWrapper`1\`
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `BlockParameter object` |
+| receiptForRpc | `ReceiptForRpc[] object` |
+{% endtab %}
+{% tab title="Response" %}
+
+#### Return type
+`Boolean`
+
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
+
+`BlockParameter`
 | Fields name | Type |
 | :--- | :--- |
-| Data | `Boolean` |
-| Result | `Result object` |
-| ErrorCode | `Quantity` |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
 
+`ReceiptForRpc[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+{% endtab %}

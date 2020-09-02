@@ -1,28 +1,36 @@
-# Web3
+#web3
 
-## web3\_clientVersion
+##web3\_clientVersion
 
-Returns the current client version.
+Returns the current client version. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `String`
 
-## web3\_sha3
+{% endtab %}
+##web3\_sha3
 
-Returns Keccak of the given data.
+Returns Keccak of the given data. 
 
-### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | data | `Data` |
+{% endtab %}
+{% tab title="Response" %}
 
-### Return type
-
+#### Return type
 `Hash`
 
+{% endtab %}
