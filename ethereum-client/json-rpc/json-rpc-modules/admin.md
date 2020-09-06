@@ -1,3 +1,7 @@
+---
+description: Some test description
+---
+
 # Admin
 
 ## admin\_addPeer
