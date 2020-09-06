@@ -1,96 +1,169 @@
-#admin
+# Admin
 
-##admin\_addPeer
+## admin\_addPeer
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+BlockParameter 
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | Hash |
+| BlockNumber | Quantity |
+
+```text
+curld --data {"jsonrpc":"2.0"}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+Response object
+
+| Field name | TypeTes |
+| :--- | :--- |
+| TestID | Quantity |
+| Hash | Hash |
+| Some string | String |
+
+```text
+{"Id":21,"Hash":"0xqowejdq123414","Somestring":"string"}
+```
+{% endtab %}
+
+{% tab title="Object definitions" %}
+#### Some additional object 
+
+| Field name | Type |
+| :--- | :--- |
+| X | X-type |
+| Y | Y-type |
+{% endtab %}
+{% endtabs %}
+
+
+
+
+
+{% api-method method="post" host="http://localhost:8545" path="" %}
+{% api-method-summary %}
+admin\_addPeer
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Does something
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="TestParameter" type="object" required=false %}
+Object of some type
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="BlockParameter" type="string" required=false %}
+TAG OR QUANTITY
+{% endapi-method-parameter %}
+{% endapi-method-form-data-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+When request is OK
+{% endapi-method-response-example-description %}
+
+```text
+{"jsonrpc":"2.0"}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | enode | `String` |
 | addToStaticNodes | `Boolean` |
 
-{% endtab %}
-{% tab title="Response" %}
+### Return type
 
-#### Return type
-`String`
+`ResultWrapper`1 object\`
 
-{% endtab %}
-{% endtabs %}
-##admin\_removePeer
+### Objects definition
 
-{% tabs %}
-{% tab title="Request" %}
-#### **Parameters**
+`ResultWrapper`1\`
+
+| Fields name | Type |
+| :--- | :--- |
+| Data | `String` |
+| Result | `Result object` |
+| ErrorCode | `Quantity` |
+
+## admin\_removePeer
+
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | enode | `String` |
 | removeFromStaticNodes | `Boolean` |
 
-{% endtab %}
-{% tab title="Response" %}
+### Return type
 
-#### Return type
-`String`
+`ResultWrapper`1 object\`
 
-{% endtab %}
-{% endtabs %}
-##admin\_peers
+### Objects definition
 
-{% tabs %}
-{% tab title="Request" %}
-#### **Parameters**
+`ResultWrapper`1\`
 
-_None_
-
-{% endtab %}
-{% tab title="Response" %}
-
-#### Return type
-`PeerInfo object`
-
-{% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
-
-`PeerInfo`
 | Fields name | Type |
 | :--- | :--- |
-| ClientId | `String` |
-| Host | `String` |
-| Port | `Quantity` |
-| Address | `String` |
-| IsBootnode | `Boolean` |
-| IsTrusted | `Boolean` |
-| IsStatic | `Boolean` |
-| Enode | `String` |
+| Data | `String` |
+| Result | `Result object` |
+| ErrorCode | `Quantity` |
 
-{% endtab %}
-{% endtabs %}
-##admin\_nodeInfo
+## admin\_peers
 
-Relevant information about this node 
-
-{% tabs %}
-{% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 
-{% endtab %}
-{% tab title="Response" %}
+### Return type
 
-#### Return type
+`PeerInfo[] object`
+
+### Objects definition
+
+`PeerInfo[]`
+
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+## admin\_nodeInfo
+
+Relevant information about this node
+
+### **Parameters**
+
+_None_
+
+### Return type
+
 `NodeInfo object`
 
-{% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `NodeInfo`
+
 | Fields name | Type |
 | :--- | :--- |
 | Enode | `String` |
@@ -99,7 +172,5 @@ _None_
 | ListenAddress | `String` |
 | Name | `String` |
 | Ports | `PortsInfo object` |
-| Protocols | `Dictionary`2 object` |
+| Protocols | `Dictionary`2 object\` |
 
-{% endtab %}
-{% endtabs %}
