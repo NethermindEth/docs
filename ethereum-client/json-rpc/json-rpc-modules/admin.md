@@ -2,6 +2,8 @@
 
 ##admin\_addPeer
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
@@ -21,6 +23,8 @@
 {% endtabs %}
 ##admin\_removePeer
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
@@ -39,6 +43,8 @@
 {% endtab %}
 {% endtabs %}
 ##admin\_peers
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -100,6 +106,13 @@ _None_
 | Name | `String` |
 | Ports | `PortsInfo object` |
 | Protocols | `Dictionary`2 object` |
+
+`PortsInfo`
+| Fields name | Type |
+| :--- | :--- |
+| Discovery | `Quantity` |
+| Listener | `Quantity` |
+
 
 {% endtab %}
 {% endtabs %}
