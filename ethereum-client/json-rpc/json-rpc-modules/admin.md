@@ -2,8 +2,6 @@
 
 ##admin\_addPeer
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
@@ -12,6 +10,7 @@
 | :--- | :--- |
 | enode | `String` |
 | addToStaticNodes | `Boolean` |
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -19,9 +18,8 @@
 `String`
 
 {% endtab %}
+{% endtabs %}
 ##admin\_removePeer
-
- 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -31,6 +29,7 @@
 | :--- | :--- |
 | enode | `String` |
 | removeFromStaticNodes | `Boolean` |
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -38,15 +37,15 @@
 `String`
 
 {% endtab %}
+{% endtabs %}
 ##admin\_peers
-
- 
 
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
 
 _None_
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -70,6 +69,7 @@ _None_
 | Enode | `String` |
 
 {% endtab %}
+{% endtabs %}
 ##admin\_nodeInfo
 
 Relevant information about this node 
@@ -79,6 +79,7 @@ Relevant information about this node
 #### **Parameters**
 
 _None_
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -101,3 +102,4 @@ _None_
 | Protocols | `Dictionary`2 object` |
 
 {% endtab %}
+{% endtabs %}
