@@ -1,7 +1,7 @@
 name: Update GitBook Docs
 
 on:
-  repository_dispatch:
+  workflow_dispatch:
     types: docs_update
 
 jobs:
