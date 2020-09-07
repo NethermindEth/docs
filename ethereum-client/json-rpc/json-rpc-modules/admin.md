@@ -46,7 +46,9 @@
 {% tab title="Request" %}
 #### **Parameters**
 
-_None_
+| Parameter name | Type |
+| :--- | :--- |
+| includeDetails | `Boolean` |
 {% endtab %}
 {% tab title="Response" %}
 
@@ -68,6 +70,9 @@ _None_
 | IsTrusted | `Boolean` |
 | IsStatic | `Boolean` |
 | Enode | `String` |
+| ClientType | `String` |
+| EthDetails | `String` |
+| LastSignal | `String` |
 
 {% endtab %}
 ##admin\_nodeInfo
