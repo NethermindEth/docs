@@ -1,9 +1,6 @@
 name: Update GitBook Docs
 
-on:
-  workflow_dispatch:
-    types: docs_update
-
+on: [workflow_dispatch]
 jobs:
   update-documentation:
     runs-on: ubuntu-latest
