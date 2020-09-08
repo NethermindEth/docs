@@ -114,14 +114,5 @@ _None_
 | Discovery | `Quantity` |
 | Listener | `Quantity` |
 
-`Dictionary`2`
-| Fields name | Type |
-| :--- | :--- |
-| Comparer | `IEqualityComparer`1 object` |
-| Count | `Quantity` |
-| Keys | `KeyCollection object` |
-| Values | `ValueCollection object` |
-| Item | `EthProtocolInfo object` |
-
 {% endtab %}
 {% endtabs %}
