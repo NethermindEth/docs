@@ -10,6 +10,7 @@ _description missing_
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -26,6 +27,7 @@ _None_
 | Queued | `Quantity` |
 
 {% endtab %}
+{% endtabs %}
 ##txpool\_content
 
 _description missing_ 
@@ -36,6 +38,7 @@ _description missing_
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -51,7 +54,22 @@ _None_
 | Pending | `IDictionary`2 object` |
 | Queued | `IDictionary`2 object` |
 
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `Array` |
+| Values | `Array` |
+
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `Array` |
+| Values | `Array` |
+
 {% endtab %}
+{% endtabs %}
 ##txpool\_inspect
 
 _description missing_ 
@@ -62,6 +80,7 @@ _description missing_
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -77,4 +96,19 @@ _None_
 | Pending | `IDictionary`2 object` |
 | Queued | `IDictionary`2 object` |
 
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `Array` |
+| Values | `Array` |
+
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `Array` |
+| Values | `Array` |
+
 {% endtab %}
+{% endtabs %}
