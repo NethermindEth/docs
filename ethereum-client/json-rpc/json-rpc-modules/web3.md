@@ -10,12 +10,14 @@ Returns the current client version.
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `String`
 
 {% endtab %}
+{% endtabs %}
 ##web3\_sha3
 
 Returns Keccak of the given data. 
@@ -28,9 +30,11 @@ Returns Keccak of the given data.
 | :--- | :--- |
 | data | `Data` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Hash`
 
 {% endtab %}
+{% endtabs %}
