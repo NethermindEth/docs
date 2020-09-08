@@ -12,6 +12,8 @@
 | :--- | :--- |
 | enode | `String` |
 | addToStaticNodes | `Boolean` |
+{% endtab %}
+{% tab title="Response" %}
 
 {% endtab %}
 {% tab title="Response" %}
@@ -33,6 +35,8 @@
 | :--- | :--- |
 | enode | `String` |
 | removeFromStaticNodes | `Boolean` |
+{% endtab %}
+{% tab title="Response" %}
 
 {% endtab %}
 {% tab title="Response" %}
@@ -50,7 +54,11 @@
 {% tab title="Request" %}
 #### **Parameters**
 
-_None_
+| Parameter name | Type |
+| :--- | :--- |
+| includeDetails | `Boolean` |
+{% endtab %}
+{% tab title="Response" %}
 
 {% endtab %}
 {% tab title="Response" %}
@@ -73,6 +81,9 @@ _None_
 | IsTrusted | `Boolean` |
 | IsStatic | `Boolean` |
 | Enode | `String` |
+| ClientType | `String` |
+| EthDetails | `String` |
+| LastSignal | `String` |
 
 {% endtab %}
 {% endtabs %}
@@ -85,6 +96,8 @@ Relevant information about this node
 #### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
 
 {% endtab %}
 {% tab title="Response" %}
@@ -113,6 +126,14 @@ _None_
 | Discovery | `Quantity` |
 | Listener | `Quantity` |
 
+`Dictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Comparer | `IEqualityComparer`1 object` |
+| Count | `Quantity` |
+| Keys | `KeyCollection object` |
+| Values | `ValueCollection object` |
+| Item | `EthProtocolInfo object` |
 
 {% endtab %}
 {% endtabs %}
