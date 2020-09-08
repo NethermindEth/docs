@@ -10,6 +10,7 @@ Returns a list of transactions currently in the queue.
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -43,7 +44,15 @@ _None_
 | V | `Quantity` |
 | StandardV | `Quantity` |
 
+`PublicKey`
+| Fields name | Type |
+| :--- | :--- |
+| Address | `Address` |
+| Bytes | `Data` |
+| PrefixedBytes | `Data` |
+
 {% endtab %}
+{% endtabs %}
 ##parity\_getBlockReceipts
 
 Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
@@ -56,6 +65,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -72,6 +82,9 @@ Get receipts from all transactions from particular block, more efficient than fe
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
 
 `ReceiptForRpc`
 | Fields name | Type |
@@ -91,7 +104,19 @@ Get receipts from all transactions from particular block, more efficient than fe
 | Status | `Quantity` |
 | Error | `String` |
 
+`LogEntryForRpc[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
 {% endtab %}
+{% endtabs %}
 ##parity\_enode
 
 Returns the node enode URI. 
@@ -102,15 +127,15 @@ Returns the node enode URI.
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `String`
 
 {% endtab %}
+{% endtabs %}
 ##parity\_setEngineSigner
-
- 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -121,14 +146,15 @@ _None_
 | address | `Address` |
 | password | `String` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##parity\_setEngineSignerSecret
-
  
 
 {% tabs %}
@@ -139,12 +165,14 @@ _None_
 | :--- | :--- |
 | privateKey | `String` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##parity\_clearEngineSigner
 
  
@@ -155,9 +183,11 @@ _None_
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
