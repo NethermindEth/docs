@@ -13,6 +13,7 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -26,10 +27,30 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | Fields name | Type |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
-| TxProof | `Byte[][] object` |
+| TxProof | `Data` |
 | BlockHeader | `Data` |
 
+`TransactionForRpc`
+| Fields name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Data` |
+| R | `Data` |
+
 {% endtab %}
+{% endtabs %}
 ##proof\_getTransactionReceipt
 
 This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
@@ -43,6 +64,7 @@ This function should return the same result as `eth_call` and also proofs of all
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
@@ -56,8 +78,27 @@ This function should return the same result as `eth_call` and also proofs of all
 | Fields name | Type |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |
-| TxProof | `Byte[][] object` |
-| ReceiptProof | `Byte[][] object` |
+| TxProof | `Data` |
+| ReceiptProof | `Data` |
 | BlockHeader | `Data` |
 
+`ReceiptForRpc`
+| Fields name | Type |
+| :--- | :--- |
+| TransactionHash | `Hash` |
+| TransactionIndex | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| CumulativeGasUsed | `Quantity` |
+| GasUsed | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| ContractAddress | `Address` |
+| Logs | `LogEntryForRpc[] object` |
+| LogsBloom | `Bloom object` |
+| Root | `Hash` |
+| Status | `Quantity` |
+| Error | `String` |
+
 {% endtab %}
+{% endtabs %}
