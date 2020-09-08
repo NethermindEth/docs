@@ -12,6 +12,9 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `TxPoolStatus object`
 
@@ -26,6 +29,7 @@ _None_
 | Queued | `Quantity` |
 
 {% endtab %}
+{% endtabs %}
 ##txpool\_content
 
 _description missing_ 
@@ -35,6 +39,9 @@ _description missing_
 #### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -51,7 +58,22 @@ _None_
 | Pending | `IDictionary`2 object` |
 | Queued | `IDictionary`2 object` |
 
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `ICollection`1 object` |
+| Values | `ICollection`1 object` |
+
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `ICollection`1 object` |
+| Values | `ICollection`1 object` |
+
 {% endtab %}
+{% endtabs %}
 ##txpool\_inspect
 
 _description missing_ 
@@ -61,6 +83,9 @@ _description missing_
 #### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -77,4 +102,19 @@ _None_
 | Pending | `IDictionary`2 object` |
 | Queued | `IDictionary`2 object` |
 
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `ICollection`1 object` |
+| Values | `ICollection`1 object` |
+
+`IDictionary`2`
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object` |
+| Keys | `ICollection`1 object` |
+| Values | `ICollection`1 object` |
+
 {% endtab %}
+{% endtabs %}

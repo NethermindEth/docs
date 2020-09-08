@@ -12,6 +12,9 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `ParityTransaction object`
 
@@ -43,7 +46,186 @@ _None_
 | V | `Quantity` |
 | StandardV | `Quantity` |
 
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
+`Int64`
+| Fields name | Type |
+| :--- | :--- |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`PublicKey`
+| Fields name | Type |
+| :--- | :--- |
+| Address | `Address` |
+| Bytes | `Data` |
+| PrefixedBytes | `Data` |
+
+`Int32`
+| Fields name | Type |
+| :--- | :--- |
+
+`Object`
+| Fields name | Type |
+| :--- | :--- |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
+`UInt256`
+| Fields name | Type |
+| :--- | :--- |
+| UlongWithOverflow | `ValueTuple`2 object` |
+| IsZero | `Boolean` |
+| ZeroValue | `Quantity` |
+| IsOne | `Boolean` |
+| OneValue | `Quantity` |
+| MaximalValue | `Quantity` |
+| BitLen | `Quantity` |
+| IsUint64 | `Boolean` |
+| Item | `UInt64 object` |
+
 {% endtab %}
+{% endtabs %}
 ##parity\_getBlockReceipts
 
 Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
@@ -55,6 +237,9 @@ Get receipts from all transactions from particular block, more efficient than fe
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -72,6 +257,13 @@ Get receipts from all transactions from particular block, more efficient than fe
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
+`Int64`
+| Fields name | Type |
+| :--- | :--- |
 
 `ReceiptForRpc`
 | Fields name | Type |
@@ -91,7 +283,48 @@ Get receipts from all transactions from particular block, more efficient than fe
 | Status | `Quantity` |
 | Error | `String` |
 
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`LogEntryForRpc[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`Bloom`
+| Fields name | Type |
+| :--- | :--- |
+| Bytes | `Data` |
+
 {% endtab %}
+{% endtabs %}
 ##parity\_enode
 
 Returns the node enode URI. 
@@ -104,10 +337,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `String`
 
 {% endtab %}
+{% endtabs %}
 ##parity\_setEngineSigner
 
  
@@ -123,10 +360,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##parity\_setEngineSignerSecret
 
  
@@ -141,10 +382,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##parity\_clearEngineSigner
 
  
@@ -157,7 +402,11 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}

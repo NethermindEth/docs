@@ -10,7 +10,7 @@ Retrieves a representation of tree branches on a given chain level (Nethermind s
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `Quantity` |
+| number | `Int64& object` |
 {% endtab %}
 {% tab title="Response" %}
 
@@ -57,7 +57,7 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 
 | Parameter name | Type |
 | :--- | :--- |
-| startNumber | `Quantity` |
+| startNumber | `Int64& object` |
 {% endtab %}
 {% tab title="Response" %}
 
@@ -70,6 +70,10 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
+
+`Int64&`
+| Fields name | Type |
+| :--- | :--- |
 
 {% endtab %}
 {% endtabs %}
@@ -138,10 +142,34 @@ This method will attempt to run the transaction in the exact same manner as it w
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
 
 {% endtab %}
 {% endtabs %}
 ##debug\_traceTransactionByBlockAndIndex
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -176,6 +204,10 @@ This method will attempt to run the transaction in the exact same manner as it w
 `BlockParameterType`
 `Quantity` or `String` (latest, earliest, pending)
 
+`Int64`
+| Fields name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 | Fields name | Type |
 | :--- | :--- |
@@ -194,10 +226,34 @@ This method will attempt to run the transaction in the exact same manner as it w
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
 
 {% endtab %}
 {% endtabs %}
 ##debug\_traceTransactionByBlockhashAndIndex
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -239,6 +295,28 @@ This method will attempt to run the transaction in the exact same manner as it w
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
 
 {% endtab %}
 {% endtabs %}
@@ -285,9 +363,34 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
+
 {% endtab %}
 {% endtabs %}
 ##debug\_traceBlockByNumber
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -328,10 +431,34 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
 
 {% endtab %}
 {% endtabs %}
 ##debug\_traceBlockByHash
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -372,6 +499,29 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
+
 {% endtab %}
 {% endtabs %}
 ##debug\_getBlockRlp
@@ -392,11 +542,15 @@ Retrieves a block in the RLP-serialized form.
 {% tab title="Response" %}
 
 #### Return type
-`Data`
+`Byte object`
 
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
+
+`Byte`
+| Fields name | Type |
+| :--- | :--- |
 
 {% endtab %}
 {% endtabs %}
@@ -418,12 +572,15 @@ Retrieves a block in the RLP-serialized form.
 {% tab title="Response" %}
 
 #### Return type
-`Data`
+`Byte object`
 
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
 
+`Byte`
+| Fields name | Type |
+| :--- | :--- |
 
 {% endtab %}
 {% endtabs %}
@@ -449,7 +606,14 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 `Object object`
 
 {% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
 
+`Object`
+| Fields name | Type |
+| :--- | :--- |
+
+{% endtab %}
 {% endtabs %}
 ##debug\_traceTransactionInBlockByHash
 
@@ -494,6 +658,29 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
+
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
 
 {% endtab %}
 {% endtabs %}
@@ -541,6 +728,28 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+`Stack`1`
+| Fields name | Type |
+| :--- | :--- |
+| Count | `Quantity` |
+
+`Byte[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`List`1`
+| Fields name | Type |
+| :--- | :--- |
+| Capacity | `Quantity` |
+| Count | `Quantity` |
+| Item | `GethTxTraceEntry object` |
 
 {% endtab %}
 {% endtabs %}
@@ -602,7 +811,11 @@ Insert receipts for the block after verifying receipts root correctness.
 `BlockParameterType`
 `Quantity` or `String` (latest, earliest, pending)
 
-`ReceiptForRpc`
+`Int64`
+| Fields name | Type |
+| :--- | :--- |
+
+`ReceiptForRpc[]`
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -612,6 +825,10 @@ Insert receipts for the block after verifying receipts root correctness.
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
+
+`Object`
+| Fields name | Type |
+| :--- | :--- |
 
 {% endtab %}
 {% endtabs %}

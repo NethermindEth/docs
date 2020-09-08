@@ -12,10 +12,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Address`
 
 {% endtab %}
+{% endtabs %}
 ##personal\_lockAccount
 
 _description missing_ 
@@ -30,10 +34,14 @@ _description missing_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##personal\_unlockAccount
 
 _description missing_ 
@@ -49,10 +57,14 @@ _description missing_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##personal\_newAccount
 
 _description missing_ 
@@ -67,7 +79,11 @@ _description missing_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Address`
 
 {% endtab %}
+{% endtabs %}
