@@ -10,7 +10,10 @@ Retrieves a representation of tree branches on a given chain level (Nethermind s
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `Int64& object` |
+| number | `Quantity` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -31,7 +34,19 @@ Retrieves a representation of tree branches on a given chain level (Nethermind s
 | BlockInfos | `BlockInfoForRpc[] object` |
 | HasBlockOnMainChain | `Boolean` |
 
+`BlockInfoForRpc[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
 {% endtab %}
+{% endtabs %}
 ##debug\_deleteChainSlice
 
 Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
@@ -42,7 +57,10 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 
 | Parameter name | Type |
 | :--- | :--- |
-| startNumber | `Int64& object` |
+| startNumber | `Quantity` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -53,11 +71,8 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 {% tab title="Object definitions" %}
 #### Objects definition
 
-`Int64&`
-| Fields name | Type |
-| :--- | :--- |
-
 {% endtab %}
+{% endtabs %}
 ##debug\_resetHead
 
 Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
@@ -72,10 +87,14 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##debug\_traceTransaction
 
 This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
@@ -88,6 +107,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 | :--- | :--- |
 | transactionHash | `Hash` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -116,10 +138,10 @@ This method will attempt to run the transaction in the exact same manner as it w
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
-{% endtab %}
-##debug\_traceTransactionByBlockAndIndex
 
- 
+{% endtab %}
+{% endtabs %}
+##debug\_traceTransactionByBlockAndIndex
 
 {% tabs %}
 {% tab title="Request" %}
@@ -130,6 +152,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 | blockParameter | `BlockParameter object` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -148,6 +173,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 `GethTraceOptions`
 | Fields name | Type |
 | :--- | :--- |
@@ -166,10 +194,10 @@ This method will attempt to run the transaction in the exact same manner as it w
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
-{% endtab %}
-##debug\_traceTransactionByBlockhashAndIndex
 
- 
+{% endtab %}
+{% endtabs %}
+##debug\_traceTransactionByBlockhashAndIndex
 
 {% tabs %}
 {% tab title="Request" %}
@@ -180,6 +208,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 | blockHash | `Hash` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -208,7 +239,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+
 {% endtab %}
+{% endtabs %}
 ##debug\_traceBlock
 
 Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
@@ -224,6 +257,9 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `GethLikeTxTrace object`
 
@@ -250,9 +286,8 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | Entries | `List`1 object` |
 
 {% endtab %}
+{% endtabs %}
 ##debug\_traceBlockByNumber
-
- 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -265,6 +300,9 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `GethLikeTxTrace object`
 
@@ -290,10 +328,10 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
-{% endtab %}
-##debug\_traceBlockByHash
 
- 
+{% endtab %}
+{% endtabs %}
+##debug\_traceBlockByHash
 
 {% tabs %}
 {% tab title="Request" %}
@@ -303,6 +341,9 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | :--- | :--- |
 | blockHash | `Hash` |
 | options | `GethTraceOptions object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -332,6 +373,7 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | Entries | `List`1 object` |
 
 {% endtab %}
+{% endtabs %}
 ##debug\_getBlockRlp
 
 Retrieves a block in the RLP-serialized form. 
@@ -346,18 +388,18 @@ Retrieves a block in the RLP-serialized form.
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`Byte object`
+`Data`
 
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
 
-`Byte`
-| Fields name | Type |
-| :--- | :--- |
-
 {% endtab %}
+{% endtabs %}
 ##debug\_getBlockRlpByHash
 
 Retrieves a block in the RLP-serialized form. 
@@ -372,18 +414,19 @@ Retrieves a block in the RLP-serialized form.
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`Byte object`
+`Data`
 
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
 
-`Byte`
-| Fields name | Type |
-| :--- | :--- |
 
 {% endtab %}
+{% endtabs %}
 ##debug\_getConfigValue
 
 Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
@@ -399,18 +442,15 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Object object`
 
 {% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
 
-`Object`
-| Fields name | Type |
-| :--- | :--- |
-
-{% endtab %}
+{% endtabs %}
 ##debug\_traceTransactionInBlockByHash
 
  
@@ -427,6 +467,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `GethLikeTxTrace object`
 
@@ -453,6 +496,7 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | Entries | `List`1 object` |
 
 {% endtab %}
+{% endtabs %}
 ##debug\_traceTransactionInBlockByIndex
 
  
@@ -469,6 +513,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `GethLikeTxTrace object`
 
@@ -494,7 +541,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | ReturnValue | `Data` |
 | Entries | `List`1 object` |
 
+
 {% endtab %}
+{% endtabs %}
 ##debug\_migrateReceipts
 
 Sets the block number up to which receipts will be migrated to (Nethermind specific). 
@@ -509,10 +558,14 @@ Sets the block number up to which receipts will be migrated to (Nethermind speci
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##debug\_insertReceipts
 
 Insert receipts for the block after verifying receipts root correctness. 
@@ -525,6 +578,9 @@ Insert receipts for the block after verifying receipts root correctness.
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | receiptForRpc | `ReceiptForRpc[] object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -543,7 +599,10 @@ Insert receipts for the block after verifying receipts root correctness.
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`ReceiptForRpc[]`
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
+`ReceiptForRpc`
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -555,3 +614,4 @@ Insert receipts for the block after verifying receipts root correctness.
 | IsSynchronized | `Boolean` |
 
 {% endtab %}
+{% endtabs %}
