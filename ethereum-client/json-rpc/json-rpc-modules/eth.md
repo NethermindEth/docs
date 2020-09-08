@@ -12,9 +12,6 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `Quantity`
 
@@ -30,9 +27,7 @@ Returns ETH protocol version
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -50,9 +45,7 @@ Returns syncing status
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -82,9 +75,7 @@ Returns current block number
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -105,9 +96,7 @@ Returns account balance
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -144,9 +133,7 @@ Returns storage data at address. storage_index
 | positionIndex | `Quantity` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -182,9 +169,7 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -219,9 +204,7 @@ Returns number of transactions in the block block hash
 | :--- | :--- |
 | blockHash | `Hash` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -241,9 +224,7 @@ Returns number of transactions in the block by block number
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -278,9 +259,7 @@ Returns number of uncles in the block by block hash
 | :--- | :--- |
 | blockHash | `Hash` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -300,9 +279,7 @@ Returns number of uncles in the block by block number
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -338,9 +315,7 @@ Returns account code at given address and block
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -375,9 +350,7 @@ Send a transaction to the tx pool and broadcasting
 | :--- | :--- |
 | transactionForRpc | `TransactionForRpc object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -420,9 +393,7 @@ Send a raw transaction to the tx pool and broadcasting
 | :--- | :--- |
 | transaction | `Data` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -443,9 +414,7 @@ Executes a tx call (does not create a transaction)
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -500,9 +469,7 @@ Executes a tx call and returns gas used (does not create a transaction)
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -557,9 +524,7 @@ Retrieves a block by hash
 | blockHash | `Hash` |
 | returnFullTransactionObjects | `Boolean` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -611,9 +576,7 @@ Retrieves a block by number
 | blockParameter | `BlockParameter object` |
 | returnFullTransactionObjects | `Boolean` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -675,9 +638,7 @@ Retrieves a transaction by hash
 | :--- | :--- |
 | transactionHash | `Hash` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -718,9 +679,7 @@ Returns the pending transactions list
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -764,9 +723,7 @@ Retrieves a transaction by block hash and index
 | blockHash | `Hash` |
 | positionIndex | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -810,9 +767,7 @@ Retrieves a transaction by block number and index
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -866,9 +821,7 @@ Retrieves a transaction receipt by tx hash
 | :--- | :--- |
 | txHashData | `Hash` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -922,9 +875,7 @@ Retrieves an uncle block header by block hash and uncle index
 | blockHashData | `Hash` |
 | positionIndex | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -976,9 +927,7 @@ Retrieves an uncle block header by block number and uncle index
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1040,9 +989,7 @@ Creates an update filter
 | :--- | :--- |
 | filter | `Filter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1080,9 +1027,7 @@ Creates an update filter
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1100,9 +1045,7 @@ Creates an update filter
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1122,9 +1065,7 @@ Creates an update filter
 | :--- | :--- |
 | filterId | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1144,9 +1085,7 @@ Reads filter changes
 | :--- | :--- |
 | filterId | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1166,9 +1105,7 @@ Reads filter changes
 | :--- | :--- |
 | filterId | `Quantity` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1192,9 +1129,7 @@ Reads logs
 | :--- | :--- |
 | filter | `Filter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1237,9 +1172,7 @@ https://github.com/ethereum/EIPs/issues/1186
 | hashRate | `Data` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
-{% tab title="Response" %}
 
-{% endtab %}
 {% tab title="Response" %}
 
 #### Return type
@@ -1271,13 +1204,6 @@ https://github.com/ethereum/EIPs/issues/1186
 | StorageRoot | `Hash` |
 | StorageProofs | `StorageProof[] object` |
 
-`Address`
-| Fields name | Type |
-| :--- | :--- |
-| Zero | `Address` |
-| SystemUser | `Address` |
-| Bytes | `Data` |
-| Item | `Byte object` |
 
 `StorageProof[]`
 | Fields name | Type |
