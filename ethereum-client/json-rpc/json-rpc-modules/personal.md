@@ -2,24 +2,22 @@
 
 ##personal\_listAccounts
 
-_description missing_ 
-
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Address`
 
 {% endtab %}
+{% endtabs %}
 ##personal\_lockAccount
 
-_description missing_ 
-
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
@@ -28,16 +26,16 @@ _description missing_
 | :--- | :--- |
 | address | `Address` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##personal\_unlockAccount
 
-_description missing_ 
-
 {% tabs %}
 {% tab title="Request" %}
 #### **Parameters**
@@ -47,15 +45,15 @@ _description missing_
 | address | `Address` |
 | passphrase | `String` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##personal\_newAccount
-
-_description missing_ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -65,9 +63,11 @@ _description missing_
 | :--- | :--- |
 | passphrase | `String` |
 {% endtab %}
+
 {% tab title="Response" %}
 
 #### Return type
 `Address`
 
 {% endtab %}
+{% endtabs %}
