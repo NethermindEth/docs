@@ -1,264 +1,219 @@
-# Clique
+#clique
 
-### clique\_discard\(signer\)
+##clique\_getSnapshot
 
-None
+Retrieves a snapshot of all clique state at a given block. 
 
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+
+#### Return type
+`Snapshot object`
+
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
+
+`Snapshot`
+| Fields name | Type |
+| :--- | :--- |
+| Number | `Quantity` |
+| Hash | `Hash` |
+| Signers | `Array` |
+| SignerLimit | `Quantity` |
+
+{% endtab %}
+{% endtabs %}
+##clique\_getSnapshotAtHash
+
+Retrieves the state snapshot at a given block. 
+
+{% tabs %}
+{% tab title="Request" %}
 #### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| signer | `address` |
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+| hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`Snapshot object`
+
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
+
+`Snapshot`
+| Fields name | Type |
+| :--- | :--- |
+| Number | `Quantity` |
+| Hash | `Hash` |
+| Signers | `Array` |
+| SignerLimit | `Quantity` |
+
 {% endtab %}
 {% endtabs %}
+##clique\_getSigners
 
-### clique\_getSigners\(\)
+Retrieves the list of authorized signers. 
 
-None
-
+{% tabs %}
+{% tab title="Request" %}
 #### **Parameters**
 
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`Address`
+
 {% endtab %}
 {% endtabs %}
+##clique\_getSignersAtHash
 
-### clique\_getSignersAnnotated\(\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+Retrieves the list of authorized signers at the specified block by hash. 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```bash
-
-```
-{% endtab %}
-{% endtabs %}
-
-### clique\_getSignersAtHash\(hash\)
-
-None
-
 #### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| hash | `hex` |
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+| hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`Address`
+
 {% endtab %}
 {% endtabs %}
+##clique\_getSignersAtNumber
 
-### clique\_getSignersAtHashAnnotated\(hash\)
+Retrieves the list of authorized signers at the specified block by block number. 
 
-None
-
+{% tabs %}
+{% tab title="Request" %}
 #### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| hash | `hex` |
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+| number | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`Address`
+
 {% endtab %}
 {% endtabs %}
+##clique\_getSignersAnnotated
 
-### clique\_getSignersAtNumber\(number\)
+ 
 
-None
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
 
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+
+#### Return type
+`String`
+
+{% endtab %}
+{% endtabs %}
+##clique\_getSignersAtHashAnnotated
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
 #### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `hex` |
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+| hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`String`
+
 {% endtab %}
 {% endtabs %}
+##clique\_propose
 
-### clique\_getSnapshot\(\)
-
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address. 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```bash
-
-```
-{% endtab %}
-{% endtabs %}
-
-### clique\_getSnapshotAtHash\(hash\)
-
-None
-
 #### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `hex` |
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+| signer | `Address` |
+| vote | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`Boolean`
+
 {% endtab %}
 {% endtabs %}
+##clique\_discard
 
-### clique\_propose\(signer, vote\)
+This method drops a currently running proposal. The signer will not cast further votes (either for or against) the address. 
 
-None
-
+{% tabs %}
+{% tab title="Request" %}
 #### **Parameters**
 
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-
-```
+| Parameter name | Type |
+| :--- | :--- |
+| signer | `Address` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
 
-```
+#### Return type
+`Boolean`
+
 {% endtab %}
 {% endtabs %}
+##clique\_produceBlock
 
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| parentHash | `Hash` |
+{% endtab %}
+
+{% tab title="Response" %}
+
+#### Return type
+`Boolean`
+
+{% endtab %}
+{% endtabs %}
