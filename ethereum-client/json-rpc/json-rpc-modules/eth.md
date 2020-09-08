@@ -12,10 +12,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_protocolVersion
 
 Returns ETH protocol version 
@@ -28,10 +32,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `String`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_syncing
 
 Returns syncing status 
@@ -41,6 +49,9 @@ Returns syncing status
 #### **Parameters**
 
 _None_
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -60,6 +71,7 @@ _None_
 | HighestBlock | `Quantity` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_blockNumber
 
 Returns current block number 
@@ -72,10 +84,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getBalance
 
 Returns account balance 
@@ -88,6 +104,9 @@ Returns account balance
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -106,7 +125,11 @@ Returns account balance
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
+{% endtabs %}
 ##eth\_getStorageAt
 
 Returns storage data at address. storage_index 
@@ -123,8 +146,11 @@ Returns storage data at address. storage_index
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`Byte object`
+`Data`
 
 {% endtab %}
 {% tab title="Object definitions" %}
@@ -138,11 +164,11 @@ Returns storage data at address. storage_index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`Byte`
-| Fields name | Type |
-| :--- | :--- |
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getTransactionCount
 
 Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
@@ -158,6 +184,9 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
@@ -173,7 +202,11 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
+{% endtabs %}
 ##eth\_getBlockTransactionCountByHash
 
 Returns number of transactions in the block block hash 
@@ -188,10 +221,14 @@ Returns number of transactions in the block block hash
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getBlockTransactionCountByNumber
 
 Returns number of transactions in the block by block number 
@@ -206,6 +243,9 @@ Returns number of transactions in the block by block number
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
@@ -221,7 +261,11 @@ Returns number of transactions in the block by block number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
+{% endtabs %}
 ##eth\_getUncleCountByBlockHash
 
 Returns number of uncles in the block by block hash 
@@ -236,10 +280,14 @@ Returns number of uncles in the block by block hash
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getUncleCountByBlockNumber
 
 Returns number of uncles in the block by block number 
@@ -251,6 +299,9 @@ Returns number of uncles in the block by block number
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -269,7 +320,11 @@ Returns number of uncles in the block by block number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
+{% endtabs %}
 ##eth\_getCode
 
 Returns account code at given address and block 
@@ -285,8 +340,11 @@ Returns account code at given address and block
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`Byte object`
+`Data`
 
 {% endtab %}
 {% tab title="Object definitions" %}
@@ -300,11 +358,11 @@ Returns account code at given address and block
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`Byte`
-| Fields name | Type |
-| :--- | :--- |
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
 
 {% endtab %}
+{% endtabs %}
 ##eth\_sendTransaction
 
 Send a transaction to the tx pool and broadcasting 
@@ -316,6 +374,9 @@ Send a transaction to the tx pool and broadcasting
 | Parameter name | Type |
 | :--- | :--- |
 | transactionForRpc | `TransactionForRpc object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -346,6 +407,7 @@ Send a transaction to the tx pool and broadcasting
 | R | `Data` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_sendRawTransaction
 
 Send a raw transaction to the tx pool and broadcasting 
@@ -360,10 +422,14 @@ Send a raw transaction to the tx pool and broadcasting
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Hash`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_call
 
 Executes a tx call (does not create a transaction) 
@@ -376,6 +442,9 @@ Executes a tx call (does not create a transaction)
 | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -413,7 +482,11 @@ Executes a tx call (does not create a transaction)
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
+{% endtabs %}
 ##eth\_estimateGas
 
 Executes a tx call and returns gas used (does not create a transaction) 
@@ -426,6 +499,9 @@ Executes a tx call and returns gas used (does not create a transaction)
 | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -463,7 +539,11 @@ Executes a tx call and returns gas used (does not create a transaction)
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
+{% endtabs %}
 ##eth\_getBlockByHash
 
 Retrieves a block by hash 
@@ -479,6 +559,9 @@ Retrieves a block by hash
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `BlockForRpc object`
 
@@ -509,11 +592,12 @@ Retrieves a block by hash
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object` |
+| Transactions | `Array` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object` |
+| Uncles | `Array` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getBlockByNumber
 
 Retrieves a block by number 
@@ -529,6 +613,9 @@ Retrieves a block by number
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `BlockForRpc object`
 
@@ -543,6 +630,9 @@ Retrieves a block by number
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
 
 `BlockForRpc`
 | Fields name | Type |
@@ -567,11 +657,12 @@ Retrieves a block by number
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object` |
+| Transactions | `Array` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object` |
+| Uncles | `Array` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getTransactionByHash
 
 Retrieves a transaction by hash 
@@ -586,42 +677,6 @@ Retrieves a transaction by hash
 {% endtab %}
 {% tab title="Response" %}
 
-#### Return type
-`TransactionForRpc object`
-
-{% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
-
-`TransactionForRpc`
-| Fields name | Type |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| V | `Quantity` |
-| S | `Data` |
-| R | `Data` |
-
-{% endtab %}
-##eth\_pendingTransactions
-
-Returns the pending transactions list 
-
-{% tabs %}
-{% tab title="Request" %}
-#### **Parameters**
-
-_None_
 {% endtab %}
 {% tab title="Response" %}
 
@@ -652,6 +707,50 @@ _None_
 | R | `Data` |
 
 {% endtab %}
+{% endtabs %}
+##eth\_pendingTransactions
+
+Returns the pending transactions list 
+
+{% tabs %}
+{% tab title="Request" %}
+#### **Parameters**
+
+_None_
+{% endtab %}
+{% tab title="Response" %}
+
+{% endtab %}
+{% tab title="Response" %}
+
+#### Return type
+`TransactionForRpc object`
+
+{% endtab %}
+{% tab title="Object definitions" %}
+#### Objects definition
+
+`TransactionForRpc`
+| Fields name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Data` |
+| R | `Data` |
+
+{% endtab %}
+{% endtabs %}
 ##eth\_getTransactionByBlockHashAndIndex
 
 Retrieves a transaction by block hash and index 
@@ -667,6 +766,9 @@ Retrieves a transaction by block hash and index
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `TransactionForRpc object`
 
@@ -694,6 +796,7 @@ Retrieves a transaction by block hash and index
 | R | `Data` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getTransactionByBlockNumberAndIndex
 
 Retrieves a transaction by block number and index 
@@ -706,6 +809,9 @@ Retrieves a transaction by block number and index
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -724,6 +830,9 @@ Retrieves a transaction by block number and index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 `TransactionForRpc`
 | Fields name | Type |
 | :--- | :--- |
@@ -744,6 +853,7 @@ Retrieves a transaction by block number and index
 | R | `Data` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getTransactionReceipt
 
 Retrieves a transaction receipt by tx hash 
@@ -755,6 +865,9 @@ Retrieves a transaction receipt by tx hash
 | Parameter name | Type |
 | :--- | :--- |
 | txHashData | `Hash` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -778,12 +891,24 @@ Retrieves a transaction receipt by tx hash
 | To | `Address` |
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Array` |
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
 
+`LogEntryForRpc[]`
+| Fields name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
 {% endtab %}
+{% endtabs %}
 ##eth\_getUncleByBlockHashAndIndex
 
 Retrieves an uncle block header by block hash and uncle index 
@@ -799,6 +924,9 @@ Retrieves an uncle block header by block hash and uncle index
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `BlockForRpc object`
 
@@ -815,7 +943,7 @@ Retrieves an uncle block header by block hash and uncle index
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
 | Hash | `Hash` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Array` |
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
@@ -829,11 +957,12 @@ Retrieves an uncle block header by block hash and uncle index
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object` |
+| Transactions | `Array` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object` |
+| Uncles | `Array` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getUncleByBlockNumberAndIndex
 
 Retrieves an uncle block header by block number and uncle index 
@@ -849,6 +978,9 @@ Retrieves an uncle block header by block number and uncle index
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `BlockForRpc object`
 
@@ -864,6 +996,9 @@ Retrieves an uncle block header by block number and uncle index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
 `BlockForRpc`
 | Fields name | Type |
 | :--- | :--- |
@@ -873,7 +1008,7 @@ Retrieves an uncle block header by block number and uncle index
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
 | Hash | `Hash` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Array` |
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
@@ -887,11 +1022,12 @@ Retrieves an uncle block header by block number and uncle index
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
-| Transactions | `IEnumerable`1 object` |
+| Transactions | `Array` |
 | TransactionsRoot | `Hash` |
-| Uncles | `IEnumerable`1 object` |
+| Uncles | `Array` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_newFilter
 
 Creates an update filter 
@@ -906,6 +1042,9 @@ Creates an update filter
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
@@ -918,10 +1057,19 @@ Creates an update filter
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
-| Address | `Object object` |
-| Topics | `IEnumerable`1 object` |
+| Address | `Address` |
+| Topics | `Array` |
+
+`BlockParameter`
+| Fields name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_newBlockFilter
 
 Creates an update filter 
@@ -934,10 +1082,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_newPendingTransactionFilter
 
 Creates an update filter 
@@ -950,10 +1102,14 @@ _None_
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Quantity`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_uninstallFilter
 
 Creates an update filter 
@@ -968,10 +1124,14 @@ Creates an update filter
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
 `Boolean`
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getFilterChanges
 
 Reads filter changes 
@@ -986,18 +1146,14 @@ Reads filter changes
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`IEnumerable`1 object`
+`Array`
 
 {% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
-
-`IEnumerable`1`
-| Fields name | Type |
-| :--- | :--- |
-
-{% endtab %}
+{% endtabs %}
 ##eth\_getFilterLogs
 
 Reads filter changes 
@@ -1012,18 +1168,18 @@ Reads filter changes
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`IEnumerable`1 object`
+`Array`
 
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
 
-`IEnumerable`1`
-| Fields name | Type |
-| :--- | :--- |
-
 {% endtab %}
+{% endtabs %}
 ##eth\_getLogs
 
 Reads logs 
@@ -1038,8 +1194,11 @@ Reads logs
 {% endtab %}
 {% tab title="Response" %}
 
+{% endtab %}
+{% tab title="Response" %}
+
 #### Return type
-`IEnumerable`1 object`
+`Array`
 
 {% endtab %}
 {% tab title="Object definitions" %}
@@ -1053,11 +1212,17 @@ Reads logs
 | Address | `Object object` |
 | Topics | `IEnumerable`1 object` |
 
-`IEnumerable`1`
+
+`BlockParameter`
 | Fields name | Type |
 | :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
 
 {% endtab %}
+{% endtabs %}
 ##eth\_getProof
 
 https://github.com/ethereum/EIPs/issues/1186 
@@ -1069,8 +1234,11 @@ https://github.com/ethereum/EIPs/issues/1186
 | Parameter name | Type |
 | :--- | :--- |
 | accountAddress | `Address` |
-| hashRate | `Byte[][] object` |
+| hashRate | `Data` |
 | blockParameter | `BlockParameter object` |
+{% endtab %}
+{% tab title="Response" %}
+
 {% endtab %}
 {% tab title="Response" %}
 
@@ -1081,7 +1249,37 @@ https://github.com/ethereum/EIPs/issues/1186
 {% tab title="Object definitions" %}
 #### Objects definition
 
-`Byte[][]`
+`BlockParameter`
+| Fields name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+`Quantity` or `String` (latest, earliest, pending)
+
+`AccountProof`
+| Fields name | Type |
+| :--- | :--- |
+| Address | `Address` |
+| Proof | `Data` |
+| Balance | `Quantity` |
+| CodeHash | `Hash` |
+| Nonce | `Quantity` |
+| StorageRoot | `Hash` |
+| StorageProofs | `StorageProof[] object` |
+
+`Address`
+| Fields name | Type |
+| :--- | :--- |
+| Zero | `Address` |
+| SystemUser | `Address` |
+| Bytes | `Data` |
+| Item | `Byte object` |
+
+`StorageProof[]`
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -1092,23 +1290,5 @@ https://github.com/ethereum/EIPs/issues/1186
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
 
-`BlockParameter`
-| Fields name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
-
-`AccountProof`
-| Fields name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| Proof | `Byte[][] object` |
-| Balance | `Quantity` |
-| CodeHash | `Hash` |
-| Nonce | `Quantity` |
-| StorageRoot | `Hash` |
-| StorageProofs | `StorageProof[] object` |
-
 {% endtab %}
+{% endtabs %}
