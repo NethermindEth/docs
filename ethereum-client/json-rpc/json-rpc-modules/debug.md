@@ -58,10 +58,6 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 `Quantity`
 
 {% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
-
-{% endtab %}
 {% endtabs %}
 ##debug\_resetHead
 
@@ -361,10 +357,6 @@ Retrieves a block in the RLP-serialized form.
 `Data`
 
 {% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
-
-{% endtab %}
 {% endtabs %}
 ##debug\_getBlockRlpByHash
 
@@ -382,11 +374,6 @@ Retrieves a block in the RLP-serialized form.
 
 #### Return type
 `Data`
-
-{% endtab %}
-{% tab title="Object definitions" %}
-#### Objects definition
-
 
 {% endtab %}
 {% endtabs %}
