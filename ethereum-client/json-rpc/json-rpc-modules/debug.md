@@ -14,19 +14,12 @@ Retrieves a representation of tree branches on a given chain level (Nethermind s
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `ChainLevelForRpc object`
 
 {% endtab %}
 {% tab title="Object definitions" %}
 #### Objects definition
-
-`Int64&`
-| Fields name | Type |
-| :--- | :--- |
 
 `ChainLevelForRpc`
 | Fields name | Type |
@@ -61,9 +54,6 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `Quantity`
 
@@ -87,9 +77,6 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `Boolean`
 
@@ -107,9 +94,6 @@ This method will attempt to run the transaction in the exact same manner as it w
 | :--- | :--- |
 | transactionHash | `Hash` |
 | options | `GethTraceOptions object` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -132,11 +116,11 @@ This method will attempt to run the transaction in the exact same manner as it w
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 
 {% endtab %}
@@ -152,9 +136,6 @@ This method will attempt to run the transaction in the exact same manner as it w
 | blockParameter | `BlockParameter object` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -188,11 +169,11 @@ This method will attempt to run the transaction in the exact same manner as it w
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 
 {% endtab %}
@@ -208,9 +189,6 @@ This method will attempt to run the transaction in the exact same manner as it w
 | blockHash | `Hash` |
 | txIndex | `Quantity` |
 | options | `GethTraceOptions object` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -233,11 +211,11 @@ This method will attempt to run the transaction in the exact same manner as it w
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 
 {% endtab %}
@@ -257,9 +235,6 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `GethLikeTxTrace object`
 
@@ -279,11 +254,11 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 {% endtab %}
 {% endtabs %}
@@ -300,9 +275,6 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `GethLikeTxTrace object`
 
@@ -322,11 +294,11 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 
 {% endtab %}
@@ -344,9 +316,6 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `GethLikeTxTrace object`
 
@@ -366,11 +335,11 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 {% endtab %}
 {% endtabs %}
@@ -385,9 +354,6 @@ Retrieves a block in the RLP-serialized form.
 | Parameter name | Type |
 | :--- | :--- |
 | number | `Quantity` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -411,9 +377,6 @@ Retrieves a block in the RLP-serialized form.
 | Parameter name | Type |
 | :--- | :--- |
 | hash | `Hash` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -442,11 +405,8 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
-`Object object`
+`String`
 
 {% endtab %}
 
@@ -467,9 +427,6 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `GethLikeTxTrace object`
 
@@ -489,11 +446,11 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 {% endtab %}
 {% endtabs %}
@@ -513,9 +470,6 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `GethLikeTxTrace object`
 
@@ -535,11 +489,11 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 `GethLikeTxTrace`
 | Fields name | Type |
 | :--- | :--- |
-| StoragesByDepth | `Stack`1 object` |
+| StoragesByDepth | `Array` |
 | Gas | `Quantity` |
 | Failed | `Boolean` |
 | ReturnValue | `Data` |
-| Entries | `List`1 object` |
+| Entries | `Array` |
 
 
 {% endtab %}
@@ -555,9 +509,6 @@ Sets the block number up to which receipts will be migrated to (Nethermind speci
 | Parameter name | Type |
 | :--- | :--- |
 | blockNumber | `Quantity` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -578,9 +529,6 @@ Insert receipts for the block after verifying receipts root correctness.
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | receiptForRpc | `ReceiptForRpc[] object` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
