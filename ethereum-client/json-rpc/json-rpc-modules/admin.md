@@ -15,9 +15,6 @@
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `String`
 
@@ -38,9 +35,6 @@
 {% endtab %}
 {% tab title="Response" %}
 
-{% endtab %}
-{% tab title="Response" %}
-
 #### Return type
 `String`
 
@@ -57,9 +51,6 @@
 | Parameter name | Type |
 | :--- | :--- |
 | includeDetails | `Boolean` |
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
@@ -96,9 +87,6 @@ Relevant information about this node
 #### **Parameters**
 
 _None_
-{% endtab %}
-{% tab title="Response" %}
-
 {% endtab %}
 {% tab title="Response" %}
 
