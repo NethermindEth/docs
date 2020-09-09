@@ -1,26 +1,26 @@
-#personal
+# Personal
 
-##personal\_listAccounts
+## personal\_listAccounts
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Address`
-
 {% endtab %}
 {% endtabs %}
-##personal\_lockAccount
+
+## personal\_lockAccount
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -28,17 +28,17 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##personal\_unlockAccount
+
+## personal\_unlockAccount
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -47,17 +47,17 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##personal\_newAccount
+
+## personal\_newAccount
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -65,9 +65,9 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Address`
-
 {% endtab %}
 {% endtabs %}
+

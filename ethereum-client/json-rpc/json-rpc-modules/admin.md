@@ -1,67 +1,65 @@
-#admin
+# Admin
 
-##admin\_addPeer
-
- 
+## admin\_addPeer
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | enode | `String` |
 | addToStaticNodes | `Boolean` |
 {% endtab %}
+
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
 {% endtabs %}
-##admin\_removePeer
 
- 
+## admin\_removePeer
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | enode | `String` |
 | removeFromStaticNodes | `Boolean` |
 {% endtab %}
+
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
 {% endtabs %}
-##admin\_peers
 
- 
+## admin\_peers
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
 | includeDetails | `Boolean` |
 {% endtab %}
+
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `PeerInfo object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `PeerInfo`
+
 | Fields name | Type |
 | :--- | :--- |
 | ClientId | `String` |
@@ -75,29 +73,31 @@
 | ClientType | `String` |
 | EthDetails | `String` |
 | LastSignal | `String` |
-
 {% endtab %}
 {% endtabs %}
-##admin\_nodeInfo
 
-Relevant information about this node 
+## admin\_nodeInfo
+
+Relevant information about this node
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
+
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `NodeInfo object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `NodeInfo`
+
 | Fields name | Type |
 | :--- | :--- |
 | Enode | `String` |
@@ -106,13 +106,14 @@ _None_
 | ListenAddress | `String` |
 | Name | `String` |
 | Ports | `PortsInfo object` |
-| Protocols | `Dictionary`2 object` |
+| Protocols | `Dictionary`2 object\` |
 
 `PortsInfo`
+
 | Fields name | Type |
 | :--- | :--- |
 | Discovery | `Quantity` |
 | Listener | `Quantity` |
-
 {% endtab %}
 {% endtabs %}
+

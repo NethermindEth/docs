@@ -1,95 +1,97 @@
-#eth
+# Eth
 
-##eth\_chainId
+## eth\_chainId
 
-Returns ChainID 
+Returns ChainID
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
-{% tab title="Response" %}
 
-#### Return type
+{% tab title="Response" %}
+### Return type
+
 `Quantity`
-
 {% endtab %}
 {% endtabs %}
-##eth\_protocolVersion
 
-Returns ETH protocol version 
+## eth\_protocolVersion
+
+Returns ETH protocol version
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
 {% endtabs %}
-##eth\_syncing
 
-Returns syncing status 
+## eth\_syncing
+
+Returns syncing status
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `SyncingResult object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `SyncingResult`
+
 | Fields name | Type |
 | :--- | :--- |
 | IsSyncing | `Boolean` |
 | StartingBlock | `Quantity` |
 | CurrentBlock | `Quantity` |
 | HighestBlock | `Quantity` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_blockNumber
 
-Returns current block number 
+## eth\_blockNumber
+
+Returns current block number
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
 {% endtabs %}
-##eth\_getBalance
 
-Returns account balance 
+## eth\_getBalance
+
+Returns account balance
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -98,15 +100,16 @@ Returns account balance
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -114,18 +117,17 @@ Returns account balance
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_getStorageAt
 
-Returns storage data at address. storage_index 
+## eth\_getStorageAt
+
+Returns storage data at address. storage\_index
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -135,15 +137,16 @@ Returns storage data at address. storage_index
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Data`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -151,18 +154,17 @@ Returns storage data at address. storage_index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_getTransactionCount
 
-Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
+## eth\_getTransactionCount
+
+Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -171,15 +173,16 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -187,18 +190,17 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash 
+## eth\_getBlockTransactionCountByHash
+
+Returns number of transactions in the block block hash
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -206,19 +208,19 @@ Returns number of transactions in the block block hash
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
 {% endtabs %}
-##eth\_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number 
+## eth\_getBlockTransactionCountByNumber
+
+Returns number of transactions in the block by block number
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -226,15 +228,16 @@ Returns number of transactions in the block by block number
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -242,18 +245,17 @@ Returns number of transactions in the block by block number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_getUncleCountByBlockHash
 
-Returns number of uncles in the block by block hash 
+## eth\_getUncleCountByBlockHash
+
+Returns number of uncles in the block by block hash
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -261,19 +263,19 @@ Returns number of uncles in the block by block hash
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
 {% endtabs %}
-##eth\_getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number 
+## eth\_getUncleCountByBlockNumber
+
+Returns number of uncles in the block by block number
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -281,15 +283,16 @@ Returns number of uncles in the block by block number
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -297,18 +300,17 @@ Returns number of uncles in the block by block number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_getCode
 
-Returns account code at given address and block 
+## eth\_getCode
+
+Returns account code at given address and block
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -317,15 +319,16 @@ Returns account code at given address and block
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Data`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -333,18 +336,17 @@ Returns account code at given address and block
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting 
+## eth\_sendTransaction
+
+Send a transaction to the tx pool and broadcasting
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -352,15 +354,16 @@ Send a transaction to the tx pool and broadcasting
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Hash`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -378,16 +381,16 @@ Send a transaction to the tx pool and broadcasting
 | V | `Quantity` |
 | S | `Data` |
 | R | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting 
+## eth\_sendRawTransaction
+
+Send a raw transaction to the tx pool and broadcasting
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -395,19 +398,19 @@ Send a raw transaction to the tx pool and broadcasting
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Hash`
-
 {% endtab %}
 {% endtabs %}
-##eth\_call
 
-Executes a tx call (does not create a transaction) 
+## eth\_call
+
+Executes a tx call \(does not create a transaction\)
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -416,15 +419,16 @@ Executes a tx call (does not create a transaction)
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -444,6 +448,7 @@ Executes a tx call (does not create a transaction)
 | R | `Data` |
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -451,18 +456,17 @@ Executes a tx call (does not create a transaction)
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_estimateGas
 
-Executes a tx call and returns gas used (does not create a transaction) 
+## eth\_estimateGas
+
+Executes a tx call and returns gas used \(does not create a transaction\)
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -471,15 +475,16 @@ Executes a tx call and returns gas used (does not create a transaction)
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -499,6 +504,7 @@ Executes a tx call and returns gas used (does not create a transaction)
 | R | `Data` |
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -506,18 +512,17 @@ Executes a tx call and returns gas used (does not create a transaction)
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
-
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
-##eth\_getBlockByHash
 
-Retrieves a block by hash 
+## eth\_getBlockByHash
+
+Retrieves a block by hash
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -526,15 +531,16 @@ Retrieves a block by hash
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `BlockForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -560,16 +566,16 @@ Retrieves a block by hash
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getBlockByNumber
 
-Retrieves a block by number 
+## eth\_getBlockByNumber
+
+Retrieves a block by number
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -578,15 +584,16 @@ Retrieves a block by number
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `BlockForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -594,10 +601,10 @@ Retrieves a block by number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -623,16 +630,16 @@ Retrieves a block by number
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getTransactionByHash
 
-Retrieves a transaction by hash 
+## eth\_getTransactionByHash
+
+Retrieves a transaction by hash
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -640,15 +647,16 @@ Retrieves a transaction by hash
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TransactionForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -666,30 +674,31 @@ Retrieves a transaction by hash
 | V | `Quantity` |
 | S | `Data` |
 | R | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_pendingTransactions
 
-Returns the pending transactions list 
+## eth\_pendingTransactions
+
+Returns the pending transactions list
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TransactionForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -707,16 +716,16 @@ _None_
 | V | `Quantity` |
 | S | `Data` |
 | R | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index 
+## eth\_getTransactionByBlockHashAndIndex
+
+Retrieves a transaction by block hash and index
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -725,15 +734,16 @@ Retrieves a transaction by block hash and index
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TransactionForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -751,16 +761,16 @@ Retrieves a transaction by block hash and index
 | V | `Quantity` |
 | S | `Data` |
 | R | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index 
+## eth\_getTransactionByBlockNumberAndIndex
+
+Retrieves a transaction by block number and index
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -769,15 +779,16 @@ Retrieves a transaction by block number and index
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TransactionForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -785,10 +796,10 @@ Retrieves a transaction by block number and index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -806,16 +817,16 @@ Retrieves a transaction by block number and index
 | V | `Quantity` |
 | S | `Data` |
 | R | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash 
+## eth\_getTransactionReceipt
+
+Retrieves a transaction receipt by tx hash
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -823,15 +834,16 @@ Retrieves a transaction receipt by tx hash
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ReceiptForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `ReceiptForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | TransactionHash | `Hash` |
@@ -850,6 +862,7 @@ Retrieves a transaction receipt by tx hash
 | Error | `String` |
 
 `LogEntryForRpc[]`
+
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -859,16 +872,16 @@ Retrieves a transaction receipt by tx hash
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index 
+## eth\_getUncleByBlockHashAndIndex
+
+Retrieves an uncle block header by block hash and uncle index
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -877,15 +890,16 @@ Retrieves an uncle block header by block hash and uncle index
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `BlockForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -911,16 +925,16 @@ Retrieves an uncle block header by block hash and uncle index
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index 
+## eth\_getUncleByBlockNumberAndIndex
+
+Retrieves an uncle block header by block number and uncle index
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -929,15 +943,16 @@ Retrieves an uncle block header by block number and uncle index
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `BlockForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -945,10 +960,10 @@ Retrieves an uncle block header by block number and uncle index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Author | `Address` |
@@ -974,16 +989,16 @@ Retrieves an uncle block header by block number and uncle index
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_newFilter
 
-Creates an update filter 
+## eth\_newFilter
+
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -991,15 +1006,16 @@ Creates an update filter
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `Filter`
+
 | Fields name | Type |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
@@ -1008,58 +1024,59 @@ Creates an update filter
 | Topics | `Array` |
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_newBlockFilter
 
-Creates an update filter 
+## eth\_newBlockFilter
+
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
 {% endtabs %}
-##eth\_newPendingTransactionFilter
 
-Creates an update filter 
+## eth\_newPendingTransactionFilter
+
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Quantity`
-
 {% endtab %}
 {% endtabs %}
-##eth\_uninstallFilter
 
-Creates an update filter 
+## eth\_uninstallFilter
+
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -1067,19 +1084,19 @@ Creates an update filter
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##eth\_getFilterChanges
 
-Reads filter changes 
+## eth\_getFilterChanges
+
+Reads filter changes
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -1087,19 +1104,19 @@ Reads filter changes
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Array`
-
 {% endtab %}
 {% endtabs %}
-##eth\_getFilterLogs
 
-Reads filter changes 
+## eth\_getFilterLogs
+
+Reads filter changes
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -1107,23 +1124,23 @@ Reads filter changes
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Array`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
-
+### Objects definition
 {% endtab %}
 {% endtabs %}
-##eth\_getLogs
 
-Reads logs 
+## eth\_getLogs
+
+Reads logs
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -1131,40 +1148,41 @@ Reads logs
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Array`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `Filter`
+
 | Fields name | Type |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
 | Address | `Object object` |
-| Topics | `IEnumerable`1 object` |
-
+| Topics | `IEnumerable`1 object\` |
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
-
 {% endtab %}
 {% endtabs %}
-##eth\_getProof
 
-https://github.com/ethereum/EIPs/issues/1186 
+## eth\_getProof
+
+[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -1174,15 +1192,16 @@ https://github.com/ethereum/EIPs/issues/1186
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `AccountProof object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -1190,10 +1209,10 @@ https://github.com/ethereum/EIPs/issues/1186
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `AccountProof`
+
 | Fields name | Type |
 | :--- | :--- |
 | Address | `Address` |
@@ -1204,8 +1223,8 @@ https://github.com/ethereum/EIPs/issues/1186
 | StorageRoot | `Hash` |
 | StorageProofs | `StorageProof[] object` |
 
-
 `StorageProof[]`
+
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -1215,6 +1234,6 @@ https://github.com/ethereum/EIPs/issues/1186
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
-
 {% endtab %}
 {% endtabs %}
+

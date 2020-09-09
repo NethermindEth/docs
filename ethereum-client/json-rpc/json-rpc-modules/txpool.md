@@ -1,114 +1,121 @@
-#txpool
+# TxPool
 
-##txpool\_status
+## txpool\_status
 
-_description missing_ 
+_description missing_
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TxPoolStatus object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TxPoolStatus`
+
 | Fields name | Type |
 | :--- | :--- |
 | Pending | `Quantity` |
 | Queued | `Quantity` |
-
 {% endtab %}
 {% endtabs %}
-##txpool\_content
 
-_description missing_ 
+## txpool\_content
+
+_description missing_
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TxPoolContent object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TxPoolContent`
-| Fields name | Type |
-| :--- | :--- |
-| Pending | `IDictionary`2 object` |
-| Queued | `IDictionary`2 object` |
 
-`IDictionary`2`
 | Fields name | Type |
 | :--- | :--- |
-| Item | `Dictionary`2 object` |
+| Pending | `IDictionary`2 object\` |
+| Queued | `IDictionary`2 object\` |
+
+`IDictionary`2\`
+
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object\` |
 | Keys | `Array` |
 | Values | `Array` |
 
-`IDictionary`2`
+`IDictionary`2\`
+
 | Fields name | Type |
 | :--- | :--- |
-| Item | `Dictionary`2 object` |
+| Item | `Dictionary`2 object\` |
 | Keys | `Array` |
 | Values | `Array` |
-
 {% endtab %}
 {% endtabs %}
-##txpool\_inspect
 
-_description missing_ 
+## txpool\_inspect
+
+_description missing_
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TxPoolInspection object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TxPoolInspection`
-| Fields name | Type |
-| :--- | :--- |
-| Pending | `IDictionary`2 object` |
-| Queued | `IDictionary`2 object` |
 
-`IDictionary`2`
 | Fields name | Type |
 | :--- | :--- |
-| Item | `Dictionary`2 object` |
+| Pending | `IDictionary`2 object\` |
+| Queued | `IDictionary`2 object\` |
+
+`IDictionary`2\`
+
+| Fields name | Type |
+| :--- | :--- |
+| Item | `Dictionary`2 object\` |
 | Keys | `Array` |
 | Values | `Array` |
 
-`IDictionary`2`
+`IDictionary`2\`
+
 | Fields name | Type |
 | :--- | :--- |
-| Item | `Dictionary`2 object` |
+| Item | `Dictionary`2 object\` |
 | Keys | `Array` |
 | Values | `Array` |
-
 {% endtab %}
 {% endtabs %}
+

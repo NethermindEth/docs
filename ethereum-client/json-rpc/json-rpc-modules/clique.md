@@ -1,42 +1,43 @@
-#clique
+# Clique
 
-##clique\_getSnapshot
+## clique\_getSnapshot
 
-Retrieves a snapshot of all clique state at a given block. 
+Retrieves a snapshot of all clique state at a given block.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Snapshot object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `Snapshot`
+
 | Fields name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
-
 {% endtab %}
 {% endtabs %}
-##clique\_getSnapshotAtHash
 
-Retrieves the state snapshot at a given block. 
+## clique\_getSnapshotAtHash
+
+Retrieves the state snapshot at a given block.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -44,49 +45,50 @@ Retrieves the state snapshot at a given block.
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Snapshot object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `Snapshot`
+
 | Fields name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
-
 {% endtab %}
 {% endtabs %}
-##clique\_getSigners
 
-Retrieves the list of authorized signers. 
+## clique\_getSigners
+
+Retrieves the list of authorized signers.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Address`
-
 {% endtab %}
 {% endtabs %}
-##clique\_getSignersAtHash
 
-Retrieves the list of authorized signers at the specified block by hash. 
+## clique\_getSignersAtHash
+
+Retrieves the list of authorized signers at the specified block by hash.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -94,19 +96,19 @@ Retrieves the list of authorized signers at the specified block by hash.
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Address`
-
 {% endtab %}
 {% endtabs %}
-##clique\_getSignersAtNumber
 
-Retrieves the list of authorized signers at the specified block by block number. 
+## clique\_getSignersAtNumber
+
+Retrieves the list of authorized signers at the specified block by block number.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -114,37 +116,33 @@ Retrieves the list of authorized signers at the specified block by block number.
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Address`
-
 {% endtab %}
 {% endtabs %}
-##clique\_getSignersAnnotated
 
- 
+## clique\_getSignersAnnotated
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
 {% endtabs %}
-##clique\_getSignersAtHashAnnotated
 
- 
+## clique\_getSignersAtHashAnnotated
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -152,19 +150,19 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
 {% endtabs %}
-##clique\_propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address. 
+## clique\_propose
+
+Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -173,19 +171,19 @@ Adds a new authorization proposal that the signer will attempt to push through. 
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##clique\_discard
 
-This method drops a currently running proposal. The signer will not cast further votes (either for or against) the address. 
+## clique\_discard
+
+This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -193,17 +191,17 @@ This method drops a currently running proposal. The signer will not cast further
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##clique\_produceBlock
+
+## clique\_produceBlock
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -211,9 +209,9 @@ This method drops a currently running proposal. The signer will not cast further
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
+

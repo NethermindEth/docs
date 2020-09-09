@@ -1,12 +1,12 @@
-#trace
+# Trace
 
-##trace\_rawTransaction
+## trace\_rawTransaction
 
-Traces a call to eth_sendRawTransaction without making the call, returning the traces 
+Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -15,30 +15,33 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ParityTxTraceFromReplay object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `ParityTxTraceFromReplay`
+
 | Fields name | Type |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
-| StateChanges | `Dictionary`2 object` |
+| StateChanges | `Dictionary`2 object\` |
 
 `ParityVmTrace`
+
 | Fields name | Type |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
+
 | Fields name | Type |
 | :--- | :--- |
 | TraceAddress | `Array` |
@@ -57,14 +60,14 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Author | `Address` |
 | RewardType | `String` |
 | Error | `String` |
-
 {% endtab %}
 {% endtabs %}
-##trace\_replayTransaction
+
+## trace\_replayTransaction
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -73,30 +76,33 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ParityTxTraceFromReplay object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `ParityTxTraceFromReplay`
+
 | Fields name | Type |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
-| StateChanges | `Dictionary`2 object` |
+| StateChanges | `Dictionary`2 object\` |
 
 `ParityVmTrace`
+
 | Fields name | Type |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
+
 | Fields name | Type |
 | :--- | :--- |
 | TraceAddress | `Array` |
@@ -115,14 +121,14 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Author | `Address` |
 | RewardType | `String` |
 | Error | `String` |
-
 {% endtab %}
 {% endtabs %}
-##trace\_replayBlockTransactions
+
+## trace\_replayBlockTransactions
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -131,15 +137,16 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ParityTxTraceFromReplay object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -147,25 +154,27 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromReplay`
+
 | Fields name | Type |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
-| StateChanges | `Dictionary`2 object` |
+| StateChanges | `Dictionary`2 object\` |
 
 `ParityVmTrace`
+
 | Fields name | Type |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
+
 | Fields name | Type |
 | :--- | :--- |
 | TraceAddress | `Int32[] object` |
@@ -180,18 +189,18 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Value | `Quantity` |
 | Input | `Data` |
 | Result | `ParityTraceResult object` |
-| Subtraces | `List`1 object` |
+| Subtraces | `List`1 object\` |
 | Author | `Address` |
 | RewardType | `String` |
 | Error | `String` |
-
 {% endtab %}
 {% endtabs %}
-##trace\_block
+
+## trace\_block
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -199,15 +208,16 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ParityTxTraceFromStore object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -215,10 +225,10 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromStore`
+
 | Fields name | Type |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
@@ -232,6 +242,7 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Type | `String` |
 
 `ParityTraceAction`
+
 | Fields name | Type |
 | :--- | :--- |
 | TraceAddress | `Array` |
@@ -252,20 +263,21 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Error | `String` |
 
 `ParityTraceResult`
+
 | Fields name | Type |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |
 | Address | `Address` |
 | Code | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##trace\_transaction
+
+## trace\_transaction
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -273,15 +285,16 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ParityTxTraceFromStore object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `ParityTxTraceFromStore`
+
 | Fields name | Type |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
@@ -295,6 +308,7 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Type | `String` |
 
 `ParityTraceAction`
+
 | Fields name | Type |
 | :--- | :--- |
 | TraceAddress | `Array` |
@@ -315,12 +329,13 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Error | `String` |
 
 `ParityTraceResult`
+
 | Fields name | Type |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |
 | Address | `Address` |
 | Code | `Data` |
-
 {% endtab %}
 {% endtabs %}
+

@@ -1,26 +1,27 @@
-#parity
+# Parity
 
-##parity\_pendingTransactions
+## parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue. 
+Returns a list of transactions currently in the queue.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ParityTransaction object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `ParityTransaction`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -45,21 +46,22 @@ _None_
 | StandardV | `Quantity` |
 
 `PublicKey`
+
 | Fields name | Type |
 | :--- | :--- |
 | Address | `Address` |
 | Bytes | `Data` |
 | PrefixedBytes | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
+## parity\_getBlockReceipts
+
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -67,15 +69,16 @@ Get receipts from all transactions from particular block, more efficient than fe
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ReceiptForRpc object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `BlockParameter`
+
 | Fields name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
@@ -83,10 +86,10 @@ Get receipts from all transactions from particular block, more efficient than fe
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType`
-`Quantity` or `String` (latest, earliest, pending)
+`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
 
 `ReceiptForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | TransactionHash | `Hash` |
@@ -105,6 +108,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 | Error | `String` |
 
 `LogEntryForRpc[]`
+
 | Fields name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
@@ -114,32 +118,32 @@ Get receipts from all transactions from particular block, more efficient than fe
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
-
 {% endtab %}
 {% endtabs %}
-##parity\_enode
 
-Returns the node enode URI. 
+## parity\_enode
+
+Returns the node enode URI.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `String`
-
 {% endtab %}
 {% endtabs %}
-##parity\_setEngineSigner
+
+## parity\_setEngineSigner
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -148,18 +152,17 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##parity\_setEngineSignerSecret
- 
+
+## parity\_setEngineSignerSecret
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -167,27 +170,25 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
-##parity\_clearEngineSigner
 
- 
+## parity\_clearEngineSigner
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 _None_
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `Boolean`
-
 {% endtab %}
 {% endtabs %}
+

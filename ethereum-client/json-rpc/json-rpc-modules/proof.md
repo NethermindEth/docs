@@ -1,12 +1,12 @@
-#proof
+# Proof
 
-##proof\_getTransactionByHash
+## proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -15,15 +15,16 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `TransactionWithProof object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `TransactionWithProof`
+
 | Fields name | Type |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
@@ -31,6 +32,7 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | BlockHeader | `Data` |
 
 `TransactionForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
@@ -48,16 +50,16 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | V | `Quantity` |
 | S | `Data` |
 | R | `Data` |
-
 {% endtab %}
 {% endtabs %}
-##proof\_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
+## proof\_getTransactionReceipt
+
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
 
 {% tabs %}
 {% tab title="Request" %}
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
@@ -66,15 +68,16 @@ This function should return the same result as `eth_call` and also proofs of all
 {% endtab %}
 
 {% tab title="Response" %}
+### Return type
 
-#### Return type
 `ReceiptWithProof object`
-
 {% endtab %}
+
 {% tab title="Object definitions" %}
-#### Objects definition
+### Objects definition
 
 `ReceiptWithProof`
+
 | Fields name | Type |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |
@@ -83,6 +86,7 @@ This function should return the same result as `eth_call` and also proofs of all
 | BlockHeader | `Data` |
 
 `ReceiptForRpc`
+
 | Fields name | Type |
 | :--- | :--- |
 | TransactionHash | `Hash` |
@@ -99,6 +103,6 @@ This function should return the same result as `eth_call` and also proofs of all
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
-
 {% endtab %}
 {% endtabs %}
+
