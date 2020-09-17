@@ -6,7 +6,7 @@ Beam Wallet is a proof of concept Ethereum Wallet with a console UI that lets us
 
 ## Download and run
 
-You can find Beam wallet **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
+You can find Beam wallet \(which is included in the standard Nethermind package\) **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
 
 Select the appropriate package based on operating system and download it.
 
