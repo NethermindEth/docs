@@ -13,81 +13,15 @@ source_file = SUMMARY.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.nethermind-utilities-json-rpc-README-md]
-file_filter = nethermind-utilities/json-rpc/README.<lang>.md
-source_file = nethermind-utilities/json-rpc/README.md
+[nethermind-docs.nethermind-utilities-beam-wallet-md]
+file_filter = nethermind-utilities/beam-wallet.<lang>.md
+source_file = nethermind-utilities/beam-wallet.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-admin-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/admin.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/admin.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-net-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/net.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/net.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-README-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/README.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/README.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-personal-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/personal.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/personal.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-eth-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/eth.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/eth.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-txpool-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/txpool.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/txpool.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-debug-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/debug.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/debug.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-web3-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/web3.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/web3.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-parity-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/parity.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/parity.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-clique-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/clique.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/clique.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-proof-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/proof.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/proof.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.nethermind-utilities-json-rpc-json-rpc-modules-trace-md]
-file_filter = nethermind-utilities/json-rpc/json-rpc-modules/trace.<lang>.md
-source_file = nethermind-utilities/json-rpc/json-rpc-modules/trace.md
+[nethermind-docs.nethermind-utilities-rocksdbextractor-md]
+file_filter = nethermind-utilities/rocksdbextractor.<lang>.md
+source_file = nethermind-utilities/rocksdbextractor.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -199,6 +133,12 @@ source_file = ethereum-client/sync-modes.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.ethereum-client-database-md]
+file_filter = ethereum-client/database.<lang>.md
+source_file = ethereum-client/database.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.ethereum-client-building-nethermind-md]
 file_filter = ethereum-client/building-nethermind.<lang>.md
 source_file = ethereum-client/building-nethermind.md
@@ -214,6 +154,12 @@ type = GITHUBMARKDOWN
 [nethermind-docs.ethereum-client-dockers-md]
 file_filter = ethereum-client/dockers.<lang>.md
 source_file = ethereum-client/dockers.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-logging-configuration-md]
+file_filter = ethereum-client/logging-configuration.<lang>.md
+source_file = ethereum-client/logging-configuration.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -331,6 +277,84 @@ source_file = ethereum-client/metrics/modules/store.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.ethereum-client-json-rpc-README-md]
+file_filter = ethereum-client/json-rpc/README.<lang>.md
+source_file = ethereum-client/json-rpc/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-admin-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/admin.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/admin.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-net-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/net.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/net.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-README-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/README.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-personal-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/personal.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/personal.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-eth-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/eth.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/eth.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-txpool-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/txpool.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/txpool.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-debug-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/debug.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/debug.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-web3-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/web3.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/web3.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-parity-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/parity.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/parity.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-clique-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/clique.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/clique.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-proof-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/proof.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/proof.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.ethereum-client-json-rpc-json-rpc-modules-trace-md]
+file_filter = ethereum-client/json-rpc/json-rpc-modules/trace.<lang>.md
+source_file = ethereum-client/json-rpc/json-rpc-modules/trace.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.ethereum-client-configuration-README-md]
 file_filter = ethereum-client/configuration/README.<lang>.md
 source_file = ethereum-client/configuration/README.md
@@ -439,6 +463,12 @@ source_file = first-steps-with-nethermind/getting-started.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.first-steps-with-nethermind-manage-nethermind-with-systemd-md]
+file_filter = first-steps-with-nethermind/manage-nethermind-with-systemd.<lang>.md
+source_file = first-steps-with-nethermind/manage-nethermind-with-systemd.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.first-steps-with-nethermind-firewall-configuration-md]
 file_filter = first-steps-with-nethermind/firewall-configuration.<lang>.md
 source_file = first-steps-with-nethermind/firewall-configuration.md
@@ -463,15 +493,39 @@ source_file = guides-and-helpers/web3.py.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.guides-and-helpers-rocksdbextractor-md]
-file_filter = guides-and-helpers/rocksdbextractor.<lang>.md
-source_file = guides-and-helpers/rocksdbextractor.md
+[nethermind-docs.guides-and-helpers-upgrades-md]
+file_filter = guides-and-helpers/upgrades.<lang>.md
+source_file = guides-and-helpers/upgrades.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-ethereum-networks-synchronization-smoke-testing-with-nethermind-md]
+file_filter = guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.<lang>.md
+source_file = guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md
 source_lang = en
 type = GITHUBMARKDOWN
 
 [nethermind-docs.guides-and-helpers-known-issues-md]
 file_filter = guides-and-helpers/known-issues.<lang>.md
 source_file = guides-and-helpers/known-issues.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-custom-analytic-tools-md]
+file_filter = guides-and-helpers/custom-analytic-tools.<lang>.md
+source_file = guides-and-helpers/custom-analytic-tools.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-validator-setup-README-md]
+file_filter = guides-and-helpers/validator-setup/README.<lang>.md
+source_file = guides-and-helpers/validator-setup/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-validator-setup-aura-validator-md]
+file_filter = guides-and-helpers/validator-setup/aura-validator.<lang>.md
+source_file = guides-and-helpers/validator-setup/aura-validator.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -511,18 +565,6 @@ source_file = guides-and-helpers/cloud-providers/upcloud.md
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.guides-and-helpers-validator-setup-README-md]
-file_filter = guides-and-helpers/validator-setup/README.<lang>.md
-source_file = guides-and-helpers/validator-setup/README.md
-source_lang = en
-type = GITHUBMARKDOWN
-
-[nethermind-docs.guides-and-helpers-validator-setup-aura-validator-md]
-file_filter = guides-and-helpers/validator-setup/aura-validator.<lang>.md
-source_file = guides-and-helpers/validator-setup/aura-validator.md
-source_lang = en
-type = GITHUBMARKDOWN
-
 [nethermind-docs.enterprise-seq-md]
 file_filter = enterprise/seq.<lang>.md
 source_file = enterprise/seq.md
@@ -546,4 +588,3 @@ file_filter = contact/contact-us.<lang>.md
 source_file = contact/contact-us.md
 source_lang = en
 type = GITHUBMARKDOWN
-

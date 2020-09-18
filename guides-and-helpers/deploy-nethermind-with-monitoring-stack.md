@@ -30,7 +30,7 @@ git clone https://github.com/NethermindEth/terraform-nethermind
 cd terraform-nethermind/
 ```
 
-Create a `terraform.tfvars` file and add these 2 variables
+创建一个`terraform.tfvars` 文件并添加这两个变量
 
 {% tabs %}
 {% tab title="terraform.tfvars" %}
@@ -41,7 +41,7 @@ pvt_key = "path/to/your/private_ssh_key"
 {% endtab %}
 {% endtabs %}
 
-Make sure that the `public_key` variable in `main.tf` file points to your Public key path
+确保`main.tf` 文件中的`public_key`变量指向您的公钥路径
 
 {% tabs %}
 {% tab title="main.tf" %}
@@ -54,103 +54,103 @@ resource "digitalocean_ssh_key" "key" {
 {% endtab %}
 {% endtabs %}
 
-### How to get those variables? \([skip this part](deploy-nethermind-with-monitoring-stack.md#run-the-stack) if you know already\)
+### 如何获得这些变量？ \([跳过此部分](deploy-nethermind-with-monitoring-stack.md#run-the-stack)若已知\)，
 
 #### do\_token
 
-Can be generated on DigitalOcean panel. First go to the **API** management \(bottom of the left navigation panel\)
+可以在DigitalOcean面板上生成。 首先转到** API **管理\（左侧导航面板的底部\）
 
 ![](../.gitbook/assets/image%20%2843%29.png)
 
-Click on the `Generate New Token` button
+点击 `Generate New Token`（生成新令牌）按钮
 
 ![](../.gitbook/assets/image%20%2847%29.png)
 
-Give it a name and generate
+给它一个名称并生成
 
 ![](../.gitbook/assets/image%20%2842%29.png)
 
-Copy the token and place in its spot in `terraform.tfvars` file
+复制令牌并将其放置在`terraform.tfvars` 文件中
 
 #### pvt\_key
 
-Generate ssh key, we will be using **ed25519** algorithm in our example
+生成ssh密钥，我们将在示例中使用** ed25519 **算法
 
 ```bash
 ssh-keygen -t ed25519 -a 100 -f private.key
 ```
 
-`pvt_key` variable will now look like this:
+`pvt_key`变量现在将如下所示：
 
 ```bash
 pvt_key = "./private.key"
 ```
 
-## Running the stack
+## 运行堆栈
 
-Confirm that terraform can be initialized, run this command from within terraform-templates directory
+确认terraform可以初始化，在terraform-templates目录中运行此命令
 
 ```bash
 terraform init
 ```
 
-You should see a green light in your console
+您应该在控制台中看到绿灯
 
 ![](../.gitbook/assets/image%20%2850%29.png)
 
-Let's preview our plan before applying and save it so that it can be used in a future
+我们在应用和保存之前预览一下我们的计划，以便将来可以使用
 
 ```bash
 terraform plan -out myplan
 ```
 
-You can now provide some basic configuration to your VM/Nethermind Node
+现在可以为VM / Nethermind节点提供一些基本配置
 
 ![](../.gitbook/assets/image%20%2855%29.png)
 
-A list of available `configs` can be found [here](../ethereum-client/networks.md)
+可在 [此处](../ethereum-client/networks.md)找到可用` 配置` 的列表
 
 {% hint style="warning" %}
 🧯 If you chose to enable JsonRpc \(it will run on port `8545` by default\) make sure that you set up [Firewall rules](../first-steps-with-nethermind/firewall-configuration.md) either in DigitalOcean or by using Linux `iptables`
 {% endhint %}
 
-Let's apply our plan and start deploying whole stack \(it should take no longer than 3 minutes\)
+我们应用以下计划吧，开始部署整个堆栈  (不应该会超过3分钟)
 
 ```bash
 terraform apply myplan
 ```
 
-Wait until terraform is done deploying and if everything went smooth you should see
+等待terraform部署完成，如果一切顺利，您应该会看到
 
 ![](../.gitbook/assets/image%20%2854%29.png)
 
-## Exploring the stack
+## 探索堆栈
 
-Grab the IP of your new Droplet from the DigitalOcean panel
+从DigitalOcean面板中获取新Droplet的IP
 
 ![](../.gitbook/assets/image%20%2852%29.png)
 
-### Grafana Dashboard
+### Grafana 仪表板
 
-Go to the `YOUR_DROPLET_IP:3000`
+转到`YOUR_DROPLET_IP:3000`
 
-Login to Grafana with `admin:admin` credentials and change the password if you wish
+使用 `admin:admin` 凭据登录到Grafana，并根据需要更改密码
 
 ![](../.gitbook/assets/image%20%2841%29.png)
 
-Go to `YOUR_DROPLET_IP:3000/dashboards` endpoint
+转到`YOUR_DROPLET_IP:3000/dashboards`端点
 
 ![](../.gitbook/assets/image%20%2840%29.png)
 
-Click on the **Nethermind** Dashboard and you should see charts with Nethermind metrics
+单击**Nethermind**仪表板，您应该会看到含有Nethermind指标的图表
 
 ![](../.gitbook/assets/image%20%2848%29.png)
 
 ### Prometheus
 
-Go to the `YOUR_DROPLET_IP:9090`
+转到`YOUR_DROPLET_IP:9090`
 
-Explore Nethermind metrics, visualize and analyse using prometheus syntax, a list of available metrics with their descriptions can be found here:
+探索Nethermind度量，使用prometheus syntax进行可视化和分析，在此处找可用度量及其描述的列表:
 
 {% page-ref page="../ethereum-client/metrics/modules/" %}
 
@@ -158,19 +158,19 @@ Explore Nethermind metrics, visualize and analyse using prometheus syntax, a lis
 
 ### Pushgateway
 
-Go to the `YOUR_DROPLET_IP:9091` and verify if metrics are inflowing
+转到`YOUR_DROPLET_IP:9091`并验证指标是否正在流入
 
 ![](../.gitbook/assets/image%20%2845%29.png)
 
 ### Seq
 
-Go to the `YOUR_DROPLET_IP:5341`, you will be albe to query your Nethermind client logs. Feel free to create some useful `Signals, Queries` or `Dashboards.`
+转到 `YOUR_DROPLET_IP:5341`,您将可以查询您的Nethermind客户日志。随意创建一些有用的`信号、查询`或`仪表板`
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 
-## Destroying the stack
+## 销毁堆栈
 
-Use below command to destroy your terraform stack \(We will need to provide variables, can be random, once again as we haven't set any default values for them. Hopefully it will change in the future.\)
+使用以下命令销毁您的Terraform堆栈\(由于我们没有为它们设置任何默认值，需要再次提供可变的变量，可以是随机的。希望将来会有所更改。\)
 
 ```bash
 terraform destroy --auto-approve

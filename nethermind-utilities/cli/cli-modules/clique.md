@@ -2,19 +2,19 @@
 
 ## clique.discard\(address\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -33,17 +33,17 @@ Request complete in 58129.371μs
 
 ## clique.getSigners
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
 None
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -62,17 +62,17 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAnnotated
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
 None
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -91,19 +91,19 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAtHash\(hash\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `string` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -122,19 +122,19 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAtHashAnnotated\(hash\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `string` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -153,19 +153,19 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAtNumber\(number\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | number | `int` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -184,17 +184,17 @@ Request complete in 58129.371μs
 
 ## clique.getSnapshot
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
 None
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -213,19 +213,19 @@ Request complete in 58129.371μs
 
 ## clique.getSnapshotAtHash\(hash\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `string` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -244,20 +244,20 @@ Request complete in 58129.371μs
 
 ## clique.propose\(address, vote\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 | vote | `boolean` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}

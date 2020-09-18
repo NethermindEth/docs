@@ -2,7 +2,7 @@
 
 | 属性名称 | 说明 | 默认值 |
 | :--- | :--- | ---: |
-| `BaseDbPath` | 所有nethermind数据库的基本目录路径。 | `db` |
+| `BaseDbPath` | 所有nethermind数据库的基本目录路径 | `db` |
 | `ChainSpecPath` | 链定义文件（奇偶校验chainspec或Geth生成文件）的路径。 | `null` |
 | `DiscoveryEnabled` | 如果为`false` 该节点不会尝试查找已配置的引导节点之外的节点。 | `true` |
 | `EnableUnsecuredDevWallet` | 如果为`true` ，将在应用程序中启用钱包/密钥存储。 | `false` |

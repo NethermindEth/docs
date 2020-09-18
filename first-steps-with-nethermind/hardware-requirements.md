@@ -22,11 +22,11 @@ description: 检查是否可以使用当前设置运行Nethermind
 | **Ropsten快速同步** | 100+ GB | 6 GB | 4 |
 | **主网完整档案** | 4.5+ TB | 16 GB | 6 |
 
-Disk space requirements:
+磁盘空间要求：
 
-A freshly fast synced mainnet disk space usage \(as of July 2020\):
+新近快速同步的主网磁盘空间使用\（截至2020年7月\）：
 
-![If you sync without receipts the 160GB space can be saved. Without bodies - 99GB more.](../.gitbook/assets/image%20%2856%29.png)
+![如果同步时没有收据，则可以节省160GB的空间。 无机身-99GB以上。](../.gitbook/assets/image%20%2856%29.png)
 
 
 

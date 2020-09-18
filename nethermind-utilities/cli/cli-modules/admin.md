@@ -2,20 +2,20 @@
 
 ## admin.addPeer\(enode, addToStaticNodes\)
 
-Adds given node to the static nodes
+给定节点添加到静态节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | enode | `string` |
 | addToStaticNodes | `boolean` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just added to the static nodes
+`String` - 刚刚添加到静态节点的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -34,17 +34,17 @@ Request complete in 58129.371μs
 
 ## admin.peers
 
-Displays a list of connected peers
+显示已连接对等方的列表
 
-#### **Parameters**
+#### **参数**
 
 None
 
-#### **Returns**
+#### **回报**
 
-`Array` - Nodes currently connected to your node
+`Array` - 当前连接到您的节点其他的节点
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -74,20 +74,20 @@ Request complete in 627464.281μs
 
 ## admin.removePeer\(enode, removeFromStaticNodes\)
 
-Removes given node from the static nodes
+从静态节点中删除给定的节点
 
-#### **Parameters**
+#### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | enode | `string` |
 | removeFromStaticNodes | `boolean` |
 
-#### **Returns**
+#### **回报**
 
-`String` - The enode just removed from the static nodes
+`String` - 刚刚从静态节点中删除的enode
 
-#### **Example**
+#### **例子**
 
 {% tabs %}
 {% tab title="Request" %}
