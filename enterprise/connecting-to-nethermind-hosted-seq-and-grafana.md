@@ -1,6 +1,6 @@
 # Connecting to Nethermind hosted Seq and Grafana
 
-Get in touch with the Nethermind team - you will receive:
+Get in touch with the Nethermind team - you will receive and Send us your Grafana Labs login:
 
 \(1\) seq host
 
@@ -11,7 +11,7 @@ Get in touch with the Nethermind team - you will receive:
 In the cfg file edit:
 
  `"Metrics": {  
-  "NodeName": "MainNet FastSync UpCloud",  
+  "NodeName": "[chooseNameForYourNode]",  
   "Enabled": true,  
   "PushGatewayUrl": "[PrometheusURL]",  
   "IntervalSeconds": 30 },`
