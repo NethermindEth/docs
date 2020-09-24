@@ -111,6 +111,7 @@
 
 ## Enterprise
 
+* [Connecting to Nethermind hosted Seq and Grafana](enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md)
 * [Baseline](enterprise/baseline.md)
 * [Seq](enterprise/seq.md)
 
