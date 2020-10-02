@@ -69,6 +69,7 @@
     * [Metrics](ethereum-client/configuration/modules/metrics.md)
     * [Hive](ethereum-client/configuration/modules/hive.md)
   * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
+* [Plugins](ethereum-client/plugins.md)
 
 ## Nethermind utilities
 
