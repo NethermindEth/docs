@@ -21,7 +21,7 @@ How to build a plugin? We included an example inside the Nethermind.Analytics pl
 
 #### RPC Plugin example:
 
-```text
+```csharp
     [RpcModule(ModuleType.Clique)]
     public interface IAnalyticsModule : IModule
     {
@@ -35,7 +35,7 @@ How to build a plugin? We included an example inside the Nethermind.Analytics pl
 
 #### CLI Plugin example:
 
-```text
+```csharp
 [CliModule("analytics")]
 public class AnalyticsCliModule : CliModuleBase
 {
@@ -58,7 +58,7 @@ public class AnalyticsCliModule : CliModuleBase
 
 #### Block Tree Visitor Plugin example:
 
-```text
+```csharp
     public class RewardsVerifier : IBlockTreeVisitor
     {
         private ILogger _logger;
@@ -115,7 +115,7 @@ public class AnalyticsCliModule : CliModuleBase
 
 #### Config plugin example:
 
-```text
+```csharp
 public class AnalyticsConfig : IAnalyticsConfig
 {
     public bool PluginsEnabled { get; set; }
@@ -127,7 +127,7 @@ public class AnalyticsConfig : IAnalyticsConfig
 
 #### State Tree Visitor example:
 
-```text
+```csharp
 public class SupplyVerifier : ITreeVisitor
 {
     private readonly ILogger _logger;
