@@ -1,16 +1,16 @@
-# Beam Wallet
+# Beam钱包
 
 ## 说明
 
 Beam Wallet是以太坊钱包的概念证明，它具有一个控制台UI，使用户可以利用Beam同步的力量。 Beam Wallet运行时没有任何外部依赖项 \(它会在后台自动启动Nethermind节点\)，并允许在启动后仅5分钟即可检查帐户余额并在主网上进行简单的交易。
 
-## Download and run
+## 下载并运行
 
-You can find Beam wallet \(which is included in the standard Nethermind package\) **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
+您可以在**此处**找到Beam钱包 \(包含在标准的Nethermind软件包中\)  [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
 
 根据操作系统选择合适的软件包并下载。
 
-### **Prerequisites**
+### **先决条件**
 
 #### Linux
 
@@ -25,7 +25,7 @@ sudo apt install -y ./packages-microsoft-prod.deb apt-transport-https && sudo ap
 sudo apt install -y dotnet-sdk-3.1 libsnappy-dev libc6-dev libc6
 ```
 
-_Tested on Ubuntu 20.04 LTS and 18.04 LTS_
+_已在Ubuntu 20.04 LTS和18.04 LTS上测试_
 
 #### **- Debian**
 
@@ -38,7 +38,7 @@ sudo apt install -y ./packages-microsoft-prod.deb apt-transport-https && sudo ap
 sudo apt install -y dotnet-sdk-3.1 libsnappy-dev libc6-dev libc6
 ```
 
-_Tested on Debian 10 \(9 not working\)_
+_在Debian 10上测试\（9不起作用\）_
 
 #### **- CentOS**
 
@@ -51,7 +51,7 @@ sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnap
 sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
 ```
 
-_Tested on CentOS 8_
+_在CentOS 8上测试_
 
 #### **- Fedora**
 
@@ -63,147 +63,147 @@ sudo dnf install -y dotnet-sdk-3.1 gcc snappy-devel glibc-devel bzip2-devel libz
 sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
 ```
 
-_Tested on Fedora 32_
+_在Fedora 32上测试_
 
 #### Mac
 
-* Install deps `brew install gmp snappy lz4 zstd`
-* Additionally, if you have problems with startup `brew install rocksdb`
+* 安装 deps `brew install gmp snappy lz4 zstd`
+* 此外，如果您在启动`brew install rocksdb`时遇到问题
 
-## Running application
+## 运行应用程序
 
-To run application open **Nethermind.BeamWallet** file.
+要运行应用程序，请打开** Nethermind.BeamWallet **文件。
 
 {% hint style="warning" %}
 **Mac**
 
-If your operating system is a macOS you will be asked to **Allow access** in your **System Preferences-&gt;Security & Privacy,** twice - for Nethermind.BeamWallet and Nethermind.Runner.
+如果您的操作系统是macOS，您将被要求在您的**系统首选项-&gt;安全和隐私**中**两次对于Nethermind.BeamWallet和Nethermind.Runner允许访问**
 {% endhint %}
 
-After starting the application you should be able to see this window:
+启动后，您应该可以看到以下窗口：
 
-\(Colors of the application may vary from those shown in the pictures - it depends on your command line settings.\)
+\(应用程序的颜色可能与图片中显示的颜色有所不同-这取决于您的命令行设置。\)
 
-* The first step is to select a network. 
+* 第一步，选择网络。
 
 ![](../.gitbook/assets/image%20%28129%29.png)
 
-* Then choose one of the two options **Create new account**  or **Provide an address** using TAB key or Up and Down arrows.
+* 使用TAB键或上下箭头键从**Create new account** （建立新帐户）或 **Provide an address**（提供地址）两个选项中选一个。
 
 ![](../.gitbook/assets/image%20%28131%29.png)
 
-### Already have an account
+### 已经有帐户了吗？
 
-If you already have and account you can use it by selecting a **Provide an address** option - in that case you will need:
+若已有帐户，就可以使用它，选择 **Provide an address** （提供地址）- 在这种情况下，您将需要：
 
-* **your address**
-* **your passphrase**
-* **your keystore file**
+* **地址**
+* **密码**
+* **密钥库文件**
 
 {% hint style="warning" %}
 **Copy keystore file**
 
-Before we start, please, copy keystore file of your wallet into the **keystore** folder. \(directory of the keystore folder will be shown in the image below\). It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
+在开始之前，请先将您钱包的密钥库文件复制到** keystore **文件夹中。\(密钥库文件夹的目录在下图中显示\)。 在发送交易之前，必须复制， 否则，解锁您的帐户将失败。
 {% endhint %}
 
-### **Create new account**
+### **建立新帐户**
 
-If you don't have an account, you can create one using **Beam wallet** application.
+如果您没有帐户，可以使用**Beam钱包**应用程序创建一个。
 
-Creating a new account creates a keystore file. You can find it in the **keystore** folder.
+创建一个新帐户将创建一个密钥库文件。 您可以在** keystore **文件夹中找到密钥库文件。
 
-Copy your keystore file if you wish to use an account in the future.
+如果希望将来使用这个帐户，请复制密钥库文件。
 
 ![](../.gitbook/assets/image%20%28118%29.png)
 
-### Set an address
+### 设定地址
 
 {% tabs %}
 {% tab title="Create new account" %}
-* Create an account by providing the passphrase in the first input and confirmation passphrase in the second one.
+* 要创建一个帐户，在第一个输入中设置密码，在第二个输入中输入确认密码。
 
 ![](../.gitbook/assets/image%20%28123%29.png)
 
 {% hint style="warning" %}
 **Passphrase**
 
-**Keep it safe**
+**保持安全**
 
-Do not lose your passphrase. We don't have an access to your passphrase so there is no chance of getting it back.
+不要丢失密码。 我们无权访问您的密码，因此没有机会找回密码。
 
-**Do not share it**
+**请勿共享**
 
-Never give your passphrase to anyone. Your founds can be stolen.
+为了避免您的资金被盗，请勿将您的密码告诉任何人。
 
-**Write it down**
+**写下来**
 
-Set a strong passphrase. We recommend writing it down on a paper. If you lose your passphrase we will not be able to help you. Your whole money will be gone.
+设置强密码。 我们建议将其记录在纸上。 如果您丢失了密码，我们将无法为您提供帮助。 您的全部金钱都将消失。
 {% endhint %}
 
-* Using the TAB key, move to the **OK** button and press Enter. 
+* 使用TAB键，移至**OK** 按钮，然后按Enter。
 {% endtab %}
 
 {% tab title="Provide an address" %}
-* After choosing "Provide an address" option you will see that window. Provide your wallet address.
+* 选择 "Provide an address" （提供地址）选项后，您将看到该窗口：
 
 ![](../.gitbook/assets/image%20%28107%29.png)
 
-* Using the TAB key, move to the **OK** button and press Enter. 
+* 使用TAB键，移至**OK** 按钮，然后按Enter。
 
 ![](../.gitbook/assets/image%20%28100%29.png)
 {% endtab %}
 {% endtabs %}
 
-### Syncing
+### 同步
 
-* After a while caption "Syncing... Please wait for the balance." should change to your wallet balance and also the **BACK** and **TRANSFER** buttons will appear. This may take a few minutes.
+* 片刻之后，标题为 "Syncing... Please wait for the balance." （正在同步...请等待余额。） 应该会更改为您的钱包余额，并且还会出现** BACK **和** TRANSFER **按钮。 此过程可能需要几分钟的时间。
 
 ![](../.gitbook/assets/image%20%28124%29.png)
 
-* The first comes your ETH balance. If you are not interested in the balance of your tokens \(DAI, USDT, USDC\), you can skip it and proceed to the transfer.
+* 首先出现的是您的以太币余额。 如果您对令牌\\(DAI, USDT, USDC\)的余额不感兴趣，可以跳过并继续进行转移。
 
 ![](../.gitbook/assets/image%20%28132%29.png)
 
 ![](../.gitbook/assets/image%20%28121%29.png)
 
-* Use the TAB key, move to the **TRANSFER** button and press Enter.
+* 使用TAB键，移至**TRANSFER** 按钮，然后按Enter。
 
-## Making transaction
+## 进行交易
 
-You will see a different window where you can provide data to make a transfer.
+您将看到另一个窗口，您可以在其中提供进行传输的数据。
 
-* In the first input provide the **address** to which you want to send ETH.
-* In the input below enter the **value** of ETH that you want to transfer.
-* And in the last input enter the **passphrase** of your wallet.
-* Move to the **TRANSFER** button and press ENTER. \(This is not the last step, you will be asked to confirm the transaction.\)
+* 在第一个输入中，提供要将以太币发送到的**地址**。
+* 在下面的输入中，输入您想要转移的以太币的**值**。
+* 在最后一个输入中，输入您钱包的**密码**。
+* 移至** TRANSFER **按钮，然后按ENTER键。 \(这不是最后一步，系统将要求您确认交易\)
 
 ![](../.gitbook/assets/image%20%28122%29.png)
 
-\(Example data\)
+\(示例数据\)
 
 ![](../.gitbook/assets/image%20%28116%29.png)
 
-* After you press Enter on **Transfer** button, a modal with summary of the transaction will appear. Confirm \(or not\) sending the transaction.
+* 在** Transfer **按钮上按Enter之后，，将出现一个带有事务摘要的模式。确认（或不确认）发送事务。
 
 ![](../.gitbook/assets/image%20%28130%29.png)
 
-* The steps that will be taken to send the transaction will be listed below.
+* 下面将列出发送事务的步骤。
 
 ![](../.gitbook/assets/image%20%28126%29.png)
 
-## Database
+## 数据库
 
-You can find database in the folder **nethermind\_db** in the downloaded package:
+在下载的软件包的 **nethermind\_db** 文件夹中找到数据库：
 
 ![](../.gitbook/assets/image%20%28113%29.png)
 
-In **nethermind\_db** directory you will find folders with networks that were run using Netherming package.
+在**nethermind\_db**目录中，您会发现使用Netherming包运行的网络文件夹。
 
-Choose the one that interests you.
+选择您感兴趣的一个。
 
 ![](../.gitbook/assets/image%20%28110%29.png)
 
-Inside you will find example folders:
+在里面您将找到示例文件夹
 
 ![](../.gitbook/assets/image%20%28108%29.png)
 

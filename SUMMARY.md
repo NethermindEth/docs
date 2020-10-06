@@ -69,6 +69,7 @@
     * [度量](ethereum-client/configuration/modules/metrics.md)
     * [Hive](ethereum-client/configuration/modules/hive.md)
   * [样本配置](ethereum-client/configuration/sample-configuration.md)
+* [插件](ethereum-client/plugins.md)
 
 ## Nethermind实用程序
 
@@ -111,6 +112,7 @@
 
 ## 事业
 
+* [连接到Nethermind托管的Seq和Grafana](enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md)
 * [Baseline](enterprise/baseline.md)
 * [Seq](enterprise/seq.md)
 

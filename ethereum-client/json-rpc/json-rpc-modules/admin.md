@@ -13,7 +13,7 @@
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回类型
 
 `String`
 {% endtab %}
@@ -23,16 +23,16 @@
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | enode | `String` |
 | removeFromStaticNodes | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回类型
 
 `String`
 {% endtab %}
@@ -42,25 +42,25 @@
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | includeDetails | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回类型
 
 `PeerInfo object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 定义
 
 `PeerInfo`
 
-| Fields name | Type |
+| 名称 | 类型 |
 | :--- | :--- |
 | ClientId | `String` |
 | Host | `String` |
@@ -70,7 +70,7 @@
 | IsTrusted | `Boolean` |
 | IsStatic | `Boolean` |
 | Enode | `String` |
-| ClientType | `String` |
+| 客户类型 | `String` |
 | EthDetails | `String` |
 | LastSignal | `String` |
 {% endtab %}
@@ -88,7 +88,7 @@ _None_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回类型
 
 `NodeInfo object`
 {% endtab %}
@@ -98,7 +98,7 @@ _None_
 
 `NodeInfo`
 
-| Fields name | Type |
+| Fields name | 类型 |
 | :--- | :--- |
 | Enode | `String` |
 | Id | `String` |
@@ -110,7 +110,7 @@ _None_
 
 `PortsInfo`
 
-| Fields name | Type |
+| Fields name | 类型 |
 | :--- | :--- |
 | Discovery | `Quantity` |
 | Listener | `Quantity` |

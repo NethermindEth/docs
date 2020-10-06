@@ -151,6 +151,12 @@ source_file = ethereum-client/networks.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.ethereum-client-plugins-md]
+file_filter = ethereum-client/plugins.<lang>.md
+source_file = ethereum-client/plugins.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.ethereum-client-dockers-md]
 file_filter = ethereum-client/dockers.<lang>.md
 source_file = ethereum-client/dockers.md
@@ -562,6 +568,12 @@ type = GITHUBMARKDOWN
 [nethermind-docs.guides-and-helpers-cloud-providers-upcloud-md]
 file_filter = guides-and-helpers/cloud-providers/upcloud.<lang>.md
 source_file = guides-and-helpers/cloud-providers/upcloud.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.enterprise-connecting-to-nethermind-hosted-seq-and-grafana-md]
+file_filter = enterprise/connecting-to-nethermind-hosted-seq-and-grafana.<lang>.md
+source_file = enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md
 source_lang = en
 type = GITHUBMARKDOWN
 
