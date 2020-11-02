@@ -67,7 +67,7 @@ version: '3.5'
 
 services:
   nethermind-validator:
-    image: nethermind/nethermind:alpine
+    image: nethermind/nethermind
     container_name: nethermind-validator
     restart: unless-stopped
     ports:
