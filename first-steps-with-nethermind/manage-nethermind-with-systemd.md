@@ -19,6 +19,12 @@ switch to the new user
 sudo su - nethermind
 ```
 
+### Install Dependencies
+
+```text
+sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y
+```
+
 ### Get Nethermind
 
 [download](../ethereum-client/download-sources/) the latest Nethermind package
