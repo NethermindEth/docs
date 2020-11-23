@@ -92,6 +92,10 @@
 * [Beam Wallet](nethermind-utilities/beam-wallet.md)
 * [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
 
+## Nethermind DataMarketplace <a id="nethermind-datamarketplace-1"></a>
+
+* [TODO](nethermind-datamarketplace-1/todo.md)
+
 ## Guides and Helpers
 
 * [Upgrades](guides-and-helpers/upgrades.md)
