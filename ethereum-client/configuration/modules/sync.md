@@ -4,7 +4,9 @@
 | :--- | :--- | ---: |
 | `BeamSync` | Beam Sync - only for DEBUG / DEV - not working in prod yet | `false` |
 | `DownloadBodiesInFastSync` | If set to `true` then the block bodies will be downloaded in the Fast Sync mode | `false` |
+| `AncientBodiesBarrier` | Allows to set a block number down to which historical block bodies will be downloaded when `DownloadBodiesInFastSync` is enabled. | 0 |
 | `DownloadReceiptsInFastSync` | If set to `true` then the receipts will be downloaded in the Fast Sync mode. This will slow down the process by a few hours but will allow you to interact with dApps that execute extensive historical logs searches \(like Maker CDPs\) | `false` |
+| `AncientReceiptsBarrier` | Allows to set a block number down to which historical receipts will be downloaded when `DownloadReceiptsInFastSync` is enabled. | 0 |
 | `FastBlocks` | If set to `true` then in the Fast Sync mode blocks will be first downloaded from the provided PivotNumber downwards. This allows for parallelization of requests with many sync peers and with no need to worry about syncing a valid branch \(syncing downwards to 0\). You need to enter the pivot block number, hash and total difficulty from a trusted source \(you can use etherscan and confirm with other sources if you want to change it\) | `false` |
 | `FastSync` | If set to `true` then the Fast Sync \(eth/63\) synchronization algorithm will be used | `false` |
 | `FastSyncCatchUpHeightDelta` | Relevant only if `FastSync` is `true`. If set to a value, then it will set a minimum height threshold limit up to which FullSync, if already on, will stay on when chain will be behind network. If this limit will be exceeded, it will switch back to FastSync. Please note that last 32 blocks will always be processed in FullSync, so setting it to less or equal to 32 will have no effect | `null` |
