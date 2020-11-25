@@ -2,6 +2,8 @@
 
 Nethermind plugins is a powerful way of extending your local node capabilities.
 
+\(see also an article here: [https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59](https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59)\)
+
 Plugins that you can write:
 
 | Plugin Type | What can it be used for? |
