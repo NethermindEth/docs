@@ -19,7 +19,9 @@ Network name can be any of the following
 * xdai
 * poacore
 * sokol
+* energyweb
 * volta
+* kovan \(only fast sync and may fail if pWASM transactions appear\)
 
 ### Mainnet
 
