@@ -94,7 +94,7 @@
 
 ## Nethermind DataMarketplace <a id="nethermind-datamarketplace-1"></a>
 
-* [FAQ](nethermind-datamarketplace-1/todo.md)
+* [DataMarketplace FAQ](nethermind-datamarketplace-1/todo.md)
 
 ## Guides and Helpers
 

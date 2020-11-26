@@ -1,5 +1,11 @@
 # FAQs
 
+## What is the minimum viable config to serve ETH2 validator requests?
+
+./Nethermind.Runner  --config mainnet --JsonRpc.Enabled true  --Sync.DownloadBodiesInFastSync true  --Sync.DownloadReceiptsInFastSync true  --Sync.AncientBodiesBarrier 11052984 --Sync.AncientReceiptsBarrier 11052984  --Init.BaseDbPath /your/db/path
+
+This config downloads a minimal amount of bodies and receipts to be able to serve ETH2 validator requests since the deposit contract deployment. It also enables JSON RPC \(make sure that you do not open firewall to the outside world!\)
+
 ## Can I disable logging to file?
 
 {% page-ref page="../ethereum-client/logging-configuration.md" %}
