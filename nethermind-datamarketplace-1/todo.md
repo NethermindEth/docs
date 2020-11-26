@@ -4,6 +4,12 @@ description: Frequently asked questions about the Nethermind Data Marketplace
 
 # FAQ
 
+## What is the minimum viable config to serve ETH2 validator requests?
+
+./Nethermind.Runner  --config mainnet --JsonRpc.Enabled true  --Sync.DownloadBodiesInFastSync true  --Sync.DownloadReceiptsInFastSync true  --Sync.AncientBodiesBarrier 11052984 --Sync.AncientReceiptsBarrier 11052984  --Init.BaseDbPath /your/db/path
+
+This config downloads a minimal amount of bodies and receipts to be able to serve ETH2 validator requests since the deposit contract deployment. It also enables JSON RPC \(make sure that you do not open firewall to the outside world!\)
+
 ## How do I import my wallet into MetaMask?
 
 NDM wallets can be imported into MetaMask as a Keystore file.  To do so, follow the instructions at [https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account](https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account), choose JSON File as the type, and then when prompted to select your Keystore file:
