@@ -1,5 +1,11 @@
 # Custom Analytic Tools
 
+Check plugins for some easy addition of analytical tools
+
+{% page-ref page="../ethereum-client/plugins.md" %}
+
+You can also read more about some useful interfaces below:
+
 There are multiple extension points where you can add custom analytics to your Nethermind node if you know some C\#. Below you will find an example of using two very useful interfaces - `IBlockVisitor` and `ITreeVisitor`.
 
 Just to execute the code I have added one new initialization step that invokes two custom verifiers that I have used for calculating total supply in two different ways - by calculating mining rewards and by summing up all account balances:

@@ -98,8 +98,8 @@
 
 ## Guides and Helpers
 
-* [Upgrades](guides-and-helpers/upgrades.md)
 * [FAQs](guides-and-helpers/faq.md)
+* [Upgrades](guides-and-helpers/upgrades.md)
 * [Custom Analytic Tools](guides-and-helpers/custom-analytic-tools.md)
 * [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
 * [Known Issues](guides-and-helpers/known-issues.md)
