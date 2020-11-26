@@ -6,6 +6,8 @@ description: Check if you can run Nethermind with your current setup
 
 Generally **the faster IO operations the better**. For this reason [Digital Ocean](https://www.digitalocean.com/) and [UpCloud](https://upcloud.com/) are so far the best cloud providers we have tested when running Nethermind nodes.
 
+When syncing locally make sure that you get the fastest SSD possible. Assume that any storage at HDD speed level is not supported \(most likely will take many times longer to sync and possibly will not be able to catch up with the network\).
+
 After startup the node will display the estimated max memory usage but not everything is accounted for and some block processing / some fast sync temporary caches may go above these values.
 
 You can use the config option --Init.MemoryHint to suggest the amount of memory to be used by the database and some network operations. During the sync process there will be more memory used for caches.
