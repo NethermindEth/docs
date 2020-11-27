@@ -2,16 +2,17 @@
 
 ## What is the minimum viable config to serve ETH2 validator requests?
 
-./Nethermind.Runner  --config mainnet --JsonRpc.Enabled true  --Sync.DownloadBodiesInFastSync true  --Sync.DownloadReceiptsInFastSync true  --Sync.AncientBodiesBarrier 11052984 --Sync.AncientReceiptsBarrier 11052984  --Init.BaseDbPath /your/db/path
-
-If you synced with versions before 1.9.39:
-
-You can run node with parameter '--SyncConfig.FixReceipts true' and the issue should be fixed. However, if you have used old configs, you may need to specify old Pivot too if it moved in default config with: --SyncConfig.PivotNumber
-
-If you have any issues, please reach out on Discord: https://discord.gg/X539yhn
-
-
 This config downloads a minimal amount of bodies and receipts to be able to serve ETH2 validator requests since the deposit contract deployment. It also enables JSON RPC \(make sure that you do not open firewall to the outside world!\)
+
+./Nethermind.Runner --config mainnet --JsonRpc.Enabled true --Sync.DownloadBodiesInFastSync true --Sync.DownloadReceiptsInFastSync true --Sync.AncientBodiesBarrier 11052984 --Sync.AncientReceiptsBarrier 11052984 --Init.BaseDbPath /your/db/path
+
+**If you synced with versions before 1.9.39:**
+
+Update to 1.9.39 and launch it once with '--Sync.FixReceipts true' and this should heal your database if it is missing any logs / receipts. Please make sure that follow the Upgrade guidelines:
+
+{% page-ref page="upgrades.md" %}
+
+If you have any issues, please reach out on Discord: [https://discord.gg/X539yhn](https://discord.gg/X539yhn)
 
 ## Can I disable logging to file?
 
