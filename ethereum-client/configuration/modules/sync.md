@@ -2,6 +2,7 @@
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |
+| FixReceipts | \(ETH2 relevant\) Set it to true once \(--Sync.FixReceipts when starting\) if you have a pre-1.9.39 node synced. It fixes an issue that was causing some blocks to not have receipts stored and causing Eth2 clients to reject Eth1 data from Nethermind. | `false` |
 | `BeamSync` | Beam Sync - only for DEBUG / DEV - not working in prod yet | `false` |
 | `DownloadBodiesInFastSync` | If set to `true` then the block bodies will be downloaded in the Fast Sync mode | `false` |
 | `AncientBodiesBarrier` | Allows to set a block number down to which historical block bodies will be downloaded when `DownloadBodiesInFastSync` is enabled. | 0 |
