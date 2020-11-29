@@ -4,6 +4,14 @@ description: There are several known issues with the current version of Nethermi
 
 # Known Issues
 
+## RocksDB checksum issue
+
+It has been brought to our attention that on some disks RocksDB may fail with an exception similar to the one below:
+
+2020-11-29 12:02:01.1968\|BlockchainProcessor encountered an exception. RocksDbSharp.RocksDbException: Corruption: block checksum mismatch: expected 2087346143, got 2983326672 in C:\Nethermind\nethermind\_db/mainnet\state/037463.sst offset 33439089 size 16319
+
+Interestingly what worked for some users was closing Nethermind, restarting the VM that it is running on and launching Nethermind again. This happens to be a RocksDB issue on some of the cloud providers' systems. We will add more details when we learn more about the problem.
+
 ## Database LOCK files not removed by RocksDB
 
 If the node complains about the LOCK files it may mean one of the two things:
