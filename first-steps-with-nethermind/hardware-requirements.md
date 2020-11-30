@@ -18,11 +18,11 @@ You can try much lower setups with smaller networks. You can also downgrade the 
 
 | Network | Disk space | Memory | Cores |
 | :--- | :--- | :--- | :--- |
-| **Goerli Fast Sync** | 20+ GB | 3 GB | 2 |
-| **Mainnet Fast Sync** | 350+ GB | 6 GB | 4 |
-| **Rinkeby Fast Sync** | 50+ GB | 6 GB | 4 |
-| **Ropsten Fast Sync** | 100+ GB | 6 GB | 4 |
-| **Mainnet Full Archive** | 4.5+ TB | 16 GB | 6 |
+| **Goerli Fast Sync** | 20+ GB | 4 GB | 2 |
+| **Mainnet Fast Sync** | 350+ GB | 16 GB | 4 |
+| **Rinkeby Fast Sync** | 50+ GB | 8 GB | 4 |
+| **Ropsten Fast Sync** | 100+ GB | 8 GB | 4 |
+| **Mainnet Full Archive** | 4.5+ TB | 32 GB | 6 |
 
 Disk space requirements:
 
