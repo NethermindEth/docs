@@ -1,4 +1,4 @@
-# FAQs
+# FAQ
 
 ## What is the minimum viable config to serve ETH2 validator requests?
 

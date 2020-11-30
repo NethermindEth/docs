@@ -98,11 +98,12 @@
 
 ## Guides and Helpers
 
-* [FAQs](guides-and-helpers/faq.md)
+* [FAQ](guides-and-helpers/faq.md)
 * [Upgrades](guides-and-helpers/upgrades.md)
 * [Custom Analytic Tools](guides-and-helpers/custom-analytic-tools.md)
 * [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
-* [Known Issues](guides-and-helpers/known-issues.md)
+* [Known Issues](guides-and-helpers/known-issues/README.md)
+  * [ETH2 issues](guides-and-helpers/known-issues/eth2-issues.md)
 * [Web3.py](guides-and-helpers/web3.py.md)
 * [Cloud Providers](guides-and-helpers/cloud-providers/README.md)
   * [UpCloud](guides-and-helpers/cloud-providers/upcloud.md)
