@@ -16,9 +16,10 @@
 | Sync Mode | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | archive | ~5TB | YES | YES | YES | ~3 weeks | ~3 weeks |
-| fast sync | ~300GB | YES | NO | YES | ~15 hours | ~15 hours |
-| fast sync without receipts | ~120GB | YES | NO | YES | ~10 hours | ~10 hours |
-| fast sync without bodies and receipts | ~60GB | YES | NO | NO | ~6 hours | ~6 hours |
+| default fast sync \(with barriers set to support Eth2\) | ~100GB | YES | NO | NO | ~11 hours | ~11 hours |
+| fast sync with all bodies and receipts | ~320GB | YES | NO | YES | ~20 hours | ~20 hours |
+| fast sync without receipts | ~130GB | YES | NO | YES | ~12 hours | ~12 hours |
+| fast sync without bodies and receipts | ~70GB | YES | NO | NO | ~9 hours | ~9 hours |
 | beam sync | ~320GB | YES | NO | YES | ~30 hours | ~20 minutes |
 | beam sync without receipts | ~140GB | YES | NO | YES | ~20 hours | ~20 minutes |
 | beam sync without bodies and receipts | ~80GB | YES | NO | NO | ~10 hours | ~20 minutes |
