@@ -31,7 +31,7 @@ cd private-networking
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* download [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json) file with clique engine and place it in `genesis` folder.
+* download [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json) file with spaceneth engine and place it in `genesis` folder.
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json
