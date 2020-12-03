@@ -481,6 +481,12 @@ source_file = first-steps-with-nethermind/firewall-configuration.md
 source_lang = en
 type = GITHUBMARKDOWN
 
+[nethermind-docs.guides-and-helpers-eth2-lighthouse-less-than-greater-than-nethermind-md]
+file_filter = guides-and-helpers/eth2-lighthouse-less-than-greater-than-nethermind.<lang>.md
+source_file = guides-and-helpers/eth2-lighthouse-less-than-greater-than-nethermind.md
+source_lang = en
+type = GITHUBMARKDOWN
+
 [nethermind-docs.guides-and-helpers-faq-md]
 file_filter = guides-and-helpers/faq.<lang>.md
 source_file = guides-and-helpers/faq.md
@@ -511,15 +517,21 @@ source_file = guides-and-helpers/ethereum-networks-synchronization-smoke-testing
 source_lang = en
 type = GITHUBMARKDOWN
 
-[nethermind-docs.guides-and-helpers-known-issues-md]
-file_filter = guides-and-helpers/known-issues.<lang>.md
-source_file = guides-and-helpers/known-issues.md
-source_lang = en
-type = GITHUBMARKDOWN
-
 [nethermind-docs.guides-and-helpers-custom-analytic-tools-md]
 file_filter = guides-and-helpers/custom-analytic-tools.<lang>.md
 source_file = guides-and-helpers/custom-analytic-tools.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-known-issues-README-md]
+file_filter = guides-and-helpers/known-issues/README.<lang>.md
+source_file = guides-and-helpers/known-issues/README.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.guides-and-helpers-known-issues-eth2-issues-md]
+file_filter = guides-and-helpers/known-issues/eth2-issues.<lang>.md
+source_file = guides-and-helpers/known-issues/eth2-issues.md
 source_lang = en
 type = GITHUBMARKDOWN
 
@@ -568,6 +580,12 @@ type = GITHUBMARKDOWN
 [nethermind-docs.guides-and-helpers-cloud-providers-upcloud-md]
 file_filter = guides-and-helpers/cloud-providers/upcloud.<lang>.md
 source_file = guides-and-helpers/cloud-providers/upcloud.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[nethermind-docs.nethermind-datamarketplace-1-todo-md]
+file_filter = nethermind-datamarketplace-1/todo.<lang>.md
+source_file = nethermind-datamarketplace-1/todo.md
 source_lang = en
 type = GITHUBMARKDOWN
 
