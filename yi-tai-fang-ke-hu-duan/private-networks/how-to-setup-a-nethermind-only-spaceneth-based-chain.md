@@ -1,8 +1,8 @@
-# 如何设置仅基于Nethermind的Spaceneth链
+# 如何设置一条仅由 Nethermind 节点运行且基于 Spaceneth 的链
 
-Spaceneth专用网络设置看起来与上述Clique设置非常相似。主要差异不大，下面将进行描述
+Spaceneth 私有网络在设置流程上与 Clique 私有网络非常相似。但是，二者存在一些主要差异，详见下文。
 
-## 先决条件
+## 必备条件
 
 * Linux bash shell
 * Docker-compose
@@ -16,22 +16,22 @@ sudo apt-get install -y docker-compose docker.io jq
 
 ## 设置
 
-在此设置中，我们将创建一个由3个Nethermind节点组成的专用网络，运行一个简单的测试NethDev共识算法。
+在该设置中，我们将创建一个私有网络，由 3 个 Nethermind 节点组成，并采用简单的 NethDev 共识算法。
 
-* 创建一个单独的目录，我们将在其中存储所有文件
+* 创建一个单独的目录用来存储所有文件
 
 ```text
 mkdir private-networking
 cd private-networking
 ```
 
-* 为每个节点和起源创建文件夹
+* 为每个节点和创世块创建文件夹
 
 ```text
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* 使用自动引擎下载 [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json)文件并放置在\`\`genesis''文件夹中。
+* 使用 Clique 引擎下载[链规范](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json)文件，并将其放入 `genesis` 文件夹。
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json
@@ -44,7 +44,7 @@ cp spaceneth.json genesis/spaceneth.json
 mkdir node_1/configs node_1/staticNodes node_2/configs node_2/staticNodes node_3/configs node_3/staticNodes
 ```
 
-* 创建一个 `static-nodes.json` 文件，并放置在 `node_1/staticNodes`  子文件夹中 \( 也对node\_2 和 node\_3 进行此操作\)
+* 创建一个 `static-nodes.json` 文件，并将其放在 `node_1/staticNodes` 子文件夹中（并对 node\_2 和 node\_3 进行同样的操作）
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -54,7 +54,7 @@ cat <<EOF > node_1/staticNodes/static-nodes.json
 EOF
 ```
 
-* 创建 `config.cfg` 文件，并放置在 `node_1/configs` 子文件夹中 \( 也对node\_2和node\_3 进行此操作\)
+* 创建 `config.cfg` 文件，并将其放在 `node_1/configs` 子文件夹中（并对 node\_2 和 node\_3 进行同样的操作）
 
 ```bash
 cat <<EOF > node_1/configs/config.cfg
@@ -84,13 +84,13 @@ cat <<EOF > node_1/configs/config.cfg
 EOF
 ```
 
-对于每个节点，需要更改配置中的以下项目：
+对于每个节点，您都需要更改以下配置项：
 
-* `LocalIp`，`ExternalIp` 和`Host` 应具有相同的值，并针对每个节点递增，例如 10.5.0.3, 10.5.0.4 等。
+* `LocalIp`、`ExternalIp` 和 `Host` 的值应该相同，而且逐节点递增，例如，10.5.0.3、10.5.0.4 并以此类推。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/configs-spaceneth.png)
 
-* 复制 `docker-compose`文件并放置在工作目录中
+* 复制 `docker-compose` 文件并将其放在工作目录中
 
 ```yaml
 version: "3.5"
@@ -149,13 +149,13 @@ networks:
                 - subnet: 10.5.0.0/16
 ```
 
-* 分别运行每个节点，以便我们能够为每个节点复制`Enode` ，我们稍后就会使用。
+* 分别运行各个节点，并为每个节点复制 `Enode`，以备后用。
 
 ```bash
 docker-compose run node_1
 ```
 
-当Nethermind初始化完成 `Ctrl +C`. 时停止节点。将 `This node` 值复制到文本文件中。继续执行node\_2和node\_3。
+当 Nethermind 初始化完成 `Ctrl +C` 时停止该节点。将 `This node` 的值复制到一个文本文件中。对 node\_2 和 node\_3 进行相同的操作。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization-spaceneth.png)
 
@@ -169,7 +169,7 @@ node.switch("http://localhost:8547")
 node.enode
 ```
 
-* 该文件应该跟以下内容相同：
+* 该文本文件可能如下所示：
 
 ```bash
 STATIC_NODE_1="enode://2281549869465d98e90cebc45e1d6834a01465a990add7bcf07a49287e7e66b50ca27f9c70a46190cef7ad746dd5d5b6b9dfee0c9954104c8e9bd0d42758ec58@10.5.0.2:30300"
@@ -177,8 +177,8 @@ STATIC_NODE_2="enode://37878ec16a5ed87c9c80b4648e5428f5c768eddd79483be118319c49d
 STATIC_NODE_3="enode://6067f06d84c207e6233dacf1f3ef961bd7231f71d5425cbaf843cf19cfd5f7e13b024d234e4e5f6175bdb37c0bbccd14488b481b2280efb66d0631a20ae13ea3@10.5.0.4:30300"
 ```
 
-* 以上变量复制粘贴到终端中
-* 对于每个节点，通过向其附加`Enodes`，修改先前创建的空`static-nodes.json` 文件
+* 将以上变量复制粘贴到您的终端上
+* 找到之前为每个节点创建的空的 `static-nodes.json` 文件，将 `Enodes` 添加到这些文件上
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -198,23 +198,23 @@ EOF
 sudo rm -rf node_1/db/spaceneth node_2/db/spaceneth node_3/db/spaceneth
 ```
 
-* 运行`docker-compose`文件
+* 运行 `docker-compose` 文件
 
 ```text
 docker-compose up
 ```
 
-应该看到专用网络正在运行。现在，为了开始生产区块，我们需要发送事务。
+您应该可以看到私有网络正在运行。现在，为了让节点打包区块，我们需要发送交易。
 
-* 运行`Nethermind.Cli`
-* 运行  `node.switch("http://localhost:8547")`
-* 运行`personal.listAccounts`
+* 运行 `Nethermind.Cli`
+* 运行 `node.switch("http://localhost:8547")`
+* 运行 `personal.listAccounts`
 * 创建新帐户 `personal.newAccount("test")`
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/cli-spaceneth.png)
 
-* 重新运行`personal.listAccounts`并复制帐户地址
-* 使用  `eth_sendTransaction`JSON RPC  或 `Nethermind.Cli` 方法发送事务来触发生产块。`from` ''属性更改为您的帐户地址
+* 重新运行 `personal.listAccounts` 并复制您的帐户地址
+* 使用 `eth_sendTransaction` JSON RPC 方法或 `Nethermind.Cli` 发送交易来触发区块打包，并将 `from` 属性修改成您的帐户地址
 
 ```bash
 curl --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{

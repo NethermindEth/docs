@@ -1,6 +1,6 @@
-# 如何设置Nethermind仅基于Clique的链
+# 如何设置一条仅由 Nethermind 节点运行且基于 Clique 的链
 
-## 先决条件
+## 必备条件
 
 * Linux bash shell
 * Docker-compose
@@ -13,22 +13,22 @@ sudo apt-get install -y docker-compose docker.io jq
 
 ## 设置
 
-在此设置中，我们创建一个由3个运行Clique共识算法的Nethermind节点组成的专用网络。
+在该设置中，我们将创建一个私有网络，由 3 个 Nethermind 节点组成，并且采用 Clique 共识算法。
 
-* 创建一个单独的目录，我们将在其中存储所有文件
+* 创建一个单独的目录用来存储所有文件
 
 ```bash
 mkdir private-networking
 cd private-networking
 ```
 
-* 为每个节点和起源创建文件夹
+* 为每个节点和创世块创建文件夹
 
 ```bash
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* 下载带有链式引擎的 chainspec 文件并放在 genesis 文件夹中 \(我们将在此示例中使用goerli chainspec\)
+* 使用 clique 引擎下载链规范文件，并将其放在创世块文件夹中（在本例中，我们使用 goerli 链规范文件）
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json
@@ -41,7 +41,7 @@ cp goerli.json genesis/goerli.json
 mkdir node_1/configs node_1/staticNodes node_2/configs node_2/staticNodes node_3/configs node_3/staticNodes
 ```
 
-* 创建一个 `static-nodes.json` 文件，并放置在 `node_1/staticNodes`  子文件夹中 \( 也对node\_2 和 node\_3 进行此操作\)
+* 创建一个 `static-nodes.json` 文件，并将其放在 `node_1/staticNodes`  子文件夹中（并对 node\_2 和 node\_3 进行同样的操作）
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -51,7 +51,7 @@ cat <<EOF > node_1/staticNodes/static-nodes.json
 EOF
 ```
 
-* 创建 `config.cfg` 文件，并放置在 `node_1/configs` 子文件夹中 \( 也对node\_2和node\_3 进行此操作\)
+* 创建 `config.cfg` 文件，并将其放在 `node_1/configs` 子文件夹中（并对 node\_2 和 node\_3 进行同样的操作）
 
 ```bash
 cat <<EOF > node_1/configs/config.cfg
@@ -84,14 +84,14 @@ cat <<EOF > node_1/configs/config.cfg
 EOF
 ```
 
-对于每个节点，需要更改配置中的以下项目：
+对于每个节点，您都需要更改以下配置项：
 
-* `TestNodeKey` 应该是64个字符长的字母数字字符串。举例，可以使用`pwgen`工具生成。
-* `LocalIp`，`ExternalIp` 和`Host` 应具有相同的值，并针对每个节点递增，例如 10.5.0.3, 10.5.0.4 等。
+* `TestNodeKey` 应该是一个由字母和数字组成的字符串，长度为 64 个字符，可以使用 `pwgen` 之类的工具生成。
+* `LocalIp`、`ExternalIp` 和 `Host` 的值应该相同，而且逐节点递增，例如，10.5.0.3、10.5.0.4 并以此类推。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/configs.png)
 
-* 复制docker-compose文件并放置在工作目录中
+* 复制 docker-compose 文件并将其放在工作目录中
 
 ```yaml
 version: "3.5"
@@ -150,13 +150,13 @@ networks:
                 - subnet: 10.5.0.0/16
 ```
 
-* 分别运行每个节点，以便我们能够为每个节点复制`Enode`和 `Node address` ，我们稍后就会使用。
+* 分别运行各个节点，并为每个节点复制 `Enode` 和 `Node address`，以备后用。
 
 ```bash
 docker-compose run node_1
 ```
 
-当Nethermind初始化完成 `Ctrl +C`时停止节点。`This node` 和`Node address` \(无0x前缀\) 值复制到文本文件中。继续执行node\_2和node\_3。
+当 Nethermind 初始化完成 `Ctrl +C` 时停止该节点。将 `This node` 和 `Node address`（去掉 0x 前缀）的值复制到一个文本文件中。对 node\_2 和 node\_3 进行相同的操作。
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization.png)
 
@@ -171,7 +171,7 @@ node.enode
 node.address
 ```
 
-* 该文件应该跟以下内容相同：
+* 该文本文件可能如下所示：
 
 ```text
 SIGNER_1="b5bc4d9e63eb1cb16aeeb0fd08e8344283b45b0d"
@@ -182,14 +182,14 @@ SIGNER_3="0076873eb11c627057834fdbdc7b391a33eb9f81"
 STATIC_NODE_3="enode://6067f06d84c207e6233dacf1f3ef961bd7231f71d5425cbaf843cf19cfd5f7e13b024d234e4e5f6175bdb37c0bbccd14488b481b2280efb66d0631a20ae13ea3@10.5.0.4:30300"
 ```
 
-* 以上变量复制粘贴到终端中，以及创建`EXTRA_VANITY`和`EXTRA_SEAL`变量
+* 将以上变量复制粘贴到您的终端上，并创建 `EXTRA_VANITY` 和 `EXTRA_SEAL` 变量
 
 ```bash
 EXTRA_VANITY="0x22466c6578692069732061207468696e6722202d204166726900000000000000"
 EXTRA_SEAL="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 ```
 
-* 根据 [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225) 创建`EXTRA_DATA`变量
+* 根据 [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225) 创建 `EXTRA_DATA` 变量
 
 ```bash
 EXTRA_DATA=${EXTRA_VANITY}${SIGNER_1}${SIGNER_2}${SIGNER_3}${EXTRA_SEAL}
@@ -197,15 +197,15 @@ EXTRA_DATA=${EXTRA_VANITY}${SIGNER_1}${SIGNER_2}${SIGNER_3}${EXTRA_SEAL}
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/extraData.png)
 
-* 在`goerli.json` 链规范文件中，在`genesis` 字段中修改`extraData` 属性
+* 在 `goerli.json` 链规范文件中，修改 `genesis` 字段中的 `extraData` 属性
 
-此操作可以手动执行，或使用以下命令
+您可以手动修改，也可以使用以下命令修改。
 
 ```bash
 cat goerli.json | jq '.genesis.extraData = '\"$EXTRA_DATA\"'' > genesis/goerli.json
 ```
 
-* 对于每个节点，通过向其附加`Enodes`，修改先前创建的空`static-nodes.json` 文件
+* 找到之前为每个节点创建的空的 `static-nodes.json` 文件，将 `Enodes` 添加到这些文件上
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -225,13 +225,13 @@ EOF
 sudo rm -rf node_1/db/clique node_2/db/clique node_3/db/clique
 ```
 
-* 最终运行docker-compose文件
+* 最后运行 docker-compose 文件
 
 ```bash
 docker-compose up
 ```
 
-在Clique共识算法中应该能看到专用网络的工作和节点密封块 🎉
+接下来，您将看到私有网络运行，节点根据 Clique 共识算法打包区块。🎉
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/finalization.png)
 

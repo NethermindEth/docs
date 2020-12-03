@@ -1,10 +1,10 @@
 # EthStats
 
-| 属性名称 | 说明 | 默认值 |
+| 属性名称 | 描述 | 默认值 |
 | :--- | :--- | ---: |
-| `Contact` | ethstats页面上显示的有节点人的联系详细信息。 | `null` |
-| `Enabled` | 如果为`true` 启用EthStats发布 | `false` |
-| `Name` | 显示在给定ethstats服务器上的节点名称。 | `null` |
-| `Secret` | 发布到给定的ethstats服务器的密码。 | `null` |
-| `Server` | EthStats服务器`wss://hostname:port/api/` | `null` |
+| `Contact` | ethstats 页面上显示的节点所有者的联系方式。 | `null` |
+| `Enabled` | 如果被设置为 `true`，则启用 EthStats 发布。 | `false` |
+| `Name` | 指定 ethstats 服务器上显示的节点名称。 | `null` |
+| `Secret` | 发布到指定 ethstats 服务器所使用的密码。 | `null` |
+| `Server` | EthStats 服务器 `wss://hostname:port/api/` 。 | `null` |
 

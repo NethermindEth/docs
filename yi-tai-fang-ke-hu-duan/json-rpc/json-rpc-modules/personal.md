@@ -4,13 +4,13 @@
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Address`
 {% endtab %}
@@ -20,15 +20,15 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `Address` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -38,16 +38,16 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `Address` |
 | passphrase | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -57,15 +57,15 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | passphrase | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Address`
 {% endtab %}

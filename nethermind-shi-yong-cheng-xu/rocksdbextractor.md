@@ -1,24 +1,24 @@
 ---
-description: 本指南是给节点开发人员篇写的。
+description: 本指南面向节点开发者。
 ---
 
 # RocksDbExtractor
 
-本指南是给节点开发人员篇写的。
+本指南面向节点开发者。
 
 ## 运行应用程序
 
-1. 运行的应用程序
+1. 运行应用程序
 
 ```text
 dotnet run
 ```
 
-1. 输入您的rocksdb数据库的路径
+1. 输入通往您的 rocksdb 数据库的路径
 
 ![](https://lh5.googleusercontent.com/r9u-RIpCLqpMhtWuel4jaDRbkeXMAI1sT-OqhqSKlERoxXmVVvvC-y9b0V4Jy0s-PcShIy1jRvfEvjDmsQaT2UxTZwIPvWixzB2H4pJMZGxbojc0q95Ivcf96et25MIGv1JjhUSu)
 
-例如：
+示例：
 
 {% tabs %}
 {% tab title="Windows" %}
@@ -34,23 +34,23 @@ D:\Workspace\Demerzel\ndm\src\Nethermind\Nethermind.Runner\bin\Debug\netcoreapp3
 {% endtab %}
 {% endtabs %}
 
-1. 使用 `Enter`确认您的文件夹选择
+1. 按 `Enter` 确认您选择的文件夹
 
 ![](../.gitbook/assets/image%20%2825%29.png)
 
-1. 使用 `Enter` 选择记录以查看详细信息
+1. 按 `Enter` 查看所选记录的详细信息
 
 ![](../.gitbook/assets/image%20%2822%29.png)
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
-## 返回上一个视窗
+## 返回上一个窗口
 
-按 `q` 键只能返回上一个视窗。
+如需返回上一个窗口，请按 `q` 键。
 
 ## 警告
 
-如果目录中没有数据，您将看到此消息框, 关闭此框按`Esc`键。
+如果目录中没有数据，您将看到该消息框。如需关闭该消息框，请按 `Esc` 键。
 
 ![](../.gitbook/assets/image%20%2824%29.png)
 

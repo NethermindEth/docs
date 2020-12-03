@@ -1,6 +1,6 @@
 # JSON RPC
 
-JSON RPC可以通过HTTP和WS获得。
+JSON RPC 可以通过 HTTP 和 WS 获得。
 
 {% hint style="warning" %}
 JSON RPC needs to be explicitly switched on in the Netherming `config` file.
@@ -36,5 +36,5 @@ JSON RPC can be also enabled by passing `--JsonRpc.Enabled true` flag to the `Ne
 {% endtab %}
 {% endtabs %}
 
-本节中列出的某些方法不是由Nethermind 实现的。\(它们会被标记\)
+本节中列出的部分方法不是通过 Nethermind 实现的\（它们会被标记出来\）。
 

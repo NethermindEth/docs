@@ -1,14 +1,14 @@
 ---
-description: Nethermind客户端的专用网络
+description: Nethermind 客户端的私有网络
 ---
 
-# 专用网络
+# 私有网络
 
-使用Nethermind节点可以配置专用网络 \(专用区块链\)。在建立专用网络之前，需要做出一些决定。其中之一是选择一种将用于保护网络安全的共识协议。
+您可以使用 Nethermind 节点来配置私有网络（私有链）。在设置私有网络之前，您需要做一些决定。其中之一就是选择一种共识协议来保护网络的安全。
 
 ## 共识算法
 
-Nethermind支持以下共识算法：
+Nethermind 支持以下共识算法：
 
 * ethash \(PoW\)
 * AuRa \(PoA\)
@@ -17,39 +17,39 @@ Nethermind支持以下共识算法：
 
 #### PoW
 
-在工作量证明共识算法中，某些节点参与了通过解决数学难题来挖掘新区块的竞赛。调整难题的难度\(找到解决方案所需的计算量\)，以使区块链在一定的平均频率出现\(以太坊主网上每15秒出现一次\) 当前PoW是用于保护公共以太坊主网和Ropsten测试网。以太坊中用于PoW的唯一挖掘算法称为ethash，其设计为严格的内存硬性\(请参阅[严格的内存硬性散列函数 ](http://www.hashcash.org/papers/memohash.pdf)\).
+在工作量证明（PoW）共识算法中，一些节点需要参与竞赛，通过解决数学难题来挖出新的区块。难题的难度（找到答案所需的计算量）会不断调整，将平均出块频率维持在一定水平（在以太坊主网上，平均每 15 秒挖出一个区块）。目前，PoW 被用来保护公共以太坊主网和 Ropsten 测试网。在以太坊上，ethash 是唯一的 PoW 挖矿算法，在设计上具有内存密集型的特点。（请参阅[《内存密集型哈希函数》](http://www.hashcash.org/papers/memohash.pdf)\）。
 
 #### Clique
 
-Clique是授权证明\(PoA\)共识算法的实现。PoA背后的想法是选择网络中具有真实性的一组节点来创建\(密封\) 新块。在Clique中，这些节点称为signers ，在初始设置后，signers 可以投票将新的signers 添加到组中或删除任何现有的signers 。 目前 Clique受到Geth，Parity，Nethermind和Pantheon的支持，并用于保护Goerli和Rinkeby测试网。
+Clique 是授权证明（PoA）共识算法的实现。PoA 的设计思路是选择网络中的一组节点，授权它们来创建（打包）新的区块。在 Clique 中，这些节点被称为签名者。在初始化设置后，签名者可以通过投票让新的签名者加入，或删除现有签名者。目前，Clique 已经得到 Geth、Parity、Nethermind 和 Pantheon 这些客户端的支持，并应用于 Goerli 和 Rinkeby 测试网。
 
 #### AuRa
 
-AuRa是权威证明共识算法的另一种实现。当前仅收到Nethermind和Parity Ethereum客户端的支持。 Aura保护Kovan测试网和POA网络。
+AuRa 是授权证明（PoA）共识算法的另一种实现。目前，AuRa 仅获得 Nethermind 和 Parity 客户端的支持，并应用于 Kovan 测试网和 POA Network。
 
-#### NethDev\(也称为 Spaceneth\)
+#### NethDev（又称 Spaceneth）
 
-NethDev是一种非常简单的共识算法\(简单的来说-它缺乏共识算法\)。NethDev可用于为开发和测试目的设置节点。在NethDev网络上，任何节点都可以创建带有事务的块，只要是有效的以太坊块，其他所有的节点都会接受它。
+NethDev 是一种非常简单的共识算法（更准确地说，它是一种缺乏共识算法）。NethDev 可用于为开发和测试目的而设置节点。在 NethDev 网络中，任何节点都可以将交易打包成区块。只要是有效的以太坊区块，其它节点都会接受。
 
 ### 配置
 
-Nethermind使用可用于在Parity中设置专用网络的相同格式chainspec文件。 Nethermind支持chainspec文件的大多数元素：
+Nethermind 使用的链规范文件也可以用来设置由 Parity 节点运行的私有网络。Nethermind 支持链规范文件中的大部分元素：
 
-* 共识引擎及其参数\(Ethash，Clique，AuRa或NethDev之间进行选择\)
-* 起源块规范
-* EIP 转换
+* 共识引擎及其参数（可以在 Ethash、Clique、AuRa 或 NethDev 之间进行选择）
+* 创世块规范
+* EIP 过渡
 * 初始帐户分配
 * 引导节点
 
-目前不支持以下元素：
+暂不支持以下元素：
 
-* 硬编码同步块哈希
+* 硬编码同步区块的哈希值
 * 预编译定义和预编译激活块
 
-在下面可以找到一些用于定义各种以太坊网络的chainspec文件的链接：
+点击以下链接，即可找到一些用于定义不同以太坊网络的链规范文件：
 
-* [foundation](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/foundation.json) - 以太坊公共主网
-* [rinkeby](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/rinkeby.json) - 基于原始集团的测试网
-* [goerli](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json) - 基于Clique的新测试网
-* [spaceneth](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/spaceneth.json) - 专用网络示例NethDev
+* [基础网络](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/foundation.json) ——公共以太坊主网
+* [rinkeby](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/rinkeby.json) ——基于 Clique 的原始测试网
+* [goerli](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json) ——基于 Clique 的新测试网
+* [spaceneth](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/spaceneth.json) ——基于 NethDev 的私有网络示例
 

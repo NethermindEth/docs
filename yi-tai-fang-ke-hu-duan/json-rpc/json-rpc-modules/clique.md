@@ -2,27 +2,27 @@
 
 ## clique\_getSnapshot
 
-Retrieves a snapshot of all clique state at a given block.
+检索指定区块的所有 clique 状态的快照。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Snapshot object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `Snapshot`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -33,29 +33,29 @@ _None_
 
 ## clique\_getSnapshotAtHash
 
-Retrieves the state snapshot at a given block.
+检索指定区块的状态快照。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Snapshot object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `Snapshot`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -66,17 +66,17 @@ Retrieves the state snapshot at a given block.
 
 ## clique\_getSigners
 
-Retrieves the list of authorized signers.
+检索授权签名者列表。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Address`
 {% endtab %}
@@ -84,19 +84,19 @@ _None_
 
 ## clique\_getSignersAtHash
 
-Retrieves the list of authorized signers at the specified block by hash.
+根据哈希值检索指定区块的授权签名者列表。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Address`
 {% endtab %}
@@ -104,19 +104,19 @@ Retrieves the list of authorized signers at the specified block by hash.
 
 ## clique\_getSignersAtNumber
 
-Retrieves the list of authorized signers at the specified block by block number.
+根据区块编号检索指定区块的授权签名者列表。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | number | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Address`
 {% endtab %}
@@ -126,13 +126,13 @@ Retrieves the list of authorized signers at the specified block by block number.
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -142,15 +142,15 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -158,20 +158,20 @@ _None_
 
 ## clique\_propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
+增加一个新的签名者授权提案。如果 `vote` 参数被设置为 true，则表示该签名者投票赞成指定地址加入授权签名者列表。如果 `vote` 参数被设置为 false，则表示该签名者投了反对票。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | signer | `Address` |
 | vote | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -179,19 +179,19 @@ Adds a new authorization proposal that the signer will attempt to push through. 
 
 ## clique\_discard
 
-This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
+删除正在运行的提案。签名者不再继续投票（赞成或反对）指定地址。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | signer | `Address` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -201,15 +201,15 @@ This method drops a currently running proposal. The signer will not cast further
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | parentHash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}

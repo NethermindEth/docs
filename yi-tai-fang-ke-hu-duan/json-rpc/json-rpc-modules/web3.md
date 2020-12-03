@@ -2,17 +2,17 @@
 
 ## web3\_clientVersion
 
-Returns the current client version.
+返回当前客户端版本。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -20,19 +20,19 @@ _None_
 
 ## web3\_sha3
 
-Returns Keccak of the given data.
+返回指定数据的 Keccak。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | data | `Data` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Hash`
 {% endtab %}

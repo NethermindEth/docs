@@ -1,8 +1,8 @@
-# 运行
+# 运行时
 
 ## 目录
 
-如果您在本地构建应用程序，入口点将位于:
+如果您在本地构建 Nethermind 应用，则入口点将位于:
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/
@@ -22,7 +22,7 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 
 ## 静态节点
 
-静态节点是可以信任的预配置节点阵列。定义静态节点用一个简单的`static-nodes.json` 文件，该文件包含用逗号分隔的`enodes`列表。
+静态节点是一组预先配置好且可以信任的节点。静态节点可以用一个简单的 `static-nodes.json` 文件定义。该文件包含一个使用逗号分隔的 `enodes` 列表。
 
 ```bash
 [
@@ -31,36 +31,36 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ]
 ```
 
-默认情况下，`static-nodes.json` 文件存储在Nethermind软件包的`Data/`文件夹中。 `静态节点` 文件的路径可以通过[`静态节点路径`](../configuration/modules/init.md) 参数配置。
+默认情况下，`static-nodes.json` 文件存储在 Nethermind 软件包的 `Data/` 文件夹中。`static-nodes` 文件的路径可以通过[`StaticNodesPath`](../configuration/modules/init.md) 参数配置。
 
 ## NLog 配置
 
-您可以通过选择以下级别之一 \(错误\(Error\)，警告\(Warn\)，信息\(Info\)，调试\(Debug\)，跟踪\(Trace\) \) 来更改文件和控制台中的登录级别：
+您可以将文件和控制台中的日志级别改成错误、警告、信息、调试和追踪中的任意一个：
 
 ```bash
 <logger name="*" minlevel="Info" writeTo="file-async"/>
 <logger name="*" minlevel="Info" writeTo="auto-colored-console-async"/>
 ```
 
-更多详细的NLog 配置就在[这里](https://github.com/NLog/NLog/wiki/Configuration-file).
+点击[此处](https://github.com/NLog/NLog/wiki/Configuration-file)，了解更多关于 NLog 配置的详细内容。
 
-### 从存储库构建
+### 使用代码库构建
 
-日志记录级别可以在`NLog.config` 文件中控制，在此处:
+日志级别可由 `NLog.config` 文件控制。该文件位于：
 
 ```text
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 ```
 
-### 从 Github/Downloads package下载程序包
+### 从 Github/Downloads 下载程序包
 
 `NLog.config` 文件随软件包一起提供，可以在提取目录中找到。
 
 ![](../../.gitbook/assets/image%20%2830%29.png)
 
-### 使用Docker镜像运行Nethermind
+### 使用 Docker 镜像运行 Nethermind
 
-`NLog.config` f文件位于Docker容器内的 `/nethermind/NLog.config` 路径中。可以使用一个简单的命令来映射该卷：
+`NLog.config` 文件位于 Docker 容器内的 `/nethermind/NLog.config` 路径。该容器卷可以使用一个简单的命令来映射：
 
 ```bash
 -v /home/user/NLog.config:/nethermind/NLog.config

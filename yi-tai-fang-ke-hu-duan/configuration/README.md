@@ -1,22 +1,22 @@
 ---
-description: 调整Nethermind节点配置的属性列表
+description: 用于调整 Nethermind 节点配置的属性列表
 ---
 
 # 配置
 
-配置Nethermind节点有三种的方法。 它们在下面以优先级\的相反顺序显示（如果您在配置文件，环境变量和命令行中设置了相同的属性，则将使用命令行值\）。
+您可以通过下列三种方法配置 Nethermind 节点。这三种方法按照从低到高的优先级排列（如果您在配置文件、环境变量和命令行中设置了相同的属性，则优先使用命令行的值\）。
 
 ## 配置文件
 
-更改要运行的网络配置的 `.cfg` 文件中的配置属性。每个具有默认设置的 `.cfg` 文件都附加在Nethermind软件包中，可以在`configs` 文件夹中找到。
+找到您想要运行的网络配置的 `.cfg` 文件，修改文件中的配置属性。每个 `.cfg` 文件都带有默认设置，可在 Nethermind 软件包的 `configs` 文件夹中找到。
 
 ## 环境变量
 
-最后一种方法是在环境变量中设置值，例如 设置`set NETHERMIND_INITCONFIG_PROCESSINGENABLED = false`
+第二种方法是设置环境变量中的值，例如，`set NETHERMIND_INITCONFIG_PROCESSINGENABLED = false`。
 
 ## 命令行
 
-另一种方法是通过将标志传递给 `Nethermind.Runner` 或 `Nethermind.Launcher`来设置每个配置属性。 您可以通过运行 `./Nethermind.Runner --help` 来查看所有配置选项的列表，例如：
+第三种方法是将标记传递给 `Nethermind.Runner` 或 `Nethermind.Launcher` 来设置每个配置属性。您可以运行 `./Nethermind.Runner --help` 查看所有配置选项的列表，例如：
 
 ```text
 ./Nethermind.Runner --config ropsten --JsonRpc.Enabled true --Init.ProcessingEnabled false

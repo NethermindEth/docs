@@ -2,7 +2,7 @@
 
 ## debug\_getChainLevel
 
-检索给定链级别\(特定于Nethermind\)上的树枝的表示形式。
+检索位于指定区块链层级的树分支的表示\（Nethermind 特有功能\）。
 
 {% tabs %}
 {% tab title="Request" %}
@@ -14,24 +14,24 @@
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ChainLevelForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ChainLevelForRpc`
 
-| Fields name | 类型 |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | BlockInfos | `BlockInfoForRpc[] object` |
 | HasBlockOnMainChain | `Boolean` |
 
 `BlockInfoForRpc[]`
 
-| Fields name | Type |
+| **字段名称** | 类型 |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -45,19 +45,19 @@
 
 ## debug\_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+将链的一部分从所有树分支上删除（Nethermind 特有功能）。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | startNumber | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
@@ -65,19 +65,19 @@ Deletes a slice of a chain from the tree on all branches \(Nethermind specific\)
 
 ## debug\_resetHead
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
+更新/重置链首块，仅限节点因数据库/内存损坏而卡住时使用（Nethermind 特有功能）。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockHash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -85,30 +85,30 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 
 ## debug\_traceTransaction
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+尝试以相同的方式将一笔已经在网络上执行过的交易再运行一遍。在尝试执行与指定哈希值相对应的交易之前，会先将在该交易之前可能已经执行过的所有交易重放。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | transactionHash | `Hash` |
 | options | `GethTraceOptions object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -118,7 +118,7 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -132,9 +132,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | txIndex | `Quantity` |
@@ -142,28 +142,28 @@ This method will attempt to run the transaction in the exact same manner as it w
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String` \（最新、最早、待处理\）
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -173,7 +173,7 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -187,9 +187,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockHash | `Hash` |
 | txIndex | `Quantity` |
@@ -197,17 +197,17 @@ This method will attempt to run the transaction in the exact same manner as it w
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -217,7 +217,7 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -229,30 +229,30 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 ## debug\_traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+返回该区块内所有交易调用过的所有操作码的完整堆栈轨迹。该区块的父区块必须存在，否则就会失败。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockRlp | `Data` |
 | options | `GethTraceOptions object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -262,7 +262,7 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -276,26 +276,26 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | number | `Quantity` |
 | options | `GethTraceOptions object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -305,7 +305,7 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -319,26 +319,26 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockHash | `Hash` |
 | options | `GethTraceOptions object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -348,7 +348,7 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -360,19 +360,19 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 
 ## debug\_getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+检索 RLP 序列化格式的区块。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | number | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Data`
 {% endtab %}
@@ -380,19 +380,19 @@ Retrieves a block in the RLP-serialized form.
 
 ## debug\_getBlockRlpByHash
 
-Retrieves a block in the RLP-serialized form.
+检索 RLP 序列化格式的区块。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | hash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Data`
 {% endtab %}
@@ -400,20 +400,20 @@ Retrieves a block in the RLP-serialized form.
 
 ## debug\_getConfigValue
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+检索 Nethermind 的配置值，例如，JsonRpc.Enabled。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | category | `String` |
 | name | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -423,9 +423,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockRlp | `Data` |
 | transactionHash | `Hash` |
@@ -433,17 +433,17 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -453,7 +453,7 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -467,9 +467,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockRlp | `Data` |
 | txIndex | `Quantity` |
@@ -477,17 +477,17 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `GethLikeTxTrace object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `GethTraceOptions`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -497,7 +497,7 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 `GethLikeTxTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -509,19 +509,19 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 ## debug\_migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+设置收据迁移的区块高度上限（Nethermind 特有功能）。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockNumber | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -529,41 +529,41 @@ Sets the block number up to which receipts will be migrated to \(Nethermind spec
 
 ## debug\_insertReceipts
 
-Insert receipts for the block after verifying receipts root correctness.
+在验证收据根的正确性之后，为该区块插入收据。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | receiptForRpc | `ReceiptForRpc[] object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String` \（最新、最早、待处理\）
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |

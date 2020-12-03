@@ -1,180 +1,118 @@
 ---
-description: Nethermind Dockers 指示
+description: Nethermind Dockers 说明
 ---
 
 # Dockers
 
-## ![](../.gitbook/assets/pobrane.png) Docker仓库
+## ![](../.gitbook/assets/pobrane.png) Docker 代码库
 
-Docker仓库可以在此处找到
+点击下方链接，查看 Docker 代码库：
 
 {% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
 
-## 支持的架构
+## 已支持架构
 
-我们目前支持以下CPU架构的docker 镜像：
+我们目前支持以下 CPU 架构的 docker 镜像：
 
 * **AMD64**
 * **ARM64**
 * **ARM32**
 
-## 使用现有的镜像
+## 使用已有镜像
 
 ### **可用标签：**
 
-| **标签** | 说明 | 架构 |
+| **标签** | 描述 | 架构 |
 | :--- | :--- | :--- |
-| `最新` | 基于**Nethermind Alpine** 的最新镜像 | x86\_64 |
-| `arm64` | 基于**Nethermind ARM64 Alpine** 的最新镜像 | ARM64 |
-| `arm32` | 基于**Nethermind ARM32 Debian** 的最新镜像 | ARM32 |
+| `latest` | 基于 **Nethermind Debian** 的最新镜像 | x86\_64, ARM64, ARM32 |
 
-要使用之前的版本，您可以传递`{tag}` ，例如`1.8.50` 主镜像名称前“
+如需使用之前的版本，您可以在主镜像名称后加上 `{tag}` ，例如 `1.8.50`。
 
-例如，如果您想使用**Nethermind Alpine**镜像`1.7.4`的版本 ，则镜像名称应为 `1.7.4-alpine`，对于**Nethermind ARM64 Alpine** `1.7.4-arm64` _\*\*_，依此类推。
+例如，如果您想使用 `1.7.4` 版本的 **Nethermind Debian** 镜像，则镜像名称应为 `nethermind/nethermind:1.7.4`。
 
-所有版本都可以在[标签历史](https://github.com/NethermindEth/nethermind/tags).中找到。
+所有版本都可以在[标签历史页](https://github.com/NethermindEth/nethermind/tags)中找到。
 
-### **运行Nethermind** 容器
+### **运行 Nethermind** 容器
 
-Docker pull命令：
+Docker 拉取命令：
 
 {% tabs %}
-{% tab title="AMD64" %}
+{% tab title="" %}
 ```text
 docker pull nethermind/nethermind
 ```
 {% endtab %}
-
-{% tab title="ARM64" %}
-```text
-docker pull nethermind/nethermind:arm64
-```
-{% endtab %}
-
-{% tab title="ARM32" %}
-```text
-docker pull nethermind/nethermind:arm32
-```
-{% endtab %}
 {% endtabs %}
 
-为了启动`Nethermind.Runner`, 只需运行：
+启动 `Nethermind.Runner` 只需运行：
 
 {% tabs %}
-{% tab title="AMD64" %}
+{% tab title="" %}
 ```text
 docker run -it nethermind/nethermind
 ```
 {% endtab %}
-
-{% tab title="ARM64" %}
-```text
-docker run -it nethermind/nethermind:arm64
-```
-{% endtab %}
-
-{% tab title="ARM32" %}
-```text
-docker run -it nethermind/nethermind:arm32
-```
-{% endtab %}
 {% endtabs %}
 
-您可以使用 `--help` 获取Nethermind可能启动参数的列表，也可以在[此处](configuration/). 找到它们。
+您可以使用`--help` 获取 Nethermind 的启动参数列表，或点击[此处](configuration/)查看。
 
 {% tabs %}
-{% tab title="AMD64" %}
+{% tab title="" %}
 ```text
 docker run -it nethermind/nethermind --help
 ```
 {% endtab %}
-
-{% tab title="ARM64" %}
-```text
-docker run -it nethermind/nethermind:arm64 --help
-```
-{% endtab %}
-
-{% tab title="ARM32" %}
-```text
-docker run -it nethermind/nethermind:arm32 --help
-```
-{% endtab %}
 {% endtabs %}
 
-可以使用简单的约定通过环境变量来修改每个配置属性:
+您可以使用简单的规范通过环境变量来修改每一个配置属性：
 
 ```bash
 NETHERMIND_{MODULE}CONFIG_{PROPERTY} or --{Module}.{Property}
 ```
 
-例如
+例如：
 
 ```text
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
 {% hint style="warning" %}
-Environment variables are to be passed before docker image tag while parameteres should be passed right after the docker image tag.
+Environment variables are to be passed before the docker image tag while parameters should be passed right after the docker image tag.
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables **\*\*can be easily used within** docker-compose.yml\*\* files in environment section
+Environment variables **\*\*can be easily used within** docker-compose.yml\*\* files in the environment section
 {% endhint %}
 
 ### **JSON RPC**
 
-要启用JSON RPC，请与 `--network host`共享主机的网络名称空间，并设置`--JsonRpc.Enabled true`.。要更改端口，只需传递`--JsonRpc.Port 8550`.。
+如需启用 JSON RPC，请将该主机的网络命名空间与 `--network host` 共享，并设置 `--JsonRpc.Enabled true`。如需更改端口，请输入 `--JsonRpc.Port 8550`。
 
-如果在本地运行：
+可以在本地运行：
 
 {% tabs %}
-{% tab title="AMD64" %}
+{% tab title="" %}
 ```text
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
 {% endtab %}
-
-{% tab title="ARM64" %}
-```text
-docker run -it --network host nethermind/nethermind:arm64 --JsonRpc.Enabled true
-```
-{% endtab %}
-
-{% tab title="ARM32" %}
-```text
-docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
-```
-{% endtab %}
 {% endtabs %}
 
-或使用端口映射
+也可以使用端口映射：
 
 {% tabs %}
-{% tab title="AMD64" %}
+{% tab title="" %}
 ```text
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
-
-{% tab title="ARM64" %}
-```text
-docker run -it -p 8545:8545 nethermind/nethermind:arm64 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
-```
-{% endtab %}
-
-{% tab title="ARM32" %}
-```text
-docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
-```
-{% endtab %}
 {% endtabs %}
 
-如果从VM运行，可能需要通过 `--JsonRpc.Host {hostmachine_ip}` \(`127.0.0.1` is set by default\)。 如果仍然无法连接JSON RPC，则可以设置`--JsonRpc.Host 0.0.0.0`
+如果在虚拟机中运行，您可能想要对外开放 JSON RPC，请使用 `--JsonRpc.Host {hostmachine_ip}` \（默认设置为 `127.0.0.1`\）。 如果仍然无法连接至 JSON RPC，您也可以尝试设置 `--JsonRpc.Host 0.0.0.0`。
 
 ### **可用配置**
 
-要切换网络，请设置`--config {network}` flag \(default value is `mainnet`\).
+如需切换网络，请使用 `--config {network}` 标记\（默认值为 `mainnet`\）。
 
 * `mainnet`
 * `goerli`
@@ -184,50 +122,39 @@ docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true -
 * `poacore`
 * `sokol`
 * `volta`
+* `energyweb`
 
-例如，在`goerli`网络上运行Nethermind：
+例如，如需在 `goerli` 网络上运行 Nethermind：
 
 {% tabs %}
-{% tab title="AMD64" %}
+{% tab title="" %}
 ```text
 docker run -it nethermind/nethermind --config goerli
-```
-{% endtab %}
-
-{% tab title="ARM64" %}
-```text
-docker run -it nethermind/nethermind:arm64 --config goerli
-```
-{% endtab %}
-
-{% tab title="ARM32" %}
-```text
-docker run -it nethermind/nethermind:arm32 --config goerli
 ```
 {% endtab %}
 {% endtabs %}
 
 ### **卷**
 
-要完全覆盖配置文件，要用这个卷:
+若想完全覆盖一个配置文件，您需要使用卷：
 
 ```bash
 -v /home/user/mainnet.cfg:/nethermind/configs/mainnet.cfg
 ```
 
-为了将内部数据库映射到本地卷，您需要映射`/nethermind/nethermind_db/`:
+若想将内部数据库映射到本地卷，您需要映射`/nethermind/nethermind_db/`：
 
 ```bash
 -v /home/user/nethermind_db:/nethermind/nethermind_db
 ```
 
-可以使用以下命令映射日志：
+您可以使用以下命令来映射日志：
 
 ```bash
 -v /home/user/logs:/nethermind/logs
 ```
 
-密钥库:
+密钥库：
 
 ```bash
 -v /home/user/keystore:/nethermind/keystore
@@ -239,32 +166,30 @@ Nlog:
 -v /home/user/NLog.config:/nethermind/NLog.config
 ```
 
-更多详细的NLog 配置就在[这里](https://github.com/NLog/NLog/wiki/Configuration-file).
+点击[此处](https://github.com/NLog/NLog/wiki/Configuration-file)，了解更多关于 NLog 配置的内容。
 
 ## 构建镜像
 
-Dockerfile可以在 [根目录](https://github.com/NethermindEth/nethermind) 中找到，它具有6种风格：
+Dockerfile 可以在存储库 [root](https://github.com/NethermindEth/nethermind)中找到。目前，该文件使用多架构构建器：
 
-| 文档名称 | 说明 | 架构 |
+| 文档名称 | 描述 | 架构 |
 | :--- | :--- | :--- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | 必须具有克隆的存储库才能构建基于Alpine的镜像。 | x86\_64 |
-| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | 不需要克隆的存储库，因为将在第一步中它被下载。 | x86\_64 |
-| [Dockerfile.arm64](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_arm64) | 必须具有克隆的存储库才能构建基于  ARM64 Alpine 的镜像。 | ARM64 |
-| [Dockerfile.arm32](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_arm32) | 必须具有克隆的存储库才能构建基于 ARM32  Debian 的镜像。 | ARM32 |
+| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | 需要克隆代码库来构建基于 Alpine 的镜像。 | x86\_64, ARM64, ARM32 |
+| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | 无需克隆代码库，因为该文件会在第一步下载代码库。 | x86\_64 |
 
-为了构建镜像，运行：
+如需构建镜像，请运行：
 
 ```bash
 docker build -t nethermind .
 ```
 
-或使用 `-f`标志来指定其他Dockerfile：
+或使用 `-f` 标记来指定其它 Dockerfile：
 
 ```bash
 docker build -f Dockerfile_full -t nethermind .
 ```
 
-本地创建docker镜像的示例用法：
+本地创建的 docker 镜像的用法示例：
 
 ```bash
 docker run -it nethermind --config goerli

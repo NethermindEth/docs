@@ -1,12 +1,12 @@
 ---
-description: 可以与团队联系的社交媒体渠道
+description: Nethermind 团队的社交媒体渠道
 ---
 
 # 社交媒体
 
 ## Discord
 
-{% embed url="https://discord.gg/5fW2Cu" caption="Discord channel" %}
+{% embed url="https://discord.gg/5FSJd4" caption="Discord channel" %}
 
 ## Gitter
 
@@ -16,11 +16,11 @@ description: 可以与团队联系的社交媒体渠道
 
 {% embed url="https://github.com/NethermindEth/nethermind/issues" caption="GitHub Issues" %}
 
-## Twitter
+## 推特
 
 {% embed url="https://twitter.com/nethermindeth" caption="" %}
 
-## 微波
+## 微博
 
 ![](../.gitbook/assets/1845600783.jpg)
 

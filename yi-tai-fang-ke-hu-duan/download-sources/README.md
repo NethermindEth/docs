@@ -1,5 +1,5 @@
 ---
-description: Nethermind软件包可在Github发布页面或我们的下载页面中找到。
+description: Nethermind 软件包可从 Github 版本发布页或我们的官方下载页获取。
 ---
 
 # 下载

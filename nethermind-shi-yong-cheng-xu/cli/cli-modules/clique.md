@@ -2,7 +2,7 @@
 
 ## clique.discard\(address\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -10,11 +10,11 @@
 | :--- | :--- |
 | address | `string` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -33,17 +33,17 @@ Request complete in 58129.371μs
 
 ## clique.getSigners
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
-None
+无
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -62,17 +62,17 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAnnotated
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
-None
+无
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -91,7 +91,7 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAtHash\(hash\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -99,11 +99,11 @@ Request complete in 58129.371μs
 | :--- | :--- |
 | hash | `string` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -122,7 +122,7 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAtHashAnnotated\(hash\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -130,11 +130,11 @@ Request complete in 58129.371μs
 | :--- | :--- |
 | hash | `string` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -153,7 +153,7 @@ Request complete in 58129.371μs
 
 ## clique.getSignersAtNumber\(number\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -161,11 +161,11 @@ Request complete in 58129.371μs
 | :--- | :--- |
 | number | `int` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -184,17 +184,17 @@ Request complete in 58129.371μs
 
 ## clique.getSnapshot
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
-None
+无
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -213,7 +213,7 @@ Request complete in 58129.371μs
 
 ## clique.getSnapshotAtHash\(hash\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -221,11 +221,11 @@ Request complete in 58129.371μs
 | :--- | :--- |
 | hash | `string` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -244,7 +244,7 @@ Request complete in 58129.371μs
 
 ## clique.propose\(address, vote\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -253,11 +253,11 @@ Request complete in 58129.371μs
 | address | `string` |
 | vote | `boolean` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}

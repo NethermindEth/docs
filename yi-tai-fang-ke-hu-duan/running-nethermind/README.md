@@ -1,6 +1,6 @@
 ---
-description: 有关如何在不同操作系统上运行Nethermind客户端的教程
+description: 关于如何在不同操作系统上运行 Nethermind 客户端的教程
 ---
 
-# 运行Nethermind
+# 运行 Nethermind
 

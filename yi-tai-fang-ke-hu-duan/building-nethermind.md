@@ -1,13 +1,13 @@
-# 建立 Nethermind
+# 构建 Nethermind
 
-## IDE \( 可选）
+## 集成开发环境（可选）
 
 * [JetBrains Rider](https://www.jetbrains.com/rider/)
 * [VS Code](https://code.visualstudio.com/docs/other/dotnet)
 
-## 微软软件开发工具包 （SDKs）
+## 软件开发工具包
 
-要构建Nethermind，您将需要 **.NET SDK 3.1** 。您可以在此处下载\（确保选择正确的平台和发行版\）：
+您需要使用  **.NET SDK 3.1**  构建 Nethermind。请点击下方链接下载\（请确保您选择的是正确的平台和发行版本\）：
 
 {% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
 
@@ -59,7 +59,7 @@ brew install gmp && brew install snappy && brew install lz4
 
 ## Windows
 
-可能需要安装 [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+您可能需要安装 [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
 ## 所有平台
 
@@ -71,7 +71,7 @@ If dotnet command is not found then probably you forgot to install SDK \(see ins
 On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
 {% endhint %}
 
-克隆Nethermind存储库及其子模块，然后以 `Release`或`Debug`模式构建Nethermind。
+克隆 Nethermind 的代码库及其子模块，然后在 `Release` 或 `Debug` 模式下构建 Nethermind。
 
 ```bash
 git clone https://github.com/NethermindEth/nethermind.git --recursive
@@ -79,25 +79,25 @@ cd nethermind/src/Nethermind
 dotnet build Nethermind.sln -c Release
 ```
 
-以进行快速同步和测试，启动goerli testnet
+启动 goerli 测试网来进行快速同步和测试
 
 ```bash
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config goerli
 ```
 
-在此处可以确认Goerli tetsnet 的最新块
+您可以点击下方链接确认 goerli 测试网的最新区块：
 
 {% embed url="https://blockscout.com/eth/goerli/" caption="" %}
 
-或运行以太坊主网:
+或通过以下命令运行以太坊主网：
 
 ```text
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config mainnet
 ```
 
-## 可能产生的问 题
+## 潜在问题
 
-如果您安装了某些.NET Core的预发行版本，则这些预发行版本可能会导致一些冲突。您怎样的情况可能非常独特，因此最好在线寻求帮助。
+如果您安装的是旧的 .NET Core 预发行版本，可能会引发冲突。由于这种情况非常特殊，您最好寻求在线帮助。
 

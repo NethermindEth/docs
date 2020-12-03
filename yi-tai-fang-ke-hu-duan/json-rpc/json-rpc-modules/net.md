@@ -2,17 +2,17 @@
 
 ## net\_localAddress
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Address`
 {% endtab %}
@@ -20,17 +20,17 @@ _None_
 
 ## net\_localEnode
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -38,17 +38,17 @@ _None_
 
 ## net\_version
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -56,17 +56,17 @@ _None_
 
 ## net\_listening
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -74,17 +74,17 @@ _None_
 
 ## net\_peerCount
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}

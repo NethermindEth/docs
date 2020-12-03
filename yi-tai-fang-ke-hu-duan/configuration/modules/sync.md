@@ -1,16 +1,16 @@
-# 同步
+# Sync
 
-| 属性名称 | 说明 | 默认值 |
+| 属性名称 | 描述 | 默认值 |
 | :--- | :--- | ---: |
-| `BeamSync` | Beam Sync 同步 - 仅用于DEBUG / DEV-尚未在PROD中不能操作。 | `false` |
-| `DownloadBodiesInFastSync` | 如果设置为 `true` 将在快速同步模式下下载块体。 | `false` |
-| `DownloadReceiptsInFastSync` | 如果设置为 `true`，则收据将以“快速同步”模式下载。这使该过程减慢几个小时，但允许您与执行大量历史日志搜索的dApp \(例如 Maker CDPs\) 进行交互。 | `false` |
-| `FastBlocks` | 如果设置为 `true`，则在快速同步模式下，将首先从提供的PivotNumber向下下载块。 这允许将请求与许多同步对等方并行化，而不必担心同步有效分支\(向下同步到0\)。 您需要输入来自受信任来源的数据透视图块编号，哈希值和总难度\(如果要更改，可以使用etherscan并与其他来源确认\) | `false` |
-| `FastSync` | 如果设置为`true`，使用快速同步 \(eth/63\)同步算法。 | `false` |
-| `FastSyncCatchUpHeightDelta` | 仅当`FastSync` 为 `true`时才相关。如果设置为value, 设置最小高度阈值限制，当链在网络后面时，FullSync（如果已启用）保持开启状态。如果超过此限制，它将切换回FastSync。请注意，最后32个块始终以FullSync处理，因此其设置为小于或等于32将无效。 | `null` |
-| `PivotHash` | 快速块同步的枢轴块的哈希。 | `null` |
-| `PivotNumber` | 快速块同步的枢轴块编号。 | `null` |
-| `PivotTotalDifficulty` | 快速块同步的枢轴块的总难度（not-这是总难度而不是难度） | `null` |
-| `SynchronizationEnabled` | 如果为`false`，则该节点不下载/处理新块 | `true` |
-| `UseGethLimitsInFastBlocks` | 如果设置为 `true`，在快速阻止模式下，Nethermind 会生成较小的请求，以避免Geth断开连接。在Geth重型网络 \(主网络\) 上是非常好的，而在Parity或Nethermind重型网络\(Goerli，AuRa\) 上，会使同步速度降低约~4倍。 | `true` |
+| `BeamSync` | Beam Sync 仅用于调试/开发，在生产环境中还不可用。 | `false` |
+| `DownloadBodiesInFastSync` | 如果被设置为 `true`，快速同步模式将下载区块体。 | `false` |
+| `DownloadReceiptsInFastSync` | 如果被设置为 `true`，快速同步模式将下载收据。这会导致进程拖慢数个小时，但是可以让您与执行大量历史日志搜索的 dApp（例如 Maker 的抵押债仓）交互。 | `false` |
+| `FastBlocks` | 如果被设置为 `true`，则在快速同步模式下，将首先根据 PivotNumber 定义的区块高度开始向下下载区块。 这样可以通过并行化方式向多个对等节点发起同步请求，无需担心正在同步的分支的有效性（因为同步进程会向下同步至 0 为止）。您需要输入从可信来源处获得的 pivot 区块编号、哈希值和总难度（您也可以使用 etherscan 获得这些数据，并通过其它来源进行确认）。 | `false` |
+| `FastSync` | 如果被设置为 `true`，将启用 Fast Sync \(eth/63\) 同步算法。 | `false` |
+| `FastSyncCatchUpHeightDelta` | 仅当 `FastSync` 为 `true` 时才需设置该项。一旦设置为某个值，则在节点与网络之间的区块高度差达到该值前，始终使用完全同步模式（如已启用）同步区块。当区块高度差超过该值后，则切换至快速同步模式同步区块。请注意，当区块高度差不超过 32 时，始终使用完全同步模式同步区块，因此设定值在小于或等于 32 时无效。 | `null` |
+| `PivotHash` | Fast Blocks 同步中 pivot 区块的哈希值。 | `null` |
+| `PivotNumber` | Fast Blocks 同步中 pivot 区块的编号。 | `null` |
+| `PivotTotalDifficulty` | Fast Blocks 同步中 pivot 区块的总难度值（请注意，这里是总难度值，而非难度值）。 | `null` |
+| `SynchronizationEnabled` | 如果被设置为 `false`，则该节点不会下载/处理新的区块。 | `true` |
+| `UseGethLimitsInFastBlocks` | 如果被设置为 `true`，则在 Fast Blocks 模式下，Nethermind 节点会产生较小的请求，以避免 Geth 节点中断连接。该设置适用于 Geth 节点占比较大的网络 \（如，主网\）。但是，在 Parity 或 Nethermind 节点占比较大的网络\（如 Goerli、AuRa\）中，这会导致同步速度降低 ~4 倍。 | `true` |
 

@@ -2,27 +2,27 @@
 
 ## txpool\_status
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TxPoolStatus object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TxPoolStatus`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Pending | `Quantity` |
 | Queued | `Quantity` |
@@ -31,34 +31,34 @@ _None_
 
 ## txpool\_content
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TxPoolContent object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TxPoolContent`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Pending | `IDictionary`2 object\` |
 | Queued | `IDictionary`2 object\` |
 
 `IDictionary`2\`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Item | `Dictionary`2 object\` |
 | Keys | `Array` |
@@ -66,7 +66,7 @@ _None_
 
 `IDictionary`2\`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Item | `Dictionary`2 object\` |
 | Keys | `Array` |
@@ -76,34 +76,34 @@ _None_
 
 ## txpool\_inspect
 
-_description missing_
+_无描述_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TxPoolInspection object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TxPoolInspection`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Pending | `IDictionary`2 object\` |
 | Queued | `IDictionary`2 object\` |
 
 `IDictionary`2\`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Item | `Dictionary`2 object\` |
 | Keys | `Array` |
@@ -111,7 +111,7 @@ _None_
 
 `IDictionary`2\`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Item | `Dictionary`2 object\` |
 | Keys | `Array` |

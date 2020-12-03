@@ -2,17 +2,17 @@
 
 ## eth\_chainId
 
-返回ChainID
+返回 ChainID
 
 {% tabs %}
 {% tab title="Request" %}
 ### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
@@ -20,17 +20,17 @@ _None_
 
 ## eth\_protocolVersion
 
-Returns ETH protocol version
+返回以太坊协议版本
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -38,27 +38,27 @@ _None_
 
 ## eth\_syncing
 
-Returns syncing status
+返回同步状态
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `SyncingResult object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `SyncingResult`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | IsSyncing | `Boolean` |
 | StartingBlock | `Quantity` |
@@ -69,17 +69,17 @@ _None_
 
 ## eth\_blockNumber
 
-Returns current block number
+返回当前区块编号
 
 {% tabs %}
 {% tab title="Request" %}
 ### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
@@ -87,43 +87,43 @@ _None_
 
 ## eth\_getBalance
 
-Returns account balance
+返回账户余额
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| **字段名称** | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_getStorageAt
 
-Returns storage data at address. storage\_index
+返回 address. storage\_index 处的存储数据
 
 {% tabs %}
 {% tab title="Request" %}
@@ -137,66 +137,66 @@ Returns storage data at address. storage\_index
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Data`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_getTransactionCount
 
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
+返回某个帐户在指定区块编号处的 nonce（该账户自创世块以来的交易总量）
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash
+根据区块哈希返回对应区块中交易的数量
 
 {% tabs %}
 {% tab title="Request" %}
@@ -208,7 +208,7 @@ Returns number of transactions in the block block hash
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
@@ -216,62 +216,7 @@ Returns number of transactions in the block block hash
 
 ## eth\_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
-
-`BlockParameter`
-
-| Fields name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
-
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
-{% endtab %}
-{% endtabs %}
-
-## eth\_getUncleCountByBlockHash
-
-Returns number of uncles in the block by block hash
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Hash` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth\_getUncleCountByBlockNumber
-
-Returns number of uncles in the block by block number
+根据区块编号返回对应区块中交易的数量
 
 {% tabs %}
 {% tab title="Request" %}
@@ -283,88 +228,143 @@ Returns number of uncles in the block by block number
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
+{% endtab %}
+{% endtabs %}
+
+## eth\_getUncleCountByBlockHash
+
+根据区块哈希返回对应区块的叔块数量
+
+{% tabs %}
+{% tab title="Request" %}
+### **参数**
+
+| 参数名称 | 类型 |
+| :--- | :--- |
+| blockHash | `Hash` |
+{% endtab %}
+
+{% tab title="Response" %}
+### 返回值类型
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth\_getUncleCountByBlockNumber
+
+根据区块编号返回对应区块的叔块数量
+
+{% tabs %}
+{% tab title="Request" %}
+### **参数**
+
+| 参数名称 | 类型 |
+| :--- | :--- |
+| blockParameter | `BlockParameter object` |
+{% endtab %}
+
+{% tab title="Response" %}
+### 返回值类型
+
+`Quantity`
+{% endtab %}
+
+{% tab title="Object definitions" %}
+### 对象定义
+
+`BlockParameter`
+
+| 字段名称 | 类型 |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_getCode
 
-Returns account code at given address and block
+返回指定地址和指定区块处的帐户代码
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `Address` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Data`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
-| 类型 | `BlockParameterType object` |
+| Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting
+向交易池发送一笔交易并进行广播
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | transactionForRpc | `TransactionForRpc object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Hash`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -386,19 +386,19 @@ Send a transaction to the tx pool and broadcasting
 
 ## eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting
+向交易池发送一笔原始交易并进行广播
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | transaction | `Data` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Hash`
 {% endtab %}
@@ -406,30 +406,30 @@ Send a raw transaction to the tx pool and broadcasting
 
 ## eth\_call
 
-Executes a tx call \(does not create a transaction\)
+执行一次交易调用（不创建交易）
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -449,43 +449,43 @@ Executes a tx call \(does not create a transaction\)
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_estimateGas
 
-Executes a tx call and returns gas used \(does not create a transaction\)
+执行一次交易调用并返回已消耗 gas 量（不创建交易）
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -505,43 +505,43 @@ Executes a tx call and returns gas used \(does not create a transaction\)
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 {% endtab %}
 {% endtabs %}
 
 ## eth\_getBlockByHash
 
-Retrieves a block by hash
+根据哈希值检索区块
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockHash | `Hash` |
 | returnFullTransactionObjects | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `BlockForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -571,41 +571,41 @@ Retrieves a block by hash
 
 ## eth\_getBlockByNumber
 
-Retrieves a block by number
+根据区块编号检索区块
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | returnFullTransactionObjects | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `BlockForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 
 `BlockForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -635,29 +635,29 @@ Retrieves a block by number
 
 ## eth\_getTransactionByHash
 
-Retrieves a transaction by hash
+根据哈希值检索交易
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | transactionHash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TransactionForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -679,27 +679,27 @@ Retrieves a transaction by hash
 
 ## eth\_pendingTransactions
 
-Returns the pending transactions list
+返回待处理交易列表
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TransactionForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -721,30 +721,30 @@ _None_
 
 ## eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index
+根据区块哈希和索引检索交易
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockHash | `Hash` |
 | positionIndex | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TransactionForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -766,41 +766,41 @@ Retrieves a transaction by block hash and index
 
 ## eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index
+根据区块编号和索引检索交易
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TransactionForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -822,29 +822,29 @@ Retrieves a transaction by block number and index
 
 ## eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash
+根据交易哈希检索交易收据
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | txHashData | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ReceiptForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -863,7 +863,7 @@ Retrieves a transaction receipt by tx hash
 
 `LogEntryForRpc[]`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -877,30 +877,30 @@ Retrieves a transaction receipt by tx hash
 
 ## eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index
+根据区块哈希和叔块索引检索叔块的区块头
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockHashData | `Hash` |
 | positionIndex | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `BlockForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -930,41 +930,41 @@ Retrieves an uncle block header by block hash and uncle index
 
 ## eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index
+根据区块编号和叔块索引检索叔块的区块头
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 | positionIndex | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `BlockForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 
 `BlockForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -994,29 +994,29 @@ Retrieves an uncle block header by block number and uncle index
 
 ## eth\_newFilter
 
-Creates an update filter
+创建一个更新过滤器
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | filter | `Filter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `Filter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -1025,7 +1025,7 @@ Creates an update filter
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -1036,17 +1036,17 @@ Creates an update filter
 
 ## eth\_newBlockFilter
 
-Creates an update filter
+创建一个更新过滤器
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
@@ -1054,17 +1054,17 @@ _None_
 
 ## eth\_newPendingTransactionFilter
 
-Creates an update filter
+创建一个更新过滤器
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Quantity`
 {% endtab %}
@@ -1072,19 +1072,19 @@ _None_
 
 ## eth\_uninstallFilter
 
-Creates an update filter
+创建一个更新过滤器
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | filterId | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -1092,19 +1092,19 @@ Creates an update filter
 
 ## eth\_getFilterChanges
 
-Reads filter changes
+读取过滤器更改
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | filterId | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Array`
 {% endtab %}
@@ -1112,53 +1112,53 @@ Reads filter changes
 
 ## eth\_getFilterLogs
 
-Reads filter changes
+读取过滤器更改
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | filterId | `Quantity` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Array`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 {% endtab %}
 {% endtabs %}
 
 ## eth\_getLogs
 
-Reads logs
+读取日志
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | filter | `Filter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Array`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `Filter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -1167,7 +1167,7 @@ Reads logs
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -1182,9 +1182,9 @@ Reads logs
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | accountAddress | `Address` |
 | hashRate | `Data` |
@@ -1192,28 +1192,28 @@ Reads logs
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `AccountProof object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String`（最新、最早、待处理）
 
 `AccountProof`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Address | `Address` |
 | Proof | `Data` |
@@ -1225,7 +1225,7 @@ Reads logs
 
 `StorageProof[]`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |

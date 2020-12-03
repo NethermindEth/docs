@@ -1,26 +1,26 @@
 # 插件
 
-Nethermind插件是扩展本地节点功能的强大方法。
+Nethermind 插件是一种有效扩展本地节点功能的方法。
 
-您可以编写的插件：
+您可以编写以下插件：
 
-| 插件类型 | 作用 |
+| 插件类型 | 用途 |
 | :--- | :--- |
-| RPC | 向客户端添加可以完全访问内部Nethermind API的其他RPC模块，并在与基础架构/系统集成时可以扩展节点的功能。 |
-| Block Tree Visitors | 该代码使您能够分析从生成到起始块的整个块树，并执行汇总的计算和检查。 |
-| Devp2p | 允许您为节点创建附加的devp2p网络协议，以通过TCP / IP进行通信。您还可以在Nethermind节点上的自定义产品构建将运行。 |
-| State Visitors | 允许您在整个原始格式状态 \(或仅某些帐户存储\)上运行汇总分析。 |
-| Config | 可以将其他配置类别添加到配置文件中，然后在env变量，json文件或命令行中使用它们来配置插件的行为。 |
-| TxPool | TxPool行为和监听器 |
-| Tracers | 定制，功能强大的EVM跟踪器，能够实时提取EVM执行元素 |
-| CLI | Nethermind CLI的其他模块，可以使您构建一些快速的便笺式JavaScript行为。 |
+| RPC | 用来将额外的 RPC 模块添加到客户端上。这些模块可以完全访问内部 Nethermind API，并与您的基础设施/系统集成，从而扩展节点的功能。 |
+| 区块树访问者 | 用来分析从创世块至链首块的整个区块树，并执行聚合计算和检查。 |
+| Devp2p | 用来创建额外的 devp2p 网络协议，让您的节点通过 TCP/IP 协议进行通信。您还可以构建自定义产品，并在 Nethermind 节点上运行。 |
+| 状态访问者 | 用来在整个原始格式状态（或某些帐户存储）上运行聚合分析。 |
+| 配置 | 用来将额外的配置类别添加到我们的配置文件中，然后在 env 变量、json 文件或命令行中使用它们来配置插件行为。 |
+| 交易池 | 交易池行为和监听器。 |
+| 追踪器 | 强大的自定义 EVM 追踪器，能够实时提取 EVM 执行的元素。 |
+| CLI | 额外的 Nethermind CLI 模块，能够让您构建一些快速的暂存器式 JavaScript 行为。 |
 |  |  |
 
-如何构建插件？我们在Nethermind.Analytics插件中包含了一个示例：
+如何构建一个插件？我们在 Nethermind.Analytics 插件中包含了一个示例：
 
-![](https://github.com/NethermindEth/docs/tree/d82a7fb5808f19408590701c4d8f8abc3cda7867/.gitbook/assets/image%20%28133%29.png)
+![](../.gitbook/assets/image%20%28133%29.png)
 
-## RPC插件示例：
+## RPC 插件示例：
 
 ```csharp
     [RpcModule(ModuleType.Clique)]
@@ -34,7 +34,7 @@ Nethermind插件是扩展本地节点功能的强大方法。
     }
 ```
 
-## CLI插件示例：
+## CLI 插件示例：
 
 ```csharp
 [CliModule("analytics")]
@@ -57,7 +57,7 @@ public class AnalyticsCliModule : CliModuleBase
 }
 ```
 
-## Block Tree Visitor \( 块树访客 \) 插件示例：
+## 区块树访问者插件示例：
 
 ```csharp
     public class RewardsVerifier : IBlockTreeVisitor
@@ -114,7 +114,7 @@ public class AnalyticsCliModule : CliModuleBase
     }
 ```
 
-## Config插件示例：
+## 配置插件示例：
 
 ```csharp
 public class AnalyticsConfig : IAnalyticsConfig
@@ -126,7 +126,7 @@ public class AnalyticsConfig : IAnalyticsConfig
 }
 ```
 
-## State Tree Visitor  \( 状态树访问者 \) 示例：
+## 状态树访问者插件示例：
 
 ```csharp
 public class SupplyVerifier : ITreeVisitor

@@ -2,17 +2,17 @@
 
 ## trace.replayBlockTransactions\(blockNumber, traceTypes\)
 
-Replays all transactions in a block returning the requested traces for each transaction
+重放一个区块中的所有交易，根据请求返回每个交易的踪迹
 
-### **Parameters**
+### **参数**
 
-None
+无
 
-### **Returns**
+### **返回值**
 
-None
+无
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -30,17 +30,17 @@ None
 
 ## trace.replayTransaction\(txHash, traceTypes\)
 
-Replays a transaction, returning the traces
+重放一个交易，返回其踪迹
 
-**Parameters**
+**参数**
 
-None
+无
 
-### **Returns**
+### **返回值**
 
-None
+无
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -58,17 +58,17 @@ None
 
 ## trace.block\(blockNumber\)
 
-Returns traces created at given block
+返回在指定区块上创建的踪迹
 
-### **Parameters**
+### **参数**
 
-None
+无
 
-### **Returns**
+### **返回值**
 
-None
+无
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -86,17 +86,17 @@ None
 
 ## trace.rawTransaction\(txData, traceTypes\)
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+追踪对 eth  \_sendRawTransaction 的调用，但是不进行该调用，返回其踪迹
 
-### **Parameters**
+### **参数**
 
-None
+无
 
-### **Returns**
+### **返回值**
 
-None
+无
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -114,17 +114,17 @@ None
 
 ## trace.transaction\(txHash\)
 
-Returns all traces of given transaction
+返回指定交易的所有踪迹
 
-### **Parameters**
+### **参数**
 
-None
+无
 
-### **Returns**
+### **返回值**
 
-None
+无
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}

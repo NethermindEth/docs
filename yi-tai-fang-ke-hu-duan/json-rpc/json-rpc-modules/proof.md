@@ -2,30 +2,30 @@
 
 ## proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+返回与 `eth_getTransactionReceipt` 相同的结果，以及交易证明、收据证明和序列化的区块头。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `TransactionWithProof object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `TransactionWithProof`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
 | TxProof | `Data` |
@@ -33,7 +33,7 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -55,30 +55,30 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 
 ## proof\_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+应返回与 `eth_call` 相同的结果，以及所有使用过的账户及其存储的证明，和序列化的区块头。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | txHash | `Hash` |
 | includeHeader | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ReceiptWithProof object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ReceiptWithProof`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |
 | TxProof | `Data` |
@@ -87,7 +87,7 @@ This function should return the same result as `eth_call` and also proofs of all
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |

@@ -2,30 +2,30 @@
 
 ## trace\_rawTransaction
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+追踪对 eth  \_sendRawTransaction 的调用，但不进行该调用，并返回其踪迹。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | data | `Data` |
 | traceTypes | `Array` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ParityTxTraceFromReplay object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ParityTxTraceFromReplay`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -35,14 +35,14 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityVmTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
@@ -67,26 +67,26 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | txHash | `Hash` |
 | traceTypes | `Array` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ParityTxTraceFromReplay object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ParityTxTraceFromReplay`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -96,14 +96,14 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityVmTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
@@ -128,37 +128,37 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | numberOrTag | `BlockParameter object` |
 | traceTypes | `Array` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ParityTxTraceFromReplay object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String` \（最新、最早、待处理\）
 
 `ParityTxTraceFromReplay`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -168,14 +168,14 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityVmTrace`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TraceAddress | `Int32[] object` |
 | CallType | `String` |
@@ -200,36 +200,36 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | numberOrTag | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ParityTxTraceFromStore object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String` \（最新、最早、待处理\）
 
 `ParityTxTraceFromStore`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
 | BlockHash | `Hash` |
@@ -243,7 +243,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityTraceAction`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
@@ -264,7 +264,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityTraceResult`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |
@@ -277,25 +277,25 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | txHash | `Hash` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ParityTxTraceFromStore object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ParityTxTraceFromStore`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
 | BlockHash | `Hash` |
@@ -309,7 +309,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityTraceAction`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
@@ -330,7 +330,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `ParityTraceResult`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |

@@ -13,7 +13,7 @@
 {% endtab %}
 
 {% tab title="Response" %}
-### 返回类型
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -32,7 +32,7 @@
 {% endtab %}
 
 {% tab title="Response" %}
-### 返回类型
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -50,17 +50,17 @@
 {% endtab %}
 
 {% tab title="Response" %}
-### 返回类型
+### 返回值类型
 
 `PeerInfo object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### 定义
+### 对象定义
 
 `PeerInfo`
 
-| 名称 | 类型 |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | ClientId | `String` |
 | Host | `String` |
@@ -70,7 +70,7 @@
 | IsTrusted | `Boolean` |
 | IsStatic | `Boolean` |
 | Enode | `String` |
-| 客户类型 | `String` |
+| ClientType | `String` |
 | EthDetails | `String` |
 | LastSignal | `String` |
 {% endtab %}
@@ -78,27 +78,27 @@
 
 ## admin\_nodeInfo
 
-Relevant information about this node
+该节点的相关信息
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### 返回类型
+### 返回值类型
 
 `NodeInfo object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `NodeInfo`
 
-| Fields name | 类型 |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Enode | `String` |
 | Id | `String` |
@@ -110,7 +110,7 @@ _None_
 
 `PortsInfo`
 
-| Fields name | 类型 |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Discovery | `Quantity` |
 | Listener | `Quantity` |

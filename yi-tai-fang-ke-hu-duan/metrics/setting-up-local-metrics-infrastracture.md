@@ -1,48 +1,48 @@
 ---
-description: 度量可用于监视正在运行的Nethermind节点
+description: Metrics 可以用来监视正在运行的 Nethermind 节点
 ---
 
-# 设置本地度量基础架构
+# 设置本地 Metrics 基础设施
 
-## 度量配置
+## Metrics 配置
 
-如果在[度量标准配置类别](../configuration/modules/metrics.md).中进行配置，_Prometheus/Grafana_可以使用Nethermind度量标准
+在[Metrics 配置类别](../configuration/modules/metrics.md)中进行配置后，Nethermind 指标即可用于_Prometheus/Grafana_。
 
-## 度量基础架构
+## Metrics 基础设施
 
-### Nethermind启用度量
+### 在 Nethermind 中启用 Metrics
 
-可以使用简单地参数 `--Metrics.Enabled true` 传递给Docker容器，`Nethermind.Runner`或`Nethermind.Launcher` 来启用 度量。 例如 `./Nethermind.Runner --Metrics.Enabled true`. 。
+您只需将 `--Metrics.Enabled true` 参数传递给 Docker 容器 `Nethermind.Runner` 或 `Nethermind.Launcher`，即可启用指标，例如，`./Nethermind.Runner --Metrics.Enabled true`。
 
-如果pushgateway端点不是默认值的，需要修改`Metrics.PushGatewayUrl`。
+如果 pushgateway 端点不是默认值，您将需要修改 `Metrics.PushGatewayUrl`。
 
 ### 运行样本配置
 
-* [x] 克隆[度量基础结构](https://github.com/NethermindEth/metrics-infrastructure) repository
+* [x] 克隆 [Metrics 基础设施](https://github.com/NethermindEth/metrics-infrastructure)代码库
 
 ```bash
 git clone https://github.com/NethermindEth/metrics-infrastructure.git
 ```
 
-1. [x] 转到`度量基础结构`目录
+1. [x] 打开 `metrics-infrastructure` 目录
 
 ```bash
 cd metrics-infrastructure
 ```
 
-1. [x] 运行docker 堆栈
+1. [x] 运行 docker 堆栈
 
 ```bash
 docker-compose up -d
 ```
 
-* _Prometheus_实例现在应该在 [`http://localhost:9090/`](http://localhost:9090/) 运行
-* _Pushgateway_ 在 [`http://localhost:9091/`](http://localhost:9091/) 运行
-* _Grafana 在_ [`http://localhost:3000/`](http://localhost:3000/)\`\` 运行
-* \[x\]在启用`度量` 的情况下运行 `Nethermind` 节点，您应该看到有度量流入_Pushgateway_ [url](http://localhost:9091/)
+* _Prometheus_ 实例应该在 [`http://localhost:9090/`](http://localhost:9090/) 上运行
+* _Pushgateway_ 应该在 [`http://localhost:9091/`](http://localhost:9091/) 上运行
+* _Grafana_ 应该在 [`http://localhost:3000/`](http://localhost:3000/)\`\` 上运行
+* [\[x\] 在启用 `Metrics` 的情况下运行 `Nethermind` 节点。您会在 _Pushgateway_ 链接 上看到指标流入。](http://localhost:9091/)
 
 {% hint style="info" %}
-可以将Nethermind服务添加到 `docker-compose.yml`文件中，以便与整个堆栈一起运行
+您可以将 Nethermind 服务添加到 `docker-compose.yml` 文件中，使其与整个堆栈一起运行。
 
 ```yaml
 nethermind:
@@ -80,19 +80,19 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 
 ![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
 
-1. [x] 打开_Grafana_ [url](http://localhost:3000) 并使用默认登录 \(admin\) 和密码 \(admin\), 登录，可以跳过密码更改
+1. [x] 打开 _Grafana_ [链接](http://localhost:3000) 并使用默认登录名（admin）和密码（admin）登录。您可以选择跳过密码修改。
 
 ![](../../.gitbook/assets/image%20%2828%29.png)
 
-* [x] 转到仪表板管理 [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards) 然后点击 `Nethermind` 
+* [x] 打开面板管理 [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards) 并点击 `Nethermind`。 
 
 ![](../../.gitbook/assets/image%20%2826%29.png)
 
-* [x] 现在可以探索度量并监控自己的的Nethermind节点
+* [x] 现在您可以探索指标并监控自己的 Nethermind 节点了。
 
 ![](../../.gitbook/assets/image%20%2829%29.png)
 
-### Prometheus，Pushgateway和Grafana的来源
+### Prometheus、Pushgateway 和 Grafana 的来源
 
 {% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
 

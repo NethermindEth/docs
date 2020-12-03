@@ -2,27 +2,27 @@
 
 ## parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue.
+返回当前队列中交易的列表。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ParityTransaction object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `ParityTransaction`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -47,7 +47,7 @@ _None_
 
 `PublicKey`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Address | `Address` |
 | Bytes | `Data` |
@@ -57,40 +57,40 @@ _None_
 
 ## parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+获取指定区块内所有交易的收据，比逐个获取收据更高效。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | blockParameter | `BlockParameter object` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `ReceiptForRpc object`
 {% endtab %}
 
 {% tab title="Object definitions" %}
-### Objects definition
+### 对象定义
 
 `BlockParameter`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType` `Quantity` 或 `String` \（最新、最早、待处理\）
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -109,7 +109,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 `LogEntryForRpc[]`
 
-| Fields name | Type |
+| 字段名称 | 类型 |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -123,17 +123,17 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 ## parity\_enode
 
-Returns the node enode URI.
+返回该节点的 enode URI。
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `String`
 {% endtab %}
@@ -143,16 +143,16 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `Address` |
 | password | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -162,15 +162,15 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | privateKey | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}
@@ -180,13 +180,13 @@ _None_
 
 {% tabs %}
 {% tab title="Request" %}
-### **Parameters**
+### **参数**
 
-_None_
+_无_
 {% endtab %}
 
 {% tab title="Response" %}
-### Return type
+### 返回值类型
 
 `Boolean`
 {% endtab %}

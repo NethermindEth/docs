@@ -2,20 +2,20 @@
 
 ## debug.deleteChainSlice\(startNumber, endNumber\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | startNumber | `int` |
 | endNumber | `int` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -33,19 +33,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.getBlockRlp\(number\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -63,19 +63,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.getBlockRlpByHash\(hash\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -93,19 +93,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.getChainlevel\(number\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -123,19 +123,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.config\(category, name\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -153,19 +153,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceBlock\(rlp, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -183,19 +183,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceBlockByHash\(hash, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -213,19 +213,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceBlockByNumber\(number, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -243,19 +243,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceTransaction\(hash, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -273,19 +273,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceTransactionByBlockAndIndex\(hash, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -303,19 +303,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceTransactionByBlockhashAndIndex\(hash, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -333,19 +333,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceTransactionInBlockByHash\(rlp, hash, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -363,19 +363,19 @@ admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e
 
 ## debug.traceTransactionInBlockByIndex\(rlp, index, options\)
 
-Adds given node to the static nodes
+将指定节点添加为静态节点
 
-### **Parameters**
+### **参数**
 
-| Parameter name | Type |
+| 参数名称 | 类型 |
 | :--- | :--- |
 | address | `string` |
 
-### **Returns**
+### **返回值**
 
-`String` - The enode just added to the static nodes
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **Example**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}

@@ -1,78 +1,78 @@
 ---
-description: 使用我们的跨平台以太坊客户端运行您的Nethermind节点
+description: 使用我们的跨平台以太坊客户端运行您的 Nethermind 节点
 ---
 
 # 运行客户端
 
-选中[下载源代码](../download-sources/) ，以获取适用于您的OS的最新Nethermind软件包。
+点击[下载源代码](../download-sources/) ，获取适合您的操作系统的最新 Nethermind 软件包。
 
 {% tabs %}
 {% tab title="Windows" %}
 1. 下载 `Windows` 软件包
-2. `解压` 文件
-3. 运行`Nethermind.Launcher.exe`
-4. 选择所需的配置
+2. `unzip` 文件
+3. 运行 `Nethermind.Launcher.exe`
+4. 选择所需配置
 {% endtab %}
 
 {% tab title="Linux" %}
-* [x] [下载软件包](../download-sources/)
+* [\[x\] 下载软件包](../download-sources/)
 
 ```bash
 wget [LINUX_PACKAGE_URL]
 ```
 
-![Download package with wget](../../.gitbook/assets/image%20%282%29.png)
+![&#x4F7F;&#x7528; wget &#x5DE5;&#x5177;&#x4E0B;&#x8F7D;&#x8F6F;&#x4EF6;&#x5305;](../../.gitbook/assets/image%20%282%29.png)
 
-* [x] 安装Linux依赖项
+* [x] 安装 Linux 依赖项
 
 ```bash
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y
 ```
 
-![Install Linux dependencies](../../.gitbook/assets/image%20%2816%29.png)
+![&#x5B89;&#x88C5; Linux &#x4F9D;&#x8D56;&#x9879;](../../.gitbook/assets/image%20%2816%29.png)
 
-* [x] `解压` 软件包
+* [x] `unzip` 软件包
 
 ```bash
 unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 ```
 
-![Unzip the package](../../.gitbook/assets/image%20%287%29.png)
+![&#x89E3;&#x538B;&#x8F6F;&#x4EF6;&#x5305;](../../.gitbook/assets/image%20%287%29.png)
 
-* \[x\]切换目录
+* [x] 切换目录
 
 ```bash
 cd nethermind
 ```
 
-![Switch directory](../../.gitbook/assets/image%20%288%29%20%281%29.png)
+![&#x5207;&#x6362;&#x76EE;&#x5F55;](../../.gitbook/assets/image%20%288%29.png)
 
-* \[x\]运行`Nethermind.Launcher`然后选择`Ethereum Node`。
+* [x] 运行 `Nethermind.Launcher` 并选择 `Ethereum Node`
 
 ```bash
 ./Nethermind.Launcher
 ```
 
-![Run the Nethermind.Launcher](../../.gitbook/assets/image%20%2819%29.png)
+![&#x8FD0;&#x884C; Nethermind.Launcher](../../.gitbook/assets/image%20%2819%29.png)
 
-* \[x\]选择[网络](../networks.md)
+* [\[x\] 选择网络](../networks.md)
 
-![Select the network](../../.gitbook/assets/image%20%2814%29.png)
+![&#x9009;&#x62E9;&#x7F51;&#x7EDC;](../../.gitbook/assets/image%20%2814%29.png)
 
-* \[x\]选择[同步模式](../sync-modes.md)
+* [\[x\] 选择同步模式](../sync-modes.md)
 
-![Select sync mode](../../.gitbook/assets/image%20%285%29.png)
+![&#x9009;&#x62E9;&#x540C;&#x6B65;&#x6A21;&#x5F0F;](../../.gitbook/assets/image%20%285%29.png)
 
-* \[x\]如果有需要配置`JSON RPC` /`EthStats`
+* [x] 如有需要，可配置 `JSON RPC` /`EthStats`
 
-![JSON RPC / EthStats configuration](../../.gitbook/assets/image%20%2813%29.png)
+![JSON RPC / EthStats &#x914D;&#x7F6E;](../../.gitbook/assets/image%20%2813%29.png)
 
-* [x] Nethermind节点现在正在运行🎉，请查看本文以熟悉 [日志](../../#explaining-nethermind-logs)
+* [\[x\] Nethermind 节点开始运行 🎉，请查看这篇文章来了解日志](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29.png)
+![&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4EE5;&#x592A;&#x574A;&#x4E3B;&#x7F51;&#x7684; Nethermind &#x5BA2;&#x6237;&#x7AEF;](../../.gitbook/assets/image%20%2818%29.png)
 
 {% hint style="danger" %}
-## 对于Ubuntu 16.04，您将需要安装其他依赖项。
+## 如果您使用的是 Ubuntu 16.04 操作系统，需要安装其它依赖项。
 {% endhint %}
 
 ```bash
@@ -84,16 +84,16 @@ sudo apt install libzstd1 -y
 {% endtab %}
 
 {% tab title="MacOS" %}
-* 下载`Darwin`软件包
-* 安装`MacOS`依赖项
+* 下载 `Darwin` 软件包
+* 安装 `MacOS` 依赖项
 
 ```text
 brew install gmp && brew install snappy && brew install lz4 && brew install zstd
 ```
 
-* `解压` 文件
-* 运行`Nethermind.Launcher`
-* 选择所需的配置
+* `unzip` 文件
+* 运行 `Nethermind.Launcher`
+* 选择所需配置
 {% endtab %}
 {% endtabs %}
 

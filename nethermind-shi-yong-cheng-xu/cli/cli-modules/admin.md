@@ -2,7 +2,7 @@
 
 ## admin.addPeer\(enode, addToStaticNodes\)
 
-给定节点添加到静态节点
+将指定节点添加为静态节点
 
 ### **参数**
 
@@ -11,11 +11,11 @@
 | enode | `string` |
 | addToStaticNodes | `boolean` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚添加到静态节点的enode
+`String` —— 刚刚被添加为静态节点的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -34,17 +34,17 @@ Request complete in 58129.371μs
 
 ## admin.peers
 
-显示已连接对等方的列表
+显示已连接对等节点的列表
 
 ### **参数**
 
-None
+无
 
-### **回报**
+### **返回值**
 
-`Array` - 当前连接到您的节点其他的节点
+`Array` —— 目前已连接到您的节点的节点
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
@@ -74,7 +74,7 @@ Request complete in 627464.281μs
 
 ## admin.removePeer\(enode, removeFromStaticNodes\)
 
-从静态节点中删除给定的节点
+从静态节点中删除指定节点
 
 ### **参数**
 
@@ -83,11 +83,11 @@ Request complete in 627464.281μs
 | enode | `string` |
 | removeFromStaticNodes | `boolean` |
 
-### **回报**
+### **返回值**
 
-`String` - 刚刚从静态节点中删除的enode
+`String` —— 刚刚从静态节点中被删除的节点的 enode
 
-### **例子**
+### **示例**
 
 {% tabs %}
 {% tab title="Request" %}
