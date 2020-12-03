@@ -32,7 +32,7 @@ Launch node B \(the test node keys are consistent with Data/static-nodes-baselin
 
 Find below a high-level overview of the Baseline Protocol Atomic Workflow Step with Provide infrastructure and Nethermind node serving as a gateway to Ethereum mainnet and maintaining data from the Baseline Merkle trees.
 
-![](../.gitbook/assets/provide_neth%20%281%29%20%281%29.png)
+![](../.gitbook/assets/provide_neth%20%281%29%20%281%29%20%281%29.png)
 
 
 

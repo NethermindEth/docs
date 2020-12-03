@@ -2,7 +2,7 @@
 
 Spaceneth private network setup looks very similar to the above Clique setup. However, there are few major differences and will be described below.
 
-### Prerequisites
+## Prerequisites
 
 * Linux bash shell
 * Docker-compose
@@ -14,7 +14,7 @@ Spaceneth private network setup looks very similar to the above Clique setup. Ho
 sudo apt-get install -y docker-compose docker.io jq
 ```
 
-### Setup
+## Setup
 
 In this setup we will create a private network of 3 Nethermind nodes running a simple testing NethDev consensus algorithm.
 

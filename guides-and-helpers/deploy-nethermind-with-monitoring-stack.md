@@ -167,7 +167,7 @@ Go to the `YOUR_DROPLET_IP:9091` and verify if metrics are inflowing
 
 Go to the `YOUR_DROPLET_IP:5341`, you will be albe to query your Nethermind client logs. Feel free to create some useful `Signals, Queries` or `Dashboards.`
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2839%29%20%282%29.png)
 
 ## Destroying the stack
 
