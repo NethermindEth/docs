@@ -114,7 +114,6 @@
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
 * [Smoke Testing Example](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
-* [ETH2 &lt;-&gt; Nethermind](guides-and-helpers/eth2-lighthouse-less-than-greater-than-nethermind.md)
 
 ## Enterprise
 
