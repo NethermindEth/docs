@@ -1,28 +1,28 @@
 # Docker \(Debian/Alpine\)
 
-## 使用现有的镜像
+## 使用已有镜像
 
-### **Available tags:**
+### **可用标签：**
 
-| **标签** | 说明 | 架构 |
+| **标签** | 描述 | 架构 |
 | :--- | :--- | :--- |
-| `最新` | 基于 **Nethermind Debian** 的最新镜像 | x86\_64 |
-| `alpine` | 基于 **Nethermind Alpine** 的最新镜像 **\(recommended\)** | x86\_64 |
+| `latest` | 基于 **Nethermind Debian** 的最新镜像 | x86\_64 |
+| `alpine` | 基于 **Nethermind Alpine** 的最新镜像 **\（推荐使用\）** | x86\_64 |
 | `arm64` | 基于 **Nethermind ARM64 Debian**  的最新镜像 | ARM64 |
-| `alpine-arm64` | 基于**Nethermind ARM64 Alpine** 的最新镜像 | ARM64 |
-| `arm32` | 基于**Nethermind ARM32 Debian** 的最新镜像 | ARM32 |
+| `alpine-arm64` | 基于 **Nethermind ARM64 Alpine** 的最新镜像 | ARM64 |
+| `arm32` | 基于 **Nethermind ARM32 Debian** 的最新镜像 | ARM32 |
 
-要使用之前的版本，您可以传递`{tag}` ，例如`1.8.50` 主镜像名称前“ 
+如需使用之前的版本，您可以在主镜像名称前加上 `{tag}` ，例如，`1.8.50`。
 
-例如，如果您想使用**Nethermind Alpine**镜像`1.7.4`的版本 ，则镜像名称应为 `1.7.4-alpine`，对于**Nethermind ARM64 Alpine**  `1.7.4-alpine-arm64` ****，依此类推。所有版本都可以在[标签历史](https://github.com/NethermindEth/nethermind/tags).中找到。
+例如，如果您想使用 `1.7.4` 版本的  **Nethermind Alpine** 镜像，则镜像名称应为 `1.7.4-alpine`；如果您想使用相同版本的 **Nethermind ARM64 Alpine** 镜像，则镜像名称应为 `1.7.4-alpine-arm64` ****，依此类推。所有可用版本都可以在[标签历史](https://github.com/NethermindEth/nethermind/tags)中找到。
 
 {% hint style="info" %}
 We highly encourage to use a lighter container which is Alpine based, tagged as `alpine` or `1.8.50-alpine` \(Possible benefit of less memory consumption\)
 {% endhint %}
 
-### **运行Nethermind **容器
+### **运行 Nethermind **容器
 
-Docker pull命令：
+Docker 拉取命令：
 
 {% tabs %}
 {% tab title="Alpine" %}
@@ -56,7 +56,7 @@ docker pull nethermind/nethermind:arm32
 {% endtab %}
 {% endtabs %}
 
-为了启动`Nethermind.Runner`,  只需运行：
+启动 `Nethermind.Runner` 只需运行：
 
 {% tabs %}
 {% tab title="Alpine" %}
@@ -90,7 +90,7 @@ docker run -it nethermind/nethermind:arm32
 {% endtab %}
 {% endtabs %}
 
-您可以使用 `--help` 获取Nethermind可能启动参数的列表，也可以在[此处](../configuration/).. 找到它们。
+您可以使用 `--help` 获取 Nethermind 的启动参数列表，或点击[此处](../configuration/)..查看。
 
 {% tabs %}
 {% tab title="Alpine" %}
@@ -124,25 +124,25 @@ docker run -it nethermind/nethermind:arm32 --help
 {% endtab %}
 {% endtabs %}
 
-可以使用简单的约定通过环境变量来修改每个配置属性:
+您可以使用简单的规范通过环境变量来修改每一个配置属性：
 
 ```bash
 NETHERMIND_{MODULE}CONFIG_{PROPERTY} or --{Module}.{Property}
 ```
 
-例如
+例如：
 
 ```text
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
-环境变量将在带有参数的docker镜像标签之前传递，而参数应在docker镜像标签之后传递
+环境变量应该放在 docker 镜像标签之前，而参数应该放在 docker 镜像标签之后。
 
 ### **JSON RPC**
 
-要启用JSON RPC，请与 `--network host`共享主机的网络名称空间，并设置`--JsonRpc.Enabled true`.。要更改端口，只需传递`--JsonRpc.Port 8550`.。
+如需启用 JSON RPC，请将该主机的网络命名空间与 `--network host` 共享，并设置 `--JsonRpc.Enabled true`。如需更改端口，请输入 `--JsonRpc.Port 8550`。
 
-如果在本地运行：
+可以在本地运行：
 
 {% tabs %}
 {% tab title="Alpine" %}
@@ -176,7 +176,7 @@ docker run -it --network host nethermind/nethermind:arm32 --JsonRpc.Enabled true
 {% endtab %}
 {% endtabs %}
 
-或使用端口映射
+也可以使用端口映射：
 
 {% tabs %}
 {% tab title="Alpine" %}
@@ -210,11 +210,11 @@ docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true -
 {% endtab %}
 {% endtabs %}
 
-如果从VM运行，可能需要通过 `--JsonRpc.Host {hostmachine_ip}` \(`127.0.0.1` is set by default\)。 如果仍然无法连接JSON RPC，则可以设置`--JsonRpc.Host 0.0.0.0` 
+如果在虚拟机中运行，您可能想要对外开放 JSON RPC，请使用 `--JsonRpc.Host {hostmachine_ip}` \（默认设置为 `127.0.0.1`\）。 如果仍然无法连接至 JSON RPC，您也可以尝试设置 `--JsonRpc.Host 0.0.0.0`。 
 
 ### **可用配置**
 
-要切换网络，请设置`--config {network}` flag \(default value is `mainnet`\).
+如需切换网络，请使用 `--config {network}` 标记\（默认值为 `mainnet`\）。
 
 * `mainnet`
 * `goerli`
@@ -225,7 +225,7 @@ docker run -it -p 8545:8545 nethermind/nethermind:arm32 --JsonRpc.Enabled true -
 * `sokol`
 * `volta`
 
-例如，在`goerli`网络上运行Nethermind：
+例如，如需在 `goerli` 网络上运行 Nethermind：
 
 {% tabs %}
 {% tab title="Alpine" %}
@@ -262,25 +262,25 @@ docker run -it nethermind/nethermind:arm32 --config goerli
 ###  
 **卷**
 
-要完全覆盖配置文件，要用这个卷:
+若想完全覆盖一个配置文件，您需要使用卷：
 
 ```bash
 -v /home/user/mainnet.cfg:/nethermind/configs/mainnet.cfg
 ```
 
-为了将内部数据库映射到本地卷，您需要映射`/nethermind/nethermind_db/`:
+若想将内部数据库映射到本地卷，您需要映射`/nethermind/nethermind_db/`：
 
 ```bash
 -v /home/user/nethermind_db:/nethermind/nethermind_db
 ```
 
-可以使用以下命令映射日志：
+您可以使用以下命令来映射日志：
 
 ```bash
 -v /home/user/logs:/nethermind/logs
 ```
 
-密钥库:
+密钥库：
 
 ```bash
 -v /home/user/keystore:/nethermind/keystore
@@ -292,19 +292,19 @@ Nlog:
 -v /home/user/NLog.config:/nethermind/NLog.config
 ```
 
-更多详细的NLog配置可以`在 [此处](https://github.com/NLog/NLog/wiki/Configuration-file).找到。
+点击[此处](https://github.com/NLog/NLog/wiki/Configuration-file)，了解更多关于 NLog 配置的内容。
 
 ## 构建镜像
 
-Dockerfile可以在 [根目录](https://github.com/NethermindEth/nethermind) 中找到，它具有3种风格：
+Docker 文件可以在[代码库](https://github.com/NethermindEth/nethermind) 中找到。它具备 3 种类型：
 
-| 文档名称 | 说明 |
+| 文件名 | 描述 |
 | :--- | :--- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | 必须具有克隆的存储库才能构建基于Debian的镜像。 |
-| [Dockerfile\_alpine](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_alpine) | 必须具有克隆的存储库才能构建基于Alpine的镜像。 |
-| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | 不需要克隆的存储库，因为将在第一步中它被下载。 |
+| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | 需要克隆代码库来构建基于 Debian 的镜像。 |
+| [Dockerfile\_alpine](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_alpine) | 需要克隆代码库来构建基于 Alpine 的镜像。 |
+| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | 无需克隆代码库，因为该文件会在第一步下载代码库。 |
 
-为了构建镜像，运行：
+如需构建镜像，请运行：
 
 ```bash
 docker build -t nethermind .
@@ -316,9 +316,9 @@ docker build -t nethermind .
 docker build -f Dockerfile_full -t nethermind .
 ```
 
-取决于所选的版本。
+视您所选择的版本而定。
 
-本地创建docker镜像的示例用法：
+本地创建的 docker 镜像的用法示例：
 
 ```bash
 docker run -it nethermind --config goerli

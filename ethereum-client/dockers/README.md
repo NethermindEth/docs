@@ -1,18 +1,18 @@
 ---
-description: Nethermind Dockers 指示
+description: Nethermind Dockers 说明
 ---
 
 # Dockers
 
-## ![](../../.gitbook/assets/pobrane.png) Docker仓库
+## ![](../../.gitbook/assets/pobrane.png) Docker 代码库
 
-Docker仓库可以在此处找到
+点击下方链接，即可查看 Docker 代码库：
 
 {% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
 
-## 支持平台
+## 已支持平台
 
-我们目前支持以下CPU架构的docker 镜像：
+我们目前为以下 CPU 架构提供 docker 镜像：
 
 {% page-ref page="docker-debian-alpine.md" %}
 
