@@ -54,6 +54,10 @@ You should see the node starting:
 **Tip:** Ctrl + A + D to leave the **screen**
 {% endhint %}
 
+### Running Nethermind as a systemd service
+
+{% page-ref page="../first-steps-with-nethermind/manage-nethermind-with-systemd.md" %}
+
 ### Monitoring Nethermind Node Health
 
 Follow this guide to setup Prometheus/Grafana based local setup and monitor your node's most important stats there
