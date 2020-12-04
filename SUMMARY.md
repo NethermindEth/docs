@@ -68,8 +68,10 @@
     * [TxPool](ethereum-client/configuration/modules/txpool.md)
     * [Metrics](ethereum-client/configuration/modules/metrics.md)
     * [Hive](ethereum-client/configuration/modules/hive.md)
+    * [HealthChecks](ethereum-client/configuration/modules/healthchecks.md)
   * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
 * [Plugins](ethereum-client/plugins.md)
+* [Monitoring Node Health](ethereum-client/monitoring-node-health.md)
 
 ## Nethermind utilities
 
