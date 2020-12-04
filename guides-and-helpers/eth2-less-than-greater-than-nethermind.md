@@ -82,3 +82,7 @@ If the result shows `false` it means that your node is **synced**
 {"jsonrpc":"2.0","result":false,"id":1}
 ```
 
+Check the following guide to get even better node health monitoring:
+
+{% page-ref page="../ethereum-client/monitoring-node-health.md" %}
+
