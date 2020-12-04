@@ -71,7 +71,7 @@
     * [HealthChecks](ethereum-client/configuration/modules/healthchecks.md)
   * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
 * [Plugins](ethereum-client/plugins.md)
-* [Monitoring Node Health](ethereum-client/monitoring-node-health.md)
+* [Monitoring Node's Health](ethereum-client/monitoring-node-health.md)
 
 ## Nethermind utilities
 
