@@ -40,3 +40,7 @@ Choose a hostname
 
 ![Hostname](../../.gitbook/assets/image%20%2812%29.png)
 
+Continue with:
+
+{% page-ref page="../../ethereum-client/running-nethermind/running-the-client.md" %}
+
