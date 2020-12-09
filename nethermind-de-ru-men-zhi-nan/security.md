@@ -5,22 +5,24 @@ description: 在以太坊主网上运行 Nethermind 节点之前应该采取的�
 # 安全性
 
 {% hint style="danger" %}
-📢 **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!
+📢 请勿使用Nethermind钱包/签名者处理主网上的 ETH！
 {% endhint %}
 
 {% hint style="danger" %}
-📢 JSON RPC endpoint \(port `8545`\) should **NOT** be exposed publicly \(should be behind the firewall\).
+📢 请勿公开 JSON RPC端点（端口`8545`）（请使用防火墙加以保护）。
 {% endhint %}
 
 {% hint style="danger" %}
-📢The private key from which the node ID is derived is stored on disk \(**NOT** protected by password\).
+📢 用来生成节点ID的私钥存储在磁盘上（无密码保护）。
 {% endhint %}
 
 {% hint style="warning" %}
-Nethermind is thoroughly tested but the more popular it will get the more likely it will be the target of client-specific attacks. Generally you should always consider running backup client nodes implemented by a different team for any critical operations.
+Nethermind已经过全面测试。但是，随着 Nethermind 越来越受欢迎，就越有可能遭受专门针对客户端的攻击。一般而言，在进行任何关键操作之前，您都应该考虑使用（由其他团队实现的）不同的客户端来运行节点，以便备份。
 {% endhint %}
 
 {% hint style="info" %}
-For non-mainnet signing you can use dev wallet configurations.
+对于非主网签名，您可以使用开发钱包配置。
 {% endhint %}
+
+
 
