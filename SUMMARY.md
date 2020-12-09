@@ -97,6 +97,7 @@
 ## Nethermind DataMarketplace <a id="nethermind-datamarketplace-1"></a>
 
 * [DataMarketplace FAQ](nethermind-datamarketplace-1/todo.md)
+* [Data asset states](nethermind-datamarketplace-1/data-asset-states.md)
 
 ## Guides and Helpers
 
