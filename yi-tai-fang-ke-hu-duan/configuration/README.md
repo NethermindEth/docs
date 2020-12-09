@@ -23,14 +23,16 @@ description: 用于调整 Nethermind 节点配置的属性列表
 ```
 
 {% hint style="warning" %}
-When passing a flag, each property needs to be prefixed with its respective [**Module**](./), followed by the **property name** and its **value** e.g `--Init.IsMining true`
+传递标记时，每个属性必须以各自的模块为前缀，并在后面加上**属性名称及其值**，例如
+
+`--Init.IsMining true`
 {% endhint %}
 
 {% hint style="info" %}
-Use `/` as the path separator so the configs can be shared between all platforms supported \(Linux, Windows, MacOS\).
+使用 / 作为路径分隔符，以便在所有已支持平台（Linux、Windows 和 MacOS）之间共享配置。
 {% endhint %}
 
 {% hint style="info" %}
-`--config`, `--baseDbPath`, and `--log` options are available from the command line to select config file, base DB directory prefix and log level respectively.
+您可以通过命令行使用 `--config`, `--baseDbPath`和 `--log`选项来选择是配置文件、基础数据库目录前缀还是日志级别。
 {% endhint %}
 
