@@ -9,7 +9,7 @@ description: 关于如何有效管理节点的 Nethermind.Cli 项目指南
 如果您在一个进程中启动节点，然后在另一个进程中启动 CLI，您将在 CLI 中看到可用的命令。
 
 {% hint style="warning" %}
-You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enabling it when Launcher asks about it or by manually editing the relevant config file or by passing `--JsonRpc.Enabled true` parameter after the Launcher command
+请务必确保将 `JsonRpc.Enabled` `设置为` `true。您可以在` Launcher 询问时启用，或手动编辑相关配置文件，或在 Launcher 命令行后输入 `--JsonRpc.Enabled true` `参数。`
 {% endhint %}
 
 CLI 在启动时将显示可用选项（功能和特性）。
