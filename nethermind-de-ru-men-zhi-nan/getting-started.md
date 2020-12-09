@@ -44,7 +44,7 @@ description: Görli 测试网上 Nethermind 同步的快速入门示例
 * [ ] 按 `enter` 跳过 `Host IP` 设置，则默认设置为 127.0.0.1 。
 
 {% hint style="warning" %}
-If **not** running locall, you may need to change the `Host` value to the VM public IP address.
+如果**不**在本地运行，您可能需要将 `Host`值更改为虚拟机的公共 IP 地址。
 {% endhint %}
 
 ![&#x4F7F;&#x7528; Nethermind.Launcher &#x542F;&#x7528; JSON RPC](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/json-choice.png)
