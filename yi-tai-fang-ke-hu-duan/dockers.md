@@ -74,14 +74,15 @@ NETHERMIND_{MODULE}CONFIG_{PROPERTY} or --{Module}.{Property}
 
 ```text
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
+
 ```
 
 {% hint style="warning" %}
-Environment variables are to be passed before the docker image tag while parameters should be passed right after the docker image tag.
+环境变量应放在 docker 镜像标签之前，而参数应放在 docker 镜像标签之后。
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables **\*\*can be easily used within** docker-compose.yml\*\* files in the environment section
+环境变量可以在环境部分的 \*\*docker-compose.yml\*\* 文件中使用。
 {% endhint %}
 
 ### **JSON RPC**
