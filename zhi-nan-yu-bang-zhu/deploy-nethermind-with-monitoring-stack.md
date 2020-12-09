@@ -13,7 +13,7 @@ description: 如何通过 Terraform 快速而简单地部署 Nethermind 客户�
 ## 必备条件
 
 * [x] [Terraform v0.12.7](https://www.terraform.io/downloads.html) &lt; 
-* [\[x\] 云提供商](cloud-providers/) \(in this tutorial we will be using **Digital Ocean**, the terraform recipe can be configured to use any other provider of your choice UpCloud/AWS/Google etc.\)
+* [\[x\] 云提供商](cloud-providers/) （在本教程中，我们将使用 Digital Ocean。您可以对 terraform 进行配置，以便使用您选择的其它提供商，例如，UpCloud/AWS/Google等。）
 
 ## 🛠 设置
 
@@ -110,7 +110,7 @@ terraform plan -out myplan
 点击[此处](../yi-tai-fang-ke-hu-duan/networks.md)，即可查看可用 `configs` 列表。
 
 {% hint style="warning" %}
-🧯 If you chose to enable JsonRpc \(it will run on port `8545` by default\) make sure that you set up [Firewall rules](../nethermind-de-ru-men-zhi-nan/firewall-configuration.md) either in DigitalOcean or by using Linux `iptables`
+🧯 如果您选择启用 JsonRpc（默认情况下，它将在端口 8545 上运行），请确保您在 DigitalOcean中或使用 Linux iptables 设置了[防火墙规则](file:///F:\nethermind\v\chinese\shi-yong-nethermind-de-yi-kai-shi\firewall-configuration)。
 {% endhint %}
 
 现在您可以应用您的 Terraform 计划，并开始部署整个堆栈（应该不会超过 3 分钟）。
