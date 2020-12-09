@@ -61,14 +61,14 @@ brew install gmp && brew install snappy && brew install lz4
 
 您可能需要安装 [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
-## 所有平台
+## 所有平台 
 
 {% hint style="warning" %}
-If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
+如果您没有找到 dotnet 命令，可能是因为没有安装 SDK（参见上述说明）
 {% endhint %}
 
 {% hint style="info" %}
-On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
+在 Linux 发行版上，我们建议您在该阶段启动 screen，以便稍后使用screen -rd命令返回会话。
 {% endhint %}
 
 克隆 Nethermind 的代码库及其子模块，然后在 `Release` 或 `Debug` 模式下构建 Nethermind。
