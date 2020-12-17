@@ -16,7 +16,11 @@ We are currently supporting docker images for the following CPU architectures:
 
 * **AMD64**
 * **ARM64**
-* **ARM32**
+* **ARM32** ⚠ ⚠ ⚠ 
+
+{% hint style="danger" %}
+**ARM32** docker image is broken now. We are working on a fix at the moment.
+{% endhint %}
 
 ## Using an existing image
 
