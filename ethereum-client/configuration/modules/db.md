@@ -1,0 +1,65 @@
+# Db
+
+{% embed url="https://github.com/facebook/rocksdb/wiki/Memory-usage-in-RocksDB" %}
+
+| 属性名称 | 描述 | 默认值 |
+| :--- | :--- | ---: |
+| `BlockCacheSize` | 无 | `null` |
+| `BlockInfosDbBlockCacheSize` | 无 | `null` |
+| `BlockInfosDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `BlockInfosDbWriteBufferNumber` | 无 | `null` |
+| `BlockInfosDbWriteBufferSize` | 无 | `null` |
+| `BlocksDbBlockCacheSize` | 无 | `null` |
+| `BlocksDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `BlocksDbWriteBufferNumber` | 无 | `null` |
+| `BlocksDbWriteBufferSize` | 无 | `null` |
+| `BloomDbBlockCacheSize` | 无 | `null` |
+| `BloomDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `BloomDbWriteBufferNumber` | 无 | `null` |
+| `BloomDbWriteBufferSize` | 无 | `null` |
+| `CacheIndexAndFilterBlocks` | 无 | `null` |
+| `CodeDbBlockCacheSize` | 无 | `null` |
+| `CodeDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `CodeDbWriteBufferNumber` | 无 | `null` |
+| `CodeDbWriteBufferSize` | 无 | `null` |
+| `ConfigsDbBlockCacheSize` | 无 | `null` |
+| `ConfigsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `ConfigsDbWriteBufferNumber` | 无 | `null` |
+| `ConfigsDbWriteBufferSize` | 无 | `null` |
+| `ConsumerDepositApprovalsDbBlockCacheSize` | 无 | `null` |
+| `ConsumerDepositApprovalsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `ConsumerDepositApprovalsDbWriteBufferNumber` | 无 | `null` |
+| `ConsumerDepositApprovalsDbWriteBufferSize` | 无 | `null` |
+| `ConsumerReceiptsDbBlockCacheSize` | 无 | `null` |
+| `ConsumerReceiptsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `ConsumerReceiptsDbWriteBufferNumber` | 无 | `null` |
+| `ConsumerReceiptsDbWriteBufferSize` | 无 | `null` |
+| `ConsumerSessionsDbBlockCacheSize` | 无 | `null` |
+| `ConsumerSessionsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `ConsumerSessionsDbWriteBufferNumber` | 无 | `null` |
+| `ConsumerSessionsDbWriteBufferSize` | 无 | `null` |
+| `DepositsDbBlockCacheSize` | 无 | `null` |
+| `DepositsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `DepositsDbWriteBufferNumber` | 无 | `null` |
+| `DepositsDbWriteBufferSize` | 无 | `null` |
+| `EthRequestsDbBlockCacheSize` | 无 | `null` |
+| `EthRequestsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `EthRequestsDbWriteBufferNumber` | 无 | `null` |
+| `EthRequestsDbWriteBufferSize` | 无 | `null` |
+| `HeadersDbBlockCacheSize` | 无 | `null` |
+| `HeadersDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `HeadersDbWriteBufferNumber` | 无 | `null` |
+| `HeadersDbWriteBufferSize` | 无 | `null` |
+| `PendingTxsDbBlockCacheSize` | 无 | `null` |
+| `PendingTxsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `PendingTxsDbWriteBufferNumber` | 无 | `null` |
+| `PendingTxsDbWriteBufferSize` | 无 | `null` |
+| `ReceiptsDbBlockCacheSize` | 无 | `null` |
+| `ReceiptsDbCacheIndexAndFilterBlocks` | 无 | `null` |
+| `ReceiptsDbWriteBufferNumber` | 无 | `null` |
+| `ReceiptsDbWriteBufferSize` | 无 | `null` |
+| `RecycleLogFileNum` | 无 | `null` |
+| `WriteAheadLogSync` | 无 | `null` |
+| `WriteBufferNumber` | 无 | `null` |
+| `WriteBufferSize` | 无 | `null` |
+
