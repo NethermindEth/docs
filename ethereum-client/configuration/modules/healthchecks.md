@@ -5,6 +5,7 @@
 | Property Name | Description | Default |
 | :--- | :--- | ---: |
 | `Enabled` | If 'true' then Health Check endpoints is enabled at `/health` | `false` |
+| `Slug` | The URL slug on which Healthchecks service will be exposed | `/health` |
 | `WebhooksEnabled` | If 'true' then Webhooks can be configured | `false` |
 | `WebhooksUri` | The Webhooks endpoint e.g. Slack WebHooks | `null` |
 | `WebhooksPayload` | Payload is the json payload that will be send on Failure and must be escaped. | `{\"attachments\":[{\"color\":\"#FFCC00\",\"pretext\":\"Health Check Status :warning:\",\"fields\":[{\"title\":\"Details\",\"value\":\"More details available at /healthchecks-ui\",\"short\":false},{\"title\":\"Description\",\"value\":\"[[DESCRIPTIONS]]\",\"short\":false}]}]}` |

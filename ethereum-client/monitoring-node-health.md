@@ -37,7 +37,8 @@ The health checks need to be additionally enabled which can be done either throu
     "WebhooksEnabled": true,
     "WebhooksUri": "https://slack.webhook",
     "UIEnabled": true,
-    "PollingInterval": 10
+    "PollingInterval": 10,
+    "Slug": "/api/health"
   }
 ```
 {% endtab %}
@@ -57,7 +58,7 @@ Each configuration option is described here:
 ./Nethermind.Runner --HealthChecks.Enabled true
 ```
 
-The `health` endpoint is now available at `localhost:8545/health` \(if your `--JsonRpc.Port` is `8545`\). We can if it is working with `curl`:
+The `health` endpoint is now available at `localhost:8545/health`  by default \(if your `--JsonRpc.Port` is `8545`\). The `health` endpoint can be configured via `--HealthChecks.Slug` parameter e.g. `--HealthChecks.Slug /api/health`. We can if it is working with `curl`:
 
 ```bash
 // Request
@@ -78,6 +79,10 @@ curl localhost:8545/health
 ```bash
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true
 ```
+
+{% hint style="danger" %}
+HealthChecks.UI won't work combined with `JsonRpc.Host 0.0.0.0`
+{% endhint %}
 
 Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow seeing node's health on a nice UI. To view the UI simply go to `http://localhost:8545/healthchecks-ui`.
 
