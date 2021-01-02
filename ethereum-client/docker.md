@@ -1,8 +1,8 @@
 ---
-description: Nethermind Dockers instructions
+description: Nethermind Docker instructions
 ---
 
-# Dockers
+# Docker
 
 ## ![](../.gitbook/assets/pobrane.png) Docker repository
 
