@@ -59,6 +59,20 @@ One of the best indicators that you are close to be synced is combined ~100% sta
 
 ## Beam Sync
 
+WARNING: we suggest that you do not pick the beam sync without the full understanding of its current downsides and benefits. Generally beam sync can only be useful for you if you know how to query the beam synced JSON RPC and you need it within the first 30 minutes of sync or so.
+
+Current downsides of beam sync:
+
+* JSON RPC queries have to be executed in a specific way \(they may timeout multiple times before you finally receive a valid response\)
+* background state sync will be significantly slower \(and may be syncing long after the downloaded state shows 100%\)
+* because of the longer sync times we test beam sync less thoroughly and we think there may be still some issues with the transition between the state sync and full sync at the last stages of the beam sync \(in fact we are just addressing on of such issues in the current 'wit' protocol testing that should be coming in early 1.10.x versions\)
+* without the 'wit' protocol that we are currently working on, the mainnet beam sync can be quite inefficient in querying the recent blocks
+
+Current benefits of the beam sync:
+
+* if you know what you are doing, beam sync can give you state access very, very quickly \(within 10 - 30 minutes from starting the sync\)
+* similarly to the above, if you know how to work with beam sync, you can start sending transactions from the beam sync node very quickly
+
 The simplest way of explaining beam sync is by saying that the beam sync is exactly the same as fast sync but additionally it downloads the state data \(witnesses\) for the latest blocks. It also allows to execute some queries about the current state via JSON RPC much before the actual fast sync finishes. Currently beam sync takes more resources than fast sync and slows the fast sync down significantly but it allows you the query blockchain within a few minutes from starting.
 
 ![Beam sync logs example.](../.gitbook/assets/image%20%2860%29.png)
