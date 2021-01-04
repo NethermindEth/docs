@@ -31,19 +31,8 @@ Use `/` as the path separator so the configs can be shared between all platforms
 {% endhint %}
 
 {% hint style="info" %}
-`--config`, `--baseDbPath`, `--datadir` and `--log` options are available from the command line to select config file, base DB directory prefix and log level respectively.
+`--config`, `--baseDbPath`,`--datadir, --loggerConfigSource, --log` and `--configsDirectory`options are available from the command line to select config file, base DB directory prefix and log level respectively.
 {% endhint %}
-
-### 
-
-```text
-        CommandOption dataDir = app.Option("-dd|--datadir <dataDir>", "data directory", CommandOptionType.SingleValue);
-        CommandOption configFile = app.Option("-c|--config <configFile>", "config file path", CommandOptionType.SingleValue);
-        CommandOption dbBasePath = app.Option("-d|--baseDbPath <baseDbPath>", "base db path", CommandOptionType.SingleValue);
-        CommandOption logLevelOverride = app.Option("-l|--log <logLevel>", "log level", CommandOptionType.SingleValue);
-        CommandOption configsDirectory = app.Option("-cd|--configsDirectory <configsDirectory>", "configs directory", CommandOptionType.SingleValue);
-        CommandOption loggerConfigSource = app.Option("-lcs|--loggerConfigSource <loggerConfigSource>", "path to the NLog config file", CommandOptionType.SingleValue);
-```
 
 ### datadir
 
