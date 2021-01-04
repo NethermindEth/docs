@@ -14,7 +14,7 @@ Change the configuration properties in the `.cfg` file of the network configurat
 
 The last way is to set the values in the environment variables, e.g. `set NETHERMIND_INITCONFIG_PROCESSINGENABLED = false`
 
-## Command line
+## Command line options
 
 Another way is to setup each configuration property by passing flags to either `Nethermind.Runner` or `Nethermind.Launcher`. You can see the list of all config option by running `./Nethermind.Runner --help` For example:
 
@@ -31,6 +31,101 @@ Use `/` as the path separator so the configs can be shared between all platforms
 {% endhint %}
 
 {% hint style="info" %}
-`--config`, `--baseDbPath`, and `--log` options are available from the command line to select config file, base DB directory prefix and log level respectively.
+`--config`, `--baseDbPath`, `--datadir` and `--log` options are available from the command line to select config file, base DB directory prefix and log level respectively.
 {% endhint %}
+
+### 
+
+```text
+        CommandOption dataDir = app.Option("-dd|--datadir <dataDir>", "data directory", CommandOptionType.SingleValue);
+        CommandOption configFile = app.Option("-c|--config <configFile>", "config file path", CommandOptionType.SingleValue);
+        CommandOption dbBasePath = app.Option("-d|--baseDbPath <baseDbPath>", "base db path", CommandOptionType.SingleValue);
+        CommandOption logLevelOverride = app.Option("-l|--log <logLevel>", "log level", CommandOptionType.SingleValue);
+        CommandOption configsDirectory = app.Option("-cd|--configsDirectory <configsDirectory>", "configs directory", CommandOptionType.SingleValue);
+        CommandOption loggerConfigSource = app.Option("-lcs|--loggerConfigSource <loggerConfigSource>", "path to the NLog config file", CommandOptionType.SingleValue);
+```
+
+### datadir
+
+**Usage:** `--datadir` or `-dd`
+
+You may want to use this option to store all data that the node produces in a custom directory. The `--datadir` \(`-dd`\) changes paths of `database, logs, keystore`to the target directory. You can specify either **relative** or **absolute** paths, e.g.
+
+```text
+--datadir data
+```
+
+```text
+--datadir /home/user/nethermind/data
+```
+
+```text
+--datadir ./data
+```
+
+{% hint style="warning" %}
+Absolute paths of `Init.BaseDbPath`, `Init.LogDirectory` or`KeyStore.KeyStoreDirectory`in config file will not be overwritten by `--datadir`
+{% endhint %}
+
+### baseDbPath
+
+**Usage:** `--baseDbPath` or `-d`
+
+Configures the path of the Nethermind's database folder. Is equal to setting `--Init.BaseDbPath` parameter.
+
+```text
+--baseDbPath /home/user/my_node/db
+```
+
+### config
+
+**Usage:** `--config` ****or ****`-c`
+
+Determines the configuration file of the network on which Nethermind will be running.
+
+```text
+--config xdai
+```
+
+More on that: 
+
+{% page-ref page="../networks.md" %}
+
+### log
+
+**Usage:** `--log` ****or ****`-l`
+
+Changes the logging level.
+
+```text
+--log DEBUG
+```
+
+More on that:
+
+{% page-ref page="../logging-configuration.md" %}
+
+### configsDirectory
+
+**Usage:** `--configsDirectory` or `-cd`
+
+Changes the source directory of your configuration files.
+
+```text
+--configsDirectory /home/user/my_configs
+```
+
+### loggerConfigSource
+
+**Usage:** `--loggerConfigSource` or `-lcs`
+
+Changes the path of the `NLog.config` file.
+
+```text
+--loggerConfigSource /home/user/NLog.config
+```
+
+More on that:
+
+{% embed url="https://github.com/nlog/nlog/wiki" %}
 

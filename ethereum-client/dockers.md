@@ -138,6 +138,14 @@ docker run -it nethermind/nethermind --config goerli
 {% endtab %}
 {% endtabs %}
 
+### **Datadir**
+
+To successfully map volumes such as `database, keystore, logs`at one go you can use `--datadir` command option:
+
+```bash
+docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --datadir data
+```
+
 ### **Volumes**
 
 To fully override a configuration file, you need to use a volume:
