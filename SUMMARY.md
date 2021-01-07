@@ -40,7 +40,7 @@
     * [TxPool](ethereum-client/json-rpc/json-rpc-modules/txpool.md)
     * [Web3](ethereum-client/json-rpc/json-rpc-modules/web3.md)
   * [JSON RPC WIKI](https://eth.wiki/json-rpc/API)
-* [Dockers](ethereum-client/dockers.md)
+* [Docker](ethereum-client/docker.md)
 * [Networks](ethereum-client/networks.md)
 * [Private Networks](ethereum-client/private-networks/README.md)
   * [How to setup a Nethermind only Clique based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md)

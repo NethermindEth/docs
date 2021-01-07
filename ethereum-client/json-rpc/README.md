@@ -8,7 +8,7 @@ JSON RPC needs to be explicitly switched on in the Netherming `config` file.
 
 {% tabs %}
 {% tab title="goerli.cfg" %}
-```yaml
+```javascript
   "JsonRpc": {
     "Enabled": true,
     "Host": "127.0.0.1",
@@ -32,6 +32,33 @@ JSON RPC can be also enabled by passing `--JsonRpc.Enabled true` flag to the `Ne
 {% tab title="Nethermind.Launcher" %}
 ```yaml
 ./Nethermind.Launcher --JsonRpc.Enabled true
+```
+{% endtab %}
+{% endtabs %}
+
+WebSockets, when enabled, will be accessible on the same address/port as HTTP by default, just using the `ws://` protocol instead of `http://` protocol.  You can change the WebSocket port to something else like 8546 if desired.
+
+{% tabs %}
+{% tab title="goerli.cfg" %}
+```javascript
+  "Init": {
+    "WebSocketsEnabled": true
+  },
+  "JsonRpc": {
+    "WebSocketsPort": 8545
+  }
+```
+{% endtab %}
+
+{% tab title="Nethermind.Runner" %}
+```text
+./Nethermind.Runner --Init.WebSocketsEnabled true --JsonRpc.WebSocketsPort 8545
+```
+{% endtab %}
+
+{% tab title="Nethermind.Launcher" %}
+```
+./Nethermind.Launcher --Init.WebSocketsEnabled true --JsonRpc.WebSocketsPort 8545
 ```
 {% endtab %}
 {% endtabs %}
