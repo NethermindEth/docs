@@ -7,9 +7,11 @@
 
 ### SDKs
 
-To build Nethermind you will need **.NET SDK 3.1**. You can download it here \(make sure you select correct platform and distribution\):
+To build Nethermind **1.9.\*** releases you will need **.NET SDK 3.1**. You can download it here \(make sure you select correct platform and distribution\):
 
 {% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
+
+For Nethermind **1.10.\*** releases you are going to need **.NET SDK 5.0** that can be downloaded from the url above.
 
 ### Linux
 
