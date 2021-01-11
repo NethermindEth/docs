@@ -34,7 +34,7 @@ sudo apt install libzstd1
 
 {% tab title="Linux \(CentOS 8\)" %}
     sudo yum install -y glibc-devel && \
-    sudo yum install bzip2-devel && \
+    sudo yum install -y bzip2-devel && \
     sudo yum install -y libzstd && \
     sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
     sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
