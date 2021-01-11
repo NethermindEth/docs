@@ -93,6 +93,7 @@ brew install gmp && brew install snappy && brew install lz4 && brew install zstd
 
 * `unzip` the file
 * Run `Nethermind.Launcher`
+* ⚠ If you will be prompted with a warning, check instructions here -&gt; [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
 * Select desired configuration
 {% endtab %}
 {% endtabs %}
