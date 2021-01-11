@@ -52,7 +52,7 @@ sudo apt install libzstd1
 ### MacOS
 
 ```text
-brew install gmp && brew install snappy && brew install lz4
+brew install gmp snappy lz4 zstd
 ```
 
 ### Windows
