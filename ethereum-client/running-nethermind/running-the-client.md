@@ -7,13 +7,6 @@ description: Run your Nethermind node with our cross-platform Ethereum client
 Check [Download sources](../download-sources/) in order to get the latest Nethermind package for your OS.
 
 {% tabs %}
-{% tab title="Windows" %}
-1. Download `Windows` package 
-2. `unzip` the file
-3. Run `Nethermind.Launcher.exe`
-4. Select desired configuration
-{% endtab %}
-
 {% tab title="Linux" %}
 * [x] [Download the package](../download-sources/)
 
@@ -67,7 +60,7 @@ cd nethermind
 
 ![JSON RPC / EthStats configuration](../../.gitbook/assets/image%20%2813%29.png)
 
-* [x] Nethermind node is now running 🎉, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
+* [x] Nethermind node is now running🎉, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
 
 ![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29.png)
 
@@ -81,6 +74,13 @@ sudo apt-get update
 sudo apt-get install gcc-6 g++-6 -y
 sudo apt install libzstd1 -y
 ```
+{% endtab %}
+
+{% tab title="Windows" %}
+1. Download `Windows` package 
+2. `unzip` the file
+3. Run `Nethermind.Launcher.exe`
+4. Select desired configuration
 {% endtab %}
 
 {% tab title="MacOS" %}
