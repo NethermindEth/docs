@@ -88,7 +88,7 @@ sudo apt install libzstd1 -y
 * Install `MacOS` dependencies
 
 ```text
-brew install gmp && brew install snappy && brew install lz4 && brew install zstd
+brew install gmp snappy lz4 zstd
 ```
 
 * `unzip` the file
