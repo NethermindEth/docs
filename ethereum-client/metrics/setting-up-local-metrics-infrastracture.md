@@ -47,7 +47,7 @@ You can add nethermind service to the `docker-compose.yml` file so that it runs 
 
 ```yaml
 nethermind:
-    image: nethermind/nethermind:alpine
+    image: nethermind/nethermind
     container_name: nethermind
     restart: unless-stopped
     command: '--config goerli --Metrics.Enabled true'
