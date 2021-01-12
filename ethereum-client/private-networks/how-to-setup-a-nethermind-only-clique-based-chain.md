@@ -98,7 +98,7 @@ version: "3.5"
 services:
 
     node_1:
-        image: nethermind/nethermind:alpine
+        image: nethermind/nethermind
         command: --config config
         volumes:
             - ./genesis:/config/genesis
@@ -113,7 +113,7 @@ services:
                 ipv4_address: 10.5.0.2
 
     node_2:
-        image: nethermind/nethermind:alpine
+        image: nethermind/nethermind
         command: --config config
         volumes:
             - ./genesis:/config/genesis
@@ -128,7 +128,7 @@ services:
                 ipv4_address: 10.5.0.3
 
     node_3:
-        image: nethermind/nethermind:alpine
+        image: nethermind/nethermind
         command: --config config
         volumes:
             - ./genesis:/config/genesis
