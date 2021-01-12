@@ -186,7 +186,7 @@ Dockerfile can be found in the repository [root](https://github.com/NethermindEt
 
 | File Name | Description | Architecture |
 | :--- | :--- | :--- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build an Alpine based image | x86\_64, ARM64, ARM32 |
+| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build a Debian based image | x86\_64, ARM64, ARM32 |
 | [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | doesn’t require to have a cloned repository, as it will download it during the first step | x86\_64 |
 
 In order to build the images, run either:
