@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
         with:
-          repository: NethermindEth/docs
+          repository: NethermindEth/nethermind
           submodules: recursive
           path: nethermind
       - uses: actions/checkout@v2.3.4
