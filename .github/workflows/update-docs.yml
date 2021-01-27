@@ -32,6 +32,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3.7.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          path: docs
           commit-message: Update documentation
           body: |
             Nethermind documentation has been updated.
