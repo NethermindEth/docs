@@ -58,8 +58,6 @@
 * [Configuration](ethereum-client/configuration/README.md)
   * [Modules](ethereum-client/configuration/modules/README.md)
     * [Init](ethereum-client/configuration/modules/init.md)
-    * [Db](ethereum-client/configuration/modules/db.md)
-    * [Discovery](ethereum-client/configuration/modules/discovery.md)
     * [Sync](ethereum-client/configuration/modules/sync.md)
     * [JsonRpc](ethereum-client/configuration/modules/jsonrpc.md)
     * [EthStats](ethereum-client/configuration/modules/ethstats.md)

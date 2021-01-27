@@ -1,8 +1,6 @@
 # Net
 
-## net_localAddress
-
- 
+## net\_localAddress
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +16,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net_localEnode
-
- 
+## net\_localEnode
 
 {% tabs %}
 {% tab title="Request" %}
@@ -36,9 +32,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net_version
-
- 
+## net\_version
 
 {% tabs %}
 {% tab title="Request" %}
@@ -54,9 +48,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net_listening
-
- 
+## net\_listening
 
 {% tabs %}
 {% tab title="Request" %}
@@ -72,9 +64,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net_peerCount
-
- 
+## net\_peerCount
 
 {% tabs %}
 {% tab title="Request" %}

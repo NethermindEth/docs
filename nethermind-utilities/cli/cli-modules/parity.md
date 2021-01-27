@@ -2,7 +2,7 @@
 
 ## parity.pendingTransactions
 
-Returns the pending transactions using Parity format 
+Returns the pending transactions using Parity format
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity.getBlockReceipts(blockParameter)
+## parity.getBlockReceipts\(blockParameter\)
 
-Returns receipts from all transactions from particular block 
+Returns receipts from all transactions from particular block
 
 {% tabs %}
 {% tab title="Request" %}
@@ -40,7 +40,7 @@ Returns receipts from all transactions from particular block
 
 ## parity.enode
 
-Returns the node enode URI. 
+Returns the node enode URI.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -58,7 +58,7 @@ _None_
 
 ## parity.clearEngineSigner
 
-Clears an authority account for signing consensus messages. Blocks will not be sealed. 
+Clears an authority account for signing consensus messages. Blocks will not be sealed.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -74,9 +74,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity.setEngineSigner(address, password)
+## parity.setEngineSigner\(address, password\)
 
-Sets an authority account for signing consensus messages. 
+Sets an authority account for signing consensus messages.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -95,9 +95,9 @@ Sets an authority account for signing consensus messages.
 {% endtab %}
 {% endtabs %}
 
-## parity.setEngineSignerSecret(privateKey)
+## parity.setEngineSignerSecret\(privateKey\)
 
-Sets an authority account for signing consensus messages. 
+Sets an authority account for signing consensus messages.
 
 {% tabs %}
 {% tab title="Request" %}

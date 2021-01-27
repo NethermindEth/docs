@@ -1,8 +1,6 @@
 # Personal
 
-## personal_listAccounts
-
- 
+## personal\_listAccounts
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +16,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal_lockAccount
-
- 
+## personal\_lockAccount
 
 {% tabs %}
 {% tab title="Request" %}
@@ -38,9 +34,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal_unlockAccount
-
- 
+## personal\_unlockAccount
 
 {% tabs %}
 {% tab title="Request" %}
@@ -59,9 +53,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal_newAccount
-
- 
+## personal\_newAccount
 
 {% tabs %}
 {% tab title="Request" %}

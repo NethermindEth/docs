@@ -114,7 +114,7 @@ Creating a new account creates a keystore file. You can find it in the **keystor
 
 Copy your keystore file if you wish to use an account in the future.
 
-![](../.gitbook/assets/image%20%28118%29%20%281%29.png)
+![](../.gitbook/assets/image%20%28118%29%20%281%29%20%281%29.png)
 
 ### Set an address
 
@@ -122,7 +122,7 @@ Copy your keystore file if you wish to use an account in the future.
 {% tab title="Create new account" %}
 * Create an account by providing the passphrase in the first input and confirmation passphrase in the second one.
 
-![](../.gitbook/assets/image%20%28117%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/image%20%28117%29%20%282%29%20%283%29%20%282%29.png)
 
 {% hint style="warning" %}
 **Passphrase**

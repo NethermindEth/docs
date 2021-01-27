@@ -34,7 +34,7 @@ screen -S nethermind
 ./Nethermind.Launcher
 ```
 
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2810%29%20%281%29.png)
 
 {% hint style="danger" %}
 Enable **JSON RPC** service so that your ETH2 Beacon node will be able to communicate

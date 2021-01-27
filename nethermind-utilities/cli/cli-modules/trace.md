@@ -1,8 +1,8 @@
 # Trace
 
-## trace.replayTransaction(txHash, traceTypes)
+## trace.replayTransaction\(txHash, traceTypes\)
 
-Replays a transaction, returning the traces. 
+Replays a transaction, returning the traces.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -21,9 +21,9 @@ Replays a transaction, returning the traces.
 {% endtab %}
 {% endtabs %}
 
-## trace.transaction(txHash)
+## trace.transaction\(txHash\)
 
-Returns all traces of given transaction 
+Returns all traces of given transaction
 
 {% tabs %}
 {% tab title="Request" %}
@@ -41,9 +41,9 @@ Returns all traces of given transaction
 {% endtab %}
 {% endtabs %}
 
-## trace.replayBlockTransactions(blockNumber, traceTypes)
+## trace.replayBlockTransactions\(blockNumber, traceTypes\)
 
-Replays all transactions in a block returning the requested traces for each transaction. 
+Replays all transactions in a block returning the requested traces for each transaction.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -62,9 +62,9 @@ Replays all transactions in a block returning the requested traces for each tran
 {% endtab %}
 {% endtabs %}
 
-## trace.block(blockNumber)
+## trace.block\(blockNumber\)
 
-Returns traces created at given block. 
+Returns traces created at given block.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -82,9 +82,9 @@ Returns traces created at given block.
 {% endtab %}
 {% endtabs %}
 
-## trace.rawTransaction(txData, traceTypes)
+## trace.rawTransaction\(txData, traceTypes\)
 
-Traces a call to eth_sendRawTransaction without making the call, returning the traces 
+Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
 {% tabs %}
 {% tab title="Request" %}
@@ -103,9 +103,9 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 {% endtab %}
 {% endtabs %}
 
-## trace.call(transaction, traceTypes, blockNumber)
+## trace.call\(transaction, traceTypes, blockNumber\)
 
-Traces a call, returning the traces 
+Traces a call, returning the traces
 
 {% tabs %}
 {% tab title="Request" %}
