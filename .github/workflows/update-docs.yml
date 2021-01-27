@@ -5,20 +5,23 @@ jobs:
   update-documentation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Update submodules
-        run: |
-          git submodule update --init
+      - uses: actions/checkout@v2.3.4
+        with:
+          repository: NethermindEth/docs
+          submodules: recursive
+          path: nethermind
+      - uses: actions/checkout@v2.3.4
       - name: Generate new docs
         run: |
-          git clone https://github.com/NethermindEth/nethermind.git --recursive
           cd nethermind/
-          git submodule update --init
           cd src/Nethermind/Nethermind.GitBook
-          dotnet run Nethermind.GitBook.csproj
+          dotnet run -c Release Nethermind.GitBook.csproj
       - name: Copy updated content to root
         run: |
           cp nethermind/gitbook/docs/ethereum-client/json-rpc/json-rpc-modules/* ethereum-client/json-rpc/json-rpc-modules/
+          cp nethermind/gitbook/docs/ethereum-client/metrics/modules/* ethereum-client/metrics/modules
+          cp nethermind/gitbook/docs/ethereum-client/configuration/modules/* ethereum-client/configuration/modules
+          cp nethermind/gitbook/docs/ethereum-client/cli/cli-modules/* ethereum-client/cli/cli-modules
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2.4.4
         with:
