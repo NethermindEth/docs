@@ -1,8 +1,8 @@
 # Trace
 
-## trace\_rawTransaction
+## trace_rawTransaction
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -31,7 +31,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | TransactionHash | `Hash` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
-| StateChanges | `Dictionary`2 object\` |
+| StateChanges | `Array` |
 
 `ParityVmTrace`
 
@@ -63,7 +63,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace\_replayTransaction
+## trace_replayTransaction
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -92,7 +94,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | TransactionHash | `Hash` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
-| StateChanges | `Dictionary`2 object\` |
+| StateChanges | `Array` |
 
 `ParityVmTrace`
 
@@ -124,7 +126,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace\_replayBlockTransactions
+## trace_replayBlockTransactions
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -154,7 +158,10 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ParityTxTraceFromReplay`
 
@@ -164,7 +171,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | TransactionHash | `Hash` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
-| StateChanges | `Dictionary`2 object\` |
+| StateChanges | `Array` |
 
 `ParityVmTrace`
 
@@ -177,7 +184,7 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 | Fields name | Type |
 | :--- | :--- |
-| TraceAddress | `Int32[] object` |
+| TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
@@ -189,14 +196,16 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | Value | `Quantity` |
 | Input | `Data` |
 | Result | `ParityTraceResult object` |
-| Subtraces | `List`1 object\` |
+| Subtraces | `Array` |
 | Author | `Address` |
 | RewardType | `String` |
 | Error | `String` |
 {% endtab %}
 {% endtabs %}
 
-## trace\_block
+## trace_block
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -225,7 +234,10 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ParityTxTraceFromStore`
 
@@ -273,7 +285,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace\_transaction
+## trace_transaction
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

@@ -1,86 +1,65 @@
 # Proof
 
-### proof.call\(tx, blockParameter\)
+## proof.call(tx, blockParameter)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| tx | `Object` |
+| blockParameter | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-### proof.getTransactionByHash\(transactionHash, includeHeader\)
+## proof.getTransactionReceipt(transactionHash, includeHeader)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| transactionHash | `String` |
+| includeHeader | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-### proof.getTransactionReceipt\(transactionHash, includeHeader\)
+## proof.getTransactionByHash(transactionHash, includeHeader)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| transactionHash | `String` |
+| includeHeader | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 

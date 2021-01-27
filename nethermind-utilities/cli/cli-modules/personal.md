@@ -1,114 +1,81 @@
 # Personal
 
-### personal.listAccounts
+## personal.listAccounts
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-### personal.lockAccount\(addressHex\)
+## personal.newAccount(password)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| password | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### personal.newAccount\(password\)
+## personal.lockAccount(addressHex)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| addressHex | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`Boolean`
 {% endtab %}
 {% endtabs %}
 
-### personal.unlockAccount\(addressHex, password\)
+## personal.unlockAccount(addressHex, password)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| addressHex | `String` |
+| password | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`Boolean`
 {% endtab %}
 {% endtabs %}
 

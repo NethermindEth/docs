@@ -1,58 +1,44 @@
 # System
 
-### system.getVariable\(name, defaultValue\)
+## system.getVariable(name, defaultValue)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| name | `String` |
+| defaultValue | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### system.memory
+## system.memory(name, defaultValue)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| name | `String` |
+| defaultValue | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 

@@ -1,58 +1,32 @@
 # Admin
 
-## admin.addPeer\(enode, addToStaticNodes\)
+## admin.peers(includeDetails)
 
-Adds given node to the static nodes
-
-#### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| enode | `string` |
-| addToStaticNodes | `boolean` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
+Displays a list of connected peers 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| includeDetails | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`Array`
 {% endtab %}
 {% endtabs %}
 
-## admin.peers
-
-Displays a list of connected peers
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-`Array` - Nodes currently connected to your node
-
-#### **Example**
-
+### **Example**
 {% tabs %}
 {% tab title="Request" %}
 ```bash
 admin.peers
 ```
 {% endtab %}
-
 {% tab title="Response" %}
 ```bash
 Request complete in 627464.281μs
@@ -72,35 +46,92 @@ Request complete in 627464.281μs
 {% endtab %}
 {% endtabs %}
 
-## admin.removePeer\(enode, removeFromStaticNodes\)
+## admin.nodeInfo
 
-Removes given node from the static nodes
+ 
 
-#### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Object`
+{% endtab %}
+{% endtabs %}
+
+## admin.addPeer(enode, addToStaticNodes)
+
+Adds given node to the static nodes 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| enode | `string` |
-| removeFromStaticNodes | `boolean` |
+| enode | `String` |
+| addToStaticNodes | `Boolean` |
+{% endtab %}
 
-#### **Returns**
+{% tab title="Response" %}
+### Return type
 
-`String` - The enode just removed from the static nodes
+`String`
+{% endtab %}
+{% endtabs %}
 
-#### **Example**
+### **Example**
+{% tabs %}
+{% tab title="Request" %}
+```bash
+admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
+```
+{% endtab %}
+{% tab title="Response" %}
+```bash
+Request complete in 58129.371μs
+"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
+```
+{% endtab %}
+{% endtabs %}
 
+## admin.removePeer(enode, removeFromStaticNodes)
+
+Removes given node from the static nodes 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| enode | `String` |
+| removeFromStaticNodes | `Boolean` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+### **Example**
 {% tabs %}
 {% tab title="Request" %}
 ```bash
 admin.removePeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)
 ```
 {% endtab %}
-
 {% tab title="Response" %}
 ```bash
 Request complete in 361680.159μs
 "enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-
 ```
 {% endtab %}
 {% endtabs %}

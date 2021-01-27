@@ -1,8 +1,8 @@
 # Proof
 
-## proof\_getTransactionByHash
+## proof_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -53,9 +53,9 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 {% endtab %}
 {% endtabs %}
 
-## proof\_getTransactionReceipt
+## proof_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -99,7 +99,7 @@ This function should return the same result as `eth_call` and also proofs of all
 | To | `Address` |
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Bloom Object` |
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |

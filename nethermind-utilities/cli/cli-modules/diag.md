@@ -1,32 +1,20 @@
 # Diag
 
-### diag.cliVersion
+## diag.cliVersion
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-diag.cliVersion
-```
+### **Parameters**
+
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
-
-## 
 

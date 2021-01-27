@@ -1,8 +1,8 @@
 # Net
 
-## net\_localAddress
+## net_localAddress
 
-_description missing_
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,27 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net\_localEnode
+## net_localEnode
 
-_description missing_
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## net\_version
-
-_description missing_
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -54,9 +36,27 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net\_listening
+## net_version
 
-_description missing_
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## net_listening
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -72,9 +72,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net\_peerCount
+## net_peerCount
 
-_description missing_
+ 
 
 {% tabs %}
 {% tab title="Request" %}
