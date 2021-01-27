@@ -4,24 +4,7 @@ description: Monitoring Nethermind Node's Health with HealthChecks
 
 # Monitoring Node's Health
 
-Nethermind **1.9.46** version comes with a `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`. 
-
-## **Add plugin to your node**
-
-At the bottom of each release in the **Assets** section, the **plugins** package is included.
-
-![](../.gitbook/assets/image%20%28111%29.png)
-
-{% hint style="warning" %}
-Each Nethermind package has its `plugins` directory, this is where you need to extract contents of the **plugins** package 👈 
-{% endhint %}
-
-* [x] Download the plugins package and inside extract its content into `plugins` directory 
-
-```text
-wget https://github.com/NethermindEth/nethermind/releases/download/1.9.45/plugins-1.9.45-6444e38-20201201.zip
-unzip plugins-1.9.45-6444e38-20201201.zip -d plugins
-```
+Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
 
 The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermind start.
 
@@ -81,7 +64,7 @@ curl localhost:8545/health
 ```
 
 {% hint style="danger" %}
-HealthChecks.UI won't work combined with `JsonRpc.Host 0.0.0.0`
+HealthChecks.UI won't work combined with `JsonRpc.Host 0.0.0.0`for now.
 {% endhint %}
 
 Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow seeing node's health on a nice UI. To view the UI simply go to `http://localhost:8545/healthchecks-ui`.
