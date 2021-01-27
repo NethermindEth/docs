@@ -1,170 +1,116 @@
 # Node
 
-### node.address
+## node.setNodeKey(key)
 
-Displays the address of the node key \(the key that is used for network identity\)
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| key | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### node.enode
+## node.switch(uri)
 
-Displays the currently connected node enode value
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| uri | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### node.setNodeKey\(key\)
+## node.switchLocal(uri)
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+| Parameter name | Type |
+| :--- | :--- |
+| uri | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### node.switch\(uri\)
+## node.address
 
-Changes the address of the node that the CLI is talking to
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### node.switchLocal\(port\)
+## node.enode
 
-Changes the address of the node that the CLI is talking to `localhost:port`
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### node.uri
+## node.uri
 
-Displays the URL of the node that the CLI is currently talking to
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 

@@ -2,15 +2,11 @@
 
 | Metric Name | Description |
 | :--- | :--- |
-| `nethermind_blocks` | Total number of blocks processed |
-| `nethermind_mgas` | Total MGas processed |
-| `nethermind_pending_transactions_discarded` | Number of pending transactions received that were ignored |
-| `nethermind_pending_transactions_known` | Number of known pending transactions |
-| `nethermind_pending_transactions_received` | Number of pending transactions received from peers |
-| `nethermind_pending_transactions_sent` | Number of pending transactions broadcasted to peers |
-| `nethermind_processing_queue_size` | Number of blocks awaiting for processing |
-| `nethermind_recovery_queue_size` | Number of blocks awaiting for recovery of public keys from signatures |
-| `nethermind_reorganizations` | Total number of chain reorganizations |
-| `nethermind_sync_peers` | Number of sync peers |
-| `nethermind_transactions` | Total number of transactions processed |
-
+| Blocks | Total number of blocks processed |
+| BlocksSealed | Total number of sealed blocks |
+| FailedBlockSeals | Total number of failed block seals |
+| Mgas | Total MGas processed |
+| ProcessingQueueSize | Number of blocks awaiting for processing. |
+| RecoveryQueueSize | Number of blocks awaiting for recovery of public keys from signatures. |
+| Reorganizations | Total number of chain reorganizations |
+| Transactions | Total number of transactions processed |

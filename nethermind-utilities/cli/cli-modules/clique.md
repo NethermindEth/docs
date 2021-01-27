@@ -1,278 +1,197 @@
 # Clique
 
-## clique.discard\(address\)
+## clique.getSnapshot
 
-Adds given node to the static nodes
-
-#### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `string` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+### **Parameters**
+
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## clique.getSnapshotAtHash(hash)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| hash | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
 ## clique.getSigners
 
-Adds given node to the static nodes
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+### **Parameters**
+
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## clique.getSignersAtNumber(number)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| number | `Quantity` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## clique.getSignersAtHash(hash)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| hash | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
 ## clique.getSignersAnnotated
 
-Adds given node to the static nodes
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+### **Parameters**
+
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-## clique.getSignersAtHash\(hash\)
+## clique.getSignersAtHashAnnotated(hash)
 
-Adds given node to the static nodes
+ 
 
-#### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| hash | `string` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+| hash | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-## clique.getSignersAtHashAnnotated\(hash\)
+## clique.propose(address, vote)
 
-Adds given node to the static nodes
+ 
 
-#### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| hash | `string` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+| address | `String` |
+| vote | `Boolean` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`Boolean`
 {% endtab %}
 {% endtabs %}
 
-## clique.getSignersAtNumber\(number\)
+## clique.discard(address)
 
-Adds given node to the static nodes
+ 
 
-#### **Parameters**
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| number | `int` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+| address | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`Boolean`
 {% endtab %}
 {% endtabs %}
 
-## clique.getSnapshot
+## clique.produceBlock(parentHash)
 
-Adds given node to the static nodes
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
-{% endtab %}
-{% endtabs %}
-
-## clique.getSnapshotAtHash\(hash\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
+### **Parameters**
 
 | Parameter name | Type |
 | :--- | :--- |
-| hash | `string` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
+| parentHash | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
+### Return type
+
+`Boolean`
 {% endtab %}
 {% endtabs %}
-
-## clique.propose\(address, vote\)
-
-Adds given node to the static nodes
-
-#### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `string` |
-| vote | `boolean` |
-
-#### **Returns**
-
-`String` - The enode just added to the static nodes
-
-#### **Example**
-
-{% tabs %}
-{% tab title="Request" %}
-```bash
-admin.addPeer("enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001", true)  
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```bash
-Request complete in 58129.371μs
-"enode://92c18bfbd45c9c7a8d46d5a766d7da4b6c1fac4f980cd11172738975e10cb84a4a98884affd240f4c40d98f371a7b2b8bd0e91c59c7beee20d20e4735a2af6e1@127.0.0.1:30001"
-```
-{% endtab %}
-{% endtabs %}
-
-## 
 

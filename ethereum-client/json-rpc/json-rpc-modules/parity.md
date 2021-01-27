@@ -1,8 +1,8 @@
 # Parity
 
-## parity\_pendingTransactions
+## parity_pendingTransactions
 
-Returns a list of transactions currently in the queue.
+Returns a list of transactions currently in the queue. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -39,7 +39,7 @@ _None_
 | Creates | `Address` |
 | PublicKey | `PublicKey object` |
 | ChainId | `Quantity` |
-| Condition | `Object object` |
+| Condition | `Object` |
 | R | `Data` |
 | S | `Data` |
 | V | `Quantity` |
@@ -55,9 +55,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity\_getBlockReceipts
+## parity_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -86,7 +86,10 @@ Get receipts from all transactions from particular block, more efficient than fe
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ReceiptForRpc`
 
@@ -102,7 +105,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 | To | `Address` |
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Bloom Object` |
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
@@ -114,16 +117,16 @@ Get receipts from all transactions from particular block, more efficient than fe
 | Length | `Quantity` |
 | LongLength | `Quantity` |
 | Rank | `Quantity` |
-| SyncRoot | `Object object` |
+| SyncRoot | `Object` |
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
-## parity\_enode
+## parity_enode
 
-Returns the node enode URI.
+Returns the node enode URI. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -139,7 +142,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity\_setEngineSigner
+## parity_setEngineSigner
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -158,7 +163,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity\_setEngineSignerSecret
+## parity_setEngineSignerSecret
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -176,7 +183,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity\_clearEngineSigner
+## parity_clearEngineSigner
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

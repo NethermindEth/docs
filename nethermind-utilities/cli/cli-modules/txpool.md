@@ -1,88 +1,56 @@
 # TxPool
 
-### txpool.content
+## txpool.status
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-### txpool.inspect
+## txpool.content
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-### txpool.status
+## txpool.inspect
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
-
-### trace.transaction\(txHash\)
 

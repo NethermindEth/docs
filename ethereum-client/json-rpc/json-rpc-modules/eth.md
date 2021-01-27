@@ -1,8 +1,8 @@
 # Eth
 
-## eth\_chainId
+## eth_chainId
 
-Returns ChainID
+Returns ChainID 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_protocolVersion
+## eth_protocolVersion
 
-Returns ETH protocol version
+Returns ETH protocol version 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -36,9 +36,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_syncing
+## eth_syncing
 
-Returns syncing status
+Returns syncing status 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -67,9 +67,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_blockNumber
+## eth_blockNumber
 
-Returns current block number
+Returns current block number 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -85,9 +85,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBalance
+## eth_getBalance
 
-Returns account balance
+Returns account balance 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -117,13 +117,16 @@ Returns account balance
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getStorageAt
+## eth_getStorageAt
 
-Returns storage data at address. storage\_index
+Returns storage data at address. storage_index 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -154,13 +157,16 @@ Returns storage data at address. storage\_index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionCount
+## eth_getTransactionCount
 
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
+Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -190,13 +196,16 @@ Returns account nonce \(number of trnsactions from the account since genesis\) a
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockTransactionCountByHash
+## eth_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash
+Returns number of transactions in the block block hash 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -214,9 +223,9 @@ Returns number of transactions in the block block hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockTransactionCountByNumber
+## eth_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number
+Returns number of transactions in the block by block number 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -245,13 +254,16 @@ Returns number of transactions in the block by block number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleCountByBlockHash
+## eth_getUncleCountByBlockHash
 
-Returns number of uncles in the block by block hash
+Returns number of uncles in the block by block hash 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -269,9 +281,9 @@ Returns number of uncles in the block by block hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleCountByBlockNumber
+## eth_getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number
+Returns number of uncles in the block by block number 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -300,13 +312,16 @@ Returns number of uncles in the block by block number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getCode
+## eth_getCode
 
-Returns account code at given address and block
+Returns account code at given address and block 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -336,13 +351,16 @@ Returns account code at given address and block
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_sendTransaction
+## eth_sendTransaction
 
-Send a transaction to the tx pool and broadcasting
+Send a transaction to the tx pool and broadcasting 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -350,7 +368,7 @@ Send a transaction to the tx pool and broadcasting
 
 | Parameter name | Type |
 | :--- | :--- |
-| transactionForRpc | `TransactionForRpc object` |
+| rpcTx | `TransactionForRpc object` |
 {% endtab %}
 
 {% tab title="Response" %}
@@ -384,9 +402,9 @@ Send a transaction to the tx pool and broadcasting
 {% endtab %}
 {% endtabs %}
 
-## eth\_sendRawTransaction
+## eth_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting
+Send a raw transaction to the tx pool and broadcasting 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -404,9 +422,9 @@ Send a raw transaction to the tx pool and broadcasting
 {% endtab %}
 {% endtabs %}
 
-## eth\_call
+## eth_call
 
-Executes a tx call \(does not create a transaction\)
+Executes a tx call (does not create a transaction) 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -456,13 +474,16 @@ Executes a tx call \(does not create a transaction\)
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_estimateGas
+## eth_estimateGas
 
-Executes a tx call and returns gas used \(does not create a transaction\)
+Executes a tx call and returns gas used (does not create a transaction) 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -512,13 +533,16 @@ Executes a tx call and returns gas used \(does not create a transaction\)
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockByHash
+## eth_getBlockByHash
 
-Retrieves a block by hash
+Retrieves a block by hash 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -549,7 +573,7 @@ Retrieves a block by hash
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
 | Hash | `Hash` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Bloom Object` |
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
@@ -569,9 +593,9 @@ Retrieves a block by hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockByNumber
+## eth_getBlockByNumber
 
-Retrieves a block by number
+Retrieves a block by number 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -601,7 +625,10 @@ Retrieves a block by number
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `BlockForRpc`
 
@@ -613,7 +640,7 @@ Retrieves a block by number
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
 | Hash | `Hash` |
-| LogsBloom | `Bloom object` |
+| LogsBloom | `Bloom Object` |
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
@@ -633,9 +660,9 @@ Retrieves a block by number
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionByHash
+## eth_getTransactionByHash
 
-Retrieves a transaction by hash
+Retrieves a transaction by hash 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -677,9 +704,9 @@ Retrieves a transaction by hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_pendingTransactions
+## eth_pendingTransactions
 
-Returns the pending transactions list
+Returns the pending transactions list 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -719,9 +746,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionByBlockHashAndIndex
+## eth_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index
+Retrieves a transaction by block hash and index 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -764,9 +791,9 @@ Retrieves a transaction by block hash and index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionByBlockNumberAndIndex
+## eth_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index
+Retrieves a transaction by block number and index 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -796,7 +823,10 @@ Retrieves a transaction by block number and index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `TransactionForRpc`
 
@@ -820,9 +850,9 @@ Retrieves a transaction by block number and index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionReceipt
+## eth_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash
+Retrieves a transaction receipt by tx hash 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -856,7 +886,7 @@ Retrieves a transaction receipt by tx hash
 | To | `Address` |
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
-| LogsBloom | `Array` |
+| LogsBloom | `Bloom Object` |
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
@@ -868,16 +898,16 @@ Retrieves a transaction receipt by tx hash
 | Length | `Quantity` |
 | LongLength | `Quantity` |
 | Rank | `Quantity` |
-| SyncRoot | `Object object` |
+| SyncRoot | `Object` |
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleByBlockHashAndIndex
+## eth_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index
+Retrieves an uncle block header by block hash and uncle index 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -908,7 +938,7 @@ Retrieves an uncle block header by block hash and uncle index
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
 | Hash | `Hash` |
-| LogsBloom | `Array` |
+| LogsBloom | `Bloom Object` |
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
@@ -928,9 +958,9 @@ Retrieves an uncle block header by block hash and uncle index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleByBlockNumberAndIndex
+## eth_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index
+Retrieves an uncle block header by block number and uncle index 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -960,7 +990,10 @@ Retrieves an uncle block header by block number and uncle index
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `BlockForRpc`
 
@@ -972,7 +1005,7 @@ Retrieves an uncle block header by block number and uncle index
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
 | Hash | `Hash` |
-| LogsBloom | `Array` |
+| LogsBloom | `Bloom Object` |
 | Miner | `Address` |
 | MixHash | `Hash` |
 | Nonce | `Data` |
@@ -992,9 +1025,9 @@ Retrieves an uncle block header by block number and uncle index
 {% endtab %}
 {% endtabs %}
 
-## eth\_newFilter
+## eth_newFilter
 
-Creates an update filter
+Creates an update filter 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1020,7 +1053,7 @@ Creates an update filter
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
-| Address | `Address` |
+| Address | `Object` |
 | Topics | `Array` |
 
 `BlockParameter`
@@ -1034,27 +1067,9 @@ Creates an update filter
 {% endtab %}
 {% endtabs %}
 
-## eth\_newBlockFilter
+## eth_newBlockFilter
 
-Creates an update filter
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth\_newPendingTransactionFilter
-
-Creates an update filter
+Creates an update filter 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1070,9 +1085,27 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_uninstallFilter
+## eth_newPendingTransactionFilter
 
-Creates an update filter
+Creates an update filter 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth_uninstallFilter
+
+Creates an update filter 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1090,9 +1123,9 @@ Creates an update filter
 {% endtab %}
 {% endtabs %}
 
-## eth\_getFilterChanges
+## eth_getFilterChanges
 
-Reads filter changes
+Reads filter changes 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1110,9 +1143,9 @@ Reads filter changes
 {% endtab %}
 {% endtabs %}
 
-## eth\_getFilterLogs
+## eth_getFilterLogs
 
-Reads filter changes
+Reads filter changes 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1128,15 +1161,11 @@ Reads filter changes
 
 `Array`
 {% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
-{% endtab %}
 {% endtabs %}
 
-## eth\_getLogs
+## eth_getLogs
 
-Reads logs
+Reads logs 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1162,8 +1191,8 @@ Reads logs
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
-| Address | `Object object` |
-| Topics | `IEnumerable`1 object\` |
+| Address | `Object` |
+| Topics | `Array` |
 
 `BlockParameter`
 
@@ -1176,9 +1205,9 @@ Reads logs
 {% endtab %}
 {% endtabs %}
 
-## eth\_getProof
+## eth_getProof
 
-[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
+https://github.com/ethereum/EIPs/issues/1186 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1209,7 +1238,10 @@ Reads logs
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
-`BlockParameterType` `Quantity` or `String` \(latest, earliest, pending\)
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `AccountProof`
 
@@ -1230,7 +1262,7 @@ Reads logs
 | Length | `Quantity` |
 | LongLength | `Quantity` |
 | Rank | `Quantity` |
-| SyncRoot | `Object object` |
+| SyncRoot | `Object` |
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |

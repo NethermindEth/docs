@@ -1,8 +1,8 @@
 # TxPool
 
-## txpool\_status
+## txpool_status
 
-_description missing_
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -29,9 +29,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## txpool\_content
+## txpool_content
 
-_description missing_
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -53,30 +53,14 @@ _None_
 
 | Fields name | Type |
 | :--- | :--- |
-| Pending | `IDictionary`2 object\` |
-| Queued | `IDictionary`2 object\` |
-
-`IDictionary`2\`
-
-| Fields name | Type |
-| :--- | :--- |
-| Item | `Dictionary`2 object\` |
-| Keys | `Array` |
-| Values | `Array` |
-
-`IDictionary`2\`
-
-| Fields name | Type |
-| :--- | :--- |
-| Item | `Dictionary`2 object\` |
-| Keys | `Array` |
-| Values | `Array` |
+| Pending | `Array` |
+| Queued | `Array` |
 {% endtab %}
 {% endtabs %}
 
-## txpool\_inspect
+## txpool_inspect
 
-_description missing_
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -98,24 +82,8 @@ _None_
 
 | Fields name | Type |
 | :--- | :--- |
-| Pending | `IDictionary`2 object\` |
-| Queued | `IDictionary`2 object\` |
-
-`IDictionary`2\`
-
-| Fields name | Type |
-| :--- | :--- |
-| Item | `Dictionary`2 object\` |
-| Keys | `Array` |
-| Values | `Array` |
-
-`IDictionary`2\`
-
-| Fields name | Type |
-| :--- | :--- |
-| Item | `Dictionary`2 object\` |
-| Keys | `Array` |
-| Values | `Array` |
+| Pending | `Array` |
+| Queued | `Array` |
 {% endtab %}
 {% endtabs %}
 

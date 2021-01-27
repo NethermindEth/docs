@@ -1,88 +1,56 @@
 # Net
 
-### net.localEnode
+## net.localEnode
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`String`
 {% endtab %}
 {% endtabs %}
 
-### net.peerCount
+## net.version
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 
-### net.version
+## net.peerCount
 
-None
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-None
-
-#### **Example**
+ 
 
 {% tabs %}
 {% tab title="Request" %}
-```bash
+### **Parameters**
 
-```
+_None_
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+### Return type
 
-```
+`Quantity`
 {% endtab %}
 {% endtabs %}
-
-### 
 
