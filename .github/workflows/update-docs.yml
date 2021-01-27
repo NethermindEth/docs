@@ -27,7 +27,7 @@ jobs:
           cp nethermind/gitbook/docs/ethereum-client/json-rpc/json-rpc-modules/* docs/ethereum-client/json-rpc/json-rpc-modules/
           cp nethermind/gitbook/docs/ethereum-client/metrics/modules/* docs/ethereum-client/metrics/modules
           cp nethermind/gitbook/docs/ethereum-client/configuration/modules/* docs/ethereum-client/configuration/modules
-          cp nethermind/gitbook/docs/ethereum-client/cli/cli-modules/* docs/ethereum-client/cli/cli-modules
+          cp nethermind/gitbook/docs/nethermind-utilities/cli/cli-modules/* docs/nethermind-utilities/cli/cli-modules
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.7.0
         with:
