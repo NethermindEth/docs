@@ -12,4 +12,8 @@
 | `WebhooksRestorePayload` | RestorePayload is the json payload that will be send on Recovery and must be escaped. | `{\"attachments\":[{\"color\":\"#36a64f\",\"pretext\":\"Health Check Status :+1:\",\"fields\":[{\"title\":\"Details\",\"value\":\"More details available at /healthchecks-ui\",\"short\":false},{\"title\":\"description\",\"value\":\"The HealthCheck [[LIVENESS]] is recovered. All is up and running\",\"short\":false}]}]}` |
 | `UIEnabled` | If 'true' then HealthChecks UI will be avaiable at `/healthchecks-ui` | `false` |
 | `PollingInterval` | Configures the UI to poll for healthchecks updates \(in **seconds**\) | `5` |
+| `MaxIntervalWithoutProcessedBlock` | Max interval in seconds in which we assume that node processing blocks in a healthy way | `null` |
+| `MaxIntervalWithoutProducedBlock` | Max interval in seconds in which we assume that node producing blocks in a healthy way | `null` |
+
+
 
