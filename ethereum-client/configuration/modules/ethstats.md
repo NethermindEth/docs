@@ -1,6 +1,6 @@
 # EthStats
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | Contact | Node owner contact details displayed on the ethstats page. | null |
 | Enabled | If 'true' then EthStats publishing gets enabled. | false |

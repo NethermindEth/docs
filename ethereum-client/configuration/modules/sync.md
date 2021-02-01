@@ -1,6 +1,6 @@
 # Sync
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | AncientBodiesBarrier | \[EXPERIMENTAL\] Defines the earliest body downloaded in fast sync when DownloadBodiesInFastSync is enabled. Actual values used will be Math.Max\(1, Math.Min\(PivotNumber, AncientBodiesBarrier\)\) | 0 |
 | AncientReceiptsBarrier | \[EXPERIMENTAL\] Defines the earliest receipts downloaded in fast sync when DownloadReceiptsInFastSync is enabled. Actual value used will be Math.Max\(1, Math.Min\(PivotNumber, Math.Max\(AncientBodiesBarrier, AncientReceiptsBarrier\)\)\) | 0 |

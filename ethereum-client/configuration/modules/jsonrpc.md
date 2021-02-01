@@ -1,6 +1,6 @@
 # JsonRpc
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | BufferResponses | Buffer responses before sending them to client. This allows to set Content-Length in response instead of using Transfer-Encoding: chunked. This may degrade performance on big responses. | false |
 | CallsFilterFilePath | A path to a file that contains a list of new-line separated approved JSON RPC calls | Data/jsonrpc.filter |

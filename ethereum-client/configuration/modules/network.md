@@ -1,6 +1,6 @@
 # Network
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | ActivePeersMaxCount | [OBSOLETE](https://github.com/NethermindEth/docs/tree/93603df88ac970633c455ff28b03c3cbad124e62/ethereum-client/configuration/modules/Use%20MaxActivePeers%20instead/README.md) Max number of connected peers. | 50 |
 | DiagTracerEnabled | Enabled very verbose diag network tracing files for DEV purposes \(Nethermind specific\) | false |

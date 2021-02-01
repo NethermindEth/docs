@@ -2,7 +2,7 @@
 
 These items need only be set when testing with Hive \(Ethereum Foundation tool\)
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | BlocksDir | Path to a directory with additional blocks. | "/blocks" |
 | ChainFile | Path to a file with a test chain definition. | "/chain.rlp" |

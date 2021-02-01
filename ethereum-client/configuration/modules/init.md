@@ -1,6 +1,6 @@
 # Init
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | BaseDbPath | Base directoy path for all the nethermind databases. | "db" |
 | ChainSpecPath | Path to the chain definition file \(Parity chainspec or Geth genesis file\). | chainspec/foundation.json |

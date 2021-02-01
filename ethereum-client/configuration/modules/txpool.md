@@ -1,6 +1,6 @@
 # TxPool
 
-| Metric Name | Description | Default |
+| Property Name | Description | Default |
 | :--- | :--- | ---: |
 | HashCacheSize | Max number of cached hashes of already known transactions.It is set automatically by the memory hint. | 524288 |
 | PeerNotificationThreshold | Defines percentage of peers receiving the tx gossips. | 5 |
