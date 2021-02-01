@@ -67,6 +67,7 @@
     * [Metrics](ethereum-client/configuration/modules/metrics.md)
     * [Hive](ethereum-client/configuration/modules/hive.md)
     * [HealthChecks](ethereum-client/configuration/modules/healthchecks.md)
+    * [Pruning](ethereum-client/configuration/modules/pruning.md)
   * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
 * [Plugins](ethereum-client/plugins.md)
 * [Monitoring Node's Health](ethereum-client/monitoring-node-health.md)
