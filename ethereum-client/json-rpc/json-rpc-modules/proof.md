@@ -1,8 +1,8 @@
 # Proof
 
-## proof\_getTransactionByHash
+## proof_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -48,14 +48,14 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | Data | `Data` |
 | Input | `Data` |
 | V | `Quantity` |
-| S | `Data` |
-| R | `Data` |
+| S | `Quantity` |
+| R | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-## proof\_getTransactionReceipt
+## proof_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
 
 {% tabs %}
 {% tab title="Request" %}
