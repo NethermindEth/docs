@@ -159,13 +159,13 @@ terraform apply myplan
 
 前往 `YOUR_DROPLET_IP:9091` 并验证是否有指标流入。
 
-![](../.gitbook/assets/image%20%2849%29.png)
+![](../.gitbook/assets/image%20%2849%29%20%282%29%20%282%29.png)
 
 ### Seq
 
 前往 `YOUR_DROPLET_IP:5341`，即可查询您的Nethermind 客户端日志。您可以随意创建一些有用的 `Signals（标志）、Queries`（查询）或 `Dashboards`（面板）。
 
-![](../.gitbook/assets/image%20%2839%29%20%282%29.png)
+![](../.gitbook/assets/image%20%2839%29%20%282%29%20%283%29%20%283%29.png)
 
 ## 销毁堆栈
 
