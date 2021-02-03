@@ -6,3 +6,4 @@
 | PendingTransactionsKnown | Number of known pending transactions. |
 | PendingTransactionsReceived | Number of pending transactions received from peers. |
 | PendingTransactionsSent | Number of pending transactions broadcasted to peers. |
+

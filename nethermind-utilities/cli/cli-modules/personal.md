@@ -2,8 +2,6 @@
 
 ## personal.listAccounts
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -18,9 +16,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal.newAccount(password)
-
- 
+## personal.newAccount\(password\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -38,9 +34,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal.lockAccount(addressHex)
-
- 
+## personal.lockAccount\(addressHex\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -58,9 +52,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal.unlockAccount(addressHex, password)
-
- 
+## personal.unlockAccount\(addressHex, password\)
 
 {% tabs %}
 {% tab title="Request" %}

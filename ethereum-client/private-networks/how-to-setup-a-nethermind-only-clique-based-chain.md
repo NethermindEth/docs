@@ -1,4 +1,32 @@
+---
+description: Set of validators sealing blocks on private clique network
+---
+
 # How to setup a Nethermind only Clique based chain
+
+### TL;DR
+
+Download a script that will do all the steps described below for you. It will prompt you 2 things: 
+
+* Confirm installation of required packages
+* The number of Validators you wish to run in your private network
+
+Script can be found here:
+
+{% embed url="https://github.com/NethermindEth/nethermind/blob/master/scripts/private-networking/clique-validators.sh" %}
+
+or use this command to download it:
+
+```bash
+wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/private-networking/clique-validators.sh
+```
+
+Finally give the script permissions and run it \(script requires `sudo` privileges\):
+
+```bash
+chmod +x clique-validators.sh
+./clique-validators.sh
+```
 
 ### Prerequisites
 
@@ -6,12 +34,17 @@
 * Docker-compose
 * Docker
 * jq
+* pwgen
 
 ```bash
-sudo apt-get install -y docker-compose docker.io jq
+sudo apt-get install -y docker-compose docker.io jq pwgen
 ```
 
-### Setup
+### Manual setup
+
+{% hint style="info" %}
+All these steps are automated and written in the above `clique-validators.sh` script.
+{% endhint %}
 
 In this setup we will create a private network of 3 Nethermind nodes running Clique consensus algorithm.
 
@@ -38,13 +71,13 @@ cp goerli.json genesis/goerli.json
 * create subfolders in each node folder
 
 ```bash
-mkdir node_1/configs node_1/staticNodes node_2/configs node_2/staticNodes node_3/configs node_3/staticNodes
+mkdir node_1/configs node_2/configs node_3/configs
 ```
 
-* create a `static-nodes.json` file and place it in `node_1/staticNodes` subfolders \(do this for node\_2 and node\_3 as well\)
+* create a `static-nodes.json` file and place it in working directory
 
 ```bash
-cat <<EOF > node_1/staticNodes/static-nodes.json
+cat <<EOF > static-nodes.json
 [
 
 ]
@@ -89,21 +122,20 @@ For each node you will need to change following items in configuration:
 * `TestNodeKey` should be a 64 character length alphanumeric string. Can be generated with `pwgen` tool for example.
 * `LocalIp`, `ExternalIp` and `Host` should have the same value and be incremented for each node e.g. 10.5.0.3, 10.5.0.4 and so on and so forth.
 
-![](https://nethermind.readthedocs.io/en/latest/_images/configs.png)
-
-* copy docker-compose file and place it in working directory
+Copy docker-compose file and place it in working directory.
 
 ```yaml
 version: "3.5"
 services:
 
     node_1:
-        image: nethermind/nethermind
+        image: nethermind/nethermind:1.10.17
         command: --config config
+        container_name: node_1
         volumes:
             - ./genesis:/config/genesis
             - ./node_1/configs/config.cfg:/nethermind/configs/config.cfg
-            - ./node_1/staticNodes/static-nodes.json:/nethermind/Data/static-nodes.json
+            - ./static-nodes.json:/nethermind/Data/static-nodes.json
             - ./node_1/db/clique:/nethermind/nethermind_db/clique
             - ./node_1/keystore:/nethermind/keystore
         ports:
@@ -113,12 +145,13 @@ services:
                 ipv4_address: 10.5.0.2
 
     node_2:
-        image: nethermind/nethermind
+        image: nethermind/nethermind:1.10.17
         command: --config config
+        container_name: node_2
         volumes:
             - ./genesis:/config/genesis
             - ./node_2/configs/config.cfg:/nethermind/configs/config.cfg
-            - ./node_2/staticNodes/static-nodes.json:/nethermind/Data/static-nodes.json
+            - ./static-nodes.json:/nethermind/Data/static-nodes.json
             - ./node_2/db/clique:/nethermind/nethermind_db/clique
             - ./node_2/keystore:/nethermind/keystore
         ports:
@@ -128,12 +161,13 @@ services:
                 ipv4_address: 10.5.0.3
 
     node_3:
-        image: nethermind/nethermind
+        image: nethermind/nethermind:1.10.17
         command: --config config
+        container_name: node_3
         volumes:
             - ./genesis:/config/genesis
             - ./node_3/configs/config.cfg:/nethermind/configs/config.cfg
-            - ./node_3/staticNodes/static-nodes.json:/nethermind/Data/static-nodes.json
+            - ./static-nodes.json:/nethermind/Data/static-nodes.json
             - ./node_3/db/clique:/nethermind/nethermind_db/clique
             - ./node_3/keystore:/nethermind/keystore
         ports:
@@ -156,9 +190,7 @@ networks:
 docker-compose run node_1
 ```
 
-Stop the node when Nethermind initialization completes `Ctrl +C`. Copy `This node` and `Node address` \(without 0x prefixes\) values to a text file. Continue with node\_2 and node\_3.
-
-![](https://nethermind.readthedocs.io/en/latest/_images/initialization.png)
+Stop the node when `Nethermind initialization` completes `Ctrl +C`. Copy `This node` and `Node address` \(without 0x prefixes\) values to a text file. Continue with node\_2 and node\_3.
 
 {% hint style="info" %}
 You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.  
@@ -189,13 +221,11 @@ EXTRA_VANITY="0x22466c6578692069732061207468696e6722202d204166726900000000000000
 EXTRA_SEAL="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 ```
 
-* create `EXTRA_DATA` variable accordingly to https://eips.ethereum.org/EIPS/eip-225
+* create `EXTRA_DATA` variable accordingly to [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225)
 
 ```bash
 EXTRA_DATA=${EXTRA_VANITY}${SIGNER_1}${SIGNER_2}${SIGNER_3}${EXTRA_SEAL}
 ```
-
-![](https://nethermind.readthedocs.io/en/latest/_images/extraData.png)
 
 * in `goerli.json` chainspec file, modify `extraData` property in `genesis` field
 
@@ -205,10 +235,10 @@ You can do this either manually or using below command
 cat goerli.json | jq '.genesis.extraData = '\"$EXTRA_DATA\"'' > genesis/goerli.json
 ```
 
-* for each node modify previously created empty `static-nodes.json` files by appending `Enodes` to them
+* Modify the content of `static-nodes.json` files by appending `Enodes` to it
 
 ```bash
-cat <<EOF > node_1/staticNodes/static-nodes.json
+cat <<EOF > static-nodes.json
 [
     "$STATIC_NODE_1",
     "$STATIC_NODE_2",
@@ -216,8 +246,6 @@ cat <<EOF > node_1/staticNodes/static-nodes.json
 ]
 EOF
 ```
-
-![](https://nethermind.readthedocs.io/en/latest/_images/staticNodes.png)
 
 * remove databases for each node
 
@@ -233,5 +261,7 @@ docker-compose up
 
 You should see the private network working and nodes sealing blocks in Clique consensus algorithm 🎉 
 
-![](https://nethermind.readthedocs.io/en/latest/_images/finalization.png)
+![Clique validators sealing blocks in private network](../../.gitbook/assets/image%20%288%29.png)
+
+
 
