@@ -1,6 +1,8 @@
 # Proof
 
-## proof.call\(tx, blockParameter\)
+## proof.call(tx, blockParameter)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -19,7 +21,9 @@
 {% endtab %}
 {% endtabs %}
 
-## proof.getTransactionReceipt\(transactionHash, includeHeader\)
+## proof.getTransactionReceipt(transactionHash, includeHeader)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -38,7 +42,9 @@
 {% endtab %}
 {% endtabs %}
 
-## proof.getTransactionByHash\(transactionHash, includeHeader\)
+## proof.getTransactionByHash(transactionHash, includeHeader)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

@@ -51,4 +51,3 @@
 | TooManyPeersDisconnects | Number of received disconnects due to too many peers |
 | UnexpectedIdentityDisconnects | Number of received disconnects due to peer identity information mismatch |
 | UselessPeerDisconnects | Number of received disconnects due to useless peer |
-
