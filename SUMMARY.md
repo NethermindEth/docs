@@ -103,7 +103,7 @@
 
 ## Nethermind DataMarketplace <a id="nethermind-datamarketplace-1"></a>
 
-* [FAQ](nethermind-datamarketplace-1/todo.md)
+* [FAQ](nethermind-datamarketplace-1/ndm-faq.md)
 * [Data asset states](nethermind-datamarketplace-1/data-asset-states.md)
 * [Refunds](nethermind-datamarketplace-1/refunds.md)
 
