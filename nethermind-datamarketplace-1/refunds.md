@@ -100,6 +100,6 @@
 
 
 * Remember to set right **thresholds** as a provider to send payment claims correctly.
-* Remember, before consumer make a refund, provider had 1 day to make a possible payment claim. To make sure that the consumer will not make a refund before provider payment claims transaction.
-* In time units we recommended setting upfront payment \(as a provider while you create data assets\).
+* Remember, before consumer make a refund, provider had **1 day** to make a possible payment claim. To make sure that the consumer will not make a refund before provider payment claims transaction.
+* In time **units** we recommended setting **upfront payment** \(as a provider while you create data assets\).
 
