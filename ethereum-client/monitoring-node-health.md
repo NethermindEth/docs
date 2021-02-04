@@ -63,10 +63,6 @@ curl localhost:8545/health
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true
 ```
 
-{% hint style="danger" %}
-HealthChecks.UI won't work combined with `JsonRpc.Host 0.0.0.0`for now.
-{% endhint %}
-
 Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow seeing node's health on a nice UI. To view the UI simply go to `http://localhost:8545/healthchecks-ui`.
 
 ![Unhealthy status reported on UI page](../.gitbook/assets/image%20%2876%29.png)
@@ -86,4 +82,60 @@ If your node will be **Unhealthy** you should receive the following message:
 and when it becomes **Healthy** \(**synced** and with **peers**\):
 
 ![Healthy](../.gitbook/assets/image%20%2846%29.png)
+
+#### HealthChecks for producing and processing blocks
+
+In version v.1.10.18, we introduced additional behavior for health checks. We added two fields for HealthChecks config: MaxIntervalWithoutProcessedBlock and MaxIntervalWithoutProducedBlock. The node will return unhealthy status if the interval elapsed without processing or producing a block. Let's use the below config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically, we will be waiting 45 seconds for a newly produced block.
+
+{% tabs %}
+{% tab title="HealthChecks config section example" %}
+```bash
+  "HealthChecks": {
+    "Enabled": true,
+    "WebhooksEnabled": true,
+    "UIEnabled": true,
+    "Slug": "/api/health",
+    "MaxIntervalWithoutProcessedBlock ": 15,
+    "MaxIntervalWithoutProducedBlock": 45
+  }
+```
+{% endtab %}
+{% endtabs %}
+
+If we don't set those fields in a config application will try to use them based on seal engine specification. You can see concrete values in the tables below. If we have infinity time, we can still report unhealthy status if our processing or producing threads stopped.
+
+| Seal engine | Processing interval | Producing interval |
+| :--- | :--- | :---: |
+| Clique | 4 \* Period | 2 \* Period \* SingersCount |
+| Aura | 4 \* StepDuration | 2 \* StepDuration \* ValidatorsCount |
+| Ethash | 180 | Infinity |
+| Custom/NethDev/None | Infinity | Infinity |
+
+#### health\_nodeStatus
+
+In version v.1.10.18, we've also introduced health checks via JSON RPC requests. To do that, we should have HealthChecks.Enabled set to true.
+
+{% tabs %}
+{% tab title="Request" %}
+```
+{ "jsonrpc":"2.0","method":"health_nodeStatus","params":[],"id":67 }
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```text
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "healthy": false,
+        "messages": [
+	        "Stopped processing blocks",
+            "Node is not connected to any peers"
+        ]
+    },
+    "id": 67
+}
+```
+{% endtab %}
+{% endtabs %}
 
