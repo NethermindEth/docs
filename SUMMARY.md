@@ -73,6 +73,7 @@
     * [Mining](ethereum-client/configuration/modules/mining.md)
     * [Network](ethereum-client/configuration/modules/network.md)
     * [Pruning](ethereum-client/configuration/modules/pruning.md)
+    * [Seq](ethereum-client/configuration/modules/seq.md)
     * [Sync](ethereum-client/configuration/modules/sync.md)
     * [TxPool](ethereum-client/configuration/modules/txpool.md)
     * [Wallet](ethereum-client/configuration/modules/wallet.md)
