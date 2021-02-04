@@ -2,7 +2,7 @@
 description: Frequently asked questions about the Nethermind Data Marketplace
 ---
 
-# DataMarketplace FAQ
+# FAQ
 
 ## How do I import my wallet into MetaMask?
 
