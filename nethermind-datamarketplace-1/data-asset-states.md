@@ -5,7 +5,7 @@
 * Unpublished to Published
 * Published to Under Maintenance
 * Under Maintenance to Published
-* Published to Closed \(Unavailable\)
+* Published to Closed
 
 #### End States:
 
