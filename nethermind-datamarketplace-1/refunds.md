@@ -50,7 +50,7 @@
       <td style="text-align:left">
         <p><b>&#x2714;<br /></b>The money will be transferred</p>
         <p>to the consumer&apos;s account after</p>
-        <p>the deposit expires - like in regular refund</p>
+        <p>the deposit expires - like in a regular refund</p>
       </td>
     </tr>
     <tr>
