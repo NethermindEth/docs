@@ -18,7 +18,7 @@ No, once created data asset can not be edited \(exception is plugin type\).
 
 ## Is creating data assets free?
 
-Yes, creating data assets is free. But remember that as a provider you need money in your account, otherwise you won't send any payment claim transaction.
+Yes, creating data assets is free. But remember that as a provider you need some balance in your account, otherwise you won't send any payment claim transaction.
 
 ## What if I need to make a technical break for my data asset?
 
