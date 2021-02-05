@@ -22,5 +22,6 @@ Yes, creating data assets is free. But remember that as a provider you need some
 
 ## What if I need to make a technical break for my data asset?
 
-Just change assets's status from `Published` to `Under maintanace`.
+Just change assets's status from `Published` to `Under maintanace`.   
+After the break just change it back to `Published` again. 
 
