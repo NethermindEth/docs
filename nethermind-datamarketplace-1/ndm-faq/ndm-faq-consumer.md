@@ -24,3 +24,7 @@ Simply transfer funds to the wallet address created by NDM.
 
 In case you have unused units you will get a refund for them.
 
+## How can I unlock my account?
+
+Right after you run NDM you will be asked to input passphrase to your account. This also happens while you change accounts. 
+
