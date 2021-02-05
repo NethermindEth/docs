@@ -6,7 +6,7 @@ description: Frequently asked questions about the Nethermind Data Marketplace
 
 ## What is NDM?
 
-Nethermind Data Marketplace is a protocol that creates a subnetwork within Ethereum to handle data delivery directly between parties who are running NDM-supporting nodes. NDM allows data consumers to discover data providers and uses a smart contract to facilitate on-chain, secure payments in exchange for data. The unique built-in reputation and data delivery protocol minimises the amount of on-chain transactions.
+Nethermind Data Marketplace is a protocol that creates a subnetwork within Ethereum to handle data delivery directly between parties who are running NDM-supporting nodes. NDM allows data consumers to discover data providers and uses a smart contract to facilitate on-chain, secure payments in exchange for data. The unique built-in reputation and data delivery protocol minimizes the amount of on-chain transactions.
 
 ## Where to download NDM?
 
@@ -14,7 +14,7 @@ You can download up to date packages on [Nethermind downloads page](https://down
 
 ## Is NDM a finished project?
 
-No, right now we are currently at beta phase of NDM. It is not a finished product so you should expect some bugs.
+No, right now we are currently at beta phase of NDM. It is not a finished product so you might encounter some issues - in that case please contact us through the Contact tab.
 
 ## What are the risks of using a beta version of NDM? 
 
@@ -30,7 +30,7 @@ Yes, NDM is built for consumers as well as for providers.
 
 ## Do I need to wait for sync before using NDM?
 
-Yes, with the package you will get ready to use configs for each of the supported chains. For Ethereum testnets estimated time before you will be able to place your first deposits depends on the testnet - 1 to few hours .   
+Yes, with the package you will get ready to use configs for each of the supported chains. For Ethereum testnets estimated time before you will be able to place your first deposits depends on the testnet - 1 to few hours.   
 For xDai chain 1 - 2 hours. 
 
 ## How does the Process of buying data look like?
@@ -77,5 +77,5 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 
 ## Where can I change account?
 
-In the account tab, you have the option to change current account.
+In the account tab, you have the option to change your current account.
 
