@@ -1,33 +1,8 @@
 # TxPool
 
-## txpool\_status
+## txpool_content
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`TxPoolStatus object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
-
-`TxPoolStatus`
-
-| Fields name | Type |
-| :--- | :--- |
-| Pending | `Quantity` |
-| Queued | `Quantity` |
-{% endtab %}
-{% endtabs %}
-
-## txpool\_content
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -54,7 +29,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## txpool\_inspect
+## txpool_inspect
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -78,6 +55,35 @@ _None_
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
+{% endtab %}
+{% endtabs %}
+
+## txpool_status
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`TxPoolStatus object`
+{% endtab %}
+
+{% tab title="Object definitions" %}
+### Objects definition
+
+`TxPoolStatus`
+
+| Fields name | Type |
+| :--- | :--- |
+| Pending | `Quantity` |
+| Queued | `Quantity` |
 {% endtab %}
 {% endtabs %}
 

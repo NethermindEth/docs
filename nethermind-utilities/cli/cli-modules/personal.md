@@ -2,6 +2,8 @@
 
 ## personal.listAccounts
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -16,25 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal.newAccount\(password\)
+## personal.lockAccount(addressHex)
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| password | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## personal.lockAccount\(addressHex\)
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -52,7 +38,29 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal.unlockAccount\(addressHex, password\)
+## personal.newAccount(password)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| password | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## personal.unlockAccount(addressHex, password)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
