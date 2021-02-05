@@ -48,7 +48,7 @@ No, NDM is able to create a wallet for the sake of using NDM first time you run 
 
 ## Can I use my own account?
 
-Yes, you can. Copy your keystore file info 'keystore' folder and that's it. After running application the window to unlock the account appear.
+Yes, you can. Copy your keystore file info `keystore` folder and that's it. After running application the prompt window to unlock the account will appear.
 
 ## How do I import my wallet into MetaMask?
 
