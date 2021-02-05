@@ -6,7 +6,7 @@ description: Frequently asked questions about the Nethermind Data Marketplace
 
 ## What is NDM?
 
-Nethermind Data Marketplace is a protocol that creates a subnetwork within Ethereum to handle data delivery directly between parties running NDM-supporting nodes. NDM allows data consumers to discover data providers and uses a smart contract to facilitate on-chain, secure payments in exchange for data. Its unique built-in reputation and data delivery protocol minimises the amount of on-chain transactions.
+Nethermind Data Marketplace is a protocol that creates a subnetwork within Ethereum to handle data delivery directly between parties who are running NDM-supporting nodes. NDM allows data consumers to discover data providers and uses a smart contract to facilitate on-chain, secure payments in exchange for data. The unique built-in reputation and data delivery protocol minimises the amount of on-chain transactions.
 
 ## Where to download NDM?
 
@@ -14,7 +14,7 @@ You can download up to date packages on [Nethermind downloads page](https://down
 
 ## Is NDM a finished project?
 
-No, right now we are at beta phase of NDM. It is not a finished product so you should expect some bugs.
+No, right now we are currently at beta phase of NDM. It is not a finished product so you should expect some bugs.
 
 ## What are the risks of using a beta version of NDM? 
 
@@ -22,11 +22,11 @@ Most of the risks are in the refunds and payment claims area, you have to be awa
 
 ## Where can I find technical assistance?
 
-We have a separate channel for NDM on our Discord server, feel free to ask any questions there. You can find it at [Nethermind Discord](https://discord.gg/732jyuNjph).
+We have a separate channel for NDM on our Discord server, feel free to ask any questions there. You can find us at [Nethermind Discord](https://discord.gg/732jyuNjph).
 
 ## Can data providers also join NDM?
 
-Yes, NDM was built for consumers as well as for providers.
+Yes, NDM is built for consumers as well as for providers.
 
 ## Do I need to wait for sync before using NDM?
 
@@ -77,5 +77,5 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 
 ## Where can I change account?
 
-In the account tab you have an option to change current account.
+In the account tab, you have the option to change current account.
 
