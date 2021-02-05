@@ -29,3 +29,7 @@ In case you have unused units you will get a refund for them.
 Right after you run NDM you will be asked to input passphrase to your account. This also happens while you change accounts.   
 You can also make it in Accounts -&gt; Unlock account.
 
+## Where can I check my deposits? 
+
+You can do it in Deposits tab.
+
