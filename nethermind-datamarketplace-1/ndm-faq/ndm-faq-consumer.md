@@ -8,6 +8,14 @@ description: Frequently asked questions about the Nethermind Data Marketplace - 
 
 You will need an enode of the provider you want to connect to and add it to nethermind/Data/static-nodes.json in the NDM package.
 
+## What's the difference between Unit and Time type data asset?
+
+In unit type when you place a deposit, you are given access to the value of units depended on how much units you can consume with this deposit eg. one unit price is 1 xDai so you place a deposit with amount of 100 xDai - you get access to consume 100 units. 
+
+In time type you pay for time under which you can consume units, eg. provider has time data asset with one second for 1 xDai, so you place a deposit for 100 xDai and can consume those units for 100 seconds.  
+   
+Keep in mind that you pay only for seconds which you actually used so if you were consuming units for 30 seconds but had deposit for 100 seconds, you will get a refund for 70 seconds. 
+
 ## I can't make a deposit for an asset
 
 Check if you have connection with provider or if provider hasn't closed the asset. Also check if your account is not blocked and whether you have enough balance on your account.
