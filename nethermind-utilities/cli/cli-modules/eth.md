@@ -2,8 +2,6 @@
 
 ## eth.blockNumber
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -18,9 +16,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getProof(address, storageKeys, blockParameter)
-
- 
+## eth.getProof\(address, storageKeys, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -40,9 +36,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.call(tx, blockParameter)
-
- 
+## eth.call\(tx, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -63,8 +57,6 @@ _None_
 
 ## eth.chainId
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -79,9 +71,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.estimateGas(json, blockParameter)
-
- 
+## eth.estimateGas\(json, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -100,9 +90,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBalance(address, blockParameter)
-
- 
+## eth.getBalance\(address, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -121,9 +109,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockByHash(hash, returnFullTransactionObjects)
-
- 
+## eth.getBlockByHash\(hash, returnFullTransactionObjects\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -142,9 +128,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
-
- 
+## eth.getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -163,9 +147,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockTransactionCountByHash(hash)
-
- 
+## eth.getBlockTransactionCountByHash\(hash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -183,9 +165,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockTransactionCountByNumber(blockParameter)
-
- 
+## eth.getBlockTransactionCountByNumber\(blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -203,9 +183,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getCode(address, blockParameter)
-
- 
+## eth.getCode\(address, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -224,9 +202,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getFilterChanges(filterId)
-
- 
+## eth.getFilterChanges\(filterId\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -244,9 +220,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getLogs(filter)
-
- 
+## eth.getLogs\(filter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -264,9 +238,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getStorageAt(address, positionIndex, blockParameter)
-
- 
+## eth.getStorageAt\(address, positionIndex, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -286,9 +258,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionByBlockNumberAndIndex(blockParameter, index)
-
- 
+## eth.getTransactionByBlockNumberAndIndex\(blockParameter, index\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -307,9 +277,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionByHash(txHash)
-
- 
+## eth.getTransactionByHash\(txHash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -327,9 +295,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionCount(address, blockParameter)
-
- 
+## eth.getTransactionCount\(address, blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -348,9 +314,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionReceipt(txHash)
-
- 
+## eth.getTransactionReceipt\(txHash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -368,9 +332,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getUncleByBlockHashAndIndex(hash, index)
-
- 
+## eth.getUncleByBlockHashAndIndex\(hash, index\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -389,9 +351,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getUncleByBlockNumberAndIndex(blockParameter, index)
-
- 
+## eth.getUncleByBlockNumberAndIndex\(blockParameter, index\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -410,9 +370,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getUncleCountByBlockNumber(blockParameter)
-
- 
+## eth.getUncleCountByBlockNumber\(blockParameter\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -432,8 +390,6 @@ _None_
 
 ## eth.newPendingTransactionFilter
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -449,8 +405,6 @@ _None_
 {% endtabs %}
 
 ## eth.pendingTransactions
-
- 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -468,8 +422,6 @@ _None_
 
 ## eth.protocolVersion
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -484,9 +436,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendEth(from, to, amountInEth)
-
- 
+## eth.sendEth\(from, to, amountInEth\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -506,9 +456,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendRawTransaction(txRlp)
-
- 
+## eth.sendRawTransaction\(txRlp\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -526,9 +474,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendTransaction(tx)
-
- 
+## eth.sendTransaction\(tx\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -546,9 +492,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendWei(from, to, amountInWei)
-
- 
+## eth.sendWei\(from, to, amountInWei\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -569,8 +513,6 @@ _None_
 {% endtabs %}
 
 ## eth.syncing
-
- 
 
 {% tabs %}
 {% tab title="Request" %}

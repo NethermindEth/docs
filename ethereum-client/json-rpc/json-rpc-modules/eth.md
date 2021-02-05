@@ -1,8 +1,8 @@
 # Eth
 
-## eth_blockNumber
+## eth\_blockNumber
 
-Returns current block number 
+Returns current block number
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_call
+## eth\_call
 
-Executes a tx call (does not create a transaction) 
+Executes a tx call \(does not create a transaction\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -72,14 +72,13 @@ Executes a tx call (does not create a transaction)
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_chainId
+## eth\_chainId
 
-Returns ChainID 
+Returns ChainID
 
 {% tabs %}
 {% tab title="Request" %}
@@ -95,9 +94,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_estimateGas
+## eth\_estimateGas
 
-Executes a tx call and returns gas used (does not create a transaction) 
+Executes a tx call and returns gas used \(does not create a transaction\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -149,14 +148,13 @@ Executes a tx call and returns gas used (does not create a transaction)
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_getBalance
+## eth\_getBalance
 
-Returns account balance 
+Returns account balance
 
 {% tabs %}
 {% tab title="Request" %}
@@ -188,14 +186,13 @@ Returns account balance
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_getBlockByHash
+## eth\_getBlockByHash
 
-Retrieves a block by hash 
+Retrieves a block by hash
 
 {% tabs %}
 {% tab title="Request" %}
@@ -246,9 +243,9 @@ Retrieves a block by hash
 {% endtab %}
 {% endtabs %}
 
-## eth_getBlockByNumber
+## eth\_getBlockByNumber
 
-Retrieves a block by number 
+Retrieves a block by number
 
 {% tabs %}
 {% tab title="Request" %}
@@ -280,8 +277,7 @@ Retrieves a block by number
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
 
@@ -313,9 +309,9 @@ Retrieves a block by number
 {% endtab %}
 {% endtabs %}
 
-## eth_getBlockTransactionCountByHash
+## eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash 
+Returns number of transactions in the block block hash
 
 {% tabs %}
 {% tab title="Request" %}
@@ -333,9 +329,9 @@ Returns number of transactions in the block block hash
 {% endtab %}
 {% endtabs %}
 
-## eth_getBlockTransactionCountByNumber
+## eth\_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number 
+Returns number of transactions in the block by block number
 
 {% tabs %}
 {% tab title="Request" %}
@@ -366,14 +362,13 @@ Returns number of transactions in the block by block number
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_getCode
+## eth\_getCode
 
-Returns account code at given address and block 
+Returns account code at given address and block
 
 {% tabs %}
 {% tab title="Request" %}
@@ -405,14 +400,13 @@ Returns account code at given address and block
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_getFilterChanges
+## eth\_getFilterChanges
 
-Reads filter changes 
+Reads filter changes
 
 {% tabs %}
 {% tab title="Request" %}
@@ -430,9 +424,9 @@ Reads filter changes
 {% endtab %}
 {% endtabs %}
 
-## eth_getFilterLogs
+## eth\_getFilterLogs
 
-Reads filter changes 
+Reads filter changes
 
 {% tabs %}
 {% tab title="Request" %}
@@ -450,9 +444,9 @@ Reads filter changes
 {% endtab %}
 {% endtabs %}
 
-## eth_getLogs
+## eth\_getLogs
 
-Reads logs 
+Reads logs
 
 {% tabs %}
 {% tab title="Request" %}
@@ -492,9 +486,9 @@ Reads logs
 {% endtab %}
 {% endtabs %}
 
-## eth_getProof
+## eth\_getProof
 
-https://github.com/ethereum/EIPs/issues/1186 
+[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -527,8 +521,7 @@ https://github.com/ethereum/EIPs/issues/1186
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `AccountProof`
 
@@ -556,9 +549,9 @@ https://github.com/ethereum/EIPs/issues/1186
 {% endtab %}
 {% endtabs %}
 
-## eth_getStorageAt
+## eth\_getStorageAt
 
-Returns storage data at address. storage_index 
+Returns storage data at address. storage\_index
 
 {% tabs %}
 {% tab title="Request" %}
@@ -591,14 +584,13 @@ Returns storage data at address. storage_index
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_getTransactionByBlockHashAndIndex
+## eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index 
+Retrieves a transaction by block hash and index
 
 {% tabs %}
 {% tab title="Request" %}
@@ -641,9 +633,9 @@ Retrieves a transaction by block hash and index
 {% endtab %}
 {% endtabs %}
 
-## eth_getTransactionByBlockNumberAndIndex
+## eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index 
+Retrieves a transaction by block number and index
 
 {% tabs %}
 {% tab title="Request" %}
@@ -675,8 +667,7 @@ Retrieves a transaction by block number and index
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `TransactionForRpc`
 
@@ -700,9 +691,9 @@ Retrieves a transaction by block number and index
 {% endtab %}
 {% endtabs %}
 
-## eth_getTransactionByHash
+## eth\_getTransactionByHash
 
-Retrieves a transaction by hash 
+Retrieves a transaction by hash
 
 {% tabs %}
 {% tab title="Request" %}
@@ -744,9 +735,9 @@ Retrieves a transaction by hash
 {% endtab %}
 {% endtabs %}
 
-## eth_getTransactionCount
+## eth\_getTransactionCount
 
-Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
+Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
 
 {% tabs %}
 {% tab title="Request" %}
@@ -778,14 +769,13 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_getTransactionReceipt
+## eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash 
+Retrieves a transaction receipt by tx hash
 
 {% tabs %}
 {% tab title="Request" %}
@@ -838,9 +828,9 @@ Retrieves a transaction receipt by tx hash
 {% endtab %}
 {% endtabs %}
 
-## eth_getUncleByBlockHashAndIndex
+## eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index 
+Retrieves an uncle block header by block hash and uncle index
 
 {% tabs %}
 {% tab title="Request" %}
@@ -891,9 +881,9 @@ Retrieves an uncle block header by block hash and uncle index
 {% endtab %}
 {% endtabs %}
 
-## eth_getUncleByBlockNumberAndIndex
+## eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index 
+Retrieves an uncle block header by block number and uncle index
 
 {% tabs %}
 {% tab title="Request" %}
@@ -925,8 +915,7 @@ Retrieves an uncle block header by block number and uncle index
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
 
@@ -958,9 +947,9 @@ Retrieves an uncle block header by block number and uncle index
 {% endtab %}
 {% endtabs %}
 
-## eth_getUncleCountByBlockHash
+## eth\_getUncleCountByBlockHash
 
-Returns number of uncles in the block by block hash 
+Returns number of uncles in the block by block hash
 
 {% tabs %}
 {% tab title="Request" %}
@@ -978,9 +967,9 @@ Returns number of uncles in the block by block hash
 {% endtab %}
 {% endtabs %}
 
-## eth_getUncleCountByBlockNumber
+## eth\_getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number 
+Returns number of uncles in the block by block number
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1011,14 +1000,13 @@ Returns number of uncles in the block by block number
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-## eth_newBlockFilter
+## eth\_newBlockFilter
 
-Creates an update filter 
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1034,9 +1022,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_newFilter
+## eth\_newFilter
 
-Creates an update filter 
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1076,9 +1064,9 @@ Creates an update filter
 {% endtab %}
 {% endtabs %}
 
-## eth_newPendingTransactionFilter
+## eth\_newPendingTransactionFilter
 
-Creates an update filter 
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1094,9 +1082,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_pendingTransactions
+## eth\_pendingTransactions
 
-Returns the pending transactions list 
+Returns the pending transactions list
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1136,9 +1124,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_protocolVersion
+## eth\_protocolVersion
 
-Returns ETH protocol version 
+Returns ETH protocol version
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1154,9 +1142,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_sendRawTransaction
+## eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting 
+Send a raw transaction to the tx pool and broadcasting
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1174,9 +1162,9 @@ Send a raw transaction to the tx pool and broadcasting
 {% endtab %}
 {% endtabs %}
 
-## eth_sendTransaction
+## eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting 
+Send a transaction to the tx pool and broadcasting
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1218,9 +1206,9 @@ Send a transaction to the tx pool and broadcasting
 {% endtab %}
 {% endtabs %}
 
-## eth_syncing
+## eth\_syncing
 
-Returns syncing status 
+Returns syncing status
 
 {% tabs %}
 {% tab title="Request" %}
@@ -1249,9 +1237,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth_uninstallFilter
+## eth\_uninstallFilter
 
-Creates an update filter 
+Creates an update filter
 
 {% tabs %}
 {% tab title="Request" %}

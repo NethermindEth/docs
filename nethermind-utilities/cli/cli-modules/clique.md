@@ -1,8 +1,6 @@
 # Clique
 
-## clique.discard(address)
-
- 
+## clique.discard\(address\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -22,8 +20,6 @@
 
 ## clique.getSigners
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -40,8 +36,6 @@ _None_
 
 ## clique.getSignersAnnotated
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -56,9 +50,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique.getSignersAtHash(hash)
-
- 
+## clique.getSignersAtHash\(hash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -76,9 +68,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique.getSignersAtHashAnnotated(hash)
-
- 
+## clique.getSignersAtHashAnnotated\(hash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -96,9 +86,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique.getSignersAtNumber(number)
-
- 
+## clique.getSignersAtNumber\(number\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -118,8 +106,6 @@ _None_
 
 ## clique.getSnapshot
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -134,9 +120,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique.getSnapshotAtHash(hash)
-
- 
+## clique.getSnapshotAtHash\(hash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -154,9 +138,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique.produceBlock(parentHash)
-
- 
+## clique.produceBlock\(parentHash\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -174,9 +156,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique.propose(address, vote)
-
- 
+## clique.propose\(address, vote\)
 
 {% tabs %}
 {% tab title="Request" %}

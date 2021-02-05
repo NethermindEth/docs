@@ -2,8 +2,6 @@
 
 ## node.address
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -20,8 +18,6 @@ _None_
 
 ## node.enode
 
- 
-
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -36,9 +32,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## node.setNodeKey(key)
-
- 
+## node.setNodeKey\(key\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -56,9 +50,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## node.switch(uri)
-
- 
+## node.switch\(uri\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -76,9 +68,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## node.switchLocal(uri)
-
- 
+## node.switchLocal\(uri\)
 
 {% tabs %}
 {% tab title="Request" %}
@@ -97,8 +87,6 @@ _None_
 {% endtabs %}
 
 ## node.uri
-
- 
 
 {% tabs %}
 {% tab title="Request" %}

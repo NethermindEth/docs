@@ -1,8 +1,6 @@
 # Parity
 
-## parity_clearEngineSigner
-
- 
+## parity\_clearEngineSigner
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +16,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity_enode
+## parity\_enode
 
-Returns the node enode URI. 
+Returns the node enode URI.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -36,9 +34,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity_getBlockReceipts
+## parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -69,8 +67,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `ReceiptForRpc`
 
@@ -105,9 +102,9 @@ Get receipts from all transactions from particular block, more efficient than fe
 {% endtab %}
 {% endtabs %}
 
-## parity_netPeers
+## parity\_netPeers
 
-Returns connected peers. Peers with non-empty protocols have completed handshake. 
+Returns connected peers. Peers with non-empty protocols have completed handshake.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -148,9 +145,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity_pendingTransactions
+## parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue. 
+Returns a list of transactions currently in the queue.
 
 {% tabs %}
 {% tab title="Request" %}
@@ -203,9 +200,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity_setEngineSigner
-
- 
+## parity\_setEngineSigner
 
 {% tabs %}
 {% tab title="Request" %}
@@ -224,9 +219,7 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity_setEngineSignerSecret
-
- 
+## parity\_setEngineSignerSecret
 
 {% tabs %}
 {% tab title="Request" %}

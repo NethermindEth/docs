@@ -28,7 +28,7 @@ CLI will allow you to query the most basic info about the node quickly.
 8. You can navigate to previous commands by using arrow keys
 9. You can auto-complete basic command with tab
 
-![Nethermind.Cli operations](../../.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29.png)
+![Nethermind.Cli operations](../../.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png)
 
 For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js libs or Truffle, Metamask, etc.
 
