@@ -25,6 +25,10 @@ Yes, creating data assets is free. But remember that as a provider you need some
 Just change assets's status from `Published` to `Under maintanace`.   
 After the break just change it back to `Published` again. 
 
+## How to claim a payment for consumed data asset?
+
+Payment claims are being sent automatically by NDM. If you want to change gas price for the transactions you can make it in Advance -&gt; Configuration tab. 
+
 ## Why I can't claim payment for consumed units?
 
 It is often due to payment claim threshold. You can change it via NDM UI in Advance -&gt; Configuration tab.   
