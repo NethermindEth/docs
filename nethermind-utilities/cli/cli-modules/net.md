@@ -2,6 +2,8 @@
 
 ## net.localEnode
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -16,23 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net.version
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
 ## net.peerCount
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -45,6 +33,24 @@ _None_
 ### Return type
 
 `Quantity`
+{% endtab %}
+{% endtabs %}
+
+## net.version
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
 {% endtab %}
 {% endtabs %}
 

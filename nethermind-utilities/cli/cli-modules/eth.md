@@ -1,6 +1,8 @@
 # Eth
 
-## eth.syncing
+## eth.blockNumber
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -12,11 +14,13 @@ _None_
 {% tab title="Response" %}
 ### Return type
 
-`JavaScript Object`
+`Quantity`
 {% endtab %}
 {% endtabs %}
 
-## eth.getProof\(address, storageKeys, blockParameter\)
+## eth.getProof(address, storageKeys, blockParameter)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -36,7 +40,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.call\(tx, blockParameter\)
+## eth.call(tx, blockParameter)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -55,7 +61,69 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockByHash\(hash, returnFullTransactionObjects\)
+## eth.chainId
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## eth.estimateGas(json, blockParameter)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| json | `Object` |
+| blockParameter | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## eth.getBalance(address, blockParameter)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| address | `String` |
+| blockParameter | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth.getBlockByHash(hash, returnFullTransactionObjects)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -74,7 +142,70 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionCount\(address, blockParameter\)
+## eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `String` |
+| returnFullTransactionObjects | `Boolean` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getBlockTransactionCountByHash(hash)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| hash | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth.getBlockTransactionCountByNumber(blockParameter)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth.getCode(address, blockParameter)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -93,7 +224,49 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getStorageAt\(address, positionIndex, blockParameter\)
+## eth.getFilterChanges(filterId)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filterId | `Quantity` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getLogs(filter)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| filter | `Object` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getStorageAt(address, positionIndex, blockParameter)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -113,7 +286,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
+## eth.getTransactionByBlockNumberAndIndex(blockParameter, index)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -122,7 +297,7 @@ _None_
 | Parameter name | Type |
 | :--- | :--- |
 | blockParameter | `String` |
-| returnFullTransactionObjects | `Boolean` |
+| index | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
@@ -132,7 +307,186 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendEth\(from, to, amountInEth\)
+## eth.getTransactionByHash(txHash)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getTransactionCount(address, blockParameter)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| address | `String` |
+| blockParameter | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## eth.getTransactionReceipt(txHash)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getUncleByBlockHashAndIndex(hash, index)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| hash | `String` |
+| index | `Quantity` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getUncleByBlockNumberAndIndex(blockParameter, index)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `String` |
+| index | `Quantity` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.getUncleCountByBlockNumber(blockParameter)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| blockParameter | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth.newPendingTransactionFilter
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Quantity`
+{% endtab %}
+{% endtabs %}
+
+## eth.pendingTransactions
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.protocolVersion
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## eth.sendEth(from, to, amountInEth)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -152,7 +506,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.estimateGas\(json, blockParameter\)
+## eth.sendRawTransaction(txRlp)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -160,8 +516,7 @@ _None_
 
 | Parameter name | Type |
 | :--- | :--- |
-| json | `Object` |
-| blockParameter | `String` |
+| txRlp | `String` |
 {% endtab %}
 
 {% tab title="Response" %}
@@ -171,7 +526,29 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendWei\(from, to, amountInWei\)
+## eth.sendTransaction(tx)
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| tx | `Object` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## eth.sendWei(from, to, amountInWei)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -191,207 +568,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth.sendRawTransaction\(txRlp\)
+## eth.syncing
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txRlp | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## eth.sendTransaction\(tx\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| tx | `Object` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## eth.blockNumber
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth.getCode\(address, blockParameter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `String` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## eth.getBlockTransactionCountByNumber\(blockParameter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth.getBlockTransactionCountByHash\(hash\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth.getUncleCountByBlockNumber\(blockParameter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth.getUncleByBlockNumberAndIndex\(blockParameter, index\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-| index | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getUncleByBlockHashAndIndex\(hash, index\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | `String` |
-| index | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getTransactionByBlockNumberAndIndex\(blockParameter, index\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-| index | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getTransactionByHash\(txHash\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.pendingTransactions
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -404,127 +583,6 @@ _None_
 ### Return type
 
 `JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getTransactionReceipt\(txHash\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getBalance\(address, blockParameter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `String` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth.chainId
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## eth.protocolVersion
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getLogs\(filter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filter | `Object` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.getFilterChanges\(filterId\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.newPendingTransactionFilter
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
 {% endtab %}
 {% endtabs %}
 

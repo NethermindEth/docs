@@ -1,49 +1,8 @@
 # Trace
 
-## trace.replayTransaction\(txHash, traceTypes\)
+## trace.replayBlockTransactions(blockNumber, traceTypes)
 
-Replays a transaction, returning the traces.
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
-| traceTypes | `Array` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## trace.transaction\(txHash\)
-
-Returns all traces of given transaction
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## trace.replayBlockTransactions\(blockNumber, traceTypes\)
-
-Replays all transactions in a block returning the requested traces for each transaction.
+Replays all transactions in a block returning the requested traces for each transaction. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -62,9 +21,30 @@ Replays all transactions in a block returning the requested traces for each tran
 {% endtab %}
 {% endtabs %}
 
-## trace.block\(blockNumber\)
+## trace.replayTransaction(txHash, traceTypes)
 
-Returns traces created at given block.
+Replays a transaction, returning the traces. 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| txHash | `String` |
+| traceTypes | `Array` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## trace.block(blockNumber)
+
+Returns traces created at given block. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -82,9 +62,31 @@ Returns traces created at given block.
 {% endtab %}
 {% endtabs %}
 
-## trace.rawTransaction\(txData, traceTypes\)
+## trace.call(transaction, traceTypes, blockNumber)
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Traces a call, returning the traces 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| transaction | `Object` |
+| traceTypes | `Array` |
+| blockNumber | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`JavaScript Object`
+{% endtab %}
+{% endtabs %}
+
+## trace.rawTransaction(txData, traceTypes)
+
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -103,9 +105,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace.call\(transaction, traceTypes, blockNumber\)
+## trace.transaction(txHash)
 
-Traces a call, returning the traces
+Returns all traces of given transaction 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -113,9 +115,7 @@ Traces a call, returning the traces
 
 | Parameter name | Type |
 | :--- | :--- |
-| transaction | `Object` |
-| traceTypes | `Array` |
-| blockNumber | `String` |
+| txHash | `String` |
 {% endtab %}
 
 {% tab title="Response" %}

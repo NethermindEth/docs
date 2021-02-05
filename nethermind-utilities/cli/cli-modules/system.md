@@ -1,6 +1,8 @@
 # System
 
-## system.getVariable\(name, defaultValue\)
+## system.getVariable(name, defaultValue)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -19,7 +21,9 @@
 {% endtab %}
 {% endtabs %}
 
-## system.memory\(name, defaultValue\)
+## system.memory(name, defaultValue)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

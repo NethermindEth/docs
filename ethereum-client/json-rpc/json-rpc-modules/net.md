@@ -1,54 +1,8 @@
 # Net
 
-## net\_localAddress
+## net_listening
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Address`
-{% endtab %}
-{% endtabs %}
-
-## net\_localEnode
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## net\_version
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## net\_listening
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -64,7 +18,45 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## net\_peerCount
+## net_localAddress
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Address`
+{% endtab %}
+{% endtabs %}
+
+## net_localEnode
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
+{% endtab %}
+{% endtabs %}
+
+## net_peerCount
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -77,6 +69,24 @@ _None_
 ### Return type
 
 `Quantity`
+{% endtab %}
+{% endtabs %}
+
+## net_version
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+_None_
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`String`
 {% endtab %}
 {% endtabs %}
 
