@@ -16,6 +16,10 @@ You can download up to date packages on [Nethermind downloads page](https://down
 
 No, right now we are at beta phase of NDM. It is not a finished product so you should expect some bugs.
 
+## What are the risks of using beta version of NDM? 
+
+Most of the risk are in refunds and payment claims area, you have to be aware that bugs with processing transactions may occur. With that in mind keep you logs and when something unexpected happens contact with our team through Contact tab.   
+
 ## Where can I find technical assistance?
 
 We have a separate channel for NDM on our Discord server, feel free to ask any questions there. You can find it at [Nethermind Discord](https://discord.gg/732jyuNjph).
