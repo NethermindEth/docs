@@ -18,7 +18,7 @@ No, right now we are at beta phase of NDM. It is not a finished product so you s
 
 ## What are the risks of using beta version of NDM? 
 
-Most of the risk are in refunds and payment claims area, you have to be aware that bugs with processing transactions may occur. With that in mind keep you logs and when something unexpected happens contact with our team through Contact tab.   
+Most of the risk are in refunds and payment claims area, you have to be aware that bugs with processing transactions may occur. With that in mind keep your logs and when something unexpected happens contact with our team through Contact tab.   
 
 ## Where can I find technical assistance?
 
@@ -32,9 +32,9 @@ Yes, NDM was built for consumers as well as for providers.
 
 Yes, with the package you will get ready to use configs for each of the supported chains. For Ethereum testnets estimated time before you will be able place your first deposits is 30 minutes - 1 hour. For xDai chain 1 - 2 hours. 
 
-## How does the Proccess of buying data looks like ?
+## How does the Process of buying data looks like ?
 
-First of all you will neeed to connect to a provider, after that you will be able to make a deposit for data asset of your choice. Payment for the data will be charged from deposit you made and not from your wallet.
+First of all you will need to connect to a provider, after that you will be able to make a deposit for data asset of your choice. Payment for the data will be charged from deposit you made and not from your wallet.
 
 For example - you connected to a provider which provides data asset with units 1 ETH/xDai per each. You make a deposit for 100 units, so 100 ETH/xDai is transfered from wallet to NDM smart contract, each time you use a single unit, 1 ETH/xDai \(plus fee\) will be transfered from the deposit on contract to the provider account.
 
