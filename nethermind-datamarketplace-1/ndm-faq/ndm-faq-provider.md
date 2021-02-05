@@ -25,3 +25,15 @@ Yes, creating data assets is free. But remember that as a provider you need some
 Just change assets's status from `Published` to `Under maintanace`.   
 After the break just change it back to `Published` again. 
 
+## Why I can't claim payment for consumed units?
+
+It is often due to payment claim threshold. You can change it via NDM UI in Advance -&gt; Configuration tab.   
+Provider won't claim any value under threshold. 
+
+## Why my receipts are not being merged? 
+
+It is due to receipts merge threshold. You can change it via NDM UI in Advance -&gt; Configuration tab.   
+Provider won't merge receipts if their count is less than threshold. 
+
+
+
