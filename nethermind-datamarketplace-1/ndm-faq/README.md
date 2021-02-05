@@ -30,7 +30,8 @@ Yes, NDM was built for consumers as well as for providers.
 
 ## Do I need to wait for sync before using NDM?
 
-Yes, with the package you will get ready to use configs for each of the supported chains. For Ethereum testnets estimated time before you will be able to place your first deposits is 30 minutes - 1 hour. For xDai chain 1 - 2 hours. 
+Yes, with the package you will get ready to use configs for each of the supported chains. For Ethereum testnets estimated time before you will be able to place your first deposits depends on the testnet - 1 to few hours .   
+For xDai chain 1 - 2 hours. 
 
 ## How does the Process of buying data look like?
 
