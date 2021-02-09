@@ -51,6 +51,10 @@ No, NDM is able to create a wallet for the sake of using NDM the first time you 
 
 Yes, you can. Copy your keystore file info`keystore` folder and that's it. After running the application the prompt window to unlock the account will appear.
 
+## **I created the account but still have no money on it, what should I do?** 
+
+You can use [Ramp Network](https://ramp.network) services without leaving NDM, simply click the “ Get ETH “ button which is located next to your address and go through the procedure. The money will be in your account in just a few seconds. In case you have any questions or problems with the transfer you can contact [support.ramp.network](https://discord.com/invite/qv8Zprw%20) on discord. 
+
 ## How do I import my wallet into MetaMask?
 
 NDM wallets can be imported into MetaMask as a Keystore file. To do so, follow the instructions at [https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account](https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account), choose JSON File as the type, and then when prompted to select your Keystore file:
