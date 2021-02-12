@@ -1,8 +1,8 @@
 # Clique
 
-## clique\_discard
+## clique_discard
 
-This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
+This method drops a currently running proposal. The signer will not cast further votes (either for or against) the address. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -20,9 +20,9 @@ This method drops a currently running proposal. The signer will not cast further
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSigners
+## clique_getSigners
 
-Retrieves the list of authorized signers.
+Retrieves the list of authorized signers. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -38,7 +38,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSignersAnnotated
+## clique_getSignersAnnotated
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -54,9 +56,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSignersAtHash
+## clique_getSignersAtHash
 
-Retrieves the list of authorized signers at the specified block by hash.
+Retrieves the list of authorized signers at the specified block by hash. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -74,7 +76,9 @@ Retrieves the list of authorized signers at the specified block by hash.
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSignersAtHashAnnotated
+## clique_getSignersAtHashAnnotated
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -92,9 +96,9 @@ Retrieves the list of authorized signers at the specified block by hash.
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSignersAtNumber
+## clique_getSignersAtNumber
 
-Retrieves the list of authorized signers at the specified block by block number.
+Retrieves the list of authorized signers at the specified block by block number. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -112,9 +116,9 @@ Retrieves the list of authorized signers at the specified block by block number.
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSnapshot
+## clique_getSnapshot
 
-Retrieves a snapshot of all clique state at a given block.
+Retrieves a snapshot of all clique state at a given block. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -143,9 +147,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSnapshotAtHash
+## clique_getSnapshotAtHash
 
-Retrieves the state snapshot at a given block.
+Retrieves the state snapshot at a given block. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -176,7 +180,9 @@ Retrieves the state snapshot at a given block.
 {% endtab %}
 {% endtabs %}
 
-## clique\_produceBlock
+## clique_produceBlock
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -194,9 +200,9 @@ Retrieves the state snapshot at a given block.
 {% endtab %}
 {% endtabs %}
 
-## clique\_propose
+## clique_propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
+Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address. 
 
 {% tabs %}
 {% tab title="Request" %}

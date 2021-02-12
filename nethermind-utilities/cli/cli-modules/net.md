@@ -2,6 +2,8 @@
 
 ## net.localEnode
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -18,6 +20,8 @@ _None_
 
 ## net.peerCount
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -33,6 +37,8 @@ _None_
 {% endtabs %}
 
 ## net.version
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
