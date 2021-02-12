@@ -102,13 +102,14 @@
 * [Beam Wallet](nethermind-utilities/beam-wallet.md)
 * [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
 
-## Nethermind DataMarketplace <a id="nethermind-datamarketplace-1"></a>
+## Nethermind DataMarketplace
 
-* [FAQ](nethermind-datamarketplace-1/ndm-faq/README.md)
-  * [Provider](nethermind-datamarketplace-1/ndm-faq/ndm-faq-provider.md)
-  * [Consumer](nethermind-datamarketplace-1/ndm-faq/ndm-faq-consumer.md)
-* [Data asset states](nethermind-datamarketplace-1/data-asset-states.md)
-* [Refunds](nethermind-datamarketplace-1/refunds.md)
+* [FAQ](nethermind-datamarketplace/ndm-faq/README.md)
+  * [Provider](nethermind-datamarketplace/ndm-faq/ndm-faq-provider.md)
+  * [Consumer](nethermind-datamarketplace/ndm-faq/ndm-faq-consumer.md)
+* [Data asset states](nethermind-datamarketplace/data-asset-states.md)
+* [Refunds](nethermind-datamarketplace/refunds.md)
+* [Deposit expiry](nethermind-datamarketplace/deposit-expiry.md)
 
 ## Guides and Helpers
 
