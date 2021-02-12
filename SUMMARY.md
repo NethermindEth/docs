@@ -109,7 +109,6 @@
   * [Consumer](nethermind-datamarketplace/ndm-faq/ndm-faq-consumer.md)
 * [Data asset states](nethermind-datamarketplace/data-asset-states.md)
 * [Refunds](nethermind-datamarketplace/refunds.md)
-* [Deposit expiry](nethermind-datamarketplace/deposit-expiry.md)
 
 ## Guides and Helpers
 
