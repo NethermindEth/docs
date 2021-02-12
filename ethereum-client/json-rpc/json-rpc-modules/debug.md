@@ -1,8 +1,8 @@
 # Debug
 
-## debug\_deleteChainSlice
+## debug_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -20,9 +20,9 @@ Deletes a slice of a chain from the tree on all branches \(Nethermind specific\)
 {% endtab %}
 {% endtabs %}
 
-## debug\_getBlockRlp
+## debug_getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -40,9 +40,9 @@ Retrieves a block in the RLP-serialized form.
 {% endtab %}
 {% endtabs %}
 
-## debug\_getBlockRlpByHash
+## debug_getBlockRlpByHash
 
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -60,9 +60,9 @@ Retrieves a block in the RLP-serialized form.
 {% endtab %}
 {% endtabs %}
 
-## debug\_getChainLevel
+## debug_getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -103,9 +103,9 @@ Retrieves a representation of tree branches on a given chain level \(Nethermind 
 {% endtab %}
 {% endtabs %}
 
-## debug\_getConfigValue
+## debug_getConfigValue
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -124,9 +124,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 {% endtab %}
 {% endtabs %}
 
-## debug\_insertReceipts
+## debug_insertReceipts
 
-Insert receipts for the block after verifying receipts root correctness.
+Insert receipts for the block after verifying receipts root correctness. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -158,7 +158,8 @@ Insert receipts for the block after verifying receipts root correctness.
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ReceiptForRpc[]`
 
@@ -174,9 +175,9 @@ Insert receipts for the block after verifying receipts root correctness.
 {% endtab %}
 {% endtabs %}
 
-## debug\_migrateReceipts
+## debug_migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -194,9 +195,9 @@ Sets the block number up to which receipts will be migrated to \(Nethermind spec
 {% endtab %}
 {% endtabs %}
 
-## debug\_resetHead
+## debug_resetHead
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -214,9 +215,9 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceBlock
+## debug_traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -259,7 +260,9 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceBlockByHash
+## debug_traceBlockByHash
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -302,7 +305,9 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceBlockByNumber
+## debug_traceBlockByNumber
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -345,9 +350,9 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceTransaction
+## debug_traceTransaction
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -390,7 +395,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceTransactionByBlockAndIndex
+## debug_traceTransactionByBlockAndIndex
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -423,7 +430,8 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `GethTraceOptions`
 
@@ -447,7 +455,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceTransactionByBlockhashAndIndex
+## debug_traceTransactionByBlockhashAndIndex
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -491,7 +501,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceTransactionInBlockByHash
+## debug_traceTransactionInBlockByHash
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -535,7 +547,9 @@ This method will attempt to run the transaction in the exact same manner as it w
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceTransactionInBlockByIndex
+## debug_traceTransactionInBlockByIndex
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

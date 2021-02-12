@@ -1,6 +1,8 @@
 # Trace
 
-## trace\_block
+## trace_block
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -31,7 +33,8 @@
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ParityTxTraceFromStore`
 
@@ -79,9 +82,9 @@
 {% endtab %}
 {% endtabs %}
 
-## trace\_rawTransaction
+## trace_rawTransaction
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -142,7 +145,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace\_replayBlockTransactions
+## trace_replayBlockTransactions
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -174,7 +179,8 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ParityTxTraceFromReplay`
 
@@ -216,7 +222,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace\_replayTransaction
+## trace_replayTransaction
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -277,7 +285,9 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 {% endtab %}
 {% endtabs %}
 
-## trace\_transaction
+## trace_transaction
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

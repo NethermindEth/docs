@@ -2,6 +2,8 @@
 
 ## txpool.content
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -18,6 +20,8 @@ _None_
 
 ## txpool.inspect
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -33,6 +37,8 @@ _None_
 {% endtabs %}
 
 ## txpool.status
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

@@ -1,8 +1,8 @@
 # Web3
 
-## web3\_clientVersion
+## web3_clientVersion
 
-Returns the current client version.
+Returns the current client version. 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,9 +18,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## web3\_sha3
+## web3_sha3
 
-Returns Keccak of the given data.
+Returns Keccak of the given data. 
 
 {% tabs %}
 {% tab title="Request" %}
