@@ -110,6 +110,7 @@
 * [Data asset states](nethermind-datamarketplace/data-asset-states.md)
 * [Refunds](nethermind-datamarketplace/refunds.md)
 * [Running NDM on MacOs problems and fixes](nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes.md)
+* [Connecting to providers](nethermind-datamarketplace/connecting-to-providers.md)
 
 ## Guides and Helpers
 
