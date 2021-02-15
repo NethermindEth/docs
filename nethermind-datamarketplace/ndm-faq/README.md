@@ -83,3 +83,11 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 
 In the account tab, you have the option to change your current account.
 
+## I'm having some issues with NDM on MacOs
+
+We have separate documentation for MacOs issues.
+
+{% page-ref page="../running-ndm-on-macos-problems-and-fixes.md" %}
+
+
+
