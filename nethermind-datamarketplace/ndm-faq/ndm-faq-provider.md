@@ -4,6 +4,12 @@ description: Frequently asked questions about the Nethermind Data Marketplace - 
 
 # Provider
 
+## How can I connect with my consumers?
+
+There is separate documentation about connecting with consumers. 
+
+{% page-ref page="../connecting-with-consumers.md" %}
+
 ## How can I unlock my account? 
 
 Right after starting NDM, you will be asked to input passphrase to your account. It also happens while changing accounts.
