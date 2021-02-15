@@ -6,7 +6,9 @@ description: Frequently asked questions about the Nethermind Data Marketplace - 
 
 ## How can I connect to a provider?
 
-You will need an enode of the provider you want to connect to and add it to nethermind/Data/static-nodes.json in the NDM package.
+There is separate documentation about connecting to a provider. 
+
+{% page-ref page="../connecting-to-providers.md" %}
 
 ## What's the difference between Unit and Time type data asset?
 
