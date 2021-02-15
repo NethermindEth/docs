@@ -1,4 +1,4 @@
-# Connecting to providers
+# Connecting with providers
 
 As a consumer, you won't be able to consume any data assets before connecting to the right providers, and you can do that in two ways. 
 
