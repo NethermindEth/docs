@@ -8,7 +8,7 @@ description: Frequently asked questions about the Nethermind Data Marketplace - 
 
 There is separate documentation about connecting to a provider. 
 
-{% page-ref page="../connecting-to-providers.md" %}
+{% page-ref page="../connecting-with-providers.md" %}
 
 ## What's the difference between Unit and Time type data asset?
 
