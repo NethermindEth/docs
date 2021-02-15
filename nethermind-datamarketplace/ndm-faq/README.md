@@ -79,7 +79,7 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 2. navigate to the `keystore` folder
 3. select the file that has your Ethereum address in the name
 
-## Where can I change account?
+## Where can I change the account?
 
 In the account tab, you have the option to change your current account.
 
