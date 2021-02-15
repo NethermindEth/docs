@@ -45,7 +45,7 @@ unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 cd nethermind
 ```
 
-![Switch directory](../../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29.png)
+![Switch directory](../../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 * [x] 运行 `Nethermind.Launcher` 并选择 `Ethereum Node`
 
