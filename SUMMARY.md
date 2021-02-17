@@ -112,6 +112,7 @@
 * [Running NDM on MacOS problems and fixes](nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes.md)
 * [Connecting with providers](nethermind-datamarketplace/connecting-with-providers.md)
 * [Connecting with consumers](nethermind-datamarketplace/connecting-with-consumers.md)
+* [Setting up NDM for manual testing](nethermind-datamarketplace/setting-up-ndm-for-manual-testing.md)
 
 ## Guides and Helpers
 
