@@ -24,7 +24,7 @@
 
 ### Playing with data assets
 
-After that, you will have an electron app and cosnole running. By default 
+After that, you will have an electron app and cosnole running. By default, you will have our Provider node added in the static-nodes file so you will be already connected to one. 
 
 We prepared consumer test account with ETH on start: 
 
