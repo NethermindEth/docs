@@ -3,12 +3,12 @@
 Download the NDM package from its download page[ https://downloads.nethermind.io/](https://downloads.nethermind.io/)
 
 Run Consumer node - ndm.launcher.exe \(Windows\),  ndm.launcher.command \(MacOs\) or ./ndm.launcher \(Linux\).   
-In the console choose "Consumer" then "Ropsten \[via proxy\]" and confirm infura key.
+In the console choose "Consumer" then "Ropsten \[via proxy\]" and confirm proxy endpoint.
 
 ![](../.gitbook/assets/image%20%28139%29.png)
 
 Run Provider in a similar way -&gt; ndm.launcher.exe \(Windows\),  ndm.launcher.command \(MacOs\) or ./ndm.launcher \(Linux\)  
-In the console choose "Provider" then "Ropsten \[via proxy\]" and also confirm infura key.
+In the console choose "Provider" then "Ropsten \[via proxy\]" and also confirm proxy endpoint.
 
 You will have two consoles and two UIs \(one for provider and one for consumer\). If you want to change client type - select the correct button in the right top corner on UI.
 
