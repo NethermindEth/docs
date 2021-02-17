@@ -109,7 +109,7 @@
   * [Consumer](nethermind-datamarketplace/ndm-faq/ndm-faq-consumer.md)
 * [Data asset states](nethermind-datamarketplace/data-asset-states.md)
 * [Refunds](nethermind-datamarketplace/refunds.md)
-* [Running NDM on MacOs problems and fixes](nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes.md)
+* [Running NDM on MacOS problems and fixes](nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes.md)
 * [Connecting with providers](nethermind-datamarketplace/connecting-with-providers.md)
 * [Connecting with consumers](nethermind-datamarketplace/connecting-with-consumers.md)
 
