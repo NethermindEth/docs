@@ -28,7 +28,7 @@ After that, you will have an electron app and cosnole running. By default, you w
 
 We prepared consumer test account with ETH on start: 
 
-* **0x5d55020e862bc876c8d2e9a4eeeda935ce6438c6** - passphrase `consumer`
+* **0x5d55020e862bc876c8d2e9a4eeeda935ce6438c6** - for passphrase contact with one of the NDM developers on Discord
 
 And one data asset from the **Crypto Compare Web Api** plugin. 
 
