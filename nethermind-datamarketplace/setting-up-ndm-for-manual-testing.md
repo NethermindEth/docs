@@ -1,30 +1,33 @@
-# Setting up NDM for manual testing
+# Beta testing NDM
 
 ### Running Consumer
 
-* [x] Download the NDM package from the download page[ https://downloads.nethermind.io/](https://downloads.nethermind.io/)
+* [x] Download the NDM package from the discord
 * [x] Run Consumer node:
 
   `ndm.launcher.exe` \(Windows\)   
   `ndm.launcher.command` \(MacOs\)  
-  `ndm.launcher` \(Linux\).   
+  `ndm.launcher` \(Linux\). 
+
+* [x] If you are working with NDM on MacOs be sure to read MacOs NDM setup page [https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MTkjrtMVQumOGgTaf\_P/nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes](running-ndm-on-macos-problems-and-fixes.md) 
+
+### Ropsten chain
 
 * [x] In the console choose **Consumer** then **Ropsten \[via proxy\]** and confirm the proxy endpoint.
 
 ![](../.gitbook/assets/image%20%28140%29.png)
 
-### Running Provider
+### xDai chain
 
-* [x] Run Provider in a similar way:  `ndm.launcher.exe` \(Windows\) `ndm.launcher.command` \(MacOs\)  `ndm.launcher` \(Linux\) 
-* [x] In the console choose **Provider** then **Ropsten \[via proxy\]** and also confirm the proxy endpoint.
+* [x] In the console chose **Consumer** then **xDai** network.
+* [x] Wait for the sync to complete \(~1 hour\)
 
 ### Playing with data assets
 
-You will have two consoles and two UIs \(one for **Provider** and one for **Consumer**\). If you want to change client type - select the correct button in the right top corner on UI.
+After that, you will have an electron app and cosnole running. By default 
 
-We prepared for you 2 accounts with ETH on start: 
+We prepared consumer test account with ETH on start: 
 
-* **0xc7f8522f15c189e00d2f895b4528b4f84516cd7b** - passphrase `provider`
 * **0x5d55020e862bc876c8d2e9a4eeeda935ce6438c6** - passphrase `consumer`
 
 And one data asset from the **Crypto Compare Web Api** plugin. 
@@ -37,7 +40,7 @@ And one data asset from the **Crypto Compare Web Api** plugin.
 
 ![Deposits view](../.gitbook/assets/image%20%28123%29.png)
 
-* [x] On selecting deposit the deposit details tab will appear - to consume units go to **Open data stream.** On input, you can write your queries to recieve data from **Provider.**
+* [x] On selecting deposit the deposit details tab will appear - to consume units go to **Open data stream.** On input, you can write your queries to receive data from **Provider.**
 
 ![Consumed data stream from Crypto Compare Web Api](../.gitbook/assets/image%20%28118%29.png)
 
