@@ -10,4 +10,3 @@
 | RecoveryQueueSize | Number of blocks awaiting for recovery of public keys from signatures. |
 | Reorganizations | Total number of chain reorganizations |
 | Transactions | Total number of transactions processed |
-

@@ -1,6 +1,8 @@
 # TxPool
 
-## txpool\_content
+## txpool_content
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -27,7 +29,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## txpool\_inspect
+## txpool_inspect
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -54,7 +58,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## txpool\_status
+## txpool_status
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

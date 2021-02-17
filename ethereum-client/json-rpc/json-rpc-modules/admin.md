@@ -1,6 +1,8 @@
 # Admin
 
-## admin\_addPeer
+## admin_addPeer
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -19,9 +21,9 @@
 {% endtab %}
 {% endtabs %}
 
-## admin\_nodeInfo
+## admin_nodeInfo
 
-Relevant information about this node
+Relevant information about this node 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -60,7 +62,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## admin\_peers
+## admin_peers
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -98,7 +102,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## admin\_removePeer
+## admin_removePeer
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
