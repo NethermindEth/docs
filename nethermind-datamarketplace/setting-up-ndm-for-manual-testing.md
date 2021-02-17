@@ -15,7 +15,7 @@
 
 ### Running Provider
 
-* [x] Run Provider in a similar way:  `ndm.launcher.exe` \(Windows\), `ndm.launcher.command` \(MacOs\)  `ndm.launcher` \(Linux\) 
+* [x] Run Provider in a similar way:  `ndm.launcher.exe` \(Windows\) `ndm.launcher.command` \(MacOs\)  `ndm.launcher` \(Linux\) 
 * [x] In the console choose **Provider** then **Ropsten \[via proxy\]** and also confirm the proxy endpoint.
 
 ### Playing with data assets
