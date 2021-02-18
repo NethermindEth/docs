@@ -41,12 +41,6 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 ## Account
 
-### Ropsten 
-
-We prepared consumer test account with ETH on start : 
-
-* **0x5d55020e862bc876c8d2e9a4eeeda935ce6438c6** - for passphrase contact with one of the NDM developers on Discord
-
 ### xDai
 
 If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#can-i-use-my-own-account).  
