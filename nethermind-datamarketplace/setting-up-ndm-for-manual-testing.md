@@ -30,7 +30,7 @@ We prepared consumer test account with ETH on start:
 
 * **0x5d55020e862bc876c8d2e9a4eeeda935ce6438c6** - for passphrase contact with one of the NDM developers on Discord
 
-And a couple of data assets from the **Crypto Compare Web Api** plugin. 
+And a couple of data assets from the **Crypto Compare Web Api** plugin and **NethermindTx Stream**. 
 
 * [x] Continue by placing a deposit with the unit number of your choice.
 
