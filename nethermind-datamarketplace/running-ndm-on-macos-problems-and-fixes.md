@@ -16,7 +16,17 @@ These are the most common problems and fixes for them:
 
 ![Be sure to let your terminal emulator access to full disk when encountering Operation not permitted permited&apos; error](../.gitbook/assets/image%20%2818%29.png)
 
-* **Cannot open an app from an unidentified developer error** 1. Go to **System Preferences** and then **Security and Privacy** tab and click on the **Open Anyway** option. Enter your Mac’s password if asked. 2. Relaunch Terminal and run NDM again - error should not appear anymore
+* **Cannot open an app from an unidentified developer error**
 
+![](../.gitbook/assets/image%20%28144%29.png)
 
+* [x] Go to **System Preferences** and then **Security and Privacy** tab and click on the **Open Anyway** option. Enter your Mac’s password if asked.
+
+![](../.gitbook/assets/image%20%28141%29.png)
+
+* [x] **Y**ou will be asked if you are sure that you want to open the app - click '**Open**'.
+
+![](../.gitbook/assets/image%20%28143%29.png)
+
+* [x] After that everything should be good to go for beta testing.
 

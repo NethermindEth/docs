@@ -15,7 +15,7 @@
 
 * [x] In the console choose **Consumer** then **Ropsten \[via proxy\]** and confirm the proxy endpoint.
 
-![](../.gitbook/assets/image%20%28141%29.png)
+![](../.gitbook/assets/image%20%28142%29.png)
 
 ### xDai chain
 
