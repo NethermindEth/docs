@@ -38,7 +38,9 @@ If you don't have an account, you can create one using the modal that will appea
   
 Rember that before creating a new account you will have to wait for sync to complete.
 
-![You need to wait for sync to complete before using the NDM on chains without PROXY. ](../.gitbook/assets/image%20%28142%29.png)
+![You need to wait for sync to complete before using the NDM on chains without PROXY.  ](../.gitbook/assets/image%20%28142%29.png)
+
+The sync will be complete when the red dot will become green and a block number will be displayed.
 
 Then you can use Get ETH using Ramp Network. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#i-created-the-account-but-still-have-no-money-on-it-what-should-i-do).
 
