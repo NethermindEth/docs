@@ -9,7 +9,22 @@
   `ndm.launcher.command` \(MacOs\)  
   `ndm.launcher` \(Linux\). 
 
-* [x] If you are working with NDM on MacOs be sure to read MacOs NDM setup page [https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MTkjrtMVQumOGgTaf\_P/nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes](running-ndm-on-macos-problems-and-fixes.md) 
+* [x] If you are working with NDM on MacOs be sure to read MacOs NDM setup page [https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MTkjrtMVQumOGgTaf\_P/nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes](running-ndm-on-macos-problems-and-fixes.md)
+* [x] If needed install dependencies  
+  Windows:
+
+  * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
+  * You may need to install [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+
+  Ubuntu:
+
+  * Install .NET [https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu)
+  * Install dependecies `sudo apt-get install libsnappy-dev libc6-dev lic6`
+
+  MacOs:
+
+  * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
+  * Install dependecies `brew install gmp snappy lz4 zstd rocksdb` 
 
 ### Ropsten chain
 
