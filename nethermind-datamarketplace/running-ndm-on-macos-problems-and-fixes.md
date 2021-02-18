@@ -28,5 +28,5 @@ These are the most common problems and fixes for them:
 
 ![](../.gitbook/assets/image%20%28143%29.png)
 
-* [x] After that everything should be good to go for beta testing.
+* [x] After that, you might expect more similar problems with **Nethermind.Runner** and **Nethermind.DataMarketplace** - to deal with that just repeat the process with opening applications from identified developers. ****
 
