@@ -15,12 +15,12 @@
 
 * [x] In the console choose **Consumer** then **Ropsten \[via proxy\]** and confirm the proxy endpoint.
 
-![](../.gitbook/assets/image%20%28140%29.png)
+![](../.gitbook/assets/image%20%28141%29.png)
 
 ### xDai chain
 
 * [x] In the console chose **Consumer** then **xDai** network.
-* [x] Wait for the sync to complete \(~1 hour\)
+* [x] Wait for the sync to complete \(~1 hour on fast sync\)
 
 ### Playing with data assets
 
@@ -30,11 +30,11 @@ We prepared consumer test account with ETH on start:
 
 * **0x5d55020e862bc876c8d2e9a4eeeda935ce6438c6** - for passphrase contact with one of the NDM developers on Discord
 
-And one data asset from the **Crypto Compare Web Api** plugin. 
+And a couple of data assets from the **Crypto Compare Web Api** plugin. 
 
 * [x] Continue by placing a deposit with the unit number of your choice.
 
-![Data assets view](../.gitbook/assets/image%20%28117%29.png)
+![Data assets view \(you will have more data assets avaliable to consume\)](../.gitbook/assets/image%20%28117%29.png)
 
 * [x] After you place a deposit for the asset go to the **Deposits** tab and start consuming your units \(click on **Open data stream**\).
 
@@ -45,6 +45,8 @@ And one data asset from the **Crypto Compare Web Api** plugin.
 ![Consumed data stream from Crypto Compare Web Api](../.gitbook/assets/image%20%28118%29.png)
 
 ###   Queries examples
+
+Those are the queries you can use to consume data assets from **Crypto Compare Web Api** plugin:
 
  `data/news/feeds  
  data/exchange/histoday?tsym=USD&limit=10  
