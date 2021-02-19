@@ -43,13 +43,7 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 ### xDai
 
-If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#can-i-use-my-own-account).  
-  
-Rember that before creating a new account you will have to wait for sync to complete.
-
-![You need to wait for sync to complete before using the NDM on chains without PROXY.  ](../.gitbook/assets/image%20%28142%29.png)
-
-The sync will be complete when the red dot will become green and a block number will be displayed.
+If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#can-i-use-my-own-account).
 
 Then you can use Get ETH using Ramp Network. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#i-created-the-account-but-still-have-no-money-on-it-what-should-i-do).
 
@@ -78,7 +72,7 @@ Once the deposit has been confirmaed, feel free to **open a data stream**.
 ###   Queries examples for **Crypto Compare Web Api** 
 
  `data/news/feeds  
- data/exchange/histoday?tsym=USD&limit=10  
+ data/exchange/histoday?tsym=USD&limit=1  
  data/top/exchanges/full?fsym=BTC&tsym=USD  
- data/symbol/histoday?fsym=BTC&tsym=USD&limit=10`
+ data/symbol/histoday?fsym=BTC&tsym=USD&limit=1`
 
