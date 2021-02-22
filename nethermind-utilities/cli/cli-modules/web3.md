@@ -1,6 +1,8 @@
 # Web3
 
-## web3.abi\(name\)
+## web3.abi(name)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -20,6 +22,8 @@
 
 ## web3.clientVersion
 
+ 
+
 {% tabs %}
 {% tab title="Request" %}
 ### **Parameters**
@@ -34,7 +38,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## web3.sha3\(data\)
+## web3.sha3(data)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -52,7 +58,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## web3.toDecimal\(hex\)
+## web3.toDecimal(hex)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
