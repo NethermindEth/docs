@@ -83,6 +83,14 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 
 In the account tab, you have the option to change your current account.
 
+## I have a problem connecting with Ethereum node. What should I do?
+
+Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**" and past default settings:
+
+JSON RPC URL: [http://localhost:8545](http://localhost:8545)
+
+WebSockets URL: [ws://localhost:8545/ndm](ws://localhost:8545/ndm)
+
 ## I'm having some issues with NDM on MacOs
 
 We have separate documentation for MacOs issues.
