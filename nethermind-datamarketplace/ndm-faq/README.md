@@ -85,7 +85,7 @@ In the account tab, you have the option to change your current account.
 
 ## I have a problem connecting with Ethereum node. What should I do?
 
-Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**" and past default settings:
+Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**" and past default settings and save settings:
 
 JSON RPC URL: [http://localhost:8545](http://localhost:8545)
 
