@@ -1,5 +1,5 @@
 ---
-description: Frequently asked questions about the Nethermind Data Marketplace - Consumer
+description: Frequently asked questions about Nethermind Data Marketplace - Consumer
 ---
 
 # Consumer
