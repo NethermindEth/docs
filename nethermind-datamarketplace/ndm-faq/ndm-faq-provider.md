@@ -10,40 +10,39 @@ There is separate documentation about connecting with consumers.
 
 {% page-ref page="../connecting-with-consumers.md" %}
 
-## How can I unlock my account?
+## Is creating data assets free?
 
-Right after starting NDM, you will be asked to input passphrase to your account.
-
-## Do I need to have my node always running in order to provide data assets for consumers?
-
-Yes, your consumers will be able to consume your assets and place deposits only while being connected to your live node.
+Yes, creating data assets is free. However, please remember that as a provider you need a balance in your account, otherwise you will not be able to send any payment claim transaction.
 
 ## Can I edit created data asset?
 
-No, once created the data asset can not be edited \(exception is plugin type\).
+No, once created the data asset can not be edited.
 
-## Is creating data assets free?
+## How can I unlock my account?
 
-Yes, creating data assets is free. But remember that, as a provider you need some balance in your account, otherwise you won't send any payment claim transaction.
+Right after starting NDM, you will be asked to input passphrase to your account. You can also unlock your account in "**Accounts**" -&gt; "**Unlock account**" tab.
+
+## Do I need to have my node always running to provide data assets for consumers?
+
+Yes, your consumers will be able to make deposits and consume data only while being connected to your node.
 
 ## What if I need to make a technical break for my data asset?
 
-Simply just change the asset status from `Published` to `Under maintanace`.   
-After the break, you simply just change it back to `Published` again. 
+Change the state of data asset from `Published` to `Under maintanace`. Consumers will be able to make deposits but will not be able to consume the data.  
+After the break, you simply just change it back to `Published`. 
 
 ## How to claim a payment for consumed data asset?
 
-Payment claims are being sent automatically by NDM. If you want to change gas price for the transactions, you can make the changes in Advance -&gt; Configuration tab. 
+Payment claims are being sent automatically by NDM. If you want to change gas price or default thresholds, you can make the changes in "**Advanced**" -&gt; "**Configuration**" tab. 
 
 ## Why I can't claim payment for consumed units?
 
-It is often due to payment claim threshold. You can change this via the NDM UI in Advance -&gt; Configuration tab.   
-Provider won't claim any value under threshold. 
+There are 2 reasons.
 
-## Why are my receipts not being merged? 
+The first reason is that sending a payment claim may result in a loss. -&gt; It costs more to send the payment claim transaction than the money that goes to your account.
 
-It is due to receipts merge threshold. You can change this via NDM UI in Advance -&gt; Configuration tab.   
-Provider won't merge receipts if their account is less than the threshold. 
+The second reason may be that the payment claim threshold is too high.  
+Provider will not claim any value under **payment claim threshold**. 
 
 
 
