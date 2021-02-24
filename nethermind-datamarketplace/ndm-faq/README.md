@@ -10,15 +10,17 @@ Nethermind Data Marketplace is a protocol that creates a subnetwork within Ether
 
 ## Where can I download NDM?
 
-You can download up to date packages on [Nethermind downloads page](https://downloads.nethermind.io/)
+You can download up to date packages on [Nethermind downloads page](https://downloads.nethermind.io/).
 
-## Is NDM a finished project?
+## Is the NDM a finished project?
 
-No, right now we are currently at beta phase of NDM. It is not a finished product so you might encounter some issues - in that case please contact us through the Contact tab.
+No, we are constantly working on the final version.
+
+NDM is currently available in beta. Due to the fact that this is not the final version, please contact us on [discord](https://discord.com/invite/zZC8CthuzA) if you have any problems.
 
 ## What are the risks of using a beta version of NDM? 
 
-Most of the risks are in the refunds and payment claims area, you have to be aware that bugs with processing transactions may occur. With that in mind keep your logs and when something unexpected happens contact our team through the contact tab.   
+Most of the risks are in the refunds and payment claims area, you have to be aware that bugs with processing transactions may occur. With that in mind keep your logs and when something unexpected happens contact our team through the contact tab.
 
 ## Where can I find technical assistance?
 
