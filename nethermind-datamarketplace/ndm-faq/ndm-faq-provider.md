@@ -4,7 +4,7 @@ description: Frequently asked questions about Nethermind Data Marketplace - Prov
 
 # Provider
 
-## How can I connect with my consumers?
+## How can I connect to a consumer?
 
 There is separate documentation about connecting with consumers. 
 
@@ -17,10 +17,6 @@ Yes, creating data assets is free. However, please remember that as a provider y
 ## Can I edit created data asset?
 
 No, once created the data asset can not be edited.
-
-## How can I unlock my account?
-
-Right after starting NDM, you will be asked to input passphrase to your account. You can also unlock your account in "**Accounts**" -&gt; "**Unlock account**" tab.
 
 ## Do I need to have my node always running to provide data assets for consumers?
 

@@ -63,6 +63,10 @@ You can use [Ramp Network](https://ramp.network) services without leaving NDM, s
 
 In the **Accounts** tab, you have the option to change your current account.
 
+## How can I unlock my account?
+
+Right after starting NDM, you will be asked to input passphrase to your account. You can also unlock your account in "**Accounts**" -&gt; "**Unlock account**" tab.
+
 ## How do I import my wallet into MetaMask?
 
 NDM wallets can be imported into MetaMask as a Keystore file. To do so, follow the instructions at [https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account](https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account), choose JSON File as the type, and then when prompted to select your Keystore file:
