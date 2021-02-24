@@ -26,9 +26,9 @@ Most risks come with refunds and payment claims, so please be aware that there m
 
 We have a separate channel for NDM on our [discord](https://discord.com/invite/zZC8CthuzA) server, feel free to ask any questions there.
 
-## Can data providers also join NDM?
+## Can I also join as a provider?
 
-Yes, NDM is built for consumers as well as for providers.
+Yes, NDM is built for consumers as well as for providers. If you want to join as a provider, please contact us on [discord](https://discord.com/invite/zZC8CthuzA).
 
 ## Do I need to wait for sync before using NDM?
 
