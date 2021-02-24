@@ -14,9 +14,9 @@ As a provider, you can provide data assets before connecting with your consumers
       3. Consumer's node should be added to the connected peers  
 
 
-![Connected provider&apos;s node](../.gitbook/assets/image%20%2845%29.png)
+![Connected consumer&apos;s node](../.gitbook/assets/image%20%2845%29.png)
 
 
 
-* **Add consumers through static-nodes.json file** 1. Go to your local NDM package 2. Access **nethermind/Data/static-nodes.json** 3. ****Add consumer's enode address to the .json file \(remember about the proper formatting - an array of strings\)  4. Run NDM  5. You should see in the logs that your node is connecting to the given enode
+* **Add consumer through static-nodes.json file** 1. Go to your local NDM package 2. Access **nethermind/Data/static-nodes.json** 3. ****Add consumer's enode address to the .json file \(remember about the proper formatting - an array of strings\)  4. Run NDM  5. You should see in the logs that your node is connecting to the given enode
 
