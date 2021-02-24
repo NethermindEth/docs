@@ -41,27 +41,27 @@ Yes, but don't worry everything is prepared. With the package you will get ready
 * Ethereum testnets estimated time depends on the network type - 1 to several hours.
 * **xDai** chain \(default fast sync\) 1 - 2 hours. 
 
-## How does the Process of buying data look like?
+## What cryptocurrency can I use in NDM?
 
-First of all, you will need to connect to a provider, after that you will be able to make a deposit for a data asset of your choice. Payment for the data will be charged from the deposit you made and not from your wallet.
-
-For example - you connected to a provider which provides data asset with units 1 ETH/xDai per each. You make a deposit for 100 units, so 100 ETH/xDai is transferred from wallet to NDM smart contract, each time you use a single unit, 1 ETH/xDai \(plus fee\) will be transferred from the deposit on contract to the provider account.
-
-## What cryptocurrency can I use to pay with NDM?
-
-It depends on the package you are using - right now we are supporting testnets ETH and xDai.
+It depends on the package you are using - right now we are supporting testnets **ETH** and **xDai**.
 
 ## Do I need a wallet to start using NDM?
 
-No, NDM is able to create a wallet for the sake of using NDM the first time you run a client.
+No, you can create your own wallet by using NDM.
 
-## Can I use my own account?
+## I already have an account, can I use it?
 
-Yes, you can. Copy your keystore file info`keystore` folder and that's it. After running the application the prompt window to unlock the account will appear.
+Yes, you can. Just copy your keystore file info`keystore` folder and that's it. After running the application a window will appear asking you to unlock your account.
 
-## **I created the account but still have no money on it, what should I do?** 
+## **I created the account but I still have no money on it, what should I do?** 
 
-You can use [Ramp Network](https://ramp.network) services without leaving NDM, simply click the “ Get ETH “ button which is located next to your address and go through the procedure. The money will be in your account in just a few seconds. In case you have any questions or problems with the transfer you can contact [support.ramp.network](https://discord.com/invite/qv8Zprw%20) on discord. 
+You can use [Ramp Network](https://ramp.network) services without leaving NDM, simply click the “Get ETH “ button which is located next to your address and go through the procedure. The money will be in your account in just a few minutes. In case you have any questions or problems with the transfer you can contact [support.ramp.network](https://discord.com/invite/qv8Zprw%20).
+
+\*When you buying ETH/xDai for EUR - procedure can take up to 30 minutes.
+
+## Where can I change the account?
+
+In the **Accounts** tab, you have the option to change your current account.
 
 ## How do I import my wallet into MetaMask?
 
@@ -87,23 +87,21 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 2. navigate to the `keystore` folder
 3. select the file that has your Ethereum address in the name
 
-## Where can I change the account?
-
-In the account tab, you have the option to change your current account.
-
-## I have a problem connecting with Ethereum node. What should I do?
-
-Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**" and past default settings and save settings:
-
-JSON RPC URL: [http://localhost:8545](http://localhost:8545)
-
-WebSockets URL: [ws://localhost:8545/ndm](ws://localhost:8545/ndm)
-
 ## I'm having some issues with NDM on MacOs
 
 We have a separate documentation for MacOs issues.
 
 {% page-ref page="../running-ndm-on-macos-problems-and-fixes.md" %}
 
+## I have a problem connecting with Ethereum node. What should I do?
 
+
+
+![Connection with Ethereum node has been lost - warning information.](../../.gitbook/assets/image%20%28146%29.png)
+
+Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**", past default settings given below and save settings:
+
+JSON RPC URL: [http://localhost:8545](http://localhost:8545)
+
+WebSockets URL: [ws://localhost:8545/ndm](ws://localhost:8545/ndm)
 
