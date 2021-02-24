@@ -12,7 +12,7 @@ There is separate documentation about connecting with consumers.
 
 ## How can I unlock my account?
 
-Right after starting NDM, you will be asked to input passphrase to your account. It also happens while changing accounts.
+Right after starting NDM, you will be asked to input passphrase to your account.
 
 ## Do I need to have my node always running in order to provide data assets for consumers?
 
