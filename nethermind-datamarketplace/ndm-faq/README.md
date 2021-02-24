@@ -22,9 +22,9 @@ NDM is currently available in **beta**. Due to the fact that this is not the fin
 
 Most risks come with refunds and payment claims, so please be aware that there may be some issues with processing transactions. With that in mind, **keep your logs** and **database** and if anything unexpected happens, get in touch with out team via [discord](https://discord.com/invite/zZC8CthuzA) or contact tab in NDM application.
 
-## Where can I find technical assistance?
+## Where can I find support?
 
-We have a separate channel for NDM on our Discord server, feel free to ask any questions there. You can find us at [Nethermind Discord](https://discord.gg/732jyuNjph).
+We have a separate channel for NDM on our [discord](https://discord.com/invite/zZC8CthuzA) server, feel free to ask any questions there.
 
 ## Can data providers also join NDM?
 
