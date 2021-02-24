@@ -12,7 +12,7 @@ Nethermind Data Marketplace is a protocol that creates a subnetwork within Ether
 
 You can download up to date packages on [Nethermind downloads page](https://downloads.nethermind.io/).
 
-## Is the NDM a finished project?
+## Is NDM a finished project?
 
 No, we are constantly working on the final version.
 
