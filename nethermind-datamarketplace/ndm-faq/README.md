@@ -1,5 +1,5 @@
 ---
-description: Frequently asked questions about the Nethermind Data Marketplace
+description: Frequently asked questions about Nethermind Data Marketplace
 ---
 
 # FAQ
