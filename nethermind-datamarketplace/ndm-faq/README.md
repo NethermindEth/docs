@@ -8,7 +8,7 @@ description: Frequently asked questions about the Nethermind Data Marketplace
 
 Nethermind Data Marketplace is a protocol that creates a subnetwork within Ethereum to handle data delivery directly between parties who are running NDM-supporting nodes. NDM allows data consumers to discover data providers and uses a smart contract to facilitate on-chain, secure payments in exchange for data. The unique built-in reputation and data delivery protocol minimizes the amount of on-chain transactions.
 
-## Where to download NDM?
+## Where can I download NDM?
 
 You can download up to date packages on [Nethermind downloads page](https://downloads.nethermind.io/)
 
@@ -93,7 +93,7 @@ WebSockets URL: [ws://localhost:8545/ndm](ws://localhost:8545/ndm)
 
 ## I'm having some issues with NDM on MacOs
 
-We have separate documentation for MacOs issues.
+We have a separate documentation for MacOs issues.
 
 {% page-ref page="../running-ndm-on-macos-problems-and-fixes.md" %}
 
