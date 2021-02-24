@@ -2,11 +2,11 @@
 
 As a consumer, you won't be able to consume any data assets before connecting to the right providers, and you can do that in two ways. 
 
-* **Add provider through UI** 1. Go to **Advanced/Peers** tab
+* **Add provider through UI** 1. Go to "**Advanced**" -&gt; "**Peers"** tab
 
 ![Advanced/Peers tab](../.gitbook/assets/image%20%2839%29.png)
 
-       2. Enter the provider enode address to the '**Add peer**' input    
+       2. Enter the provider enode address to the "**Add peer"** input  
 
 
 ![Adding enode to the available peers](../.gitbook/assets/image%20%2849%29.png)
