@@ -16,11 +16,11 @@ You can download up to date packages on [Nethermind downloads page](https://down
 
 No, we are constantly working on the final version.
 
-NDM is currently available in beta. Due to the fact that this is not the final version, please contact us on [discord](https://discord.com/invite/zZC8CthuzA) if you have any problems.
+NDM is currently available in **beta**. Due to the fact that this is not the final version, please contact us on [discord](https://discord.com/invite/zZC8CthuzA) if you have any problems.
 
 ## What are the risks of using a beta version of NDM? 
 
-Most of the risks are in the refunds and payment claims area, you have to be aware that bugs with processing transactions may occur. With that in mind keep your logs and when something unexpected happens contact our team through the contact tab.
+Most risks come with refunds and payment claims, so please be aware that there may be some issues with processing transactions. With that in mind, **keep your logs** and **database** and if anything unexpected happens, get in touch with out team via [discord](https://discord.com/invite/zZC8CthuzA) or contact tab in NDM application.
 
 ## Where can I find technical assistance?
 
