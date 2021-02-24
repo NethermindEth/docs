@@ -30,10 +30,16 @@ We have a separate channel for NDM on our [discord](https://discord.com/invite/z
 
 Yes, NDM is built for consumers as well as for providers. If you want to join as a provider, please contact us on [discord](https://discord.com/invite/zZC8CthuzA).
 
-## Do I need to wait for sync before using NDM?
+## What networks are supported?
 
-Yes, with the package you will get ready to use configs for each of the supported chains. For Ethereum testnets estimated time before you will be able to place your first deposits depends on the testnet - 1 to few hours.   
-For xDai chain 1 - 2 hours. 
+For now we support **xDai** network and testnets networks like **Ropsten**, **Goerli**.
+
+## Do I need to wait for sync and how long?
+
+Yes, but don't worry everything is prepared. With the package you will get ready to use configs. After run NDM, you will be asked to select the client type \(consumer or provider\) and then type of the network. After that the sync will start.
+
+* Ethereum testnets estimated time depends on the network type - 1 to several hours.
+* **xDai** chain \(default fast sync\) 1 - 2 hours. 
 
 ## How does the Process of buying data look like?
 
