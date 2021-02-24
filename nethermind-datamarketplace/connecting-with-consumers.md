@@ -2,7 +2,7 @@
 
 As a provider, you can provide data assets before connecting with your consumers' nodes but there will be no one to consume them. First, you have to connect with them and there are two ways to do that.
 
-* **Add consumers through UI** 1. Go to "**Advanced**" -&gt; "**Peers"** tab
+* **Add consumer through UI** 1. Go to "**Advanced**" -&gt; "**Peers"** tab
 
 ![Advanced/Peers tab](../.gitbook/assets/image%20%2839%29.png)
 
