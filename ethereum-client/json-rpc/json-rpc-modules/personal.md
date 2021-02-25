@@ -1,6 +1,29 @@
 # Personal
 
-## personal\_listAccounts
+## personal_importRawKey
+
+ 
+
+{% tabs %}
+{% tab title="Request" %}
+### **Parameters**
+
+| Parameter name | Type |
+| :--- | :--- |
+| keyData | `Data` |
+| passphrase | `String` |
+{% endtab %}
+
+{% tab title="Response" %}
+### Return type
+
+`Address`
+{% endtab %}
+{% endtabs %}
+
+## personal_listAccounts
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -16,7 +39,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal\_lockAccount
+## personal_lockAccount
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -34,7 +59,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal\_newAccount
+## personal_newAccount
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -52,7 +79,9 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## personal\_unlockAccount
+## personal_unlockAccount
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}

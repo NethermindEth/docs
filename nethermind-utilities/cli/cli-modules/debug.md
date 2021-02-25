@@ -1,6 +1,8 @@
 # Debug
 
-## debug.getBlockRlp\(number\)
+## debug.getBlockRlp(number)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -18,7 +20,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.getBlockRlpByHash\(hash\)
+## debug.getBlockRlpByHash(hash)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -36,7 +40,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.getChainLevel\(number\)
+## debug.getChainLevel(number)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -54,7 +60,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.config\(category, name\)
+## debug.config(category, name)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -73,7 +81,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.migrateReceipts\(number\)
+## debug.migrateReceipts(number)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -91,7 +101,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceBlock\(rlp, options\)
+## debug.traceBlock(rlp, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -110,7 +122,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceBlockByHash\(hash, options\)
+## debug.traceBlockByHash(hash, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -129,7 +143,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceBlockByNumber\(number, options\)
+## debug.traceBlockByNumber(number, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -148,7 +164,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceTransaction\(hash, options\)
+## debug.traceTransaction(hash, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -167,7 +185,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceTransactionByBlockAndIndex\(hash, options\)
+## debug.traceTransactionByBlockAndIndex(hash, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -186,7 +206,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceTransactionByBlockhashAndIndex\(hash, options\)
+## debug.traceTransactionByBlockhashAndIndex(hash, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -205,7 +227,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceTransactionInBlockByHash\(rlp, hash, options\)
+## debug.traceTransactionInBlockByHash(rlp, hash, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
@@ -225,7 +249,9 @@
 {% endtab %}
 {% endtabs %}
 
-## debug.traceTransactionInBlockByIndex\(rlp, index, options\)
+## debug.traceTransactionInBlockByIndex(rlp, index, options)
+
+ 
 
 {% tabs %}
 {% tab title="Request" %}
