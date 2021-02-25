@@ -105,7 +105,15 @@ We have a separate documentation for MacOs issues.
 
 Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**", past default settings given below and save settings:
 
+For **consumer**:
+
 JSON RPC URL: [http://localhost:8545](http://localhost:8545)
 
 WebSockets URL: [ws://localhost:8545/ndm](ws://localhost:8545/ndm)
+
+For **provider**:
+
+JSON RPC URL: [http://localhost:8546](http://localhost:8546)
+
+WebSockets URL: [ws://localhost:8546/ndm](ws://localhost:8546/ndm)
 
