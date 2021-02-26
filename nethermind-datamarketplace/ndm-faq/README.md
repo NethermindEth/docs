@@ -103,6 +103,8 @@ We have a separate documentation for MacOs issues.
 
 ![Connection with Ethereum node has been lost - warning information.](../../.gitbook/assets/image%20%28146%29.png)
 
+Apparently somehow the settings did not save at the start. We are working on solving this problem.
+
 Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**", past default settings given below and save settings:
 
 For **consumer**:
