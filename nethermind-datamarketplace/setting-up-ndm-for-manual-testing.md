@@ -43,7 +43,7 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 ### xDai
 
-If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#can-i-use-my-own-account).
+If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://app.gitbook.com/@nethermind/s/nethermind/nethermind-datamarketplace/ndm-faq#i-already-have-an-account-can-i-use-it).
 
 Then you can use Get ETH using Ramp Network. [See more](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MToMX3Y8003QRzTycLU/nethermind-datamarketplace/ndm-faq#i-created-the-account-but-still-have-no-money-on-it-what-should-i-do).
 
