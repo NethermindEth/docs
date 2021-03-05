@@ -16,11 +16,12 @@
   * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
   * You may need to install [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
-  Ubuntu:
+  Linux:
 
   * Install .NET [https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu)
-  * Install dependecies `sudo apt-get install libsnappy-dev libc6-dev lic6`
+  * Install dependecies  Ubuntu: `sudo apt-get install libsnappy-dev libc6-dev lic6`
 
+          openSUSE: `sudo zyper install libsnappy-devel glibc-devel`  
   MacOs:
 
   * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
