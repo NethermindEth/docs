@@ -19,13 +19,13 @@
   Linux:
 
   * Install .NET [https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu)
-  * Install dependecies  Ubuntu: `sudo apt-get install libsnappy-dev libc6-dev lic6`
+  * Install dependencies  Ubuntu: `sudo apt-get install libsnappy-dev libc6-dev libc6`
 
           openSUSE: `sudo zyper install libsnappy-devel glibc-devel`  
   MacOs:
 
   * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
-  * Install dependecies `brew install gmp snappy lz4 zstd rocksdb` 
+  * Install dependencies `brew install gmp snappy lz4 zstd rocksdb` 
 
 ### Ropsten chain
 
