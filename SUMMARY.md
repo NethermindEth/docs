@@ -36,6 +36,7 @@
     * [Parity](ethereum-client/json-rpc/json-rpc-modules/parity.md)
     * [Personal](ethereum-client/json-rpc/json-rpc-modules/personal.md)
     * [Proof](ethereum-client/json-rpc/json-rpc-modules/proof.md)
+    * [Subscribe](ethereum-client/json-rpc/json-rpc-modules/subscribe.md)
     * [Trace](ethereum-client/json-rpc/json-rpc-modules/trace.md)
     * [TxPool](ethereum-client/json-rpc/json-rpc-modules/txpool.md)
     * [Web3](ethereum-client/json-rpc/json-rpc-modules/web3.md)
