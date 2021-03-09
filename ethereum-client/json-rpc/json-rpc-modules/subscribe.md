@@ -46,10 +46,56 @@ Parameter: `"newHeads"`
 
 #### Example
 
+{% tabs %}
+{% tab title="Request" %}
 ```text
->> {"method":"eth_subscribe","params":["newHeads"],"id":1,"jsonrpc":"2.0"}
-<< {"jsonrpc":"2.0","result":"0x2160ff5d141248a8bbcbbc44a5c3aa54","id":1}
+{"method":"eth_subscribe","params":["newHeads"],"id":1,"jsonrpc":"2.0"}
 ```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+{"jsonrpc":"2.0","result":"0x1a14b6bdcf4542fabf71c4abee244e47","id":1}
+```
+{% endtab %}
+
+{% tab title="Notification" %}
+```
+{
+	"jsonrpc":"2.0",
+	"method":"eth_subscription",
+	"params":
+		{
+			"result":
+				{
+					"author":"0x000000568b9b5a365eaa767d42e74ed88915c204",
+					"difficulty":"0x1",
+					"extraData":"0x4e65746865726d696e6420312e392e32322d302d6463373666616366612d32308639ad8ff3d850a261f3b26bc2a55e0f3a718de0dd040a19a4ce37e7b473f2d7481448a1e1fd8fb69260825377c0478393e6055f471a5cf839467ce919a6ad2700",
+					"gasLimit":"0x7a1200",
+					"gasUsed":"0x0",
+					"hash":"0xa4856602944fdfd18c528ef93cc52a681b38d766a7e39c27a47488c8461adcb0",
+					"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+					"miner":"0x0000000000000000000000000000000000000000",
+					"mixHash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+					"nonce":"0x0000000000000000",
+					"number":"0x434822",
+					"parentHash":"0x1a9bdc31fc785f8a95efeeb7ae58f40f6366b8e805f47447a52335c95f4ceb49",
+					"receiptsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+					"sha3Uncles":"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+					"size":"0x261",
+					"stateRoot":"0xf38c4bf2958e541ec6df148e54ce073dc6b610f8613147ede568cb7b5c2d81ee",
+					"totalDifficulty":"0x633ebd",
+					"timestamp":"0x604726b0",
+					"transactions":[],
+					"transactionsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+					"uncles":[]
+				},
+			"subscription":"0x1a14b6bdcf4542fabf71c4abee244e47"
+		}
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### logs
 
@@ -68,10 +114,58 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 
 #### Example
 
+{% tabs %}
+{% tab title="Request" %}
 ```text
->> {"method":"eth_subscribe","params":["logs"],"id":1,"jsonrpc":"2.0"}
-<< {"jsonrpc":"2.0","result":"0x00d19d5b87a94098a412de60ea8912b0","id":1}
+{
+	"method":"eth_subscribe",
+	"params":
+		["logs",
+			{
+				"fromBlock":"latest",
+				"toBlock":"latest",
+				"address":"0xb7705ae4c6f81b66cdb323c65f4e8133690fc099",
+				"topics":["0x03783fac2efed8fbc9ad443e592ee30e61d65f471140c10ca155e937b435b760"]
+			}
+		],
+	"id":1,
+	"jsonrpc":"2.0"
+}
 ```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+{"jsonrpc":"2.0","result":"0x0de42098e48c4ffba6d40561dc17b065","id":1}
+```
+{% endtab %}
+
+{% tab title="Notification" %}
+```
+{
+	"jsonrpc":"2.0",
+	"method":"eth_subscription",
+	"params":
+		{
+			"result":
+				{
+				"address":"0xb7705ae4c6f81b66cdb323c65f4e8133690fc099",
+				"blockHash":"0x05333898e7f28f21a56370ed272b16c4b603d8a1dd26ec44f22639d8d90fe9d9",
+				"blockNumber":"0x43489c",
+				"data":"0x0000000000000000000000000000000000000000000000000000000000000000",
+				"logIndex":"0x7",
+				"removed":false,
+				"topics":["0x03783fac2efed8fbc9ad443e592ee30e61d65f471140c10ca155e937b435b760","0x1f675bff07515f5df96737194ea945c36c41e7b4fcef307b7cd4d0e602a69111","0x000000000000000000000000c74f17181bf55635be65672e366b20f70662b79c"],
+				"transactionHash":"0x29c551ba625bfaf58cb3d407c3e6f5c647032725c145cf55c7353cd3387cf845",
+				"transactionIndex":"0xa",
+				"transactionLogIndex":"0x0"
+				},
+			"subscription":"0x0de42098e48c4ffba6d40561dc17b065"
+		}
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### newPendingTransactions
 
@@ -81,10 +175,33 @@ Parameter: `"newPendingTransactions"`
 
 #### Example
 
+{% tabs %}
+{% tab title="Request" %}
 ```text
->> {"method":"eth_subscribe","params":["newPendingTransactions"],"id":1,"jsonrpc":"2.0"}
-<< {"jsonrpc":"2.0","result":"0x6927b0dcf6534500add4b589230c19ff","id":1}
+{"method":"eth_subscribe","params":["newPendingTransactions"],"id":1,"jsonrpc":"2.0"}
 ```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+{"jsonrpc":"2.0","result":"0xfa561cbadf9b4bd79b62537661d18f27","id":1}
+```
+{% endtab %}
+
+{% tab title="Notification" %}
+```
+{
+	"jsonrpc":"2.0",
+	"method":"eth_subscription",
+	"params":
+		{
+			"result":"0x6ad1058c56f71fe630053d24905f06d80677262ae2e8f42799690ab6b9fc5bd0",
+			"subscription":"0xfa561cbadf9b4bd79b62537661d18f27"
+		}
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### syncing
 
@@ -94,10 +211,39 @@ Parameter: `"syncing"`
 
 #### Example
 
+{% tabs %}
+{% tab title="Request" %}
 ```text
->> {"method":"eth_subscribe","params":["newHeads"],"id":1,"jsonrpc":"2.0"}
-<< {"jsonrpc":"2.0","result":"0x482b454f96d74bb08163cf94011778c1","id":1}
+{"method":"eth_subscribe","params":["syncing"],"id":1,"jsonrpc":"2.0"}
 ```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+{"jsonrpc":"2.0","result":"0x28d37f96bc784de4abf96ee4f8005a79","id":1}
+```
+{% endtab %}
+
+{% tab title="Notification" %}
+```
+{
+	"jsonrpc":"2.0",
+	"method":"eth_subscription",
+	"params":
+		{
+			"result"
+				{
+					"isSyncing":false,
+					"startingBlock":"0x0",
+					"currentBlock":"0x4347fe",
+					"highestBlock":"0x434806"
+				},
+		"subscription":"0x28d37f96bc784de4abf96ee4f8005a79"
+		}
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ## eth\_unsubscribe
 
@@ -117,8 +263,17 @@ Unsubscribes from subscription. Subscriptions are cancelled with a regular RPC c
 
 #### Example
 
+{% tabs %}
+{% tab title="Request" %}
 ```text
->> {"method":"eth_unsubscribe","params":["0x3cd2bcd1630948fe89190ca27b3b5913"],"id":1,"jsonrpc":"2.0"}
-<< {"jsonrpc":"2.0","result":true,"id":1}
+{"method":"eth_unsubscribe","params":["0x3cd2bcd1630948fe89190ca27b3b5913"],"id":1,"jsonrpc":"2.0"}
 ```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+{"jsonrpc":"2.0","result":true,"id":1}
+```
+{% endtab %}
+{% endtabs %}
 
