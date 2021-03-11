@@ -114,6 +114,7 @@
 * [Connecting with providers](nethermind-datamarketplace/connecting-with-providers.md)
 * [Connecting with consumers](nethermind-datamarketplace/connecting-with-consumers.md)
 * [Beta testing NDM](nethermind-datamarketplace/setting-up-ndm-for-manual-testing.md)
+* [Providing data as a provider](nethermind-datamarketplace/providing-data-as-a-provider.md)
 
 ## Guides and Helpers
 
