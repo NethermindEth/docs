@@ -1,4 +1,4 @@
-# Aura
+# Aura module
 
 | Metric Name | Description |
 | :--- | :--- |

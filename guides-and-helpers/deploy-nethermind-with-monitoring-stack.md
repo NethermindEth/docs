@@ -153,8 +153,6 @@ Go to the `YOUR_DROPLET_IP:9090`
 
 Explore Nethermind metrics, visualize and analyse using prometheus syntax, a list of available metrics with their descriptions can be found here:
 
-{% page-ref page="../ethereum-client/metrics/modules/" %}
-
 ![](../.gitbook/assets/image%20%2851%29.png)
 
 ### Pushgateway

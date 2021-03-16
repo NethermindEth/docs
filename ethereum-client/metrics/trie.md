@@ -1,4 +1,4 @@
-# Trie
+# Trie module
 
 | Metric Name | Description |
 | :--- | :--- |

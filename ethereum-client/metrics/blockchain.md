@@ -1,4 +1,4 @@
-# Blockchain
+# Blockchain module
 
 | Metric Name | Description |
 | :--- | :--- |

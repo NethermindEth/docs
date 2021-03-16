@@ -1,4 +1,4 @@
-# Network
+# Network module
 
 | Metric Name | Description |
 | :--- | :--- |

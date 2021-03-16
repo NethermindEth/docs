@@ -1,4 +1,4 @@
-# JsonRpc
+# JsonRpc module
 
 | Metric Name | Description |
 | :--- | :--- |

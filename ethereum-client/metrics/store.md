@@ -1,4 +1,4 @@
-# Store
+# Store module
 
 | Metric Name | Description |
 | :--- | :--- |

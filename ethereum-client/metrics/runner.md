@@ -1,4 +1,4 @@
-# Runner
+# Runner module
 
 | Metric Name | Description |
 | :--- | :--- |

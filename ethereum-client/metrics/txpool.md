@@ -1,4 +1,4 @@
-# TxPool
+# TxPool module
 
 | Metric Name | Description |
 | :--- | :--- |
