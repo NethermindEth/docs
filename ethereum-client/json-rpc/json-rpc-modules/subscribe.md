@@ -7,7 +7,7 @@ Subscriptions are created with a regular RPC call, with `eth_subscribe` as metho
 
 #### Parameters
 
-| Parameter name | Type | Description |
+| Parameter | Type | Description |
 | :--- | :--- | :--- |
 | subscriptionType | `string` | Type of subscription you want to subscribe to. |
 | arguments | `Filter object` | Optional arguments available only for logs subscription. |
@@ -47,25 +47,26 @@ Parameter: `"newHeads"`
 #### Example
 
 {% tabs %}
-{% tab title="Request" %}
+{% tab title="Request of newHeads" %}
 ```text
 {"method":"eth_subscribe","params":["newHeads"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
 
-{% tab title="Response" %}
+{% tab title="Response of newHeads" %}
 ```
 {"jsonrpc":"2.0","result":"0x1a14b6bdcf4542fabf71c4abee244e47","id":1}
 ```
 {% endtab %}
 
-{% tab title="Notification" %}
+{% tab title="Notification of newHeads" %}
 ```
 {
 	"jsonrpc":"2.0",
 	"method":"eth_subscription",
 	"params":
 		{
+			"subscription":"0x1a14b6bdcf4542fabf71c4abee244e47",
 			"result":
 				{
 					"author":"0x000000568b9b5a365eaa767d42e74ed88915c204",
@@ -89,8 +90,7 @@ Parameter: `"newHeads"`
 					"transactions":[],
 					"transactionsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
 					"uncles":[]
-				},
-			"subscription":"0x1a14b6bdcf4542fabf71c4abee244e47"
+				}
 		}
 }
 ```
@@ -115,7 +115,7 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 #### Example
 
 {% tabs %}
-{% tab title="Request" %}
+{% tab title="Request of logs" %}
 ```text
 {
 	"method":"eth_subscribe",
@@ -134,33 +134,33 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 ```
 {% endtab %}
 
-{% tab title="Response" %}
+{% tab title="Response of logs" %}
 ```
 {"jsonrpc":"2.0","result":"0x0de42098e48c4ffba6d40561dc17b065","id":1}
 ```
 {% endtab %}
 
-{% tab title="Notification" %}
+{% tab title="Notification of logs" %}
 ```
 {
 	"jsonrpc":"2.0",
 	"method":"eth_subscription",
 	"params":
 		{
+			"subscription":"0x0de42098e48c4ffba6d40561dc17b065",
 			"result":
 				{
-				"address":"0xb7705ae4c6f81b66cdb323c65f4e8133690fc099",
-				"blockHash":"0x05333898e7f28f21a56370ed272b16c4b603d8a1dd26ec44f22639d8d90fe9d9",
-				"blockNumber":"0x43489c",
-				"data":"0x0000000000000000000000000000000000000000000000000000000000000000",
-				"logIndex":"0x7",
-				"removed":false,
-				"topics":["0x03783fac2efed8fbc9ad443e592ee30e61d65f471140c10ca155e937b435b760","0x1f675bff07515f5df96737194ea945c36c41e7b4fcef307b7cd4d0e602a69111","0x000000000000000000000000c74f17181bf55635be65672e366b20f70662b79c"],
-				"transactionHash":"0x29c551ba625bfaf58cb3d407c3e6f5c647032725c145cf55c7353cd3387cf845",
-				"transactionIndex":"0xa",
-				"transactionLogIndex":"0x0"
-				},
-			"subscription":"0x0de42098e48c4ffba6d40561dc17b065"
+					"address":"0xb7705ae4c6f81b66cdb323c65f4e8133690fc099",
+					"blockHash":"0x05333898e7f28f21a56370ed272b16c4b603d8a1dd26ec44f22639d8d90fe9d9",
+					"blockNumber":"0x43489c",
+					"data":"0x0000000000000000000000000000000000000000000000000000000000000000",
+					"logIndex":"0x7",
+					"removed":false,
+					"topics":["0x03783fac2efed8fbc9ad443e592ee30e61d65f471140c10ca155e937b435b760","0x1f675bff07515f5df96737194ea945c36c41e7b4fcef307b7cd4d0e602a69111","0x000000000000000000000000c74f17181bf55635be65672e366b20f70662b79c"],
+					"transactionHash":"0x29c551ba625bfaf58cb3d407c3e6f5c647032725c145cf55c7353cd3387cf845",
+					"transactionIndex":"0xa",
+					"transactionLogIndex":"0x0"
+				}
 		}
 }
 ```
@@ -176,27 +176,27 @@ Parameter: `"newPendingTransactions"`
 #### Example
 
 {% tabs %}
-{% tab title="Request" %}
+{% tab title="Request of newPendingTransactions" %}
 ```text
 {"method":"eth_subscribe","params":["newPendingTransactions"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
 
-{% tab title="Response" %}
+{% tab title="Response of newPendingTransactions" %}
 ```
 {"jsonrpc":"2.0","result":"0xfa561cbadf9b4bd79b62537661d18f27","id":1}
 ```
 {% endtab %}
 
-{% tab title="Notification" %}
+{% tab title="Notification of newPendingTransactions" %}
 ```
 {
 	"jsonrpc":"2.0",
 	"method":"eth_subscription",
 	"params":
 		{
-			"result":"0x6ad1058c56f71fe630053d24905f06d80677262ae2e8f42799690ab6b9fc5bd0",
-			"subscription":"0xfa561cbadf9b4bd79b62537661d18f27"
+			"subscription":"0xfa561cbadf9b4bd79b62537661d18f27",
+			"result":"0x6ad1058c56f71fe630053d24905f06d80677262ae2e8f42799690ab6b9fc5bd0"
 		}
 }
 ```
@@ -205,40 +205,52 @@ Parameter: `"newPendingTransactions"`
 
 ### syncing
 
-Subscribe to syncing events. Returns an object once when the node starts or finish syncing.
+Subscribe to syncing events. Returns boolean `false` once if node is synced or an object with statistics once when the node starts syncing.
 
 Parameter: `"syncing"`
 
 #### Example
 
 {% tabs %}
-{% tab title="Request" %}
+{% tab title="Request of syncing" %}
 ```text
 {"method":"eth_subscribe","params":["syncing"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
 
-{% tab title="Response" %}
+{% tab title="Response of syncing" %}
 ```
 {"jsonrpc":"2.0","result":"0x28d37f96bc784de4abf96ee4f8005a79","id":1}
 ```
 {% endtab %}
 
-{% tab title="Notification" %}
+{% tab title="Notification of syncing" %}
 ```
 {
 	"jsonrpc":"2.0",
 	"method":"eth_subscription",
 	"params":
 		{
-			"result"
+			"subscription":"0x28d37f96bc784de4abf96ee4f8005a79",
+			"result":false
+		}
+}
+
+or
+
+{
+	"jsonrpc":"2.0",
+	"method":"eth_subscription",
+	"params":
+		{
+			"subscription":"0x28d37f96bc784de4abf96ee4f8005a79",
+			"result":
 				{
-					"isSyncing":false,
+					"isSyncing":true,
 					"startingBlock":"0x0",
-					"currentBlock":"0x4347fe",
+					"currentBlock":"0x4346fe",
 					"highestBlock":"0x434806"
-				},
-		"subscription":"0x28d37f96bc784de4abf96ee4f8005a79"
+				}
 		}
 }
 ```
@@ -264,13 +276,13 @@ Unsubscribes from subscription. Subscriptions are cancelled with a regular RPC c
 #### Example
 
 {% tabs %}
-{% tab title="Request" %}
+{% tab title="Request of eth\_unsubscribe" %}
 ```text
 {"method":"eth_unsubscribe","params":["0x3cd2bcd1630948fe89190ca27b3b5913"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
 
-{% tab title="Response" %}
+{% tab title="Response of eth\_unsubscribe" %}
 ```
 {"jsonrpc":"2.0","result":true,"id":1}
 ```
