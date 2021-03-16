@@ -1,4 +1,4 @@
-# Debug
+# Debug module
 
 ## debug.getBlockRlp\(number\)
 

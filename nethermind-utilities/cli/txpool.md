@@ -1,4 +1,4 @@
-# TxPool
+# TxPool module
 
 ## txpool.content
 

@@ -1,4 +1,4 @@
-# Personal
+# Personal module
 
 ## personal.listAccounts
 

@@ -1,4 +1,4 @@
-# Clique
+# Clique module
 
 ## clique.discard\(address\)
 

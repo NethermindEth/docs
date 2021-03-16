@@ -1,4 +1,4 @@
-# Proof
+# Proof module
 
 ## proof.call\(tx, blockParameter\)
 

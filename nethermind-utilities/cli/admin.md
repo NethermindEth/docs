@@ -1,4 +1,4 @@
-# Admin
+# Admin module
 
 ## admin.addPeer\(enode, addToStaticNodes\)
 

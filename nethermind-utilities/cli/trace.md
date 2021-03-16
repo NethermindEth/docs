@@ -1,4 +1,4 @@
-# Trace
+# Trace module
 
 ## trace.replayBlockTransactions\(blockNumber, traceTypes\)
 

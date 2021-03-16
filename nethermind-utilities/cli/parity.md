@@ -1,4 +1,4 @@
-# Parity
+# Parity module
 
 ## parity.clearEngineSigner
 

@@ -1,4 +1,4 @@
-# Web3
+# Web3 module
 
 ## web3.abi\(name\)
 

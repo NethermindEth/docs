@@ -1,4 +1,4 @@
-# System
+# System module
 
 ## system.getVariable\(name, defaultValue\)
 

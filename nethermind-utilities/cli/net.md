@@ -1,4 +1,4 @@
-# Net
+# Net module
 
 ## net.localEnode
 

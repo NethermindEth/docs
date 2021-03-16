@@ -1,4 +1,4 @@
-# Eth
+# Eth module
 
 ## eth.blockNumber
 

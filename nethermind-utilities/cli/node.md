@@ -1,4 +1,4 @@
-# Node
+# Node module
 
 ## node.address
 

@@ -1,4 +1,4 @@
-# Diag
+# Diag module
 
 ## diag.cliVersion
 
