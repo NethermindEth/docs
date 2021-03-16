@@ -1,4 +1,4 @@
-# Seq
+# Seq module
 
 Configuration of the Prometheus + Grafana metrics publication. Documentation of the required setup is not yet ready \(but the metrics do work and are used by the dev team\)
 

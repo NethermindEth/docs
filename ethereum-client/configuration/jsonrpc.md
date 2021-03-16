@@ -1,4 +1,4 @@
-# JsonRpc
+# JsonRpc module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

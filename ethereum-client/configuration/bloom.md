@@ -1,4 +1,4 @@
-# Bloom
+# Bloom module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

@@ -1,4 +1,4 @@
-# HealthChecks
+# HealthChecks module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

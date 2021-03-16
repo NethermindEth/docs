@@ -1,4 +1,4 @@
-# Network
+# Network module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

@@ -1,4 +1,4 @@
-# Wallet
+# Wallet module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

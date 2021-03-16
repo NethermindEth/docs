@@ -1,4 +1,4 @@
-# Keystore
+# Keystore module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

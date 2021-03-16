@@ -1,4 +1,4 @@
-# Pruning
+# Pruning module
 
 Configuration of the pruning parameters \(pruning is the process of removing some of the intermediary state nodes - it saves some disk space but makes most of the historical state queries fail\).
 

@@ -1,4 +1,4 @@
-# Sync
+# Sync module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

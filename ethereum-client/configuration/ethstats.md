@@ -1,4 +1,4 @@
-# EthStats
+# EthStats module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

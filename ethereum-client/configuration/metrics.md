@@ -1,4 +1,4 @@
-# Metrics
+# Metrics module
 
 Configuration of the Prometheus metrics publication. Documentation of the required setup is not yet ready \(but the metrics do work and are used by the dev team\)
 

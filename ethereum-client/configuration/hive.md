@@ -1,4 +1,4 @@
-# Hive
+# Hive module
 
 These items need only be set when testing with Hive \(Ethereum Foundation tool\)
 

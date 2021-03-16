@@ -33,7 +33,7 @@ JSON RPC Service needs to be enabled in order for health checks to work `--JsonR
 
 Each configuration option is described here: 
 
-{% page-ref page="configuration/modules/healthchecks.md" %}
+{% page-ref page="configuration/healthchecks.md" %}
 
 #### Enabling Health Checks without UI 
 

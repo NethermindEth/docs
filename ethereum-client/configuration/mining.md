@@ -1,4 +1,4 @@
-# Mining
+# Mining module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

@@ -1,4 +1,4 @@
-# Init
+# Init module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |

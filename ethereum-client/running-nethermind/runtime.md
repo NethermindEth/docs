@@ -31,7 +31,7 @@ Static nodes are a pre-configured array of nodes you can trust. They can be defi
 ]
 ```
 
-By default `static-nodes.json` file is stored in `Data/` folder included in Nethermind packages. Path to `static-nodes` file can be configured via [`StaticNodesPath`](../configuration/modules/init.md) parameter.
+By default `static-nodes.json` file is stored in `Data/` folder included in Nethermind packages. Path to `static-nodes` file can be configured via [`StaticNodesPath`](../configuration/init.md) parameter.
 
 ## NLog config
 

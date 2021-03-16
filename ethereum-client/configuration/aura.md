@@ -1,4 +1,4 @@
-# Aura
+# Aura module
 
 | Property Name | Description | Default |
 | :--- | :--- | ---: |
