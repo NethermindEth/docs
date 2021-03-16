@@ -140,7 +140,7 @@ Request complete in 361680.159μs
 {% endtab %}
 {% endtabs %}
 
-{% page-ref page="../../ethereum-client/json-rpc/json-rpc-modules/admin.md" %}
+{% page-ref page="../../ethereum-client/json-rpc/admin.md" %}
 
 
 
