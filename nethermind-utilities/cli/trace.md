@@ -1,127 +1,390 @@
-# Trace module
+# trace
 
-## trace.replayBlockTransactions\(blockNumber, traceTypes\)
 
-Replays all transactions in a block returning the requested traces for each transaction.
+
+## trace.block
+
+Returns traces created at given block. 
+
+
+| Invocation |
+| :--- |
+| `trace.block(numberOrTag)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| numberOrTag | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityTxTraceFromStore object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockNumber | `String` |
-| traceTypes | `Array` |
+{% tab title="Example request of trace.block" %}
+```yaml
+trace.block(numberOrTag)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in trace_block" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`ParityTxTraceFromStore`
+
+| Field name | Type |
+| :--- | :--- |
+| Action | `ParityTraceAction object` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Quantity` |
+| TraceAddress | `Array` |
+| TransactionHash | `Hash` |
+| TransactionPosition | `Quantity` |
+| Type | `String` |
+
+`ParityTraceAction`
+
+| Field name | Type |
+| :--- | :--- |
+| TraceAddress | `Array` |
+| CallType | `String` |
+| IncludeInTrace | `Boolean` |
+| IsPrecompiled | `Boolean` |
+| Type | `String` |
+| CreationMethod | `String` |
+| From | `Address` |
+| To | `Address` |
+| Gas | `Quantity` |
+| Value | `Quantity` |
+| Input | `Data` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Array` |
+| Author | `Address` |
+| RewardType | `String` |
+| Error | `String` |
+
+`ParityTraceResult`
+
+| Field name | Type |
+| :--- | :--- |
+| GasUsed | `Quantity` |
+| Output | `Data` |
+| Address | `Address` |
+| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 
-## trace.replayTransaction\(txHash, traceTypes\)
+[See also JSON RPC trace_block](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_block)
 
-Replays a transaction, returning the traces.
+
+## trace.rawTransaction
+
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
+
+
+| Invocation |
+| :--- |
+| `trace.rawTransaction(data, traceTypes)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| data | `Data` |  |
+| traceTypes | `Array` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityTxTraceFromReplay object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
-| traceTypes | `Array` |
+{% tab title="Example request of trace.rawTransaction" %}
+```yaml
+trace.rawTransaction(data, traceTypes)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in trace_rawTransaction" %}
 
-`JavaScript Object`
+`ParityTxTraceFromReplay`
+
+| Field name | Type |
+| :--- | :--- |
+| Output | `Data` |
+| TransactionHash | `Hash` |
+| VmTrace | `ParityVmTrace object` |
+| Action | `ParityTraceAction object` |
+| StateChanges | `Array` |
+
+`ParityVmTrace`
+
+| Field name | Type |
+| :--- | :--- |
+| Code | `Data` |
+| Operations | `ParityVmOperationTrace[] object` |
+
+`ParityTraceAction`
+
+| Field name | Type |
+| :--- | :--- |
+| TraceAddress | `Array` |
+| CallType | `String` |
+| IncludeInTrace | `Boolean` |
+| IsPrecompiled | `Boolean` |
+| Type | `String` |
+| CreationMethod | `String` |
+| From | `Address` |
+| To | `Address` |
+| Gas | `Quantity` |
+| Value | `Quantity` |
+| Input | `Data` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Array` |
+| Author | `Address` |
+| RewardType | `String` |
+| Error | `String` |
 {% endtab %}
 {% endtabs %}
 
-## trace.block\(blockNumber\)
+[See also JSON RPC trace_rawTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_rawtransaction)
 
-Returns traces created at given block.
+
+## trace.replayBlockTransactions
+
+Replays all transactions in a block returning the requested traces for each transaction. 
+
+
+| Invocation |
+| :--- |
+| `trace.replayBlockTransactions(numberOrTag, traceTypes)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| numberOrTag | `BlockParameter object` |  |
+| traceTypes | `Array` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityTxTraceFromReplay object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockNumber | `String` |
+{% tab title="Example request of trace.replayBlockTransactions" %}
+```yaml
+trace.replayBlockTransactions(numberOrTag, traceTypes)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in trace_replayBlockTransactions" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`ParityTxTraceFromReplay`
+
+| Field name | Type |
+| :--- | :--- |
+| Output | `Data` |
+| TransactionHash | `Hash` |
+| VmTrace | `ParityVmTrace object` |
+| Action | `ParityTraceAction object` |
+| StateChanges | `Array` |
+
+`ParityVmTrace`
+
+| Field name | Type |
+| :--- | :--- |
+| Code | `Data` |
+| Operations | `ParityVmOperationTrace[] object` |
+
+`ParityTraceAction`
+
+| Field name | Type |
+| :--- | :--- |
+| TraceAddress | `Array` |
+| CallType | `String` |
+| IncludeInTrace | `Boolean` |
+| IsPrecompiled | `Boolean` |
+| Type | `String` |
+| CreationMethod | `String` |
+| From | `Address` |
+| To | `Address` |
+| Gas | `Quantity` |
+| Value | `Quantity` |
+| Input | `Data` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Array` |
+| Author | `Address` |
+| RewardType | `String` |
+| Error | `String` |
 {% endtab %}
 {% endtabs %}
 
-## trace.call\(transaction, traceTypes, blockNumber\)
+[See also JSON RPC trace_replayBlockTransactions](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_replayblocktransactions)
 
-Traces a call, returning the traces
+
+## trace.replayTransaction
+
+Replays a transaction, returning the traces. 
+
+
+| Invocation |
+| :--- |
+| `trace.replayTransaction(txHash, traceTypes)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| txHash | `Hash` |  |
+| traceTypes | `Array` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityTxTraceFromReplay object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transaction | `Object` |
-| traceTypes | `Array` |
-| blockNumber | `String` |
+{% tab title="Example request of trace.replayTransaction" %}
+```yaml
+trace.replayTransaction(txHash, traceTypes)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in trace_replayTransaction" %}
 
-`JavaScript Object`
+`ParityTxTraceFromReplay`
+
+| Field name | Type |
+| :--- | :--- |
+| Output | `Data` |
+| TransactionHash | `Hash` |
+| VmTrace | `ParityVmTrace object` |
+| Action | `ParityTraceAction object` |
+| StateChanges | `Array` |
+
+`ParityVmTrace`
+
+| Field name | Type |
+| :--- | :--- |
+| Code | `Data` |
+| Operations | `ParityVmOperationTrace[] object` |
+
+`ParityTraceAction`
+
+| Field name | Type |
+| :--- | :--- |
+| TraceAddress | `Array` |
+| CallType | `String` |
+| IncludeInTrace | `Boolean` |
+| IsPrecompiled | `Boolean` |
+| Type | `String` |
+| CreationMethod | `String` |
+| From | `Address` |
+| To | `Address` |
+| Gas | `Quantity` |
+| Value | `Quantity` |
+| Input | `Data` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Array` |
+| Author | `Address` |
+| RewardType | `String` |
+| Error | `String` |
 {% endtab %}
 {% endtabs %}
 
-## trace.rawTransaction\(txData, traceTypes\)
+[See also JSON RPC trace_replayTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_replaytransaction)
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+
+## trace.transaction
+
+Returns all traces of given transaction 
+
+
+| Invocation |
+| :--- |
+| `trace.transaction(txHash)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| txHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityTxTraceFromStore object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txData | `String` |
-| traceTypes | `Array` |
+{% tab title="Example request of trace.transaction" %}
+```yaml
+trace.transaction(txHash)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in trace_transaction" %}
 
-`JavaScript Object`
+`ParityTxTraceFromStore`
+
+| Field name | Type |
+| :--- | :--- |
+| Action | `ParityTraceAction object` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Quantity` |
+| TraceAddress | `Array` |
+| TransactionHash | `Hash` |
+| TransactionPosition | `Quantity` |
+| Type | `String` |
+
+`ParityTraceAction`
+
+| Field name | Type |
+| :--- | :--- |
+| TraceAddress | `Array` |
+| CallType | `String` |
+| IncludeInTrace | `Boolean` |
+| IsPrecompiled | `Boolean` |
+| Type | `String` |
+| CreationMethod | `String` |
+| From | `Address` |
+| To | `Address` |
+| Gas | `Quantity` |
+| Value | `Quantity` |
+| Input | `Data` |
+| Result | `ParityTraceResult object` |
+| Subtraces | `Array` |
+| Author | `Address` |
+| RewardType | `String` |
+| Error | `String` |
+
+`ParityTraceResult`
+
+| Field name | Type |
+| :--- | :--- |
+| GasUsed | `Quantity` |
+| Output | `Data` |
+| Address | `Address` |
+| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 
-## trace.transaction\(txHash\)
-
-Returns all traces of given transaction
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
+[See also JSON RPC trace_transaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_transaction)

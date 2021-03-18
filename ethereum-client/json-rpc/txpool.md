@@ -1,83 +1,95 @@
-# TxPool module
+# txpool
 
-## txpool\_content
+## txpool_content
+| Invocation |
+| :--- |
+| `{"method":"txpool_content","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TxPoolContent object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of txpool_content" %}
+```
+curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TxPoolContent object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in txpool_content" %}
 
 `TxPoolContent`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
 {% endtab %}
 {% endtabs %}
 
-## txpool\_inspect
+[See also CLI txpool.content](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-content)
+## txpool_inspect
+| Invocation |
+| :--- |
+| `{"method":"txpool_inspect","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TxPoolInspection object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of txpool_inspect" %}
+```
+curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TxPoolInspection object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in txpool_inspect" %}
 
 `TxPoolInspection`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
 {% endtab %}
 {% endtabs %}
 
-## txpool\_status
+[See also CLI txpool.inspect](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-inspect)
+## txpool_status
+| Invocation |
+| :--- |
+| `{"method":"txpool_status","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TxPoolStatus object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of txpool_status" %}
+```
+curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TxPoolStatus object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in txpool_status" %}
 
 `TxPoolStatus`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Pending | `Quantity` |
 | Queued | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
+[See also CLI txpool.status](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-status)

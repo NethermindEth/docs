@@ -1,31 +1,34 @@
-# Proof module
+# proof
 
-## proof\_getTransactionByHash
+## proof_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
+
+| Invocation |
+| :--- |
+| `{"method":"proof_getTransactionByHash","params":[txHash, includeHeader]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| txHash | `Hash` |  |
+| includeHeader | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionWithProof object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `Hash` |
-| includeHeader | `Boolean` |
+{% tab title="Example request of proof_getTransactionByHash" %}
+```
+curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHeader],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TransactionWithProof object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in proof_getTransactionByHash" %}
 
 `TransactionWithProof`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
 | TxProof | `Data` |
@@ -33,7 +36,7 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -53,32 +56,36 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 {% endtab %}
 {% endtabs %}
 
-## proof\_getTransactionReceipt
+[See also CLI proof.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionbyhash)
+## proof_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
+
+| Invocation |
+| :--- |
+| `{"method":"proof_getTransactionReceipt","params":[txHash, includeHeader]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| txHash | `Hash` |  |
+| includeHeader | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ReceiptWithProof object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `Hash` |
-| includeHeader | `Boolean` |
+{% tab title="Example request of proof_getTransactionReceipt" %}
+```
+curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHeader],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`ReceiptWithProof object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in proof_getTransactionReceipt" %}
 
 `ReceiptWithProof`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |
 | TxProof | `Data` |
@@ -87,7 +94,7 @@ This function should return the same result as `eth_call` and also proofs of all
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -106,3 +113,4 @@ This function should return the same result as `eth_call` and also proofs of all
 {% endtab %}
 {% endtabs %}
 
+[See also CLI proof.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionreceipt)

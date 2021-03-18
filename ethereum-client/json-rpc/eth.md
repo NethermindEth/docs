@@ -1,49 +1,58 @@
-# Eth module
+# eth
 
-## eth\_blockNumber
+## eth_blockNumber
 
-Returns current block number
+Returns current block number 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_blockNumber","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
+{% tab title="Example request of eth_blockNumber" %}
+```
+curl --data '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_call
+[See also CLI eth.blockNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-blocknumber)
+## eth_call
 
-Executes a tx call \(does not create a transaction\)
+Executes a tx call (does not create a transaction) 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_call","params":[transactionCall, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionCall | `TransactionForRpc object` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transactionCall | `TransactionForRpc object` |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_call" %}
+```
+curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_call" %}
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -63,7 +72,7 @@ Executes a tx call \(does not create a transaction\)
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -72,54 +81,73 @@ Executes a tx call \(does not create a transaction\)
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_chainId
+[See also CLI eth.call](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-call)
+## eth_chainId
 
-Returns ChainID
+Returns ChainID 
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+| Invocation |
+| :--- |
+| `{"method":"eth_chainId","params":[]}` |
 
-_None_
-{% endtab %}
+| This method doesn't have parameters. |
+| :--- |
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth\_estimateGas
-
-Executes a tx call and returns gas used \(does not create a transaction\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| transactionCall | `TransactionForRpc object` |
-| blockParameter | `BlockParameter object` |
+| `UInt64 object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth_chainId" %}
+```
+curl --data '{"method":"eth_chainId","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_chainId" %}
 
-`Quantity`
+`UInt64`
+
+| Field name | Type |
+| :--- | :--- |
+{% endtab %}
+{% endtabs %}
+
+[See also CLI eth.chainId](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-chainid)
+## eth_estimateGas
+
+Executes a tx call and returns gas used (does not create a transaction) 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_estimateGas","params":[transactionCall, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionCall | `TransactionForRpc object` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
+
+{% tabs %}
+{% tab title="Example request of eth_estimateGas" %}
+```
+curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_estimateGas" %}
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -139,7 +167,7 @@ Executes a tx call and returns gas used \(does not create a transaction\)
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -148,36 +176,41 @@ Executes a tx call and returns gas used \(does not create a transaction\)
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBalance
+[See also CLI eth.estimateGas](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-estimategas)
+## eth_getBalance
 
-Returns account balance
+Returns account balance 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getBalance","params":[address, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `Address` |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getBalance" %}
+```
+curl --data '{"method":"eth_getBalance","params":[address, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getBalance" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -186,36 +219,41 @@ Returns account balance
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockByHash
+[See also CLI eth.getBalance](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getbalance)
+## eth_getBlockByHash
 
-Retrieves a block by hash
+Retrieves a block by hash 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getBlockByHash","params":[blockHash, returnFullTransactionObjects]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+| returnFullTransactionObjects | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Hash` |
-| returnFullTransactionObjects | `Boolean` |
+{% tab title="Example request of eth_getBlockByHash" %}
+```
+curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTransactionObjects],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`BlockForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getBlockByHash" %}
 
 `BlockForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -243,32 +281,36 @@ Retrieves a block by hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockByNumber
+[See also CLI eth.getBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblockbyhash)
+## eth_getBlockByNumber
 
-Retrieves a block by number
+Retrieves a block by number 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getBlockByNumber","params":[blockParameter, returnFullTransactionObjects]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+| returnFullTransactionObjects | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
-| returnFullTransactionObjects | `Boolean` |
+{% tab title="Example request of eth_getBlockByNumber" %}
+```
+curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFullTransactionObjects],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`BlockForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getBlockByNumber" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -277,11 +319,12 @@ Retrieves a block by number
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `BlockForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -309,51 +352,60 @@ Retrieves a block by number
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockTransactionCountByHash
+[See also CLI eth.getBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblockbynumber)
+## eth_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash
+Returns number of transactions in the block block hash 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getBlockTransactionCountByHash","params":[blockHash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Hash` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
+{% tab title="Example request of eth_getBlockTransactionCountByHash" %}
+```
+curl --data '{"method":"eth_getBlockTransactionCountByHash","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_getBlockTransactionCountByNumber
+[See also CLI eth.getBlockTransactionCountByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblocktransactioncountbyhash)
+## eth_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number
+Returns number of transactions in the block by block number 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getBlockTransactionCountByNumber","params":[blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getBlockTransactionCountByNumber" %}
+```
+curl --data '{"method":"eth_getBlockTransactionCountByNumber","params":[blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getBlockTransactionCountByNumber" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -362,36 +414,41 @@ Returns number of transactions in the block by block number
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getCode
+[See also CLI eth.getBlockTransactionCountByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblocktransactioncountbynumber)
+## eth_getCode
 
-Returns account code at given address and block
+Returns account code at given address and block 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getCode","params":[address, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Data` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `Address` |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getCode" %}
+```
+curl --data '{"method":"eth_getCode","params":[address, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Data`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getCode" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -400,75 +457,89 @@ Returns account code at given address and block
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getFilterChanges
+[See also CLI eth.getCode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getcode)
+## eth_getFilterChanges
 
-Reads filter changes
+Reads filter changes 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getFilterChanges","params":[filterId]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filterId | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Array` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Array`
+{% tab title="Example request of eth_getFilterChanges" %}
+```
+curl --data '{"method":"eth_getFilterChanges","params":[filterId],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_getFilterLogs
+[See also CLI eth.getFilterChanges](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getfilterchanges)
+## eth_getFilterLogs
 
-Reads filter changes
+Reads filter changes 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getFilterLogs","params":[filterId]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filterId | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Array` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Array`
+{% tab title="Example request of eth_getFilterLogs" %}
+```
+curl --data '{"method":"eth_getFilterLogs","params":[filterId],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_getLogs
+## eth_getLogs
 
-Reads logs
+Reads logs 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getLogs","params":[filter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filter | `Filter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Array` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filter | `Filter object` |
+{% tab title="Example request of eth_getLogs" %}
+```
+curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Array`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getLogs" %}
 
 `Filter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -477,7 +548,7 @@ Reads logs
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -486,33 +557,37 @@ Reads logs
 {% endtab %}
 {% endtabs %}
 
-## eth\_getProof
+[See also CLI eth.getLogs](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getlogs)
+## eth_getProof
 
-[https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
+https://github.com/ethereum/EIPs/issues/1186 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getProof","params":[accountAddress, hashRate, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| accountAddress | `Address` |  |
+| hashRate | `Data` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `AccountProof object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| accountAddress | `Address` |
-| hashRate | `Data` |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getProof" %}
+```
+curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`AccountProof object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getProof" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -521,11 +596,12 @@ Reads logs
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `AccountProof`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Address | `Address` |
 | Proof | `Data` |
@@ -537,7 +613,7 @@ Reads logs
 
 `StorageProof[]`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -549,33 +625,37 @@ Reads logs
 {% endtab %}
 {% endtabs %}
 
-## eth\_getStorageAt
+[See also CLI eth.getProof](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getproof)
+## eth_getStorageAt
 
-Returns storage data at address. storage\_index
+Returns storage data at address. storage_index 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getStorageAt","params":[address, positionIndex, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| positionIndex | `Quantity` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Data` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `Address` |
-| positionIndex | `Quantity` |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getStorageAt" %}
+```
+curl --data '{"method":"eth_getStorageAt","params":[address, positionIndex, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Data`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getStorageAt" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -584,36 +664,41 @@ Returns storage data at address. storage\_index
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionByBlockHashAndIndex
+[See also CLI eth.getStorageAt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getstorageat)
+## eth_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index
+Retrieves a transaction by block hash and index 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHash, positionIndex]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Hash` |
-| positionIndex | `Quantity` |
+{% tab title="Example request of eth_getTransactionByBlockHashAndIndex" %}
+```
+curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHash, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TransactionForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getTransactionByBlockHashAndIndex" %}
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -633,32 +718,35 @@ Retrieves a transaction by block hash and index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionByBlockNumberAndIndex
+## eth_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index
+Retrieves a transaction by block number and index 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getTransactionByBlockNumberAndIndex","params":[blockParameter, positionIndex]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
-| positionIndex | `Quantity` |
+{% tab title="Example request of eth_getTransactionByBlockNumberAndIndex" %}
+```
+curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[blockParameter, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TransactionForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getTransactionByBlockNumberAndIndex" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -667,11 +755,12 @@ Retrieves a transaction by block number and index
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -691,31 +780,35 @@ Retrieves a transaction by block number and index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionByHash
+[See also CLI eth.getTransactionByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionbyblocknumberandindex)
+## eth_getTransactionByHash
 
-Retrieves a transaction by hash
+Retrieves a transaction by hash 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getTransactionByHash","params":[transactionHash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transactionHash | `Hash` |
+{% tab title="Example request of eth_getTransactionByHash" %}
+```
+curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TransactionForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getTransactionByHash" %}
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -735,32 +828,36 @@ Retrieves a transaction by hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionCount
+[See also CLI eth.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionbyhash)
+## eth_getTransactionCount
 
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
+Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getTransactionCount","params":[address, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `Address` |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getTransactionCount" %}
+```
+curl --data '{"method":"eth_getTransactionCount","params":[address, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getTransactionCount" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -769,35 +866,40 @@ Returns account nonce \(number of trnsactions from the account since genesis\) a
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_getTransactionReceipt
+[See also CLI eth.getTransactionCount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactioncount)
+## eth_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash
+Retrieves a transaction receipt by tx hash 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getTransactionReceipt","params":[txHashData]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| txHashData | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ReceiptForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHashData | `Hash` |
+{% tab title="Example request of eth_getTransactionReceipt" %}
+```
+curl --data '{"method":"eth_getTransactionReceipt","params":[txHashData],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`ReceiptForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getTransactionReceipt" %}
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -816,7 +918,7 @@ Retrieves a transaction receipt by tx hash
 
 `LogEntryForRpc[]`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -828,32 +930,36 @@ Retrieves a transaction receipt by tx hash
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleByBlockHashAndIndex
+[See also CLI eth.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionreceipt)
+## eth_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index
+Retrieves an uncle block header by block hash and uncle index 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData, positionIndex]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHashData | `Hash` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHashData | `Hash` |
-| positionIndex | `Quantity` |
+{% tab title="Example request of eth_getUncleByBlockHashAndIndex" %}
+```
+curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`BlockForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getUncleByBlockHashAndIndex" %}
 
 `BlockForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -881,32 +987,36 @@ Retrieves an uncle block header by block hash and uncle index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleByBlockNumberAndIndex
+[See also CLI eth.getUncleByBlockHashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclebyblockhashandindex)
+## eth_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index
+Retrieves an uncle block header by block number and uncle index 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParameter, positionIndex]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
-| positionIndex | `Quantity` |
+{% tab title="Example request of eth_getUncleByBlockNumberAndIndex" %}
+```
+curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParameter, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`BlockForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getUncleByBlockNumberAndIndex" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -915,11 +1025,12 @@ Retrieves an uncle block header by block number and uncle index
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `BlockForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -947,51 +1058,59 @@ Retrieves an uncle block header by block number and uncle index
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleCountByBlockHash
+[See also CLI eth.getUncleByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclebyblocknumberandindex)
+## eth_getUncleCountByBlockHash
 
-Returns number of uncles in the block by block hash
+Returns number of uncles in the block by block hash 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getUncleCountByBlockHash","params":[blockHash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockHash | `Hash` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
+{% tab title="Example request of eth_getUncleCountByBlockHash" %}
+```
+curl --data '{"method":"eth_getUncleCountByBlockHash","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_getUncleCountByBlockNumber
+## eth_getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number
+Returns number of uncles in the block by block number 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `BlockParameter object` |
+{% tab title="Example request of eth_getUncleCountByBlockNumber" %}
+```
+curl --data '{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_getUncleCountByBlockNumber" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -1000,53 +1119,63 @@ Returns number of uncles in the block by block number
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth\_newBlockFilter
+[See also CLI eth.getUncleCountByBlockNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclecountbyblocknumber)
+## eth_newBlockFilter
 
-Creates an update filter
+Creates an update filter 
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+| Invocation |
+| :--- |
+| `{"method":"eth_newBlockFilter","params":[]}` |
 
-_None_
-{% endtab %}
+| This method doesn't have parameters. |
+| :--- |
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-{% endtabs %}
-
-## eth\_newFilter
-
-Creates an update filter
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| filter | `Filter object` |
+| `Quantity` |  |
+
+{% tabs %}
+{% tab title="Example request of eth_newBlockFilter" %}
+```
+curl --data '{"method":"eth_newBlockFilter","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% endtabs %}
+
+## eth_newFilter
+
+Creates an update filter 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_newFilter","params":[filter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filter | `Filter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
+
+{% tabs %}
+{% tab title="Example request of eth_newFilter" %}
+```
+curl --data '{"method":"eth_newFilter","params":[filter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_newFilter" %}
 
 `Filter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -1055,7 +1184,7 @@ Creates an update filter
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -1064,47 +1193,57 @@ Creates an update filter
 {% endtab %}
 {% endtabs %}
 
-## eth\_newPendingTransactionFilter
+## eth_newPendingTransactionFilter
 
-Creates an update filter
+Creates an update filter 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_newPendingTransactionFilter","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
+{% tab title="Example request of eth_newPendingTransactionFilter" %}
+```
+curl --data '{"method":"eth_newPendingTransactionFilter","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_pendingTransactions
+[See also CLI eth.newPendingTransactionFilter](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-newpendingtransactionfilter)
+## eth_pendingTransactions
 
-Returns the pending transactions list
+Returns the pending transactions list 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_pendingTransactions","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of eth_pendingTransactions" %}
+```
+curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`TransactionForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_pendingTransactions" %}
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -1124,69 +1263,84 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_protocolVersion
+[See also CLI eth.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-pendingtransactions)
+## eth_protocolVersion
 
-Returns ETH protocol version
+Returns ETH protocol version 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_protocolVersion","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth_protocolVersion" %}
+```
+curl --data '{"method":"eth_protocolVersion","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_sendRawTransaction
+[See also CLI eth.protocolVersion](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-protocolversion)
+## eth_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting
+Send a raw transaction to the tx pool and broadcasting 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_sendRawTransaction","params":[transaction]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transaction | `Data` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Hash` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| transaction | `Data` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Hash`
+{% tab title="Example request of eth_sendRawTransaction" %}
+```
+curl --data '{"method":"eth_sendRawTransaction","params":[transaction],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## eth\_sendTransaction
+[See also CLI eth.sendRawTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-sendrawtransaction)
+## eth_sendTransaction
 
-Send a transaction to the tx pool and broadcasting
+Send a transaction to the tx pool and broadcasting 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_sendTransaction","params":[rpcTx]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| rpcTx | `TransactionForRpc object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Hash` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| rpcTx | `TransactionForRpc object` |
+{% tab title="Example request of eth_sendTransaction" %}
+```
+curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Hash`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_sendTransaction" %}
 
 `TransactionForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -1206,29 +1360,34 @@ Send a transaction to the tx pool and broadcasting
 {% endtab %}
 {% endtabs %}
 
-## eth\_syncing
+[See also CLI eth.sendTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-sendtransaction)
+## eth_syncing
 
-Returns syncing status
+Returns syncing status 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_syncing","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `SyncingResult object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of eth_syncing" %}
+```
+curl --data '{"method":"eth_syncing","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`SyncingResult object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in eth_syncing" %}
 
 `SyncingResult`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | IsSyncing | `Boolean` |
 | StartingBlock | `Quantity` |
@@ -1237,23 +1396,28 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## eth\_uninstallFilter
+[See also CLI eth.syncing](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-syncing)
+## eth_uninstallFilter
 
-Creates an update filter
+Creates an update filter 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_uninstallFilter","params":[filterId]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filterId | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tab title="Example request of eth_uninstallFilter" %}
+```
+curl --data '{"method":"eth_uninstallFilter","params":[filterId],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 

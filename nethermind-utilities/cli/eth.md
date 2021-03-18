@@ -1,530 +1,1372 @@
-# Eth module
+# eth
+
+
 
 ## eth.blockNumber
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Returns current block number 
 
-_None_
-{% endtab %}
 
-{% tab title="Response" %}
-### Return type
+| Invocation |
+| :--- |
+| `eth.blockNumber` |
 
-`Quantity`
-{% endtab %}
-{% endtabs %}
+| This method doesn't have parameters. |
+| :--- |
 
-## eth.getProof\(address, storageKeys, blockParameter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| address | `String` |
-| storageKeys | `Array` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## eth.call\(tx, blockParameter\)
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| tx | `Object` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth.blockNumber" %}
+```yaml
+eth.blockNumber
+```
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC eth_blockNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_blocknumber)
+
+
+## eth.call
+
+Executes a tx call (does not create a transaction) 
+
+
+| Invocation |
+| :--- |
+| `eth.call(transactionCall, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionCall | `TransactionForRpc object` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.call" %}
+```yaml
+eth.call(transactionCall, blockParameter)
+```
+{% endtab %}
+
+{% tab title="Objects in eth_call" %}
+
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth_call](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_call)
+
 
 ## eth.chainId
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Returns ChainID 
 
-_None_
-{% endtab %}
 
-{% tab title="Response" %}
-### Return type
+| Invocation |
+| :--- |
+| `eth.chainId` |
 
-`String`
-{% endtab %}
-{% endtabs %}
+| This method doesn't have parameters. |
+| :--- |
 
-## eth.estimateGas\(json, blockParameter\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| json | `Object` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## eth.getBalance\(address, blockParameter\)
+| `UInt64 object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `String` |
-| blockParameter | `String` |
+{% tab title="Example request of eth.chainId" %}
+```yaml
+eth.chainId
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_chainId" %}
 
-`Quantity`
+`UInt64`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockByHash\(hash, returnFullTransactionObjects\)
+[See also JSON RPC eth_chainId](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_chainid)
+
+
+## eth.estimateGas
+
+Executes a tx call and returns gas used (does not create a transaction) 
+
+
+| Invocation |
+| :--- |
+| `eth.estimateGas(transactionCall, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionCall | `TransactionForRpc object` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | `String` |
-| returnFullTransactionObjects | `Boolean` |
+{% tab title="Example request of eth.estimateGas" %}
+```yaml
+eth.estimateGas(transactionCall, blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_estimateGas" %}
 
-`JavaScript Object`
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockByNumber\(blockParameter, returnFullTransactionObjects\)
+[See also JSON RPC eth_estimateGas](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_estimategas)
+
+
+## eth.getBalance
+
+Returns account balance 
+
+
+| Invocation |
+| :--- |
+| `eth.getBalance(address, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-| returnFullTransactionObjects | `Boolean` |
+{% tab title="Example request of eth.getBalance" %}
+```yaml
+eth.getBalance(address, blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getBalance" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockTransactionCountByHash\(hash\)
+[See also JSON RPC eth_getBalance](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getbalance)
+
+
+## eth.getBlockByHash
+
+Retrieves a block by hash 
+
+
+| Invocation |
+| :--- |
+| `eth.getBlockByHash(blockHash, returnFullTransactionObjects)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+| returnFullTransactionObjects | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | `String` |
+{% tab title="Example request of eth.getBlockByHash" %}
+```yaml
+eth.getBlockByHash(blockHash, returnFullTransactionObjects)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getBlockByHash" %}
 
-`Quantity`
+`BlockForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Author | `Address` |
+| Difficulty | `Quantity` |
+| ExtraData | `Data` |
+| GasLimit | `Quantity` |
+| GasUsed | `Quantity` |
+| Hash | `Hash` |
+| LogsBloom | `Bloom Object` |
+| Miner | `Address` |
+| MixHash | `Hash` |
+| Nonce | `Data` |
+| Number | `Quantity` |
+| ParentHash | `Hash` |
+| ReceiptsRoot | `Hash` |
+| Sha3Uncles | `Hash` |
+| Signature | `Data` |
+| Size | `Quantity` |
+| StateRoot | `Hash` |
+| Step | `Quantity` |
+| TotalDifficulty | `Quantity` |
+| Timestamp | `Quantity` |
+| Transactions | `Array` |
+| TransactionsRoot | `Hash` |
+| Uncles | `Array` |
 {% endtab %}
 {% endtabs %}
 
-## eth.getBlockTransactionCountByNumber\(blockParameter\)
+[See also JSON RPC eth_getBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getblockbyhash)
+
+
+## eth.getBlockByNumber
+
+Retrieves a block by number 
+
+
+| Invocation |
+| :--- |
+| `eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+| returnFullTransactionObjects | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
+{% tab title="Example request of eth.getBlockByNumber" %}
+```yaml
+eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getBlockByNumber" %}
 
-`Quantity`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`BlockForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Author | `Address` |
+| Difficulty | `Quantity` |
+| ExtraData | `Data` |
+| GasLimit | `Quantity` |
+| GasUsed | `Quantity` |
+| Hash | `Hash` |
+| LogsBloom | `Bloom Object` |
+| Miner | `Address` |
+| MixHash | `Hash` |
+| Nonce | `Data` |
+| Number | `Quantity` |
+| ParentHash | `Hash` |
+| ReceiptsRoot | `Hash` |
+| Sha3Uncles | `Hash` |
+| Signature | `Data` |
+| Size | `Quantity` |
+| StateRoot | `Hash` |
+| Step | `Quantity` |
+| TotalDifficulty | `Quantity` |
+| Timestamp | `Quantity` |
+| Transactions | `Array` |
+| TransactionsRoot | `Hash` |
+| Uncles | `Array` |
 {% endtab %}
 {% endtabs %}
 
-## eth.getCode\(address, blockParameter\)
+[See also JSON RPC eth_getBlockByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getblockbynumber)
+
+
+## eth.getBlockTransactionCountByHash
+
+Returns number of transactions in the block block hash 
+
+
+| Invocation |
+| :--- |
+| `eth.getBlockTransactionCountByHash(blockHash)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `String` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth.getBlockTransactionCountByHash" %}
+```yaml
+eth.getBlockTransactionCountByHash(blockHash)
+```
 {% endtab %}
 {% endtabs %}
 
-## eth.getFilterChanges\(filterId\)
+[See also JSON RPC eth_getBlockTransactionCountByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getblocktransactioncountbyhash)
+
+
+## eth.getBlockTransactionCountByNumber
+
+Returns number of transactions in the block by block number 
+
+
+| Invocation |
+| :--- |
+| `eth.getBlockTransactionCountByNumber(blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filterId | `Quantity` |
+{% tab title="Example request of eth.getBlockTransactionCountByNumber" %}
+```yaml
+eth.getBlockTransactionCountByNumber(blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getBlockTransactionCountByNumber" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth.getLogs\(filter\)
+[See also JSON RPC eth_getBlockTransactionCountByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getblocktransactioncountbynumber)
+
+
+## eth.getCode
+
+Returns account code at given address and block 
+
+
+| Invocation |
+| :--- |
+| `eth.getCode(address, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Data` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| filter | `Object` |
+{% tab title="Example request of eth.getCode" %}
+```yaml
+eth.getCode(address, blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getCode" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth.getStorageAt\(address, positionIndex, blockParameter\)
+[See also JSON RPC eth_getCode](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getcode)
+
+
+## eth.getFilterChanges
+
+Reads filter changes 
+
+
+| Invocation |
+| :--- |
+| `eth.getFilterChanges(filterId)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filterId | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Array` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `String` |
-| positionIndex | `String` |
-| blockParameter | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth.getFilterChanges" %}
+```yaml
+eth.getFilterChanges(filterId)
+```
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionByBlockNumberAndIndex\(blockParameter, index\)
+[See also JSON RPC eth_getFilterChanges](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getfilterchanges)
+
+
+
+## eth.getLogs
+
+Reads logs 
+
+
+| Invocation |
+| :--- |
+| `eth.getLogs(filter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| filter | `Filter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Array` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-| index | `String` |
+{% tab title="Example request of eth.getLogs" %}
+```yaml
+eth.getLogs(filter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getLogs" %}
 
-`JavaScript Object`
+`Filter`
+
+| Field name | Type |
+| :--- | :--- |
+| FromBlock | `BlockParameter object` |
+| ToBlock | `BlockParameter object` |
+| Address | `Object` |
+| Topics | `Array` |
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionByHash\(txHash\)
+[See also JSON RPC eth_getLogs](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getlogs)
+
+
+## eth.getProof
+
+https://github.com/ethereum/EIPs/issues/1186 
+
+
+| Invocation |
+| :--- |
+| `eth.getProof(accountAddress, hashRate, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| accountAddress | `Address` |  |
+| hashRate | `Data` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `AccountProof object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
+{% tab title="Example request of eth.getProof" %}
+```yaml
+eth.getProof(accountAddress, hashRate, blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getProof" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`AccountProof`
+
+| Field name | Type |
+| :--- | :--- |
+| Address | `Address` |
+| Proof | `Data` |
+| Balance | `Quantity` |
+| CodeHash | `Hash` |
+| Nonce | `Quantity` |
+| StorageRoot | `Hash` |
+| StorageProofs | `StorageProof[] object` |
+
+`StorageProof[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionCount\(address, blockParameter\)
+[See also JSON RPC eth_getProof](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getproof)
+
+
+## eth.getStorageAt
+
+Returns storage data at address. storage_index 
+
+
+| Invocation |
+| :--- |
+| `eth.getStorageAt(address, positionIndex, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| positionIndex | `Quantity` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Data` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `String` |
-| blockParameter | `String` |
+{% tab title="Example request of eth.getStorageAt" %}
+```yaml
+eth.getStorageAt(address, positionIndex, blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getStorageAt" %}
 
-`String`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth.getTransactionReceipt\(txHash\)
+[See also JSON RPC eth_getStorageAt](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getstorageat)
+
+
+
+## eth.getTransactionByBlockNumberAndIndex
+
+Retrieves a transaction by block number and index 
+
+
+| Invocation |
+| :--- |
+| `eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txHash | `String` |
+{% tab title="Example request of eth.getTransactionByBlockNumberAndIndex" %}
+```yaml
+eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getTransactionByBlockNumberAndIndex" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-## eth.getUncleByBlockHashAndIndex\(hash, index\)
+[See also JSON RPC eth_getTransactionByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_gettransactionbyblocknumberandindex)
+
+
+## eth.getTransactionByHash
+
+Retrieves a transaction by hash 
+
+
+| Invocation |
+| :--- |
+| `eth.getTransactionByHash(transactionHash)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | `String` |
-| index | `Quantity` |
+{% tab title="Example request of eth.getTransactionByHash" %}
+```yaml
+eth.getTransactionByHash(transactionHash)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getTransactionByHash" %}
 
-`JavaScript Object`
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-## eth.getUncleByBlockNumberAndIndex\(blockParameter, index\)
+[See also JSON RPC eth_getTransactionByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_gettransactionbyhash)
+
+
+## eth.getTransactionCount
+
+Returns account nonce (number of trnsactions from the account since genesis) at the given block number 
+
+
+| Invocation |
+| :--- |
+| `eth.getTransactionCount(address, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
-| index | `Quantity` |
+{% tab title="Example request of eth.getTransactionCount" %}
+```yaml
+eth.getTransactionCount(address, blockParameter)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getTransactionCount" %}
 
-`JavaScript Object`
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 {% endtab %}
 {% endtabs %}
 
-## eth.getUncleCountByBlockNumber\(blockParameter\)
+[See also JSON RPC eth_getTransactionCount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_gettransactioncount)
+
+
+## eth.getTransactionReceipt
+
+Retrieves a transaction receipt by tx hash 
+
+
+| Invocation |
+| :--- |
+| `eth.getTransactionReceipt(txHashData)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| txHashData | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ReceiptForRpc object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| blockParameter | `String` |
+{% tab title="Example request of eth.getTransactionReceipt" %}
+```yaml
+eth.getTransactionReceipt(txHashData)
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_getTransactionReceipt" %}
 
-`Quantity`
+`ReceiptForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| TransactionHash | `Hash` |
+| TransactionIndex | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| CumulativeGasUsed | `Quantity` |
+| GasUsed | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| ContractAddress | `Address` |
+| Logs | `LogEntryForRpc[] object` |
+| LogsBloom | `Bloom Object` |
+| Root | `Hash` |
+| Status | `Quantity` |
+| Error | `String` |
+
+`LogEntryForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC eth_getTransactionReceipt](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_gettransactionreceipt)
+
+
+## eth.getUncleByBlockHashAndIndex
+
+Retrieves an uncle block header by block hash and uncle index 
+
+
+| Invocation |
+| :--- |
+| `eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHashData | `Hash` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.getUncleByBlockHashAndIndex" %}
+```yaml
+eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
+```
+{% endtab %}
+
+{% tab title="Objects in eth_getUncleByBlockHashAndIndex" %}
+
+`BlockForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Author | `Address` |
+| Difficulty | `Quantity` |
+| ExtraData | `Data` |
+| GasLimit | `Quantity` |
+| GasUsed | `Quantity` |
+| Hash | `Hash` |
+| LogsBloom | `Bloom Object` |
+| Miner | `Address` |
+| MixHash | `Hash` |
+| Nonce | `Data` |
+| Number | `Quantity` |
+| ParentHash | `Hash` |
+| ReceiptsRoot | `Hash` |
+| Sha3Uncles | `Hash` |
+| Signature | `Data` |
+| Size | `Quantity` |
+| StateRoot | `Hash` |
+| Step | `Quantity` |
+| TotalDifficulty | `Quantity` |
+| Timestamp | `Quantity` |
+| Transactions | `Array` |
+| TransactionsRoot | `Hash` |
+| Uncles | `Array` |
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth_getUncleByBlockHashAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getunclebyblockhashandindex)
+
+
+## eth.getUncleByBlockNumberAndIndex
+
+Retrieves an uncle block header by block number and uncle index 
+
+
+| Invocation |
+| :--- |
+| `eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+| positionIndex | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `BlockForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.getUncleByBlockNumberAndIndex" %}
+```yaml
+eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
+```
+{% endtab %}
+
+{% tab title="Objects in eth_getUncleByBlockNumberAndIndex" %}
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`BlockForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Author | `Address` |
+| Difficulty | `Quantity` |
+| ExtraData | `Data` |
+| GasLimit | `Quantity` |
+| GasUsed | `Quantity` |
+| Hash | `Hash` |
+| LogsBloom | `Bloom Object` |
+| Miner | `Address` |
+| MixHash | `Hash` |
+| Nonce | `Data` |
+| Number | `Quantity` |
+| ParentHash | `Hash` |
+| ReceiptsRoot | `Hash` |
+| Sha3Uncles | `Hash` |
+| Signature | `Data` |
+| Size | `Quantity` |
+| StateRoot | `Hash` |
+| Step | `Quantity` |
+| TotalDifficulty | `Quantity` |
+| Timestamp | `Quantity` |
+| Transactions | `Array` |
+| TransactionsRoot | `Hash` |
+| Uncles | `Array` |
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth_getUncleByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getunclebyblocknumberandindex)
+
+
+
+## eth.getUncleCountByBlockNumber
+
+Returns number of uncles in the block by block number 
+
+
+| Invocation |
+| :--- |
+| `eth.getUncleCountByBlockNumber(blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.getUncleCountByBlockNumber" %}
+```yaml
+eth.getUncleCountByBlockNumber(blockParameter)
+```
+{% endtab %}
+
+{% tab title="Objects in eth_getUncleCountByBlockNumber" %}
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth_getUncleCountByBlockNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getunclecountbyblocknumber)
+
+
+
 
 ## eth.newPendingTransactionFilter
 
+Creates an update filter 
+
+
+| Invocation |
+| :--- |
+| `eth.newPendingTransactionFilter()` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
+
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
+{% tab title="Example request of eth.newPendingTransactionFilter" %}
+```yaml
+eth.newPendingTransactionFilter()
+```
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC eth_newPendingTransactionFilter](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_newpendingtransactionfilter)
+
 
 ## eth.pendingTransactions
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Returns the pending transactions list 
 
-_None_
+
+| Invocation |
+| :--- |
+| `eth.pendingTransactions` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `TransactionForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.pendingTransactions" %}
+```yaml
+eth.pendingTransactions
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_pendingTransactions" %}
 
-`JavaScript Object`
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC eth_pendingTransactions](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_pendingtransactions)
+
 
 ## eth.protocolVersion
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Returns ETH protocol version 
 
-_None_
-{% endtab %}
 
-{% tab title="Response" %}
-### Return type
+| Invocation |
+| :--- |
+| `eth.protocolVersion` |
 
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
+| This method doesn't have parameters. |
+| :--- |
 
-## eth.sendEth\(from, to, amountInEth\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| from | `String` |
-| to | `String` |
-| amountInEth | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## eth.sendRawTransaction\(txRlp\)
+| `String` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| txRlp | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth.protocolVersion" %}
+```yaml
+eth.protocolVersion
+```
 {% endtab %}
 {% endtabs %}
 
-## eth.sendTransaction\(tx\)
+[See also JSON RPC eth_protocolVersion](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_protocolversion)
+
+## eth.sendEth
+
+| Invocation |
+| :--- |
+| `eth.sendEth(from, to, amountInEth)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| from | `String` |  |
+| to | `String` |  |
+| amountInEth | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| tx | `Object` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth.sendEth" %}
+```yaml
+eth.sendEth(from, to, amountInEth)
+```
 {% endtab %}
 {% endtabs %}
 
-## eth.sendWei\(from, to, amountInWei\)
+
+
+## eth.sendRawTransaction
+
+Send a raw transaction to the tx pool and broadcasting 
+
+
+| Invocation |
+| :--- |
+| `eth.sendRawTransaction(transaction)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transaction | `Data` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Hash` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| from | `String` |
-| to | `String` |
-| amountInWei | `Quantity` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of eth.sendRawTransaction" %}
+```yaml
+eth.sendRawTransaction(transaction)
+```
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC eth_sendRawTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_sendrawtransaction)
+
+
+## eth.sendTransaction
+
+Send a transaction to the tx pool and broadcasting 
+
+
+| Invocation |
+| :--- |
+| `eth.sendTransaction(rpcTx)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| rpcTx | `TransactionForRpc object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Hash` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.sendTransaction" %}
+```yaml
+eth.sendTransaction(rpcTx)
+```
+{% endtab %}
+
+{% tab title="Objects in eth_sendTransaction" %}
+
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth_sendTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_sendtransaction)
+
+## eth.sendWei
+
+| Invocation |
+| :--- |
+| `eth.sendWei(from, to, amountInWei)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| from | `String` |  |
+| to | `String` |  |
+| amountInWei | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.sendWei" %}
+```yaml
+eth.sendWei(from, to, amountInWei)
+```
+{% endtab %}
+{% endtabs %}
+
+
 
 ## eth.syncing
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Returns syncing status 
 
-_None_
+
+| Invocation |
+| :--- |
+| `eth.syncing()` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `SyncingResult object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.syncing" %}
+```yaml
+eth.syncing()
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
+{% tab title="Objects in eth_syncing" %}
 
-`JavaScript Object`
+`SyncingResult`
+
+| Field name | Type |
+| :--- | :--- |
+| IsSyncing | `Boolean` |
+| StartingBlock | `Quantity` |
+| CurrentBlock | `Quantity` |
+| HighestBlock | `Quantity` |
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC eth_syncing](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_syncing)
 

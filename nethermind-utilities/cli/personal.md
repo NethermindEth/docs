@@ -1,73 +1,128 @@
-# Personal module
+# personal
+
+
+
+## personal.importRawKey
+
+| Invocation |
+| :--- |
+| `personal.importRawKey(keyData, passphrase)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| keyData | `Data` |  |
+| passphrase | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Address` |  |
+
+{% tabs %}
+{% tab title="Example request of personal.importRawKey" %}
+```yaml
+personal.importRawKey(keyData, passphrase)
+```
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC personal_importRawKey](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_importrawkey)
+
 
 ## personal.listAccounts
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+| Invocation |
+| :--- |
+| `personal.listAccounts` |
 
-_None_
-{% endtab %}
+| This method doesn't have parameters. |
+| :--- |
 
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
-{% endtab %}
-{% endtabs %}
-
-## personal.lockAccount\(addressHex\)
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| addressHex | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
-{% endtab %}
-{% endtabs %}
-
-## personal.newAccount\(password\)
+| `Address` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| password | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of personal.listAccounts" %}
+```yaml
+personal.listAccounts
+```
 {% endtab %}
 {% endtabs %}
 
-## personal.unlockAccount\(addressHex, password\)
+[See also JSON RPC personal_listAccounts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_listaccounts)
+
+
+## personal.lockAccount
+
+| Invocation |
+| :--- |
+| `personal.lockAccount(address)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| addressHex | `String` |
-| password | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tab title="Example request of personal.lockAccount" %}
+```yaml
+personal.lockAccount(address)
+```
 {% endtab %}
 {% endtabs %}
 
+[See also JSON RPC personal_lockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_lockaccount)
+
+
+## personal.newAccount
+
+| Invocation |
+| :--- |
+| `personal.newAccount(passphrase)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| passphrase | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Address` |  |
+
+{% tabs %}
+{% tab title="Example request of personal.newAccount" %}
+```yaml
+personal.newAccount(passphrase)
+```
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC personal_newAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_newaccount)
+
+
+## personal.unlockAccount
+
+| Invocation |
+| :--- |
+| `personal.unlockAccount(address, passphrase)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| passphrase | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
+
+{% tabs %}
+{% tab title="Example request of personal.unlockAccount" %}
+```yaml
+personal.unlockAccount(address, passphrase)
+```
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC personal_unlockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_unlockaccount)
