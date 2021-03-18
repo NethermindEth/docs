@@ -1,6 +1,6 @@
-# Blockchain module
+# Blockchain
 
-| Metric Name | Description |
+| Metric | Description |
 | :--- | :--- |
 | Blocks | Total number of blocks processed |
 | BlocksSealed | Total number of sealed blocks |
@@ -10,4 +10,3 @@
 | RecoveryQueueSize | Number of blocks awaiting for recovery of public keys from signatures. |
 | Reorganizations | Total number of chain reorganizations |
 | Transactions | Total number of transactions processed |
-

@@ -1,6 +1,6 @@
-# Store module
+# Store
 
-| Metric Name | Description |
+| Metric | Description |
 | :--- | :--- |
 | BlockInfosDbReads | Number of Block Infos DB reads. |
 | BlockInfosDbWrites | Number of Block Infos DB writes. |
@@ -28,4 +28,3 @@
 | StorageTreeWrites | Number of storage trie writes. |
 | WitnessDbReads | Number of Witness DB reads. |
 | WitnessDbWrites | Number of Witness DB writes. |
-

@@ -1,64 +1,81 @@
-# Parity module
+# parity
 
-## parity\_clearEngineSigner
+## parity_clearEngineSigner
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Clears an authority account for signing consensus messages. Blocks will not be sealed. 
 
-_None_
-{% endtab %}
+| Invocation |
+| :--- |
+| `{"method":"parity_clearEngineSigner","params":[]}` |
 
-{% tab title="Response" %}
-### Return type
+| This method doesn't have parameters. |
+| :--- |
 
-`Boolean`
-{% endtab %}
-{% endtabs %}
-
-## parity\_enode
-
-Returns the node enode URI.
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## parity\_getBlockReceipts
-
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| blockParameter | `BlockParameter object` |
+| `Boolean` |  |
+
+{% tabs %}
+{% tab title="Example request of parity_clearEngineSigner" %}
+```
+curl --data '{"method":"parity_clearEngineSigner","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% endtabs %}
+
+[See also CLI parity.clearEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-clearenginesigner)
+## parity_enode
+
+Returns the node enode URI. 
+
+| Invocation |
+| :--- |
+| `{"method":"parity_enode","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
+
+{% tabs %}
+{% tab title="Example request of parity_enode" %}
+```
+curl --data '{"method":"parity_enode","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% endtabs %}
+
+[See also CLI parity.enode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-enode)
+## parity_getBlockReceipts
+
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
+
+| Invocation |
+| :--- |
+| `{"method":"parity_getBlockReceipts","params":[blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ReceiptForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of parity_getBlockReceipts" %}
+```
+curl --data '{"method":"parity_getBlockReceipts","params":[blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`ReceiptForRpc object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in parity_getBlockReceipts" %}
 
 `BlockParameter`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
@@ -67,11 +84,12 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ReceiptForRpc`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -90,7 +108,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 `LogEntryForRpc[]`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -102,29 +120,34 @@ Get receipts from all transactions from particular block, more efficient than fe
 {% endtab %}
 {% endtabs %}
 
-## parity\_netPeers
+[See also CLI parity.getBlockReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-getblockreceipts)
+## parity_netPeers
 
-Returns connected peers. Peers with non-empty protocols have completed handshake.
+Returns connected peers. Peers with non-empty protocols have completed handshake. 
+
+| Invocation |
+| :--- |
+| `{"method":"parity_netPeers","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityNetPeers object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of parity_netPeers" %}
+```
+curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`ParityNetPeers object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in parity_netPeers" %}
 
 `ParityNetPeers`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Active | `Quantity` |
 | Connected | `Quantity` |
@@ -133,7 +156,7 @@ _None_
 
 `PeerInfo[]`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -145,29 +168,34 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## parity\_pendingTransactions
+[See also CLI parity.netPeers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-netpeers)
+## parity_pendingTransactions
 
-Returns a list of transactions currently in the queue.
+Returns a list of transactions currently in the queue. 
+
+| Invocation |
+| :--- |
+| `{"method":"parity_pendingTransactions","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `ParityTransaction object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
+{% tab title="Example request of parity_pendingTransactions" %}
+```
+curl --data '{"method":"parity_pendingTransactions","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`ParityTransaction object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in parity_pendingTransactions" %}
 
 `ParityTransaction`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -183,7 +211,7 @@ _None_
 | Raw | `Data` |
 | Creates | `Address` |
 | PublicKey | `PublicKey object` |
-| ChainId | `Quantity` |
+| ChainId | `UInt64 object` |
 | Condition | `Object` |
 | R | `Data` |
 | S | `Data` |
@@ -192,48 +220,68 @@ _None_
 
 `PublicKey`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Address | `Address` |
 | Bytes | `Data` |
 | PrefixedBytes | `Data` |
+
+`UInt64`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
-## parity\_setEngineSigner
+[See also CLI parity.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-pendingtransactions)
+## parity_setEngineSigner
+
+Sets an authority account for signing consensus messages. 
+
+| Invocation |
+| :--- |
+| `{"method":"parity_setEngineSigner","params":[address, password]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
+| password | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| address | `Address` |
-| password | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tab title="Example request of parity_setEngineSigner" %}
+```
+curl --data '{"method":"parity_setEngineSigner","params":[address, password],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## parity\_setEngineSignerSecret
+[See also CLI parity.setEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesigner)
+## parity_setEngineSignerSecret
+
+Sets an authority account for signing consensus messages. 
+
+| Invocation |
+| :--- |
+| `{"method":"parity_setEngineSignerSecret","params":[privateKey]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| privateKey | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| privateKey | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tab title="Example request of parity_setEngineSignerSecret" %}
+```
+curl --data '{"method":"parity_setEngineSignerSecret","params":[privateKey],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
+[See also CLI parity.setEngineSignerSecret](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesignersecret)

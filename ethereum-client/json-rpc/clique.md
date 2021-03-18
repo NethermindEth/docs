@@ -1,140 +1,199 @@
-# Clique module
+# clique
 
-## clique\_discard
+## clique_discard
 
-This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
+This method drops a currently running proposal. The signer will not cast further votes (either for or against) the address. 
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+| Invocation |
+| :--- |
+| `{"method":"clique_discard","params":[signer]}` |
 
-| Parameter name | Type |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| signer | `Address` |  |
+
+| Returned type | Description |
 | :--- | :--- |
-| signer | `Address` |
-{% endtab %}
+| `Boolean` |  |
 
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tabs %}
+{% tab title="Example request of clique_discard" %}
+```
+curl --data '{"method":"clique_discard","params":[signer],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSigners
+[See also CLI clique.discard](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-discard)
+## clique_getBlockSigner
 
-Retrieves the list of authorized signers.
+Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist. 
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+| Invocation |
+| :--- |
+| `{"method":"clique_getBlockSigner","params":[hash]}` |
 
-_None_
-{% endtab %}
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| hash | `Hash` |  |
 
-{% tab title="Response" %}
-### Return type
-
-`Address`
-{% endtab %}
-{% endtabs %}
-
-## clique\_getSignersAnnotated
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
-{% endtab %}
-{% endtabs %}
-
-## clique\_getSignersAtHash
-
-Retrieves the list of authorized signers at the specified block by hash.
-
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| hash | `Hash` |
-{% endtab %}
+| `Address` |  |
 
-{% tab title="Response" %}
-### Return type
-
-`Address`
+{% tabs %}
+{% tab title="Example request of clique_getBlockSigner" %}
+```
+curl --data '{"method":"clique_getBlockSigner","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSignersAtHashAnnotated
+[See also CLI clique.getBlockSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getblocksigner)
+## clique_getSigners
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+Retrieves the list of authorized signers. 
 
-| Parameter name | Type |
+| Invocation |
+| :--- |
+| `{"method":"clique_getSigners","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
 | :--- | :--- |
-| hash | `Hash` |
-{% endtab %}
+| `Address` |  |
 
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tabs %}
+{% tab title="Example request of clique_getSigners" %}
+```
+curl --data '{"method":"clique_getSigners","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSignersAtNumber
+[See also CLI clique.getSigners](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsigners)
+## clique_getSignersAnnotated
+| Invocation |
+| :--- |
+| `{"method":"clique_getSignersAnnotated","params":[]}` |
 
-Retrieves the list of authorized signers at the specified block by block number.
+| This method doesn't have parameters. |
+| :--- |
 
-{% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
+| Returned type | Description |
 | :--- | :--- |
-| number | `Quantity` |
-{% endtab %}
+| `String` |  |
 
-{% tab title="Response" %}
-### Return type
-
-`Address`
+{% tabs %}
+{% tab title="Example request of clique_getSignersAnnotated" %}
+```
+curl --data '{"method":"clique_getSignersAnnotated","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSnapshot
+[See also CLI clique.getSignersAnnotated](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersannotated)
+## clique_getSignersAtHash
 
-Retrieves a snapshot of all clique state at a given block.
+Retrieves the list of authorized signers at the specified block by hash. 
+
+| Invocation |
+| :--- |
+| `{"method":"clique_getSignersAtHash","params":[hash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| hash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Address` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
+{% tab title="Example request of clique_getSignersAtHash" %}
+```
+curl --data '{"method":"clique_getSignersAtHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% endtabs %}
 
-_None_
+[See also CLI clique.getSignersAtHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersathash)
+## clique_getSignersAtHashAnnotated
+| Invocation |
+| :--- |
+| `{"method":"clique_getSignersAtHashAnnotated","params":[hash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| hash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
+
+{% tabs %}
+{% tab title="Example request of clique_getSignersAtHashAnnotated" %}
+```
+curl --data '{"method":"clique_getSignersAtHashAnnotated","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% endtabs %}
+
+[See also CLI clique.getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersathashannotated)
+## clique_getSignersAtNumber
+
+Retrieves the list of authorized signers at the specified block by block number. 
+
+| Invocation |
+| :--- |
+| `{"method":"clique_getSignersAtNumber","params":[number]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| number | `Quantity` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Address` |  |
+
+{% tabs %}
+{% tab title="Example request of clique_getSignersAtNumber" %}
+```
+curl --data '{"method":"clique_getSignersAtNumber","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% endtabs %}
+
+[See also CLI clique.getSignersAtNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersatnumber)
+## clique_getSnapshot
+
+Retrieves a snapshot of all clique state at a given block. 
+
+| Invocation |
+| :--- |
+| `{"method":"clique_getSnapshot","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Snapshot object` |  |
+
+{% tabs %}
+{% tab title="Example request of clique_getSnapshot" %}
+```
+curl --data '{"method":"clique_getSnapshot","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Snapshot object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in clique_getSnapshot" %}
 
 `Snapshot`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -143,31 +202,35 @@ _None_
 {% endtab %}
 {% endtabs %}
 
-## clique\_getSnapshotAtHash
+[See also CLI clique.getSnapshot](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsnapshot)
+## clique_getSnapshotAtHash
 
-Retrieves the state snapshot at a given block.
+Retrieves the state snapshot at a given block. 
+
+| Invocation |
+| :--- |
+| `{"method":"clique_getSnapshotAtHash","params":[hash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| hash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Snapshot object` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| hash | `Hash` |
+{% tab title="Example request of clique_getSnapshotAtHash" %}
+```
+curl --data '{"method":"clique_getSnapshotAtHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 
-{% tab title="Response" %}
-### Return type
-
-`Snapshot object`
-{% endtab %}
-
-{% tab title="Object definitions" %}
-### Objects definition
+{% tab title="Objects in clique_getSnapshotAtHash" %}
 
 `Snapshot`
 
-| Fields name | Type |
+| Field name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -176,42 +239,52 @@ Retrieves the state snapshot at a given block.
 {% endtab %}
 {% endtabs %}
 
-## clique\_produceBlock
+[See also CLI clique.getSnapshotAtHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsnapshotathash)
+## clique_produceBlock
+| Invocation |
+| :--- |
+| `{"method":"clique_produceBlock","params":[parentHash]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| parentHash | `Hash` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| parentHash | `Hash` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tab title="Example request of clique_produceBlock" %}
+```
+curl --data '{"method":"clique_produceBlock","params":[parentHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
-## clique\_propose
+[See also CLI clique.produceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-produceblock)
+## clique_propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
+Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address. 
+
+| Invocation |
+| :--- |
+| `{"method":"clique_propose","params":[signer, vote]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| signer | `Address` |  |
+| vote | `Boolean` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Boolean` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| signer | `Address` |
-| vote | `Boolean` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Boolean`
+{% tab title="Example request of clique_propose" %}
+```
+curl --data '{"method":"clique_propose","params":[signer, vote],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
 {% endtab %}
 {% endtabs %}
 
+[See also CLI clique.propose](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-propose)

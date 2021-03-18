@@ -1,40 +1,50 @@
-# System module
+# system
 
-## system.getVariable\(name, defaultValue\)
+
+## system.getVariable
+
+| Invocation |
+| :--- |
+| `system.getVariable(name, defaultValue)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| name | `String` |  |
+| defaultValue | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| name | `String` |
-| defaultValue | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of system.getVariable" %}
+```yaml
+system.getVariable(name, defaultValue)
+```
 {% endtab %}
 {% endtabs %}
 
-## system.memory\(name, defaultValue\)
+
+## system.memory
+
+| Invocation |
+| :--- |
+| `system.memory(name, defaultValue)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| name | `String` |  |
+| defaultValue | `String` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
 
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-| Parameter name | Type |
-| :--- | :--- |
-| name | `String` |
-| defaultValue | `String` |
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of system.memory" %}
+```yaml
+system.memory(name, defaultValue)
+```
 {% endtab %}
 {% endtabs %}
 

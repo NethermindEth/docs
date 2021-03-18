@@ -1,50 +1,76 @@
-# Net module
+# net
+
+
+
+
 
 ## net.localEnode
 
+| Invocation |
+| :--- |
+| `net.localEnode` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
+
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`String`
+{% tab title="Example request of net.localEnode" %}
+```yaml
+net.localEnode
+```
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC net_localEnode](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_localenode)
+
 
 ## net.peerCount
 
+| Invocation |
+| :--- |
+| `net.peerCount` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Quantity` |  |
+
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`Quantity`
+{% tab title="Example request of net.peerCount" %}
+```yaml
+net.peerCount
+```
 {% endtab %}
 {% endtabs %}
+
+[See also JSON RPC net_peerCount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_peercount)
+
 
 ## net.version
 
+| Invocation |
+| :--- |
+| `net.version` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `String` |  |
+
 {% tabs %}
-{% tab title="Request" %}
-### **Parameters**
-
-_None_
-{% endtab %}
-
-{% tab title="Response" %}
-### Return type
-
-`JavaScript Object`
+{% tab title="Example request of net.version" %}
+```yaml
+net.version
+```
 {% endtab %}
 {% endtabs %}
 
+[See also JSON RPC net_version](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_version)

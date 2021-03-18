@@ -1,6 +1,6 @@
-# Network module
+# Network
 
-| Metric Name | Description |
+| Metric | Description |
 | :--- | :--- |
 | AlreadyConnectedDisconnects | Number of received disconnects due to already connected |
 | BreachOfProtocolDisconnects | Number of received disconnects due to breach of protocol |
@@ -51,4 +51,3 @@
 | TooManyPeersDisconnects | Number of received disconnects due to too many peers |
 | UnexpectedIdentityDisconnects | Number of received disconnects due to peer identity information mismatch |
 | UselessPeerDisconnects | Number of received disconnects due to useless peer |
-
