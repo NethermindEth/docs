@@ -24,10 +24,10 @@ jobs:
           dotnet run -c Release Nethermind.GitBook.csproj
       - name: Copy updated content to root
         run: |
-          cp nethermind/gitbook/docs/ethereum-client/json-rpc/json-rpc-modules/* docs/ethereum-client/json-rpc/json-rpc-modules/
-          cp nethermind/gitbook/docs/ethereum-client/metrics/modules/* docs/ethereum-client/metrics/modules
-          cp nethermind/gitbook/docs/ethereum-client/configuration/modules/* docs/ethereum-client/configuration/modules
-          cp nethermind/gitbook/docs/nethermind-utilities/cli/cli-modules/* docs/nethermind-utilities/cli/cli-modules
+          cp nethermind/gitbook/docs/ethereum-client/json-rpc/* docs/ethereum-client/json-rpc/
+          cp nethermind/gitbook/docs/ethereum-client/metrics/* docs/ethereum-client/metrics
+          cp nethermind/gitbook/docs/ethereum-client/configuration/* docs/ethereum-client/configuration
+          cp nethermind/gitbook/docs/nethermind-utilities/cli/* docs/nethermind-utilities/cli
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.7.0
         with:
