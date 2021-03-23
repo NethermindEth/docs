@@ -11,10 +11,6 @@ Running consumer
 
 * [x] Select `Consumer` and then select the network:
 
-Ropsten
-
-xDai
-
 ## Connect to the network
 
 ### Ropsten
