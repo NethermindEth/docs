@@ -159,7 +159,7 @@ terraform apply myplan
 
 前往 `YOUR_DROPLET_IP:9091` 并验证是否有指标流入。
 
-![](../.gitbook/assets/image%20%2849%29%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/image%20%2849%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 ### Seq
 
