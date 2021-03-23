@@ -1,11 +1,8 @@
-# clique
-
-
+# Clique module
 
 ## clique.discard
 
-This method drops a currently running proposal. The signer will not cast further votes (either for or against) the address. 
-
+This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
 
 | Invocation |
 | :--- |
@@ -27,13 +24,11 @@ clique.discard(signer)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_discard](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_discard)
-
+[See also JSON RPC clique\_discard](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_discard)
 
 ## clique.getBlockSigner
 
-Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist. 
-
+Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist.
 
 | Invocation |
 | :--- |
@@ -55,13 +50,11 @@ clique.getBlockSigner(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getBlockSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getblocksigner)
-
+[See also JSON RPC clique\_getBlockSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getblocksigner)
 
 ## clique.getSigners
 
-Retrieves the list of authorized signers. 
-
+Retrieves the list of authorized signers.
 
 | Invocation |
 | :--- |
@@ -69,6 +62,7 @@ Retrieves the list of authorized signers.
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -82,8 +76,7 @@ clique.getSigners()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSigners](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsigners)
-
+[See also JSON RPC clique\_getSigners](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsigners)
 
 ## clique.getSignersAnnotated
 
@@ -93,6 +86,7 @@ clique.getSigners()
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -106,13 +100,11 @@ clique.getSignersAnnotated()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSignersAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersannotated)
-
+[See also JSON RPC clique\_getSignersAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersannotated)
 
 ## clique.getSignersAtHash
 
-Retrieves the list of authorized signers at the specified block by hash. 
-
+Retrieves the list of authorized signers at the specified block by hash.
 
 | Invocation |
 | :--- |
@@ -134,8 +126,7 @@ clique.getSignersAtHash(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSignersAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathash)
-
+[See also JSON RPC clique\_getSignersAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathash)
 
 ## clique.getSignersAtHashAnnotated
 
@@ -159,13 +150,11 @@ clique.getSignersAtHashAnnotated(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathashannotated)
-
+[See also JSON RPC clique\_getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathashannotated)
 
 ## clique.getSignersAtNumber
 
-Retrieves the list of authorized signers at the specified block by block number. 
-
+Retrieves the list of authorized signers at the specified block by block number.
 
 | Invocation |
 | :--- |
@@ -187,13 +176,11 @@ clique.getSignersAtNumber(number)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSignersAtNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersatnumber)
-
+[See also JSON RPC clique\_getSignersAtNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersatnumber)
 
 ## clique.getSnapshot
 
-Retrieves a snapshot of all clique state at a given block. 
-
+Retrieves a snapshot of all clique state at a given block.
 
 | Invocation |
 | :--- |
@@ -201,6 +188,7 @@ Retrieves a snapshot of all clique state at a given block.
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -213,8 +201,7 @@ clique.getSnapshot()
 ```
 {% endtab %}
 
-{% tab title="Objects in clique_getSnapshot" %}
-
+{% tab title="Objects in clique\_getSnapshot" %}
 `Snapshot`
 
 | Field name | Type |
@@ -226,13 +213,11 @@ clique.getSnapshot()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSnapshot](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshot)
-
+[See also JSON RPC clique\_getSnapshot](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshot)
 
 ## clique.getSnapshotAtHash
 
-Retrieves the state snapshot at a given block. 
-
+Retrieves the state snapshot at a given block.
 
 | Invocation |
 | :--- |
@@ -253,8 +238,7 @@ clique.getSnapshotAtHash(hash)
 ```
 {% endtab %}
 
-{% tab title="Objects in clique_getSnapshotAtHash" %}
-
+{% tab title="Objects in clique\_getSnapshotAtHash" %}
 `Snapshot`
 
 | Field name | Type |
@@ -266,8 +250,7 @@ clique.getSnapshotAtHash(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_getSnapshotAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshotathash)
-
+[See also JSON RPC clique\_getSnapshotAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshotathash)
 
 ## clique.produceBlock
 
@@ -291,13 +274,11 @@ clique.produceBlock(parentHash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_produceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_produceblock)
-
+[See also JSON RPC clique\_produceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_produceblock)
 
 ## clique.propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address. 
-
+Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
 
 | Invocation |
 | :--- |
@@ -320,4 +301,5 @@ clique.propose(signer, vote)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique_propose](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_propose)
+[See also JSON RPC clique\_propose](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_propose)
+

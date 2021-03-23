@@ -1,6 +1,4 @@
-# txpool
-
-
+# TxPool module
 
 ## txpool.content
 
@@ -10,6 +8,7 @@
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -22,8 +21,7 @@ txpool.content
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool_content" %}
-
+{% tab title="Objects in txpool\_content" %}
 `TxPoolContent`
 
 | Field name | Type |
@@ -33,8 +31,7 @@ txpool.content
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC txpool_content](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/txpool#txpool_content)
-
+[See also JSON RPC txpool\_content](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/txpool#txpool_content)
 
 ## txpool.inspect
 
@@ -44,6 +41,7 @@ txpool.content
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -56,8 +54,7 @@ txpool.inspect
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool_inspect" %}
-
+{% tab title="Objects in txpool\_inspect" %}
 `TxPoolInspection`
 
 | Field name | Type |
@@ -67,8 +64,7 @@ txpool.inspect
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC txpool_inspect](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/txpool#txpool_inspect)
-
+[See also JSON RPC txpool\_inspect](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/txpool#txpool_inspect)
 
 ## txpool.status
 
@@ -78,6 +74,7 @@ txpool.inspect
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -90,8 +87,7 @@ txpool.status
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool_status" %}
-
+{% tab title="Objects in txpool\_status" %}
 `TxPoolStatus`
 
 | Field name | Type |
@@ -101,4 +97,5 @@ txpool.status
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC txpool_status](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/txpool#txpool_status)
+[See also JSON RPC txpool\_status](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/txpool#txpool_status)
+

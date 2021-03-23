@@ -1,4 +1,4 @@
-# Store
+# Store module
 
 | Metric | Description |
 | :--- | :--- |
@@ -28,3 +28,4 @@
 | StorageTreeWrites | Number of storage trie writes. |
 | WitnessDbReads | Number of Witness DB reads. |
 | WitnessDbWrites | Number of Witness DB writes. |
+

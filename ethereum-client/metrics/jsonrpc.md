@@ -1,4 +1,4 @@
-# JsonRpc
+# JsonRpc module
 
 | Metric | Description |
 | :--- | :--- |
@@ -9,3 +9,4 @@
 | JsonRpcRequestDeserializationFailures | Number of JSON RPC requests that failed JSON deserialization. |
 | JsonRpcRequests | Total number of JSON RPC requests received by the node. |
 | JsonRpcSuccesses | Number of JSON RPC requests processed succesfully. |
+
