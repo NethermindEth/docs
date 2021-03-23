@@ -20,17 +20,5 @@
   * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
   * Install dependencies `brew install gmp snappy lz4 zstd rocksdb`
 
-## Account
-
-If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/ndm-faq#i-already-have-an-account-can-i-use-it).
-
-### Ropsten
-
-If you can use Get ETH contact with us on Discord.
-
-### xDai
-
-If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/ndm-faq#i-created-the-account-but-i-still-have-no-money-on-it-what-should-i-do).
-
 
 
