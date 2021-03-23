@@ -13,7 +13,7 @@ description: Running the Provider
 
 * [x] Select `Provider` 
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 * [x] Select the network
 
@@ -27,20 +27,23 @@ description: Running the Provider
 
 for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190)\`\`
 
-![](../../.gitbook/assets/image%20%28141%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%28153%29.png)
 
 ### xDai
 
 #### Sync
 
-* [x] In the console chose  **xDai** network. Default sync type is **fast sync**.
+* [x] Select  **xDai** network. Default sync type is **fast sync**.
+
+![](../../.gitbook/assets/image%20%28158%29.png)
+
 * [x] Wait for the sync to complete \(~1 hour\)
 
 #### VIA Proxy
 
-* [x] Select xDai \[VIA Proxy\] and enter the proxy endpoint
+* [x] Select **xDai \[VIA Proxy\]** and enter the proxy endpoint
 
-![](../../.gitbook/assets/image%20%2838%29.png)
+![](../../.gitbook/assets/image%20%28154%29.png)
 
 ## Account
 

@@ -13,7 +13,7 @@ description: Running the consumer
 
 * [x] Select `Consumer`
 
-![](../../.gitbook/assets/image%20%28153%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 * [x] Select the network
 
@@ -27,7 +27,7 @@ description: Running the consumer
 
 for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190)\`\`
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2815%29.png)
 
 ### xDai
 
@@ -35,15 +35,15 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 * [x] Select **xDai** network. Default sync type is **fast sync**.
 
-![](../../.gitbook/assets/image%20%28144%29.png)
+![](../../.gitbook/assets/image%20%28156%29.png)
 
 * [x] Wait for the sync to complete \(~1 hour\)
 
 #### VIA Proxy
 
-* [x] Select xDai \[VIA Proxy\] and enter the proxy endpoint
+* [x] Select **xDai \[VIA Proxy\]** and enter the proxy endpoint
 
-![](../../.gitbook/assets/image%20%28152%29.png)
+![](../../.gitbook/assets/image%20%28157%29.png)
 
 ## Account
 
