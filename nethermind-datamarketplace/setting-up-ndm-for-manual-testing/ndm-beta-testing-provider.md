@@ -13,7 +13,7 @@ description: Running the Provider
 
 * [x] Select `Provider` 
 
-![](../../.gitbook/assets/image%20%2820%29.png)
+![](../../.gitbook/assets/image%20%28152%29.png)
 
 * [x] Select the network
 
@@ -27,7 +27,7 @@ description: Running the Provider
 
 for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190)\`\`
 
-![](../../.gitbook/assets/image%20%28153%29.png)
+![](../../.gitbook/assets/image%20%28159%29.png)
 
 ### xDai
 
@@ -35,7 +35,7 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 * [x] Select  **xDai** network. Default sync type is **fast sync**.
 
-![](../../.gitbook/assets/image%20%28158%29.png)
+![](../../.gitbook/assets/image%20%28165%29.png)
 
 * [x] Wait for the sync to complete \(~1 hour\)
 
@@ -43,7 +43,7 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 * [x] Select **xDai \[VIA Proxy\]** and enter the proxy endpoint
 
-![](../../.gitbook/assets/image%20%28154%29.png)
+![](../../.gitbook/assets/image%20%28160%29.png)
 
 ## Account
 
@@ -56,4 +56,51 @@ If you can use Get ETH contact with us on Discord.
 ### xDai
 
 If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/ndm-faq#i-created-the-account-but-i-still-have-no-money-on-it-what-should-i-do).
+
+## Creating the data asset
+
+* [x] To create a data asset click ‘+’ button.
+
+![](../../.gitbook/assets/image%20%28155%29.png)
+
+* [x] Complete all the fields with correct data.
+
+![](../../.gitbook/assets/image%20%28153%29.png)
+
+* [x] Example
+
+![](../../.gitbook/assets/image%20%28164%29.png)
+
+* [x] Click "Create" button and create the data asset.
+
+![](../../.gitbook/assets/image%20%2810%29.png)
+
+* [x] Remember to change data asset state from "Unpublished" to "Publish" if you want it to be visible to consumers.
+
+![](../../.gitbook/assets/image%20%28154%29.png)
+
+##  [Connecting with consumers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-consumers)
+
+
+
+{% hint style="info" %}
+You can also test the whole flow of NDM by yourself. All you need to do is:
+
+* Run Provider with nethermind.launcher,
+* Run Consumer with nethermind.launcher
+* You will have two consoles and two UIs \(one for provider and one for consumer\).
+* If needed - change client type - select the correct button in the right top corner on UI.
+* Connect them with each other. See[ connecting with consumers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-consumers) and [connecting with providers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-providers).
+* Create data asset as provider.
+* Make a deposit as consumer
+* Consume the data as consumer.
+
+Voilà! :\) 
+{% endhint %}
+
+
+
+
+
+
 
