@@ -11,5 +11,46 @@ description: Running the Provider
   `ndm.launcher.command` \(MacOs\)  
   `ndm.launcher` \(Linux\). 
 
-* [x] Select `Provider` and then select the network:
+* [x] Select `Provider` 
+
+![](../../.gitbook/assets/image%20%2815%29.png)
+
+* [x] Select the network
+
+## Connect to the network
+
+### Ropsten
+
+#### VIA Proxy
+
+* [x] Select **Ropsten \[VIA Proxy\]** and enter the proxy endpoint.
+
+for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190)\`\`
+
+![](../../.gitbook/assets/image%20%28141%29%20%281%29.png)
+
+### xDai
+
+#### Sync
+
+* [x] In the console chose  **xDai** network. Default sync type is **fast sync**.
+* [x] Wait for the sync to complete \(~1 hour\)
+
+#### VIA Proxy
+
+* [x] Select xDai \[VIA Proxy\] and enter the proxy endpoint
+
+![](../../.gitbook/assets/image%20%2838%29.png)
+
+## Account
+
+If you don't have an account, you can create one using the modal that will appear at the start. Or you can use your existing account. [See more](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/ndm-faq#i-already-have-an-account-can-i-use-it).
+
+### Ropsten
+
+If you can use Get ETH contact with us on Discord.
+
+### xDai
+
+If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/ndm-faq#i-created-the-account-but-i-still-have-no-money-on-it-what-should-i-do).
 

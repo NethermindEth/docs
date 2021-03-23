@@ -11,7 +11,11 @@ description: Running the consumer
   `ndm.launcher.command` \(MacOs\)  
   `ndm.launcher` \(Linux\).
 
-* [x] Select `Consumer` and then select the network:
+* [x] Select `Consumer`
+
+![](../../.gitbook/assets/image%20%28153%29.png)
+
+* [x] Select the network
 
 ## Connect to the network
 
@@ -23,20 +27,23 @@ description: Running the consumer
 
 for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190)\`\`
 
-![](../../.gitbook/assets/image%20%28141%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 ### xDai
 
 #### Sync
 
-* [x] In the console chose  **xDai** network. Default sync type is **fast sync**.
+* [x] Select **xDai** network. Default sync type is **fast sync**.
+
+![](../../.gitbook/assets/image%20%28144%29.png)
+
 * [x] Wait for the sync to complete \(~1 hour\)
 
 #### VIA Proxy
 
 * [x] Select xDai \[VIA Proxy\] and enter the proxy endpoint
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%28152%29.png)
 
 ## Account
 
