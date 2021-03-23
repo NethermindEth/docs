@@ -86,8 +86,8 @@ If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io
 {% hint style="info" %}
 You can also test the whole flow of NDM by yourself. All you need to do is:
 
-* Run Provider with nethermind.launcher,
-* Run Consumer with nethermind.launcher
+* Run Provider with nethermind.launcher.
+* Run Consumer with nethermind.launcher.
 * You will have two consoles and two UIs \(one for provider and one for consumer\).
 * If needed - change client type - select the correct button in the right top corner on UI.
 * Connect them with each other. See[ connecting with consumers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-consumers) and [connecting with providers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-providers).
@@ -97,8 +97,6 @@ You can also test the whole flow of NDM by yourself. All you need to do is:
 
 Voilà! :\) 
 {% endhint %}
-
-
 
 
 
