@@ -1,4 +1,8 @@
-# Net module
+# net
+
+
+
+
 
 ## net.localEnode
 
@@ -8,7 +12,6 @@
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -22,7 +25,8 @@ net.localEnode
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC net\_localEnode](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_localenode)
+[See also JSON RPC net_localEnode](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_localenode)
+
 
 ## net.peerCount
 
@@ -32,7 +36,6 @@ net.localEnode
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -46,7 +49,8 @@ net.peerCount
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC net\_peerCount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_peercount)
+[See also JSON RPC net_peerCount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_peercount)
+
 
 ## net.version
 
@@ -56,7 +60,6 @@ net.peerCount
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -70,5 +73,4 @@ net.version
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC net\_version](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_version)
-
+[See also JSON RPC net_version](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/net#net_version)
