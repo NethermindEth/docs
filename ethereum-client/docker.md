@@ -16,11 +16,6 @@ We are currently supporting docker images for the following CPU architectures:
 
 * **AMD64**
 * **ARM64**
-* **ARM32** ⚠ ⚠ ⚠ 
-
-{% hint style="danger" %}
-**ARM32** docker image is broken now. We are working on a fix at the moment.
-{% endhint %}
 
 ## Using an existing image
 
@@ -28,11 +23,11 @@ We are currently supporting docker images for the following CPU architectures:
 
 | **Tag** | Description | Architecture |
 | :--- | :--- | :--- |
-| `latest` | The latest **Nethermind Debian** based image | x86\_64, ARM64, ARM32 |
+| `latest` | The latest **Nethermind Debian** based image | x86\_64, ARM64 |
 
 To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
 
-For example if you wish to use version `1.7.4` of **Nethermind Debian** image, the image name would be `nethermind/nethermind:1.7.4`.
+For example, if you wish to use version `1.7.4` of **Nethermind Debian** image, the image name would be `nethermind/nethermind:1.7.4`.
 
 All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
 
@@ -172,7 +167,7 @@ Keystore:
 -v /home/user/keystore:/nethermind/keystore
 ```
 
-Nlog:
+NLog:
 
 ```bash
 -v /home/user/NLog.config:/nethermind/NLog.config
@@ -186,19 +181,12 @@ Dockerfile can be found in the repository [root](https://github.com/NethermindEt
 
 | File Name | Description | Architecture |
 | :--- | :--- | :--- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build a Debian based image | x86\_64, ARM64, ARM32 |
-| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | doesn’t require to have a cloned repository, as it will download it during the first step | x86\_64 |
+| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build a Debian based image | x86\_64, ARM64 |
 
-In order to build the images, run either:
-
-```bash
-docker build -t nethermind .
-```
-
-or to specify other Dockerfile use `-f` flag:
+In order to build the images, run:
 
 ```bash
-docker build -f Dockerfile_full -t nethermind .
+docker buildx build --platform=linux/amd64 -t nethermind .
 ```
 
 Example usage of the locally created docker-image:
