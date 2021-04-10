@@ -1,8 +1,8 @@
-# Admin module
+# admin
 
-## admin\_addPeer
+## admin_addPeer
 
-Adds given node.
+Adds given node. 
 
 | Invocation |
 | :--- |
@@ -11,20 +11,19 @@ Adds given node.
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | enode | `String` | Given node |
-| addToStaticNodes | `Boolean` | Adding to static nodes if `true` \(optional\) |
+| addToStaticNodes | `Boolean` | Adding to static nodes if `true` (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
 | `String` | Added node |
 
 {% tabs %}
-{% tab title="Example request of admin\_addPeer" %}
-```text
+{% tab title="Example request of admin_addPeer" %}
+```
 curl --data '{"method":"admin_addPeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
-
-{% tab title="Example response of admin\_addPeer" %}
+{% tab title="Example response of admin_addPeer" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -36,10 +35,9 @@ curl --data '{"method":"admin_addPeer","params":["enode://deed356ddcaa1eb33a859b
 {% endtabs %}
 
 [See also CLI admin.addPeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-addpeer)
+## admin_nodeInfo
 
-## admin\_nodeInfo
-
-Displays relevant information about this node.
+Displays relevant information about this node. 
 
 | Invocation |
 | :--- |
@@ -48,19 +46,17 @@ Displays relevant information about this node.
 | This method doesn't have parameters. |
 | :--- |
 
-
 | Returned type | Description |
 | :--- | :--- |
 | `NodeInfo object` | Information about this node |
 
 {% tabs %}
-{% tab title="Example request of admin\_nodeInfo" %}
-```text
+{% tab title="Example request of admin_nodeInfo" %}
+```
 curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
-
-{% tab title="Example response of admin\_nodeInfo" %}
+{% tab title="Example response of admin_nodeInfo" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -88,7 +84,8 @@ curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_nodeInfo" %}
+{% tab title="Objects in admin_nodeInfo" %}
+
 `NodeInfo`
 
 | Field name | Type |
@@ -111,10 +108,9 @@ curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 {% endtabs %}
 
 [See also CLI admin.nodeInfo](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-nodeinfo)
+## admin_peers
 
-## admin\_peers
-
-Displays a list of connected peers including information about them \(`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`\).
+Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`). 
 
 | Invocation |
 | :--- |
@@ -122,20 +118,19 @@ Displays a list of connected peers including information about them \(`clientId`
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` \(optional\) |
+| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
 | `PeerInfo object` | List of connected peers including information |
 
 {% tabs %}
-{% tab title="Example request of admin\_peers" %}
-```text
+{% tab title="Example request of admin_peers" %}
+```
 curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
-
-{% tab title="Example response of admin\_peers" %}
+{% tab title="Example response of admin_peers" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -153,16 +148,17 @@ curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H
       "ethDetails": "eth65",
       "lastSignal": "03/11/2021 12:33:58"
     },
-
+    
     (...)
-
+    
   ],
   "id": 1
 }
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_peers" %}
+{% tab title="Objects in admin_peers" %}
+
 `PeerInfo`
 
 | Field name | Type |
@@ -182,10 +178,9 @@ curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H
 {% endtabs %}
 
 [See also CLI admin.peers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-peers)
+## admin_removePeer
 
-## admin\_removePeer
-
-Removes given node.
+Removes given node. 
 
 | Invocation |
 | :--- |
@@ -194,20 +189,19 @@ Removes given node.
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | enode | `String` | Given node |
-| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` \(optional\) |
+| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
 | `String` | Removed node |
 
 {% tabs %}
-{% tab title="Example request of admin\_removePeer" %}
-```text
+{% tab title="Example request of admin_removePeer" %}
+```
 curl --data '{"method":"admin_removePeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
-
-{% tab title="Example response of admin\_removePeer" %}
+{% tab title="Example response of admin_removePeer" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -219,4 +213,3 @@ curl --data '{"method":"admin_removePeer","params":["enode://deed356ddcaa1eb33a8
 {% endtabs %}
 
 [See also CLI admin.removePeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-removepeer)
-
