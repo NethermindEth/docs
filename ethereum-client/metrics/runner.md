@@ -1,6 +1,5 @@
-# Runner module
+# Runner
 
 | Metric | Description |
 | :--- | :--- |
 | Version | Version number |
-

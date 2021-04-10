@@ -1,13 +1,13 @@
-# Evm module
+# Evm
 
 | Metric | Description |
 | :--- | :--- |
 | BlockhashOpcode | Number of BLOCKHASH opcodes executed. |
-| Bn256AddPrecompile | Number of BN256\_ADD precompile calls. |
-| Bn256MulPrecompile | Number of BN256\_MUL precompile calls. |
-| Bn256PairingPrecompile | Number of BN256\_PAIRING precompile calls. |
+| Bn256AddPrecompile | Number of BN256_ADD precompile calls. |
+| Bn256MulPrecompile | Number of BN256_MUL precompile calls. |
+| Bn256PairingPrecompile | Number of BN256_PAIRING precompile calls. |
 | Calls | Number of calls to other contracts. |
-| EcRecoverPrecompile | Number of EC\_RECOVERY precompile calls. |
+| EcRecoverPrecompile | Number of EC_RECOVERY precompile calls. |
 | EvmExceptions | Number of EVM exceptions thrown by contracts. |
 | ModExpOpcode | Number of MODEXP precompiles executed. |
 | ModExpPrecompile | Number of MODEXP precompile calls. |
@@ -16,4 +16,3 @@
 | Sha256Precompile | Number of SHA256 precompile calls. |
 | SloadOpcode | Number of SLOAD opcodes executed. |
 | SstoreOpcode | Number of SSTORE opcodes executed. |
-
