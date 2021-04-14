@@ -29,7 +29,7 @@ We will build a Nethermind plugin \(see [nethermind plugins](https://docs.nether
 
 Firstly we need to create our pipeline elements. With this case there will only be 3 of them - source, processor and publisher but there is nothing standing in the way in adding more elements. 
 
-```text
+```csharp
     public class NewTransactionsSource<TIn> : IPipelineElement<TIn> where TIn : Transaction
     {
         private Block _block;
@@ -56,7 +56,7 @@ Firstly we need to create our pipeline elements. With this case there will only 
     }
 ```
 
-```text
+```csharp
     public class TransactionProcessorElement<TIn, TOut> : IPipelineElement<TIn, TOut>
     where TIn : Transaction
     where TOut : TIn
@@ -76,7 +76,7 @@ Firstly we need to create our pipeline elements. With this case there will only 
 
 After that create plugin file and build your pipeline with `IPipelineBuilder` 
 
-```text
+```csharp
     public class PipelineExamplePlugin : INethermindPlugin
     {
         public string Name => "Pipeline example";
@@ -118,5 +118,5 @@ After that create plugin file and build your pipeline with `IPipelineBuilder`
     }
 ```
 
-With that, all you need is to add the plugin to your node and watch how transactions are beeing streamed through web sockets. 
+With that, all you need is to add the plugin to your node and watch how transactions are being streamed through web sockets. 
 
