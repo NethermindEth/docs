@@ -98,6 +98,7 @@
   * [Web3 module](nethermind-utilities/cli/web3.md)
 * [Beam Wallet](nethermind-utilities/beam-wallet.md)
 * [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
+* [Pipeline](nethermind-utilities/pipeline.md)
 
 ## Nethermind DataMarketplace
 
