@@ -6,7 +6,9 @@ description: >-
 
 # Pipeline
 
- Nethermind under `Nethermind.Pipeline` project provides couple of interfaces and classes used in creating pipelines. 
+### Please note that the pipeline source code is still a work in progress and there will be significant changes in the coming weeks!
+
+Nethermind under `Nethermind.Pipeline` project provides couple of interfaces and classes used in creating pipelines. 
 
 ## Pipeline items
 
