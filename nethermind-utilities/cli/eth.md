@@ -67,9 +67,27 @@ eth.call(transactionCall, blockParameter)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 
 `BlockParameter`
 
@@ -121,6 +139,98 @@ eth.chainId
 
 [See also JSON RPC eth\_chainId](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_chainid)
 
+## eth.createAccessList
+
+Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList for the given transaction
+
+{% hint style="info" %}
+**Hint:** If your transaction has code executed, then you can generate transaction access list with eth\_createAccessList. If you send it with your transaction then it will lower your gas cost on Ethereum
+{% endhint %}
+
+| Invocation |
+| :--- |
+| `eth.createAccessList(transactionCall, blockParameter, optimize)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| transactionCall | `TransactionForRpc object` | Transaction's details |
+| blockParameter | `BlockParameter object` | \(optional\) |
+| optimize | `Boolean` | \(optional\) |
+
+| Returned type | Description |
+| :--- | :--- |
+| `AccessListForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.createAccessList" %}
+```yaml
+eth.createAccessList(transactionCall, blockParameter, optimize)
+```
+{% endtab %}
+
+{% tab title="Objects in eth\_createAccessList" %}
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+* `Quantity` or `String` \(latest, earliest, pending\)
+
+`AccessListForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| AccessList | `AccessListItemForRpc[] object` |
+| GasUsed | `Quantity` |
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth\_createAccessList](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_createaccesslist)
+
 ## eth.estimateGas
 
 Executes a tx call and returns gas used \(does not create a transaction\)
@@ -162,9 +272,27 @@ eth.estimateGas(transactionCall, blockParameter)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 
 `BlockParameter`
 
@@ -697,9 +825,27 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
@@ -745,9 +891,27 @@ eth.getTransactionByHash(transactionHash)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
@@ -837,6 +1001,7 @@ eth.getTransactionReceipt(txHashData)
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
+| Type | `TxType object` |
 
 `LogEntryForRpc[]`
 
@@ -849,6 +1014,10 @@ eth.getTransactionReceipt(txHashData)
 | IsReadOnly | `Boolean` |
 | IsFixedSize | `Boolean` |
 | IsSynchronized | `Boolean` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 {% endtab %}
 {% endtabs %}
 
@@ -1088,9 +1257,27 @@ eth.pendingTransactions
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
@@ -1212,9 +1399,27 @@ eth.sendTransaction(rpcTx)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+
+`TxType`
+
+* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Length | `Quantity` |
+| LongLength | `Quantity` |
+| Rank | `Quantity` |
+| SyncRoot | `Object` |
+| IsReadOnly | `Boolean` |
+| IsFixedSize | `Boolean` |
+| IsSynchronized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
