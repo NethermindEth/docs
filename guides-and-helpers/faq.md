@@ -1,5 +1,35 @@
 # FAQ
 
+## How do I upgrade my node prior to the upcoming Ethereum Berlin fork?
+
+All details regarding the upgrade can be found on the official EF announcement [https://blog.ethereum.org/2021/03/08/ethereum-berlin-upgrade-announcement/](https://blog.ethereum.org/2021/03/08/ethereum-berlin-upgrade-announcement/)
+
+### Upgrading Nethermind for Docker users
+
+Pull the latest version of Nethermind using the `latest` or `1.10.58` version tag.
+
+```text
+docker pull nethermind/nethermind:1.10.58
+```
+
+or pull with docker-compose if the `nethermind/nethermind` base image is specified
+
+```text
+docker-compose pull
+```
+
+### Upgrading Nethermind for Systemd users
+
+Simply download the latest Nethermind package either from [https://downloads.nethermind.io](https://downloads.nethermind.io/) or [https://github.com/NethermindEth/nethermind/releases](https://github.com/NethermindEth/nethermind/releases) and make sure that the package is extracted in the `WorkingDirectory` path defined in your `systemd` service.
+
+```text
+WorkingDirectory=/home/nethermind/nethermind
+```
+
+### Upgrading Nethermind when running as a background process
+
+Download the latest Nethermind package either from [https://downloads.nethermind.io](https://downloads.nethermind.io/) or [https://github.com/NethermindEth/nethermind/releases](https://github.com/NethermindEth/nethermind/releases) and extract the package in the folder you currently use for running Nethermind.
+
 ## What is the minimum viable config to serve ETH2 validator requests?
 
 This config downloads a minimal amount of bodies and receipts to be able to serve ETH2 validator requests since the deposit contract deployment. It also enables JSON RPC \(**important - make sure that you do not open firewall to the outside world!**\)
