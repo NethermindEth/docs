@@ -53,6 +53,7 @@
   * [Evm module](ethereum-client/metrics/evm.md)
   * [JsonRpc module](ethereum-client/metrics/jsonrpc.md)
   * [Network module](ethereum-client/metrics/network.md)
+  * [Pruning module](ethereum-client/metrics/trie.pruning.md)
   * [Runner module](ethereum-client/metrics/runner.md)
   * [Store module](ethereum-client/metrics/store.md)
   * [Trie module](ethereum-client/metrics/trie.md)

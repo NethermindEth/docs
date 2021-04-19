@@ -14,7 +14,7 @@ These are the most common problems and fixes for them:
      * \(Terminal = your local terminal emulator like iTerm\)
   7. Relaunch Terminal, the _Operation not permitted_ error messages will be gone
 
-![Be sure to let your terminal emulator access to full disk when encountering Operation not permitted permited&apos; error](../.gitbook/assets/image%20%2818%29%20%282%29.png)
+![Be sure to let your terminal emulator access to full disk when encountering Operation not permitted permited&apos; error](../.gitbook/assets/image%20%2818%29%20%284%29%20%282%29.png)
 
 * **Cannot open an app from an unidentified developer error**
 

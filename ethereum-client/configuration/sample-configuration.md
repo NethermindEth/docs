@@ -69,6 +69,7 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
+
 {% tab title="goerli.cfg" %}
 ```yaml
 {
@@ -136,6 +137,7 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
+
 {% tab title="rinkeby.cfg" %}
 ```yaml
 {
@@ -192,6 +194,7 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
+
 {% tab title="ropsten.cfg" %}
 ```yaml
 {
@@ -249,3 +252,4 @@ description: Sample Fast Sync configurations for Nethermind
 ```
 {% endtab %}
 {% endtabs %}
+
