@@ -1,6 +1,6 @@
 # Store module
 
-| Metric | Description |
+| Metric Name | Description |
 | :--- | :--- |
 | BlockInfosDbReads | Number of Block Infos DB reads. |
 | BlockInfosDbWrites | Number of Block Infos DB writes. |
