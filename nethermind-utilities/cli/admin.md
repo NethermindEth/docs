@@ -1,8 +1,11 @@
-# Admin module
+# admin
+
+
 
 ## admin.addPeer
 
-Adds given node.
+Adds given node. 
+
 
 | Invocation |
 | :--- |
@@ -11,7 +14,7 @@ Adds given node.
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | enode | `String` | Given node |
-| addToStaticNodes | `Boolean` | Adding to static nodes if `true` \(optional\) |
+| addToStaticNodes | `Boolean` | Adding to static nodes if `true` (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -23,7 +26,6 @@ Adds given node.
 admin.addPeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true)
 ```
 {% endtab %}
-
 {% tab title="Example response of admin.addPeer" %}
 ```yaml
 "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303"
@@ -31,11 +33,13 @@ admin.addPeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c942
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC admin\_addPeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_addpeer)
+[See also JSON RPC admin_addPeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_addpeer)
+
 
 ## admin.nodeInfo
 
-Displays relevant information about this node.
+Displays relevant information about this node. 
+
 
 | Invocation |
 | :--- |
@@ -43,7 +47,6 @@ Displays relevant information about this node.
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -55,7 +58,6 @@ Displays relevant information about this node.
 admin.nodeInfo
 ```
 {% endtab %}
-
 {% tab title="Example response of admin.nodeInfo" %}
 ```yaml
 {
@@ -80,7 +82,8 @@ admin.nodeInfo
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_nodeInfo" %}
+{% tab title="Objects in admin_nodeInfo" %}
+
 `NodeInfo`
 
 | Field name | Type |
@@ -102,11 +105,13 @@ admin.nodeInfo
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC admin\_nodeInfo](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_nodeinfo)
+[See also JSON RPC admin_nodeInfo](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_nodeinfo)
+
 
 ## admin.peers
 
-Displays a list of connected peers including information about them \(`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`\).
+Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`). 
+
 
 | Invocation |
 | :--- |
@@ -114,7 +119,7 @@ Displays a list of connected peers including information about them \(`clientId`
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` \(optional\) |
+| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -126,7 +131,6 @@ Displays a list of connected peers including information about them \(`clientId`
 admin.peers(true)
 ```
 {% endtab %}
-
 {% tab title="Example response of admin.peers" %}
 ```yaml
 [
@@ -143,14 +147,15 @@ admin.peers(true)
     "ethDetails": "eth65",
     "lastSignal": "03/11/2021 12:33:58"
   },
-
+  
   (...)
-
+  
 ]
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_peers" %}
+{% tab title="Objects in admin_peers" %}
+
 `PeerInfo`
 
 | Field name | Type |
@@ -169,11 +174,13 @@ admin.peers(true)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC admin\_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_peers)
+[See also JSON RPC admin_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_peers)
+
 
 ## admin.removePeer
 
-Removes given node.
+Removes given node. 
+
 
 | Invocation |
 | :--- |
@@ -182,7 +189,7 @@ Removes given node.
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | enode | `String` | Given node |
-| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` \(optional\) |
+| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -194,7 +201,6 @@ Removes given node.
 admin.removePeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true)
 ```
 {% endtab %}
-
 {% tab title="Example response of admin.removePeer" %}
 ```yaml
 "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303"
@@ -202,5 +208,4 @@ admin.removePeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC admin\_removePeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_removepeer)
-
+[See also JSON RPC admin_removePeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_removepeer)
