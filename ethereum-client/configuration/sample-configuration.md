@@ -38,9 +38,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 12230000,
-    "PivotHash": "0x4dcd23872a0f240977ec09b21f9eef0b60d3b93e923b9340dba6a1f31d3c3d11",
-    "PivotTotalDifficulty": "23221053475357008465237",
+    "PivotNumber": 12270000,
+    "PivotHash": "0xeed329384e84789e4cb6642c8d78268a13690738bb2cca890db5a01ea3fe36b2",
+    "PivotTotalDifficulty": "23490778234635454118845",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -69,7 +69,6 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
-
 {% tab title="goerli.cfg" %}
 ```yaml
 {
@@ -103,9 +102,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 4590000,
-    "PivotHash": "0xeafba08acf678b053b4dc822c3c36657fe7a822c141957e15c317f7bb1b38984",
-    "PivotTotalDifficulty": "6774054",
+    "PivotNumber": 4620000,
+    "PivotHash": "0x4c136657658558bf7f600f5d03ba5c0137c4da8cc73910c4db5b07edef8501b2",
+    "PivotTotalDifficulty": "6813607",
     "FastBlocks": true,
     "BeamSync": false,
     "DownloadBodiesInFastSync": true,
@@ -137,7 +136,6 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
-
 {% tab title="rinkeby.cfg" %}
 ```yaml
 {
@@ -170,9 +168,9 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "BeamSync": false,
-    "PivotNumber": 8400000,
-    "PivotHash": "0xbb2690b83da8a78275844e4afc96d377db04af6c11e1a69b4b4a759e57fe8bfb",
-    "PivotTotalDifficulty": "14490763",
+    "PivotNumber": 8430000,
+    "PivotHash": "0x5f722392f864853a499f2ead479cf2e206b4e4673d8a4663443891a90d988c84",
+    "PivotTotalDifficulty": "14533473",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -194,7 +192,6 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
-
 {% tab title="ropsten.cfg" %}
 ```yaml
 {
@@ -229,11 +226,11 @@ description: Sample Fast Sync configurations for Nethermind
     "FastBlocks": true,
     "BeamSync": false,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 10030000,
+    "PivotNumber": 10070000,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
-    "PivotHash": "0xe3eae20c8e64745c6342aeed28e492f3cb5f3b6ab18660068ee07447d5ce3d8d",
-    "PivotTotalDifficulty": "33395036883369846"
+    "PivotHash": "0x3e505b8e2ac402717e6c7defce5ffaaa6dfd2f469eec4d74dcc3c3b08c16cc54",
+    "PivotTotalDifficulty": "33414653975941753"
   },
   "EthStats": {
     "Enabled": false,
@@ -252,4 +249,3 @@ description: Sample Fast Sync configurations for Nethermind
 ```
 {% endtab %}
 {% endtabs %}
-
