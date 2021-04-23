@@ -1,11 +1,10 @@
-# TxPool module
+# TxPool
 
 | Metric | Description |
 | :--- | :--- |
-| nethermind\_dark\_pool\_ratio\_level1 | Ratio of transactions in the block absent in hashCache |
-| nethermind\_dark\_pool\_ratio\_level2 | Ratio of transactions in the block absent in pending transactions |
-| nethermind\_pending\_transactions\_discarded | Number of pending transactions received that were ignored. |
-| nethermind\_pending\_transactions\_known | Number of known pending transactions. |
-| nethermind\_pending\_transactions\_received | Number of pending transactions received from peers. |
-| nethermind\_pending\_transactions\_sent | Number of pending transactions broadcasted to peers. |
-
+| nethermind_dark_pool_ratio_level1 | Ratio of transactions in the block absent in hashCache |
+| nethermind_dark_pool_ratio_level2 | Ratio of transactions in the block absent in pending transactions |
+| nethermind_pending_transactions_discarded | Number of pending transactions received that were ignored. |
+| nethermind_pending_transactions_known | Number of known pending transactions. |
+| nethermind_pending_transactions_received | Number of pending transactions received from peers. |
+| nethermind_pending_transactions_sent | Number of pending transactions broadcasted to peers. |
