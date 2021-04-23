@@ -1,9 +1,3 @@
----
-description: >-
-  For now - pipeline plugins are available in separate branch
-  "feature/pipeline-plugins"
----
-
 # Pipeline Plugins
 
 Nethermind `Pipeline.Plugins` solution provides plugins which can be used to streaming data like **Transactions** or **Blocks**.
@@ -23,8 +17,6 @@ If you have any problems with running Nethermind Pipeline Plugins - please conta
 | RemovedPendingTransactions | Streaming removed pending transactions from transaction pool. | Log | TxPool |
 
 ### Publishers
-
-There are two publishers are available for now.
 
 #### Log
 
@@ -56,7 +48,7 @@ To enable the plugins include the section defined below in config file you will 
 }
 ```
 
-Exemplary config file **mainnet\_pruned** with enable web sockets and enabled plugins
+Exemplary config file **mainnet\_pruned** with enabled web sockets and enabled plugins
 
 ```csharp
 {
