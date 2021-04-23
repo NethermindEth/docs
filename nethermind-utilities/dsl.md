@@ -47,15 +47,6 @@ WHERE [condition]
 PUBLISH [WebSockets|LogPublisher]
 ```
 
-For example:
-
-```csharp
-SOURCE BlockProcessor
-WATCH Blocks
-WHERE Author == 0x52bc44d5378309EE2abF1539BF71dE1b7d7bE3b5
-PUBLISH WebSockets
-```
-
 Every DSL keyword needs to be **uppercase** in order to be parsed correctly.
 
 Join discord channel at the [Nethermind discord server](https://discord.com/invite/PaCMRFdvWT) to be up to date with every new update to the DSL.
