@@ -28,6 +28,10 @@ PUBLISH WebSockets
 Make sure that in the config file you are using - web sockets are enabled.
 {% endhint %}
 
+```csharp
+"WebSocketsEnabled": true
+```
+
 For example: [**wscat**](https://github.com/websockets/wscat) can be used to get the data - by entering this command in console:
 
 ```csharp
