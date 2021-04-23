@@ -30,6 +30,10 @@ Streaming data using logs. Log publisher also save the data to separate file whi
 Make sure that in the config file you are using - web sockets are enabled.
 {% endhint %}
 
+```csharp
+"WebSocketsEnabled": true
+```
+
 Streaming data through web sockets. For example: [**wscat**](https://github.com/websockets/wscat) can be used to get the data - by entering this command in console:
 
 ```csharp
