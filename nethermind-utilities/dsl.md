@@ -12,7 +12,7 @@ For now, there is one plugin used for demo purposes that streams blocks from a B
 
 * [ ] [Download Nethermind](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#downloading-nethermind)
 * [ ] After sync and running example plugin should be available in directory `/DSL`with the **GetBlocksFromMiner.txt** name.
-* [ ] The source code of the sample plugin. If you want - you can change the address of the miner.
+* [ ] This is the sample plugin. If you want - you can change the address of the miner.
 
 ```csharp
 SOURCE BlockProcessor
@@ -39,9 +39,9 @@ wscat -c http://127.0.0.1:8545/dsl
 
 Every WebSocketPublisher created with DSL will have `/dsl` at the end of the connection URI.
 
-## Syntax
+## How to build own plugin
 
-Supported syntax of DSL script is:
+Plugin appearance:
 
 ```csharp
 SOURCE [BlockProcessor|TxPool]
@@ -50,7 +50,18 @@ WHERE [condition]
 PUBLISH [WebSockets|LogPublisher]
 ```
 
-Every DSL keyword needs to be **uppercase** in order to be parsed correctly.
+For example:
+
+```csharp
+SOURCE BlockProcessor
+WATCH Blocks
+WHERE Author == 0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8
+PUBLISH WebSockets
+```
+
+{% hint style="info" %}
+You have to use the word casing the same as in the example. \(e.g. SOURCE and not ~~Source~~ or ~~source~~\)
+{% endhint %}
 
 Join discord channel at the [Nethermind discord server](https://discord.com/invite/PaCMRFdvWT) to be up to date with every new update to the DSL.
 
