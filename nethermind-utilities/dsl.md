@@ -10,9 +10,8 @@ If you have any problems with running Nethermind with DSL - please contact our d
 For now, there is one plugin used for demo purposes that streams blocks from a Block Processor mined by a given miner and publishes data through web sockets.
 {% endhint %}
 
-* [ ] Download Nethermind from the [page](https://downloads.nethermind.io/).
-* [ ] Run Nethermind node and wait for the sync.
-* [ ] An example plugin should be available in directory `/DSL`with the **GetBlocksFromMiner.txt** name.
+* [ ] [Download Nethermind](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#downloading-nethermind)
+* [ ] After sync and running example plugin should be available in directory `/DSL`with the **GetBlocksFromMiner.txt** name.
 * [ ] The source code of the sample plugin. If you want - you can change the address of the miner.
 
 ```csharp
