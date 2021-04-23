@@ -26,7 +26,7 @@ There are two publishers are available for now.
 
 #### Log
 
-Streaming data using logs. Log publisher also save the data to separate file which can be found here: `../Nethermind.Runner/bin/Debug/net5.0/pipeline/pipeline_data.txt`
+Streaming data using logs. Log publisher also save the data to separate file which can be found here: `../pipeline/pipeline_data.txt`
 
 ![Data from Erc721 plugin streaming through log publisher.](../../.gitbook/assets/image%20%28152%29.png)
 
