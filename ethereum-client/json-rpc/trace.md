@@ -1,8 +1,8 @@
-# Trace module
+# trace
 
-## trace\_block
+## trace_block
 
-Returns traces created at given block.
+Returns traces created at given block. 
 
 | Invocation |
 | :--- |
@@ -17,13 +17,14 @@ Returns traces created at given block.
 | `ParityTxTraceFromStore object` |  |
 
 {% tabs %}
-{% tab title="Example request of trace\_block" %}
-```text
+{% tab title="Example request of trace_block" %}
+```
 curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_block" %}
+{% tab title="Objects in trace_block" %}
+
 `BlockParameter`
 
 | Field name | Type |
@@ -35,7 +36,8 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ParityTxTraceFromStore`
 
@@ -84,10 +86,9 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 {% endtabs %}
 
 [See also CLI trace.block](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-block)
+## trace_rawTransaction
 
-## trace\_rawTransaction
-
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Traces a call to eth_sendRawTransaction without making the call, returning the traces 
 
 | Invocation |
 | :--- |
@@ -103,13 +104,14 @@ Traces a call to eth\_sendRawTransaction without making the call, returning the 
 | `ParityTxTraceFromReplay object` |  |
 
 {% tabs %}
-{% tab title="Example request of trace\_rawTransaction" %}
-```text
+{% tab title="Example request of trace_rawTransaction" %}
+```
 curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_rawTransaction" %}
+{% tab title="Objects in trace_rawTransaction" %}
+
 `ParityTxTraceFromReplay`
 
 | Field name | Type |
@@ -151,10 +153,9 @@ curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1
 {% endtabs %}
 
 [See also CLI trace.rawTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-rawtransaction)
+## trace_replayBlockTransactions
 
-## trace\_replayBlockTransactions
-
-Replays all transactions in a block returning the requested traces for each transaction.
+Replays all transactions in a block returning the requested traces for each transaction. 
 
 | Invocation |
 | :--- |
@@ -170,13 +171,14 @@ Replays all transactions in a block returning the requested traces for each tran
 | `ParityTxTraceFromReplay object` |  |
 
 {% tabs %}
-{% tab title="Example request of trace\_replayBlockTransactions" %}
-```text
+{% tab title="Example request of trace_replayBlockTransactions" %}
+```
 curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_replayBlockTransactions" %}
+{% tab title="Objects in trace_replayBlockTransactions" %}
+
 `BlockParameter`
 
 | Field name | Type |
@@ -188,7 +190,8 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ParityTxTraceFromReplay`
 
@@ -231,10 +234,9 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 {% endtabs %}
 
 [See also CLI trace.replayBlockTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-replayblocktransactions)
+## trace_replayTransaction
 
-## trace\_replayTransaction
-
-Replays a transaction, returning the traces.
+Replays a transaction, returning the traces. 
 
 | Invocation |
 | :--- |
@@ -250,13 +252,14 @@ Replays a transaction, returning the traces.
 | `ParityTxTraceFromReplay object` |  |
 
 {% tabs %}
-{% tab title="Example request of trace\_replayTransaction" %}
-```text
+{% tab title="Example request of trace_replayTransaction" %}
+```
 curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_replayTransaction" %}
+{% tab title="Objects in trace_replayTransaction" %}
+
 `ParityTxTraceFromReplay`
 
 | Field name | Type |
@@ -298,10 +301,9 @@ curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"
 {% endtabs %}
 
 [See also CLI trace.replayTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-replaytransaction)
+## trace_transaction
 
-## trace\_transaction
-
-Returns all traces of given transaction
+Returns all traces of given transaction 
 
 | Invocation |
 | :--- |
@@ -316,13 +318,14 @@ Returns all traces of given transaction
 | `ParityTxTraceFromStore object` |  |
 
 {% tabs %}
-{% tab title="Example request of trace\_transaction" %}
-```text
+{% tab title="Example request of trace_transaction" %}
+```
 curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_transaction" %}
+{% tab title="Objects in trace_transaction" %}
+
 `ParityTxTraceFromStore`
 
 | Field name | Type |
@@ -370,4 +373,3 @@ curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2
 {% endtabs %}
 
 [See also CLI trace.transaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-transaction)
-
