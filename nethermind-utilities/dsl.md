@@ -4,7 +4,7 @@
 
 Nethermind under `Nethermind.Dsl` project provides a way of creating your own plugin to extract the data with the usage of Domain Specific Language \(DSL\)**.**
 
-{% hint style="warning" %}
+{% hint style="info" %}
 As the code is constantly developed, some unexpected errors can occur. If you have any problems with running Nethermind with DSL - please contact our developers on the [discord channel](https://discord.com/invite/PaCMRFdvWT).
 {% endhint %}
 
