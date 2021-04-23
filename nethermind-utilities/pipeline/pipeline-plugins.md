@@ -1,3 +1,9 @@
+---
+description: >-
+  For now - pipeline plugins are available in separate branch
+  "feature/pipeline-plugins"
+---
+
 # Pipeline Plugins
 
 ### Please note that the pipeline source code is still a work in progress and there will be significant changes in the coming weeks!
