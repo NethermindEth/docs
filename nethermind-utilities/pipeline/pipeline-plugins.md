@@ -127,7 +127,7 @@ Exemplary config file **mainnet\_pruned** with enabled web sockets and enabled p
 
 ## Running with pipeline plugins
 
-* [ ] Download Nethermind from the [page](https://downloads.nethermind.io/).
+* [ ] [Download Nethermind](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#downloading-nethermind)
 * [ ] Add Pipeline Plugins section to config file.
 * [ ] Run Nethermind node and wait for the sync.
 * [ ] Once the node is synchronized you can connect through the web sockets to get the data.
