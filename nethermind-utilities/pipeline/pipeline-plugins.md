@@ -6,12 +6,10 @@ description: >-
 
 # Pipeline Plugins
 
-### Please note that the pipeline source code is still a work in progress and there will be significant changes in the coming weeks!
-
 Nethermind `Pipeline.Plugins` solution provides plugins which can be used to streaming data like **Transactions** or **Blocks**.
 
 {% hint style="info" %}
-As the code is constantly developed, some unexpected errors can occur. If you have any problems with running Nethermind Pipeline Plugins - please contact our developers on the [discord channel](https://discord.com/invite/PaCMRFdvWT).
+If you have any problems with running Nethermind Pipeline Plugins - please contact our developers on the [discord channel](https://discord.com/invite/PaCMRFdvWT).
 {% endhint %}
 
 ### Available plugins:
@@ -133,18 +131,8 @@ Exemplary config file **mainnet\_pruned** with enable web sockets and enabled pl
 
 ## Running with pipeline plugins
 
-* [ ] The Pipeline Plugins source code is available on separate branch at the moment. The first step is to checkout to the branch **feature/pipeline-plugins** with the command below in Nethermind repository.
-
-```csharp
-git checkout feature/feature-plugins
-```
-
-* [ ] Build Nethermind solution in the same directory with the command
-
-```csharp
-dotnet build Nethermind.sln
-```
-
-* [ ] Run Nethermind node with the right config and wait for mainnet sync.
+* [ ] Download the package from the download site.
+* [ ] Add Pipeline Plugins section to config file.
+* [ ] Run Nethermind node and wait for the sync.
 * [ ] Once the node is synchronized you can connect through the web sockets to get the data.
 
