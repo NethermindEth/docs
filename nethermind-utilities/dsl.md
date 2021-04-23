@@ -12,7 +12,7 @@ For now, there is one plugin used for demo purposes that streams blocks from a B
 
 * [ ] Download Nethermind from the [page](https://downloads.nethermind.io/).
 * [ ] Run Nethermind node and wait for the sync.
-* [ ] An Eexample plugin should be available in directory `/nethermind/src/Nethermind/Nethermind.Runner/bin/Debug/net5.0/DSL`with the **GetBlocksFromMiner.txt** name.
+* [ ] An example plugin should be available in directory `/DSL`with the **GetBlocksFromMiner.txt** name.
 * [ ] The source code of the sample plugin. If you want - you can change the address of the miner.
 
 ```csharp
