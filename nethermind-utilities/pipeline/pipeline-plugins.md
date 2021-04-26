@@ -10,7 +10,7 @@ If you have any problems with running Nethermind Pipeline Plugins - please conta
 
 | Plugin type | What can it be used for? | Publisher | Source |
 | :--- | :--- | :--- | :--- |
-| Erc20Transactions | Streaming Erc20 transactions from the last block. | WebSockets | Block |
+| Erc20Transactions | Streaming Erc20 transactions from the last block. | Log | Block |
 | Erc721Transactions | Streaming Erc721 transactions from the last block. | Log | Block |
 | NewPendingTransactions | Streaming new pending transactions from transaction pool. | Log | TxPool |
 | NewDiscoveredTransactions | Streaming new discovered transactions from transaction pool. | Log | TxPool |
