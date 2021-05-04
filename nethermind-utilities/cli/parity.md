@@ -1,8 +1,11 @@
-# Parity module
+# parity
+
+
 
 ## parity.clearEngineSigner
 
-Clears an authority account for signing consensus messages. Blocks will not be sealed.
+Clears an authority account for signing consensus messages. Blocks will not be sealed. 
+
 
 | Invocation |
 | :--- |
@@ -10,7 +13,6 @@ Clears an authority account for signing consensus messages. Blocks will not be s
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -24,11 +26,13 @@ parity.clearEngineSigner()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_clearEngineSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_clearenginesigner)
+[See also JSON RPC parity_clearEngineSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_clearenginesigner)
+
 
 ## parity.enode
 
-Returns the node enode URI.
+Returns the node enode URI. 
+
 
 | Invocation |
 | :--- |
@@ -36,7 +40,6 @@ Returns the node enode URI.
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -50,11 +53,13 @@ parity.enode
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_enode](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_enode)
+[See also JSON RPC parity_enode](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_enode)
+
 
 ## parity.getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one. 
+
 
 | Invocation |
 | :--- |
@@ -75,7 +80,8 @@ parity.getBlockReceipts(blockParameter)
 ```
 {% endtab %}
 
-{% tab title="Objects in parity\_getBlockReceipts" %}
+{% tab title="Objects in parity_getBlockReceipts" %}
+
 `BlockParameter`
 
 | Field name | Type |
@@ -87,7 +93,8 @@ parity.getBlockReceipts(blockParameter)
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ReceiptForRpc`
 
@@ -123,15 +130,18 @@ parity.getBlockReceipts(blockParameter)
 
 `TxType`
 
-* [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+- [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_getBlockReceipts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_getblockreceipts)
+[See also JSON RPC parity_getBlockReceipts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_getblockreceipts)
+
 
 ## parity.netPeers
 
-Returns connected peers. Peers with non-empty protocols have completed handshake.
+Returns connected peers. Peers with non-empty protocols have completed handshake. 
+
 
 | Invocation |
 | :--- |
@@ -139,7 +149,6 @@ Returns connected peers. Peers with non-empty protocols have completed handshake
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -152,7 +161,8 @@ parity.netPeers
 ```
 {% endtab %}
 
-{% tab title="Objects in parity\_netPeers" %}
+{% tab title="Objects in parity_netPeers" %}
+
 `ParityNetPeers`
 
 | Field name | Type |
@@ -176,11 +186,13 @@ parity.netPeers
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_netPeers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_netpeers)
+[See also JSON RPC parity_netPeers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_netpeers)
+
 
 ## parity.pendingTransactions
 
-Returns a list of transactions currently in the queue.
+Returns a list of transactions currently in the queue. 
+
 
 | Invocation |
 | :--- |
@@ -188,7 +200,6 @@ Returns a list of transactions currently in the queue.
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -201,7 +212,8 @@ parity.pendingTransactions()
 ```
 {% endtab %}
 
-{% tab title="Objects in parity\_pendingTransactions" %}
+{% tab title="Objects in parity_pendingTransactions" %}
+
 `ParityTransaction`
 
 | Field name | Type |
@@ -242,11 +254,13 @@ parity.pendingTransactions()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_pendingTransactions](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_pendingtransactions)
+[See also JSON RPC parity_pendingTransactions](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_pendingtransactions)
+
 
 ## parity.setEngineSigner
 
-Sets an authority account for signing consensus messages.
+Sets an authority account for signing consensus messages. 
+
 
 | Invocation |
 | :--- |
@@ -269,11 +283,13 @@ parity.setEngineSigner(address, password)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_setEngineSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_setenginesigner)
+[See also JSON RPC parity_setEngineSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_setenginesigner)
+
 
 ## parity.setEngineSignerSecret
 
-Sets an authority account for signing consensus messages.
+Sets an authority account for signing consensus messages. 
+
 
 | Invocation |
 | :--- |
@@ -295,5 +311,4 @@ parity.setEngineSignerSecret(privateKey)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC parity\_setEngineSignerSecret](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_setenginesignersecret)
-
+[See also JSON RPC parity_setEngineSignerSecret](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/parity#parity_setenginesignersecret)
