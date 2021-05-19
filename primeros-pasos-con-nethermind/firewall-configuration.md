@@ -5,14 +5,16 @@ description: Reglas que deben agregarse al firewall de su máquina
 # Configuración de Firewall
 
 {% hint style="info" %}
-Keep `8545` \(or `8000-9000`\) closed except for the trusted machines - this is the JSON RPC port which gives admin access to the node.
+Mantenga `8545`\(o`8000-9000`\) cerrado, excepto para las máquinas de confianza: este es el puerto JSON RPC que le da acceso de administrador al nodo.
 {% endhint %}
 
 {% hint style="info" %}
-Keep TCP `30303` \(or `30300-30400`\) open for the outside world so other nodes can connect to your node.
+Mantenga TCP `30303` \(or `30300-30400`\) abierto para el mundo exterior para que otros nodos puedan conectarse a su nodo.
 {% endhint %}
 
 {% hint style="info" %}
-Keep UDP `30303` \(or `30300-30400`\) open for the outside world so other nodes can discover your node.
+Mantenga UDP `30303` \(or `30300-30400`\) abierto para el mundo exterior para que otros nodos puedan descubrir su nodo.
 {% endhint %}
+
+
 
