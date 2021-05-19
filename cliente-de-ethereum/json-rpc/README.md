@@ -3,7 +3,7 @@
 JSON RPC está disponible a través de HTTP y WS.
 
 {% hint style="warning" %}
-JSON RPC needs to be explicitly switched on in the Netherming `config` file.
+JSON RPC debe activarse explícitamente en el archivo de `config`de Nethermind.
 {% endhint %}
 
 {% tabs %}
@@ -19,7 +19,7 @@ JSON RPC needs to be explicitly switched on in the Netherming `config` file.
 {% endtabs %}
 
 {% hint style="warning" %}
-JSON RPC can be also enabled by passing `--JsonRpc.Enabled true` flag to the `Nethermind.Runner` or `Nethermind.Launcher` arguments.
+JSON RPC también se puede habilitar pasando `--JsonRpc.Enabled true`flag a los argumentos`Nethermind.Runner o Nethermind.Launche.`
 {% endhint %}
 
 {% tabs %}
