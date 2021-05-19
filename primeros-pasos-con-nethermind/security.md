@@ -7,22 +7,22 @@ description: >-
 # Seguridad
 
 {% hint style="danger" %}
-📢 **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!
+📢  **NO use** cartera de Nethermind / firmantes de Nethermind para el manejo de ETH en el mainnet!
 {% endhint %}
 
 {% hint style="danger" %}
-📢 JSON RPC endpoint \(port `8545`\) should **NOT** be exposed publicly \(should be behind the firewall\).
+📢 Endpoint JSON RPC \( puerto`8545`\) **NO** debe exponerse públicamente \(debe estar detrás del firewall\).
 {% endhint %}
 
 {% hint style="danger" %}
-📢The private key from which the node ID is derived is stored on disk \(**NOT** protected by password\).
+📢 La llave privada de la que se deriva el ID de nodo se almacena en el disco \( **NO** protegido por contraseña\).
 {% endhint %}
 
 {% hint style="warning" %}
-Nethermind is thoroughly tested but the more popular it will get the more likely it will be the target of client-specific attacks. Generally you should always consider running backup client nodes implemented by a different team for any critical operations.
+Nethermind se prueba a fondo, pero cuanto más popular se vuelve, más probable es que sea el objetivo de ataques específicos del cliente. Por lo general, siempre debe considerar la ejecución de nodos de cliente de respaldo implementados por un equipo diferente para cualquier operación crítica.
 {% endhint %}
 
 {% hint style="info" %}
-For non-mainnet signing you can use dev wallet configurations.
+Para firmas que no pertenecen a la red principal, puede usar configuraciones de cartera dev.
 {% endhint %}
 
