@@ -66,11 +66,11 @@ Es posible que debas instalar [https://support.microsoft.com/en-us/help/2977003/
 ## Todas las Plataformas
 
 {% hint style="warning" %}
-If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
+Si no se encuentra el comando dotnet, probablemente olvidó instalar el SDK \(consulte las instrucciones anteriores\)
 {% endhint %}
 
 {% hint style="info" %}
-On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
+En las distribuciones de Linux, sugerimos que en esta etapa inicie la pantalla para que pueda volver a la sesión con el comando screen -rd más adelante.
 {% endhint %}
 
 Clona el repositorio de Nethermind y sus submódulos, luego compile Nethermind en el modo `Release` o `Debug`.
