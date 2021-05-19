@@ -4,16 +4,16 @@
 
 Adds given node.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `admin.addPeer(enode, addToStaticNodes)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
-| enode | `String` | Given node |
+| enode | `String` | Nodo dado. |
 | addToStaticNodes | `Boolean` | Adding to static nodes if `true` \(optional\) |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` | Added node |
 
@@ -37,17 +37,17 @@ admin.addPeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c942
 
 Displays relevant information about this node.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `admin.nodeInfo` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
-| `NodeInfo object` | Information about this node |
+| `NodeInfo object` | Información sobre este nodo |
 
 {% tabs %}
 {% tab title="Example request of admin.nodeInfo" %}
@@ -83,7 +83,7 @@ admin.nodeInfo
 {% tab title="Objects in admin\_nodeInfo" %}
 `NodeInfo`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Enode | `String` |
 | Id | `String` |
@@ -95,9 +95,9 @@ admin.nodeInfo
 
 `PortsInfo`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Discovery | `Quantity` |
+| Descubrimiento | `Quantity` |
 | Listener | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -108,15 +108,15 @@ admin.nodeInfo
 
 Displays a list of connected peers including information about them \(`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `admin.peers(includeDetails)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` \(optional\) |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `PeerInfo object` | List of connected peers including information |
 
@@ -153,7 +153,7 @@ admin.peers(true)
 {% tab title="Objects in admin\_peers" %}
 `PeerInfo`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | ClientId | `String` |
 | Host | `String` |
@@ -173,18 +173,18 @@ admin.peers(true)
 
 ## admin.removePeer
 
-Removes given node.
+Elimina un nodo dado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `admin.removePeer(enode, removeFromStaticNodes)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
-| enode | `String` | Given node |
+| enode | `String` | Nodo dado. |
 | removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` \(optional\) |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` | Removed node |
 

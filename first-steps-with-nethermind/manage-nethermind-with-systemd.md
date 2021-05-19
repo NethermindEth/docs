@@ -1,89 +1,89 @@
-# Manage Nethermind with systemd
+# Administra Nethermind con systemd
 
-### Create a new user
+### Crear un nuevo usuario
 
 ```text
 sudo useradd -m -s /bin/bash nethermind
 ```
 
-increase the maximum number of open files
+aumentar el número máximo de archivos abiertos
 
 ```text
 sudo bash -c 'echo "nethermind soft nofile 1000000" > /etc/security/limits.d/nethermind.conf'
 sudo bash -c 'echo "nethermind hard nofile 1000000" >> /etc/security/limits.d/nethermind.conf'
 ```
 
-switch to the new user
+Cambiar al nuevo usuario
 
 ```text
 sudo su - nethermind
 ```
 
-### Install Dependencies
+### Instalar dependencias
 
 ```text
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y
 ```
 
-### Get Nethermind
+### Obtener Nethermind
 
-[download](../ethereum-client/download-sources/) the latest Nethermind package
+[descarga](../ethereum-client/download-sources/) el último paquete de Nethermind
 
 ```text
 wget [LINUX_PACKAGE_URL]
 ```
 
-extract the files
+extraer los archivos
 
 ```text
 unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 ```
 
-remove the no more need package **\(optional\)**
+eliminar el paquete que no necesita más **\ (opcional\) **
 
 ```text
 rm [LINUX_PACKAGE_FILENAME]
 ```
 
-### Manage Nethermind with systemd
+### Administra Nethermind con systemd
 
-exit the session as user `nethermind` if still active
+Salga de la sesión como usuario `nethermind` si todavía está activa
 
 ```text
 exit
 ```
 
-download the nethermind.service config
+descargar la configuración nethermind.service
 
 ```text
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/nethermind.service
 ```
 
-move the config into the systemd folder
+mover la configuración a la carpeta systemd
 
 ```text
 sudo mv nethermind.service /etc/systemd/system/
 ```
 
-reload the systemd configs
+recargar las configuraciones de systemd
 
 ```text
 sudo systemctl daemon-reload
 ```
 
-you can now `start`, `stop`, `restart` Nethermind with systemd
+ahora puedes `start`,` stop`, `restart` Nethermind con systemd
 
 ```text
 sudo service nethermind start
 ```
 
-display the current Nethermind output **\(optional\)**
+mostrar la salida actual de Nethermind **\(opcional\) **
 
 ```text
 journalctl -u nethermind -f
 ```
 
-enable autorun **\(optional\)**
+habilitar ejecución automática **\(opcional \)**
 
 ```text
 sudo systemctl enable nethermind

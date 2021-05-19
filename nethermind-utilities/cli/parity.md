@@ -4,15 +4,15 @@
 
 Clears an authority account for signing consensus messages. Blocks will not be sealed.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.clearEngineSigner()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -28,17 +28,17 @@ parity.clearEngineSigner()
 
 ## parity.enode
 
-Returns the node enode URI.
+Retorna el URI del enodo del nodo.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.enode` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -54,17 +54,17 @@ parity.enode
 
 ## parity.getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+Obtiene los recibos de todas las transacciones de un bloque en particular, más eficiente que buscar los recibos uno por uno.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.getBlockReceipts(blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ReceiptForRpc object` |  |
 
@@ -78,20 +78,20 @@ parity.getBlockReceipts(blockParameter)
 {% tab title="Objects in parity\_getBlockReceipts" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ReceiptForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -107,11 +107,11 @@ parity.getBlockReceipts(blockParameter)
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 
 `LogEntryForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -133,15 +133,15 @@ parity.getBlockReceipts(blockParameter)
 
 Returns connected peers. Peers with non-empty protocols have completed handshake.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.netPeers` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityNetPeers object` |  |
 
@@ -155,7 +155,7 @@ parity.netPeers
 {% tab title="Objects in parity\_netPeers" %}
 `ParityNetPeers`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Active | `Quantity` |
 | Connected | `Quantity` |
@@ -164,7 +164,7 @@ parity.netPeers
 
 `PeerInfo[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -180,17 +180,17 @@ parity.netPeers
 
 ## parity.pendingTransactions
 
-Returns a list of transactions currently in the queue.
+Retorna una lista de transacciones actualmente en cola.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.pendingTransactions()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTransaction object` |  |
 
@@ -204,7 +204,7 @@ parity.pendingTransactions()
 {% tab title="Objects in parity\_pendingTransactions" %}
 `ParityTransaction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -229,7 +229,7 @@ parity.pendingTransactions()
 
 `PublicKey`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Address | `Address` |
 | Bytes | `Data` |
@@ -237,7 +237,7 @@ parity.pendingTransactions()
 
 `UInt64`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 {% endtab %}
 {% endtabs %}
@@ -248,16 +248,16 @@ parity.pendingTransactions()
 
 Sets an authority account for signing consensus messages.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.setEngineSigner(address, password)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | password | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -275,15 +275,15 @@ parity.setEngineSigner(address, password)
 
 Sets an authority account for signing consensus messages.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `parity.setEngineSignerSecret(privateKey)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | privateKey | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 

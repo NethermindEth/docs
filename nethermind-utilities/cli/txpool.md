@@ -4,15 +4,15 @@
 
 Returns tx pool content.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `txpool.content` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TxPoolContent object` |  |
 
@@ -26,7 +26,7 @@ txpool.content
 {% tab title="Objects in txpool\_content" %}
 `TxPoolContent`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
@@ -39,15 +39,15 @@ txpool.content
 
 Returns a detailed info on tx pool transactions.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `txpool.inspect` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TxPoolInspection object` |  |
 
@@ -61,7 +61,7 @@ txpool.inspect
 {% tab title="Objects in txpool\_inspect" %}
 `TxPoolInspection`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
@@ -74,15 +74,15 @@ txpool.inspect
 
 Returns a tx pool status.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `txpool.status` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TxPoolStatus object` |  |
 
@@ -96,7 +96,7 @@ txpool.status
 {% tab title="Objects in txpool\_status" %}
 `TxPoolStatus`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Pending | `Quantity` |
 | Queued | `Quantity` |

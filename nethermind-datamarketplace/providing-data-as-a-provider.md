@@ -2,13 +2,13 @@
 
 To provide your data through NDM you will have to create a data asset.   
 Data assets are created based on the plugin files created in the provider's **ndm-plugins** directory in the package.  
-  
+
 To create such a plugin go to **nethermind/ndm-plugins** directory and create **.yml** file, next pick one of the types of plugins suited for you. 
 
 ## WebApi
 
 Plugin type used for providing data from RESTfull Web Api using HTTP requests.   
-  
+
 **File structure:**
 
 ```text
@@ -30,7 +30,7 @@ method: get
 **Process:** 
 
 Let's say that we want to provide data from this public api [https://dog.ceo/dog-api/](https://dog.ceo/dog-api/). First of all we will need to create a .yml file with plugin description.   
-  
+
 Go to **nethermind/ndm-plugins/** and create dogs-plugin.yml looking like this
 
 ```text
@@ -83,9 +83,9 @@ host: https://ropsten.nethermind.io
 **Process:**
 
 The main idea behind the JsonRpc data asset is that consumer will make a JsonRpc request \(just like with curl\) using the javascript object.   
-  
+
 For example, let's make ropsten.yml file where we define JsonRpc data asset plugin with connection to Nethermind's ropsten open node at [ropsten.nethermind.io](https://ropsten.nethermind.io/).  
-  
+
 The file will look like this:
 
 ```text
@@ -104,7 +104,7 @@ After unlocking \(or creating\) your account, click on the '+' icon to create ne
 
 Create the data asset and change its status to **Published**, after that connected consumers will be able to place deposits for this asset and consume it.   
 In order to make queries to data assets they will just need to make JsonRpc request similar to those in curl - creating javascript object.   
-  
+
 Let's say that consumers want to consume data from **txpool\_content** JsonRpc method - in order to do that, in the data stream they will need to input 
 
 ```text

@@ -1,9 +1,9 @@
 # Bloom module
 
-| Property | Description | Default |
+| Propiedad | Descripción | Predeterminado |
 | :--- | :--- | :--- |
-| Index | Defines whether the Bloom index is used. Bloom index speeds up rpc log searches. | true |
-| IndexLevelBucketSizes | Defines multipliers for index levels. Can be tweaked per chain to boost performance. | \[4, 8, 8\] |
-| Migration | Defines if migration of previously downloaded blocks to Bloom index will be done. | false |
-| MigrationStatistics | Defines if migration statistics are to be calculated and output. | false |
+| Index | Define si el índice de Bloom es utilizado. El índice Bloom acelera las búsquedas de registros rpc | true |
+| IndexLevelBucketSizes | Define multiplicadores para niveles de índice. Se puede ajustar por cadena para incrementar el rendimiento | \[4, 8, 8\] |
+| Migration | Define si se realizará la migración de bloques descargados previamente al índice Bloom | false |
+| MigrationStatistics | Define si las estadísticas de migración deben ser calculadas y generar una salida. | false |
 

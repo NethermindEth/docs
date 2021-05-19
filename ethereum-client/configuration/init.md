@@ -1,25 +1,25 @@
 # Init module
 
-| Property | Description | Default |
+| Propiedad | Descripción | Predeterminado |
 | :--- | :--- | :--- |
-| BaseDbPath | Base directoy path for all the nethermind databases. | "db" |
-| ChainSpecPath | Path to the chain definition file \(Parity chainspec or Geth genesis file\). | chainspec/foundation.json |
-| DiagnosticMode | Diagnostics modes | None |
-| DiscoveryEnabled | If 'false' then the node does not try to find nodes beyond the bootnodes configured. | true |
-| EnableUnsecuredDevWallet | If 'true' then it enables the wallet / key store in the application. | false |
-| GenesisHash | Hash of the genesis block - if the default null value is left then the genesis block validity will not be checked which is useful for ad hoc test/private networks. | null |
+| BaseDbPath | Ruta del directorio base para todas las bases de datos de nethermind. | "db" |
+| ChainSpecPath | Ruta al archivo de definición de cadena \ (Especificación de cadena de paridad o archivo Geth genesis\). | chainspec/foundation.json |
+| DiagnosticMode | Diagnostics modes | Ninguna |
+| DiscoveryEnabled | Si es `false` entonces el nodo no intenta encontrar nodos más allá de los nodos de arranque configurados. | true |
+| EnableUnsecuredDevWallet | Si es `true` entonces habilita la billetera de almacenamiento / llave clave en la aplicación. | false |
+| GenesisHash | Hash del bloque de génesis - si se deja el valor nulo predeterminado, entonces no se verificará la validez del bloque de génesis, lo cual es útil para pruebas ad hoc / redes privadas. | null |
 | HiveChainSpecPath | Path to the chain definition file created by Hive for test purpouse | chainspec/test.json |
-| IsMining | If 'true' then the node will try to seal/mine new blocks | false |
-| KeepDevWalletInMemory | If 'true' then any accounts created will be only valid during the session and deleted when application closes. | false |
-| LogDirectory | In case of null, the path is set to \[applicationDirectiory\]\logs | logs |
-| LogFileName | Name of the log file generated \(useful when launching multiple networks with the same log folder\). | "log.txt" |
+| IsMining | Si es `true` entonces el nodo intentará sellar / minar nuevos bloques. | false |
+| KeepDevWalletInMemory | Si es `true` entonces cualquier cuenta creada solo serán válidas durante la sesión y se eliminarán cuando se cierre la aplicación | false |
+| LogDirectory | En caso de que sea nulo, la ruta se establece en \[applicationDirectiory\]\ registro | logs |
+| LogFileName | Nombre del archivo de registro generado  \(útil al iniciar varias networks con la misma carpeta de registro\). | "log.txt" |
 | MemoryHint | A hint for the max memory that will allow us to configure the DB and Netty memory allocations. | null |
-| PeerManagerEnabled | If 'false' then the node does not connect to newly discovered peers.. | true |
+| PeerManagerEnabled | Si es `false` entonces el nodo no se conecta a los pares recién descubiertos. | true |
 | PluginsDirectory | Directory for Nethermind plugins like NDM. | plugins |
-| ProcessingEnabled | If 'false' then the node does not download/process new blocks.. | true |
+| ProcessingEnabled | Si es `falso` entonces el nodo no descarga / procesa nuevos bloques. | true |
 | ReceiptsMigration | If set to 'true' then receipts db will be migrated to new schema. | false |
 | RpcDbUrl | Url for remote node that will be used as DB source when 'DiagnosticMode' is set to'RpcDb' |  |
-| StaticNodesPath | Path to the file with a list of static nodes. | "Data/static-nodes.json" |
-| StoreReceipts | If set to 'false' then transaction receipts will not be stored in the database after a new block is processed. This setting is independent from downloading receipts in fast sync mode. | true |
-| WebSocketsEnabled | Defines whether the WebSockets service is enabled on node startup at the 'HttpPort' - e.g. ws://localhost:8545/ws/json-rpc | false |
+| StaticNodesPath | Ruta al archivo con una lista de nodos estáticos. | "Data/static-nodes.json" |
+| StoreReceipts | Si se establece en `false` entonces los recibos de transacciones no se almacenados en la base de datos después de que un nuevo bloque se procese. Esta configuración es independiente de la descarga de recibos en el modo de sincronización rápida | true |
+| WebSocketsEnabled | Define si el servicio WebSockets está habilitado en el inicio del nodo en el `HttpPort` - p. Ej. ws://localhost:8545/ws/json-rpc | false |
 

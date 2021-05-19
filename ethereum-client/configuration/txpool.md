@@ -1,6 +1,6 @@
 # TxPool module
 
-| Property | Description | Default |
+| Propiedad | Descripción | Predeterminado |
 | :--- | :--- | :--- |
 | FutureNonceRetention | Defines how much into the future transactions are kept. | 16 |
 | GasLimit | Max transaction gas allowed. | null |

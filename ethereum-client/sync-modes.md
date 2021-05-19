@@ -1,57 +1,57 @@
-# Sync modes
+# Modos de sincronización
 
-## There are three main synchronization modes
+## Hay tres modos de sincronización principales
 
-* fast sync
-  * downloads only the latest state, headers, and optionally bodies and receipts
-  * you can run it like this: `./Nethermind.Runner --config mainnet`
-  * if you have a good connection and a reasonable machine then setting --Network.MaxActiveSyncPeers to 256 \(see NetworkConfig secion in configuration\) should give much better fast sync times \(we use 256 peers to get 5 hours syncs\) [https://docs.nethermind.io/nethermind/ethereum-client/configuration/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network)
-* beam sync
-  * same as fast sync but also allows to query the chain within the first few minutes from starting
-  * you can run it like this: `./Nethermind.Runner --config mainnet_beam`
-* archive sync
-  * heavy historical sync verifying all the transactions and keeping all the historical state
-  * you can run it like this `./Nethermind.Runner --config mainnet_archive`
+* sincronización rápida
+  * descarga solo el estado, los encabezados y, opcionalmente, los cuerpos y los recibos más recientes
+  * puedes ejecutarlo así: `./Nethermind.Runner --config mainnet`
+  * si tienes una buena conexión y una máquina razonable, entonces establecer --Network.MaxActiveSyncPeers en 256 \(consulte la sección Configuración de red en la configuración \) debería proporcionar tiempos de sincronización mucho mejores \(usamos 256 pares para obtener 5 horas de sincronización\) [https://docs.nethermind.io/nethermind/ethereum-client/configuration/modules/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/modules/network)
+* sincronización de destello
+  * Igual que la sincronización rápida, pero también permite consultar la cadena en los primeros minutos desde el inicio.
+  * puedes ejecutarlo así: `./Nethermind.Runner --config mainnet_beam`
+* sincronización de archivos
+  * sincronización histórica pesada que verifica todas las transacciones y mantiene todo el estado histórico
+  * puede ejecutarlo así `./Nethermind.Runner --config mainnet_archive`
 
-| Sync Mode | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
+| Modo de sincronización | Espacio en disco necesario | Estado actual completo | Estado actual completo y todos los estados históricos | Puedes sincronizar un nodo de archivo completo desde este | Es hora de sincronizar | Tiempo para RPC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| archive | ~5TB | YES | YES | YES | ~3 weeks | ~3 weeks |
-| default fast sync \(with barriers set to support Eth2\) | ~100GB | YES | NO | NO | ~11 hours | ~11 hours |
-| fast sync with all bodies and receipts | ~320GB | YES | NO | YES | ~20 hours | ~20 hours |
-| fast sync without receipts | ~130GB | YES | NO | YES | ~12 hours | ~12 hours |
-| fast sync without bodies and receipts | ~70GB | YES | NO | NO | ~9 hours | ~9 hours |
-| beam sync | ~320GB | YES | NO | YES | ~30 hours | ~20 minutes |
-| beam sync without receipts | ~140GB | YES | NO | YES | ~20 hours | ~20 minutes |
-| beam sync without bodies and receipts | ~80GB | YES | NO | NO | ~10 hours | ~20 minutes |
-| beam sync without historical headers | ~60GB | YES | NO | NO | ~9 hours | ~5 minutes |
+| archivo | ~5TB | SÍ | SÍ | SÍ | ~ 3 semanas | ~ 3 semanas |
+| sincronización rápida predeterminada \(con barreras configuradas para admitir Eth2\) | ~100GB | SI | NO | NO | ~ 11 horas | ~ 11 horas |
+| sincronización rápida con todos los cuerpos y recibos | ~320GB | SI | NO | SI | ~20 horas | ~20 horas |
+| sincronización rápida sin recibos | ~130GB | SI | NO | SI | ~ 12 horas | ~ 12 horas |
+| sincronización rápida sin cuerpos ni recibos | ~70GB | SI | NO | NO | ~9 horas | ~9 horas |
+| sincronización destello | ~320GB | SI | NO | SI | ~30 horas | ~20 minutos |
+| sincronización destellos sin recibos | ~140GB | SI | NO | SI | ~ 20 horas | ~20 minutos |
+| sincronización destello sin cuerpos ni recibos | ~80GB | SI | NO | NO | ~10 horas | ~20 minutos |
+| sincronización destello sin encabezados históricos | ~60GB | SI | NO | NO | ~9 horas | ~ 5 minutos |
 
-## Fast Sync
+## Sincronización rápida
 
-Fast sync is probably the most popular method of syncing. After completing the fast sync your node will have the ability to answer questions like _'what is my account balance **now**'_, _'how many XYZ tokens SomeExchange holds **at the moment**'_.
+La sincronización rápida es probablemente el método de sincronización más popular. Después de completar la sincronización rápida, su nodo tendrá la capacidad de responder preguntas como _'cuánto es el saldo de mi cuenta ** ahora** '_, _'cuántos tokens XYZ tiene SomeExchange **en este momento**'_.
 
-Fast sync is the default syncing method in Nethermind so whenever you launch standard configs you will end up using Fast Sync.
+La sincronización rápida es el método de sincronización predeterminado en Nethermind, por lo que cada vez que inicie configuraciones estándar, terminará usando Fast Sync.
 
 `./Nethermind.Runner --config mainnet`
 
 `./Nethermind.Runner --config goerli`
 
-Fast sync has multiple stages. Nethermind uses a `pivot block` number to improve fast sync performance. The `pivot block` data is provided in the configuration file and consists of the `block number`, `block hash` and `block total difficulty` \(please note that `total difficulty` is different than `difficulty`\). Please note that the meaning of `pivot block` is different in Nethermind than in other clients, for example. Before synchronizing state data Nethermind synchronizes in two directions - backwards from `pivot block` to 0 for headers and forward to the head of the chain for headers, blocks and receipts. Forward sync might be very slow \(5 - 50 bps\) so it is important that you use the latest config or update your config before synchronization.
+La sincronización rápida tiene varias etapas. Nethermind utiliza un número de `pivot block` para mejorar el rendimiento de la sincronización rápida. Los datos del `pivot block` se proporcionan en el archivo de configuración y consisten en el `block number`, el `block hash` y el `block total difficulty`. \ (tenga en cuenta que la `dificultad total` es diferente a la `dificultad`\). Tenga en cuenta que el significado de `pivot block` es diferente en Nethermind que en otros clientes, por ejemplo. Antes de sincronizar los datos de estado, Nethermind se sincroniza en dos direcciones: hacia atrás desde el `pivot block` a 0 para los encabezados y hacia adelante al encabezado de la cadena para los encabezados, bloques y recibos. La sincronización directa puede ser muy lenta \(5 - 50 bps\) por lo que es importante que utilice la última configuración o actualice su configuración antes de la sincronización.
 
-After downloading the block data Nethermind will start state sync \(downloading the latest state trie nodes\). We are providing an estimate for the download size and progress but the real value may be different than the estimate \(especially if you are using an old version of Nethermind as we sometimes manually adjust the estimator based on our observations of the chain growth rate\). Because of this sometimes your sync may continue even when it shows ~100% finished. The other important component is the speed of your sync - if your IO / network / file system causes the state sync to go much slower than around 1.5MB per second on average then you will start downloading some parts of the trie over and over again. In such cases you may be surprised to see something like 58000MB / 53000MB \(100%\). It means that you downloaded around 5GB of data that is no longer needed. If your sync is very slow \(extended beyond two days\) then very likely your setup cannot catch up with the chain progress.
+Después de descargar los datos del bloque, Nethermind iniciará la sincronización de estado \ (descargando los últimos nodos de prueba de estado \). Proporcionamos una estimación del tamaño y el progreso de la descarga, pero el valor real puede ser diferente a la estimación. \(especialmente si está utilizando una versión antigua de Nethermind, ya que a veces ajustamos manualmente el estimador en función de nuestras observaciones de la tasa de crecimiento de la cadena\). Debido a esto, a veces su sincronización puede continuar incluso cuando muestra ~ 100% finalizada. El otro componente importante es la velocidad de su sincronización: si su IO/network/ sistema de archivos hace que la sincronización del estado sea mucho más lenta que alrededor de 1.5 MB por segundo en promedio, entonces comenzará a descargar algunas partes del trie una y otra vez. En tales casos, es posible que se sorprenda al ver algo como 58000 MB /53000 MB \(100%\). Significa que descargó alrededor de 5 GB de datos que ya no son necesarios. Si su sincronización es muy lenta \(se extiende más allá de dos días \), es muy probable que su configuración no pueda ponerse al día con el progreso de la cadena.
 
-After the state sync finishes you will see the _'Processed...'_ messages like in archive sync - it means that your node is in sync and is processing the latest blocks.
+Después de que finalice la sincronización de estado, verá los mensajes _'Processed ...'_ como en la sincronización de archivos; significa que su nodo está sincronizado y está procesando los últimos bloques.
 
-Mainnet sync, at the time of writing \(December 2020\), takes around 8 hours on an UpCloud 16GB RAM 8 CPU  $40 VM \(and then syncs receipts and bodies in the background if you enabled them in the configuration\). Goerli sync should take around 40 minutes.
+La sincronización de Mainnet, al momento de escribir \ (diciembre de 2020 \), toma alrededor de 8 horas en un UpCloud 16GB RAM 8 CPU $ 40 VM \ (y luego sincroniza recibos y cuerpos en segundo plano si los habilitó en la configuración \). La sincronización de Goerli debería tardar unos 40 minutos.
 
-![Fast sync logs example for mainnet.](../.gitbook/assets/image%20%2859%29.png)
+![Ejemplo de registros de sincronización rápida para mainnet.](../.gitbook/assets/image%20%2859%29.png)
 
-State sync log messages have multiple values displayed. First `dd.HH:mm:ss` total state sync time is displayed, followed by an estimated sync progress \(percentage of total database data synced\), then the current download speed is displayed \(there will be times when it will slow down to 0 or single digit numbers, especially towards the end of the sync\). In general 6 hours sync times shown on screenshots are with around 2000 kB/s \(kilobytes per second\) average sync rate. You can calculate it in the example as ~45GB / \(2MB/s\) ~ 22500 seconds ~6.25 hours. We also display the number of state accounts synced, number of trie nodes synced and a diagnostic message in the format of _\[number\_of\_pending\_requests\].\[average time spent in response handler displayed as milliseconds\]_. So `5.6.20ms` means that we are awaiting for responses to 5 requests that have been sent to peers and the average time it takes us to process a single response is 6.20ms. The response handling times will differ depending on how many trie nodes are already cached \(so they will be significantly slower for a while after the node restart when cache has to be rebuilt\) and based on how fast the database IO is \(SSD vs NVMe vs cloud drives\). For a reasonable sync time you probably should expect these values to be below 15ms \(but they may be as high as 700ms for a while after restarting the node\).
+Los mensajes de registro de sincronización de estado tienen varios valores mostrados. Primero se muestra el tiempo total de sincronización del estado `dd.HH: mm: ss`, seguido de un progreso de sincronización estimado \(porcentaje del total de datos sincronizados de la base de datos\), luego se muestra la velocidad de descarga actual \ (habrá momentos en los que reduzca la velocidad a 0 o números de un solo dígito, especialmente hacia el final de la sincronización \). En general, los tiempos de sincronización de 6 horas que se muestran en las capturas de pantalla tienen una velocidad de sincronización promedio de alrededor de 2000 kB/s\(kilobytes por segundo\). Puede calcularlo en el ejemplo como ~ 45GB / \ (2MB/s \) ~ 22500 segundos ~ 6.25 horas. También mostramos la cantidad de cuentas estatales sincronizadas, la cantidad de nodos trie sincronizados y un mensaje de diagnóstico en el formato de _ \ [número \ _ de \ _pending \ _requests\]. \[Tiempo promedio empleado en el controlador de respuesta mostrado como milisegundos \] _ . Entonces, `5.6.20ms`significa que estamos esperando respuestas a 5 solicitudes que se han enviado a pares y el tiempo medio que nos lleva procesar una única respuesta es de 6,20 ms. Los tiempos de manejo de respuesta diferirán dependiendo de cuántos nodos de prueba ya estén almacenados en caché \ (por lo que serán significativamente más lentos durante un tiempo después del reinicio del nodo cuando la caché debe reconstruirse \) y según la rapidez con la que la IO de la base de datos es \ (SSD vs NVMe vs unidades en la nube \). Durante un tiempo de sincronización razonable, probablemente debería esperar que estos valores estén por debajo de 15 ms \(pero pueden ser tan altos como 700 ms durante un tiempo después de reiniciar el nodo\).
 
-A single restart of the node during the fast sync may extend the sync time by up to two hours because the node has to rebuild the caches by reading millions of values from the database.
+Un solo reinicio del nodo durante la sincronización rápida puede extender el tiempo de sincronización hasta dos horas porque el nodo tiene que reconstruir las cachés leyendo millones de valores de la base de datos.
 
-At the last stages of the sync the node will be repeatedly displaying the branch sync progress and changing the block number to which it tries to catch up. This stage should take between 30 minutes and two hours. If it lasts much more then it is possible that you will not be able to catch up with the network progress.
+En las últimas etapas de la sincronización, el nodo mostrará repetidamente el progreso de la sincronización de la rama y cambiará el número de bloque al que intenta ponerse al día. Esta etapa debería durar entre 30 minutos y dos horas. Si dura mucho más, es posible que no pueda ponerse al día con el progreso de la red.
 
-One of the best indicators that you are close to be synced is combined ~100% state size progress and nearly 100% branch sync progress.
+Uno de los mejores indicadores de que está a punto de sincronizarse es el progreso combinado de ~ 100% del tamaño del estado y casi el 100% de progreso de sincronización de rama. 
 
 ![](../.gitbook/assets/image%20%2864%29.png)
 
@@ -73,34 +73,34 @@ Current benefits of the beam sync:
 * if you know what you are doing, beam sync can give you state access very, very quickly \(within 10 - 30 minutes from starting the sync\)
 * similarly to the above, if you know how to work with beam sync, you can start sending transactions from the beam sync node very quickly
 
-The simplest way of explaining beam sync is by saying that the beam sync is exactly the same as fast sync but additionally it downloads the state data \(witnesses\) for the latest blocks. It also allows to execute some queries about the current state via JSON RPC much before the actual fast sync finishes. Currently beam sync takes more resources than fast sync and slows the fast sync down significantly but it allows you the query blockchain within a few minutes from starting.
+La forma más sencilla de explicar la sincronización de haces es decir que la sincronización de haces es exactamente la misma que la sincronización rápida, pero además descarga los datos de estado \ (testigos \) de los últimos bloques. También permite ejecutar algunas consultas sobre el estado actual a través de JSON RPC mucho antes de que finalice la sincronización rápida real. Actualmente, la sincronización de haces requiere más recursos que la sincronización rápida y ralentiza significativamente la sincronización rápida, pero le permite consultar la cadena de bloques a los pocos minutos de comenzar.
 
-![Beam sync logs example.](../.gitbook/assets/image%20%2860%29.png)
+![Beam sync logs  ejemplo.](../.gitbook/assets/image%20%2860%29.png)
 
-When the _'Beam sync is ON'_ message is displayed then it generally means that you can ask about the latest headers, latest transactions, you can ask about `eth_getBalance`, `eth_getCode`, `eth_call`, `debug_trace`, `trace_replayTransactions`etc. You cannot ask about transaction receipts or logs as most of them are not processed yet. With beam sync it is possible to create and broadcast an Ether or token transfer transactions from the node.
+Cuando se muestra el mensaje _'Beam sync is ON'_, generalmente significa que puede preguntar sobre los últimos encabezados, las últimas transacciones, puede preguntar sobre `eth_getBalance`,` eth_getCode`, `eth_call`,` debug_trace`, `trace_replayTransactions`etc. No puedes preguntar acerca de los recibos o registros de transacciones, ya que la mayoría de ellos aún no se procesan. Con la sincronización de haces es posible crear y difundir transacciones de transferencia de Ether o token desde el nodo.
 
 ![](../.gitbook/assets/image%20%2865%29.png)
 
-## Archive Sync
+## Sincronización de archivos
 
-Archive sync is the 'heaviest' and slowest sync mode but allows to ask questions like _'what was the balance of my account 2 years ago?'_, _'how many XYZ token were held in SomeExchange custody in 2017?'_.
+La sincronización de archivos es el modo de sincronización 'más pesado' y más lento, pero permite hacer preguntas como _ '¿Cuál era el saldo de mi cuenta hace 2 años?' _, _ '¿Cuántos tokens XYZ se mantuvieron bajo la custodia de algunos Exchange en 2017?'_.
 
-We have prepared default archive sync configurations and they can be launched from Nethermind Launcher \(just choose the archive options\) or by simply loading appropriate config when launching `./Nethermind.Runner --config mainnet_archive`
+Hemos preparado configuraciones de sincronización de archivos predeterminadas y se pueden iniciar desde Nethermind Launcher \(solo elija las opciones de archivo\) o simplemente cargando la configuración apropiada al iniciar `./Nethermind.Runner --config mainnet_archive`
 
 `./Nethermind.Runner --config goerli_archive`
 
-While for some smaller networks archive sync can complete very quickly \(in minutes or hours\) mainnet sync would take 2 - 6 weeks depending on the speed of your IO \(whether you use SSD or NVMe or depending on the cloud provider IOPS\). Database size in archive sync is the biggest from all modes as you will store all the historical data.
+Mientras que para algunas redes más pequeñas, la sincronización de archivos puede completarse muy rápidamente \(en minutos u horas\) la sincronización de mainnet tomaría de 2 a 6 semanas dependiendo de la velocidad de su IO \ (ya sea que use SSD o NVMe o dependiendo del proveedor de nube IOPS \ ). El tamaño de la base de datos en la sincronización de archivos es el más grande de todos los modos, ya que almacenará todos los datos históricos.
 
-![Example of the archive sync logs](../.gitbook/assets/image%20%2858%29.png)
+![Ejemplo de registros de sincronización de archivos](../.gitbook/assets/image%20%2858%29.png)
 
 ![](../.gitbook/assets/image%20%2857%29.png)
 
-Explanation of some data in the logs:
+Explicación de algunos datos en los registros:
 
-* at the beginning you may see a _'Waiting for peers...'_ message while the node is trying to discover nodes that it can sync with.
-* _'Downloaded 1234/8000000'_ shows the number of unprocessed blocks \(with transactions\) downloaded from the network. For `mainnet`this value may be slower than processing at first but very quickly you will see blocks being downloaded much faster than processed. Empty blocks can be as small as 512 bytes \(just headers without transactions\) and full blocks with heavy transactions can reach a few hundred kilobytes. We display both current download speed \(calculated in the last second\) and average \(total\) speed since starting the node.
-* _'Processed ...'_ displays the blocks that have been processed by the EVM. The first number shows the current head block number, then you can see `mgasps` \(million gas per second\) - current and total, then `tps` \(transactions per second\) - current and total, `bps` \(blocks per second\). Then `recv queue` \(transactions signature public key recovery queue\), `proc queue` \(processor queue\). Both recovery queue and processor queue are designed so when too many blocks are waiting for processing then only their hashes are kept in memory and remaining data are stored in the database. Thus, the queues numbers that you can see will be capped by some number.
-* _'Cache for epoch...'_ informs about `ethash` cache needed for block seal verification \(only on `mainnet` and `ropsten`\). Caches will be calculated every 30000 blocks \(length of an epoch\) but can also be calculated for the latest blocks that are being broadcast on the network.
-* After the archive sync finishes you will see the _'Processed...'_ message appearing on average every 15 seconds when the new block is processed.
-* `mgasps`, `tps`, `bps` values should not be treated as comparable as they may differ massively on different parts of the chain. For example when blocks are empty you may see very high `bps` values with very low \(or even zero\) `tps` and `mgasps` values as there are no transactions and no gas for EVM processing and blocks are very light. On the other hand when blocks are filled with very heavy transactions then `bps` might be very low while `mgasps` will be very high. It is even possible that you will see a lot of very light transactions where `tps` will be high while `bps` and `mgasps` will be average.
+* al principio, es posible que vea un mensaje _'Esperando pares ...'_ mientras el nodo está tratando de descubrir nodos con los que se puede sincronizar.
+* _'Downloaded 1234/8000000'_ muestra el número de bloques sin procesar \ (con transacciones \) descargados de la red. Para `mainnet`, este valor puede ser más lento que el procesamiento al principio, pero muy rápidamente verá que los bloques se descargan mucho más rápido de lo que se procesan. Los bloques vacíos pueden ser tan pequeños como 512 bytes \ (solo encabezados sin transacciones \) y los bloques completos con transacciones pesadas pueden alcanzar algunos cientos de kilobytes. Mostramos tanto la velocidad de descarga actual \(calculada en el último segundo\) como la velocidad promedio \(total\) desde que se inició el nodo.
+* _'Processed ...'_ muestra los bloques que han sido procesados por EVM. El primer número muestra el número de bloque de cabeza actual, luego puede ver `mgasps` \(millones de gas por segundo\) - actual y total, luego` tps` \(transacciones por segundo\) - actual y total, `bps` \ (bloques por segundo \). Luego, `recv queue` \ (cola de recuperación de clave pública de firma de transacciones \),` proc queue` \ (procesador de cola \). Tanto la cola de recuperación como la cola del procesador están diseñadas para que cuando haya demasiados bloques en espera de procesamiento, solo sus hashes se mantengan en la memoria y los datos restantes se almacenen en la base de datos. Por lo tanto, los números de las colas que puede ver estarán limitados por algún número.
+* _'Cache for epoch ...'_ informa sobre la caché `ethash` necesaria para la verificación del sello de bloque \ (solo en` mainnet` y `ropsten`\). Los cachés se calcularán cada 30000 bloques \(duración de una época\) pero también se pueden calcular para los últimos bloques que se transmiten en la red.
+* Una vez finalizada la sincronización del archivo, verá el mensaje _'Processed ...'_ que aparece en promedio cada 15 segundos cuando se procesa el nuevo bloque.
+* Los valores de `mgasps`,` tps`, `bps` no deben tratarse como comparables, ya que pueden diferir enormemente en diferentes partes de la cadena. Por ejemplo, cuando los bloques están vacíos, puede ver valores muy altos de `bps` con valores muy bajos de \(o incluso cero\)` tps` y `mgasps` ya que no hay transacciones ni gas para el procesamiento de EVM y los bloques son muy livianos. Por otro lado, cuando los bloques están llenos de transacciones muy pesadas, entonces `bps` puede ser muy bajo mientras que`mgasps` será muy alto. Incluso es posible que vea muchas transacciones muy ligeras donde `tps` será alto mientras que` bps` y `mgasps` serán promedio.
 

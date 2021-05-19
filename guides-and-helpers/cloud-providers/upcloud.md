@@ -4,43 +4,43 @@ description: UpCloud Cloud Hosting
 
 # UpCloud
 
-## Deploy server
+## Desplegar servidor
 
-Deploy a new server.
+Desplegar un nuevo servidor
 
 ![Server deployment](../../.gitbook/assets/image%20%284%29.png)
 
-## Select region
+## Seleccione región
 
-Select preferred region \(some will sync faster\).
+Seleccione la región preferida \(algunas se sincronizarán más rápido\).
 
-![Region selection](../../.gitbook/assets/image%20%2817%29.png)
+![Selección de región](../../.gitbook/assets/image%20%2817%29.png)
 
-## Server size
+## Tamaño del servidor
 
-Choose the server size \($5 is enough for `Goerli`, $40 is enough for the `Mainnet fast sync`\)
+Elija el tamaño del servidor \($ 5 es suficiente para `Goerli`, $ 40 es suficiente para la `sincronización rápida de Mainnet`\)
 
-![Goerli lowest setup](../../.gitbook/assets/image%20%2821%29.png)
+![Configuración más baja de Goerli](../../.gitbook/assets/image%20%2821%29.png)
 
-![Mainnet lowest setup](../../.gitbook/assets/image%20%2811%29.png)
+![Configuración más baja de Mainnet](../../.gitbook/assets/image%20%2811%29.png)
 
-## Storage size
+## Tamaño de almacenamiento
 
-Leave the storage size unchanged
+Deje el tamaño de almacenamiento sin cambios
 
-## Operating system
+## Sistema operativo
 
-Choose the operating system \(Ubuntu 20.04\)
+Elija el sistema operativo \(Ubuntu 20.04\)
 
-![Operating system](../../.gitbook/assets/image%20%289%29.png)
+![Sistema operativo](../../.gitbook/assets/image%20%289%29.png)
 
-## Hostname
+## Nombre de host
 
-Choose a hostname
+Elija un nombre de host
 
-![Hostname](../../.gitbook/assets/image%20%2812%29.png)
+![Nombre de host](../../.gitbook/assets/image%20%2812%29.png)
 
-Continue with:
+Continua con:
 
 {% page-ref page="../../ethereum-client/running-nethermind/running-the-client.md" %}
 

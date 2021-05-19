@@ -2,7 +2,7 @@
 
 Configuration of the Prometheus + Grafana metrics publication. Documentation of the required setup is not yet ready \(but the metrics do work and are used by the dev team\)
 
-| Property | Description | Default |
+| Propiedad | Descripción | Predeterminado |
 | :--- | :--- | :--- |
 | ApiKey | API key used for log events ingestion to Seq instance |  |
 | MinLevel | Minimal level of log events which will be sent to Seq instance. | Off |

@@ -1,28 +1,28 @@
 ---
-description: dbpath and databases info
+description: información de dbpath y bases de datos
 ---
 
-# Database
+# Base de datos
 
-Nethermind uses the [RocksDB](https://rocksdb.org) database to store state. By default the database is stored in the same directory where the client binaries are. You can change it by providing a `--baseDbPath` config switch in the command line, e.g.`./Nethermind.Runner --config goerli --baseDbPath /home/username/nethermind_db`
+Nethermind usa la base de datos [RocksDB] (https://rocksdb.org) para almacenar el estado. De forma predeterminada, la base de datos se almacena en el mismo directorio donde están los binarios del cliente. Puedes cambiar eso proporcionando la configuración `--baseDbPath` en la línea de comandos, por ejemplo ,`./ Nethermind.Runner --config goerli --baseDbPath /home/username/nethermind_db`
 
-After Nethermind is started, you will see multiple directories appearing in the _baseDbPath_ directory.
+Después de iniciar Nethermind, verá que aparecen varios directorios en el directorio _baseDbPath_.
 
-![Example of the DB directory on a freshly deployed Ubuntu VM with Nethermind.](../.gitbook/assets/image%20%2861%29.png)
+![Ejemplo del directorio DB en una máquina virtual Ubuntu recién implementada con Nethermind.](../.gitbook/assets/image%20%2861%29.png)
 
-| DB Directory | Content |
+| Directorio de base de datos | Contenido |
 | :--- | :--- |
-| blockInfos | information about blocks at each level of the block tree \(canonical chain and branches\) |
-| blocks | block bodies \(block transactions and uncle data\) |
-| bloom | bloom indexes for fast log searches |
-| canonicalHashTrie | LES protocol related data |
-| code | contract bytecodes |
-| discoveryNodes | peers discovered via discovery protocol - used for quick peering after restarts \(you can copy this DB between nodes to speed up peering\) |
-| headers | block headers only |
-| pendingTx | \(this DB is wiped out on each restart\) 2nd level cache of pending transactions / mempool \(1st level is in memory\) |
-| peers | stores additional sync peers information \(like peer reputation\) - you can copy this DB between nodes to speed up peering on fresh sync  |
-| receipts | transaction receipts data |
-| state | blockchain state including accounts and contract storage \(Patricia trie nodes\) |
+| blockInfos | Información sobre bloques en cada nivel del árbol de bloques \(cadena canónica y ramas\) |
+| blocks | Cuerpos de bloque \(bloquear transacciones y datos del tío\) |
+| bloom | Indices de bloom para búsquedas rápidas de registros |
+| canonicalHashTrie | Datos relacionados con el protocolo LES |
+| code | bytecodes del contrato |
+| discoveryNodes | Pares descubiertos a través del protocolo de descubrimiento: se usa para emparejamiento rápido después de reiniciar \(puedes copiar esta base de datos entre nodos para acelerar el emparejamiento\) |
+| headers | Headers solo del bloque |
+| pendingTx | \(esta base de datos se borra en cada reinicio\) caché de 2 nivel de transacciones pendientes / mempool \(1 nivel está en la memoria\) |
+| peers | almacena información adicional de pares de sincronización \(como reputación de pares\): puedes copiar esta base de datos entre nodos para acelerar el intercambio de tráfico en una nueva sincronización  |
+| receipts | Datos de recibos de transacciones |
+| state | Los estados de blockchain incluye las cuentas y almacenamiento por contrato \(Patricia trie nodos\) |
 
-You can use `rsync` between your nodes to clone the database \(One of our users copied entire 4.5TB archive state this way while the node was running and only stopped the node for the very last stage of `rsync` \). You can also simply copy the database between Unix and Windows systems \(and most likely macOS\).
+Puedes usar `rsync` entre sus nodos para clonar la base de datos \(Uno de nuestros usuarios copió el estado completo del archivo de 4.5TB de esta manera mientras el nodo se estaba ejecutando y solo detuvo el nodo para la última etapa de` rsync`\). También puedes simplemente copiar la base de datos entre los sistemas Unix y Windows \(y probablemente macOS\).
 

@@ -1,8 +1,8 @@
 ---
-description: Sample Fast Sync configurations for Nethermind
+description: Ejemplo de configuración de Fast Sync para Nethermind
 ---
 
-# Sample configuration
+# Configuración de muestra
 
 {% tabs %}
 {% tab title="mainnet.cfg" %}

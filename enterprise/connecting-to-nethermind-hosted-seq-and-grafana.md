@@ -1,6 +1,6 @@
-# Connecting to Nethermind hosted Seq and Grafana
+# Conectando a Nethermind hosted Seq y Grafana
 
-Get in touch with the Nethermind team - you will receive and Send us your Grafana Labs login:
+Contacta con el equipo de con el equipo de Nethermind - recibirás y enviaras tu inicio de sesión de Grafana Labs:
 
 \(1\) seq host
 
@@ -8,7 +8,7 @@ Get in touch with the Nethermind team - you will receive and Send us your Grafan
 
 \(3\) Prometheus URL
 
-In the cfg file edit:
+En el archivo cfg edita:
 
  `"Metrics": {  
   "NodeName": "[chooseNameForYourNode]",  
@@ -16,7 +16,7 @@ In the cfg file edit:
   "PushGatewayUrl": "[PrometheusURL]",  
   "IntervalSeconds": 30 },`
 
-In the NLog.config file edit:
+En el archivo NLog.config edita:
 
 ```text
  <target xsi:type="BufferingWrapper" name="seq" bufferSize="1000" flushTimeout="2000">

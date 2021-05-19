@@ -1,112 +1,112 @@
 ---
-description: A quick start example for Görli Testnet Nethermind synchronization
+description: Un ejemplo de inicio rápido para la sincronización de Görli Testnet Nethermind
 ---
 
-# Getting Started
+# Empezando
 
-## 🔧 Setting up a Virtual Machine
+## 🔧 Configurar una máquina virtual
 
-If you are not launching on your laptop/desktop then you will probably want to setup a cloud VM. You can find more info about setting up everything with selected [cloud providers](../guides-and-helpers/cloud-providers/).
+Si no está iniciando en su computadora portátil / computadora de escritorio, probablemente desee configurar una máquina virtual en la nube. Puede encontrar más información sobre cómo configurar todo con [proveedores en la nube] seleccionados (../guías-y-ayudantes/proveedores en la nube /).
 
 {% page-ref page="../guides-and-helpers/cloud-providers/" %}
 
-Make sure that you configure [firewall](firewall-configuration.md) properly.
+Asegúrese de configurar [firewall] (firewall-configuration.md) correctamente.
 
 {% page-ref page="firewall-configuration.md" %}
 
-You can check [supported operating systems](supported-platforms.md) and architectures and [hardware requirements](hardware-requirements.md).
+Puede comprobar [sistemas operativos compatibles] (plataformas-compatibles.md) y arquitecturas y [requisitos de hardware] (requisitos de hardware.md).
 
 {% page-ref page="supported-platforms.md" %}
 
 {% page-ref page="hardware-requirements.md" %}
 
-## ⏬ Downloading Nethermind
+## ⏬ Descargando Nethermind
 
-You need to download the Nethermind package first. There are currently 2 sources providing `Nethermind` packages. Check this page to find them out
+Primero debe descargar el paquete Nethermind. Actualmente hay 2 fuentes que proporcionan paquetes `Nethermind`. Consulte esta página para descubrirlos
 
 {% page-ref page="../ethereum-client/download-sources/" %}
 
-## 🔛 Launching Nethermind
+## 🔛 Lanzamiento de Nethermind
 
-* [ ] After launching Nethermind via `./Nethermind.Launcher` you need to choose the Node to start first.
+* [] Después de iniciar Nethermind a través de `. /Nethermind.Launcher`, primero debe elegir el nodo para comenzar.
 
-![Nethermind.Launcher initial options](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/launcher.png)
+![Opciones iniciales de Nethermind.Launcher](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/launcher.png)
 
-* [ ] Select `Goerli (light Clique testnet)`
+* [] Seleccione `Goerli (red de testnet ligera Clique)`
 
-![Network options](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/goerli-choice.png)
+![Opciones de red](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/goerli-choice.png)
 
-* [ ] Select `Fast Sync` mode
+* [] Seleccione el modo `Fast Sync`
 
-![Synchronization mode options](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-sync-choice.png)
+![Opciones del modo de sincronización](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-sync-choice.png)
 
-* [ ] Ensure that JSON RPC is enabled by typing `y`and pressing `enter`
-* [ ] Press `enter` to skip setting up `Host IP` 127.0.0.1 will be set as default
+* [] Asegúrese de que JSON RPC esté habilitado escribiendo `y` y presionando` enter`
+* [] Presione `enter` para omitir la configuración de` Host IP` 127.0.0.1 se establecerá como predeterminado
 
 {% hint style="warning" %}
 If **not** running locall, you may need to change the `Host` value to the VM public IP address.
 {% endhint %}
 
-![Enabling JSON RPC via Nethermind.Launcher](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/json-choice.png)
+![Habilitación de JSON RPC a través de Nethermind.Launcher](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/json-choice.png)
 
-* [ ] Skip the ethstats registration by typing `y`and pressing `enter`
+* [] Omita el registro de ethstats escribiendo `y` y presionando` enter`
 
-![EthStats configuration skip](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/ethstats-choice.png)
+![Omitir configuración de EthStats](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/ethstats-choice.png)
 
-## 👨💻 Explaining Nethermind logs
+## 👨💻 Explicando los registros de Nethermind
 
-After the node starts you will see some initial info about the node and then the sync will start. Görli fast sync uses a `fast blocks` sync mode initially. The `fast blocks` sync picks some known `pivot block` from the past and downloads `headers`, `bodies`, and `receipts` downwards all the way to `genesis block`. The console display shows the number growing from 0 to pivot but this is just to make the display more user-friendly.
+Después de que se inicie el nodo, verá información inicial sobre el nodo y luego comenzará la sincronización. La sincronización rápida de Görli utiliza inicialmente un modo de sincronización de `bloques rápidos`. La sincronización de `bloques rápidos` selecciona algún `pivot block` conocido del pasado y descarga los `headers`, `bodies` y `receipts` hacia abajo hasta llegar al `genesis block`. La pantalla de la consola muestra el número que crece de 0 a pivotar, pero esto es solo para que la pantalla sea más fácil de usar.
 
-You will see some information about the sync progress, like below:
+Verá información sobre el progreso de la sincronización, como a continuación:
 
-1. Shows the number of already downloaded `headers`, `bodies` and `receipts` out of all to be downloaded in the fast blocks stage.
-2. Shows the current queue of already downloaded `blocks`, `headers` and `receipts` waiting for being saved to the database.
-3. Shows the current download speed \(blocks per second - bps\).
-4. Shows the average download speed \(blocks per second - bps\).
+1. Muestra el número de `headers`,` bodies` y `receipts` ya descargados de todos los que se descargarán en la etapa de bloques rápidos.
+2. Muestra la cola actual de `blocks`,` headers` y `receipts` ya descargados esperando ser guardados en la base de datos.
+3. Muestra la velocidad de descarga actual \(blocks per second - bps\).
+4. Muestra la velocidad de descarga promedio \(blocks per second - bps\).
 
-![Fast blocks sync logs](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-blocks-sync-annotated.png)
+![Registros de sincronización de bloques rápidos](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-blocks-sync-annotated.png)
 
-When the fast blocks stage finishes there will be some period of downloading blocks between the `pivot` and the`latest blocks` which will have some additional info:
+Cuando finalice la etapa de bloques rápidos, habrá un período de descarga de bloques entre el `pivot` y los` últimos bloques` que tendrán información adicional:
 
-1. Shows the last entry from the fast blocks stage.
-2. Shows the mode transition moment.
-3. Displays the speed \(in blocks per second\) of all `headers`, `bodies` and `receipts` at the same time.
-4. Additional info will appear every 30000 blocks with information about the Görli epoch being stored.
+1. Muestra la última entrada de la etapa de bloques rápidos.
+2. Muestra el momento de transición de modo.
+3. Muestra la velocidad \(en bloques por segund \) de todos los `headers`,` bodies` y `receipts` al mismo tiempo.
+4. Aparecerá información adicional cada 30000 bloques con información sobre la época de Görli que se está almacenando.
 
-![G&#xF6;rli fast sync logs](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-sync-annotated.png)
+![G&#xF6;rli registros de sincronización rápida](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-sync-annotated.png)
 
-After the `fast sync` part finished the node will transition to the `state sync stage` when the `state trie` is being downloaded. Much information is displayed about the progress as this process may take a long time on mainnet \(a few hours\).
+Una vez finalizada la parte de `sincronización rápida`, el nodo pasará a la `etapa de sincronización de estado` cuando se esté descargando el `proceso de estado`. Se muestra mucha información sobre el progreso ya que este proceso puede llevar mucho tiempo en mainnet \(unas pocas horas\).
 
-1. Total elapsed time in `state sync` is displayed.
-2. Total downloaded DB size is displayed \(on mainnet the sync finishes around 34GB in March 2020, on Görli around 800MB\).
-3. Download speed in kilobytes per second is displayed.
-4. Occasionally a queue review message may appear \(you can ignore it\).
-5. `P` stands for the number of current parallel requests that the node is waiting for.
-6. `acc` stands for the number of accounts data downloaded already.
-7. `nodes` stands for the number of `Patricia trie nodes` downloaded by the sync process.
-8. `db_delay` shows the time spent in the DB write / read access. The higher the value the worse. It may get much worse if you restart the node during the sync process as we need to recreate some caches then by reading data from the DB.
-9. Occasionally we display additional info about the health of requests and caches that you may ignore unless you need to report any issues.
+1. Se muestra el tiempo total transcurrido en `sincronización de estado`
+2. Se muestra el tamaño total de la base de datos descargada \(en el mainnet, la sincronización termina alrededor de 34 GB en marzo de 2020, en Görli alrededor de 800 MB\).
+3. Se muestra la velocidad de descarga en kilobytes por segundo.
+4. Ocasionalmente puede aparecer un mensaje de revisión de la cola \(puedes ignorarlo\).
+5. `P` representa el número de solicitudes paralelas actuales que el nodo está esperando.
+6. `acc` representa la cantidad de datos de cuentas descargados.
+7. `nodes` representa el número de `Patricia trie nodes` descargados por el proceso de sincronización.
+8. `db_delay` muestra el tiempo empleado en el acceso de lectura / escritura a la base de datos. Cuanto mayor sea el valor, peor. Puede empeorar mucho si reinicia el nodo durante el proceso de sincronización, ya que se necesita volver a crear algunos cachés luego de leer los datos de la base de datos.
+9. Ocasionalmente, mostramos información adicional sobre el estado de las solicitudes y las cachés que puede ignorar a menos que necesite informar algún problema.
 
-![G&#xF6;rli state sync logs](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/state-sync-annotated.png)
+![G&#xF6;rli registros de sincronización de estado](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/state-sync-annotated.png)
 
-When the state sync is nearing completion you may see a series of `branch sync` information realoading many times from 0% to nearly 100%. This is the node trying to retrieve the few remaining state nodes and progressing with the head block rapidly:
+Cuando la sincronización de estado está a punto de completarse, es posible que vea una serie de información de `sincronización de rama` que se vuelve a cargar muchas veces desde el 0% hasta casi el 100%. Este es el nodo que intenta recuperar los pocos nodos de estado restantes y progresa rápidamente con el bloque principal:
 
-![G&#xF6;rli branch sync logs](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/branch-sync.png)
+![G&#xF6;rli registros de sincronización de rama](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/branch-sync.png)
 
-At some point the entire state is downloaded and the node enters the `full sync` mode and will allow you to issue CLI / Web3 queries and send / receive transactions🥳
+En algún momento, se descarga todo el estado y el nodo entra en el modo de `sincronización completa` y le permitirá emitir consultas CLI / Web3 y enviar / recibir transacciones🥳
 
-1. The `root` is saved at the moment when the entire `Patricia trie` is downloaded.
-2. We also clearly state that the node transitions to the `full sync`.
-3. When you see the block being processed then you are in the `full sync` and the newly arrived block is being calculated.
-4. Every two minutes you will see a summary of connected peers with their client version, IP address, highest synced block, and data download speeds.
+1. El `root` se guarda en el momento en que se descarga todo el` Patricia trie`.
+2. También indicamos claramente que el nodo pasa a la `sincronización completa`.
+3. Cuando veas que se está procesando el bloque, estás en la `sincronización completa` y se está calculando el bloque recién llegado.
+4. Cada dos minutos, verá un resumen de los pares conectados con su versión de cliente, dirección IP, bloque sincronizado más alto y velocidades de descarga de datos.
 
-![G&#xF6;rli full sync logs](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/full-sync-annotated.png)
+![G&#xF6;rli registros de sincronización completos](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/full-sync-annotated.png)
 
-Now you can launch CLI in the separate process \(launching Nethermind.Launcher again and selecting CLI instead of Node\). You can read more about [CLI here](https://nethermind.readthedocs.io/en/latest/cli.html).
+Ahora puede iniciar CLI en el proceso separado \(iniciando Nethermind.Launcher nuevamente y seleccionando CLI en lugar de Node\). Puede leer más sobre [CLI aquí] (https://nethermind.readthedocs.io/en/latest/cli.html).
 
-You can also connect to the node from Metamask by selecting `localhost:8545` from the Metamask network list.
+También puede conectarse al nodo desde Metamask seleccionando `localhost: 8545` de la lista de redes de Metamask.
 
-![Metamask localhost connection](https://github.com/NethermindEth/nethermind/raw/master/docs/source/metamask/localhost.png)
+![Conexión de metamask localhost](https://github.com/NethermindEth/nethermind/raw/master/docs/source/metamask/localhost.png)
 
 
 

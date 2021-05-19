@@ -2,16 +2,16 @@
 
 ## personal\_importRawKey
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"personal_importRawKey","params":[keyData, passphrase]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | keyData | `Data` |  |
 | passphrase | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -23,19 +23,19 @@ curl --data '{"method":"personal_importRawKey","params":[keyData, passphrase],"i
 {% endtab %}
 {% endtabs %}
 
-[See also CLI personal.importRawKey](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-importrawkey)
+[ingrese a CLI personal.importRawKey](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-importrawkey)
 
 ## personal\_listAccounts
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"personal_listAccounts","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -47,19 +47,19 @@ curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0
 {% endtab %}
 {% endtabs %}
 
-[See also CLI personal.listAccounts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-listaccounts)
+[ingrese a CLI personal.listAccounts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-listaccounts)
 
 ## personal\_lockAccount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"personal_lockAccount","params":[address]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -71,19 +71,19 @@ curl --data '{"method":"personal_lockAccount","params":[address],"id":1,"jsonrpc
 {% endtab %}
 {% endtabs %}
 
-[See also CLI personal.lockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-lockaccount)
+[ingrese a CLI personal.lockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-lockaccount)
 
 ## personal\_newAccount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"personal_newAccount","params":[passphrase]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | passphrase | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -95,20 +95,20 @@ curl --data '{"method":"personal_newAccount","params":[passphrase],"id":1,"jsonr
 {% endtab %}
 {% endtabs %}
 
-[See also CLI personal.newAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-newaccount)
+[ingrese a CLI personal.newAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-newaccount)
 
 ## personal\_unlockAccount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"personal_unlockAccount","params":[address, passphrase]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | passphrase | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -120,5 +120,5 @@ curl --data '{"method":"personal_unlockAccount","params":[address, passphrase],"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI personal.unlockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-unlockaccount)
+[ingrese a CLI personal.unlockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-unlockaccount)
 

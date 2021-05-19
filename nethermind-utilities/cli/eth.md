@@ -2,17 +2,17 @@
 
 ## eth.blockNumber
 
-Returns current block number
+Retorna el número de bloque actual
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.blockNumber` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -28,18 +28,18 @@ eth.blockNumber
 
 ## eth.call
 
-Executes a tx call \(does not create a transaction\)
+Ejecuta una llamada tx \(no crea una transacción\)
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.call(transactionCall, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -53,7 +53,7 @@ eth.call(transactionCall, blockParameter)
 {% tab title="Objects in eth\_call" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -67,7 +67,7 @@ eth.call(transactionCall, blockParameter)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -79,7 +79,7 @@ eth.call(transactionCall, blockParameter)
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -91,16 +91,16 @@ eth.call(transactionCall, blockParameter)
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -108,17 +108,17 @@ eth.call(transactionCall, blockParameter)
 
 ## eth.chainId
 
-Returns ChainID
+Retorna ChainID
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.chainId` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `UInt64 object` |  |
 
@@ -132,7 +132,7 @@ eth.chainId
 {% tab title="Objects in eth\_chainId" %}
 `UInt64`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 {% endtab %}
 {% endtabs %}
@@ -141,23 +141,23 @@ eth.chainId
 
 ## eth.createAccessList
 
-Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList for the given transaction
+Crea un [EIP2930] (https://eips.ethereum.org/EIPS/eip-2930) tipo AccessList para la transacción 
 
 {% hint style="info" %}
 **Hint:** If your transaction has code executed, then you can generate transaction access list with eth\_createAccessList. If you send it with your transaction then it will lower your gas cost on Ethereum
 {% endhint %}
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.createAccessList(transactionCall, blockParameter, optimize)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
-| transactionCall | `TransactionForRpc object` | Transaction's details |
-| blockParameter | `BlockParameter object` | \(optional\) |
-| optimize | `Boolean` | \(optional\) |
+| transactionCall | `TransactionForRpc object` | Detalles de la transacción |
+| blockParameter | `BlockParameter object` | \(opcional\) |
+| optimizar | `Boolean` | \(opcional\) |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `AccessListForRpc object` |  |
 
@@ -171,7 +171,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 {% tab title="Objects in eth\_createAccessList" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -185,7 +185,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -197,7 +197,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -209,20 +209,20 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `AccessListForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | AccessList | `AccessListItemForRpc[] object` |
 | GasUsed | `Quantity` |
@@ -233,18 +233,18 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 
 ## eth.estimateGas
 
-Executes a tx call and returns gas used \(does not create a transaction\)
+Ejecuta una llamada tx y retorna el gas usado \(no crea una transacción\)
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.estimateGas(transactionCall, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -258,7 +258,7 @@ eth.estimateGas(transactionCall, blockParameter)
 {% tab title="Objects in eth\_estimateGas" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -272,7 +272,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -284,7 +284,7 @@ eth.estimateGas(transactionCall, blockParameter)
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -296,16 +296,16 @@ eth.estimateGas(transactionCall, blockParameter)
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -313,18 +313,18 @@ eth.estimateGas(transactionCall, blockParameter)
 
 ## eth.getBalance
 
-Returns account balance
+Retorno el saldo de la cuenta
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getBalance(address, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -338,16 +338,16 @@ eth.getBalance(address, blockParameter)
 {% tab title="Objects in eth\_getBalance" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -355,18 +355,18 @@ eth.getBalance(address, blockParameter)
 
 ## eth.getBlockByHash
 
-Retrieves a block by hash
+Recupera un bloque por hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getBlockByHash(blockHash, returnFullTransactionObjects)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | returnFullTransactionObjects | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -380,7 +380,7 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 {% tab title="Objects in eth\_getBlockByHash" %}
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -412,18 +412,18 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 
 ## eth.getBlockByNumber
 
-Retrieves a block by number
+Recupera un bloque por número
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | returnFullTransactionObjects | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -437,20 +437,20 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 {% tab title="Objects in eth\_getBlockByNumber" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -482,17 +482,17 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 
 ## eth.getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash
+Retorna el número de transacciones en el bloque hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getBlockTransactionCountByHash(blockHash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -508,17 +508,17 @@ eth.getBlockTransactionCountByHash(blockHash)
 
 ## eth.getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number
+Retorna el número de transacciones en el bloque por número de bloque
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getBlockTransactionCountByNumber(blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -532,16 +532,16 @@ eth.getBlockTransactionCountByNumber(blockParameter)
 {% tab title="Objects in eth\_getBlockTransactionCountByNumber" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -549,18 +549,18 @@ eth.getBlockTransactionCountByNumber(blockParameter)
 
 ## eth.getCode
 
-Returns account code at given address and block
+Retorna el código de cuenta en la dirección y el bloque dados
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getCode(address, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -574,16 +574,16 @@ eth.getCode(address, blockParameter)
 {% tab title="Objects in eth\_getCode" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -591,17 +591,17 @@ eth.getCode(address, blockParameter)
 
 ## eth.getFilterChanges
 
-Reads filter changes
+Lee cambios de filtro
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getFilterChanges(filterId)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filterId | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Array` |  |
 
@@ -617,17 +617,17 @@ eth.getFilterChanges(filterId)
 
 ## eth.getLogs
 
-Reads logs
+Lee registros
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getLogs(filter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filter | `Filter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Array` |  |
 
@@ -641,7 +641,7 @@ eth.getLogs(filter)
 {% tab title="Objects in eth\_getLogs" %}
 `Filter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -650,9 +650,9 @@ eth.getLogs(filter)
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
@@ -665,17 +665,17 @@ eth.getLogs(filter)
 
 [https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getProof(accountAddress, hashRate, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | accountAddress | `Address` |  |
 | hashRate | `Data` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `AccountProof object` |  |
 
@@ -689,20 +689,20 @@ eth.getProof(accountAddress, hashRate, blockParameter)
 {% tab title="Objects in eth\_getProof" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `AccountProof`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Address | `Address` |
 | Proof | `Data` |
@@ -714,7 +714,7 @@ eth.getProof(accountAddress, hashRate, blockParameter)
 
 `StorageProof[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -730,19 +730,19 @@ eth.getProof(accountAddress, hashRate, blockParameter)
 
 ## eth.getStorageAt
 
-Returns storage data at address. storage\_index
+Retorna los datos de almacenamiento en la dirección. storage_index
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getStorageAt(address, positionIndex, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | positionIndex | `Quantity` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -756,16 +756,16 @@ eth.getStorageAt(address, positionIndex, blockParameter)
 {% tab title="Objects in eth\_getStorageAt" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -773,18 +773,18 @@ eth.getStorageAt(address, positionIndex, blockParameter)
 
 ## eth.getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index
+Retorna una transacción por número de bloque e índice
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -798,20 +798,20 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 {% tab title="Objects in eth\_getTransactionByBlockNumberAndIndex" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -825,7 +825,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -837,7 +837,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -853,17 +853,17 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 
 ## eth.getTransactionByHash
 
-Retrieves a transaction by hash
+Recupera una transacción por hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getTransactionByHash(transactionHash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -877,7 +877,7 @@ eth.getTransactionByHash(transactionHash)
 {% tab title="Objects in eth\_getTransactionByHash" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -891,7 +891,7 @@ eth.getTransactionByHash(transactionHash)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -903,7 +903,7 @@ eth.getTransactionByHash(transactionHash)
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -919,18 +919,18 @@ eth.getTransactionByHash(transactionHash)
 
 ## eth.getTransactionCount
 
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
+Retorna la cuenta nonce \(número de transacciones de la cuenta desde el génesis\) en el número de bloque dado
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getTransactionCount(address, blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -944,16 +944,16 @@ eth.getTransactionCount(address, blockParameter)
 {% tab title="Objects in eth\_getTransactionCount" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -961,17 +961,17 @@ eth.getTransactionCount(address, blockParameter)
 
 ## eth.getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash
+Retorna un recibo de transacción por tx hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getTransactionReceipt(txHashData)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHashData | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ReceiptForRpc object` |  |
 
@@ -985,7 +985,7 @@ eth.getTransactionReceipt(txHashData)
 {% tab title="Objects in eth\_getTransactionReceipt" %}
 `ReceiptForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -1001,11 +1001,11 @@ eth.getTransactionReceipt(txHashData)
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 
 `LogEntryForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1025,18 +1025,18 @@ eth.getTransactionReceipt(txHashData)
 
 ## eth.getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index
+Recupera un encabezado de bloque de tío por hash de bloque e índice de tío
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHashData | `Hash` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -1050,7 +1050,7 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 {% tab title="Objects in eth\_getUncleByBlockHashAndIndex" %}
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -1082,18 +1082,18 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 
 ## eth.getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index
+Recupera el header de bloque de tío por número de bloque e índice de tío
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -1107,20 +1107,20 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 {% tab title="Objects in eth\_getUncleByBlockNumberAndIndex" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -1152,17 +1152,17 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 
 ## eth.getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number
+Retorna el número de tíos en el bloque por número de bloque
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.getUncleCountByBlockNumber(blockParameter)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1176,16 +1176,16 @@ eth.getUncleCountByBlockNumber(blockParameter)
 {% tab title="Objects in eth\_getUncleCountByBlockNumber" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
@@ -1193,17 +1193,17 @@ eth.getUncleCountByBlockNumber(blockParameter)
 
 ## eth.newPendingTransactionFilter
 
-Creates an update filter
+Crea un filtro de actualización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.newPendingTransactionFilter()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1219,17 +1219,17 @@ eth.newPendingTransactionFilter()
 
 ## eth.pendingTransactions
 
-Returns the pending transactions list
+Retorna la lista de transacciones pendientes
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.pendingTransactions` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -1243,7 +1243,7 @@ eth.pendingTransactions
 {% tab title="Objects in eth\_pendingTransactions" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -1257,7 +1257,7 @@ eth.pendingTransactions
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1269,7 +1269,7 @@ eth.pendingTransactions
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1285,17 +1285,17 @@ eth.pendingTransactions
 
 ## eth.protocolVersion
 
-Returns ETH protocol version
+Retorna la versión del protocolo ETH
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.protocolVersion` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -1311,17 +1311,17 @@ eth.protocolVersion
 
 ## eth.sendEth
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.sendEth(from, to, amountInEth)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | from | `String` |  |
 | to | `String` |  |
 | amountInEth | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -1335,17 +1335,17 @@ eth.sendEth(from, to, amountInEth)
 
 ## eth.sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting
+Envíe una transacción sin procesar al tx pool y al broadcasting
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.sendRawTransaction(transaction)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transaction | `Data` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Hash` |  |
 
@@ -1361,17 +1361,17 @@ eth.sendRawTransaction(transaction)
 
 ## eth.sendTransaction
 
-Send a transaction to the tx pool and broadcasting
+Envíe una transacción al tx pool y al broadcasting
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.sendTransaction(rpcTx)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | rpcTx | `TransactionForRpc object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Hash` |  |
 
@@ -1385,7 +1385,7 @@ eth.sendTransaction(rpcTx)
 {% tab title="Objects in eth\_sendTransaction" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -1399,7 +1399,7 @@ eth.sendTransaction(rpcTx)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1411,7 +1411,7 @@ eth.sendTransaction(rpcTx)
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1427,17 +1427,17 @@ eth.sendTransaction(rpcTx)
 
 ## eth.sendWei
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.sendWei(from, to, amountInWei)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | from | `String` |  |
 | to | `String` |  |
 | amountInWei | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -1451,17 +1451,17 @@ eth.sendWei(from, to, amountInWei)
 
 ## eth.syncing
 
-Returns syncing status
+Retorna el estado de sincronización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `eth.syncing()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `SyncingResult object` |  |
 
@@ -1475,7 +1475,7 @@ eth.syncing()
 {% tab title="Objects in eth\_syncing" %}
 `SyncingResult`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | IsSyncing | `Boolean` |
 | StartingBlock | `Quantity` |

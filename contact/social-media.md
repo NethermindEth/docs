@@ -1,8 +1,8 @@
 ---
-description: Social media channels where you can reach the Team
+description: Canales en redes sociales donde puedes contactar al Equipo
 ---
 
-# Social Media
+# Redes Sociales
 
 ## Discord
 

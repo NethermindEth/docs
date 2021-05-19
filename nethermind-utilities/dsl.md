@@ -10,7 +10,7 @@ If you have any problems with running Nethermind with DSL - please contact our d
 For now, there is one plugin used for demo purposes that streams blocks from a Block Processor mined by a given miner and publishes data through web sockets.
 {% endhint %}
 
-* [ ] [Download Nethermind](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#downloading-nethermind)
+* [] [Descargando Nethermind](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#downloading-nethermind)
 * [ ] After sync and running example plugin should be available in directory `/DSL`with the **GetBlocksFromMiner.txt** name.
 * [ ] This is the sample plugin. If you want - you can change the address of the miner.
 
@@ -50,7 +50,7 @@ WHERE [condition]
 PUBLISH [WebSockets|LogPublisher]
 ```
 
-For example:
+Por ejemplo:
 
 ```csharp
 SOURCE BlockProcessor

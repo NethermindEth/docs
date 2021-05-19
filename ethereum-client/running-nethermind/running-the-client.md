@@ -1,38 +1,38 @@
 ---
-description: Run your Nethermind node with our cross-platform Ethereum client
+description: Ejecuta tu nodo Nethermind con nuestro cliente Ethereum multiplataforma
 ---
 
-# Running the client
+# Ejecutando el cliente
 
-Check [Download sources](../download-sources/) in order to get the latest Nethermind package for your OS.
+Chequea [Fuentes de descarga](../ download-sources /) para obtener el último paquete de Nethermind para tu sistema operativo.
 
 {% tabs %}
 {% tab title="Linux" %}
-* [x] [Download the package](../download-sources/)
+* [x] [Descarga el paquete](../download-sources/)
 
 ```bash
 wget [LINUX_PACKAGE_URL]
 ```
 
-![Download package with wget](../../.gitbook/assets/image%20%282%29.png)
+![Descargar paquete con wget](../../.gitbook/assets/image%20%282%29.png)
 
-* [x] Install linux dependencies
+* [x] Instalar dependencias de Linux
 
 ```bash
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y
 ```
 
-![Install Linux dependencies](../../.gitbook/assets/image%20%2816%29.png)
+![Instalar dependencias de Linux](../../.gitbook/assets/image%20%2816%29.png)
 
-* [x] `unzip` the package
+* [x] `unzip` el paquete
 
 ```bash
 unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 ```
 
-![Unzip the package](../../.gitbook/assets/image%20%287%29.png)
+![Unzip el paquete](../../.gitbook/assets/image%20%287%29.png)
 
-* [x] Switch directory
+* [x] Cambiar de directorio
 
 ```bash
 cd nethermind
@@ -40,32 +40,32 @@ cd nethermind
 
 ![Switch directory](../../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
-* [x] Run `Nethermind.Launcher` and select `Ethereum Node`
+* [x] Ejecuta `Nethermind.Launcher` y selecciona` Ethereum Node`
 
 ```bash
 ./Nethermind.Launcher
 ```
 
-![Run the Nethermind.Launcher](../../.gitbook/assets/image%20%2819%29.png)
+![Ejecuta Nethermind.Launcher](../../.gitbook/assets/image%20%2819%29.png)
 
-* [x] Select [network](../networks.md)
+* [x] Seleccione la [red](../networks.md)
 
-![Select the network](../../.gitbook/assets/image%20%2814%29.png)
+![Seleccione la red](../../.gitbook/assets/image%20%2814%29.png)
 
-* [x] Select [synchronization mode](../sync-modes.md)
+* [x] Selecciona [modo de sincronización](../sync-modes.md)
 
-![Select sync mode](../../.gitbook/assets/image%20%285%29.png)
+![Selecciona el modo de sincronización](../../.gitbook/assets/image%20%285%29.png)
 
-* [x] Configure `JSON RPC`/`EthStats` if needed
+* [x] Configura `JSON RPC`/` EthStats` si es necesario
 
-![JSON RPC / EthStats configuration](../../.gitbook/assets/image%20%2813%29.png)
+![JSON RPC / EthStats configuración](../../.gitbook/assets/image%20%2813%29.png)
 
-* [x] Nethermind node is now running🎉, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
+* [x] El nodo Nethermind ahora se está ejecutando 🎉, consulte este artículo para familiarizarse con los [registros](../../#explaining-nethermind-logs)
 
 ![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 {% hint style="danger" %}
-#### For Ubuntu 16.04 you will need additional dependencies installed.
+#### Para Ubuntu 16.04, necesitará instalar dependencias adicionales.
 {% endhint %}
 
 ```bash
@@ -77,24 +77,24 @@ sudo apt install libzstd1 -y
 {% endtab %}
 
 {% tab title="Windows" %}
-1. Download `Windows` package 
-2. `unzip` the file
-3. Run `Nethermind.Launcher.exe`
-4. Select desired configuration
+1. Descargue el paquete `Windows`
+2. `unzip` el archivo
+3. Ejecuta `Nethermind.Launcher.exe`
+4. Seleccione la configuración deseada
 {% endtab %}
 
 {% tab title="MacOS" %}
-* Download `Darwin`package 
-* Install `MacOS` dependencies
+* Descargar el paquete `Darwin`
+* Instalar dependencias de `MacOS`
 
 ```text
 brew install gmp snappy lz4 zstd
 ```
 
-* `unzip` the file
-* Run `Nethermind.Launcher`
+* `unzip` el archivo
+* Ejecuta `Nethermind.Launcher`
 * ⚠ If you will be prompted with a warning, check instructions here -&gt; [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
-* Select desired configuration
+* Seleccione la configuración deseada
 {% endtab %}
 {% endtabs %}
 

@@ -2,16 +2,16 @@
 
 ## system.getVariable
 
-| Invocation |
+| Invocación |
 | :--- |
 | `system.getVariable(name, defaultValue)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | name | `String` |  |
 | defaultValue | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -25,16 +25,16 @@ system.getVariable(name, defaultValue)
 
 ## system.memory
 
-| Invocation |
+| Invocación |
 | :--- |
 | `system.memory(name, defaultValue)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | name | `String` |  |
 | defaultValue | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 

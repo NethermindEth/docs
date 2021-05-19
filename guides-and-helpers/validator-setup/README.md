@@ -1,2 +1,2 @@
-# Validator setup
+# Configuración del validador
 

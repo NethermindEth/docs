@@ -1,14 +1,14 @@
 ---
-description: Private networks of Nethermind Client
+description: Redes privadas de Nethermind Client
 ---
 
-# Private Networks
+# Redes privadas
 
-It is possible to configure a private network \(private blockchain\) using Nethermind nodes. Before you setup a private network you will need to make a few decisions. One of them is choosing a consensus protocol that will be used for securing the network.
+Es posible configurar una red privada \(blockchain privada\) usando nodos Nethermind. Antes de configurar una red privada, deberá tomar algunas decisiones. Uno de ellas es elegir un protocolo de consenso que se utilizará para proteger la red.
 
-## Consensus Algorithms
+## Algoritmos de consenso
 
-Nethermind supports the following consensus algorithms:
+Nethermind soporta los siguientes algoritmos de consenso:
 
 * ethash \(PoW\)
 * AuRa \(PoA\)
@@ -17,41 +17,41 @@ Nethermind supports the following consensus algorithms:
 
 #### PoW
 
-In the proof of work consensus algorithm some of the nodes participate in a race to mine a new block by solving a mathematical puzzle. The difficulty of the puzzle \(the amount of computation needed to find a solution\) is adjusted so as to make blocks appear with some average frequency \(every 15 seconds on the Ethereum mainnet\). PoW is currently used to secure the public Ethereum mainnet and the Ropsten testnet. The only mining algorithm used for PoW in Ethereum is called ethash and is designed to be strict memory hard \(see [Strict Memory Hard Hashing Functions](http://www.hashcash.org/papers/memohash.pdf)\).
+En algoritmo de consenso de prueba de trabajo, algunos de los nodos participan en una carrera para extraer un nuevo bloque resolviendo un algoritmo matemático. La dificultad del algoritmo  \(la cantidad de cálculo necesaria para encontrar una solución\) se ajusta para hacer que los bloques aparezcan con una frecuencia promedio \(cada 15 segundos en la red principal de Ethereum\). PoW se utiliza actualmente para proteger la red principal pública de Ethereum y la red de prueba de Ropsten. El único algoritmo de minería utilizado para PoW en Ethereum se llama ethash y está diseñado para ser estrictamente duro con la memoria \(consulta [Funciones de hash estricto de memoria estricta](http://www.hashcash.org/papers/memohash.pdf)\).
 
 #### Clique
 
-Clique is an implementation of the Proof of Authority \(PoA\) consensus algorithm. The idea behind PoA is to choose a group of nodes within the network with authority to create \(seal\) new blocks. In Clique such nodes are called signers and after the initial setup signers can vote to add new signers to the group or to remove any of the existing signers. Clique is currently supported by Geth, Parity, Nethermind and Pantheon and is used to secure the Goerli and Rinkeby testnets.
+Clique es una implementación del algoritmo de consenso Proof of Authority \(PoA\). La idea detrás de PoA es elegir un grupo de nodos dentro de la red con autoridad para crear \(sella \) nuevos bloques. En Clique, estos nodos se denominan firmantes y, después de la configuración inicial, los firmantes pueden votar para agregar nuevos firmantes al grupo o eliminar cualquiera de los firmantes existentes. Actualmente, Clique cuenta con el apoyo de Geth, Parity, Nethermind y Pantheon y se utiliza para asegurar las testnets de Goerli y Rinkeby.
 
 #### AuRa
 
-AuRa is another implementation of the Proof of Authority consensus algorithm. It is currently only supported by Nethermind and Parity Ethereum client. Aura is used to secure the Kovan testnet and the POA Network.
+AuRa es otra implementación del algoritmo de consenso de prueba de autoridad. Actualmente solo es compatible con el cliente Nethermind y Parity Ethereum. Aura se utiliza para proteger los testnets de Kovan y la red de POA.
 
-#### NethDev \(we also call it Spaceneth\)
+#### NethDev \(también lo llamamos Spaceneth\)
 
-NethDev is a very simple consensus algorithm \(or to better describe it - lack of consensus algorithm\). NethDev can be used for setting up nodes for development and testing purposes. On the NethDev network any node can create a block with transactions and as long as it is a valid Ethereum block all other nodes will accept it.
+NethDev es un algoritmo de consenso muy simple \(o para describirlo mejor - falta de algoritmo de consenso\). NethDev se puede utilizar para configurar nodos con fines de desarrollo y prueba. En la red NethDev, cualquier nodo puede crear un bloque con transacciones y, siempre que sea un bloque Ethereum válido, todos los demás nodos lo aceptarán.
 
-### Configuration
+### Configuración
 
-Nethermind uses the same format chainspec files that can be used for setting up private networks in Parity. Most of the elements of the chainspec files are supported by Nethermind:
+Nethermind usa el mismo formato de chainspec que se pueden usar para configurar redes privadas en Parity. La mayoría de los elementos de los archivos chainspec son compatibles con Nethermind:
 
-* consensus engine and its parameters \(to choose between Ethash, Clique, AuRa or NethDev\)
-* genesis block spec
-* EIP transitions
-* initial account allocations
+* motor de consenso y sus parámetros \(a elegir entre Ethash, Clique, AuRa o NethDev\)
+* especificación del bloque génesis
+* Transiciones EIP
+* asignaciones de cuenta iniciales
 * bootnodes
 
-The following elements are NOT supported at the moment:
+Los siguientes elementos NO son compatibles en este momento:
 
-* hardcoded sync block hashes
-* precompile definitions and precompile activation blocks
+* hashes de bloque de sincronización codificados
+* definiciones de precompilación y bloques de activación de precompilación
 
-You can find below links to some of the chainspec files used to define various Ethereum networks:
+Puede encontrar los links a continuación a algunos de los chainspec que se utilizan para definir varias redes Ethereum:
 
-* [foundation](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/foundation.json) - the public Ethereum mainnet
-* [rinkeby](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/rinkeby.json) - the original Clique based testnet
-* [goerli](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json) - the new Clique based testnet
-* [spaceneth](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/spaceneth.json) - a private network example with NethDev
+* [foundation](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/foundation.json) - la red mainnet pública de Ethereum
+* [rinkeby](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/rinkeby.json) - la testnet basada en Clique original
+* [goerli](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json) - la nueva testnet basada en Clique
+* [spaceneth](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/spaceneth.json) - un ejemplo de red privada con NethDev
 
 
 

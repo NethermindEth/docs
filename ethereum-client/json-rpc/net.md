@@ -2,15 +2,15 @@
 
 ## net\_listening
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"net_listening","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -24,15 +24,15 @@ curl --data '{"method":"net_listening","params":[],"id":1,"jsonrpc":"2.0"}' -H "
 
 ## net\_localAddress
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"net_localAddress","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -46,15 +46,15 @@ curl --data '{"method":"net_localAddress","params":[],"id":1,"jsonrpc":"2.0"}' -
 
 ## net\_localEnode
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"net_localEnode","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -66,19 +66,19 @@ curl --data '{"method":"net_localEnode","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 {% endtab %}
 {% endtabs %}
 
-[See also CLI net.localEnode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-localenode)
+[ingrese a CLI net.localEnode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-localenode)
 
 ## net\_peerCount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"net_peerCount","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -90,19 +90,19 @@ curl --data '{"method":"net_peerCount","params":[],"id":1,"jsonrpc":"2.0"}' -H "
 {% endtab %}
 {% endtabs %}
 
-[See also CLI net.peerCount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-peercount)
+[ingrese a CLI net.peerCount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-peercount)
 
 ## net\_version
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"net_version","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -114,5 +114,5 @@ curl --data '{"method":"net_version","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 {% endtab %}
 {% endtabs %}
 
-[See also CLI net.version](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-version)
+[ingrese a CLI net.version](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-version)
 

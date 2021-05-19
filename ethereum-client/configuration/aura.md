@@ -1,6 +1,6 @@
 # Aura module
 
-| Property | Description | Default |
+| Propiedad | Descripción | Predeterminado |
 | :--- | :--- | :--- |
 | AllowAuRaPrivateChains | If 'true' then you can run Nethermind only private chains. Do not use with existing Parity AuRa chains. | false |
 | ForceSealing | If 'true' then Nethermind if mining will seal empty blocks. | false |

@@ -7,7 +7,7 @@
   Windows:
 
   * Install .NET [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download)
-  * You may need to install [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+  * Es posible que debas instalar [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
   Linux:
 

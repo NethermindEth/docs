@@ -2,7 +2,7 @@
 description: Running the Provider
 ---
 
-# Provider
+# Proveedor
 
 * [x] Download the NDM package from the discord
 * [x] Run Consumer node:
@@ -31,7 +31,7 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 ### xDai
 
-#### Sync
+#### Sincronizar
 
 * [x] Select  **xDai** network. Default sync type is **fast sync**.
 

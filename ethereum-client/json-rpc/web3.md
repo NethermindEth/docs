@@ -2,17 +2,17 @@
 
 ## web3\_clientVersion
 
-Returns the current client version.
+Retorna la versión actual del cliente.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"web3_clientVersion","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -24,21 +24,21 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 {% endtab %}
 {% endtabs %}
 
-[See also CLI web3.clientVersion](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/web3#web3-clientversion)
+[ingrese a CLI web3.clientVersion](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/web3#web3-clientversion)
 
 ## web3\_sha3
 
-Returns Keccak of the given data.
+Retorna el Keccak de los datos proporcionados.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"web3_sha3","params":[data]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | data | `Data` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Hash` |  |
 
@@ -50,5 +50,5 @@ curl --data '{"method":"web3_sha3","params":[data],"id":1,"jsonrpc":"2.0"}' -H "
 {% endtab %}
 {% endtabs %}
 
-[See also CLI web3.sha3](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/web3#web3-sha3)
+[ingrese a CLI web3.sha3](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/web3#web3-sha3)
 

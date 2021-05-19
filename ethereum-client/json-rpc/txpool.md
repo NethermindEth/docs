@@ -4,15 +4,15 @@
 
 Returns tx pool content.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"txpool_content","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TxPoolContent object` |  |
 
@@ -26,28 +26,28 @@ curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 {% tab title="Objects in txpool\_content" %}
 `TxPoolContent`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
 {% endtab %}
 {% endtabs %}
 
-[See also CLI txpool.content](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-content)
+[ingrese a CLI txpool.content](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-content)
 
 ## txpool\_inspect
 
 Returns a detailed info on tx pool transactions.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"txpool_inspect","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TxPoolInspection object` |  |
 
@@ -61,7 +61,7 @@ curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 {% tab title="Objects in txpool\_inspect" %}
 `TxPoolInspection`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
@@ -74,15 +74,15 @@ curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 Returns a tx pool status.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"txpool_status","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TxPoolStatus object` |  |
 
@@ -96,7 +96,7 @@ curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "
 {% tab title="Objects in txpool\_status" %}
 `TxPoolStatus`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Pending | `Quantity` |
 | Queued | `Quantity` |

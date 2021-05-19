@@ -1,8 +1,8 @@
-# Welcome to Nethermind
+# Bienvenido a Nethermind
 
-Founded in 2017 by a small team of world-class technologists, Nethermind builds Ethereum solutions for developers and enterprises. Boosted by a grant from the Ethereum Foundation in August 2018, our team has worked tirelessly to deliver the fastest Ethereum client in the market. 
+Fundada en 2017 por un pequeño equipo de tecnólogos de clase mundial, Nethermind crea soluciones Ethereum para desarrolladores y empresas. Impulsado por una subvención de la Fundación Ethereum en agosto de 2018, nuestro equipo ha trabajado incansablemente para ofrecer el cliente Ethereum más rápido del mercado.
 
-Our flagship Ethereum client is all about performance and flexibility. Built on .NET core, a widespread, enterprise-friendly platform, Nethermind makes integration with existing infrastructures simple, without losing sight of stability, reliability, data integrity, and security.
+Nuestro cliente insignia de Ethereum tiene que ver con el rendimiento y la flexibilidad. Construido sobre .NET core, una plataforma amplia y amigable para las empresas, Nethermind simplifica la integración con las infraestructuras existentes, sin perder de vista la estabilidad, la confiabilidad, la integridad de los datos y la seguridad.
 
 ![](.gitbook/assets/nethermind.png)
 

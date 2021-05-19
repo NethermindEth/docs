@@ -1,18 +1,18 @@
 ---
-description: Nethermind Dockers instructions
+description: Instrucciones de Nethermind Dockers
 ---
 
 # Dockers
 
-## ![](../../.gitbook/assets/pobrane.png) Docker repository
+## ![](../../.gitbook/assets/pobrane.png) Repositorio de Docker
 
-Docker repository can be found here:
+El repositorio de Docker se puede encontrar aquí:
 
 {% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
 
-## Supported platforms
+## Plataformas compatibles
 
-We are currently supporting docker images for the following CPU architectures:
+Actualmente soportamos imágenes de Docker para las siguientes arquitecturas de CPU:
 
 {% page-ref page="docker-debian-alpine.md" %}
 

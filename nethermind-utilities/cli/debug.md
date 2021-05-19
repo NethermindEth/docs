@@ -2,16 +2,16 @@
 
 ## debug.config
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.config(category, name)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | category | `String` |  |
 | name | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -25,17 +25,17 @@ debug.config(category, name)
 
 ## debug.getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+Recupera un bloque en la forma serializada RLP.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.getBlockRlp(number)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -51,17 +51,17 @@ debug.getBlockRlp(number)
 
 ## debug.getBlockRlpByHash
 
-Retrieves a block in the RLP-serialized form.
+Recupera un bloque en la forma serializada RLP.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.getBlockRlpByHash(hash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -77,17 +77,17 @@ debug.getBlockRlpByHash(hash)
 
 ## debug.getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Recupera una representación de las ramas de los árboles en un nivel de cadena determinado \ (específico de Nethermind\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.getChainLevel(number)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ChainLevelForRpc object` |  |
 
@@ -101,14 +101,14 @@ debug.getChainLevel(number)
 {% tab title="Objects in debug\_getChainLevel" %}
 `ChainLevelForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | BlockInfos | `BlockInfoForRpc[] object` |
 | HasBlockOnMainChain | `Boolean` |
 
 `BlockInfoForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -124,17 +124,17 @@ debug.getChainLevel(number)
 
 ## debug.migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Establece el número de bloque hasta el que se migrarán los recibos a \(específico de Nethermind\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.migrateReceipts(blockNumber)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockNumber | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -150,18 +150,18 @@ debug.migrateReceipts(blockNumber)
 
 ## debug.traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+Devuelve un seguimiento completo de todos los códigos de operación invocados de todas las transacciones que se incluyeron en este bloque. El padre de este bloque debe estar presente o fallará.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceBlock(blockRlp, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -175,7 +175,7 @@ debug.traceBlock(blockRlp, options)
 {% tab title="Objects in debug\_traceBlock" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -185,7 +185,7 @@ debug.traceBlock(blockRlp, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -199,16 +199,16 @@ debug.traceBlock(blockRlp, options)
 
 ## debug.traceBlockByHash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceBlockByHash(blockHash, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -222,7 +222,7 @@ debug.traceBlockByHash(blockHash, options)
 {% tab title="Objects in debug\_traceBlockByHash" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -232,7 +232,7 @@ debug.traceBlockByHash(blockHash, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -246,16 +246,16 @@ debug.traceBlockByHash(blockHash, options)
 
 ## debug.traceBlockByNumber
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceBlockByNumber(number, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -269,7 +269,7 @@ debug.traceBlockByNumber(number, options)
 {% tab title="Objects in debug\_traceBlockByNumber" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -279,7 +279,7 @@ debug.traceBlockByNumber(number, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -293,18 +293,18 @@ debug.traceBlockByNumber(number, options)
 
 ## debug.traceTransaction
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+Este método intentará ejecutar la transacción exactamente de la misma manera en que se ejecutó en la red. Reproducirá cualquier transacción que se haya ejecutado antes de esta antes de intentar finalmente ejecutar la transacción que corresponde al hash dado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceTransaction(transactionHash, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionHash | `Hash` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -318,7 +318,7 @@ debug.traceTransaction(transactionHash, options)
 {% tab title="Objects in debug\_traceTransaction" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -328,7 +328,7 @@ debug.traceTransaction(transactionHash, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -342,17 +342,17 @@ debug.traceTransaction(transactionHash, options)
 
 ## debug.traceTransactionByBlockAndIndex
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -366,20 +366,20 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 {% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -389,7 +389,7 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -403,17 +403,17 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 
 ## debug.traceTransactionByBlockhashAndIndex
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -427,7 +427,7 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 {% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -437,7 +437,7 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -451,17 +451,17 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 
 ## debug.traceTransactionInBlockByHash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
 | transactionHash | `Hash` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -475,7 +475,7 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 {% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -485,7 +485,7 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -499,17 +499,17 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 
 ## debug.traceTransactionInBlockByIndex
 
-| Invocation |
+| Invocación |
 | :--- |
 | `debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -523,7 +523,7 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 {% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -533,7 +533,7 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |

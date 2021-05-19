@@ -2,7 +2,7 @@
 description: Frequently asked questions about Nethermind Data Marketplace - Provider
 ---
 
-# Provider
+# Proveedor
 
 ## How can I connect to a consumer?
 

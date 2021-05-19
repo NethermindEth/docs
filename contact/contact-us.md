@@ -1,16 +1,16 @@
 ---
-description: E-mail addresses of Nethermind Team
+description: Correos electrónicos del Equipo Nethermind
 ---
 
-# Contact us
+# Contáctanos
 
 ## 📬 E-mails
 
-| Team | E-mail address |
+| Equipo | Correo electrónico |
 | :--- | :--- |
-| Nethermind Team | team@nethermind.io |
+| Equipo Nethermind | team@nethermind.io |
 | DevOps | devops@nethermind.io |
-| Marketing | marketing@nethermind.io |
+| Mercadeo | marketing@nethermind.io |
 | PR | pr@nethermind.io |
 | UI | ui@nethermind.io |
 

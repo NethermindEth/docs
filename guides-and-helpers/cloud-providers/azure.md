@@ -1,4 +1,4 @@
 # Azure
 
-Based on our tests it is probably the worst choice from the providers listed here. Should be fine \(although more expensive\) for fast syncing nodes. Full archive is not reasonable with the price / IOPS ratio.
+Según nuestras pruebas, probablemente sea la peor opción de los proveedores enumerados aquí. Debería estar bien \(aunque más caro\) para nodos de sincronización rápida. El archivo completo no es razonable con la relación precio / IOPS.
 

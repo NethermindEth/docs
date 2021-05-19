@@ -1,16 +1,16 @@
 ---
-description: Networks currently supported by Nethermind Client
+description: Networks actualmente admitidas por Nethermind Client
 ---
 
 # Networks
 
-By default Nethermind launches with mainnet network configuration but you can sync any of the below networks by adding a command line switch:
+De forma predeterminada, Nethermind se inicia con la configuración de mainnet, pero puede sincronizar cualquiera de las siguientes redes agregando un interruptor de línea de comando:
 
 ```text
 --config [NETWORK_NAME]
 ```
 
-Network name can be any of the following
+El nombre de la network puede ser cualquiera de los siguientes
 
 * mainnet
 * goerli
@@ -21,11 +21,11 @@ Network name can be any of the following
 * sokol
 * energyweb
 * volta
-* kovan \(only fast sync and may fail if pWASM transactions appear\)
+* kovan \(solo sincronización rápida y puede fallar si aparecen transacciones pWASM\)
 
 ### Mainnet
 
-This is the main public Ethereum network secured by the ethash PoW algorithm.
+Esta es la principal red pública de Ethereum protegida por el algoritmo ethash PoW.
 
 ```text
 Nethermind.Runner --config mainnet
@@ -35,7 +35,7 @@ Nethermind.Runner --config mainnet
 
 ### Görli \(goerli\)
 
-This is a Clique-PoA based testnet supported by all major clients. It has a 15 seconds delay between blocks that are sealed by Goerli validators.
+Esta es una red de prueba basada en Clique-PoA compatible con todos los clientes principales. Tiene un retraso de 15 segundos entre los bloques sellados por los validadores de Goerli.
 
 ```text
 Nethermind.Runner --config goerli
@@ -47,7 +47,7 @@ Nethermind.Runner --config goerli
 
 ### Ropsten
 
-This is a test network secured by ethash PoW algorithm which resembles mainnet most closely but is prone to hashrate-based attacks.
+Esta es una testnet protegida por el algoritmo ethash PoW que se parece más a la red principal, pero es propensa a ataques basados en hashrate.
 
 ```text
 Nethermind.Runner --config ropsten
@@ -57,7 +57,7 @@ Nethermind.Runner --config ropsten
 
 ### Rinkeby
 
-This is a Clique-PoA based testnet supported by Geth and Nethermind. It has a 15 seconds delay between blocks.
+Esta es una red de prueba basada en Clique-PoA compatible con Geth y Nethermind. Tiene un retraso de 15 segundos entre bloques.
 
 ```text
 Nethermind.Runner --config rinkeby

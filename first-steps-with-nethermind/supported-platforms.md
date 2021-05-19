@@ -1,14 +1,14 @@
 ---
-description: Run Nethermind from any platform of your choice
+description: Ejecuta Nethermind desde cualquier plataforma de su elección
 ---
 
-# Supported platforms
+# Plataformas compatibles
 
 ## Linux
 
 {% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/linux?tabs=netcore31&pivots=os-linux" caption="Supported operating systems" %}
 
-| Operating System | Version | Architecture | Tested by us |
+| Sistema operativo | Version | Arquitectura | Probado por nosotros |
 | :--- | :--- | :---: | :---: |
 | Red Hat Enterprise Linux | 7+ | x64 | ❌ |
 | CentOS | 8+ | x64 | ✔ |
@@ -26,7 +26,7 @@ description: Run Nethermind from any platform of your choice
 
 {% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/windows?tabs=netcore31&pivots=os-windows" caption="Supported operating systems" %}
 
-| Operating System | Version | Architecture | Tested by us |
+| Sistema operativo | Version | Arquitectura | Probado por nosotros |
 | :--- | :--- | :---: | :---: |
 | Windows 10 Client | 1607+ | x64, x86 | ✔ |
 | Windows Client | 7 SP1\(\*\), 8.1 | x64, x86 | ✔ |
@@ -38,7 +38,7 @@ description: Run Nethermind from any platform of your choice
 
 {% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/macos?tabs=netcore31&pivots=os-macos" caption="Supported operating systems" %}
 
-| Operating System | Architect**ure** | **Tested by us** |
+| Sistema operativo | Arquitectu**ra** | Probado por noso**tros** |
 | :--- | :---: | :---: |
 | Mojave+ 10.13+ | x64 | ✔ |
 

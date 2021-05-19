@@ -1,6 +1,6 @@
 ---
-description: Tutorial on how to run Nethermind client on different Operating Systems
+description: Tutorial sobre cómo ejecutar el cliente Nethermind en diferentes sistemas operativos
 ---
 
-# Running Nethermind
+# Ejecutando Nethermind
 

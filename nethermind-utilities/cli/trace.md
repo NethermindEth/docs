@@ -4,15 +4,15 @@
 
 Returns traces created at given block.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `trace.block(numberOrTag)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | numberOrTag | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromStore object` |  |
 
@@ -26,20 +26,20 @@ trace.block(numberOrTag)
 {% tab title="Objects in trace\_block" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromStore`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
 | BlockHash | `Hash` |
@@ -49,17 +49,17 @@ trace.block(numberOrTag)
 | TraceAddress | `Array` |
 | TransactionHash | `Hash` |
 | TransactionPosition | `Quantity` |
-| Type | `String` |
+| Tipo | `String` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -74,7 +74,7 @@ trace.block(numberOrTag)
 
 `ParityTraceResult`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |
@@ -87,18 +87,18 @@ trace.block(numberOrTag)
 
 ## trace.rawTransaction
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Rastrea una llamada a eth\_sendRawTransaction sin hacer la llamada, devolviendo los rastros
 
-| Invocation |
+| Invocación |
 | :--- |
 | `trace.rawTransaction(data, traceTypes)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | data | `Data` |  |
 | traceTypes | `Array` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromReplay object` |  |
 
@@ -112,7 +112,7 @@ trace.rawTransaction(data, traceTypes)
 {% tab title="Objects in trace\_rawTransaction" %}
 `ParityTxTraceFromReplay`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -122,20 +122,20 @@ trace.rawTransaction(data, traceTypes)
 
 `ParityVmTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -156,16 +156,16 @@ trace.rawTransaction(data, traceTypes)
 
 Replays all transactions in a block returning the requested traces for each transaction.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `trace.replayBlockTransactions(numberOrTag, traceTypes)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | numberOrTag | `BlockParameter object` |  |
 | traceTypes | `Array` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromReplay object` |  |
 
@@ -179,20 +179,20 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 {% tab title="Objects in trace\_replayBlockTransactions" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromReplay`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -202,20 +202,20 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 
 `ParityVmTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -236,16 +236,16 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 
 Replays a transaction, returning the traces.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `trace.replayTransaction(txHash, traceTypes)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
 | traceTypes | `Array` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromReplay object` |  |
 
@@ -259,7 +259,7 @@ trace.replayTransaction(txHash, traceTypes)
 {% tab title="Objects in trace\_replayTransaction" %}
 `ParityTxTraceFromReplay`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -269,20 +269,20 @@ trace.replayTransaction(txHash, traceTypes)
 
 `ParityVmTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -303,15 +303,15 @@ trace.replayTransaction(txHash, traceTypes)
 
 Returns all traces of given transaction
 
-| Invocation |
+| Invocación |
 | :--- |
 | `trace.transaction(txHash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromStore object` |  |
 
@@ -325,7 +325,7 @@ trace.transaction(txHash)
 {% tab title="Objects in trace\_transaction" %}
 `ParityTxTraceFromStore`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
 | BlockHash | `Hash` |
@@ -335,17 +335,17 @@ trace.transaction(txHash)
 | TraceAddress | `Array` |
 | TransactionHash | `Hash` |
 | TransactionPosition | `Quantity` |
-| Type | `String` |
+| Tipo | `String` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -360,7 +360,7 @@ trace.transaction(txHash)
 
 `ParityTraceResult`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |

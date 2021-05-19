@@ -1,27 +1,27 @@
-# Upgrades
+# Actualizaciones
 
-When upgrading existing database make sure that you read the release notes for all version between your current version and the version that you are upgrading to.
+Al actualizar la base de datos existente, asegúrese de leer las notas de la versión para todas las versiones entre su versión actual y la versión a la que está actualizando.
 
-The **biggest risk** when upgrading is to **upgrade a fast synced node** that is **not in a synced state** with a **new pivot block** in configuration \(changing the pivot block after sync should not be done - we are in the process of writing code that would prevent it\).
+El **biggest risk** al actualizar es **upgrade a fast synced node** que **not in a synced state** con un **new pivot block** en la configuración \(no se debe cambiar el bloque de pivote después de la sincronización; estamos en el proceso de escribir un código que lo evitaría\).
 
-Generally you should ensure that when you upgrade:
+Por lo general, debe asegurarse de que cuando actualice:
 
-* use the same pivot block data as in the initial sync
-* **OR** drop the database and resync
+* utilizar los mismos datos del bloque de pivote que en la sincronización inicial
+* **O** elimine la base de datos y vuelva a sincronizar
 
-Each release of Nethermind is going through the following test procedure:
+Cada versión de Nethermind pasa por el siguiente procedimiento de prueba:
 
-* Exploratory testing, including mainnet resyncs, Goerli validator testing, JSON RPC
-* Nethermind specific unit and integration tests are executed
-* Ethereum tests are executed for EVM, fork choice, RLP, Trie
-* Legacy \(old network versions\) Ethereum tests are executed for EVM, fork choice, RLP, Trie
-* Hive tests for networking, sync and consensus are executed
-* Deployment of an ERC20 contract from Truffle to Nethermind spaceneth network
-* Smoke Tests are Executed for each of the following syncs:
+* Pruebas exploratorias, incluidas resincronizaciones de mainnet, pruebas de validación de Goerli, JSON RPC
+* Se ejecutan pruebas de integración y unidad específicas de Nethermind
+* Las pruebas de Ethereum se ejecutan para EVM, elección de horquilla, RLP, Trie
+* Legacy \(versiones de red antiguas\) Las pruebas de Ethereum se ejecutan para EVM, fork choice, RLP, Trie
+* Se ejecutan pruebas de Hive para redes, sincronización y consenso.
+* Despliegue de un contrato ERC20 de Truffle a Nethermind spaceneth network
+* Las pruebas de humo se ejecutan para cada una de las siguientes sincronizaciones:
 
 {% page-ref page="ethereum-networks-synchronization-smoke-testing-with-nethermind.md" %}
 
-| Network | Sync Mode | Consensus | Sync Test |
+| Network | Modo de sincronización | Consenso | Sync Test |
 | :--- | :--- | :--- | :--- |
 | Mainnet | fast sync | ethash | YES |
 | Mainnet | archive | ethash | NO |
@@ -51,5 +51,5 @@ Each release of Nethermind is going through the following test procedure:
 | Volta | archive | AuRa | YES |
 | Volta | beam sync | AuRa | NO |
 
-![Example of sync test results](../.gitbook/assets/image%20%2893%29.png)
+![Ejemplo de resultados de la prueba de sincronización](../.gitbook/assets/image%20%2893%29.png)
 

@@ -2,18 +2,18 @@
 
 ## proof\_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+Esta función retorna el mismo resultado que `eth_getTransactionReceipt` y también una prueba de tx, prueba de recibo y encabezados de bloque serializados.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"proof_getTransactionByHash","params":[txHash, includeHeader]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
 | includeHeader | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionWithProof object` |  |
 
@@ -27,7 +27,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 {% tab title="Objects in proof\_getTransactionByHash" %}
 `TransactionWithProof`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Transaction | `TransactionForRpc object` |
 | TxProof | `Data` |
@@ -35,7 +35,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -49,7 +49,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -57,22 +57,22 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 {% endtab %}
 {% endtabs %}
 
-[See also CLI proof.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionbyhash)
+[ingrese a CLI proof.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionbyhash)
 
 ## proof\_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+Esta función debería devolver el mismo resultado que `eth_call`  y también pruebas de todas las cuentas USADAS y sus almacenamientos y encabezados de bloque serializados
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"proof_getTransactionReceipt","params":[txHash, includeHeader]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
 | includeHeader | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ReceiptWithProof object` |  |
 
@@ -86,7 +86,7 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 {% tab title="Objects in proof\_getTransactionReceipt" %}
 `ReceiptWithProof`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Receipt | `ReceiptForRpc object` |
 | TxProof | `Data` |
@@ -95,7 +95,7 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 
 `ReceiptForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -111,9 +111,9 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 {% endtab %}
 {% endtabs %}
 
-[See also CLI proof.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionreceipt)
+[ingrese a CLI proof.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionreceipt)
 

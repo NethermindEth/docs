@@ -1,6 +1,6 @@
 # JSON RPC
 
-JSON RPC is available via HTTP and WS.
+JSON RPC está disponible a través de HTTP y WS.
 
 {% hint style="warning" %}
 JSON RPC needs to be explicitly switched on in the Netherming `config` file.
@@ -63,5 +63,5 @@ WebSockets, when enabled, will be accessible on the same address/port as HTTP by
 {% endtab %}
 {% endtabs %}
 
-Some of the methods listed in this section are not implemented by Nethermind \(they will be marked\).
+Algunos de los métodos enumerados en esta sección no están implementados  por Nethermind \ (estarán marcados como\).
 

@@ -1,30 +1,29 @@
 ---
-description: >-
-  How to setup a Nethermind Validator in Aura (Authority Round) consensus
-  algorithm
+description: Cómo configurar un Validador Nethermind en el algoritmo de consenso Aura (Ronda de autoridad)
+
 ---
 
-# Aura Validator
+# Validador de aura
 
-This article will lead you through docker-compose setup of **Nethermind Aura Validator** \(xDai chain in this example\). Same result can be obtained by [Downloading](../../ethereum-client/download-sources/) & [Running Nethermind](../../ethereum-client/running-nethermind/running-the-client.md) package or by [Building Nethermind](../../ethereum-client/building-nethermind.md) from the source code. 
+Este artículo lo guiará a través de la configuración de la ventana acoplable de **Nethermind Aura Validator** \(cadena xDai en este ejemplo\). Se puede obtener el mismo resultado [Descargando] (../../ ethereum-client/download-sources/) & [Ejecutando Nethermind] (../../ ethereum-client/running-nethermind/running-the-client .md) o por [Building Nethermind] (../../ ethereum-client/building-nethermind.md) desde el código fuente.
 
-If you chose not to use docker-compose, you can skip docker-compose related sections and read about [config file](aura-validator.md#config-file) and [private key ](aura-validator.md#mining-private-key)configuration only.
+Si elige no usar docker-compose, puede omitir las secciones relacionadas con docker-compose y leer acerca de [config file](aura-validator.md#config-file) y [private key ](aura-validator.md#mining-private-key) solo configuración.
 
-## Prerequisites
+## Prerrequisitos
 
 * [x] docker-compose
 * [x] docker
-* [x] machine with at least 4GB RAM is recommended
+* [x] Se recomienda una máquina con al menos 4 GB de RAM
 
 ```bash
 sudo apt-get install docker docker-compose -y
 ```
 
-## Clock synchronization
+## Sincronización de reloj
 
-You system clock needs to be synchronized otherwise you might encounter skipping block sealing. By default `stepDuration` is configured to `5s`.
+El reloj del sistema debe estar sincronizado; de lo contrario, es posible que se salte el sellado del bloque. Por defecto, `stepDuration` está configurado en `5s`.
 
-Verify if your system clock is synchronized, type `timedatectl status` and you should see similar output:
+Verifique si el reloj de su sistema está sincronizado, escriba `timedatectl status` y debería ver un resultado similar:
 
 ```bash
 Local time: Tue 2020-06-30 17:16:19 UTC
@@ -36,12 +35,12 @@ systemd-timesyncd.service active: yes
 RTC in local TZ: no
 ```
 
-If `System clock synchronized` displays `yes` you are all set, otherwise you may need to either:
+Si `System clock synchronized` muestra `yes`, ya está todo listo; de lo contrario, es posible que deba:
 
-* [x] synchronize clock with NTP servers \(allow **UDP** port **123** for both incoming and outgoing traffic\)
-* [x] use below script to sync with google.com:
+* [x] sincronizar el reloj con los servidores NTP \(permitir **UDP** puerto **123** para ambos tráfico entrante y saliente\)
+* [x] utilice el siguiente script para sincronizar con google.com:
 
-Create `fixtime.sh` script and run it with `watch -n 60` command in a `screen`
+Cree el script `fixtime.sh` y ejecútelo con el comando` watch -n 60` en la `pantalla`
 
 ```bash
 echo sudo date -s '"$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"' > fixtime.sh
@@ -50,11 +49,11 @@ screen -S time
 watch -n 60 ./fixtime.sh
 ```
 
-Press `Ctrl+A+D` to leave the `screen`
+Presione `Ctrl + A + D` para salir de la `pantalla`
 
-## Docker-compose file sample
+## Muestra de archivo Docker-compose
 
-Create and edit`docker-compose.yml` file
+Cree y edite el archivo`docker-compose.yml`
 
 ```bash
 nano docker-compose.yml
@@ -98,37 +97,37 @@ volumes:
 {% endtab %}
 {% endtabs %}
 
-Configure Nethermind node via environment variables or use local config file and map it to the one, existing inside container \(`xdai.cfg` file in above example\).
+Configure el nodo Nethermind a través de variables de entorno o use el archivo de configuración local y asígnelo al que existe dentro del contenedor \(archivo `xdai.cfg` en el ejemplo anterior\).
 
 {% hint style="info" %}
 Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, otherwise you might lose database or keys
 {% endhint %}
 
-[`NLog.config`](../../ethereum-client/running-nethermind/runtime.md#nlog-config) file is optional.  
-[`static-nodes.json`](../../ethereum-client/running-nethermind/runtime.md#static-nodes) can be filled with an array of enodes, this is also optional.
+[`NLog.config`](../../ethereum-client/running-nethermind/runtime.md#nlog-config) el archivo es opcional.
+[`static-nodes.json`](../../ethereum-client/running-nethermind/runtime.md#static-nodes) se puede completar con un array de enodos, esto también es opcional.
 
-## Mining **P**rivate key
+## Minería **LL**ave privada
 
 {% hint style="danger" %}
-Make sure that the filename contains key's **public address** otherwise it won't be recognized by Nethermind Client as a keyfile.  
-  
-Correct naming of a `keyfile`: **key-a5237f7f43cc46cba43ac212dabd0c45e3e3050a**
+Asegúrese de que el nombre del archivo contenga las llaves **public address** de lo contrario, Nethermind Client no lo reconocerá como un archivo de llaves.
 
-The `keyfile` should be then stored inside `keystore` volume.
+Nombramiento correcto de un `archivo de llaves`: **key-a5237f7f43cc46cba43ac212dabd0c45e3e3050a**
+
+El `archivo de llaves` debe almacenarse dentro del volumen del `almacén de claves`.
 {% endhint %}
 
-## Config file
+## Archivo de configuración
 
-Things to be configured:
+Cosas a configurar:
 
 * [ ] `Init.IsMining` true
-* [ ] `Init.MemoryHint` can be left default, recommended to configure it accordingly to the machine hardware setup \(for `xdai` 1000000000 is enough\)
-* [ ] `EthStats` section if you wish to report node status to the ethstats page for a given network
-* [ ] `Metrics` section if running local/remote [Metrics infrastructure](../../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
-* [ ] `KeyStore.PasswordFiles` path to the file containing password for **mining private key**
-* [ ] `KeyStore.UnlockAccounts` ****an array of accounts, provide **mining public address** here
-* [ ] `KeyStore.BlockAuthorAccount` **mining public address** should be provided here as well
-* [ ] `Aura.ForceSealing` set to true
+* [ ] `Init.MemoryHint` se puede dejar por defecto, se recomienda configurarlo de acuerdo con la configuración del hardware de la máquina \(para `xdai` 1000000000 es suficiente\)
+* [ ] `EthStats`  sección si desea informar el estado del nodo a la página ethstats para una red determinada.
+* [ ] `Metrics` sección si se ejecuta de forma local / remota [Infraestructura de métricas](../../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
+* [ ] `KeyStore.PasswordFiles` ruta al archivo que contiene la contraseña para **mining private key**
+* [ ] `KeyStore.UnlockAccounts` ****una array de cuentas, proporcione **mining private key** aquí
+* [ ] `KeyStore.BlockAuthorAccount` **mining public address** debe proporcionarse aquí también
+* [ ] `Aura.ForceSealing` establecido en true
 
 {% tabs %}
 {% tab title="xdai.cfg" %}
@@ -204,17 +203,17 @@ Things to be configured:
 {% endtab %}
 {% endtabs %}
 
-## Running Validator node
+## Ejecutando el nodo Validator
 
-Run it with a simple docker-compose command.
+Ejecútela con un simple comando docker-compose.
 
 ```bash
 docker-compose up -d
 ```
 
-You will need to wait for the node to be fully **synchronized**.
+Deberas esperar a que el nodo esté completamente **synchronized**.
 
-To check the logs and verify if it is sealing blocks as expected \(look for the `Sealed block` log\).
+Para revisar los registros y verificar si está sellando los bloques como se esperaba \(busca el `Sealed block` log\).
 
 ```bash
 docker-compose logs -f nethermind-validator

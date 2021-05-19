@@ -1,10 +1,9 @@
 ---
-description: >-
-  Security measures that should be taken before running Nethermind Node on
-  Ethereum Mainnet
+description: Medidas de seguridad que deben tomarse antes de ejecutar Nethermind Node en Ethereum Mainnet
+
 ---
 
-# Security
+# Seguridad
 
 {% hint style="danger" %}
 📢 **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!

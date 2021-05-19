@@ -4,15 +4,15 @@
 
 Displays client version
 
-| Invocation |
+| Invocación |
 | :--- |
 | `diag.cliVersion` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `JavaScript Object` | Client version |
 

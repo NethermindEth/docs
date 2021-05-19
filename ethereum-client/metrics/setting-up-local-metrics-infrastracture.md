@@ -1,49 +1,49 @@
 ---
-description: Metrics then can be used to monitor your running Nethermind nodes
+description: Las métricas se pueden usar para monitorear tus nodos Nethermind en ejecución
 ---
 
-# Setting up local Metrics infrastructure
+# Configurando la infraestructura de métricas local
 
-## Metrics Configuration
+## Configuración de métricas
 
 Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Metrics configuration category](../configuration/metrics.md).
 
-## Metrics infrastructure
+## Infraestructura de métricas
 
-### Enabling Metrics in Nethermind
+### Habilitación de métricas en Nethermind
 
-Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`. 
+Las métricas se pueden habilitar simplemente pasando el argumento `--Metrics.Enabled true` a los contenedores de Docker,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`. 
 
-`Metrics.PushGatewayUrl` will need to be amended if pushgateway endpoint is not default.
+`Metrics.PushGatewayUrl` deberá modificarse si el endpoint de la puerta de enlace push no está predeterminado.
 
-### Running sample configuration
+### Ejecución de la configuración de muestra
 
-* [x] clone [metrics-infrastructure](https://github.com/NethermindEth/metrics-infrastructure) repository
+* [x] clone [metrics-infrastructure](https://github.com/NethermindEth/metrics-infrastructure) repositorio
 
 ```bash
 git clone https://github.com/NethermindEth/metrics-infrastructure.git
 ```
 
-1. [x] go to `metrics-infrastructure` directory
+1. [x] vaya al directorio `metrics-infrastructure` 
 
 ```bash
 cd metrics-infrastructure
 ```
 
-1. [x] run docker stack
+1. [x] ejecuta docker stack
 
 ```bash
 docker-compose up -d
 ```
 
-* _Prometheus_ instance should be now running on [`http://localhost:9090/`](http://localhost:9090/)
-* _Pushgateway_ on [`http://localhost:9091/`](http://localhost:9091/)
-* _Grafana on_ [`http://localhost:3000/`](http://localhost:3000/)\`\`
+* La instancia de _Prometheus_ debería estar ejecutándose ahora en [`http://localhost:9090/`](http://localhost:9090/)
+* _Pushgateway_ en [`http://localhost:9091/`](http://localhost:9091/)
+* _Grafana en_ [`http://localhost:3000/`](http://localhost:3000/)\`\`
 
-1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on _Pushgateway_ [url](http://localhost:9091/)
+1. [x] ejecuta el nodo `Nethermind` con` Metrics` habilitado y debería ver las métricas en _Pushgateway_ [url](http://localhost:9091/)
 
 {% hint style="info" %}
-You can add nethermind service to the `docker-compose.yml` file so that it runs with the whole stack
+Puedes agregar el servicio nethermind al archivo `docker-compose.yml` para que se ejecute con todo el stack
 
 ```yaml
 nethermind:
@@ -81,19 +81,19 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 
 ![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
 
-1. [x] open _Grafana_ [url](http://localhost:3000) and login with default login \(admin\) and password \(admin\), skip password change if you want
+1. [x] abre _Grafana_ [url](http://localhost:3000) e inicie sesión con el inicio de sesión predeterminado \ (admin\) y la contraseña \ (admin \), omita el cambio de contraseña si lo desea
 
 ![](../../.gitbook/assets/image%20%2828%29.png)
 
-* [x] go to dashboards management [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards)and click `Nethermind` 
+* [x] vaya a los dashboards de manejo [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards)and click `Nethermind`
 
 ![](../../.gitbook/assets/image%20%2826%29.png)
 
-* [x] you can now explore metrics and monitor your Nethermind node
+* [x] ahora puedes explorar las métricas y monitorear su nodo Nethermind
 
 ![](../../.gitbook/assets/image%20%2829%29.png)
 
-### Prometheus, Pushgateway and Grafana sources
+### Prometheus, Pushgateway y recursos de Grafana
 
 {% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
 

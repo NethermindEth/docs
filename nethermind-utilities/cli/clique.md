@@ -2,17 +2,17 @@
 
 ## clique.discard
 
-This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
+Este método descarta una propuesta en ejecución. El firmante no emitirá más votos \(ni a favor ni en contra\) de la dirección.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.discard(signer)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | signer | `Address` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -30,15 +30,15 @@ clique.discard(signer)
 
 Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getBlockSigner(hash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -54,17 +54,17 @@ clique.getBlockSigner(hash)
 
 ## clique.getSigners
 
-Retrieves the list of authorized signers.
+Recupera la lista de firmantes autorizados.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSigners()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -82,15 +82,15 @@ clique.getSigners()
 
 Retrieves the list of authorized signers but with signer names instead of addresses
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSignersAnnotated()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -106,17 +106,17 @@ clique.getSignersAnnotated()
 
 ## clique.getSignersAtHash
 
-Retrieves the list of authorized signers at the specified block by hash.
+Recupera la lista de firmantes autorizados en un bloque especificado por hash.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSignersAtHash(hash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -134,15 +134,15 @@ clique.getSignersAtHash(hash)
 
 Retrieves the list of authorized signers at the specified block by hash but with signer names instead of addresses
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSignersAtHashAnnotated(hash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -158,17 +158,17 @@ clique.getSignersAtHashAnnotated(hash)
 
 ## clique.getSignersAtNumber
 
-Retrieves the list of authorized signers at the specified block by block number.
+Recupera la lista de firmantes autorizados en un bloque especificado por número de bloque.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSignersAtNumber(number)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -184,17 +184,17 @@ clique.getSignersAtNumber(number)
 
 ## clique.getSnapshot
 
-Retrieves a snapshot of all clique state at a given block.
+Recupera una instantánea de todos los estados del clique en un bloque determinado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSnapshot()` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Snapshot object` |  |
 
@@ -208,7 +208,7 @@ clique.getSnapshot()
 {% tab title="Objects in clique\_getSnapshot" %}
 `Snapshot`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -221,17 +221,17 @@ clique.getSnapshot()
 
 ## clique.getSnapshotAtHash
 
-Retrieves the state snapshot at a given block.
+Recupera el estado en un bloque determinado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.getSnapshotAtHash(hash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Snapshot object` |  |
 
@@ -245,7 +245,7 @@ clique.getSnapshotAtHash(hash)
 {% tab title="Objects in clique\_getSnapshotAtHash" %}
 `Snapshot`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -260,15 +260,15 @@ clique.getSnapshotAtHash(hash)
 
 Forces Clique block producer to produce a new block
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.produceBlock(parentHash)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | parentHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -284,18 +284,18 @@ clique.produceBlock(parentHash)
 
 ## clique.propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
+Agrega una nueva propuesta de autorización que el firmante intentará aprobar. Si el parámetro `vote` es true, el firmante local vota para que la dirección dada se incluya en el conjunto de firmantes autorizados. Con `vote` configurado como false, el firmante está en contra de la dirección.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `clique.propose(signer, vote)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | signer | `Address` |  |
 | vote | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 

@@ -2,17 +2,17 @@
 
 ## clique\_discard
 
-This method drops a currently running proposal. The signer will not cast further votes \(either for or against\) the address.
+Este método descarta una propuesta en ejecución. El firmante no emitirá más votos \(ni a favor ni en contra\) de la dirección.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_discard","params":[signer]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | signer | `Address` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -24,21 +24,21 @@ curl --data '{"method":"clique_discard","params":[signer],"id":1,"jsonrpc":"2.0"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.discard](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-discard)
+[ingrese a CLI clique.discard](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-discard)
 
 ## clique\_getBlockSigner
 
 Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getBlockSigner","params":[hash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -50,21 +50,21 @@ curl --data '{"method":"clique_getBlockSigner","params":[hash],"id":1,"jsonrpc":
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getBlockSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getblocksigner)
+[ingrese a CLI clique.getBlockSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getblocksigner)
 
 ## clique\_getSigners
 
-Retrieves the list of authorized signers.
+Recupera la lista de firmantes autorizados.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSigners","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -76,21 +76,21 @@ curl --data '{"method":"clique_getSigners","params":[],"id":1,"jsonrpc":"2.0"}' 
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSigners](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsigners)
+[ingrese a CLI clique.getSigners](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsigners)
 
 ## clique\_getSignersAnnotated
 
 Retrieves the list of authorized signers but with signer names instead of addresses
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSignersAnnotated","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -102,21 +102,21 @@ curl --data '{"method":"clique_getSignersAnnotated","params":[],"id":1,"jsonrpc"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSignersAnnotated](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersannotated)
+[ingrese a CLI clique.getSignersAnnotated](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersannotated)
 
 ## clique\_getSignersAtHash
 
-Retrieves the list of authorized signers at the specified block by hash.
+Recupera la lista de firmantes autorizados en un bloque especificado por hash.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSignersAtHash","params":[hash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -128,21 +128,21 @@ curl --data '{"method":"clique_getSignersAtHash","params":[hash],"id":1,"jsonrpc
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSignersAtHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersathash)
+[ingrese a CLI clique.getSignersAtHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersathash)
 
 ## clique\_getSignersAtHashAnnotated
 
 Retrieves the list of authorized signers at the specified block by hash but with signer names instead of addresses
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSignersAtHashAnnotated","params":[hash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -154,21 +154,21 @@ curl --data '{"method":"clique_getSignersAtHashAnnotated","params":[hash],"id":1
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersathashannotated)
+[ingrese a CLI clique.getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersathashannotated)
 
 ## clique\_getSignersAtNumber
 
-Retrieves the list of authorized signers at the specified block by block number.
+Recupera la lista de firmantes autorizados en un bloque especificado por número de bloque.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSignersAtNumber","params":[number]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -180,21 +180,21 @@ curl --data '{"method":"clique_getSignersAtNumber","params":[number],"id":1,"jso
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSignersAtNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersatnumber)
+[ingrese a CLI clique.getSignersAtNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsignersatnumber)
 
 ## clique\_getSnapshot
 
-Retrieves a snapshot of all clique state at a given block.
+Recupera una instantánea de todos los estados del clique en un bloque determinado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSnapshot","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Snapshot object` |  |
 
@@ -208,7 +208,7 @@ curl --data '{"method":"clique_getSnapshot","params":[],"id":1,"jsonrpc":"2.0"}'
 {% tab title="Objects in clique\_getSnapshot" %}
 `Snapshot`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -217,21 +217,21 @@ curl --data '{"method":"clique_getSnapshot","params":[],"id":1,"jsonrpc":"2.0"}'
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSnapshot](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsnapshot)
+[ingrese a CLI clique.getSnapshot](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsnapshot)
 
 ## clique\_getSnapshotAtHash
 
-Retrieves the state snapshot at a given block.
+Recupera el estado en un bloque determinado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_getSnapshotAtHash","params":[hash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Snapshot object` |  |
 
@@ -245,7 +245,7 @@ curl --data '{"method":"clique_getSnapshotAtHash","params":[hash],"id":1,"jsonrp
 {% tab title="Objects in clique\_getSnapshotAtHash" %}
 `Snapshot`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Number | `Quantity` |
 | Hash | `Hash` |
@@ -254,21 +254,21 @@ curl --data '{"method":"clique_getSnapshotAtHash","params":[hash],"id":1,"jsonrp
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.getSnapshotAtHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsnapshotathash)
+[ingrese a CLI clique.getSnapshotAtHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-getsnapshotathash)
 
 ## clique\_produceBlock
 
 Forces Clique block producer to produce a new block
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_produceBlock","params":[parentHash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | parentHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -280,22 +280,22 @@ curl --data '{"method":"clique_produceBlock","params":[parentHash],"id":1,"jsonr
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.produceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-produceblock)
+[ingrese a CLI clique.produceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-produceblock)
 
 ## clique\_propose
 
-Adds a new authorization proposal that the signer will attempt to push through. If the `vote` parameter is true, the local signer votes for the given address to be included in the set of authorized signers. With `vote` set to false, the signer is against the address.
+Agrega una nueva propuesta de autorización que el firmante intentará aprobar. Si el parámetro `vote` es true, el firmante local vota para que la dirección dada se incluya en el conjunto de firmantes autorizados. Con `vote` configurado como false, el firmante está en contra de la dirección.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"clique_propose","params":[signer, vote]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | signer | `Address` |  |
 | vote | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -307,5 +307,5 @@ curl --data '{"method":"clique_propose","params":[signer, vote],"id":1,"jsonrpc"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI clique.propose](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-propose)
+[ingrese a CLI clique.propose](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-propose)
 

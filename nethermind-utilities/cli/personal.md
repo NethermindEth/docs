@@ -2,16 +2,16 @@
 
 ## personal.importRawKey
 
-| Invocation |
+| Invocación |
 | :--- |
 | `personal.importRawKey(keyData, passphrase)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | keyData | `Data` |  |
 | passphrase | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -27,15 +27,15 @@ personal.importRawKey(keyData, passphrase)
 
 ## personal.listAccounts
 
-| Invocation |
+| Invocación |
 | :--- |
 | `personal.listAccounts` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -51,15 +51,15 @@ personal.listAccounts
 
 ## personal.lockAccount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `personal.lockAccount(address)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -75,15 +75,15 @@ personal.lockAccount(address)
 
 ## personal.newAccount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `personal.newAccount(passphrase)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | passphrase | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Address` |  |
 
@@ -99,16 +99,16 @@ personal.newAccount(passphrase)
 
 ## personal.unlockAccount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `personal.unlockAccount(address, passphrase)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | passphrase | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 

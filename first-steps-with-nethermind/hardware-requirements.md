@@ -1,22 +1,22 @@
 ---
-description: Check if you can run Nethermind with your current setup
+description: Comprueba si puedes ejecutar Nethermind con su configuración actual
 ---
 
-# Hardware Requirements
+# Requisitos de hardware
 
-Generally **the faster IO operations the better**. For this reason [Digital Ocean](https://www.digitalocean.com/) and [UpCloud](https://upcloud.com/) are so far the best cloud providers we have tested when running Nethermind nodes.
+Generalmente ** cuanto más rápidas sean las operaciones de IO mejor **. Por esta razón, [Digital Ocean] (https://www.digitalocean.com/) y [UpCloud] (https://upcloud.com/) son hasta ahora los mejores proveedores de nube que hemos probado al ejecutar nodos Nethermind.
 
-When syncing locally make sure that you get the fastest SSD possible. Assume that any storage at HDD speed level is not supported \(most likely will take many times longer to sync and possibly will not be able to catch up with the network\).
+Al sincronizar localmente, asegúrese de obtener el SSD más rápido posible. Suponga que no se admite ningún almacenamiento a nivel de velocidad de HDD \(lo más probable es que la sincronización demore muchas veces más y posiblemente no pueda ponerse al día con la red\).
 
-After startup the node will display the estimated max memory usage but not everything is accounted for and some block processing / some fast sync temporary caches may go above these values.
+Después del inicio, el nodo mostrará el uso máximo de memoria estimado, pero no todo se tiene en cuenta y algunos procesos de bloques / algunas memorias caché temporales de sincronización rápida pueden superar estos valores.
 
-You can use the config option --Init.MemoryHint to suggest the amount of memory to be used by the database and some network operations. During the sync process there will be more memory used for caches.
+Puedes utilizar la opción de configuración --Init.MemoryHint para sugerir la cantidad de memoria que utilizará la base de datos y algunas operaciones de red. Durante el proceso de sincronización, se utilizará más memoria para cachés.
 
-Suggested requirements can be found below.
+Los requisitos sugeridos se pueden encontrar a continuación.
 
-You can try much lower setups with smaller networks. You can also downgrade the VM after initial sync \(if you have used 16GB RAM for sync then 4GB RAM should be enough to run a synced mainnet node with --Init.MemoryHint 1500000000
+Puedes probar configuraciones mucho más bajas con redes más pequeñas. También puede degradar la VM después de la sincronización inicial \(si ha usado 16 GB de RAM para la sincronización, entonces 4 GB de RAM deberían ser suficientes para ejecutar un nodo de mainnet sincronizado con --Init.MemoryHint 1500000000
 
-| Network | Disk space | Memory | Cores |
+| Network | Espacio del disco | Memoria | Cores |
 | :--- | :--- | :--- | :--- |
 | **Goerli Fast Sync** | 20+ GB | 4 GB | 2 |
 | **Mainnet Fast Sync** | 350+ GB | 16 GB | 4 |
@@ -24,11 +24,11 @@ You can try much lower setups with smaller networks. You can also downgrade the 
 | **Ropsten Fast Sync** | 100+ GB | 8 GB | 4 |
 | **Mainnet Full Archive** | 4.5+ TB | 32 GB | 6 |
 
-Disk space requirements:
+Requisitos de espacio en disco:
 
-A freshly fast synced mainnet disk space usage \(as of July 2020\):
+Uso de espacio en disco mainnet sincronizado recientemente \(a partir de julio de 2020\):
 
-![If you sync without receipts the 160GB space can be saved. Without bodies - 99GB more.](../.gitbook/assets/image%20%2856%29.png)
+![Si sincroniza sin receipts, se puede guardar el espacio de 160 GB. Sin cuerpos: 99 GB más.](../.gitbook/assets/image%20%2856%29.png)
 
 
 

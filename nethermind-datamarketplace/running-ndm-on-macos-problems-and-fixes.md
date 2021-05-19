@@ -1,7 +1,7 @@
 # Running NDM on MacOS problems and fixes
 
 With the first-time run of NDM on the MacOs machine, you can stumble on some problems due to Apple's security and privacy settings.   
-  
+
 These are the most common problems and fixes for them: 
 
 * **Operation not permitted error** 

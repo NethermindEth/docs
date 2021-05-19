@@ -1,7 +1,6 @@
 ---
-description: >-
-  Pipelines were added to the Nethermind code base in order to make building
-  plugins around blockchain analysis faster and easier.
+description: Pipelines were added to the Nethermind code base in order to make building plugins around blockchain analysis faster and easier.
+
 ---
 
 # Pipeline
@@ -43,7 +42,7 @@ Firstly we need to create our pipeline elements. With this case there will only 
         {
             _blockProcessor = blockProcessor; 
 
-            
+
         }
 
         public void OnNewBlockProcessed(BlockProcessedEventArgs args)
@@ -96,7 +95,7 @@ After that create plugin file and build your pipeline with `IPipelineBuilder`
         public Task Init(INethermindApi nethermindApi)
         {
             _api = nethermindApi;
-            
+
             var sourceElement = new NewTransactionsSource<Transaction>(_api.MainBlockProcessor);
             var processorElement = new TransactionProcessorElement<Transaction, Transaction>();
             var webSocketsPublisher = new WebSocketsPublisher<Transaction, Transaction>("example-publisher", _api.EthereumJsonSerializer);

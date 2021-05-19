@@ -2,15 +2,15 @@
 
 ## web3.abi
 
-| Invocation |
+| Invocación |
 | :--- |
 | `web3.abi(name)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | name | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -24,17 +24,17 @@ web3.abi(name)
 
 ## web3.clientVersion
 
-Returns the current client version.
+Retorna la versión actual del cliente.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `web3.clientVersion` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -50,17 +50,17 @@ web3.clientVersion
 
 ## web3.sha3
 
-Returns Keccak of the given data.
+Retorna el Keccak de los datos proporcionados.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `web3.sha3(data)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | data | `Data` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Hash` |  |
 
@@ -76,15 +76,15 @@ web3.sha3(data)
 
 ## web3.toDecimal
 
-| Invocation |
+| Invocación |
 | :--- |
 | `web3.toDecimal(hex)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hex | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `JavaScript Object` |  |
 

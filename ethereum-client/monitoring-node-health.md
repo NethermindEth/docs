@@ -1,16 +1,16 @@
 ---
-description: Monitoring Nethermind Node's Health with HealthChecks
+description: Monitoreo del estado del nodo Nethermind con HealthChecks
 ---
 
-# Monitoring Node's Health
+# Monitoreo del estado del nodo
 
-Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
+La versión Nethermind **1.9.51** viene con un plugin `Nethermind.HealthChecks.dll` que le permite monitorear mejor su nodo Nethermind. Aprovecha el poder de [AspNetCore.Diagnostics.HealthChecks] (https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). Simplemente agrega un punto final. `/health` al endpoint del servicio JSON RPC que se puede usar para verificar la  _ **vivacidad**_ de Nethermind para verificar si el nodo está **sincronizado** y tiene **al menos un par.** Útil cuando no desea consultar el nodo antes de que pueda proporcionarle datos disponibles solo para nodos completamente sincronizados como `eth_getBalance`.
 
-The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermind start.
+El plugin `Nethermind.HealthChecks.dll` se cargará automáticamente al iniciar Nethermind.
 
-## Enabling and configuring Health Checks
+## Habilitación y configuración de Health Checks
 
-The health checks need to be additionally enabled which can be done either through `--HealthChecks.*` flags or by adding a `"HealthChecks"` section to the config file. 
+Los health checks deben habilitarse adicionalmente, lo que se puede realizar a través de los indicadores `--HealthChecks.*` O agregando una sección `"HealthChecks"` al archivo de configuración.
 
 {% tabs %}
 {% tab title="HealthChecks config section example" %}
@@ -31,11 +31,11 @@ The health checks need to be additionally enabled which can be done either throu
 JSON RPC Service needs to be enabled in order for health checks to work `--JsonRpc.Enabled true`
 {% endhint %}
 
-Each configuration option is described here: 
+Cada opción de configuración se describe aquí:
 
 {% page-ref page="configuration/healthchecks.md" %}
 
-#### Enabling Health Checks without UI 
+#### Habilitación de Health Checks sin interfaz de usuario
 
 ```bash
 ./Nethermind.Runner --HealthChecks.Enabled true
@@ -54,32 +54,32 @@ curl localhost:8545/health
 {"status":"Healthy","totalDuration":"00:00:00.0015582","entries":{"node-health":{"data":{},"description":"The node is now fully synced with a network, number of peers: 99","duration":"00:00:00.0003881","status":"Healthy","tags":[]}}}
 ```
 
-* **Unhealthy** returns **503** \(Service Unavailable\) status code
-* **Healthy** returns **200** status code
+* **Unhealthy** devuelve **503** \(Servicio no disponible\) código de estado
+* **Healthy** devuelve ** 200 ** código de estado
 
-#### Enabling Health Checks UI
+#### Habilitación de la interfaz de usuario Health Checks
 
 ```bash
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true
 ```
 
-Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow seeing node's health on a nice UI. To view the UI simply go to `http://localhost:8545/healthchecks-ui`.
+Habilitar la Interfaz de usuario expondrá un endpoint adicional `/healthchecks-ui` y permitirá ver el estado del nodo en una buena Interfaz de usuario. Para ver la interfaz de usuario, simplemente vaya a `http://localhost:8545/healthchecks-ui`.
 
-![Unhealthy status reported on UI page](../.gitbook/assets/image%20%2876%29.png)
+![Estado unhealthy informado en la página de la interfaz de usuario](../.gitbook/assets/image%20%2876%29.png)
 
-#### Enabling Slack reports
+#### Habilitación de informes de Slack
 
-We may also add Slack Webhook endpoint to which our node's health will be reported. We need to pass the `--HealthChecks.WebhooksEnabled true` and add  the `--HealthChecks.WebhooksUri` which can be found in your Slack app configuration.
+También podemos agregar un punto final de Slack Webhook al que se informará el estado de nuestro nodo. Necesitamos pasar el `--HealthChecks.WebhooksEnabled true` y agregar el` --HealthChecks.WebhooksUri` que se puede encontrar en la configuración de la aplicación de Slack.
 
 ```bash
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
 ```
 
-If your node will be **Unhealthy** you should receive the following message:
+Si su nodo estará **Unhealthy**, debería recibir el siguiente mensaje:
 
 ![Unhealty](../.gitbook/assets/image%20%28114%29.png)
 
-and when it becomes **Healthy** \(**synced** and with **peers**\):
+y cuando se vuelve **Healthy**  \(**sincronizado** con sus **pares** \):
 
 ![Healthy](../.gitbook/assets/image%20%2846%29.png)
 
@@ -129,7 +129,7 @@ In version v.1.10.18, we've also introduced health checks via JSON RPC requests.
     "result": {
         "healthy": false,
         "messages": [
-	        "Stopped processing blocks",
+            "Stopped processing blocks",
             "Node is not connected to any peers"
         ]
     },

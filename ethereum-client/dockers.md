@@ -1,18 +1,18 @@
 ---
-description: Nethermind Dockers instructions
+description: Instrucciones de Nethermind Dockers
 ---
 
 # Dockers
 
-## ![](../.gitbook/assets/pobrane.png) Docker repository
+## ![](../.gitbook/assets/pobrane.png) Repositorio de Docker
 
-Docker repository can be found here:
+El repositorio de Docker se puede encontrar aquí:
 
 {% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
 
-## Supported architectures
+## Arquitecturas soportadas
 
-We are currently supporting docker images for the following CPU architectures:
+Actualmente admitimos imágenes de Docker para las siguientes arquitecturas de CPU:
 
 * **AMD64**
 * **ARM64**
@@ -22,23 +22,23 @@ We are currently supporting docker images for the following CPU architectures:
 **ARM32** docker image is broken now. We are working on a fix at the moment.
 {% endhint %}
 
-## Using an existing image
+## Usando una imagen existente
 
-### **Available tags:**
+### **Etiquetas disponibles:**
 
-| **Tag** | Description | Architecture |
+| **Etiqueta** | Descripción | Arquitectura |
 | :--- | :--- | :--- |
-| `latest` | The latest **Nethermind Debian** based image | x86\_64, ARM64, ARM32 |
+| `latest` | La última imagen basada en **Nethermind Debian** | x86\_64, ARM64, ARM32 |
 
-To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
+Para utilizar una de las versiones anteriores, puedes pasar `{tag}` Ej. `1.8.50` antes del nombre de la imagen principal.
 
-For example if you wish to use version `1.7.4` of **Nethermind Debian** image, the image name would be `nethermind/nethermind:1.7.4`.
+Por ejemplo si deseas utilizar la versión `1.7.4` de la imagen **Nethermind Debian**, el nombre de la imagen sería `nethermind/nethermind:1.7.4`.
 
-All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
+Todas las versiones están disponibles en [historial de etiquetas] (https://github.com/NethermindEth/nethermind/tags).
 
-### **Running Nethermind** Container
+### ** Ejecutando Nethermind ** Contenedor
 
-Docker pull command:
+Comando Docker pull:
 
 {% tabs %}
 {% tab title="" %}
@@ -48,7 +48,7 @@ docker pull nethermind/nethermind
 {% endtab %}
 {% endtabs %}
 
-In order to start `Nethermind.Runner`, simply run:
+Para iniciar `Nethermind.Runner` simplemente ejecute:
 
 {% tabs %}
 {% tab title="" %}
@@ -58,7 +58,7 @@ docker run -it nethermind/nethermind
 {% endtab %}
 {% endtabs %}
 
-You can use `--help` to get a list of possible start parameters for Nethermind or you can find them all [here](configuration/).
+Puedes usar `--help` para obtener una lista de posibles parámetros de inicio para Nethermind o puede encontrarlos todos [aquí] (configuración/).
 
 {% tabs %}
 {% tab title="" %}
@@ -68,13 +68,13 @@ docker run -it nethermind/nethermind --help
 {% endtab %}
 {% endtabs %}
 
-It’s possible to modify each configuration property via environment variable, using a simple convention:
+Es posible modificar cada propiedad de configuración a través de una variable de entorno, usando una convención simple:
 
 ```bash
 NETHERMIND_{MODULE}CONFIG_{PROPERTY} or --{Module}.{Property}
 ```
 
-For example:
+Por ejemplo:
 
 ```text
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
@@ -90,9 +90,9 @@ Environment variables ****can be easily used within **docker-compose.yml** files
 
 ### **JSON RPC**
 
-To enable JSON RPC, share the host’s networking namespace with `--network host` and set`--JsonRpc.Enabled true`. To change port simply pass`--JsonRpc.Port 8550`.
+Para habilitar JSON RPC, comparta el espacio de nombres de red del host con `--network host` y configure` - JsonRpc.Enabled true`. Para cambiar de puerto, simplemente pase` - JsonRpc.Port 8550`.
 
-If running locally:
+Si se ejecuta localmente:
 
 {% tabs %}
 {% tab title="" %}
@@ -102,7 +102,7 @@ docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 {% endtab %}
 {% endtabs %}
 
-or with port-mapping
+o con mapeo de puertos
 
 {% tabs %}
 {% tab title="" %}
@@ -112,11 +112,11 @@ docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonR
 {% endtab %}
 {% endtabs %}
 
-If running from a VM you may want to expose JSON RPC to the outer world via `--JsonRpc.Host {hostmachine_ip}` \(`127.0.0.1` is set by default\). You may try setting `--JsonRpc.Host 0.0.0.0` if you still can not connect with JSON RPC.
+Si se ejecuta desde una máquina virtual, es posible que desee exponer JSON RPC al mundo exterior a través de `--JsonRpc.Host {hostmachine_ip}` \ (`127.0.0.1` está configurado de forma predeterminada \). Puedes intentar configurar `--JsonRpc.Host 0.0.0.0` si aún no puedes conectarte con JSON RPC.
 
-### **Available configurations**
+### **Configuraciones disponibles**
 
-To switch the network use `--config {network}` flag \(default value is `mainnet`\).
+Para cambiar la red, use `--config {network}` flag \(el valor predeterminado es `mainnet`\).
 
 * `mainnet`
 * `goerli`
@@ -128,7 +128,7 @@ To switch the network use `--config {network}` flag \(default value is `mainnet`
 * `volta`
 * `energyweb`
 
-For example to run Nethermind on `goerli` network:
+Por ejemplo, para ejecutar Nethermind en la network `goerli`:
 
 {% tabs %}
 {% tab title="" %}
@@ -148,19 +148,19 @@ docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --datad
 
 ### **Volumes**
 
-To fully override a configuration file, you need to use a volume:
+Para sobreescribir completamente un archivo de configuración, debes usar un volumen:
 
 ```bash
 -v /home/user/mainnet.cfg:/nethermind/configs/mainnet.cfg
 ```
 
-In order to map an internal database to a local volume, you need to map `/nethermind/nethermind_db/`:
+Para mapear una base de datos interna a un volumen local, necesita mapear `/nethermind/nethermind_db/`:
 
 ```bash
 -v /home/user/nethermind_db:/nethermind/nethermind_db
 ```
 
-Logs can be mapped with the following command:
+Los registros se pueden mapear con el siguiente comando:
 
 ```bash
 -v /home/user/logs:/nethermind/logs
@@ -178,30 +178,30 @@ Nlog:
 -v /home/user/NLog.config:/nethermind/NLog.config
 ```
 
-More detailed NLog configuration can be found [here](https://github.com/NLog/NLog/wiki/Configuration-file).
+Puedes encontrar una configuración más detallada de NLog [aquí] (https://github.com/NLog/NLog/wiki/Configuration-file).
 
-## Building an image
+## Compilando una imagen
 
-Dockerfile can be found in the repository [root](https://github.com/NethermindEth/nethermind) and it currently uses the power of multi-arch builds:
+Dockerfile se puede encontrar en el repositorio [raíz] (https://github.com/NethermindEth/nethermind) y actualmente usa el poder de compilaciones de múltiples arcos:
 
-| File Name | Description | Architecture |
+| Nombre del archivo | Descripción | Arquitectura |
 | :--- | :--- | :--- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build an Alpine based image | x86\_64, ARM64, ARM32 |
-| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | doesn’t require to have a cloned repository, as it will download it during the first step | x86\_64 |
+| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requiere tener un repositorio clonado para construir una imagen basada en Alpine | x86\_64, ARM64, ARM32 |
+| [Dockerfile\_full](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile_full) | no requiere tener un repositorio clonado, ya que lo descargará durante el primer paso | x86\_64 |
 
-In order to build the images, run either:
+Para compilar las imágenes, ejecute:
 
 ```bash
 docker build -t nethermind .
 ```
 
-or to specify other Dockerfile use `-f` flag:
+o para especificar otro Dockerfile use el indicador `-f`:
 
 ```bash
 docker build -f Dockerfile_full -t nethermind .
 ```
 
-Example usage of the locally created docker-image:
+Ejemplo de uso de la imagen docker creada localmente:
 
 ```bash
 docker run -it nethermind --config goerli

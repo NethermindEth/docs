@@ -67,29 +67,29 @@ In the **Accounts** tab, you have the option to change your current account.
 
 Right after starting NDM, you will be asked to input passphrase to your account. You can also unlock your account in "**Accounts**" -&gt; "**Unlock account**" tab.
 
-## How do I import my wallet into MetaMask?
+## ¿Cómo importo mi cartera a MetaMask?
 
 NDM wallets can be imported into MetaMask as a Keystore file. To do so, follow the instructions at [https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account](https://metamask.zendesk.com/hc/en-us/articles/360015489331-Importing-an-Account), choose JSON File as the type, and then when prompted to select your Keystore file:
 
-1. locate your NDM installation folder
-2. navigate to the `keystore` folder
-3. select the file that has your Ethereum address in the name
+1. localice su carpeta de instalación de NDM
+2. navega a la carpeta `keystore`
+3. seleccione el archivo que tiene su dirección Ethereum en el nombre
 
-## How do I import my wallet into MyEtherWallet?
+## ¿Cómo importo mi cartera a MyEtherWallet?
 
 NDM wallets can be imported into MyEtherWallet as a Keystore file. To do so, follow the instructions at [https://kb.myetherwallet.com/en/getting-started/how-to-access-your-wallet/\#Keystore-JSON-Password](https://kb.myetherwallet.com/en/getting-started/how-to-access-your-wallet/#Keystore-JSON-Password) and when prompted to select your Keystore file:
 
-1. locate your NDM installation folder
-2. navigate to the `keystore` folder
-3. select the file that has your Ethereum address in the name
+1. localice su carpeta de instalación de NDM
+2. navega a la carpeta `keystore`
+3. seleccione el archivo que tiene su dirección Ethereum en el nombre
 
-## How do I import my wallet into MyCrypto?
+## ¿Cómo importo mi cartera a MyCrypto?
 
 Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore file. To do so, follow the instructions at [https://support.mycrypto.com/how-to/accessing-wallet/how-to-access-your-wallet-with-keystore-file](https://support.mycrypto.com/how-to/accessing-wallet/how-to-access-your-wallet-with-keystore-file) and when prompted to select your Keystore file:
 
-1. locate your NDM installation folder
-2. navigate to the `keystore` folder
-3. select the file that has your Ethereum address in the name
+1. localice su carpeta de instalación de NDM
+2. navega a la carpeta `keystore`
+3. seleccione el archivo que tiene su dirección Ethereum en el nombre
 
 ## I'm having some issues with NDM on MacOs
 

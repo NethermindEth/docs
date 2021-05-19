@@ -1,30 +1,30 @@
 # Digital Ocean
 
-Create a new droplet
+Crea una nueva gota
 
 ![](../../.gitbook/assets/image%20%28137%29.png)
 
-Select Ubuntu version \(20.04\)
+Seleccione la versión de Ubuntu \(20.04\)
 
 ![](../../.gitbook/assets/image%20%28120%29.png)
 
-Choose the minimal option
+Elige la opción mínima
 
 ![](../../.gitbook/assets/image%20%28134%29.png)
 
-Select preferred region \(some will sync faster\)
+Seleccione la región preferida \(algunas se sincronizarán más rápido\)
 
 ![](../../.gitbook/assets/image%20%28135%29.png)
 
-Choose a hostname
+Elija un nombre de host
 
 ![](../../.gitbook/assets/image%20%28138%29.png)
 
-Wait for the droplet to be created
+Espere a que se cree la gota
 
 ![](../../.gitbook/assets/image%20%28136%29.png)
 
-Continue with:
+Continua con:
 
 {% page-ref page="../../ethereum-client/running-nethermind/running-the-client.md" %}
 

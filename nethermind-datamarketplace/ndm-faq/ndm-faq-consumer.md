@@ -15,7 +15,7 @@ There is separate documentation about connecting to a provider.
 In unit type, when you place a deposit, you are given access to the value of units based on how much units you can consume with this deposit eg. one unit price is 1 xDai, and if  you place a deposit with an amount of 100 xDai, you get access to consume 100 units. 
 
 In time type, you pay for time under which you can consume units, eg. provider has time data asset with one second for 1 xDai, and if you place a deposit for 100 xDai, you can consume those units for 100 seconds.  
-   
+
 Keep in mind that you pay only for seconds which you actually used, hence, if you were consuming units for 30 seconds but had deposit for 100 seconds, you will be refunded for 70 seconds. 
 
 ## I can't make a deposit for an asset.

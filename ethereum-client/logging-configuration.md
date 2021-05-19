@@ -1,27 +1,27 @@
-# Logging Configuration
+# Configuración de registro
 
-## Log config file location
+## Ubicación del archivo de configuración de registro
 
-Logging in Nethermind is done via NLog library that can be configured by editing the NLog.config file.
+El inicio de sesión en Nethermind se realiza a través de la librería NLog que se puede configurar editando el archivo NLog.config.
 
-| Environment Type | NLog.config location |
+| Tipo de ambiente | Ubicación de NLog.config |
 | :--- | :--- |
 | built from src - Debug mode | src\Nethermind\Nethermind.Runner\bin\Debug\netcoreapp3.1\NLog.config |
 | built from src - Release mode | src\Nethermind\Nethermind.Runner\bin\Release\netcoreapp3.1\NLog.config |
 | Docker | /nethermind/NLog.config |
-| from [downloads page](https://downloads.nethermind.io) | top level directory after unzipping the package |
-| from [GitHub releases page](https://github.com/NethermindEth/nethermind/releases) | top level directory after unzipping the package |
-| dAppNode | ? \[to be documented\] |
+| from [downloads page](https://downloads.nethermind.io) | directorio de nivel superior después de descomprimir el paquete |
+| from [GitHub releases page](https://github.com/NethermindEth/nethermind/releases) | directorio de nivel superior después de descomprimir el paquete |
+| dAppNode | ? \[sera documentado\] |
 
-## Log config file syntax
+## Sintaxis del archivo de configuración de registro
 
-Detailed NLog configuration options can be found here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
+Opciones detalladas de configuración de NLog se pueden encontrar aquí: [https://nlog-project.org/config/](https://nlog-project.org/config/)
 
-## Global logging override
+## Anulación de registro global
 
-Additionally there are global logging override that you can use temporarily:
+Además, hay una anulación de registro global que puede usar temporalmente:
 
-| Command line override | Log level |
+| Sobrescritura de la línea de comando | Nivel de registro |
 | :--- | :--- |
 | ./Nethermind.Runner --config mainnet --log TRACE | TRACE |
 | ./Nethermind.Runner --config mainnet --log DEBUG | DEBUG |
@@ -29,9 +29,9 @@ Additionally there are global logging override that you can use temporarily:
 | ./Nethermind.Runner --config mainnet --log WARN | WARN |
 | ./Nethermind.Runner --config mainnet --log ERROR | ERROR |
 
-## JSON RPC logging level
+## Nivel de registro JSON RPC
 
-This can be done by including these lines in the logging configuration file:
+Esto se puede hacer incluyendo estas líneas en el archivo de configuración de registro:
 
 ```text
 <logger name="JsonRpc.*" minlevel="Error" writeTo="file-async"/>
@@ -39,7 +39,7 @@ This can be done by including these lines in the logging configuration file:
 <logger name="JsonRpc.*" final="true"/>
 ```
 
-## Enterprise Logging
+## Registro empresarial
 
-See how to configure Seq [here](https://docs.nethermind.io/nethermind/enterprise/seq)
+Puedes ver cómo configurar Seq [aquí] (https://docs.nethermind.io/nethermind/enterprise/seq)
 

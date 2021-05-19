@@ -1,28 +1,28 @@
 # Runtime
 
-## Directories
+## Directorios
 
-If you built the application locally then the entry point will be located in:
+Si creas la aplicación localmente, el punto de entrada se ubicará en:
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/
 ```
 
-Log files by default are located in:
+Los archivos de registro de forma predeterminada se encuentran en:
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/logs
 ```
 
-Database by default is located in:
+La base de datos por defecto se encuentra en:
 
 ```bash
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ```
 
-## Static nodes
+## Nodos estáticos
 
-Static nodes are a pre-configured array of nodes you can trust. They can be defined with a simple `static-nodes.json` file containing a list of `enodes` separated with comma.
+Los nodos estáticos son una matriz preconfigurada de nodos en los que puede confiar. Se pueden definir con un archivo simple `static-nodes.json` que contiene una lista de` enodes` separados por comas.
 
 ```bash
 [
@@ -33,34 +33,34 @@ Static nodes are a pre-configured array of nodes you can trust. They can be defi
 
 By default `static-nodes.json` file is stored in `Data/` folder included in Nethermind packages. Path to `static-nodes` file can be configured via [`StaticNodesPath`](../configuration/init.md) parameter.
 
-## NLog config
+## Configuración de NLog
 
-You can change the level of logging in file and in the console by choosing one of the levels \(Error, Warn, Info, Debug, Trace\):
+Puede cambiar el nivel de logging en el archivo y en la consola eligiendo uno de los niveles \(Error, Warn, Info, Debug, Trace\):
 
 ```bash
 <logger name="*" minlevel="Info" writeTo="file-async"/>
 <logger name="*" minlevel="Info" writeTo="auto-colored-console-async"/>
 ```
 
-More detailed NLog configuration can be found [here](https://github.com/NLog/NLog/wiki/Configuration-file).
+Puedes encontrar una configuración más detallada de NLog [aquí] (https://github.com/NLog/NLog/wiki/Configuration-file).
 
-### Building from repository
+### Compilando desde un repositorio
 
-Logging level can be controlled in `NLog.config` file located in:
+El nivel de logging se puede controlar en el archivo `NLog.config` ubicado en:
 
 ```text
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 ```
 
-### Downloading package from Github/Downloads package
+### Descargando el paquete de Github/Downloads package
 
-`NLog.config` file is supplied with the package and can be found in extraction directory.
+El archivo `NLog.config` se suministra con el paquete y se puede encontrar en el directorio de extracción.
 
 ![](../../.gitbook/assets/image%20%2830%29.png)
 
-### Running Nethermind with docker image
+### Ejecutando Nethermind con la imagen de docker
 
-`NLog.config` file is located at `/nethermind/NLog.config` path inside the docker container. The volume can be then mapped with a simple command:
+El archivo `NLog.config` se encuentra en la ruta `/nethermind/NLog.config` dentro del contenedor docker. Luego, el volumen se puede asignar con un comando simple:
 
 ```bash
 -v /home/user/NLog.config:/nethermind/NLog.config

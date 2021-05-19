@@ -1,22 +1,22 @@
 ---
-description: A list of properites to adjust Nethermind Node configuration
+description: Una lista de propiedades para ajustar la configuración del nodo Nethermind
 ---
 
-# Configuration
+# Configuración
 
-There are three ways of configuring Nethermind node. They are presented below in the reversed order of priorities \(if you set the same property in the config file, in the environment variable and in the command line then the command line value will be used\).
+Hay tres formas de configurar el nodo Nethermind. Están presentadas a continuación en el orden inverso de prioridades \(si estableces la misma propiedad en el archivo de configuración, en la variable de entorno y en la línea de comandos entonces se utilizará el valor de la línea de comando\).
 
-## Config file
+## Archivo de configuración
 
-Change the configuration properties in the `.cfg` file of the network configuration you wish to run. Each `.cfg` file with the default setup is attached to Nethermind packages and can be found in `configs` folder.
+Cambia las propiedades de configuración en el archivo `.cfg` de la configuración de red que desea ejecutar. Cada archivo `.cfg` con la configuración predeterminada se adjunta a los paquetes de Nethermind y se puede encontrar en la carpeta`configs`.
 
-## Environment variables
+## Variables de entorno
 
-The last way is to set the values in the environment variables, e.g. `set NETHERMIND_INITCONFIG_PROCESSINGENABLED = false`
+La última forma es establecer los valores en las variables de entorno, Ej. `establecer NETHERMIND_INITCONFIG_PROCESSINGENABLED = false`
 
-## Command line options
+## Opciones de línea de comando
 
-Another way is to setup each configuration property by passing flags to either `Nethermind.Runner` or `Nethermind.Launcher`. You can see the list of all config option by running `./Nethermind.Runner --help` For example:
+Otra forma es configurar cada propiedad de configuración pasando indicadores a `Nethermind.Runner` o` Nethermind.Launcher`. Puedes ver la lista de todas las opciones de configuración ejecutando `./Nethermind.Runner --help` Por ejemplo:
 
 ```text
 ./Nethermind.Runner --config ropsten --JsonRpc.Enabled true --Init.ProcessingEnabled false
@@ -36,7 +36,7 @@ Use `/` as the path separator so the configs can be shared between all platforms
 
 ### datadir
 
-**Usage:** `--datadir` or `-dd`
+**Usage:** `--datadir` o `-dd`
 
 You may want to use this option to store all data that the node produces in a custom directory. The `--datadir` \(`-dd`\) changes paths of `database, logs, keystore`to the target directory. You can specify either **relative** or **absolute** paths, e.g.
 
@@ -58,7 +58,7 @@ Absolute paths of `Init.BaseDbPath`, `Init.LogDirectory` or`KeyStore.KeyStoreDir
 
 ### baseDbPath
 
-**Usage:** `--baseDbPath` or `-d`
+**Usage:** `--baseDbPath` o `-d`
 
 Configures the path of the Nethermind's database folder. Is equal to setting `--Init.BaseDbPath` parameter.
 
@@ -68,7 +68,7 @@ Configures the path of the Nethermind's database folder. Is equal to setting `--
 
 ### config
 
-**Usage:** `--config` ****or ****`-c`
+**Usage:** `--config` ****o ****`-c`
 
 Determines the configuration file of the network on which Nethermind will be running.
 
@@ -82,7 +82,7 @@ More on that:
 
 ### log
 
-**Usage:** `--log` ****or ****`-l`
+**Usage:** `--log` ****o ****`-l`
 
 Changes the logging level.
 
@@ -96,7 +96,7 @@ More on that:
 
 ### configsDirectory
 
-**Usage:** `--configsDirectory` or `-cd`
+**Usage:** `--configsDirectory` o `-cd`
 
 Changes the source directory of your configuration files.
 
@@ -106,7 +106,7 @@ Changes the source directory of your configuration files.
 
 ### loggerConfigSource
 
-**Usage:** `--loggerConfigSource` or `-lcs`
+**Usage:** `--loggerConfigSource` o `-lcs`
 
 Changes the path of the `NLog.config` file.
 

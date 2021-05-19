@@ -1,16 +1,16 @@
-# Beam Wallet
+# Beam wallet
 
-## Description
+## Descripción
 
-Beam Wallet is a proof of concept Ethereum Wallet with a console UI that lets users harness the power of beam sync. Beam Wallet is running without any external dependencies \(it automatically launches a Nethermind Node in the background\) and allows to check account balances and make simple transactions on mainnet just 5 minutes after launching.
+Beam Wallet es una prueba de concepto Ethereum Wallet con una interfaz de usuario de consola que permite a los usuarios aprovechar el poder del beam sync. Beam Wallet se ejecuta sin dependencias externas \(inicia automáticamente un nodo Nethermind en segundo plano\) y permite verificar los saldos de las cuentas y realizar transacciones simples en mainnet solo 5 minutos después del lanzamiento.
 
-## Download and run
+## Descarga y ejecuta
 
-You can find Beam wallet \(which is included in the standard Nethermind package\) **here**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
+Puede encontrar el Beam wallet  \(que se incluye en el paquete estándar de Nethermind\) **aquí**: [https://downloads.nethermind.io/](https://downloads.nethermind.io/).
 
-Select the appropriate package based on operating system and download it.
+Seleccione el paquete apropiado según el sistema operativo y descárguelo.
 
-### **Prerequisites**
+### **Prerrequisitos**
 
 #### Linux
 
@@ -25,7 +25,7 @@ sudo apt install -y ./packages-microsoft-prod.deb apt-transport-https && sudo ap
 sudo apt install -y dotnet-sdk-3.1 libsnappy-dev libc6-dev libc6
 ```
 
-_Tested on Ubuntu 20.04 LTS and 18.04 LTS_
+_Probado en Ubuntu 20.04 LTS and 18.04 LTS_
 
 #### **- Debian**
 
@@ -38,7 +38,7 @@ sudo apt install -y ./packages-microsoft-prod.deb apt-transport-https && sudo ap
 sudo apt install -y dotnet-sdk-3.1 libsnappy-dev libc6-dev libc6
 ```
 
-_Tested on Debian 10 \(9 not working\)_
+_Probado en Debian 10 \(9 no funciona\)_
 
 #### **- CentOS**
 
@@ -51,7 +51,7 @@ sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnap
 sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
 ```
 
-_Tested on CentOS 8_
+_Probado en CentOS 8_
 
 #### **- Fedora**
 
@@ -63,147 +63,147 @@ sudo dnf install -y dotnet-sdk-3.1 gcc snappy-devel glibc-devel bzip2-devel libz
 sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
 ```
 
-_Tested on Fedora 32_
+_Probado en Fedora 32_
 
 #### Mac
 
-* Install deps `brew install gmp snappy lz4 zstd`
-* Additionally, if you have problems with startup `brew install rocksdb`
+* instalar deps `brew install gmp snappy lz4 zstd`
+* Además, si tiene problemas con el inicio corre este comando `brew install rocksdb`
 
-## Running application
+## Aplicación en ejecución
 
-To run application open **Nethermind.BeamWallet** file.
+Para ejecutar la aplicación, abra el archivo **Nethermind.BeamWallet**.
 
 {% hint style="warning" %}
 **Mac**
 
-If your operating system is a macOS you will be asked to **Allow access** in your **System Preferences-&gt;Security & Privacy,** twice - for Nethermind.BeamWallet and Nethermind.Runner.
+Si su sistema operativo es macOS, se le pedirá que **Permita el acceso** en sus ** Preferencias del sistema-&gt;Security & Privacy,** dos veces: para Nethermind.BeamWallet y Nethermind.Runner.
 {% endhint %}
 
-After starting the application you should be able to see this window:
+Después de iniciar la aplicación, debería poder ver esta ventana:
 
-\(Colors of the application may vary from those shown in the pictures - it depends on your command line settings.\)
+\(Los colores de la aplicación pueden variar de los que se muestran en las imágenes; depende de la configuración de la línea de comandos.\)
 
-* The first step is to select a network. 
+* El primer paso es seleccionar una red.
 
 ![](../.gitbook/assets/image%20%28129%29.png)
 
-* Then choose one of the two options **Create new account**  or **Provide an address** using TAB key or Up and Down arrows.
+* Luego elija una de las dos opciones **Create new account** o **Provide an address** usando la tecla TAB o las flechas hacia arriba y hacia abajo.
 
 ![](../.gitbook/assets/image%20%28131%29.png)
 
-### Already have an account
+### Ya tienes una cuenta
 
-If you already have and account you can use it by selecting a **Provide an address** option - in that case you will need:
+Si ya tienes una cuenta, puede usarla seleccionando la opción **Provide an address**; en ese caso, necesitará:
 
 * **your address**
 * **your passphrase**
 * **your keystore file**
 
 {% hint style="warning" %}
-**Copy keystore file**
+**Copia el archivo keystore**
 
-Before we start, please, copy keystore file of your wallet into the **keystore** folder. \(directory of the keystore folder will be shown in the image below\). It is necessary to properly unlock your account before sending the transaction. Otherwise unlocking your account will be failed.
+Antes de comenzar, copie el archivo keystore de su cartera en la carpeta **keystore**. \ (el directorio de la carpeta del almacén de claves se mostrará en la imagen siguiente\). Es necesario desbloquear correctamente su cuenta antes de enviar la transacción. De lo contrario, fallará el desbloqueo de su cuenta.
 {% endhint %}
 
-### **Create new account**
+### **Crear una nueva cuenta**
 
-If you don't have an account, you can create one using **Beam wallet** application.
+Si no tienes una cuenta, puedes crear una usando la aplicación **Beam wallet**.
 
-Creating a new account creates a keystore file. You can find it in the **keystore** folder.
+Crear una nueva cuenta crea un archivo keystore. Puede encontrarlo en la carpeta **keystore**.
 
-Copy your keystore file if you wish to use an account in the future.
+Copie su archivo de keystore si desea utilizar una cuenta en el futuro.
 
 ![](../.gitbook/assets/image%20%28118%29%20%281%29%20%281%29%20%281%29.png)
 
-### Set an address
+### Establece una dirección
 
 {% tabs %}
 {% tab title="Create new account" %}
-* Create an account by providing the passphrase in the first input and confirmation passphrase in the second one.
+* Cree una cuenta proporcionando el passphrase en la primera entrada y el passphrase de confirmación en la segunda.
 
 ![](../.gitbook/assets/image%20%28117%29%20%282%29%20%283%29%20%283%29%20%282%29%20%282%29.png)
 
 {% hint style="warning" %}
 **Passphrase**
 
-**Keep it safe**
+**Mantenerla segura**
 
-Do not lose your passphrase. We don't have an access to your passphrase so there is no chance of getting it back.
+No pierda su passphrase. No tenemos acceso a su frase de passphrase, por lo que no hay posibilidad de recuperarla.
 
-**Do not share it**
+**No lo compartas**
 
-Never give your passphrase to anyone. Your founds can be stolen.
+Nunca le dé su passphrase a nadie. Sus fondos pueden ser robados.
 
-**Write it down**
+**Escríbelo**
 
-Set a strong passphrase. We recommend writing it down on a paper. If you lose your passphrase we will not be able to help you. Your whole money will be gone.
+Establezca una frase de contraseña segura. Recomendamos escribirlo en un papel. Si pierde su contraseña, no podremos ayudarlo. Todo tu dinero se habrá ido. 
 {% endhint %}
 
-* Using the TAB key, move to the **OK** button and press Enter. 
+* Con la tecla TAB, muévase al botón **OK**  y presione Enter.
 {% endtab %}
 
 {% tab title="Provide an address" %}
-* After choosing "Provide an address" option you will see that window. Provide your wallet address.
+* Después de elegir la opción "Provide an address", verá esa ventana. Proporcione la dirección de su cartera.
 
 ![](../.gitbook/assets/image%20%28107%29.png)
 
-* Using the TAB key, move to the **OK** button and press Enter. 
+* Con la tecla TAB, muévase al botón **OK** y presione Enter.
 
 ![](../.gitbook/assets/image%20%28100%29.png)
 {% endtab %}
 {% endtabs %}
 
-### Syncing
+### Sincronizando
 
-* After a while caption "Syncing... Please wait for the balance." should change to your wallet balance and also the **BACK** and **TRANSFER** buttons will appear. This may take a few minutes.
+* Después de un rato, la leyenda "Syncing ... Please wait for the balance.". debería cambiar al saldo de su cartera y también aparecerán los botones **BACK** y **TRANSFER**.
 
 ![](../.gitbook/assets/image%20%28124%29.png)
 
-* The first comes your ETH balance. If you are not interested in the balance of your tokens \(DAI, USDT, USDC\), you can skip it and proceed to the transfer.
+* Lo primero es tu saldo ETH. Si no está interesado en el saldo de sus tokens \(DAI, USDT, USDC\),puedes omitirlo y continuar con la transferencia.
 
 ![](../.gitbook/assets/image%20%28132%29.png)
 
 ![](../.gitbook/assets/image%20%28121%29.png)
 
-* Use the TAB key, move to the **TRANSFER** button and press Enter.
+* Use la tecla TAB, vaya al botón **TRANSFER** y presione Enter.
 
-## Making transaction
+## Realizando una transacción
 
-You will see a different window where you can provide data to make a transfer.
+Veras una ventana diferente donde puede proporcionar datos para realizar una transferencia.
 
-* In the first input provide the **address** to which you want to send ETH.
-* In the input below enter the **value** of ETH that you want to transfer.
-* And in the last input enter the **passphrase** of your wallet.
-* Move to the **TRANSFER** button and press ENTER. \(This is not the last step, you will be asked to confirm the transaction.\)
+* En la primera entrada proporcione el **address** a la que desea enviar ETH.
+* En la entrada a continuación, ingrese el ** valor ** de ETH que desea transferir.
+* Y en la última entrada ingrese su **passphrase** de su cartera.
+* Vaya al botón **TRANSFER** y presione ENTER. \ (Este no es el último paso, se le pedirá que confirme la transacción.\)
 
 ![](../.gitbook/assets/image%20%28122%29.png)
 
-\(Example data\)
+\(Datos de ejemplo\)
 
 ![](../.gitbook/assets/image%20%28116%29.png)
 
-* After you press Enter on **Transfer** button, a modal with summary of the transaction will appear. Confirm \(or not\) sending the transaction.
+* Después de presionar Enter en el botón **Transfer**, aparecerá un modal con un resumen de la transacción. Confirme \(o no\) el envío de la transacción.
 
 ![](../.gitbook/assets/image%20%28130%29.png)
 
-* The steps that will be taken to send the transaction will be listed below.
+* Los pasos que se seguirán para enviar la transacción se enumerarán a continuación.
 
 ![](../.gitbook/assets/image%20%28126%29.png)
 
-## Database
+## Base de datos
 
-You can find database in the folder **nethermind\_db** in the downloaded package:
+Puede encontrar la base de datos en la carpeta **nethermind\ _db ** en el paquete descargado:
 
 ![](../.gitbook/assets/image%20%28113%29.png)
 
-In **nethermind\_db** directory you will find folders with networks that were run using Netherming package.
+En el directorio **nethermind\ _db ** encontrará carpetas con redes que se ejecutaron utilizando el paquete Netherming.
 
-Choose the one that interests you.
+Elige el que más te interese.
 
 ![](../.gitbook/assets/image%20%28110%29.png)
 
-Inside you will find example folders:
+Dentro encontrará carpetas de ejemplo:
 
 ![](../.gitbook/assets/image%20%28108%29.png)
 

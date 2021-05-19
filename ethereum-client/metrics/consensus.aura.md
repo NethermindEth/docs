@@ -1,6 +1,6 @@
 # Aura module
 
-| Metric | Description |
+| Métricas | Descripción |
 | :--- | :--- |
 | nethermind\_au\_ra\_step | Current AuRa step |
 | nethermind\_commit\_hash\_transaction | RANDAO number of commit hash transactions |

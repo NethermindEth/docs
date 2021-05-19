@@ -1,31 +1,31 @@
-# Table of contents
+# Tabla de contenido
 
-* [Welcome to Nethermind](README.md)
+* [Bienvenido a Nethermind](README.md)
 
-## Contact
+## Contacto
 
-* [Social Media](contact/social-media.md)
-* [Contact us](contact/contact-us.md)
+* [Redes Sociales](contact/social-media.md)
+* [Contactanos](contact/contact-us.md)
 
-## First steps with Nethermind
+## Primeros pasos con Nethermind
 
-* [Getting Started](first-steps-with-nethermind/getting-started.md)
-* [Supported platforms](first-steps-with-nethermind/supported-platforms.md)
-* [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
-* [Hardware Requirements](first-steps-with-nethermind/hardware-requirements.md)
-* [Security](first-steps-with-nethermind/security.md)
-* [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
+* [Primeros Pasos](first-steps-with-nethermind/getting-started.md)
+* [Plataformas compatibles](first-steps-with-nethermind/supported-platforms.md)
+* [Configuración de Firewall](first-steps-with-nethermind/firewall-configuration.md)
+* [Requisitos de hardware](first-steps-with-nethermind/hardware-requirements.md)
+* [Seguridad](first-steps-with-nethermind/security.md)
+* [Administra Nethermind con systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 
-## Ethereum client
+## Cliente de Ethereum
 
-* [Download](ethereum-client/download-sources/README.md)
-  * [Downloads Page](http://downloads.nethermind.io/)
-  * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
-* [Running Nethermind](ethereum-client/running-nethermind/README.md)
-  * [Running the client](ethereum-client/running-nethermind/running-the-client.md)
-  * [Runtime](ethereum-client/running-nethermind/runtime.md)
-* [Sync modes](ethereum-client/sync-modes.md)
-* [Building Nethermind](ethereum-client/building-nethermind.md)
+* [Descargar](ethereum-client/download-sources/README.md)
+  * [Páginas de descargas](http://downloads.nethermind.io/)
+  * [Página de lanzamiento de Github](https://github.com/NethermindEth/nethermind/releases)
+* [Ejecutando Nethermind](ethereum-client/running-nethermind/README.md)
+  * [Ejecutando el cliente](ethereum-client/running-nethermind/running-the-client.md)
+  * [Tiempo de ejecución](ethereum-client/running-nethermind/runtime.md)
+* [Modos de sincronización](ethereum-client/sync-modes.md)
+* [Compilando Nethermind](ethereum-client/building-nethermind.md)
 * [JSON RPC](ethereum-client/json-rpc/README.md)
   * [Admin module](ethereum-client/json-rpc/admin.md)
   * [Clique module](ethereum-client/json-rpc/clique.md)
@@ -42,12 +42,12 @@
   * [JSON RPC WIKI](https://eth.wiki/json-rpc/API)
 * [Docker](ethereum-client/docker.md)
 * [Networks](ethereum-client/networks.md)
-* [Private Networks](ethereum-client/private-networks/README.md)
-  * [How to setup a Nethermind only Clique based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md)
-  * [How to setup a Nethermind only Spaceneth based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-spaceneth-based-chain.md)
-* [Database](ethereum-client/database.md)
-* [Metrics](ethereum-client/metrics/README.md)
-  * [Setting up local Metrics infrastructure](ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
+* [Redes privadas](ethereum-client/private-networks/README.md)
+  * [Cómo configurar una cadena basada solo en Nethermind Clique](ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md)
+  * [Cómo configurar una cadena basada solo en Spaceneth de Nethermind](ethereum-client/private-networks/how-to-setup-a-nethermind-only-spaceneth-based-chain.md)
+* [Base de datos](ethereum-client/database.md)
+* [Métricas](ethereum-client/metrics/README.md)
+  * [Configurar la infraestructura de métricas local](ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
   * [Aura module](ethereum-client/metrics/consensus.aura.md)
   * [Blockchain module](ethereum-client/metrics/blockchain.md)
   * [Evm module](ethereum-client/metrics/evm.md)
@@ -58,13 +58,13 @@
   * [Store module](ethereum-client/metrics/store.md)
   * [Trie module](ethereum-client/metrics/trie.md)
   * [TxPool module](ethereum-client/metrics/txpool.md)
-* [Logging Configuration](ethereum-client/logging-configuration.md)
-* [Configuration](ethereum-client/configuration/README.md)
-  * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
+* [Configuración de loggin](ethereum-client/logging-configuration.md)
+* [Configuración](ethereum-client/configuration/README.md)
+  * [Configuración de muestra](ethereum-client/configuration/sample-configuration.md)
   * [Aura module](ethereum-client/configuration/aura.md)
   * [Bloom module](ethereum-client/configuration/bloom.md)
   * [EthStats module](ethereum-client/configuration/ethstats.md)
-  * [HealthChecks module](ethereum-client/configuration/healthchecks.md)
+  * [Comprobaciones de estado module](ethereum-client/configuration/healthchecks.md)
   * [Hive module](ethereum-client/configuration/hive.md)
   * [Init module](ethereum-client/configuration/init.md)
   * [JsonRpc module](ethereum-client/configuration/jsonrpc.md)
@@ -78,9 +78,9 @@
   * [TxPool module](ethereum-client/configuration/txpool.md)
   * [Wallet module](ethereum-client/configuration/wallet.md)
 * [Plugins](ethereum-client/plugins.md)
-* [Monitoring Node's Health](ethereum-client/monitoring-node-health.md)
+* [Monitoreo del estado del nodo](ethereum-client/monitoring-node-health.md)
 
-## Nethermind utilities
+## Utilidades de Nethermind
 
 * [CLI](nethermind-utilities/cli/README.md)
   * [Admin module](nethermind-utilities/cli/admin.md)
@@ -106,41 +106,41 @@
 ## Nethermind DataMarketplace
 
 * [FAQ](nethermind-datamarketplace/ndm-faq/README.md)
-  * [Provider](nethermind-datamarketplace/ndm-faq/ndm-faq-provider.md)
+  * [Proveedor](nethermind-datamarketplace/ndm-faq/ndm-faq-provider.md)
   * [Consumer](nethermind-datamarketplace/ndm-faq/ndm-faq-consumer.md)
-* [Data asset states](nethermind-datamarketplace/data-asset-states.md)
+* [Estados de activos de datos](nethermind-datamarketplace/data-asset-states.md)
 * [Refunds](nethermind-datamarketplace/refunds.md)
 * [Running NDM on MacOS problems and fixes](nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes.md)
 * [Connecting with providers](nethermind-datamarketplace/connecting-with-providers.md)
 * [Connecting with consumers](nethermind-datamarketplace/connecting-with-consumers.md)
 * [Beta testing NDM](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/README.md)
-  * [Provider](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/ndm-beta-testing-provider.md)
+  * [Proveedor](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/ndm-beta-testing-provider.md)
   * [Consumer](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/ndm-beta-testing-consumer.md)
 * [Providing data as a provider](nethermind-datamarketplace/providing-data-as-a-provider.md)
 
-## Guides and Helpers
+## Guías y ayudantes
 
 * [FAQ](guides-and-helpers/faq.md)
-* [Upgrades](guides-and-helpers/upgrades.md)
-* [Custom Analytic Tools](guides-and-helpers/custom-analytic-tools.md)
-* [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
-* [Known Issues](guides-and-helpers/known-issues/README.md)
-  * [ETH2 issues](guides-and-helpers/known-issues/eth2-issues.md)
+* [Actualizaciones](guides-and-helpers/upgrades.md)
+* [Herramientas analíticas personalizadas](guides-and-helpers/custom-analytic-tools.md)
+* [Implementar Nethermind con el stack de monitoreo](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
+* [Problemas conocidos](guides-and-helpers/known-issues/README.md)
+  * [Problemas de ETH2](guides-and-helpers/known-issues/eth2-issues.md)
 * [Web3.py](guides-and-helpers/web3.py.md)
-* [Cloud Providers](guides-and-helpers/cloud-providers/README.md)
+* [Proveedores de nube](guides-and-helpers/cloud-providers/README.md)
   * [UpCloud](guides-and-helpers/cloud-providers/upcloud.md)
   * [Digital Ocean](guides-and-helpers/cloud-providers/digital-ocean.md)
   * [Azure](guides-and-helpers/cloud-providers/azure.md)
   * [AWS](guides-and-helpers/cloud-providers/aws.md)
   * [Google Cloud](guides-and-helpers/cloud-providers/google-cloud.md)
-* [Validator setup](guides-and-helpers/validator-setup/README.md)
-  * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
-* [Smoke Testing Example](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
+* [Configuración del validador](guides-and-helpers/validator-setup/README.md)
+  * [Validador de aura](guides-and-helpers/validator-setup/aura-validator.md)
+* [Ejemplo de prueba de humo](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
 * [ETH2 &lt;-&gt; Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 
-## Enterprise
+## Registro empresarial
 
-* [Connecting to Nethermind hosted Seq and Grafana](enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md)
+* [Conectando a Nethermind hosted Seq y Grafana](enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md)
 * [Baseline](enterprise/baseline.md)
 * [Seq](enterprise/seq.md)
 

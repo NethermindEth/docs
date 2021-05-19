@@ -4,15 +4,15 @@
 
 Clears an authority account for signing consensus messages. Blocks will not be sealed.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_clearEngineSigner","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -24,21 +24,21 @@ curl --data '{"method":"parity_clearEngineSigner","params":[],"id":1,"jsonrpc":"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.clearEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-clearenginesigner)
+[ingrese a CLI parity.clearEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-clearenginesigner)
 
 ## parity\_enode
 
-Returns the node enode URI.
+Retorna el URI del enodo del nodo.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_enode","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -50,21 +50,21 @@ curl --data '{"method":"parity_enode","params":[],"id":1,"jsonrpc":"2.0"}' -H "C
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.enode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-enode)
+[ingrese a CLI parity.enode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-enode)
 
 ## parity\_getBlockReceipts
 
-Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+Obtiene los recibos de todas las transacciones de un bloque en particular, más eficiente que buscar los recibos uno por uno.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_getBlockReceipts","params":[blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ReceiptForRpc object` |  |
 
@@ -78,20 +78,20 @@ curl --data '{"method":"parity_getBlockReceipts","params":[blockParameter],"id":
 {% tab title="Objects in parity\_getBlockReceipts" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ReceiptForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -107,11 +107,11 @@ curl --data '{"method":"parity_getBlockReceipts","params":[blockParameter],"id":
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 
 `LogEntryForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -127,21 +127,21 @@ curl --data '{"method":"parity_getBlockReceipts","params":[blockParameter],"id":
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.getBlockReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-getblockreceipts)
+[ingrese a CLI parity.getBlockReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-getblockreceipts)
 
 ## parity\_netPeers
 
 Returns connected peers. Peers with non-empty protocols have completed handshake.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_netPeers","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityNetPeers object` |  |
 
@@ -155,7 +155,7 @@ curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H
 {% tab title="Objects in parity\_netPeers" %}
 `ParityNetPeers`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Active | `Quantity` |
 | Connected | `Quantity` |
@@ -164,7 +164,7 @@ curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H
 
 `PeerInfo[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -176,21 +176,21 @@ curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.netPeers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-netpeers)
+[ingrese a CLI parity.netPeers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-netpeers)
 
 ## parity\_pendingTransactions
 
-Returns a list of transactions currently in the queue.
+Retorna una lista de transacciones actualmente en cola.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_pendingTransactions","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTransaction object` |  |
 
@@ -204,7 +204,7 @@ curl --data '{"method":"parity_pendingTransactions","params":[],"id":1,"jsonrpc"
 {% tab title="Objects in parity\_pendingTransactions" %}
 `ParityTransaction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -229,7 +229,7 @@ curl --data '{"method":"parity_pendingTransactions","params":[],"id":1,"jsonrpc"
 
 `PublicKey`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Address | `Address` |
 | Bytes | `Data` |
@@ -237,27 +237,27 @@ curl --data '{"method":"parity_pendingTransactions","params":[],"id":1,"jsonrpc"
 
 `UInt64`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-pendingtransactions)
+[ingrese a CLI parity.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-pendingtransactions)
 
 ## parity\_setEngineSigner
 
 Sets an authority account for signing consensus messages.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_setEngineSigner","params":[address, password]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | password | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -269,21 +269,21 @@ curl --data '{"method":"parity_setEngineSigner","params":[address, password],"id
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.setEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesigner)
+[ingrese a CLI parity.setEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesigner)
 
 ## parity\_setEngineSignerSecret
 
 Sets an authority account for signing consensus messages.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"parity_setEngineSignerSecret","params":[privateKey]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | privateKey | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -295,5 +295,5 @@ curl --data '{"method":"parity_setEngineSignerSecret","params":[privateKey],"id"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI parity.setEngineSignerSecret](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesignersecret)
+[ingrese a CLI parity.setEngineSignerSecret](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesignersecret)
 

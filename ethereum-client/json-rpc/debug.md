@@ -2,17 +2,17 @@
 
 ## debug\_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+Elimina una porción de una cadena del árbol en todas las ramas \(específico de Nethermind\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_deleteChainSlice","params":[startNumber]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | startNumber | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -26,17 +26,17 @@ curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"j
 
 ## debug\_getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+Recupera un bloque en la forma serializada RLP.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_getBlockRlp","params":[number]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -48,21 +48,21 @@ curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.getBlockRlp](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlp)
+[ingrese a CLI debug.getBlockRlp](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlp)
 
 ## debug\_getBlockRlpByHash
 
-Retrieves a block in the RLP-serialized form.
+Recupera un bloque en la forma serializada RLP.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_getBlockRlpByHash","params":[hash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | hash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -74,21 +74,21 @@ curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.getBlockRlpByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlpbyhash)
+[ingrese a CLI debug.getBlockRlpByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlpbyhash)
 
 ## debug\_getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Recupera una representación de las ramas de los árboles en un nivel de cadena determinado \ (específico de Nethermind\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_getChainLevel","params":[number]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ChainLevelForRpc object` |  |
 
@@ -102,14 +102,14 @@ curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":
 {% tab title="Objects in debug\_getChainLevel" %}
 `ChainLevelForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | BlockInfos | `BlockInfoForRpc[] object` |
 | HasBlockOnMainChain | `Boolean` |
 
 `BlockInfoForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -121,22 +121,22 @@ curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.getChainLevel](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getchainlevel)
+[ingrese a CLI debug.getChainLevel](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getchainlevel)
 
 ## debug\_getConfigValue
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+Recupera el valor de configuración de Nethermind Ej. JsonRpc.Enabled
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_getConfigValue","params":[category, name]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | category | `String` |  |
 | name | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Object` |  |
 
@@ -150,18 +150,18 @@ curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"
 
 ## debug\_insertReceipts
 
-Insert receipts for the block after verifying receipts root correctness.
+Inserta los recibos para el bloque después de verificar que los recibos sean correctos.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | receiptForRpc | `ReceiptForRpc[] object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -175,20 +175,20 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 {% tab title="Objects in debug\_insertReceipts" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ReceiptForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -202,17 +202,17 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 
 ## debug\_migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Establece el número de bloque hasta el que se migrarán los recibos a \(específico de Nethermind\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_migrateReceipts","params":[blockNumber]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockNumber | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -224,21 +224,21 @@ curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"js
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.migrateReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-migratereceipts)
+[ingrese a CLI debug.migrateReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-migratereceipts)
 
 ## debug\_resetHead
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
+Actualiza / resetea el bloque principal: utilízalo sólo cuando el nodo se atascó debido a daños en la base de datos / corrupción de memoria \(específico de Nethermind\).
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_resetHead","params":[blockHash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 
@@ -252,18 +252,18 @@ curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"
 
 ## debug\_traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+Devuelve un seguimiento completo de todos los códigos de operación invocados de todas las transacciones que se incluyeron en este bloque. El padre de este bloque debe estar presente o fallará.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceBlock","params":[blockRlp, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -277,7 +277,7 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 {% tab title="Objects in debug\_traceBlock" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -287,7 +287,7 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -297,20 +297,20 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblock)
+[ingrese a CLI debug.traceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblock)
 
 ## debug\_traceBlockByHash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceBlockByHash","params":[blockHash, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -324,7 +324,7 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 {% tab title="Objects in debug\_traceBlockByHash" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -334,7 +334,7 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -344,20 +344,20 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbyhash)
+[ingrese a CLI debug.traceBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbyhash)
 
 ## debug\_traceBlockByNumber
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceBlockByNumber","params":[number, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | number | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -371,7 +371,7 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 {% tab title="Objects in debug\_traceBlockByNumber" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -381,7 +381,7 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -391,22 +391,22 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbynumber)
+[ingrese a CLI debug.traceBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbynumber)
 
 ## debug\_traceTransaction
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+Este método intentará ejecutar la transacción exactamente de la misma manera en que se ejecutó en la red. Reproducirá cualquier transacción que se haya ejecutado antes de esta antes de intentar finalmente ejecutar la transacción que corresponde al hash dado.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceTransaction","params":[transactionHash, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionHash | `Hash` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -420,7 +420,7 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 {% tab title="Objects in debug\_traceTransaction" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -430,7 +430,7 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -440,21 +440,21 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransaction)
+[ingrese a CLI debug.traceTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransaction)
 
 ## debug\_traceTransactionByBlockAndIndex
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -468,20 +468,20 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 {% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -491,7 +491,7 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -501,21 +501,21 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockandindex)
+[ingrese a CLI debug.traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockandindex)
 
 ## debug\_traceTransactionByBlockhashAndIndex
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -529,7 +529,7 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 {% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -539,7 +539,7 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -549,21 +549,21 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockhashandindex)
+[ingrese a CLI debug.traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockhashandindex)
 
 ## debug\_traceTransactionInBlockByHash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
 | transactionHash | `Hash` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -577,7 +577,7 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 {% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -587,7 +587,7 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -597,21 +597,21 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyhash)
+[ingrese a CLI debug.traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyhash)
 
 ## debug\_traceTransactionInBlockByIndex
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `GethLikeTxTrace object` |  |
 
@@ -625,7 +625,7 @@ curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp
 {% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
 `GethTraceOptions`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
@@ -635,7 +635,7 @@ curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp
 
 `GethLikeTxTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | StoragesByDepth | `Array` |
 | Gas | `Quantity` |
@@ -645,5 +645,5 @@ curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp
 {% endtab %}
 {% endtabs %}
 
-[See also CLI debug.traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyindex)
+[ingrese a CLI debug.traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyindex)
 

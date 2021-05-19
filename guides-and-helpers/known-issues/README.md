@@ -1,44 +1,44 @@
 ---
-description: There are several known issues with the current version of Nethermind
+description: Hay varios problemas conocidos con la versión actual de Nethermind
 ---
 
-# Known Issues
+# Problemas conocidos
 
-## RocksDB checksum issue
+## Problema de checksum RocksDB
 
-It has been brought to our attention that on some disks RocksDB may fail with an exception similar to the one below:
+Se nos ha señalado que en algunos discos, RocksDB puede fallar con una excepción similar a la siguiente:
 
 2020-11-29 12:02:01.1968\|BlockchainProcessor encountered an exception. RocksDbSharp.RocksDbException: Corruption: block checksum mismatch: expected 2087346143, got 2983326672 in C:\Nethermind\nethermind\_db/mainnet\state/037463.sst offset 33439089 size 16319
 
-Interestingly what worked for some users was closing Nethermind, restarting the VM that it is running on and launching Nethermind again. This happens to be a RocksDB issue on some of the cloud providers' systems. We will add more details when we learn more about the problem.
+Curiosamente, lo que funcionó para algunos usuarios fue cerrar Nethermind, reiniciar la VM en la que se está ejecutando y lanzar Nethermind nuevamente. Esto pasa a ser un problema de RocksDB en algunos de los sistemas de los proveedores de la nube. Agregaremos más detalles cuando sepamos más sobre el problema.
 
-## Database LOCK files not removed by RocksDB
+## Archivos de LOCK de base de datos no eliminados por RocksDB
 
-If the node complains about the LOCK files it may mean one of the two things:
+Si el nodo se queja de los archivos LOCK, puede significar una de las dos cosas:
 
-\(1\) another Nethermind process is running and using the same DB
+\ (1 \) otro proceso Nethermind se está ejecutando y usa la misma base de datos
 
-\(2\) previous process did not close the DB properly
+\(2 \) el proceso anterior no cerró la base de datos correctamente
 
-When \(2\) happens you can run
+Cuando ocurra \(2\) puedes correr
 
 `find . -type f -name 'LOCK' -delete`
 
-in the database folder.
+en la carpeta de la base de datos.
 
-## Leaking Socket Descriptors
+## Descriptores de Leaking Socket
 
-On Linux our networking library is not closing socket descriptors properly. This results in the number of open files for the process growing indefinitely. Limits for the number of open files per process are different for root and other users. For root the limits are usually very high and the socket descriptors would probably not cause much trouble. Many of the cloud operators are launching VMs with root user access by default. If Nethermind process is frequently killed by OS then you may need to change the configuration for the maximum number of open files.
+En Linux, nuestra biblioteca de redes no cierra correctamente los descriptores de socket. Esto da como resultado que el número de archivos abiertos para el proceso crezca indefinidamente. Los límites para la cantidad de archivos abiertos por proceso son diferentes para usuarios raíz y otros. Para root, los límites suelen ser muy altos y los descriptores de socket probablemente no causarían muchos problemas. Muchos de los operadores de la nube están lanzando máquinas virtuales con acceso de usuario raíz de forma predeterminada. Si el proceso de Nethermind es anulado con frecuencia por el sistema operativo, es posible que deba cambiar la configuración para el número máximo de archivos abiertos.
 
-## RocksDB on macOS
+## RocksDB en macOS
 
-RocksDB library does not always load properly on macOS. One \(hacky\) workaround is to install the latest version of RocksDB by running brew install rocksdb.
+La libreria RocksDB no siempre se carga correctamente en macOS. Una solución \ (hacky \) es instalar la última versión de RocksDB ejecutando brew install rocksdb.
 
-## Skipping consensus issues blocks
+## Omitir bloques de problemas de consenso
 
-We do our best in Nethermind not to have consensus issues with other clients. But historically consensus issues had happened. In that case we start working on a hotfix immediately and release it within hours time. If you need your node to be operational ASAP and can’t wait for hotfix you do have an option to achieve that. Nethermind node allows you to fast sync to recent blocks and state. When node does fast sync it can skip over processing problematic blocks. In order to be able to fast sync we need SyncConfig.FastSync to be set to ‘true’. You also need to set SyncConfig.FastSyncCatchUpHeightDelta to a value lower than how far your node is behind the chain. SyncConfig.FastSyncCatchUpHeightDelta is the minimum difference between current chain height and chain head block number when node can switch from full sync \(block processing\) to fast sync. By default it is set to 1024. Please note that we don’t recommend setting this value to less than 32 in normal circumstances. After setting those values and restarting node, the node will download block headers, bodies \(if SyncConfig.DownloadBodiesInFastSync is ‘true’\), receipts \(if SyncConfig.DownloadReceiptsInFastSync is ‘true’\) and current state. After that it will resume processing from new head block. Please note that the historical state for skipped blocks might not be available. This can cause some JSON RPC calls on the historical state not to work - same situation as if these blocks state was pruned.
+Hacemos nuestro mejor esfuerzo en Nethermind para no tener problemas de consenso con otros clientes. Pero históricamente habían ocurrido problemas de consenso. En ese caso, comenzamos a trabajar en una revisión de inmediato y la lanzamos en cuestión de horas. Si necesita que su nodo esté operativo lo antes posible y no puede esperar a la revisión, tiene una opción para lograrlo. El nodo Nethermind le permite sincronizar rápidamente los bloques y el estado recientes. Cuando el nodo realiza una sincronización rápida, puede omitir el procesamiento de bloques problemáticos. Para poder realizar una sincronización rápida, necesitamos que SyncConfig.FastSync esté configurado como "verdadero". También debe establecer SyncConfig.FastSyncCatchUpHeightDelta en un valor más bajo que la distancia a la que se encuentra su nodo detrás de la cadena. SyncConfig.FastSyncCatchUpHeightDelta es la diferencia mínima entre la altura de la cadena actual y el número de bloque de la cabeza de la cadena cuando el nodo puede cambiar de sincronización completa \ (procesamiento de bloques \) a sincronización rápida. De forma predeterminada, está configurado en 1024. Tenga en cuenta que no recomendamos establecer este valor en menos de 32 en circunstancias normales. Después de establecer esos valores y reiniciar el nodo, el nodo descargará encabezados de bloque, cuerpos \ (si SyncConfig.DownloadBodiesInFastSync es "verdadero" \), recibos \ (si SyncConfig.DownloadReceiptsInFastSync es "verdadero" \) y estado actual. Después de eso, se reanudará el procesamiento desde el nuevo bloque de cabeza. Tenga en cuenta que es posible que el estado histórico de los bloques omitidos no esté disponible. Esto puede hacer que algunas llamadas JSON RPC en el estado histórico no funcionen, la misma situación que si se poda el estado de estos bloques.
 
-For example if current chain head block number is 10,000,100 and node couldn’t process block 10,000,000 due to consensus issue, if you set FastSync:true and FastSyncCatchUpHeightDelta:100 \(or as low as 32\) and node should switch to fast sync, catch up with current chain head and switch back to full sync.
+Por ejemplo, si el número de bloque de cabeza de cadena actual es 10,000,100 y el nodo no pudo procesar el bloque 10,000,000 debido a un problema de consenso, si configura FastSync: true y FastSyncCatchUpHeightDelta: 100 \(o tan bajo como 32\) y el nodo debe cambiar a sincronización rápida, ponerse al día con la cabeza de la cadena actual y volver a la sincronización completa.
 
-The time that it will take to fast sync to current chain head can take even up to 2 hours depending how many blocks and how much new state there is to be downloaded.
+El tiempo que llevará la sincronización rápida con el cabezal de la cadena actual puede llevar incluso hasta 2 horas, dependiendo de cuántos bloques y cuánto estado nuevo haya que descargar.
 

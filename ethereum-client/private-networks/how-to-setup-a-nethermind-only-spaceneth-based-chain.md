@@ -1,10 +1,10 @@
-# How to setup a Nethermind only Spaceneth based chain
+# Cómo configurar una cadena basada solo en Spaceneth de Nethermind
 
-Spaceneth private network setup looks very similar to the above Clique setup. However, there are few major differences and will be described below.
+La configuración de la red privada de Spaceneth es muy similar a la configuración anterior de Clique. Sin embargo, existen pocas diferencias importantes y se describirán a continuación.
 
-## Prerequisites
+## Prerrequisitos
 
-* Linux bash shell
+* Shell de bash de Linux
 * Docker-compose
 * Docker
 * jq
@@ -14,37 +14,37 @@ Spaceneth private network setup looks very similar to the above Clique setup. Ho
 sudo apt-get install -y docker-compose docker.io jq
 ```
 
-## Setup
+## Configuración
 
-In this setup we will create a private network of 3 Nethermind nodes running a simple testing NethDev consensus algorithm.
+En esta configuración, crearemos una red privada de 3 nodos Nethermind que ejecutaran un algoritmo de consenso de prueba NethDev.
 
-* create separate directory where we will store all files
+* crea un directorio separado donde almacenaremos todos los archivos
 
 ```text
 mkdir private-networking
 cd private-networking
 ```
 
-* create folders for each node and genesis
+* crear carpetas para cada nodo y génesis
 
 ```text
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* download [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json) file with spaceneth engine and place it in `genesis` folder.
+* descarga [chainspec](https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json) archivo con el motor spaceneth y colocalo en la carpeta `genesis`.
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/src/Nethermind/Chains/spaceneth.json
 cp spaceneth.json genesis/spaceneth.json
 ```
 
-* create subfolders in each node folder
+* crear subcarpetas en cada carpeta de nodo
 
 ```bash
 mkdir node_1/configs node_1/staticNodes node_2/configs node_2/staticNodes node_3/configs node_3/staticNodes
 ```
 
-* create a `static-nodes.json` file and place it in `node_1/staticNodes` subfolders \(do this for node\_2 and node\_3 as well\)
+* cree un archivo `static-nodes.json` y colocalo en las subcarpetas `node_1 /staticNodes`  \(haga esto también para node\ _2 y node\ _3 \)
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -54,7 +54,7 @@ cat <<EOF > node_1/staticNodes/static-nodes.json
 EOF
 ```
 
-* create `config.cfg` file and place it in `node_1/configs` subfolders \(do this for node\_2 and node\_3 as well\)
+* crea el archivo `config.cfg` y colocalo en las subcarpetas `node_1 /configs` \(haga esto también para el nodo\ _2 y el nodo\ _3 \)
 
 ```bash
 cat <<EOF > node_1/configs/config.cfg
@@ -84,13 +84,13 @@ cat <<EOF > node_1/configs/config.cfg
 EOF
 ```
 
-For each node you will need to change following items in configuration:
+Para cada nodo, deberá cambiar los siguientes elementos en la configuración:
 
-* `LocalIp`, `ExternalIp` and `Host` should have the same value and be incremented for each node e.g. 10.5.0.3, 10.5.0.4 and so on and so forth.
+* `LocalIp`,` ExternalIp` y `Host` deben tener el mismo valor y deben incrementarse para cada nodo, Ejemplo. 10.5.0.3, 10.5.0.4 y así sucesivamente.
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/configs-spaceneth.png)
 
-* copy `docker-compose` file and place it in working directory
+* copie el archivo `docker-compose` y colóquelo en el directorio de trabajo
 
 ```yaml
 version: "3.5"
@@ -149,13 +149,13 @@ networks:
                 - subnet: 10.5.0.0/16
 ```
 
-* run each node separately so that we can copy `Enode` for each node, we will use them later
+* ejecute cada nodo por separado para que podamos copiar `Enode` para cada nodo, los usaremos más adelante
 
 ```bash
 docker-compose run node_1
 ```
 
-Stop the node when Nethermind initialization completes `Ctrl +C`. Copy `This node` values to a text file. Continue with node\_2 and node\_3.
+Detenga el nodo cuando la inicialización de Nethermind se complete `Ctrl + C`. Copie los valores de `Este nodo` en un archivo de texto. Continúe con el nodo\ _2 y el nodo\ _3.
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization-spaceneth.png)
 
@@ -169,7 +169,7 @@ node.switch("http://localhost:8547")
 node.enode
 ```
 
-* the file should look similar to this:
+* el archivo debería verse similar a esto:
 
 ```bash
 STATIC_NODE_1="enode://2281549869465d98e90cebc45e1d6834a01465a990add7bcf07a49287e7e66b50ca27f9c70a46190cef7ad746dd5d5b6b9dfee0c9954104c8e9bd0d42758ec58@10.5.0.2:30300"
@@ -177,8 +177,8 @@ STATIC_NODE_2="enode://37878ec16a5ed87c9c80b4648e5428f5c768eddd79483be118319c49d
 STATIC_NODE_3="enode://6067f06d84c207e6233dacf1f3ef961bd7231f71d5425cbaf843cf19cfd5f7e13b024d234e4e5f6175bdb37c0bbccd14488b481b2280efb66d0631a20ae13ea3@10.5.0.4:30300"
 ```
 
-* copy & paste above variables into your terminal
-* for each node modify previously created empty `static-nodes.json` files by appending `Enodes` to them
+* copia y pega las variables anteriores en su terminal
+* para cada nodo, modifique los archivos `static-nodes.json` vacíos previamente creados agregando` Enodes` a ellos
 
 ```bash
 cat <<EOF > node_1/staticNodes/static-nodes.json
@@ -192,29 +192,29 @@ EOF
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/staticNodes-spaceneth.png)
 
-* remove databases for each node
+* eliminar bases de datos para cada nodo
 
 ```bash
 sudo rm -rf node_1/db/spaceneth node_2/db/spaceneth node_3/db/spaceneth
 ```
 
-* run `docker-compose` file
+* ejecuta el archivo `docker-compose`
 
 ```text
 docker-compose up
 ```
 
-You should see the private network working. We now need to send transactions in order to start producing blocks.
+Debería ver la red privada funcionando. Ahora necesitamos enviar transacciones para comenzar a producir bloques.
 
-* run `Nethermind.Cli`
-* run `node.switch("http://localhost:8547")`
-* run `personal.listAccounts`
-* create new account `personal.newAccount("test")`
+* ejecuta `Nethermind.Cli`
+* ejecuta `node.switch("http://localhost:8547")`
+* ejecuta `personal.listAccounts`
+* crear una nueva cuenta `personal.newAccount ("test")`
 
 ![](https://nethermind.readthedocs.io/en/latest/_images/cli-spaceneth.png)
 
-* re-run `personal.listAccounts` and copy your account address
-* trigger blocks producing by sending transaction using `eth_sendTransaction`JSON RPC method or `Nethermind.Cli`. Change `from` property to your account address
+* Vuelve a ejecutar `personal.listAccounts` y copie la dirección de su cuenta
+* desencadenar bloques produciendo mediante el envío de transacciones utilizando el método `eth_sendTransaction`JSON RPC o` Nethermind.Cli`. Cambie la propiedad `from` a la dirección de su cuenta
 
 ```bash
 curl --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{

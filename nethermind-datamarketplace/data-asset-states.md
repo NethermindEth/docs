@@ -1,34 +1,34 @@
-# Data asset states
+# Estados de activos de datos
 
-## Valid state transitions
+## Transiciones de estado válidas
 
-* Unpublished to Published
-* Published to Under Maintenance
-* Under Maintenance to Published
+* Sin publicar a publicado 
+* Publicado bajo mantenimiento
+* En mantenimiento a publicado
 * Published to Closed
 
-#### End States:
+#### Estados finales:
 
-* Closed
+* Cerrado
 
-#### Visibility for Consumers:
+#### Visibilidad para los consumidores:
 
-* Unpublished - not visible
-* Published - visible
-* Under Maintenance - visible
-* Closed - visible only if user has made deposits in the past
+* No publicado - no visible
+* Publicado - visible
+* En mantenimiento - visible
+* Cerrado: visible solo si el usuario ha realizado depósitos en el pasado
 
-#### Ability to Make Deposit by Consumer
+#### Capacidad para realizar depósitos por parte del consumidor
 
-* Unpublished - not possible
-* Published - possible
-* Under Maintenance - possible
-* Closed - not possible
+* No publicado - no es posible
+* Publicado - posible
+* Bajo mantenimiento - posible
+* Cerrado - no es posible
 
-#### Ability to Start a Session by Consumer
+#### Capacidad de iniciar una sesión por consumidor
 
-* Unpublished - not possible
-* Published - possible
-* Under Maintenance - not possible
-* Closed - not possible
+* No publicado - no es posible
+* Publicado - posible
+* En mantenimiento - no es posible
+* Cerrado - no es posible
 

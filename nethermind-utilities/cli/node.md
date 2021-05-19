@@ -2,15 +2,15 @@
 
 ## node.address
 
-| Invocation |
+| Invocación |
 | :--- |
 | `node.address` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -24,15 +24,15 @@ node.address
 
 ## node.enode
 
-| Invocation |
+| Invocación |
 | :--- |
 | `node.enode` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -46,15 +46,15 @@ node.enode
 
 ## node.setNodeKey
 
-| Invocation |
+| Invocación |
 | :--- |
 | `node.setNodeKey(key)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | key | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -68,15 +68,15 @@ node.setNodeKey(key)
 
 ## node.switch
 
-| Invocation |
+| Invocación |
 | :--- |
 | `node.switch(uri)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | uri | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -90,15 +90,15 @@ node.switch(uri)
 
 ## node.switchLocal
 
-| Invocation |
+| Invocación |
 | :--- |
 | `node.switchLocal(uri)` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | uri | `String` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -112,15 +112,15 @@ node.switchLocal(uri)
 
 ## node.uri
 
-| Invocation |
+| Invocación |
 | :--- |
 | `node.uri` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `JavaScript Object` |  |
 

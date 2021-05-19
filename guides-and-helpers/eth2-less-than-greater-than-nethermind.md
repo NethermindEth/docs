@@ -1,10 +1,10 @@
 ---
-description: How to run Nethermind as your ETH1 endpoint for ETH2 clients
+description: Cómo ejecutar Nethermind como su endpoint ETH1 para clientes ETH2
 ---
 
 # ETH2 &lt;-&gt; Nethermind
 
-## Nethermind client as ETH1 endpoint
+## Cliente Nethermind como  endpoint ETH1
 
 {% hint style="warning" %}
 You should always consider being able to switch to Infura or another provider as a backup for safety \(or run two nodes yourself\)👈 
@@ -14,16 +14,16 @@ You should always consider being able to switch to Infura or another provider as
 For a more comprehensive step-by-step guide, you should look into one of these awesome guides -&gt; [https://someresat.medium.com/](https://someresat.medium.com/). Below you will find instructions on how to run Nethermind node -&gt; **Step 6 — Set up an Ethereum \(Eth1\) Node**
 {% endhint %}
 
-### Get & Run Nethermind
+### Obtener y ejecutar Nethermind
 
-* [x] Download the Nethermind client
+* [x] Descargar el cliente Nethermind
 
-You can get it either from Github Releases or our Downloads page:
+Puede obtenerlo desde Github Releases o desde nuestra página de Descargas:
 
 {% page-ref page="../ethereum-client/download-sources/" %}
 
-* [x] unzip the package
-* [x] run the Nethermind node \(use `Nethermind.Launcher` or change `configs/mainnet.cfg` and run `Nethermind.Runner --config mainnet`\)
+* [x] descomprimir el paquete
+* [x] ejecute el nodo Nethermind \ (use `Nethermind.Launcher` o cambie `configs/mainnet.cfg` y ejecuta `Nethermind.Runner --config mainnet`\)
 
 {% hint style="info" %}
 use the Linux **screen** utility to keep your node working in the background
@@ -42,11 +42,11 @@ Enable **JSON RPC** service so that your ETH2 Beacon node will be able to commun
 
 {% page-ref page="../first-steps-with-nethermind/firewall-configuration.md" %}
 
-Configure EthStats for your node if needed:
+Configure EthStats para su nodo si es necesario:
 
 ![](../.gitbook/assets/image%20%283%29.png)
 
-You should see the node starting:
+Debería ver el nodo comenzando:
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
@@ -54,13 +54,13 @@ You should see the node starting:
 **Tip:** Ctrl + A + D to leave the **screen**
 {% endhint %}
 
-### Running Nethermind as a systemd service
+### Ejecutando Nethermind como un servicio systemd
 
 {% page-ref page="../first-steps-with-nethermind/manage-nethermind-with-systemd.md" %}
 
-### Monitoring Nethermind Node Health
+### Monitoreo del estado del nodo Nethermind
 
-Follow this guide to setup Prometheus/Grafana based local setup and monitor your node's most important stats there
+Siga esta guía para configurar la configuración local basada en Prometheus/Grafana y monitorear las estadísticas más importantes de su nodo allí.
 
 {% page-ref page="../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md" %}
 
@@ -70,19 +70,19 @@ Follow this guide to setup Prometheus/Grafana based local setup and monitor your
 The Block Number will be **0** for the **unsynced** node
 {% endhint %}
 
-To check if your node is synced you may execute `eth_syncing` call check its result
+Para verificar si su nodo está sincronizado, puede ejecutar la llamada `eth_syncing` verificar su resultado
 
 ```text
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' localhost:8545
 ```
 
-If the result shows `false` it means that your node is **synced** 
+Si el resultado muestra `false`  significa que su nodo está **synced**
 
 ```text
 {"jsonrpc":"2.0","result":false,"id":1}
 ```
 
-Check the following guide to get even better node health monitoring:
+Consulte la siguiente guía para obtener un monitoreo aún mejor del estado de los nodos:
 
 {% page-ref page="../ethereum-client/monitoring-node-health.md" %}
 

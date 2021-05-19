@@ -1,13 +1,13 @@
 # Blockchain module
 
-| Metric | Description |
+| Métricas | Descripción |
 | :--- | :--- |
-| nethermind\_blocks | Total number of blocks processed |
+| nethermind\_blocks | Número total de bloques procesados |
 | nethermind\_blocks\_sealed | Total number of sealed blocks |
 | nethermind\_failed\_block\_seals | Total number of failed block seals |
-| nethermind\_mgas | Total MGas processed |
-| nethermind\_processing\_queue\_size | Number of blocks awaiting for processing. |
-| nethermind\_recovery\_queue\_size | Number of blocks awaiting for recovery of public keys from signatures. |
-| nethermind\_reorganizations | Total number of chain reorganizations |
-| nethermind\_transactions | Total number of transactions processed |
+| nethermind\_mgas | MGas totales procesados |
+| nethermind\_processing\_queue\_size | Número de bloques en espera de procesamiento. |
+| nethermind\_recovery\_queue\_size | Número de bloques en espera de recuperación de llaves públicas a partir de firmas. |
+| nethermind\_reorganizations | Número total de cadenas reorganizaciones |
+| nethermind\_transactions | Número total de transacciones procesadas |
 

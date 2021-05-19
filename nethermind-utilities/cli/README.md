@@ -1,38 +1,38 @@
 ---
-description: Guide for Nethermind.Cli project which is useful for managing your node
+description: Guía para el proyecto Nethermind.Cli que es útil para administrar su nodo
 ---
 
 # CLI
 
-After launching `./Nethermind.Launcher` you have two options - `Ethereum Node` and `CLI`.
+Después de iniciar Nethermind a través de `. /Nethermind.Launcher` tienes dos opciones: `Ethereum Node` y` CLI`.
 
-If you launch the Node in one process and then launch the CLI in another process you will see available commands inside the CLI.
+Si inicia el nodo en un proceso y luego inicia la CLI en otro proceso, verá los comandos disponibles dentro de la CLI.
 
 {% hint style="warning" %}
 You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enabling it when Launcher asks about it or by manually editing the relevant config file or by passing `--JsonRpc.Enabled true` parameter after the Launcher command
 {% endhint %}
 
-CLI will display available options \(functions and properties\) when started.
+CLI mostrará las opciones disponibles \(funciones y propiedades\) cuando se inicie.
 
-![Nethermind.Cli view](../../.gitbook/assets/image%20%286%29.png)
+![Nethermind.Cli vista](../../.gitbook/assets/image%20%286%29.png)
 
-CLI will allow you to query the most basic info about the node quickly.
+CLI le permitirá consultar la información más básica sobre el nodo rápidamente.
 
-1. You can execute javascript arithmetics
-2. You can issue JSON RPC requests to the node
-3. You can combine the former two
-4. You can create and call functions
-5. You can retrieve node objects
-6. And work with node object properties
-7. You can also load javascript files from disk by calling `load("filepath.js")`
-8. You can navigate to previous commands by using arrow keys
-9. You can auto-complete basic command with tab
+1. Puedes ejecutar aritmética javascript
+2. Puedes emitir solicitudes JSON RPC al nodo
+3. Puedes combinar los dos anteriores
+4. Puedes crear y llamar funciones
+5. Puede recuperar objetos de nodo
+6. Y trabajar con propiedades de objetos de nodo
+7. También puede cargar archivos javascript desde el disco llamando a `load (" filepath.js ")`
+8. Puedes navegar a los comandos anteriores usando las teclas de flecha
+9. Puede autocompletar el comando básico con la pestaña
 
 ![Nethermind.Cli operations](https://github.com/NethermindEth/docs/tree/b8c795545ab876ff12dec434d0cd00585f2ba346/.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png)
 
-For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js libs or Truffle, Metamask, etc.
+Para operaciones más avanzadas con el nodo, use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) o ether.js libs o Truffle, Metamask, etc.
 
-Below you will find the available list of CLI operations and you can find more information about each call in JSON RPC section.
+A continuación, encontrará la lista disponible de operaciones CLI y puede encontrar más información sobre cada llamada en la sección JSON RPC.
 
 {% page-ref page="../../ethereum-client/json-rpc/" %}
 

@@ -1,27 +1,27 @@
 # Plugins
 
-Nethermind plugins is a powerful way of extending your local node capabilities.
+Los plugins de Nethermind son una forma poderosa de ampliar las capacidades de su nodo local.
 
-\(see also an article here: [https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59](https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59)\)
+\(ver también un artículo aquí: [https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59](https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59)\)
 
-Plugins that you can write:
+Plugins que puedes escribir:
 
-| Plugin Type | What can it be used for? |
+| Tipo de Plugin | ¿Para qué se puede usar? |
 | :--- | :--- |
-| RPC | Adding additional RPC modules to the client that have full access to the internal Nethermind APIs and can extend capabilities of the node when integrating with your infrastructure / systems. |
-| Block Tree Visitors | Code allowing you to analyze entire block tree from genesis to the head block and execute aggregated calculations and checks. |
-| Devp2p | Allows you to create additional devp2p network protocol for your nodes to communicate over TCP/IP. You can also build custom products that will run attached to Nethermind nodes. |
-| State Visitors | Allow you to run aggregated analysis on the entire raw format state \(or just some accounts storages\). |
-| Config | You can add additional configuration categories to our config files and then use them in env variables, json files or command line to configure behaviour of your plugins. |
-| TxPool | TxPool behaviours and listeners. |
-| Tracers | Custom, powerful EVM tracers capable of extracting elements of EVM execution in real time. |
-| CLI | Additional modules for Nethermind CLI that can allow you build some quick scratchpad style JavaScript based behaviors. |
+| RPC | Agregar módulos RPC adicionales al cliente que tienen acceso completo a las API internas de Nethermind y pueden extender las capacidades del nodo al integrarse con su infraestructura / sistemas. |
+| Block Tree Visitors | Código que le permite analizar todo el árbol de bloques desde la génesis hasta el bloque principal y ejecutar cálculos y comprobaciones agregados. |
+| Devp2p | Le permite crear un protocolo de red devp2p adicional para que sus nodos se comuniquen a través de TCP/IP. También puede crear productos personalizados que se ejecutarán adjuntos a los nodos de Nethermind. |
+| State Visitors | Permite ejecutar análisis agregados en todo el estado del formato sin procesar \(o solo en algunos cuentas almacenadas\). |
+| Config | Puedes agregar categorías de configuración adicionales a nuestros archivos de configuración y luego usarlos en variables env, archivos json o línea de comando para configurar el comportamiento de sus complementos. |
+| TxPool | Comportamientos y oyentes de TxPool. |
+| Tracers | Trazadores de EVM potentes y personalizados capaces de extraer elementos de la ejecución de EVM en tiempo real. |
+| CLI | Módulos adicionales para la CLI de Nethermind que pueden permitirle crear algunos comportamientos rápidos basados en JavaScript de estilo scratchpad. |
 
-How to build a plugin? We included an example inside the Nethermind.Analytics plugin:
+¿Cómo construir un plugin? Incluimos un ejemplo dentro del complemento Nethermind.Analytics:
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
-#### RPC Plugin example:
+#### RPC Plugin ejemplo:
 
 ```csharp
     [RpcModule(ModuleType.Clique)]
@@ -29,13 +29,13 @@ How to build a plugin? We included an example inside the Nethermind.Analytics pl
     {
         [JsonRpcMethod(Description = "Retrieves ETH supply counted from state.", IsImplemented = true)]
         ResultWrapper<UInt256> analytics_verifySupply();
-        
+
         [JsonRpcMethod(Description = "Retrieves ETH supply counted from rewards.", IsImplemented = true)]
         ResultWrapper<UInt256> analytics_verifyRewards();
     }
 ```
 
-#### CLI Plugin example:
+#### CLI Plugin ejemplo:
 
 ```csharp
 [CliModule("analytics")]
@@ -58,7 +58,7 @@ public class AnalyticsCliModule : CliModuleBase
 }
 ```
 
-#### Block Tree Visitor Plugin example:
+#### Block Tree Visitor Plugin ejemplo:
 
 ```csharp
     public class RewardsVerifier : IBlockTreeVisitor
@@ -70,7 +70,7 @@ public class AnalyticsCliModule : CliModuleBase
 
         private UInt256 _genesisAllocations = UInt256.Parse("72009990499480000000000000");
         private UInt256 _uncles;
-        
+
         public UInt256 BlockRewards { get; private set; }
 
         public RewardsVerifier(ILogManager logManager, long endLevelExclusive)
@@ -109,13 +109,13 @@ public class AnalyticsCliModule : CliModuleBase
 
         public Task<HeaderVisitOutcome> VisitHeader(BlockHeader header, CancellationToken cancellationToken)
             => Task.FromResult(HeaderVisitOutcome.None);
-        
+
         public Task<LevelVisitOutcome> VisitLevelEnd(CancellationToken cancellationToken)
             => Task.FromResult(LevelVisitOutcome.None);
     }
 ```
 
-#### Config plugin example:
+#### Config plugin ejemplo:
 
 ```csharp
 public class AnalyticsConfig : IAnalyticsConfig
@@ -127,7 +127,7 @@ public class AnalyticsConfig : IAnalyticsConfig
 }
 ```
 
-#### State Tree Visitor example:
+#### State Tree Visitor ejemplo:
 
 ```csharp
 public class SupplyVerifier : ITreeVisitor

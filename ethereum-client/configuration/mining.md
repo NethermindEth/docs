@@ -1,6 +1,6 @@
 # Mining module
 
-| Property | Description | Default |
+| Propiedad | Descripción | Predeterminado |
 | :--- | :--- | :--- |
 | Enabled | Defines whether the blocks should be produced. | false |
 | MinGasPrice | Minimum gas price for transactions accepted by the block producer. | 1000000000 |

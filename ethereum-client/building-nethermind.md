@@ -1,17 +1,17 @@
-# Building Nethermind
+# Compilando Nethermind
 
-### IDE \(optional\)
+### IDE \(opcional \)
 
 * [JetBrains Rider](https://www.jetbrains.com/rider/)
 * [VS Code](https://code.visualstudio.com/docs/other/dotnet)
 
 ### SDKs
 
-To build Nethermind **1.9.\*** releases you will need **.NET SDK 3.1**. You can download it here \(make sure you select correct platform and distribution\):
+Para compilar Nethermind  **1.9.\*** necesitarás ** .NET SDK 3.1 **. Puedes descargarlo aquí \(asegúrate de seleccionar la plataforma y distribución correctas\):
 
 {% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
 
-For Nethermind **1.10.\*** releases you are going to need **.NET SDK 5.0** that can be downloaded from the url above.
+Para compilar Nethermind **1.10.\*** necesitarás **.NET SDK 5.0** . Puedes descargarlo desde la URL anterior.
 
 ### Linux
 
@@ -57,9 +57,9 @@ brew install gmp snappy lz4 zstd
 
 ### Windows
 
-You may need to install [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+Es posible que debas instalar [https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
 
-### All Platforms
+### Todas las Plataformas
 
 {% hint style="warning" %}
 If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
@@ -69,7 +69,7 @@ If dotnet command is not found then probably you forgot to install SDK \(see ins
 On Linux distributions we suggest that at this stage you start `screen` so you can go back to session with `screen -rd` command later on
 {% endhint %}
 
-Clone the Nethermind repository and its submodules, then build Nethermind in `Release` or `Debug` mode.
+Clona el repositorio de Nethermind y sus submódulos, luego compile Nethermind en el modo `Release` o `Debug`.
 
 ```bash
 git clone https://github.com/NethermindEth/nethermind.git --recursive
@@ -77,25 +77,25 @@ cd nethermind/src/Nethermind
 dotnet build Nethermind.sln -c Release
 ```
 
-Launch goerli testnet for quick sync and testing
+Inicie goerli testnet para sincronizaciones rápidas y pruebas
 
 ```bash
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config goerli
 ```
 
-You can confirm the latest block of the Goerli tetsnet here:
+Puedes confirmar el último bloque de la tetsnet Goerli aquí:
 
 {% embed url="https://blockscout.com/eth/goerli/" %}
 
-or to run Ethereum Mainnet:
+o para ejecutar Ethereum Mainnet
 
 ```text
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config mainnet
 ```
 
-### Potential Issues
+### Problemas Potenciales
 
-If you have some previous pre-release versions of .NET Core installed they may cause conflicts. Your case might be quite unique so best to search for help online.
+Si tiene instaladas algunas versiones preliminares de .NET Core instaladas, pueden causar conflictos. Su caso puede ser único, por lo que es mejor buscar ayuda en línea.
 

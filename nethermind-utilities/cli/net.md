@@ -2,15 +2,15 @@
 
 ## net.localEnode
 
-| Invocation |
+| Invocación |
 | :--- |
 | `net.localEnode` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -26,15 +26,15 @@ net.localEnode
 
 ## net.peerCount
 
-| Invocation |
+| Invocación |
 | :--- |
 | `net.peerCount` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -50,15 +50,15 @@ net.peerCount
 
 ## net.version
 
-| Invocation |
+| Invocación |
 | :--- |
 | `net.version` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 

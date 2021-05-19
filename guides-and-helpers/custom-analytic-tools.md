@@ -1,14 +1,14 @@
-# Custom Analytic Tools
+# Herramientas analíticas personalizadas
 
-Check plugins for some easy addition of analytical tools
+Verifique los plugins para una fácil adición de herramientas analíticas
 
 {% page-ref page="../ethereum-client/plugins.md" %}
 
-You can also read more about some useful interfaces below:
+También puedes leer más sobre algunas interfaces útiles a continuación:
 
-There are multiple extension points where you can add custom analytics to your Nethermind node if you know some C\#. Below you will find an example of using two very useful interfaces - `IBlockVisitor` and `ITreeVisitor`.
+Hay varios puntos de extensión donde puede agregar análisis personalizados a su nodo Nethermind si tienes conocimiento sobre C\#.  A continuación encontrarás un ejemplo del uso de dos interfaces muy útiles: `IBlockVisitor` e` ITreeVisitor`.
 
-Just to execute the code I have added one new initialization step that invokes two custom verifiers that I have used for calculating total supply in two different ways - by calculating mining rewards and by summing up all account balances:
+Solo para ejecutar el código, agregué un nuevo paso de inicialización que invoca dos verificadores personalizados que he usado para calcular el suministro total de dos maneras diferentes - calculando las recompensas mineras y sumando todos los saldos de las cuentas:
 
 ```text
     [RunnerStepDependencies(typeof(ReviewBlockTree))]
@@ -53,7 +53,7 @@ Just to execute the code I have added one new initialization step that invokes t
     }
 ```
 
-Below you will see an example of using ITreeVisitor that allows to check all the blocks, including some of the discarded branches if you wish so:
+A continuación verá un ejemplo de uso de ITreeVisitor que permite verificar todos los bloques, incluidas algunas de las ramas descartadas si así lo desea:
 
 ```text
     public class RewardsVerifier : IBlockTreeVisitor
@@ -107,7 +107,7 @@ Below you will see an example of using ITreeVisitor that allows to check all the
     }
 ```
 
-And here you will find an example of a tree visitor that sums up all the account balances:
+Y aquí encontrará un ejemplo de un visitante de árbol que resume todos los saldos de la cuenta:
 
 ```text
     public class SupplyVerifier : ITreeVisitor

@@ -4,14 +4,14 @@
 
 Triggers block production. 
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"evm_mine","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 

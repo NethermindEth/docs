@@ -2,17 +2,17 @@
 
 ## eth\_blockNumber
 
-Returns current block number
+Retorna el número de bloque actual
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_blockNumber","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -24,22 +24,22 @@ curl --data '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}' -H
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.blockNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-blocknumber)
+[ingrese a  CLI eth.blockNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-blocknumber)
 
 ## eth\_call
 
-Executes a tx call \(does not create a transaction\)
+Ejecuta una llamada tx \(no crea una transacción\)
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_call","params":[transactionCall, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -53,7 +53,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 {% tab title="Objects in eth\_call" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -67,7 +67,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -79,7 +79,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -91,34 +91,34 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.call](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-call)
+[ingrese a  CLI eth.call](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-call)
 
 ## eth\_chainId
 
-Returns ChainID
+Retorna ChainID
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_chainId","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `UInt64 object` |  |
 
@@ -132,32 +132,32 @@ curl --data '{"method":"eth_chainId","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 {% tab title="Objects in eth\_chainId" %}
 `UInt64`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.chainId](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-chainid)
+[ingrese a  CLI eth.chainId](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-chainid)
 
 ## eth\_createAccessList
 
-Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList for the given transaction
+Crea un [EIP2930] (https://eips.ethereum.org/EIPS/eip-2930) tipo AccessList para la transacción 
 
 {% hint style="info" %}
 **Hint:** If your transaction has code executed, then you can generate transaction access list with eth\_createAccessList. If you send it with your transaction then it will lower your gas cost on Ethereum
 {% endhint %}
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_createAccessList","params":[transactionCall, blockParameter, optimize]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
-| transactionCall | `TransactionForRpc object` | Transaction's details |
-| blockParameter | `BlockParameter object` | \(optional\) |
-| optimize | `Boolean` | \(optional\) |
+| transactionCall | `TransactionForRpc object` | Detalles de la transacción |
+| blockParameter | `BlockParameter object` | \(opcional\) |
+| optimizar | `Boolean` | \(opcional\) |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `AccessListForRpc object` |  |
 
@@ -171,7 +171,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 {% tab title="Objects in eth\_createAccessList" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -185,7 +185,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -197,7 +197,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -209,42 +209,42 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `AccessListForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | AccessList | `AccessListItemForRpc[] object` |
 | GasUsed | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.createAccessList](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-createaccesslist)
+[ingrese a CLI eth.createAccessList](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-createaccesslist)
 
 ## eth\_estimateGas
 
-Executes a tx call and returns gas used \(does not create a transaction\)
+Ejecuta una llamada tx y retorna el gas usado \(no crea una transacción\)
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_estimateGas","params":[transactionCall, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionCall | `TransactionForRpc object` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -258,7 +258,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 {% tab title="Objects in eth\_estimateGas" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -272,7 +272,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -284,7 +284,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -296,35 +296,35 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.estimateGas](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-estimategas)
+[ingrese a CLI eth.estimateGas](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-estimategas)
 
 ## eth\_getBalance
 
-Returns account balance
+Retorno el saldo de la cuenta
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getBalance","params":[address, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -338,35 +338,35 @@ curl --data '{"method":"eth_getBalance","params":[address, blockParameter],"id":
 {% tab title="Objects in eth\_getBalance" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getBalance](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getbalance)
+[ingrese a CLI eth.getBalance](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getbalance)
 
 ## eth\_getBlockByHash
 
-Retrieves a block by hash
+Recupera un bloque por hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getBlockByHash","params":[blockHash, returnFullTransactionObjects]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | returnFullTransactionObjects | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -380,7 +380,7 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 {% tab title="Objects in eth\_getBlockByHash" %}
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -408,22 +408,22 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblockbyhash)
+[ingrese a CLI eth.getBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblockbyhash)
 
 ## eth\_getBlockByNumber
 
-Retrieves a block by number
+Recupera un bloque por número
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getBlockByNumber","params":[blockParameter, returnFullTransactionObjects]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | returnFullTransactionObjects | `Boolean` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -437,20 +437,20 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 {% tab title="Objects in eth\_getBlockByNumber" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -478,21 +478,21 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblockbynumber)
+[ingrese a CLI eth.getBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblockbynumber)
 
 ## eth\_getBlockTransactionCountByHash
 
-Returns number of transactions in the block block hash
+Retorna el número de transacciones en el bloque hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getBlockTransactionCountByHash","params":[blockHash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -504,21 +504,21 @@ curl --data '{"method":"eth_getBlockTransactionCountByHash","params":[blockHash]
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getBlockTransactionCountByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblocktransactioncountbyhash)
+[ingrese a CLI eth.getBlockTransactionCountByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblocktransactioncountbyhash)
 
 ## eth\_getBlockTransactionCountByNumber
 
-Returns number of transactions in the block by block number
+Retorna el número de transacciones en el bloque por número de bloque
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getBlockTransactionCountByNumber","params":[blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -532,35 +532,35 @@ curl --data '{"method":"eth_getBlockTransactionCountByNumber","params":[blockPar
 {% tab title="Objects in eth\_getBlockTransactionCountByNumber" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getBlockTransactionCountByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblocktransactioncountbynumber)
+[ingrese a CLI eth.getBlockTransactionCountByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getblocktransactioncountbynumber)
 
 ## eth\_getCode
 
-Returns account code at given address and block
+Retorna el código de cuenta en la dirección y el bloque dados
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getCode","params":[address, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -574,34 +574,34 @@ curl --data '{"method":"eth_getCode","params":[address, blockParameter],"id":1,"
 {% tab title="Objects in eth\_getCode" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getCode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getcode)
+[ingrese a CLI eth.getCode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getcode)
 
 ## eth\_getFilterChanges
 
-Reads filter changes
+Lee cambios de filtro
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getFilterChanges","params":[filterId]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filterId | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Array` |  |
 
@@ -613,21 +613,21 @@ curl --data '{"method":"eth_getFilterChanges","params":[filterId],"id":1,"jsonrp
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getFilterChanges](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getfilterchanges)
+[ingrese a CLI eth.getFilterChanges](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getfilterchanges)
 
 ## eth\_getFilterLogs
 
-Reads filter changes
+Lee cambios de filtro
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getFilterLogs","params":[filterId]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filterId | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Array` |  |
 
@@ -641,17 +641,17 @@ curl --data '{"method":"eth_getFilterLogs","params":[filterId],"id":1,"jsonrpc":
 
 ## eth\_getLogs
 
-Reads logs
+Lee registros
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getLogs","params":[filter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filter | `Filter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Array` |  |
 
@@ -665,7 +665,7 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 {% tab title="Objects in eth\_getLogs" %}
 `Filter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -674,32 +674,32 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getLogs](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getlogs)
+[ingrese a CLI eth.getLogs](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getlogs)
 
 ## eth\_getProof
 
 [https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getProof","params":[accountAddress, hashRate, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | accountAddress | `Address` |  |
 | hashRate | `Data` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `AccountProof object` |  |
 
@@ -713,20 +713,20 @@ curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockP
 {% tab title="Objects in eth\_getProof" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `AccountProof`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Address | `Address` |
 | Proof | `Data` |
@@ -738,7 +738,7 @@ curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockP
 
 `StorageProof[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -750,23 +750,23 @@ curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockP
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getProof](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getproof)
+[ingrese a CLI eth.getProof](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getproof)
 
 ## eth\_getStorageAt
 
-Returns storage data at address. storage\_index
+Retorna los datos de almacenamiento en la dirección. storage_index
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getStorageAt","params":[address, positionIndex, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | positionIndex | `Quantity` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Data` |  |
 
@@ -780,35 +780,35 @@ curl --data '{"method":"eth_getStorageAt","params":[address, positionIndex, bloc
 {% tab title="Objects in eth\_getStorageAt" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getStorageAt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getstorageat)
+[ingrese a CLI eth.getStorageAt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getstorageat)
 
 ## eth\_getTransactionByBlockHashAndIndex
 
-Retrieves a transaction by block hash and index
+Retorna una transacción por bloque hash e índice
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHash, positionIndex]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -822,7 +822,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 {% tab title="Objects in eth\_getTransactionByBlockHashAndIndex" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -836,7 +836,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -848,7 +848,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -862,18 +862,18 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 
 ## eth\_getTransactionByBlockNumberAndIndex
 
-Retrieves a transaction by block number and index
+Retorna una transacción por número de bloque e índice
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getTransactionByBlockNumberAndIndex","params":[blockParameter, positionIndex]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -887,20 +887,20 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 {% tab title="Objects in eth\_getTransactionByBlockNumberAndIndex" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -914,7 +914,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -926,7 +926,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -938,21 +938,21 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getTransactionByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionbyblocknumberandindex)
+[ingrese a CLI eth.getTransactionByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionbyblocknumberandindex)
 
 ## eth\_getTransactionByHash
 
-Retrieves a transaction by hash
+Recupera una transacción por hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getTransactionByHash","params":[transactionHash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transactionHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -966,7 +966,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 {% tab title="Objects in eth\_getTransactionByHash" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -980,7 +980,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -992,7 +992,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1004,22 +1004,22 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionbyhash)
+[ingrese a CLI eth.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionbyhash)
 
 ## eth\_getTransactionCount
 
-Returns account nonce \(number of trnsactions from the account since genesis\) at the given block number
+Retorna la cuenta nonce \(número de transacciones de la cuenta desde el génesis\) en el número de bloque dado
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getTransactionCount","params":[address, blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | address | `Address` |  |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1033,34 +1033,34 @@ curl --data '{"method":"eth_getTransactionCount","params":[address, blockParamet
 {% tab title="Objects in eth\_getTransactionCount" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getTransactionCount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactioncount)
+[ingrese a CLI eth.getTransactionCount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactioncount)
 
 ## eth\_getTransactionReceipt
 
-Retrieves a transaction receipt by tx hash
+Retorna un recibo de transacción por tx hash
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getTransactionReceipt","params":[txHashData]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHashData | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ReceiptForRpc object` |  |
 
@@ -1074,7 +1074,7 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[txHashData],"id":1,
 {% tab title="Objects in eth\_getTransactionReceipt" %}
 `ReceiptForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TransactionHash | `Hash` |
 | TransactionIndex | `Quantity` |
@@ -1090,11 +1090,11 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[txHashData],"id":1,
 | Root | `Hash` |
 | Status | `Quantity` |
 | Error | `String` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 
 `LogEntryForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1110,22 +1110,22 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[txHashData],"id":1,
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionreceipt)
+[ingrese a CLI eth.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-gettransactionreceipt)
 
 ## eth\_getUncleByBlockHashAndIndex
 
-Retrieves an uncle block header by block hash and uncle index
+Recupera un encabezado de bloque de tío por hash de bloque e índice de tío
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData, positionIndex]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHashData | `Hash` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -1139,7 +1139,7 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 {% tab title="Objects in eth\_getUncleByBlockHashAndIndex" %}
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -1167,22 +1167,22 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getUncleByBlockHashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclebyblockhashandindex)
+[ingrese a CLI eth.getUncleByBlockHashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclebyblockhashandindex)
 
 ## eth\_getUncleByBlockNumberAndIndex
 
-Retrieves an uncle block header by block number and uncle index
+Recupera el header de bloque de tío por número de bloque e índice de tío
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParameter, positionIndex]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 | positionIndex | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `BlockForRpc object` |  |
 
@@ -1196,20 +1196,20 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 {% tab title="Objects in eth\_getUncleByBlockNumberAndIndex" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `BlockForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Author | `Address` |
 | Difficulty | `Quantity` |
@@ -1237,21 +1237,21 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getUncleByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclebyblocknumberandindex)
+[ingrese a CLI eth.getUncleByBlockNumberAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclebyblocknumberandindex)
 
 ## eth\_getUncleCountByBlockHash
 
-Returns number of uncles in the block by block hash
+Retorna el número de tíos en el bloque por hash de bloque
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getUncleCountByBlockHash","params":[blockHash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1265,17 +1265,17 @@ curl --data '{"method":"eth_getUncleCountByBlockHash","params":[blockHash],"id":
 
 ## eth\_getUncleCountByBlockNumber
 
-Returns number of uncles in the block by block number
+Retorna el número de tíos en el bloque por número de bloque
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1289,34 +1289,34 @@ curl --data '{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter
 {% tab title="Objects in eth\_getUncleCountByBlockNumber" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.getUncleCountByBlockNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclecountbyblocknumber)
+[ingrese a CLI eth.getUncleCountByBlockNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getunclecountbyblocknumber)
 
 ## eth\_newBlockFilter
 
-Creates an update filter
+Crea un filtro de actualización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_newBlockFilter","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1330,17 +1330,17 @@ curl --data '{"method":"eth_newBlockFilter","params":[],"id":1,"jsonrpc":"2.0"}'
 
 ## eth\_newFilter
 
-Creates an update filter
+Crea un filtro de actualización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_newFilter","params":[filter]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filter | `Filter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1354,7 +1354,7 @@ curl --data '{"method":"eth_newFilter","params":[filter],"id":1,"jsonrpc":"2.0"}
 {% tab title="Objects in eth\_newFilter" %}
 `Filter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
@@ -1363,9 +1363,9 @@ curl --data '{"method":"eth_newFilter","params":[filter],"id":1,"jsonrpc":"2.0"}
 
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
@@ -1374,17 +1374,17 @@ curl --data '{"method":"eth_newFilter","params":[filter],"id":1,"jsonrpc":"2.0"}
 
 ## eth\_newPendingTransactionFilter
 
-Creates an update filter
+Crea un filtro de actualización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_newPendingTransactionFilter","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Quantity` |  |
 
@@ -1396,21 +1396,21 @@ curl --data '{"method":"eth_newPendingTransactionFilter","params":[],"id":1,"jso
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.newPendingTransactionFilter](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-newpendingtransactionfilter)
+[ingrese a CLI eth.newPendingTransactionFilter](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-newpendingtransactionfilter)
 
 ## eth\_pendingTransactions
 
-Returns the pending transactions list
+Retorna la lista de transacciones pendientes
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_pendingTransactions","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `TransactionForRpc object` |  |
 
@@ -1424,7 +1424,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 {% tab title="Objects in eth\_pendingTransactions" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -1438,7 +1438,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1450,7 +1450,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1462,21 +1462,21 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-pendingtransactions)
+[ingrese a CLI eth.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-pendingtransactions)
 
 ## eth\_protocolVersion
 
-Returns ETH protocol version
+Retorna la versión del protocolo ETH
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_protocolVersion","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `String` |  |
 
@@ -1488,21 +1488,21 @@ curl --data '{"method":"eth_protocolVersion","params":[],"id":1,"jsonrpc":"2.0"}
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.protocolVersion](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-protocolversion)
+[ingrese a CLI eth.protocolVersion](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-protocolversion)
 
 ## eth\_sendRawTransaction
 
-Send a raw transaction to the tx pool and broadcasting
+Envíe una transacción sin procesar al tx pool y al broadcasting
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_sendRawTransaction","params":[transaction]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | transaction | `Data` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Hash` |  |
 
@@ -1514,21 +1514,21 @@ curl --data '{"method":"eth_sendRawTransaction","params":[transaction],"id":1,"j
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.sendRawTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-sendrawtransaction)
+[ingrese a CLI eth.sendRawTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-sendrawtransaction)
 
 ## eth\_sendTransaction
 
-Send a transaction to the tx pool and broadcasting
+Envíe una transacción al tx pool y al broadcasting
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_sendTransaction","params":[rpcTx]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | rpcTx | `TransactionForRpc object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Hash` |  |
 
@@ -1542,7 +1542,7 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 {% tab title="Objects in eth\_sendTransaction" %}
 `TransactionForRpc`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
@@ -1556,7 +1556,7 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
-| Type | `TxType object` |
+| Tipo | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1568,7 +1568,7 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 
 `AccessListItemForRpc[]`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Length | `Quantity` |
 | LongLength | `Quantity` |
@@ -1580,21 +1580,21 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.sendTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-sendtransaction)
+[ingrese a CLI eth.sendTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-sendtransaction)
 
 ## eth\_syncing
 
-Returns syncing status
+Retorna el estado de sincronización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_syncing","params":[]}` |
 
-| This method doesn't have parameters. |
+| este método no tiene parametros  |
 | :--- |
 
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `SyncingResult object` |  |
 
@@ -1608,7 +1608,7 @@ curl --data '{"method":"eth_syncing","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 {% tab title="Objects in eth\_syncing" %}
 `SyncingResult`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | IsSyncing | `Boolean` |
 | StartingBlock | `Quantity` |
@@ -1617,21 +1617,21 @@ curl --data '{"method":"eth_syncing","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 {% endtab %}
 {% endtabs %}
 
-[See also CLI eth.syncing](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-syncing)
+[ingrese a  CLI eth.syncing](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-syncing)
 
 ## eth\_uninstallFilter
 
-Creates an update filter
+Crea un filtro de actualización
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"eth_uninstallFilter","params":[filterId]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | filterId | `Quantity` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `Boolean` |  |
 

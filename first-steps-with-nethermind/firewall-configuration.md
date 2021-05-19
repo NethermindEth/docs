@@ -1,8 +1,8 @@
 ---
-description: Rules that should be added to your machine's firewall
+description: Reglas que deben agregarse al firewall de su máquina
 ---
 
-# Firewall Configuration
+# Configuración de Firewall
 
 {% hint style="info" %}
 Keep `8545` \(or `8000-9000`\) closed except for the trusted machines - this is the JSON RPC port which gives admin access to the node.

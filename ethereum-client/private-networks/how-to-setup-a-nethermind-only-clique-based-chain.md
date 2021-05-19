@@ -2,7 +2,7 @@
 description: Set of validators sealing blocks on private clique network
 ---
 
-# How to setup a Nethermind only Clique based chain
+# Cómo configurar una cadena basada solo en Nethermind Clique
 
 ### TL;DR
 
@@ -28,9 +28,9 @@ chmod +x clique-validators.sh
 ./clique-validators.sh
 ```
 
-### Prerequisites
+### Prerrequisitos
 
-* Linux bash shell
+* Shell de bash de Linux
 * Docker-compose
 * Docker
 * jq
@@ -46,29 +46,29 @@ sudo apt-get install -y docker-compose docker.io jq pwgen
 All these steps are automated and written in the above `clique-validators.sh` script.
 {% endhint %}
 
-In this setup we will create a private network of 3 Nethermind nodes running Clique consensus algorithm.
+En esta configuración, crearemos una red privada de 3 nodos Nethermind ejecutando el algoritmo de consenso Clique.
 
-* create separate directory where we will store all files
+* crea un directorio separado donde almacenaremos todos los archivos
 
 ```bash
 mkdir private-networking
 cd private-networking
 ```
 
-* create folders for each node and genesis
+* crear carpetas para cada nodo y génesis
 
 ```bash
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* download chainspec file with clique engine and place it in genesis folder \(we will be using goerli chainspec in this example\)
+* descargue el archivo chainspec con el motor clique y colocalo en la carpeta genesis \(usaremos goerli chainspec en este ejemplo\)
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json
 cp goerli.json genesis/goerli.json
 ```
 
-* create subfolders in each node folder
+* crear subcarpetas en cada carpeta de nodo
 
 ```bash
 mkdir node_1/configs node_2/configs node_3/configs
@@ -84,7 +84,7 @@ cat <<EOF > static-nodes.json
 EOF
 ```
 
-* create `config.cfg` file and place it in `node_1/configs` subfolders \(do this for node\_2 and node\_3 as well\)
+* crea el archivo `config.cfg` y colocalo en las subcarpetas `node_1 /configs` \(haga esto también para el nodo\ _2 y el nodo\ _3 \)
 
 ```bash
 cat <<EOF > node_1/configs/config.cfg
@@ -117,12 +117,12 @@ cat <<EOF > node_1/configs/config.cfg
 EOF
 ```
 
-For each node you will need to change following items in configuration:
+Para cada nodo, deberá cambiar los siguientes elementos en la configuración:
 
-* `TestNodeKey` should be a 64 character length alphanumeric string. Can be generated with `pwgen` tool for example.
-* `LocalIp`, `ExternalIp` and `Host` should have the same value and be incremented for each node e.g. 10.5.0.3, 10.5.0.4 and so on and so forth.
+* `TestNodeKey` debe ser una cadena alfanumérica de 64 caracteres. Se puede generar con la herramienta `pwgen`, por ejemplo.
+* `LocalIp`,` ExternalIp` y `Host` deben tener el mismo valor y deben incrementarse para cada nodo, Ejemplo. 10.5.0.3, 10.5.0.4 y así sucesivamente.
 
-Copy docker-compose file and place it in working directory.
+Copie el archivo docker-compose y colóquelo en el directorio de trabajo
 
 ```yaml
 version: "3.5"
@@ -184,13 +184,13 @@ networks:
                 - subnet: 10.5.0.0/16
 ```
 
-* run each node separately so that we can copy `Enode` and `Node address` for each node, we will use them later
+* ejecute cada nodo por separado para que podamos copiar `Enode` y `Node address` para cada nodo, los usaremos más adelante
 
 ```bash
 docker-compose run node_1
 ```
 
-Stop the node when `Nethermind initialization` completes `Ctrl +C`. Copy `This node` and `Node address` \(without 0x prefixes\) values to a text file. Continue with node\_2 and node\_3.
+Detenga el nodo cuando  `la inicialización de Nethermind` se complete `Ctrl + C`. Copie los valores de `Este nodo` y` Dirección de nodo` \ (sin prefijos 0x \) en un archivo de texto. Continúe con el nodo\ _2 y el nodo\ _3.
 
 {% hint style="info" %}
 You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.  
@@ -203,7 +203,7 @@ node.enode
 node.address
 ```
 
-* the file should look similar to this:
+* el archivo debería verse similar a esto:
 
 ```text
 SIGNER_1="b5bc4d9e63eb1cb16aeeb0fd08e8344283b45b0d"
@@ -214,7 +214,7 @@ SIGNER_3="0076873eb11c627057834fdbdc7b391a33eb9f81"
 STATIC_NODE_3="enode://6067f06d84c207e6233dacf1f3ef961bd7231f71d5425cbaf843cf19cfd5f7e13b024d234e4e5f6175bdb37c0bbccd14488b481b2280efb66d0631a20ae13ea3@10.5.0.4:30300"
 ```
 
-* copy & paste above variables into your terminal and create `EXTRA_VANITY` and `EXTRA_SEAL` variables
+* copie y pegue las variables anteriores en su terminal y cree las variables `EXTRA_VANITY` y` EXTRA_SEAL`
 
 ```bash
 EXTRA_VANITY="0x22466c6578692069732061207468696e6722202d204166726900000000000000"
@@ -227,9 +227,9 @@ EXTRA_SEAL="00000000000000000000000000000000000000000000000000000000000000000000
 EXTRA_DATA=${EXTRA_VANITY}${SIGNER_1}${SIGNER_2}${SIGNER_3}${EXTRA_SEAL}
 ```
 
-* in `goerli.json` chainspec file, modify `extraData` property in `genesis` field
+* en el archivo chainspec `goerli.json`, modifica la propiedad` extraData` en el campo `genesis`
 
-You can do this either manually or using below command
+Puedes hacer esto manualmente o usando el siguiente comando
 
 ```bash
 cat goerli.json | jq '.genesis.extraData = '\"$EXTRA_DATA\"'' > genesis/goerli.json
@@ -247,19 +247,19 @@ cat <<EOF > static-nodes.json
 EOF
 ```
 
-* remove databases for each node
+* eliminar bases de datos para cada nodo
 
 ```bash
 sudo rm -rf node_1/db/clique node_2/db/clique node_3/db/clique
 ```
 
-* finally run docker-compose file
+* finalmente ejecute el archivo docker-compose
 
 ```bash
 docker-compose up
 ```
 
-You should see the private network working and nodes sealing blocks in Clique consensus algorithm 🎉 
+Deberías ver la red privada funcionando y los nodos sellando bloques en el algoritmo de consenso de Clique 🎉
 
 ![Clique validators sealing blocks in private network](../../.gitbook/assets/image%20%288%29.png)
 

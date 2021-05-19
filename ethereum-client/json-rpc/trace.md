@@ -4,15 +4,15 @@
 
 Returns traces created at given block.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"trace_block","params":[numberOrTag]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | numberOrTag | `BlockParameter object` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromStore object` |  |
 
@@ -26,20 +26,20 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 {% tab title="Objects in trace\_block" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromStore`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
 | BlockHash | `Hash` |
@@ -49,17 +49,17 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 | TraceAddress | `Array` |
 | TransactionHash | `Hash` |
 | TransactionPosition | `Quantity` |
-| Type | `String` |
+| Tipo | `String` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -74,7 +74,7 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 
 `ParityTraceResult`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |
@@ -83,22 +83,22 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 {% endtab %}
 {% endtabs %}
 
-[See also CLI trace.block](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-block)
+[ingrese a CLI trace.block](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-block)
 
 ## trace\_rawTransaction
 
-Traces a call to eth\_sendRawTransaction without making the call, returning the traces
+Rastrea una llamada a eth\_sendRawTransaction sin hacer la llamada, devolviendo los rastros
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"trace_rawTransaction","params":[data, traceTypes]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | data | `Data` |  |
 | traceTypes | `Array` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromReplay object` |  |
 
@@ -112,7 +112,7 @@ curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1
 {% tab title="Objects in trace\_rawTransaction" %}
 `ParityTxTraceFromReplay`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -122,20 +122,20 @@ curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1
 
 `ParityVmTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -150,22 +150,22 @@ curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1
 {% endtab %}
 {% endtabs %}
 
-[See also CLI trace.rawTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-rawtransaction)
+[ingrese a CLI trace.rawTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-rawtransaction)
 
 ## trace\_replayBlockTransactions
 
 Replays all transactions in a block returning the requested traces for each transaction.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"trace_replayBlockTransactions","params":[numberOrTag, traceTypes]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | numberOrTag | `BlockParameter object` |  |
 | traceTypes | `Array` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromReplay object` |  |
 
@@ -179,20 +179,20 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 {% tab title="Objects in trace\_replayBlockTransactions" %}
 `BlockParameter`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
-| Type | `BlockParameterType object` |
+| Tipo | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
 | BlockHash | `Hash` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromReplay`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -202,20 +202,20 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 
 `ParityVmTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -230,22 +230,22 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 {% endtab %}
 {% endtabs %}
 
-[See also CLI trace.replayBlockTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-replayblocktransactions)
+[ingrese a CLI trace.replayBlockTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-replayblocktransactions)
 
 ## trace\_replayTransaction
 
 Replays a transaction, returning the traces.
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"trace_replayTransaction","params":[txHash, traceTypes]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
 | traceTypes | `Array` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromReplay object` |  |
 
@@ -259,7 +259,7 @@ curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"
 {% tab title="Objects in trace\_replayTransaction" %}
 `ParityTxTraceFromReplay`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Output | `Data` |
 | TransactionHash | `Hash` |
@@ -269,20 +269,20 @@ curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"
 
 `ParityVmTrace`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Code | `Data` |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -297,21 +297,21 @@ curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"
 {% endtab %}
 {% endtabs %}
 
-[See also CLI trace.replayTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-replaytransaction)
+[ingrese a CLI trace.replayTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-replaytransaction)
 
 ## trace\_transaction
 
 Returns all traces of given transaction
 
-| Invocation |
+| Invocación |
 | :--- |
 | `{"method":"trace_transaction","params":[txHash]}` |
 
-| Parameter | Type | Description |
+| Parámetro | Tipo | Descripción |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
 
-| Returned type | Description |
+| Tipo de retorno | Descripción |
 | :--- | :--- |
 | `ParityTxTraceFromStore object` |  |
 
@@ -325,7 +325,7 @@ curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2
 {% tab title="Objects in trace\_transaction" %}
 `ParityTxTraceFromStore`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | Action | `ParityTraceAction object` |
 | BlockHash | `Hash` |
@@ -335,17 +335,17 @@ curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2
 | TraceAddress | `Array` |
 | TransactionHash | `Hash` |
 | TransactionPosition | `Quantity` |
-| Type | `String` |
+| Tipo | `String` |
 
 `ParityTraceAction`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | TraceAddress | `Array` |
 | CallType | `String` |
 | IncludeInTrace | `Boolean` |
 | IsPrecompiled | `Boolean` |
-| Type | `String` |
+| Tipo | `String` |
 | CreationMethod | `String` |
 | From | `Address` |
 | To | `Address` |
@@ -360,7 +360,7 @@ curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2
 
 `ParityTraceResult`
 
-| Field name | Type |
+| Nombre de los campos | Tipo |
 | :--- | :--- |
 | GasUsed | `Quantity` |
 | Output | `Data` |
@@ -369,5 +369,5 @@ curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2
 {% endtab %}
 {% endtabs %}
 
-[See also CLI trace.transaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-transaction)
+[ingrese a CLI trace.transaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-transaction)
 
