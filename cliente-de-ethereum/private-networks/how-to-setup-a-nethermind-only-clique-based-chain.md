@@ -193,8 +193,8 @@ docker-compose run node_1
 Detenga el nodo cuando `la inicialización de Nethermind` se complete `Ctrl + C`. Copie los valores de `Este nodo` y`Dirección de nodo`  \(sin prefijos 0x \) en un archivo de texto. Continúe con el nodo \_2 y el nodo \_3.
 
 {% hint style="info" %}
-You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.  
-`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io/).
+Puede usar`Nethermind.Cli`para obtener estos valores de los nodos ejecutando lo siguiente.  
+`Nethermind.Cli`se puede encontrar en paquetes en las versiones de [Github](https://github.com/NethermindEth/nethermind/releases) o en la [página de descarga](http://downloads.nethermind.io/).
 {% endhint %}
 
 ```bash
