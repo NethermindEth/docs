@@ -9,7 +9,7 @@ Después de iniciar Nethermind a través de `. /Nethermind.Launcher` tienes dos 
 Si inicia el nodo en un proceso y luego inicia la CLI en otro proceso, verá los comandos disponibles dentro de la CLI.
 
 {% hint style="warning" %}
-You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enabling it when Launcher asks about it or by manually editing the relevant config file or by passing `--JsonRpc.Enabled true` parameter after the Launcher command
+Debe asegurarse de que `JsonRpc.Enabled` esté configurado en `true`, ya sea habilitándolo cuando Launcher pregunte al respecto o editando manualmente el archivo de configuración relevante o pasando el parámetro `--JsonRpc.Enabled true`después del comando Launcher
 {% endhint %}
 
 CLI mostrará las opciones disponibles \(funciones y propiedades\) cuando se inicie.
