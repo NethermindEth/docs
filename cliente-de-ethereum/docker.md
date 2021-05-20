@@ -76,11 +76,11 @@ NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
 {% hint style="warning" %}
-Environment variables are to be passed before the docker image tag while parameters should be passed right after the docker image tag.
+Las variables de entorno deben pasarse antes de la etiqueta de docker de la ventana acoplable, mientras que los parámetros deben pasarse justo después de la etiqueta de docker de la ventana acoplable.
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables **\*\*can be easily used within** docker-compose.yml\*\* files in the environment section
+Las variables de entorno \*\* **se pueden usar fácilmente dentro de los archivos** docker-compose.yml \*\* en la sección de entorno
 {% endhint %}
 
 ### **JSON RPC**
