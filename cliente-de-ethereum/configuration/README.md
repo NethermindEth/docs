@@ -23,15 +23,16 @@ Otra forma es configurar cada propiedad de configuración pasando indicadores a 
 ```
 
 {% hint style="warning" %}
-When passing a flag, each property needs to be prefixed with its respective [**Module**](./), followed by the **property name** and its **value** e.g `--Init.IsMining true`
+Al pasar una bandera, cada propiedad debe tener el prefijo de su ****[**módulo**](https://app.gitbook.com/@nethermind/s/nethermind/~/drafts/-MaAKH3aeKCFuQB_nKeN/v/spanish/cliente-de-ethereum/configuration) ****respectivo, seguido del **nombre de la propiedad** y su **valor**, por ejemplo, `--Init.IsMining`true
 {% endhint %}
 
 {% hint style="info" %}
-Use `/` as the path separator so the configs can be shared between all platforms supported \(Linux, Windows, MacOS\).
+Utilice / como separador de ruta para que las configuraciones se puedan compartir entre todas las plataformas compatibles \(Linux, Windows, MacOS\).
 {% endhint %}
 
 {% hint style="info" %}
-`--config`, `--baseDbPath`,`--datadir, --loggerConfigSource, --log` and `--configsDirectory`options are available from the command line to select config file, base DB directory prefix and log level respectively.
+Las opciones`--config`, `--baseDbPath`,`--datadir, --loggerConfigSource, --log` y `--configsDirectory`están disponibles en la línea de comandos para seleccionar el archivo de configuración, el prefijo del directorio base de la base de datos y el nivel de registro, respectivamente.  
+  
 {% endhint %}
 
 ### datadir
