@@ -101,7 +101,7 @@ volumes:
 Configure el nodo Nethermind a través de variables de entorno o use el archivo de configuración local y asígnelo al que existe dentro del contenedor \(archivo `xdai.cfg` en el ejemplo anterior\).
 
 {% hint style="info" %}
-Make sure that `nethermind_db`, `keystore`\(`logs` - optional \) are mapped, otherwise you might lose database or keys
+Asegúrese de que`nethermind_db`, `keystore`\(`logs` - optional \) estén mapeados, de lo contrario podría perder la base de datos o las claves
 {% endhint %}
 
 [`NLog.config`](../../cliente-de-ethereum/running-nethermind/runtime.md#nlog-config) el archivo es opcional. [`static-nodes.json`](../../cliente-de-ethereum/running-nethermind/runtime.md#static-nodes) se puede completar con un array de enodos, esto también es opcional.
