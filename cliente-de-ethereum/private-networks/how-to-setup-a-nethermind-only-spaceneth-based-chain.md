@@ -160,8 +160,8 @@ Detenga el nodo cuando la inicialización de Nethermind se complete `Ctrl + C`. 
 ![](https://nethermind.readthedocs.io/en/latest/_images/initialization-spaceneth.png)
 
 {% hint style="info" %}
-You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.  
-`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io/).
+Puede usar`Nethermind.Cli` para obtener estos valores de los nodos ejecutando lo siguiente.   
+`Nethermind.Cli`se puede encontrar en paquetes en las versiones de [Github](https://github.com/NethermindEth/nethermind/releases) o en la [página de descarga](http://downloads.nethermind.io/).
 {% endhint %}
 
 ```bash
