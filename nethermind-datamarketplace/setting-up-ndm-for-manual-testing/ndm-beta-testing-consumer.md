@@ -7,7 +7,7 @@ description: Running the consumer
 * [x] Download the NDM package from the discord
 * [x] Run Consumer node:
 
-  `ndm.launcher.exe` \(Windows\)  
+  `ndm.launcher.exe` \(Windows\)   
   `ndm.launcher.command` \(MacOs\)  
   `ndm.launcher` \(Linux\).
 
@@ -61,7 +61,7 @@ If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io
 
 After that, you will have an electron app and cosnole running. By default, you will have our Provider node added in the static-nodes file so you will be already connected to one. If you don't see any data assets - don't worry, they will appear after a while.
 
-You will see a couple of data assets. For example **Crypto Compare Web Api** or **Nethermind Tx Stream**.
+You will see a couple of data assets. For example **Crypto Compare Web Api** or **Nethermind Tx Stream**. 
 
 * [x] Continue by placing a deposit with the unit number of your choice.
 
@@ -79,10 +79,10 @@ Once the deposit has been confirmaed, feel free to **open a data stream**.
 
 ![Consumed data stream from Crypto Compare Web Api](../../.gitbook/assets/image%20%28118%29.png)
 
-### Queries examples for **Crypto Compare Web Api**
+###   Queries examples for **Crypto Compare Web Api** 
 
-`data/news/feeds    
-data/exchange/histoday?tsym=USD&limit=1    
-data/top/exchanges/full?fsym=BTC&tsym=USD    
-data/symbol/histoday?fsym=BTC&tsym=USD&limit=1`
+ `data/news/feeds  
+ data/exchange/histoday?tsym=USD&limit=1  
+ data/top/exchanges/full?fsym=BTC&tsym=USD  
+ data/symbol/histoday?fsym=BTC&tsym=USD&limit=1`
 

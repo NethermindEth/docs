@@ -1,8 +1,8 @@
 # Running NDM on MacOS problems and fixes
 
-With the first-time run of NDM on the MacOs machine, you can stumble on some problems due to Apple's security and privacy settings.
+With the first-time run of NDM on the MacOs machine, you can stumble on some problems due to Apple's security and privacy settings.   
 
-These are the most common problems and fixes for them:
+These are the most common problems and fixes for them: 
 
 * **Operation not permitted error** 
   1. Pull down the  Apple menu and choose **System Preferences**
@@ -28,5 +28,5 @@ These are the most common problems and fixes for them:
 
 ![](../.gitbook/assets/image%20%28143%29.png)
 
-* [x] After that, you might expect more similar problems with **Nethermind.Runner** and **Nethermind.DataMarketplace** - to deal with that just repeat the process with opening applications from identified developers. _\*\*_
+* [x] After that, you might expect more similar problems with **Nethermind.Runner** and **Nethermind.DataMarketplace** - to deal with that just repeat the process with opening applications from identified developers. ****
 

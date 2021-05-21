@@ -7,13 +7,13 @@ description: Running the Provider
 * [x] Download the NDM package from the discord
 * [x] Run Consumer node:
 
-  `ndm.launcher.exe` \(Windows\)  
+  `ndm.launcher.exe` \(Windows\)   
   `ndm.launcher.command` \(MacOs\)  
-  `ndm.launcher` \(Linux\).
+  `ndm.launcher` \(Linux\). 
 
-* [x] Select `Provider`
+* [x] Select `Provider` 
 
-![](../../.gitbook/assets/image%20%28157%29%20%281%29%20%283%29.png)
+![](../../.gitbook/assets/image%20%28157%29.png)
 
 * [x] Select the network
 
@@ -73,13 +73,15 @@ If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io
 
 * [x] Click "Create" button and create the data asset.
 
-![](../../.gitbook/assets/image%20%2810%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 * [x] Remember to change data asset state from "Unpublished" to "Publish" if you want it to be visible to consumers.
 
 ![](../../.gitbook/assets/image%20%28154%29.png)
 
-## [Connecting with consumers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-consumers)
+##  [Connecting with consumers](https://docs.nethermind.io/nethermind/nethermind-datamarketplace/connecting-with-consumers)
+
+
 
 {% hint style="info" %}
 You can also test the whole flow of NDM by yourself. All you need to do is:
@@ -93,6 +95,10 @@ You can also test the whole flow of NDM by yourself. All you need to do is:
 * Make a deposit as consumer
 * Consume the data as consumer.
 
-Voilà! :\)
+Voilà! :\) 
 {% endhint %}
+
+
+
+
 
