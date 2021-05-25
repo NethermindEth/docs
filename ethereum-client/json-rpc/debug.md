@@ -1,8 +1,8 @@
-# Debug module
+# debug
 
-## debug\_deleteChainSlice
+## debug_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches \(Nethermind specific\).
+Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
 
 | Invocation |
 | :--- |
@@ -17,16 +17,16 @@ Deletes a slice of a chain from the tree on all branches \(Nethermind specific\)
 | `Quantity` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_deleteChainSlice" %}
-```text
+{% tab title="Example request of debug_deleteChainSlice" %}
+```
 curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
-## debug\_getBlockRlp
+## debug_getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
 
 | Invocation |
 | :--- |
@@ -41,18 +41,17 @@ Retrieves a block in the RLP-serialized form.
 | `Data` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_getBlockRlp" %}
-```text
+{% tab title="Example request of debug_getBlockRlp" %}
+```
 curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI debug.getBlockRlp](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlp)
+## debug_getBlockRlpByHash
 
-## debug\_getBlockRlpByHash
-
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
 
 | Invocation |
 | :--- |
@@ -67,18 +66,17 @@ Retrieves a block in the RLP-serialized form.
 | `Data` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_getBlockRlpByHash" %}
-```text
+{% tab title="Example request of debug_getBlockRlpByHash" %}
+```
 curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI debug.getBlockRlpByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlpbyhash)
+## debug_getChainLevel
 
-## debug\_getChainLevel
-
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
 
 | Invocation |
 | :--- |
@@ -93,13 +91,14 @@ Retrieves a representation of tree branches on a given chain level \(Nethermind 
 | `ChainLevelForRpc object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_getChainLevel" %}
-```text
+{% tab title="Example request of debug_getChainLevel" %}
+```
 curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_getChainLevel" %}
+{% tab title="Objects in debug_getChainLevel" %}
+
 `ChainLevelForRpc`
 
 | Field name | Type |
@@ -111,21 +110,17 @@ curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":
 
 | Field name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| BlockHash | `Hash` |
+| TotalDifficulty | `Quantity` |
+| WasProcessed | `Boolean` |
+| IsFinalized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
 [See also CLI debug.getChainLevel](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getchainlevel)
+## debug_getConfigValue
 
-## debug\_getConfigValue
-
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
 
 | Invocation |
 | :--- |
@@ -141,16 +136,16 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 | `Object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_getConfigValue" %}
-```text
+{% tab title="Example request of debug_getConfigValue" %}
+```
 curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
-## debug\_insertReceipts
+## debug_insertReceipts
 
-Insert receipts for the block after verifying receipts root correctness.
+Insert receipts for the block after verifying receipts root correctness. 
 
 | Invocation |
 | :--- |
@@ -166,13 +161,14 @@ Insert receipts for the block after verifying receipts root correctness.
 | `Boolean` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_insertReceipts" %}
-```text
+{% tab title="Example request of debug_insertReceipts" %}
+```
 curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_insertReceipts" %}
+{% tab title="Objects in debug_insertReceipts" %}
+
 `BlockParameter`
 
 | Field name | Type |
@@ -184,25 +180,34 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `ReceiptForRpc[]`
 
 | Field name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| TransactionHash | `Hash` |
+| TransactionIndex | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| CumulativeGasUsed | `Quantity` |
+| GasUsed | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| ContractAddress | `Address` |
+| Logs | `LogEntryForRpc[] object` |
+| LogsBloom | `Bloom Object` |
+| Root | `Hash` |
+| Status | `Quantity` |
+| Error | `String` |
+| Type | `TxType object` |
 {% endtab %}
 {% endtabs %}
 
-## debug\_migrateReceipts
+## debug_migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
 
 | Invocation |
 | :--- |
@@ -217,18 +222,17 @@ Sets the block number up to which receipts will be migrated to \(Nethermind spec
 | `Boolean` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_migrateReceipts" %}
-```text
+{% tab title="Example request of debug_migrateReceipts" %}
+```
 curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI debug.migrateReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-migratereceipts)
+## debug_resetHead
 
-## debug\_resetHead
-
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption \(Nethermind specific\).
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
 
 | Invocation |
 | :--- |
@@ -243,16 +247,16 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 | `Boolean` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_resetHead" %}
-```text
+{% tab title="Example request of debug_resetHead" %}
+```
 curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
-## debug\_traceBlock
+## debug_traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
 
 | Invocation |
 | :--- |
@@ -268,13 +272,14 @@ Returns a full stack trace of all invoked opcodes of all transaction that were i
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlock" %}
-```text
+{% tab title="Example request of debug_traceBlock" %}
+```
 curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlock" %}
+{% tab title="Objects in debug_traceBlock" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -298,9 +303,7 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 {% endtabs %}
 
 [See also CLI debug.traceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblock)
-
-## debug\_traceBlockByHash
-
+## debug_traceBlockByHash
 | Invocation |
 | :--- |
 | `{"method":"debug_traceBlockByHash","params":[blockHash, options]}` |
@@ -315,13 +318,14 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlockByHash" %}
-```text
+{% tab title="Example request of debug_traceBlockByHash" %}
+```
 curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByHash" %}
+{% tab title="Objects in debug_traceBlockByHash" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -345,9 +349,7 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 {% endtabs %}
 
 [See also CLI debug.traceBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbyhash)
-
-## debug\_traceBlockByNumber
-
+## debug_traceBlockByNumber
 | Invocation |
 | :--- |
 | `{"method":"debug_traceBlockByNumber","params":[number, options]}` |
@@ -362,13 +364,14 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlockByNumber" %}
-```text
+{% tab title="Example request of debug_traceBlockByNumber" %}
+```
 curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByNumber" %}
+{% tab title="Objects in debug_traceBlockByNumber" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -392,10 +395,9 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 {% endtabs %}
 
 [See also CLI debug.traceBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbynumber)
+## debug_traceTransaction
 
-## debug\_traceTransaction
-
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
 
 | Invocation |
 | :--- |
@@ -411,13 +413,14 @@ This method will attempt to run the transaction in the exact same manner as it w
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransaction" %}
-```text
+{% tab title="Example request of debug_traceTransaction" %}
+```
 curl --data '{"method":"debug_traceTransaction","params":[transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransaction" %}
+{% tab title="Objects in debug_traceTransaction" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -441,9 +444,7 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 {% endtabs %}
 
 [See also CLI debug.traceTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransaction)
-
-## debug\_traceTransactionByBlockAndIndex
-
+## debug_traceTransactionByBlockAndIndex
 | Invocation |
 | :--- |
 | `{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options]}` |
@@ -459,13 +460,14 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionByBlockAndIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionByBlockAndIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockAndIndex" %}
+
 `BlockParameter`
 
 | Field name | Type |
@@ -477,7 +479,8 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `GethTraceOptions`
 
@@ -502,9 +505,7 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 {% endtabs %}
 
 [See also CLI debug.traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockandindex)
-
-## debug\_traceTransactionByBlockhashAndIndex
-
+## debug_traceTransactionByBlockhashAndIndex
 | Invocation |
 | :--- |
 | `{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options]}` |
@@ -520,13 +521,14 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionByBlockhashAndIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionByBlockhashAndIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -550,9 +552,7 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 {% endtabs %}
 
 [See also CLI debug.traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockhashandindex)
-
-## debug\_traceTransactionInBlockByHash
-
+## debug_traceTransactionInBlockByHash
 | Invocation |
 | :--- |
 | `{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options]}` |
@@ -568,13 +568,14 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionInBlockByHash" %}
-```text
+{% tab title="Example request of debug_traceTransactionInBlockByHash" %}
+```
 curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
+{% tab title="Objects in debug_traceTransactionInBlockByHash" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -598,9 +599,7 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 {% endtabs %}
 
 [See also CLI debug.traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyhash)
-
-## debug\_traceTransactionInBlockByIndex
-
+## debug_traceTransactionInBlockByIndex
 | Invocation |
 | :--- |
 | `{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options]}` |
@@ -616,13 +615,14 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 | `GethLikeTxTrace object` |  |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionInBlockByIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionInBlockByIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
+{% tab title="Objects in debug_traceTransactionInBlockByIndex" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -646,4 +646,3 @@ curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp
 {% endtabs %}
 
 [See also CLI debug.traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyindex)
-

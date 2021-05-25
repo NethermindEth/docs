@@ -1,4 +1,5 @@
-# Debug module
+# debug
+
 
 ## debug.config
 
@@ -23,9 +24,13 @@ debug.config(category, name)
 {% endtab %}
 {% endtabs %}
 
+
+
+
 ## debug.getBlockRlp
 
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
+
 
 | Invocation |
 | :--- |
@@ -47,11 +52,13 @@ debug.getBlockRlp(number)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_getBlockRlp](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getblockrlp)
+[See also JSON RPC debug_getBlockRlp](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getblockrlp)
+
 
 ## debug.getBlockRlpByHash
 
-Retrieves a block in the RLP-serialized form.
+Retrieves a block in the RLP-serialized form. 
+
 
 | Invocation |
 | :--- |
@@ -73,11 +80,13 @@ debug.getBlockRlpByHash(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_getBlockRlpByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getblockrlpbyhash)
+[See also JSON RPC debug_getBlockRlpByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getblockrlpbyhash)
+
 
 ## debug.getChainLevel
 
-Retrieves a representation of tree branches on a given chain level \(Nethermind specific\).
+Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
+
 
 | Invocation |
 | :--- |
@@ -98,7 +107,8 @@ debug.getChainLevel(number)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_getChainLevel" %}
+{% tab title="Objects in debug_getChainLevel" %}
+
 `ChainLevelForRpc`
 
 | Field name | Type |
@@ -110,21 +120,22 @@ debug.getChainLevel(number)
 
 | Field name | Type |
 | :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| BlockHash | `Hash` |
+| TotalDifficulty | `Quantity` |
+| WasProcessed | `Boolean` |
+| IsFinalized | `Boolean` |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_getChainLevel](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getchainlevel)
+[See also JSON RPC debug_getChainLevel](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getchainlevel)
+
+
+
 
 ## debug.migrateReceipts
 
-Sets the block number up to which receipts will be migrated to \(Nethermind specific\).
+Sets the block number up to which receipts will be migrated to (Nethermind specific). 
+
 
 | Invocation |
 | :--- |
@@ -146,11 +157,14 @@ debug.migrateReceipts(blockNumber)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_migrateReceipts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_migratereceipts)
+[See also JSON RPC debug_migrateReceipts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_migratereceipts)
+
+
 
 ## debug.traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail.
+Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
+
 
 | Invocation |
 | :--- |
@@ -172,7 +186,8 @@ debug.traceBlock(blockRlp, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlock" %}
+{% tab title="Objects in debug_traceBlock" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -195,7 +210,8 @@ debug.traceBlock(blockRlp, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblock)
+[See also JSON RPC debug_traceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblock)
+
 
 ## debug.traceBlockByHash
 
@@ -219,7 +235,8 @@ debug.traceBlockByHash(blockHash, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByHash" %}
+{% tab title="Objects in debug_traceBlockByHash" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -242,7 +259,8 @@ debug.traceBlockByHash(blockHash, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbyhash)
+[See also JSON RPC debug_traceBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbyhash)
+
 
 ## debug.traceBlockByNumber
 
@@ -266,7 +284,8 @@ debug.traceBlockByNumber(number, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByNumber" %}
+{% tab title="Objects in debug_traceBlockByNumber" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -289,11 +308,13 @@ debug.traceBlockByNumber(number, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceBlockByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbynumber)
+[See also JSON RPC debug_traceBlockByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbynumber)
+
 
 ## debug.traceTransaction
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
+
 
 | Invocation |
 | :--- |
@@ -315,7 +336,8 @@ debug.traceTransaction(transactionHash, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransaction" %}
+{% tab title="Objects in debug_traceTransaction" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -338,7 +360,8 @@ debug.traceTransaction(transactionHash, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransaction)
+[See also JSON RPC debug_traceTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransaction)
+
 
 ## debug.traceTransactionByBlockAndIndex
 
@@ -363,7 +386,8 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockAndIndex" %}
+
 `BlockParameter`
 
 | Field name | Type |
@@ -375,7 +399,8 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 
 `BlockParameterType`
 
-* `Quantity` or `String` \(latest, earliest, pending\)
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `GethTraceOptions`
 
@@ -399,7 +424,8 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactionbyblockandindex)
+[See also JSON RPC debug_traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactionbyblockandindex)
+
 
 ## debug.traceTransactionByBlockhashAndIndex
 
@@ -424,7 +450,8 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -447,7 +474,8 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactionbyblockhashandindex)
+[See also JSON RPC debug_traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactionbyblockhashandindex)
+
 
 ## debug.traceTransactionInBlockByHash
 
@@ -472,7 +500,8 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
+{% tab title="Objects in debug_traceTransactionInBlockByHash" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -495,7 +524,8 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactioninblockbyhash)
+[See also JSON RPC debug_traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactioninblockbyhash)
+
 
 ## debug.traceTransactionInBlockByIndex
 
@@ -520,7 +550,8 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
+{% tab title="Objects in debug_traceTransactionInBlockByIndex" %}
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -543,5 +574,4 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactioninblockbyindex)
-
+[See also JSON RPC debug_traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactioninblockbyindex)
