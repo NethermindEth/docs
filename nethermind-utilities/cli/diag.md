@@ -1,8 +1,10 @@
-# Diag module
+# diag
+
 
 ## diag.cliVersion
 
-Displays client version
+Displays client version 
+
 
 | Invocation |
 | :--- |
@@ -10,7 +12,6 @@ Displays client version
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -22,7 +23,6 @@ Displays client version
 diag.cliVersion
 ```
 {% endtab %}
-
 {% tab title="Example response of diag.cliVersion" %}
 ```yaml
 "Nethermind.Cli, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"

@@ -1,4 +1,5 @@
-# Web3 module
+# web3
+
 
 ## web3.abi
 
@@ -22,9 +23,12 @@ web3.abi(name)
 {% endtab %}
 {% endtabs %}
 
+
+
 ## web3.clientVersion
 
-Returns the current client version.
+Returns the current client version. 
+
 
 | Invocation |
 | :--- |
@@ -32,7 +36,6 @@ Returns the current client version.
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -46,11 +49,13 @@ web3.clientVersion
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC web3\_clientVersion](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/web3#web3_clientversion)
+[See also JSON RPC web3_clientVersion](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/web3#web3_clientversion)
+
 
 ## web3.sha3
 
-Returns Keccak of the given data.
+Returns Keccak of the given data. 
+
 
 | Invocation |
 | :--- |
@@ -72,7 +77,7 @@ web3.sha3(data)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC web3\_sha3](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/web3#web3_sha3)
+[See also JSON RPC web3_sha3](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/web3#web3_sha3)
 
 ## web3.toDecimal
 
