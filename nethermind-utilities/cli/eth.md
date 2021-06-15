@@ -74,6 +74,7 @@ eth.call(transactionCall, blockParameter)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -187,6 +188,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -276,6 +278,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -866,6 +869,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -933,6 +937,7 @@ eth.getTransactionByHash(transactionHash)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -1326,6 +1331,7 @@ eth.pendingTransactions
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -1473,6 +1479,7 @@ eth.sendTransaction(rpcTx)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |

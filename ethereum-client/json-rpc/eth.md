@@ -68,6 +68,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -175,6 +176,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -261,6 +263,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -826,6 +829,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -904,6 +908,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -968,6 +973,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -1429,6 +1435,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
@@ -1542,6 +1549,7 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |

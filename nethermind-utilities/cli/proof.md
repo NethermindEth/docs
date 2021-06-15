@@ -55,6 +55,7 @@ proof.getTransactionByHash(txHash, includeHeader)
 | Gas | `Quantity` |
 | Data | `Data` |
 | Input | `Data` |
+| ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | V | `Quantity` |
