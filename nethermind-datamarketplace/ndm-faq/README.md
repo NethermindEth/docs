@@ -18,7 +18,7 @@ No, we are constantly working on the final version.
 
 NDM is currently available in **beta**. Due to the fact that this is not the final version, please contact us on [discord](https://discord.com/invite/zZC8CthuzA) if you have any problems.
 
-## What are the risks of using a beta version of NDM? 
+## What are the risks of using a beta version of NDM?
 
 Most risks come with refunds and payment claims, so please be aware that there may be some issues with processing transactions. With that in mind, **keep your logs** and **database** and if anything unexpected happens, get in touch with out team via [discord](https://discord.com/invite/zZC8CthuzA) or contact tab in NDM application.
 
@@ -53,7 +53,7 @@ No, you can create your own wallet by using NDM.
 
 Yes, you can. Just copy your keystore file info`keystore` folder and that's it. After running the application a window will appear asking you to unlock your account.
 
-## **I created the account but I still have no money on it, what should I do?** 
+## **I created the account but I still have no money on it, what should I do?**
 
 You can use [Ramp Network](https://ramp.network) services without leaving NDM, simply click the “Get ETH “ button which is located next to your address and go through the procedure. The money will be in your account in just a few minutes. In case you have any questions or problems with the transfer you can contact [support.ramp.network](https://discord.com/invite/qv8Zprw%20).
 
@@ -98,8 +98,6 @@ We have a separate documentation for MacOs issues.
 {% page-ref page="../running-ndm-on-macos-problems-and-fixes.md" %}
 
 ## I have a problem connecting with Ethereum node. What should I do?
-
-
 
 ![Connection with Ethereum node has been lost - warning information.](../../.gitbook/assets/image%20%28146%29.png)
 
