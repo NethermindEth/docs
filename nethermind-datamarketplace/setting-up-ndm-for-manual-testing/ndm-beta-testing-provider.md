@@ -13,7 +13,7 @@ description: Running the Provider
 
 * [x] Select `Provider` 
 
-![](../../.gitbook/assets/image%20%28157%29.png)
+![](../../.gitbook/assets/image%20%28157%29%20%281%29.png)
 
 * [x] Select the network
 
@@ -69,11 +69,11 @@ If you can use Get ETH using Ramp Network. [See more](https://docs.nethermind.io
 
 * [x] Example
 
-![](../../.gitbook/assets/image%20%2810%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2810%29%20%281%29%20%284%29.png)
 
 * [x] Click "Create" button and create the data asset.
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2810%29%20%281%29.png)
 
 * [x] Remember to change data asset state from "Unpublished" to "Publish" if you want it to be visible to consumers.
 

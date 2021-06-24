@@ -1,5 +1,4 @@
-# system
-
+# System module
 
 ## system.getVariable
 
@@ -23,7 +22,6 @@ system.getVariable(name, defaultValue)
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ## system.memory
 

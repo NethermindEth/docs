@@ -23,7 +23,7 @@ How to build a plugin? We included an example inside the Nethermind.Analytics pl
 
 ![](../.gitbook/assets/image%20%28133%29.png)
 
-#### RPC Plugin example:
+## RPC Plugin example:
 
 ```csharp
     [RpcModule(ModuleType.Clique)]
@@ -31,13 +31,13 @@ How to build a plugin? We included an example inside the Nethermind.Analytics pl
     {
         [JsonRpcMethod(Description = "Retrieves ETH supply counted from state.", IsImplemented = true)]
         ResultWrapper<UInt256> analytics_verifySupply();
-        
+
         [JsonRpcMethod(Description = "Retrieves ETH supply counted from rewards.", IsImplemented = true)]
         ResultWrapper<UInt256> analytics_verifyRewards();
     }
 ```
 
-#### CLI Plugin example:
+## CLI Plugin example:
 
 ```csharp
 [CliModule("analytics")]
@@ -60,7 +60,7 @@ public class AnalyticsCliModule : CliModuleBase
 }
 ```
 
-#### Block Tree Visitor Plugin example:
+## Block Tree Visitor Plugin example:
 
 ```csharp
     public class RewardsVerifier : IBlockTreeVisitor
@@ -72,7 +72,7 @@ public class AnalyticsCliModule : CliModuleBase
 
         private UInt256 _genesisAllocations = UInt256.Parse("72009990499480000000000000");
         private UInt256 _uncles;
-        
+
         public UInt256 BlockRewards { get; private set; }
 
         public RewardsVerifier(ILogManager logManager, long endLevelExclusive)
@@ -111,13 +111,13 @@ public class AnalyticsCliModule : CliModuleBase
 
         public Task<HeaderVisitOutcome> VisitHeader(BlockHeader header, CancellationToken cancellationToken)
             => Task.FromResult(HeaderVisitOutcome.None);
-        
+
         public Task<LevelVisitOutcome> VisitLevelEnd(CancellationToken cancellationToken)
             => Task.FromResult(LevelVisitOutcome.None);
     }
 ```
 
-#### Config plugin example:
+## Config plugin example:
 
 ```csharp
 public class AnalyticsConfig : IAnalyticsConfig
@@ -129,7 +129,7 @@ public class AnalyticsConfig : IAnalyticsConfig
 }
 ```
 
-#### State Tree Visitor example:
+## State Tree Visitor example:
 
 ```csharp
 public class SupplyVerifier : ITreeVisitor

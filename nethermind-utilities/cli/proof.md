@@ -1,11 +1,8 @@
-# proof
-
-
+# Proof module
 
 ## proof.getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
-
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
 
 | Invocation |
 | :--- |
@@ -27,8 +24,7 @@ proof.getTransactionByHash(txHash, includeHeader)
 ```
 {% endtab %}
 
-{% tab title="Objects in proof_getTransactionByHash" %}
-
+{% tab title="Objects in proof\_getTransactionByHash" %}
 `TransactionWithProof`
 
 | Field name | Type |
@@ -63,13 +59,11 @@ proof.getTransactionByHash(txHash, includeHeader)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC proof_getTransactionByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/proof#proof_gettransactionbyhash)
-
+[See also JSON RPC proof\_getTransactionByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/proof#proof_gettransactionbyhash)
 
 ## proof.getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
-
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
 
 | Invocation |
 | :--- |
@@ -91,8 +85,7 @@ proof.getTransactionReceipt(txHash, includeHeader)
 ```
 {% endtab %}
 
-{% tab title="Objects in proof_getTransactionReceipt" %}
-
+{% tab title="Objects in proof\_getTransactionReceipt" %}
 `ReceiptWithProof`
 
 | Field name | Type |
@@ -124,4 +117,5 @@ proof.getTransactionReceipt(txHash, includeHeader)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC proof_getTransactionReceipt](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/proof#proof_gettransactionreceipt)
+[See also JSON RPC proof\_getTransactionReceipt](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/proof#proof_gettransactionreceipt)
+

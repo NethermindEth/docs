@@ -6,16 +6,19 @@
 sudo useradd -m -s /bin/bash nethermind
 ```
 
-increase the maximum number of open files
+* [x] increase the maximum number of open files
+
+```
+sudo bash -c 'echo "nethermind soft nofile 1000000" > /etc/security/limits.d/nethermind.conf'
+```
 
 ```text
-sudo bash -c 'echo "nethermind soft nofile 1000000" > /etc/security/limits.d/nethermind.conf'
 sudo bash -c 'echo "nethermind hard nofile 1000000" >> /etc/security/limits.d/nethermind.conf'
 ```
 
-switch to the new user
+* [x] switch to the new user
 
-```text
+```
 sudo su - nethermind
 ```
 
@@ -27,19 +30,35 @@ sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip 
 
 ### Get Nethermind
 
-[download](../ethereum-client/download-sources/) the latest Nethermind package
+* [x] [download](../ethereum-client/download-sources/) the latest Nethermind package
 
 ```text
 wget [LINUX_PACKAGE_URL]
 ```
 
-extract the files
+* [x] extract the files
 
 ```text
-unzip [LINUX_PACKAGE_FILENAME] -d nethermind
+unzip [LINUX_PACKAGE_FILENAME] -d build
 ```
 
-remove the no more need package **\(optional\)**
+* [x] create data directory for `logs`, `database` and `keystore`
+
+```bash
+mkdir data
+```
+
+* [x] create `.env` file inside `data` directory and provide environment variables to the Node configuration like for example:
+
+{% code title=".env" %}
+```bash
+NETHERMIND_JSONRPCCONFIG_ENABLED=true
+NETHERMIND_JSONRPCCONFIG_HOST="0.0.0.0"
+NETHERMIND_HEALTHCHECKSCONFIG_ENABLED="true"
+```
+{% endcode %}
+
+* [x] remove the no more need package **\(optional\)**
 
 ```text
 rm [LINUX_PACKAGE_FILENAME]
@@ -47,43 +66,37 @@ rm [LINUX_PACKAGE_FILENAME]
 
 ### Manage Nethermind with systemd
 
-exit the session as user `nethermind` if still active
-
-```text
-exit
-```
-
-download the nethermind.service config
+* [x] download the nethermind.service config
 
 ```text
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/nethermind.service
 ```
 
-move the config into the systemd folder
+* [x] move the config into the systemd folder
 
 ```text
 sudo mv nethermind.service /etc/systemd/system/
 ```
 
-reload the systemd configs
+* [x] reload the systemd configs
 
 ```text
 sudo systemctl daemon-reload
 ```
 
-you can now `start`, `stop`, `restart` Nethermind with systemd
+* [x] you can now `start`, `stop`, `restart` Nethermind with systemd
 
 ```text
 sudo service nethermind start
 ```
 
-display the current Nethermind output **\(optional\)**
+* [x] display the current Nethermind output **\(optional\)**
 
 ```text
 journalctl -u nethermind -f
 ```
 
-enable autorun **\(optional\)**
+* [x] enable autorun **\(optional\)**
 
 ```text
 sudo systemctl enable nethermind
