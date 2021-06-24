@@ -51,7 +51,7 @@ mkdir data
 * [x] create `.env` file inside `data` directory and provide environment variables to the Node configuration like for example:
 
 {% hint style="warning" %}
-`NETHERMIND_CONFIG` is the important one - defines the network config
+`NETHERMIND_CONFIG` is the important one - defines the network config, the rest is optional.
 {% endhint %}
 
 {% code title=".env" %}
