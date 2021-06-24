@@ -50,8 +50,13 @@ mkdir data
 
 * [x] create `.env` file inside `data` directory and provide environment variables to the Node configuration like for example:
 
+{% hint style="warning" %}
+`NETHERMIND_CONFIG` is the important one - defines the network config
+{% endhint %}
+
 {% code title=".env" %}
 ```bash
+NETHERMIND_CONFIG="mainnet_pruned"
 NETHERMIND_JSONRPCCONFIG_ENABLED=true
 NETHERMIND_JSONRPCCONFIG_HOST="0.0.0.0"
 NETHERMIND_HEALTHCHECKSCONFIG_ENABLED="true"
