@@ -16,8 +16,6 @@
 | nethermind_header_db_writes | Number of Headers DB writes. |
 | nethermind_other_db_reads | Number of other DB reads. |
 | nethermind_other_db_writes | Number of other DB writes. |
-| nethermind_pending_txs_db_reads | Number of Pending Tx DB reads. |
-| nethermind_pending_txs_db_writes | Number of Pending Tx DB writes. |
 | nethermind_receipts_db_reads | Number of Receipts DB reads. |
 | nethermind_receipts_db_writes | Number of Receipts DB writes. |
 | nethermind_state_db_reads | Number of State DB reads. |
