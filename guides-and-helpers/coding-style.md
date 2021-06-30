@@ -2,14 +2,13 @@
 
 ## General Rules:
 
-* We use tabs with size of 4 for indentation (not four spaces).
+* We use four spaces for indentation (not tabs).
 * Do not use Hungarian Notation!
 * Avoid more than one empty line at any time. For example, do not have two blank lines between members of a type.
 * If a file happens to differ in style from these guidelines (e.g. private members are named m_member rather than _member), the existing style in that file takes precedence.
 * We only use `var` when it's obvious what the variable type is (e.g. `var stream = new FileStream(...)` not `var stream = OpenStandardInput()`).
 * Fields should be specified at the top within type declarations.
 * When using a single-statement `if`, we follow these conventions:
-    * Never use single-line form (for example: `if (source == null) throw new ArgumentNullException("source");`)
     * Using braces is always accepted, and required if any block of an if/else if/.../else compound statement uses braces or if a single statement body spans multiple lines.
     * Braces may be omitted only if the body of every block associated with an if/else if/.../else compound statement is placed on a single line. 
 * Avoid complex conditions in ternary operators.
