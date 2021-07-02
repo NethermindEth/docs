@@ -137,6 +137,7 @@
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
 * [Smoke Testing Example](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
 * [ETH2 &lt;-&gt; Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
+* [Coding Style](guides-and-helpers/coding-style.md)
 
 ## Enterprise
 

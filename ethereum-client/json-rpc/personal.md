@@ -1,6 +1,7 @@
-# personal
+# Personal module
 
-## personal_importRawKey
+## personal\_importRawKey
+
 | Invocation |
 | :--- |
 | `{"method":"personal_importRawKey","params":[keyData, passphrase]}` |
@@ -15,15 +16,17 @@
 | `Address` |  |
 
 {% tabs %}
-{% tab title="Example request of personal_importRawKey" %}
-```
+{% tab title="Example request of personal\_importRawKey" %}
+```text
 curl --data '{"method":"personal_importRawKey","params":[keyData, passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI personal.importRawKey](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-importrawkey)
-## personal_listAccounts
+
+## personal\_listAccounts
+
 | Invocation |
 | :--- |
 | `{"method":"personal_listAccounts","params":[]}` |
@@ -31,20 +34,23 @@ curl --data '{"method":"personal_importRawKey","params":[keyData, passphrase],"i
 | This method doesn't have parameters. |
 | :--- |
 
+
 | Returned type | Description |
 | :--- | :--- |
 | `Address` |  |
 
 {% tabs %}
-{% tab title="Example request of personal_listAccounts" %}
-```
+{% tab title="Example request of personal\_listAccounts" %}
+```text
 curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI personal.listAccounts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-listaccounts)
-## personal_lockAccount
+
+## personal\_lockAccount
+
 | Invocation |
 | :--- |
 | `{"method":"personal_lockAccount","params":[address]}` |
@@ -58,15 +64,17 @@ curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0
 | `Boolean` |  |
 
 {% tabs %}
-{% tab title="Example request of personal_lockAccount" %}
-```
+{% tab title="Example request of personal\_lockAccount" %}
+```text
 curl --data '{"method":"personal_lockAccount","params":[address],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI personal.lockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-lockaccount)
-## personal_newAccount
+
+## personal\_newAccount
+
 | Invocation |
 | :--- |
 | `{"method":"personal_newAccount","params":[passphrase]}` |
@@ -80,15 +88,17 @@ curl --data '{"method":"personal_lockAccount","params":[address],"id":1,"jsonrpc
 | `Address` |  |
 
 {% tabs %}
-{% tab title="Example request of personal_newAccount" %}
-```
+{% tab title="Example request of personal\_newAccount" %}
+```text
 curl --data '{"method":"personal_newAccount","params":[passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI personal.newAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-newaccount)
-## personal_unlockAccount
+
+## personal\_unlockAccount
+
 | Invocation |
 | :--- |
 | `{"method":"personal_unlockAccount","params":[address, passphrase]}` |
@@ -103,11 +113,12 @@ curl --data '{"method":"personal_newAccount","params":[passphrase],"id":1,"jsonr
 | `Boolean` |  |
 
 {% tabs %}
-{% tab title="Example request of personal_unlockAccount" %}
-```
+{% tab title="Example request of personal\_unlockAccount" %}
+```text
 curl --data '{"method":"personal_unlockAccount","params":[address, passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [See also CLI personal.unlockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-unlockaccount)
+

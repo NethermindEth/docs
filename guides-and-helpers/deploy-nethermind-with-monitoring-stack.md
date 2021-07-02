@@ -163,7 +163,7 @@ Explore Nethermind metrics, visualize and analyse using prometheus syntax, a lis
 
 Go to the `YOUR_DROPLET_IP:9091` and verify if metrics are inflowing
 
-![](../.gitbook/assets/image%20%2849%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/image%20%2849%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29.png)
 
 ### Seq
 

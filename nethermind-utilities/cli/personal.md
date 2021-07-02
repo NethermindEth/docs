@@ -1,6 +1,4 @@
-# personal
-
-
+# Personal module
 
 ## personal.importRawKey
 
@@ -25,8 +23,7 @@ personal.importRawKey(keyData, passphrase)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal_importRawKey](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_importrawkey)
-
+[See also JSON RPC personal\_importRawKey](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_importrawkey)
 
 ## personal.listAccounts
 
@@ -36,6 +33,7 @@ personal.importRawKey(keyData, passphrase)
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -49,8 +47,7 @@ personal.listAccounts
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal_listAccounts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_listaccounts)
-
+[See also JSON RPC personal\_listAccounts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_listaccounts)
 
 ## personal.lockAccount
 
@@ -74,8 +71,7 @@ personal.lockAccount(address)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal_lockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_lockaccount)
-
+[See also JSON RPC personal\_lockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_lockaccount)
 
 ## personal.newAccount
 
@@ -99,8 +95,7 @@ personal.newAccount(passphrase)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal_newAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_newaccount)
-
+[See also JSON RPC personal\_newAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_newaccount)
 
 ## personal.unlockAccount
 
@@ -125,4 +120,5 @@ personal.unlockAccount(address, passphrase)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal_unlockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_unlockaccount)
+[See also JSON RPC personal\_unlockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_unlockaccount)
+

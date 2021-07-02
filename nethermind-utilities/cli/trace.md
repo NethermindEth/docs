@@ -1,11 +1,8 @@
-# trace
-
-
+# Trace module
 
 ## trace.block
 
-Returns traces created at given block. 
-
+Returns traces created at given block.
 
 | Invocation |
 | :--- |
@@ -26,8 +23,7 @@ trace.block(numberOrTag)
 ```
 {% endtab %}
 
-{% tab title="Objects in trace_block" %}
-
+{% tab title="Objects in trace\_block" %}
 `BlockParameter`
 
 | Field name | Type |
@@ -39,8 +35,7 @@ trace.block(numberOrTag)
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromStore`
 
@@ -88,13 +83,11 @@ trace.block(numberOrTag)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC trace_block](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_block)
-
+[See also JSON RPC trace\_block](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_block)
 
 ## trace.rawTransaction
 
-Traces a call to eth_sendRawTransaction without making the call, returning the traces 
-
+Traces a call to eth\_sendRawTransaction without making the call, returning the traces
 
 | Invocation |
 | :--- |
@@ -116,8 +109,7 @@ trace.rawTransaction(data, traceTypes)
 ```
 {% endtab %}
 
-{% tab title="Objects in trace_rawTransaction" %}
-
+{% tab title="Objects in trace\_rawTransaction" %}
 `ParityTxTraceFromReplay`
 
 | Field name | Type |
@@ -158,13 +150,11 @@ trace.rawTransaction(data, traceTypes)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC trace_rawTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_rawtransaction)
-
+[See also JSON RPC trace\_rawTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_rawtransaction)
 
 ## trace.replayBlockTransactions
 
-Replays all transactions in a block returning the requested traces for each transaction. 
-
+Replays all transactions in a block returning the requested traces for each transaction.
 
 | Invocation |
 | :--- |
@@ -186,8 +176,7 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 ```
 {% endtab %}
 
-{% tab title="Objects in trace_replayBlockTransactions" %}
-
+{% tab title="Objects in trace\_replayBlockTransactions" %}
 `BlockParameter`
 
 | Field name | Type |
@@ -199,8 +188,7 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 
 `BlockParameterType`
 
-- `Quantity` or `String` (latest, earliest, pending)
-
+* `Quantity` or `String` \(latest, earliest, pending\)
 
 `ParityTxTraceFromReplay`
 
@@ -242,13 +230,11 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC trace_replayBlockTransactions](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_replayblocktransactions)
-
+[See also JSON RPC trace\_replayBlockTransactions](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_replayblocktransactions)
 
 ## trace.replayTransaction
 
-Replays a transaction, returning the traces. 
-
+Replays a transaction, returning the traces.
 
 | Invocation |
 | :--- |
@@ -270,8 +256,7 @@ trace.replayTransaction(txHash, traceTypes)
 ```
 {% endtab %}
 
-{% tab title="Objects in trace_replayTransaction" %}
-
+{% tab title="Objects in trace\_replayTransaction" %}
 `ParityTxTraceFromReplay`
 
 | Field name | Type |
@@ -312,13 +297,11 @@ trace.replayTransaction(txHash, traceTypes)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC trace_replayTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_replaytransaction)
-
+[See also JSON RPC trace\_replayTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_replaytransaction)
 
 ## trace.transaction
 
-Returns all traces of given transaction 
-
+Returns all traces of given transaction
 
 | Invocation |
 | :--- |
@@ -339,8 +322,7 @@ trace.transaction(txHash)
 ```
 {% endtab %}
 
-{% tab title="Objects in trace_transaction" %}
-
+{% tab title="Objects in trace\_transaction" %}
 `ParityTxTraceFromStore`
 
 | Field name | Type |
@@ -387,4 +369,5 @@ trace.transaction(txHash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC trace_transaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_transaction)
+[See also JSON RPC trace\_transaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/trace#trace_transaction)
+

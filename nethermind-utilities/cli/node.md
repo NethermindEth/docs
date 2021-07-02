@@ -1,5 +1,4 @@
-# node
-
+# Node module
 
 ## node.address
 
@@ -9,6 +8,7 @@
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -22,7 +22,6 @@ node.address
 {% endtab %}
 {% endtabs %}
 
-
 ## node.enode
 
 | Invocation |
@@ -31,6 +30,7 @@ node.address
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
@@ -43,7 +43,6 @@ node.enode
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ## node.setNodeKey
 
@@ -67,7 +66,6 @@ node.setNodeKey(key)
 {% endtab %}
 {% endtabs %}
 
-
 ## node.switch
 
 | Invocation |
@@ -89,7 +87,6 @@ node.switch(uri)
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ## node.switchLocal
 
@@ -113,7 +110,6 @@ node.switchLocal(uri)
 {% endtab %}
 {% endtabs %}
 
-
 ## node.uri
 
 | Invocation |
@@ -122,6 +118,7 @@ node.switchLocal(uri)
 
 | This method doesn't have parameters. |
 | :--- |
+
 
 | Returned type | Description |
 | :--- | :--- |
