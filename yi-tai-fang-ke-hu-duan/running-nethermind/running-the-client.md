@@ -62,7 +62,7 @@ cd nethermind
 
 * [x] Nethermind 节点开始运行 🎉，请查看这篇文章来了解[日志](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%284%29%20%281%29.png)
 
 {% hint style="danger" %}
 ## 如果您使用的是 Ubuntu 16.04 操作系统，需要安装其它依赖项。
