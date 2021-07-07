@@ -30,28 +30,28 @@ You need to download the Nethermind package first. There are currently 2 sources
 
 * [ ] After launching Nethermind via `./Nethermind.Launcher` you need to choose the Node to start first.
 
-![Nethermind.Launcher initial options](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/launcher.png)
+![Nethermind.Launcher initial options](../.gitbook/assets/screenshot-from-2021-07-07-18-32-55.png)
 
 * [ ] Select `Goerli (light Clique testnet)`
 
-![Network options](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/goerli-choice.png)
+![Network options](../.gitbook/assets/screenshot-from-2021-07-07-18-33-21.png)
 
 * [ ] Select `Fast Sync` mode
 
-![Synchronization mode options](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/fast-sync-choice.png)
+![](../.gitbook/assets/screenshot-from-2021-07-07-18-34-17.png)
 
 * [ ] Ensure that JSON RPC is enabled by typing `y`and pressing `enter`
 * [ ] Press `enter` to skip setting up `Host IP` 127.0.0.1 will be set as default
 
 {% hint style="warning" %}
-If **not** running locall, you may need to change the `Host` value to the VM public IP address.
+If **not** running local, you may need to change the `Host` value to the VM public IP address.
 {% endhint %}
 
-![Enabling JSON RPC via Nethermind.Launcher](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/json-choice.png)
+![Enabling JSON RPC via Nethermind.Launcher](../.gitbook/assets/screenshot-from-2021-07-07-19-07-25.png)
 
-* [ ] Skip the ethstats registration by typing `y`and pressing `enter`
+* [ ] Skip the ethstats registration by typing `N` and pressing `enter`
 
-![EthStats configuration skip](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/ethstats-choice.png)
+![EthStats configuration skip](../.gitbook/assets/screenshot-from-2021-07-07-18-43-35.png)
 
 ## 👨💻 Explaining Nethermind logs
 
@@ -102,7 +102,7 @@ At some point the entire state is downloaded and the node enters the `full sync`
 
 ![G&#xF6;rli full sync logs](https://github.com/NethermindEth/nethermind/raw/master/docs/source/start/full-sync-annotated.png)
 
-Now you can launch CLI in the separate process \(launching Nethermind.Launcher again and selecting CLI instead of Node\). You can read more about [CLI here](https://nethermind.readthedocs.io/en/latest/cli.html).
+Now you can launch CLI in the separate process \(launching Nethermind.Launcher again and selecting CLI instead of Node\). You can read more about [CLI here](https://docs.nethermind.io/nethermind/nethermind-utilities/cli).
 
 You can also connect to the node from Metamask by selecting `localhost:8545` from the Metamask network list.
 
