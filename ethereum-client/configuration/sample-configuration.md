@@ -38,9 +38,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 12768000,
-    "PivotHash": "0x4665d013457fa4df36a048b9c32aacef4625c33b675e85cae9ec4639051b8b14",
-    "PivotTotalDifficulty": "27132500332398259437744",
+    "PivotNumber": 12864000,
+    "PivotHash": "0x3f6659e34eda19383437b02e27b11356e49a753eadb50dcbe5ada3b759df9227",
+    "PivotTotalDifficulty": "27770076516721242175281",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -98,13 +98,15 @@ description: Sample Fast Sync configurations for Nethermind
     "Size": 1024
   },
   "Db": {
-    "CacheIndexAndFilterBlocks": false
+    "CacheIndexAndFilterBlocks": false,
+    "EnableMetricsUpdater": true,
+    "EnableDbStatistics": false
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 5070000,
-    "PivotHash": "0x8346be124d70ca755a218e7e65af603cdd06f32ce4f1e3e58131e7daf36390b9",
-    "PivotTotalDifficulty": "7412944",
+    "PivotNumber": 5160000,
+    "PivotHash": "0x47ee48875f9c2ffb801487b88d32886b85e6df14c0cd3b023dd9c8ed9c5c3d6a",
+    "PivotTotalDifficulty": "7543345",
     "FastBlocks": true,
     "BeamSync": false,
     "DownloadBodiesInFastSync": true,
@@ -168,9 +170,9 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "BeamSync": false,
-    "PivotNumber": 8850000,
-    "PivotHash": "0xc8b82fcebd870be023e55526bf5261b77eb89b0bc150152e8afe9fff3c07f10b",
-    "PivotTotalDifficulty": "15135600",
+    "PivotNumber": 8940000,
+    "PivotHash": "0x57ead986f28cc83c30a1cae725c6df50f210b7129226a5f7c728628109eecc0e",
+    "PivotTotalDifficulty": "15256291",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -226,11 +228,11 @@ description: Sample Fast Sync configurations for Nethermind
     "FastBlocks": true,
     "BeamSync": false,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 10560000,
+    "PivotNumber": 10660000,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
-    "PivotHash": "0xb2f873313a056d377eea670ec795391be63ef4adc9d10011b341b15f1a4ac4a4",
-    "PivotTotalDifficulty": "33957955142407625"
+    "PivotHash": "0x8f1d8e1e8e33427e85364fe138e05d40feffe8a46fa18029db101e4cb78464ea",
+    "PivotTotalDifficulty": "34183794910988026"
   },
   "EthStats": {
     "Enabled": false,
