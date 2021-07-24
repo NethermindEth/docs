@@ -12,6 +12,7 @@
 | nethermind_c_h_t_db_writes | Number of CHT DB writes. |
 | nethermind_code_db_reads | Number of Code DB reads. |
 | nethermind_code_db_writes | Number of Code DB writes. |
+| nethermind_db_stats | Metrics extracted from RocksDB Compacion Stats and DB Statistics |
 | nethermind_header_db_reads | Number of Headers DB reads. |
 | nethermind_header_db_writes | Number of Headers DB writes. |
 | nethermind_other_db_reads | Number of other DB reads. |
