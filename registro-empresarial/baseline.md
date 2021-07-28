@@ -32,5 +32,5 @@ Inicie el nodo B \(las llaves del nodo de prueba son consistentes con Data/stati
 
 Encontrarás debajo una descripción de alto nivel sobre el Baseline Protocol Atomic Workflow Step con la infraestructura proveída y el node Nethermind sirviendo como la entrada al Ethereum mainnet y manteniendo los datos del Baseline Merkle trees.
 
-![](../.gitbook/assets/provide_neth%20%281%29%20%281%29%20%284%29%20%284%29.png)
+![](../.gitbook/assets/provide_neth%20%281%29%20%281%29%20%284%29%20%284%29%20%284%29.png)
 

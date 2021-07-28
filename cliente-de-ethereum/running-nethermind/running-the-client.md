@@ -62,7 +62,7 @@ cd nethermind
 
 * [x] El nodo Nethermind ahora se está ejecutando 🎉, consulte este artículo para familiarizarse con los [registros](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%284%29%20%283%29.png)
+![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%284%29%20%282%29%20%283%29.png)
 
 {% hint style="danger" %}
 ## Para Ubuntu 16.04, necesitará instalar dependencias adicionales.
