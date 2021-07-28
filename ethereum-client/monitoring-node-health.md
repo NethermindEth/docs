@@ -75,11 +75,12 @@ We may also add Slack Webhook endpoint to which our node's health will be report
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
 ```
 
-If your node will be **Unhealthy** you should receive the following message:
+If your node will be **Unhealthy** you should receive a message similar to this:
 
-![Unhealty](../.gitbook/assets/image%20%28114%29.png)
+![Unhealthy](../.gitbook/assets/unhealthy.png)
 
-and when it becomes **Healthy** \(**synced** and with **peers**\):
+with description of why the node is unhealthy, node's name and information about the machine on which the node is running.  
+When it becomes **Healthy** \(**synced** and with **peers**\) you should receive:
 
 ![Healthy](../.gitbook/assets/image%20%2846%29.png)
 
