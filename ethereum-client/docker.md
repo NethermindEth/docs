@@ -34,7 +34,7 @@ All versions are available in [tags history](https://github.com/NethermindEth/ne
 ### **Running Nethermind** Container
 
 {% hint style="danger" %}
-For chains like `sokol` you may need to increase the `nofile` limit by adding the following instruction to docker commands
+On some OS like **Amazon Linux** you may need to increase the `nofile` limit by adding the following instruction to docker commands:
 
 ```
 --ulimit nofile=1000000:1000000
@@ -46,7 +46,7 @@ e.g.
 docker run -it --ulimit nofile=1000000:1000000 nethermind/nethermind
 ```
 
-ref. [Github issue](https://github.com/NethermindEth/nethermind/issues/3221)
+ref. [Github issue](https://github.com/NethermindEth/nethermind/issues/3221), [alternative solutions](https://stackoverflow.com/a/62136351)
 {% endhint %}
 
 Docker pull command:
