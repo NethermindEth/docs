@@ -8,9 +8,10 @@ description: E-mail addresses of Nethermind Team
 
 | Team | E-mail address |
 | :--- | :--- |
+| All | hello@nethermind.io |
 | Nethermind Team | team@nethermind.io |
 | DevOps | devops@nethermind.io |
-| Marketing | marketing@nethermind.io |
-| PR | pr@nethermind.io |
-| UI | ui@nethermind.io |
+| Marketing & PR | marketing@nethermind.io |
+
+
 
