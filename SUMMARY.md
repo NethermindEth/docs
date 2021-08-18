@@ -83,7 +83,6 @@
 ## MEV
 
 * [MEV Plugin](mev/mev-plugin.md)
-* [MEV on xDai](mev/xdai-relay.md)
 
 ## Nethermind utilities
 
