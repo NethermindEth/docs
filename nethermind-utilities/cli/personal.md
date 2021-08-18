@@ -1,4 +1,6 @@
-# Personal module
+# personal
+
+
 
 ## personal.importRawKey
 
@@ -21,9 +23,15 @@
 personal.importRawKey(keyData, passphrase)
 ```
 {% endtab %}
+{% tab title="Example response of personal.importRawKey" %}
+```yaml
+0x707fc13c0eb628c074f7ff514ae21acaee0ec072
+```
+{% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal\_importRawKey](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_importrawkey)
+[See also JSON RPC personal_importRawKey](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_importrawkey)
+
 
 ## personal.listAccounts
 
@@ -33,7 +41,6 @@ personal.importRawKey(keyData, passphrase)
 
 | This method doesn't have parameters. |
 | :--- |
-
 
 | Returned type | Description |
 | :--- | :--- |
@@ -45,9 +52,15 @@ personal.importRawKey(keyData, passphrase)
 personal.listAccounts
 ```
 {% endtab %}
+{% tab title="Example response of personal.listAccounts" %}
+```yaml
+["0x247b5f5f007fb5d50de13cfcbd4460db21c12bcb","0x707fc13c0eb628c074f7ff514ae21acaee0ec072"]
+```
+{% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal\_listAccounts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_listaccounts)
+[See also JSON RPC personal_listAccounts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_listaccounts)
+
 
 ## personal.lockAccount
 
@@ -66,12 +79,18 @@ personal.listAccounts
 {% tabs %}
 {% tab title="Example request of personal.lockAccount" %}
 ```yaml
-personal.lockAccount(address)
+personal.lockAccount(707Fc13C0eB628c074f7ff514Ae21ACaeE0ec072)
+```
+{% endtab %}
+{% tab title="Example response of personal.lockAccount" %}
+```yaml
+true
 ```
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal\_lockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_lockaccount)
+[See also JSON RPC personal_lockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_lockaccount)
+
 
 ## personal.newAccount
 
@@ -90,12 +109,18 @@ personal.lockAccount(address)
 {% tabs %}
 {% tab title="Example request of personal.newAccount" %}
 ```yaml
-personal.newAccount(passphrase)
+personal.newAccount(testPass)
+```
+{% endtab %}
+{% tab title="Example response of personal.newAccount" %}
+```yaml
+0xfb06d31473545b0e0d62a24e02b266e08523c6a9
 ```
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal\_newAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_newaccount)
+[See also JSON RPC personal_newAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_newaccount)
+
 
 ## personal.unlockAccount
 
@@ -118,7 +143,11 @@ personal.newAccount(passphrase)
 personal.unlockAccount(address, passphrase)
 ```
 {% endtab %}
+{% tab title="Example response of personal.unlockAccount" %}
+```yaml
+true
+```
+{% endtab %}
 {% endtabs %}
 
-[See also JSON RPC personal\_unlockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_unlockaccount)
-
+[See also JSON RPC personal_unlockAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/personal#personal_unlockaccount)
