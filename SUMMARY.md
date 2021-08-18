@@ -80,6 +80,11 @@
 * [Plugins](ethereum-client/plugins.md)
 * [Monitoring Node's Health](ethereum-client/monitoring-node-health.md)
 
+## MEV
+
+* [MEV Plugin](mev/mev-plugin.md)
+* [MEV on xDai](mev/xdai-relay.md)
+
 ## Nethermind utilities
 
 * [CLI](nethermind-utilities/cli/README.md)
