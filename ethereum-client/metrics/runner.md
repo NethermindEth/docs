@@ -1,6 +1,6 @@
 # Runner module
 
-| Metric | Description |
+| Metric Name | Description |
 | :--- | :--- |
-| nethermind\_version | Version number |
+| Version | Version number |
 

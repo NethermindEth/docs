@@ -1,4 +1,6 @@
-# EthStats module
+# EthStats
+
+
 
 | Property | Description | Default |
 | :--- | :--- | :--- |
@@ -7,4 +9,3 @@
 | Name | Node name displayed on the given ethstats server. | null |
 | Secret | Password for publishing to a given ethstats server. | null |
 | Server | EthStats server wss://hostname:port/api/ | null |
-
