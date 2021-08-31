@@ -1,8 +1,8 @@
-# Proof module
+# proof
 
-## proof\_getTransactionByHash
+## proof_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers. 
 
 | Invocation |
 | :--- |
@@ -18,13 +18,12 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | `TransactionWithProof object` |  |
 
 {% tabs %}
-{% tab title="Example request of proof\_getTransactionByHash" %}
-```text
+{% tab title="Example request of proof_getTransactionByHash" %}
+```
 curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHeader],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
-
-{% tab title="Example response of proof\_getTransactionByHash" %}
+{% tab title="Example response of proof_getTransactionByHash" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -34,7 +33,8 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 ```
 {% endtab %}
 
-{% tab title="Objects in proof\_getTransactionByHash" %}
+{% tab title="Objects in proof_getTransactionByHash" %}
+
 `TransactionWithProof`
 
 | Field name | Type |
@@ -71,10 +71,9 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 {% endtabs %}
 
 [See also CLI proof.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionbyhash)
+## proof_getTransactionReceipt
 
-## proof\_getTransactionReceipt
-
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers
+This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
 
 | Invocation |
 | :--- |
@@ -90,13 +89,12 @@ This function should return the same result as `eth_call` and also proofs of all
 | `ReceiptWithProof object` |  |
 
 {% tabs %}
-{% tab title="Example request of proof\_getTransactionReceipt" %}
-```text
+{% tab title="Example request of proof_getTransactionReceipt" %}
+```
 curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHeader],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
-
-{% tab title="Example response of proof\_getTransactionReceipt" %}
+{% tab title="Example response of proof_getTransactionReceipt" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -106,7 +104,8 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 ```
 {% endtab %}
 
-{% tab title="Objects in proof\_getTransactionReceipt" %}
+{% tab title="Objects in proof_getTransactionReceipt" %}
+
 `ReceiptWithProof`
 
 | Field name | Type |
@@ -140,4 +139,3 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 {% endtabs %}
 
 [See also CLI proof.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionreceipt)
-
