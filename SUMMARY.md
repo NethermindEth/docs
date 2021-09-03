@@ -102,10 +102,7 @@
   * [TxPool module](nethermind-utilities/cli/txpool.md)
   * [Web3 module](nethermind-utilities/cli/web3.md)
 * [DSL](nethermind-utilities/dsl.md)
-* [Beam Wallet](nethermind-utilities/beam-wallet.md)
 * [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
-* [Pipeline](nethermind-utilities/pipeline/README.md)
-  * [Pipeline Plugins](nethermind-utilities/pipeline/pipeline-plugins.md)
 
 ## Nethermind DataMarketplace
 
