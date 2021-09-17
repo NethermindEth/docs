@@ -1,19 +1,18 @@
-# Evm module
+# Evm
 
 | Metric | Description |
 | :--- | :--- |
-| nethermind\_blockhash\_opcode | Number of BLOCKHASH opcodes executed. |
-| nethermind\_bn256\_add\_precompile | Number of BN256\_ADD precompile calls. |
-| nethermind\_bn256\_mul\_precompile | Number of BN256\_MUL precompile calls. |
-| nethermind\_bn256\_pairing\_precompile | Number of BN256\_PAIRING precompile calls. |
-| nethermind\_calls | Number of calls to other contracts. |
-| nethermind\_ec\_recover\_precompile | Number of EC\_RECOVERY precompile calls. |
-| nethermind\_evm\_exceptions | Number of EVM exceptions thrown by contracts. |
-| nethermind\_mod\_exp\_opcode | Number of MODEXP precompiles executed. |
-| nethermind\_mod\_exp\_precompile | Number of MODEXP precompile calls. |
-| nethermind\_ripemd160\_precompile | Number of RIPEMD160 precompile calls. |
-| nethermind\_self\_destructs | Number of SELFDESTRUCT calls. |
-| nethermind\_sha256\_precompile | Number of SHA256 precompile calls. |
-| nethermind\_sload\_opcode | Number of SLOAD opcodes executed. |
-| nethermind\_sstore\_opcode | Number of SSTORE opcodes executed. |
-
+| nethermind_blockhash_opcode | Number of BLOCKHASH opcodes executed. |
+| nethermind_bn256_add_precompile | Number of BN256_ADD precompile calls. |
+| nethermind_bn256_mul_precompile | Number of BN256_MUL precompile calls. |
+| nethermind_bn256_pairing_precompile | Number of BN256_PAIRING precompile calls. |
+| nethermind_calls | Number of calls to other contracts. |
+| nethermind_ec_recover_precompile | Number of EC_RECOVERY precompile calls. |
+| nethermind_evm_exceptions | Number of EVM exceptions thrown by contracts. |
+| nethermind_mod_exp_opcode | Number of MODEXP precompiles executed. |
+| nethermind_mod_exp_precompile | Number of MODEXP precompile calls. |
+| nethermind_ripemd160_precompile | Number of RIPEMD160 precompile calls. |
+| nethermind_self_destructs | Number of SELFDESTRUCT calls. |
+| nethermind_sha256_precompile | Number of SHA256 precompile calls. |
+| nethermind_sload_opcode | Number of SLOAD opcodes executed. |
+| nethermind_sstore_opcode | Number of SSTORE opcodes executed. |
