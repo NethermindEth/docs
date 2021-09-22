@@ -21,7 +21,7 @@ You can check [supported operating systems](supported-platforms.md) and architec
 {% page-ref page="hardware-requirements.md" %}
 
 ## ⏬ Installing and launching Nethermind
-You can install Nethermind by executing commands or download Nethermind package.
+You can install Nethermind by executing commands or downloading Nethermind package.
 
 ### Install on Ubuntu
 Run the following commands to enable our launchpad repository run then install `Nethermind`:
@@ -61,20 +61,20 @@ There are currently 2 sources providing `Nethermind` packages. Check this page t
 
 {% page-ref page="../ethereum-client/download-sources/" %}
 
-Then you can launch Nethermind via `./Nethermind.Launcher` or `./Nethermind.Runner`.
+You can launch Nethermind via `./Nethermind.Launcher` or `./Nethermind.Runner`.
 
 ## 🔛 Launching Nethermind via Nethermind.Launcher
 
 We will explain the process of launching Nethermind on the example of Görli Testnet.
-* After launching Nethermind via `./Nethermind.Launcher` you need to choose the Node to start first.
+* After launching Nethermind via `./Nethermind.Launcher` choose node to start first.
 
 ![Nethermind.Launcher initial options](../.gitbook/assets/getting_started_0.png)
 
-* First select `Ethereum Node` and then select `Goerli (light Clique testnet)`
+* First select `Ethereum Node` and then `Goerli (light Clique testnet)`
 
 ![Network options](../.gitbook/assets/getting_started_1.png)
 
-* Select `Fast Sync` mode. If you are curious about other modes, click here: [sync modes](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes).
+* In this example we will select `Fast Sync` mode. If you are curious about other modes, click here: [sync modes](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes).
 
 ![Selecting Fast sync option](../.gitbook/assets/getting_started_2.png)
 
