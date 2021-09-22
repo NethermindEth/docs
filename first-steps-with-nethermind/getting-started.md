@@ -55,11 +55,29 @@ To execute `Nethermind.Runner` run:
 nethermind --config mainnet
 ```
 
+### Install on Windows
+
+The best way to install `Nethermind` on Windows is by downloading package. It is described below. 
+
 ### Download a package
 
-There are currently 2 sources providing `Nethermind` packages. Check this page to find them out
+There are currently 2 sources providing `Nethermind` packages.
 
-{% page-ref page="../ethereum-client/download-sources/" %}
+{% tabs %}
+{% tab title="Downloads Page" %}
+Click here: [downloads.nethermind.io](https://downloads.nethermind.io/)
+{% endtab %}
+
+{% tab title="Github Relase Page" %}
+Click here: [github.com/Nethermind](https://github.com/NethermindEth/nethermind/releases)
+{% endtab %}
+{% endtabs %}
+
+{% page-ref page="../../first-steps-with-nethermind/getting-started.md" %}
+
+{% page-ref page="../running-nethermind/" %}
+
+
 
 You can launch Nethermind via `./Nethermind.Launcher` or `./Nethermind.Runner`.
 
