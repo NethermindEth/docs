@@ -5,7 +5,7 @@
 * fast sync
   * downloads only the latest state, headers, and optionally bodies and receipts
   * you can run it like this: `./Nethermind.Runner --config mainnet`
-  * if you have a good connection and a reasonable machine then setting --Network.MaxActiveSyncPeers to 256 \(see NetworkConfig secion in configuration\) should give much better fast sync times \(we use 256 peers to get 5 hours syncs\) [https://docs.nethermind.io/nethermind/ethereum-client/configuration/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network)
+  * if you have a good connection and a reasonable machine then setting --Network.MaxActivePeers to 256 \(see NetworkConfig secion in configuration\) should give much better fast sync times \(we use 256 peers to get 5 hours syncs\) [https://docs.nethermind.io/nethermind/ethereum-client/configuration/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network)
 * beam sync
   * same as fast sync but also allows to query the chain within the first few minutes from starting
   * you can run it like this: `./Nethermind.Runner --config mainnet_beam`
