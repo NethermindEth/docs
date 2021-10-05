@@ -1,56 +1,67 @@
-# Network module
+# Network
 
 | Metric | Description |
 | :--- | :--- |
-| nethermind\_already\_connected\_disconnects | Number of received disconnects due to already connected |
-| nethermind\_breach\_of\_protocol\_disconnects | Number of received disconnects due to breach of protocol |
-| nethermind\_client\_quitting\_disconnects | Number of received disconnects due to client quitting |
-| nethermind\_disconnect\_requested\_disconnects | Number of received disconnects due to disconnect requested |
-| nethermind\_eth62\_block\_bodies\_received | Number of eth.62 BlockBodies messages received |
-| nethermind\_eth62\_block\_headers\_received | Number of eth.62 BlockHeaders messages received |
-| nethermind\_eth62\_get\_block\_bodies\_received | Number of eth.62 GetBlockBodies messages received |
-| nethermind\_eth62\_get\_block\_headers\_received | Number of eth.62 GetBlockHeaders messages received |
-| nethermind\_eth62\_new\_block\_hashes\_received | Number of eth.62 NewBlockHashes messages received |
-| nethermind\_eth62\_new\_block\_received | Number of eth.62 NewBlock messages received |
-| nethermind\_eth62\_transactions\_received | Number of eth.62 Transactions messages received |
-| nethermind\_eth63\_get\_node\_data\_received | Number of eth.63 GetNodeData messages received |
-| nethermind\_eth63\_get\_receipts\_received | Number of eth.63 GetReceipts messages received |
-| nethermind\_eth63\_node\_data\_received | Number of eth.63 NodeData messages received |
-| nethermind\_eth63\_receipts\_received | Number of eth.63 Receipts messages received |
-| nethermind\_eth65\_get\_pooled\_transactions\_received | Number of eth.65 GetPooledTransactions messages received |
-| nethermind\_eth65\_get\_pooled\_transactions\_requested | Number of eth.65 GetPooledTransactions messages sent |
-| nethermind\_eth65\_new\_pooled\_transaction\_hashes\_received | Number of eth.65 NewPooledTransactionHashes messages received |
-| nethermind\_eth65\_pooled\_transactions\_received | Number of eth.65 PooledTransactions messages received |
-| nethermind\_handshakes | Number of devp2p handshakes |
-| nethermind\_handshake\_timeouts | Number of devp2p handshke timeouts |
-| nethermind\_hellos\_received | Number of devp2p hello messages received |
-| nethermind\_hellos\_sent | Number of devp2p hello messages sent |
-| nethermind\_incoming\_connections | Number of incoming connection. |
-| nethermind\_incompatible\_p2\_p\_disconnects | Number of received disconnects due to incompatible devp2p version |
-| nethermind\_les\_statuses\_received | Number of les status messages received |
-| nethermind\_les\_statuses\_sent | Number of les status messages sent |
-| nethermind\_local\_already\_connected\_disconnects | Number of initiated disconnects due to already connected |
-| nethermind\_local\_breach\_of\_protocol\_disconnects | Number of sent disconnects due to breach of protocol |
-| nethermind\_local\_client\_quitting\_disconnects | Number of initiated disconnects due to client quitting |
-| nethermind\_local\_disconnect\_requested\_disconnects | Number of initiated disconnects due to disconnect requested |
-| nethermind\_local\_incompatible\_p2\_p\_disconnects | Number of initiated disconnects due to incompatible devp2p |
-| nethermind\_local\_null\_node\_identity\_disconnects | Number of initiated disconnects due to missing node identity |
-| nethermind\_local\_other\_disconnects | Number of initiated disconnects due to other reason |
-| nethermind\_local\_receive\_message\_timeout\_disconnects | Number of initiated disconnects due to request timeout |
-| nethermind\_local\_same\_as\_self\_disconnects | Number of initiated disconnects due to connection to self |
-| nethermind\_local\_tcp\_subsystem\_error\_disconnects | Number of initiated disconnects due to TCP error |
-| nethermind\_local\_too\_many\_peers\_disconnects | Number of initiated disconnects due to breach of protocol |
-| nethermind\_local\_unexpected\_identity\_disconnects | Number of initiated disconnects due to node identity info mismatch |
-| nethermind\_local\_useless\_peer\_disconnects | Number of sent disconnects due to useless peer |
-| nethermind\_null\_node\_identity\_disconnects | Number of received disconnects due to missing peer identity |
-| nethermind\_other\_disconnects | Number of received disconnects due to other reasons |
-| nethermind\_outgoing\_connections | Number of outgoing connection. |
-| nethermind\_receive\_message\_timeout\_disconnects | Number of received disconnects due to request timeouts |
-| nethermind\_same\_as\_self\_disconnects | Number of received disconnects due to connecting to self |
-| nethermind\_statuses\_received | Number of eth status messages received |
-| nethermind\_statuses\_sent | Number of eth status messages sent |
-| nethermind\_tcp\_subsystem\_error\_disconnects | Number of disconnects due to TCP error |
-| nethermind\_too\_many\_peers\_disconnects | Number of received disconnects due to too many peers |
-| nethermind\_unexpected\_identity\_disconnects | Number of received disconnects due to peer identity information mismatch |
-| nethermind\_useless\_peer\_disconnects | Number of received disconnects due to useless peer |
-
+| nethermind_already_connected_disconnects | Number of received disconnects due to already connected |
+| nethermind_breach_of_protocol_disconnects | Number of received disconnects due to breach of protocol |
+| nethermind_client_quitting_disconnects | Number of received disconnects due to client quitting |
+| nethermind_disconnect_requested_disconnects | Number of received disconnects due to disconnect requested |
+| nethermind_eth62_block_bodies_received | Number of eth.62 BlockBodies messages received |
+| nethermind_eth62_block_headers_received | Number of eth.62 BlockHeaders messages received |
+| nethermind_eth62_get_block_bodies_received | Number of eth.62 GetBlockBodies messages received |
+| nethermind_eth62_get_block_headers_received | Number of eth.62 GetBlockHeaders messages received |
+| nethermind_eth62_new_block_hashes_received | Number of eth.62 NewBlockHashes messages received |
+| nethermind_eth62_new_block_received | Number of eth.62 NewBlock messages received |
+| nethermind_eth62_transactions_received | Number of eth.62 Transactions messages received |
+| nethermind_eth63_get_node_data_received | Number of eth.63 GetNodeData messages received |
+| nethermind_eth63_get_receipts_received | Number of eth.63 GetReceipts messages received |
+| nethermind_eth63_node_data_received | Number of eth.63 NodeData messages received |
+| nethermind_eth63_receipts_received | Number of eth.63 Receipts messages received |
+| nethermind_eth65_get_pooled_transactions_received | Number of eth.65 GetPooledTransactions messages received |
+| nethermind_eth65_get_pooled_transactions_requested | Number of eth.65 GetPooledTransactions messages sent |
+| nethermind_eth65_new_pooled_transaction_hashes_received | Number of eth.65 NewPooledTransactionHashes messages received |
+| nethermind_eth65_new_pooled_transaction_hashes_sent | Number of eth.65 NewPooledTransactionHashes messages sent |
+| nethermind_eth65_pooled_transactions_received | Number of eth.65 PooledTransactions messages received |
+| nethermind_eth66_block_bodies_received | Number of eth.66 BlockBodies messages received |
+| nethermind_eth66_block_headers_received | Number of eth.66 BlockHeaders messages received |
+| nethermind_eth66_get_block_bodies_received | Number of eth.66 GetBlockBodies messages received |
+| nethermind_eth66_get_block_headers_received | Number of eth.66 GetBlockHeaders messages received |
+| nethermind_eth66_get_node_data_received | Number of eth.66 GetNodeData messages received |
+| nethermind_eth66_get_pooled_transactions_received | Number of eth.66 GetPooledTransactions messages received |
+| nethermind_eth66_get_pooled_transactions_requested | Number of eth.66 GetPooledTransactions messages sent |
+| nethermind_eth66_get_receipts_received | Number of eth.66 GetReceipts messages received |
+| nethermind_eth66_node_data_received | Number of eth.66 NodeData messages received |
+| nethermind_eth66_pooled_transactions_received | Number of eth.66 PooledTransactions messages received |
+| nethermind_eth66_receipts_received | Number of eth.66 Receipts messages received |
+| nethermind_handshakes | Number of devp2p handshakes |
+| nethermind_handshake_timeouts | Number of devp2p handshke timeouts |
+| nethermind_hellos_received | Number of devp2p hello messages received |
+| nethermind_hellos_sent | Number of devp2p hello messages sent |
+| nethermind_incoming_connections | Number of incoming connection. |
+| nethermind_incompatible_p2_p_disconnects | Number of received disconnects due to incompatible devp2p version |
+| nethermind_les_statuses_received | Number of les status messages received |
+| nethermind_les_statuses_sent | Number of les status messages sent |
+| nethermind_local_already_connected_disconnects | Number of initiated disconnects due to already connected |
+| nethermind_local_breach_of_protocol_disconnects | Number of sent disconnects due to breach of protocol |
+| nethermind_local_client_quitting_disconnects | Number of initiated disconnects due to client quitting |
+| nethermind_local_disconnect_requested_disconnects | Number of initiated disconnects due to disconnect requested |
+| nethermind_local_incompatible_p2_p_disconnects | Number of initiated disconnects due to incompatible devp2p |
+| nethermind_local_null_node_identity_disconnects | Number of initiated disconnects due to missing node identity |
+| nethermind_local_other_disconnects | Number of initiated disconnects due to other reason |
+| nethermind_local_receive_message_timeout_disconnects | Number of initiated disconnects due to request timeout |
+| nethermind_local_same_as_self_disconnects | Number of initiated disconnects due to connection to self |
+| nethermind_local_tcp_subsystem_error_disconnects | Number of initiated disconnects due to TCP error |
+| nethermind_local_too_many_peers_disconnects | Number of initiated disconnects due to breach of protocol |
+| nethermind_local_unexpected_identity_disconnects | Number of initiated disconnects due to node identity info mismatch |
+| nethermind_local_useless_peer_disconnects | Number of sent disconnects due to useless peer |
+| nethermind_null_node_identity_disconnects | Number of received disconnects due to missing peer identity |
+| nethermind_other_disconnects | Number of received disconnects due to other reasons |
+| nethermind_outgoing_connections | Number of outgoing connection. |
+| nethermind_receive_message_timeout_disconnects | Number of received disconnects due to request timeouts |
+| nethermind_same_as_self_disconnects | Number of received disconnects due to connecting to self |
+| nethermind_statuses_received | Number of eth status messages received |
+| nethermind_statuses_sent | Number of eth status messages sent |
+| nethermind_tcp_subsystem_error_disconnects | Number of disconnects due to TCP error |
+| nethermind_too_many_peers_disconnects | Number of received disconnects due to too many peers |
+| nethermind_unexpected_identity_disconnects | Number of received disconnects due to peer identity information mismatch |
+| nethermind_useless_peer_disconnects | Number of received disconnects due to useless peer |
