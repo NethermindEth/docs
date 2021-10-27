@@ -3,7 +3,7 @@
 JSON RPC is available via HTTP and WS.
 
 {% hint style="warning" %}
-JSON RPC needs to be explicitly switched on in the Netherming `config` file.
+JSON RPC needs to be explicitly switched on in the Nethermind `config` file.
 {% endhint %}
 
 {% tabs %}
