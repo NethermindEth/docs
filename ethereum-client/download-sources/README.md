@@ -1,6 +1,6 @@
 ---
 description: >-
-  Nethermind packages are available in either [Github Releases Page](https://github.com/NethermindEth/nethermind/releases) or our
+  Nethermind packages are available on either Github Releases Page or our
   Downloads Page.
 ---
 
@@ -8,7 +8,7 @@ description: >-
 
 {% tabs %}
 {% tab title="Downloads Page" %}
-Click here: [downloads.nethermind.io](https://downloads.nethermind.io/)
+Click here: [downloads.nethermind.io](https://downloads.nethermind.io)
 {% endtab %}
 
 {% tab title="Github Relase Page" %}
@@ -16,9 +16,10 @@ Click here: [github.com/Nethermind](https://github.com/NethermindEth/nethermind/
 {% endtab %}
 {% endtabs %}
 
-{% page-ref page="../../first-steps-with-nethermind/getting-started.md" %}
+{% content-ref url="../../first-steps-with-nethermind/getting-started.md" %}
+[getting-started.md](../../first-steps-with-nethermind/getting-started.md)
+{% endcontent-ref %}
 
-{% page-ref page="../running-nethermind/" %}
-
-
-
+{% content-ref url="../running-nethermind/" %}
+[running-nethermind](../running-nethermind/)
+{% endcontent-ref %}
