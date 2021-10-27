@@ -1,22 +1,22 @@
 # Subscribe module
 
-## eth_subscribe
+## eth\_subscribe
 
-Starts a subscription to specific event. For every event matching subscription, JSON-RPC notification with event details and subscription ID will be sent to a client.\
+Starts a subscription to specific event. For every event matching subscription, JSON-RPC notification with event details and subscription ID will be sent to a client.  
 Subscriptions are created with a regular RPC call, with `eth_subscribe` as method and subscription type as first parameter. If successful, returns `subscription ID`.
 
 #### Parameters
 
-| Parameter        | Type            | Description                                              |
-| ---------------- | --------------- | -------------------------------------------------------- |
-| subscriptionType | `string`        | Type of subscription you want to subscribe to.           |
-| arguments        | `Filter object` | Optional arguments available only for logs subscription. |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| subscriptionType | `string` | Type of subscription you want to subscribe to. |
+| arguments | `Filter object` | Optional arguments available only for logs subscription. |
 
 #### Returns
 
-| Returned type | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| `string`      | Subscription ID, used to identify subscription and to unsubscribe. |
+| Returned type | Description |
+| :--- | :--- |
+| `string` | Subscription ID, used to identify subscription and to unsubscribe. |
 
 #### Notifications returns
 
@@ -31,9 +31,10 @@ Depends on the subscription type.
 
 #### Additional informations
 
-*   Subscriptions require a full duplex connections. Due to this reason, they are not available via HTTP and supported only on WebSockets.
+* Subscriptions require a full duplex connections. Due to this reason, they are not available via HTTP and supported only on WebSockets.
 
-    [Learn how to install and use wscat - simple command line WebSockets client.](https://github.com/websockets/wscat)
+  [Learn how to install and use wscat - simple command line WebSockets client.](https://github.com/websockets/wscat)
+
 * Subscriptions are coupled to a connection. If the connection is closed, all subscriptions created over this connection are removed.
 * Subscribing to some events can cause a flood of notifications, e.g. listening for all logs/blocks when the node starts to synchronize.
 
@@ -47,7 +48,7 @@ Parameter: `"newHeads"`
 
 {% tabs %}
 {% tab title="Request of newHeads" %}
-```
+```text
 {"method":"eth_subscribe","params":["newHeads"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
@@ -103,11 +104,11 @@ Subscribes to incoming logs, filtered by the given options. In case of a chain r
 Parameters:
 
 * `"logs"`
-* `Filter object` (optional)
-  * `fromBlock` - `"earliest"`, `"pending"` or `"latest"` (optional)
-  * `toBlock` - `"earliest"`, `"pending"` or `"latest"` (optional)
-  * `address` - either an address or an array of addresses. Only logs that are created from these addresses are returned (optional)
-  * `topics` - only logs which match the specified topics (optional)
+* `Filter object` \(optional\)
+  * `fromBlock` - `"earliest"`, `"pending"` or `"latest"` \(optional\)
+  * `toBlock` - `"earliest"`, `"pending"` or `"latest"` \(optional\)
+  * `address` - either an address or an array of addresses. Only logs that are created from these addresses are returned \(optional\)
+  * `topics` - only logs which match the specified topics \(optional\)
 
 If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock` are not provided, subscription will use default filter: `fromBlock` - `"latest"`, `toBlock` - `"latest"`
 
@@ -115,7 +116,7 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 
 {% tabs %}
 {% tab title="Request of logs" %}
-```
+```text
 {
 	"method":"eth_subscribe",
 	"params":
@@ -176,7 +177,7 @@ Parameter: `"newPendingTransactions"`
 
 {% tabs %}
 {% tab title="Request of newPendingTransactions" %}
-```
+```text
 {"method":"eth_subscribe","params":["newPendingTransactions"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
@@ -202,42 +203,6 @@ Parameter: `"newPendingTransactions"`
 {% endtab %}
 {% endtabs %}
 
-### droppedPendingTransactions
-
-Subscribes to transactions evicted from transaction pool. Returns transaction hash.
-
-Parameter: `"droppedPendingTransactions"`
-
-#### Example
-
-{% tabs %}
-{% tab title="Request of droppedPendingTransactions" %}
-```
-{"method":"eth_subscribe","params":["droppedPendingTransactions"],"id":1,"jsonrpc":"2.0"}
-```
-{% endtab %}
-
-{% tab title="Response of droppedPendingTransactions" %}
-```
-{"jsonrpc":"2.0","result":"0xfa561cbadf9b4bd79b62537661d18f27","id":1}
-```
-{% endtab %}
-
-{% tab title="Notification of droppedPendingTransactions" %}
-```
-{
-	"jsonrpc":"2.0",
-	"method":"eth_subscription",
-	"params":
-		{
-			"subscription":"0xfa561cbadf9b4bd79b62537661d18f27",
-			"result":"0x6ad1058c56f71fe630053d24905f06d80677262ae2e8f42799690ab6b9fc5bd0"
-		}
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ### syncing
 
 Subscribe to syncing events. Returns boolean `false` once if node is synced or an object with statistics once when the node starts syncing.
@@ -248,7 +213,7 @@ Parameter: `"syncing"`
 
 {% tabs %}
 {% tab title="Request of syncing" %}
-```
+```text
 {"method":"eth_subscribe","params":["syncing"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
@@ -292,34 +257,35 @@ or
 {% endtab %}
 {% endtabs %}
 
-## eth_unsubscribe
+## eth\_unsubscribe
 
 Unsubscribes from subscription. Subscriptions are cancelled with a regular RPC call with `eth_unsubscribe` as method and `subscription ID` as a parameter. It returns a `bool` indicating if the subscription was cancelled successful.
 
 #### Parameters
 
-| Parameter name | Type     | Description                                 |
-| -------------- | -------- | ------------------------------------------- |
+| Parameter name | Type | Description |
+| :--- | :--- | :--- |
 | subscriptionId | `string` | ID of subscription you want to unsubscribe. |
 
 #### Returns
 
-| Returned type | Description                                                      |
-| ------------- | ---------------------------------------------------------------- |
-| `bool`        | `true` if subscription was cancelled successful, `false` if not. |
+| Returned type | Description |
+| :--- | :--- |
+| `bool` | `true` if subscription was cancelled successful, `false` if not. |
 
 #### Example
 
 {% tabs %}
-{% tab title="Request of eth_unsubscribe" %}
-```
+{% tab title="Request of eth\_unsubscribe" %}
+```text
 {"method":"eth_unsubscribe","params":["0x3cd2bcd1630948fe89190ca27b3b5913"],"id":1,"jsonrpc":"2.0"}
 ```
 {% endtab %}
 
-{% tab title="Response of eth_unsubscribe" %}
+{% tab title="Response of eth\_unsubscribe" %}
 ```
 {"jsonrpc":"2.0","result":true,"id":1}
 ```
 {% endtab %}
 {% endtabs %}
+
