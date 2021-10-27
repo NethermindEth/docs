@@ -20,23 +20,79 @@ You can check [supported operating systems](supported-platforms.md) and architec
 
 {% page-ref page="hardware-requirements.md" %}
 
-## ⏬ Downloading Nethermind
+## ⏬ Installing and launching Nethermind
+You can install Nethermind by executing commands or downloading Nethermind package.
 
-You need to download the Nethermind package first. There are currently 2 sources providing `Nethermind` packages. Check this page to find them out
+### Install on Ubuntu
+Run the following commands to enable our launchpad repository run then install `Nethermind`:
+```
+sudo add-apt-repository ppa:nethermindeth/nethermind
+sudo apt install nethermind
+```
+To execute `Nethermind.Launcher` run:
 
-{% page-ref page="../ethereum-client/download-sources/" %}
+```
+nethermind
+```
+To execute `Nethermind.Runner` run:
+```
+nethermind --config mainnet
+```
 
-## 🔛 Launching Nethermind
+### Install on macOs 
+Run the following commands to add the `Nethermind` repository to your local Homebrew and install.
+```
+brew tap nethermindeth/nethermind
+brew install nethermind
+```
+To execute `Nethermind.Launcher` run:
+```
+nethermind-launcher
+```
 
-* After launching Nethermind via `./Nethermind.Launcher` you need to choose the Node to start first.
+To execute `Nethermind.Runner` run:
+```
+nethermind --config mainnet
+```
+
+### Install on Windows
+
+The best way to install `Nethermind` on Windows is by downloading package. It is described below. 
+
+### Download a package
+
+There are currently 2 sources providing `Nethermind` packages.
+
+{% tabs %}
+{% tab title="Downloads Page" %}
+Click here: [downloads.nethermind.io](https://downloads.nethermind.io/)
+{% endtab %}
+
+{% tab title="Github Relase Page" %}
+Click here: [github.com/Nethermind](https://github.com/NethermindEth/nethermind/releases)
+{% endtab %}
+{% endtabs %}
+
+{% page-ref page="../../first-steps-with-nethermind/getting-started.md" %}
+
+{% page-ref page="../running-nethermind/" %}
+
+
+
+You can launch Nethermind via `./Nethermind.Launcher` or `./Nethermind.Runner`.
+
+## 🔛 Launching Nethermind via Nethermind.Launcher
+
+We will explain the process of launching Nethermind on the example of Görli Testnet.
+* After launching Nethermind via `./Nethermind.Launcher` choose node to start first.
 
 ![Nethermind.Launcher initial options](../.gitbook/assets/getting_started_0.png)
 
-* First select `Ethereum Node` and then select `Goerli (light Clique testnet)`
+* First select `Ethereum Node` and then `Goerli (light Clique testnet)`
 
 ![Network options](../.gitbook/assets/getting_started_1.png)
 
-* Select `Fast Sync` mode. If you are curious about other modes, click here: [sync modes](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes).
+* In this example we will select `Fast Sync` mode. If you are curious about other modes, click here: [sync modes](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes).
 
 ![Selecting Fast sync option](../.gitbook/assets/getting_started_2.png)
 
