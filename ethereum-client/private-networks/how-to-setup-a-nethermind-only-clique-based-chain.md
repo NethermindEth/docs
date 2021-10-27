@@ -6,7 +6,7 @@ description: Set of validators sealing blocks on private clique network
 
 ### TL;DR
 
-Download a script that will do all the steps described below for you. It will prompt you 2 things: 
+Download a script that will do all the steps described below for you. It will prompt you 2 things:&#x20;
 
 * Confirm installation of required packages
 * The number of Validators you wish to run in your private network
@@ -21,7 +21,7 @@ or use this command to download it:
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/private-networking/clique-validators.sh
 ```
 
-Finally give the script permissions and run it \(script requires `sudo` privileges\):
+Finally give the script permissions and run it (script requires `sudo` privileges):
 
 ```bash
 chmod +x clique-validators.sh
@@ -61,7 +61,7 @@ cd private-networking
 mkdir node_1 node_2 node_3 genesis
 ```
 
-* download chainspec file with clique engine and place it in genesis folder \(we will be using goerli chainspec in this example\)
+* download chainspec file with clique engine and place it in genesis folder (we will be using goerli chainspec in this example)
 
 ```bash
 wget https://raw.githubusercontent.com/NethermindEth/nethermind/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json
@@ -84,7 +84,7 @@ cat <<EOF > static-nodes.json
 EOF
 ```
 
-* create `config.cfg` file and place it in `node_1/configs` subfolders \(do this for node\_2 and node\_3 as well\)
+* create `config.cfg` file and place it in `node_1/configs` subfolders (do this for node\_2 and node\_3 as well)
 
 ```bash
 cat <<EOF > node_1/configs/config.cfg
@@ -190,11 +190,11 @@ networks:
 docker-compose run node_1
 ```
 
-Stop the node when `Nethermind initialization` completes `Ctrl +C`. Copy `This node` and `Node address` \(without 0x prefixes\) values to a text file. Continue with node\_2 and node\_3.
+Stop the node when `Nethermind initialization` completes `Ctrl +C`. Copy `This node` and `Node address` (without 0x prefixes) values to a text file. Continue with node\_2 and node\_3.
 
 {% hint style="info" %}
-You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.  
-`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io/).
+You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.\
+`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io).
 {% endhint %}
 
 ```bash
@@ -205,7 +205,7 @@ node.address
 
 * the file should look similar to this:
 
-```text
+```
 SIGNER_1="b5bc4d9e63eb1cb16aeeb0fd08e8344283b45b0d"
 STATIC_NODE_1="enode://2281549869465d98e90cebc45e1d6834a01465a990add7bcf07a49287e7e66b50ca27f9c70a46190cef7ad746dd5d5b6b9dfee0c9954104c8e9bd0d42758ec58@10.5.0.2:30300"
 SIGNER_2="c4e3a14d33f765faaca31672bd90d0c325bfa0cf"
@@ -259,9 +259,7 @@ sudo rm -rf node_1/db/clique node_2/db/clique node_3/db/clique
 docker-compose up
 ```
 
-You should see the private network working and nodes sealing blocks in Clique consensus algorithm 🎉 
+You should see the private network working and nodes sealing blocks in Clique consensus algorithm :tada:&#x20;
 
-![Clique validators sealing blocks in private network](../../.gitbook/assets/image%20%288%29.png)
-
-
+![Clique validators sealing blocks in private network](<../../.gitbook/assets/image (8).png>)
 

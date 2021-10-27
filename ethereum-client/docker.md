@@ -8,7 +8,9 @@ description: Nethermind Dockers instructions
 
 Docker repository can be found here:
 
-{% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
+{% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" %}
+Nethermind Docker Hub
+{% endembed %}
 
 ## Supported architectures
 
@@ -21,13 +23,13 @@ We are currently supporting docker images for the following CPU architectures:
 
 ### **Available tags:**
 
-| **Tag** | Description | Architecture |
-| :--- | :--- | :--- |
-| `latest` | The latest **Nethermind Debian** based image | x86\_64, ARM64 |
+| **Tag**  | Description                                  | Architecture   |
+| -------- | -------------------------------------------- | -------------- |
+| `latest` | The latest **Nethermind Debian **based image | x86\_64, ARM64 |
 
 To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
 
-For example, if you wish to use version `1.7.4` of **Nethermind Debian** image, the image name would be `nethermind/nethermind:1.7.4`.
+For example, if you wish to use version `1.7.4` of **Nethermind Debian **image, the image name would be `nethermind/nethermind:1.7.4`.
 
 All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
 
@@ -87,7 +89,7 @@ NETHERMIND_{MODULE}CONFIG_{PROPERTY} or --{Module}.{Property}
 
 For example:
 
-```text
+```
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
@@ -96,7 +98,7 @@ Environment variables are to be passed before the docker image tag while paramet
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables ****can be easily used within **docker-compose.yml** files in the environment section
+Environment variables** **can be easily used within **docker-compose.yml** files in the environment section
 {% endhint %}
 
 ### **JSON RPC**
@@ -123,11 +125,11 @@ docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonR
 {% endtab %}
 {% endtabs %}
 
-If running from a VM you may want to expose JSON RPC to the outer world via `--JsonRpc.Host {hostmachine_ip}` \(`127.0.0.1` is set by default\). You may try setting `--JsonRpc.Host 0.0.0.0` if you still can not connect with JSON RPC.
+If running from a VM you may want to expose JSON RPC to the outer world via `--JsonRpc.Host {hostmachine_ip}` (`127.0.0.1` is set by default). You may try setting `--JsonRpc.Host 0.0.0.0` if you still can not connect with JSON RPC.
 
 ### **Available configurations**
 
-To switch the network use `--config {network}` flag \(default value is `mainnet`\).
+To switch the network use `--config {network}` flag (default value is `mainnet`).
 
 * `mainnet`
 * `goerli`
@@ -195,8 +197,8 @@ More detailed NLog configuration can be found [here](https://github.com/NLog/NLo
 
 Dockerfile can be found in the repository [root](https://github.com/NethermindEth/nethermind) and it currently uses the power of multi-arch builds:
 
-| File Name | Description | Architecture |
-| :--- | :--- | :--- |
+| File Name                                                                        | Description                                                                 | Architecture   |
+| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------- |
 | [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build a Debian based image | x86\_64, ARM64 |
 
 In order to build the images, run:
@@ -210,4 +212,3 @@ Example usage of the locally created docker-image:
 ```bash
 docker run -it nethermind --config goerli
 ```
-

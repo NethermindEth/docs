@@ -4,13 +4,13 @@ description: Monitoring Nethermind Node's Health with HealthChecks
 
 # Monitoring Node's Health
 
-Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
+Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness **-_ verify if the node is **synced** and has **at least one peer. **Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
 
 The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermind start.
 
 ## Enabling and configuring Health Checks
 
-The health checks need to be additionally enabled which can be done either through `--HealthChecks.*` flags or by adding a `"HealthChecks"` section to the config file. 
+The health checks need to be additionally enabled which can be done either through `--HealthChecks.*` flags or by adding a `"HealthChecks"` section to the config file.&#x20;
 
 {% tabs %}
 {% tab title="HealthChecks config section example" %}
@@ -31,17 +31,19 @@ The health checks need to be additionally enabled which can be done either throu
 JSON RPC Service needs to be enabled in order for health checks to work `--JsonRpc.Enabled true`
 {% endhint %}
 
-Each configuration option is described here: 
+Each configuration option is described here:&#x20;
 
-{% page-ref page="configuration/healthchecks.md" %}
+{% content-ref url="configuration/healthchecks.md" %}
+[healthchecks.md](configuration/healthchecks.md)
+{% endcontent-ref %}
 
-#### Enabling Health Checks without UI 
+#### Enabling Health Checks without UI&#x20;
 
 ```bash
 ./Nethermind.Runner --HealthChecks.Enabled true
 ```
 
-The `health` endpoint is now available at `localhost:8545/health`  by default \(if your `--JsonRpc.Port` is `8545`\). The `health` endpoint can be configured via `--HealthChecks.Slug` parameter e.g. `--HealthChecks.Slug /api/health`. We can if it is working with `curl`:
+The `health` endpoint is now available at `localhost:8545/health`  by default (if your `--JsonRpc.Port` is `8545`). The `health` endpoint can be configured via `--HealthChecks.Slug` parameter e.g. `--HealthChecks.Slug /api/health`. We can if it is working with `curl`:
 
 ```bash
 // Request
@@ -54,7 +56,7 @@ curl localhost:8545/health
 {"status":"Healthy","totalDuration":"00:00:00.0015582","entries":{"node-health":{"data":{},"description":"The node is now fully synced with a network, number of peers: 99","duration":"00:00:00.0003881","status":"Healthy","tags":[]}}}
 ```
 
-* **Unhealthy** returns **503** \(Service Unavailable\) status code
+* **Unhealthy **returns **503** (Service Unavailable) status code
 * **Healthy** returns **200** status code
 
 #### Enabling Health Checks UI
@@ -65,7 +67,7 @@ curl localhost:8545/health
 
 Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow seeing node's health on a nice UI. To view the UI simply go to `http://localhost:8545/healthchecks-ui`.
 
-![Unhealthy status reported on UI page](../.gitbook/assets/image%20%2876%29.png)
+![Unhealthy status reported on UI page](<../.gitbook/assets/image (76).png>)
 
 #### Enabling Slack reports
 
@@ -75,14 +77,14 @@ We may also add Slack Webhook endpoint to which our node's health will be report
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
 ```
 
-If your node will be **Unhealthy** you should receive a message similar to this:
+If your node will be **Unhealthy **you should receive a message similar to this:
 
 ![Unhealthy](../.gitbook/assets/unhealthy.png)
 
-with description of why the node is unhealthy, node's name and information about the machine on which the node is running.  
-When it becomes **Healthy** \(**synced** and with **peers**\) you should receive:
+with description of why the node is unhealthy, node's name and information about the machine on which the node is running.\
+When it becomes **Healthy **(**synced **and with **peers**) you should receive:
 
-![Healthy](../.gitbook/assets/image%20%2846%29.png)
+![Healthy](<../.gitbook/assets/image (46).png>)
 
 #### HealthChecks for producing and processing blocks
 
@@ -105,12 +107,12 @@ In version v.1.10.18, we introduced additional behavior for health checks. We ad
 
 If we don't set those fields in a config application will try to use them based on seal engine specification. You can see concrete values in the tables below. If we have infinity time, we can still report unhealthy status if our processing or producing threads stopped.
 
-| Seal engine | Processing interval | Producing interval |
-| :--- | :--- | :---: |
-| Clique | 4 \* Period | 2 \* Period \* SingersCount |
-| Aura | 4 \* StepDuration | 2 \* StepDuration \* ValidatorsCount |
-| Ethash | 180 | Infinity |
-| Custom/NethDev/None | Infinity | Infinity |
+| Seal engine         | Processing interval |          Producing interval          |
+| ------------------- | ------------------- | :----------------------------------: |
+| Clique              | 4 \* Period         |      2 \* Period \* SingersCount     |
+| Aura                | 4 \* StepDuration   | 2 \* StepDuration \* ValidatorsCount |
+| Ethash              | 180                 |               Infinity               |
+| Custom/NethDev/None | Infinity            |               Infinity               |
 
 #### health\_nodeStatus
 
@@ -124,7 +126,7 @@ In version v.1.10.18, we've also introduced health checks via JSON RPC requests.
 {% endtab %}
 
 {% tab title="Response" %}
-```text
+```
 {
     "jsonrpc": "2.0",
     "result": {
@@ -139,4 +141,3 @@ In version v.1.10.18, we've also introduced health checks via JSON RPC requests.
 ```
 {% endtab %}
 {% endtabs %}
-

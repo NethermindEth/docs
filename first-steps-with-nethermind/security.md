@@ -7,15 +7,15 @@ description: >-
 # Security
 
 {% hint style="danger" %}
-📢 **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!
+:loudspeaker: **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!
 {% endhint %}
 
 {% hint style="danger" %}
-📢 JSON RPC endpoint \(port `8545`\) should **NOT** be exposed publicly \(should be behind the firewall\).
+:loudspeaker: JSON RPC endpoint (port `8545`) should **NOT** be exposed publicly (should be behind the firewall).
 {% endhint %}
 
 {% hint style="danger" %}
-📢The private key from which the node ID is derived is stored on disk \(**NOT** protected by password\).
+:loudspeaker:The private key from which the node ID is derived is stored on disk (**NOT** protected by password).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -25,4 +25,3 @@ Nethermind is thoroughly tested but the more popular it will get the more likely
 {% hint style="info" %}
 For non-mainnet signing you can use dev wallet configurations.
 {% endhint %}
-

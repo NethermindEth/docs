@@ -19,7 +19,7 @@
 ## Ethereum client
 
 * [Download](ethereum-client/download-sources/README.md)
-  * [Downloads Page](http://downloads.nethermind.io/)
+  * [Downloads Page](http://downloads.nethermind.io)
   * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
 * [Running Nethermind](ethereum-client/running-nethermind/README.md)
   * [Running the client](ethereum-client/running-nethermind/running-the-client.md)
@@ -101,23 +101,6 @@
   * [Trace module](nethermind-utilities/cli/trace.md)
   * [TxPool module](nethermind-utilities/cli/txpool.md)
   * [Web3 module](nethermind-utilities/cli/web3.md)
-* [DSL](nethermind-utilities/dsl.md)
-* [RocksDbExtractor](nethermind-utilities/rocksdbextractor.md)
-
-## Nethermind DataMarketplace
-
-* [FAQ](nethermind-datamarketplace/ndm-faq/README.md)
-  * [Provider](nethermind-datamarketplace/ndm-faq/ndm-faq-provider.md)
-  * [Consumer](nethermind-datamarketplace/ndm-faq/ndm-faq-consumer.md)
-* [Data asset states](nethermind-datamarketplace/data-asset-states.md)
-* [Refunds](nethermind-datamarketplace/refunds.md)
-* [Running NDM on MacOS problems and fixes](nethermind-datamarketplace/running-ndm-on-macos-problems-and-fixes.md)
-* [Connecting with providers](nethermind-datamarketplace/connecting-with-providers.md)
-* [Connecting with consumers](nethermind-datamarketplace/connecting-with-consumers.md)
-* [Beta testing NDM](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/README.md)
-  * [Provider](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/ndm-beta-testing-provider.md)
-  * [Consumer](nethermind-datamarketplace/setting-up-ndm-for-manual-testing/ndm-beta-testing-consumer.md)
-* [Providing data as a provider](nethermind-datamarketplace/providing-data-as-a-provider.md)
 
 ## Guides and Helpers
 
@@ -137,7 +120,7 @@
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
 * [Smoke Testing Example](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
-* [ETH2 &lt;-&gt; Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
+* [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 * [Coding Style](guides-and-helpers/coding-style.md)
 
 ## Enterprise
@@ -145,4 +128,3 @@
 * [Connecting to Nethermind hosted Seq and Grafana](enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md)
 * [Baseline](enterprise/baseline.md)
 * [Seq](enterprise/seq.md)
-

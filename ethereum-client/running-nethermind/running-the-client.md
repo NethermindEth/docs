@@ -14,7 +14,7 @@ Check [Download sources](../download-sources/) in order to get the latest Nether
 wget [LINUX_PACKAGE_URL]
 ```
 
-![Download package with wget](../../.gitbook/assets/image%20%282%29.png)
+![Download package with wget](<../../.gitbook/assets/image (2).png>)
 
 * [x] Install linux dependencies
 
@@ -22,7 +22,7 @@ wget [LINUX_PACKAGE_URL]
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y
 ```
 
-![Install Linux dependencies](../../.gitbook/assets/image%20%2816%29.png)
+![Install Linux dependencies](<../../.gitbook/assets/image (16).png>)
 
 * [x] `unzip` the package
 
@@ -30,7 +30,7 @@ sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip 
 unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 ```
 
-![Unzip the package](../../.gitbook/assets/image%20%287%29.png)
+![Unzip the package](<../../.gitbook/assets/image (7).png>)
 
 * [x] Switch directory
 
@@ -38,7 +38,7 @@ unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 cd nethermind
 ```
 
-![Switch directory](../../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![Switch directory](<../../.gitbook/assets/image (8) (1) (1) (1) (1).png>)
 
 * [x] Run `Nethermind.Launcher` and select `Ethereum Node`
 
@@ -46,23 +46,23 @@ cd nethermind
 ./Nethermind.Launcher
 ```
 
-![Run the Nethermind.Launcher](../../.gitbook/assets/image%20%2819%29.png)
+![Run the Nethermind.Launcher](<../../.gitbook/assets/image (19).png>)
 
 * [x] Select [network](../networks.md)
 
-![Select the network](../../.gitbook/assets/image%20%2814%29.png)
+![Select the network](<../../.gitbook/assets/image (14).png>)
 
 * [x] Select [synchronization mode](../sync-modes.md)
 
-![Select sync mode](../../.gitbook/assets/image%20%285%29.png)
+![Select sync mode](<../../.gitbook/assets/image (5).png>)
 
 * [x] Configure `JSON RPC`/`EthStats` if needed
 
-![JSON RPC / EthStats configuration](../../.gitbook/assets/image%20%2813%29.png)
+![JSON RPC / EthStats configuration](<../../.gitbook/assets/image (13).png>)
 
-* [x] Nethermind node is now running🎉, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
+* [x] Nethermind node is now running:tada:, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](../../.gitbook/assets/image%20%2818%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%284%29%20%282%29%20%281%29%20%284%29.png)
+![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (4).png>)
 
 {% hint style="danger" %}
 #### For Ubuntu 16.04 you will need additional dependencies installed.
@@ -77,28 +77,26 @@ sudo apt install libzstd1 -y
 {% endtab %}
 
 {% tab title="Windows" %}
-1. Download `Windows` package 
+1. Download `Windows` package&#x20;
 2. `unzip` the file
 3. Run `Nethermind.Launcher.exe`
 4. Select desired configuration
 {% endtab %}
 
 {% tab title="MacOS" %}
-* Download `Darwin`package 
+* Download `Darwin`package&#x20;
 * Install `MacOS` dependencies
 
-```text
+```
 brew install gmp snappy lz4 zstd
 ```
 
 * `unzip` the file
 * Run `Nethermind.Launcher`
-* ⚠ If you will be prompted with a warning, check instructions here -&gt; [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
+* :warning: If you will be prompted with a warning, check instructions here -> [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
 * Select desired configuration
 {% endtab %}
 {% endtabs %}
-
-
 
 
 
