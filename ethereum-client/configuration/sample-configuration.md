@@ -38,9 +38,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 13486000,
-    "PivotHash": "0x98a267b3c1d4d6f543bdf542ced1066e55185a87c67b059ec7f406b64b30cac9",
-    "PivotTotalDifficulty": "33073173643303586419891",
+    "PivotNumber": 13544000,
+    "PivotHash": "0x65d8f63590251e4452a664ae09551a14bcd57e68b434e830611deadf231ae221",
+    "PivotTotalDifficulty": "33665249308679674847066",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -104,9 +104,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 5700000,
-    "PivotHash": "0xdd98758fdddfd21257898c42c1505280394f99843aea785965d006d0ad72ad6f",
-    "PivotTotalDifficulty": "8370907",
+    "PivotNumber": 5760000,
+    "PivotHash": "0xd19286f1c7f48ee5b4e05b0182b210cb61c8ec36365e33b1b7df38c9f8bb54fb",
+    "PivotTotalDifficulty": "8447763",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -168,9 +168,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 9510000,
-    "PivotHash": "0x66317c4dffaaf1faed554a9c7a8b82e734bac400562aa2bd8186c563182523b5",
-    "PivotTotalDifficulty": "16020360",
+    "PivotNumber": 9570000,
+    "PivotHash": "0x1547387c2a0000bff7bf34c430c1fb36edae176d3f496d373e8fc80bdf4bae49",
+    "PivotTotalDifficulty": "16107003",
     "FastBlocks": true,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
@@ -225,11 +225,11 @@ description: Sample Fast Sync configurations for Nethermind
     "FastSync": true,
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 11290000,
+    "PivotNumber": 11340000,
     "DownloadBodiesInFastSync": true,
     "DownloadReceiptsInFastSync": true,
-    "PivotHash": "0x21a37467ce813ff0386bba8f87c5547a8be7d19e560a5e3ba0fb0a78ed70e27d",
-    "PivotTotalDifficulty": "35403647782445642"
+    "PivotHash": "0xfb773413a0569193b33d0fb6b8f77e13fcca51e3cc6596463b120788f02742f4",
+    "PivotTotalDifficulty": "35516591109556671"
   },
   "EthStats": {
     "Enabled": false,

@@ -3,7 +3,7 @@
 JSON RPC is available via HTTP and WS.
 
 {% hint style="warning" %}
-JSON RPC needs to be explicitly switched on in the Nethermind `config` file.
+JSON RPC needs to be explicitly switched on in the Netherming `config` file.
 {% endhint %}
 
 {% tabs %}
@@ -62,31 +62,6 @@ WebSockets, when enabled, will be accessible on the same address/port as HTTP by
 ```
 {% endtab %}
 {% endtabs %}
-
-IPC communication over Unix Domian Socket can be enabled by providing a path to a socket file. This communication type works on all systems that implements the standard including Windows 10.
-
-{% tabs %}
-{% tab title="goerli.cfg" %}
-```javascript
-  "JsonRpc": {
-    "IpcUnixDomainSocketPath": <provide path here>
-  }
-```
-{% endtab %}
-
-{% tab title="Nethermind.Runner" %}
-```text
-./Nethermind.Runner --JsonRpc.IpcUnixDomainSocketPath <provide path here>
-```
-{% endtab %}
-
-{% tab title="Nethermind.Launcher" %}
-```
-./Nethermind.Launcher --JsonRpc.IpcUnixDomainSocketPath <provide path here>
-```
-{% endtab %}
-{% endtabs %}
-
 
 Some of the methods listed in this section are not implemented by Nethermind \(they will be marked\).
 

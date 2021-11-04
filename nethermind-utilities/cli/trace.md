@@ -104,11 +104,11 @@ Traces a call, returning the traces
 
 | Invocation |
 | :--- |
-| `trace.call(message, traceTypes, blockParameter)` |
+| `trace.call(call, traceTypes, blockParameter)` |
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| message | `TransactionForRpc object` |  |
+| call | `TransactionForRpc object` |  |
 | traceTypes | `Array` |  |
 | blockParameter | `BlockParameter object` |  |
 
@@ -119,7 +119,7 @@ Traces a call, returning the traces
 {% tabs %}
 {% tab title="Example request of trace.call" %}
 ```yaml
-trace.call(message, traceTypes, blockParameter)
+trace.call(call, traceTypes, blockParameter)
 ```
 {% endtab %}
 
