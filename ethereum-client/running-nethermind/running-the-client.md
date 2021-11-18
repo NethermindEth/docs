@@ -84,17 +84,50 @@ sudo apt install libzstd1 -y
 {% endtab %}
 
 {% tab title="MacOS" %}
-* Download `Darwin`package&#x20;
-* Install `MacOS` dependencies
+*   **Via homebrew:**
 
-```
-brew install gmp snappy lz4 zstd
-```
+    1.  Install by running:
 
-* `unzip` the file
-* Run `Nethermind.Launcher`
-* :warning: If you will be prompted with a warning, check instructions here -> [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
-* Select desired configuration
+        ```
+        brew tap nethermindeth/nethermind
+        brew install nethermind
+        ```
+    2.  Run nethermind launcher with:
+
+        ```
+        nethermind-launcher
+        ```
+    3.  :warning: If you get the error&#x20;
+
+        ```
+        There was an error when starting ./Nethermind.RunnerError: spawn ./Nethermind.Runner ENOENT
+        ```
+
+        Run nethermind runner with the desired configuration with:
+
+        ```
+        nethermind --config <config file name (default: mainnet)>
+        ```
+
+        example:
+
+        ```
+        nethermind --config goerli
+        ```
+
+
+* **By downloading package:**
+  1. Download `Darwin`package from [downloads.nethermind.io](https://downloads.nethermind.io)
+  2.  Install `MacOS` dependencies
+
+      ```
+      brew install gmp snappy lz4 zstd
+      ```
+  3. `unzip` the file
+  4.  Run `Nethermind.Launcher`  &#x20;
+
+      :warning: If you are prompted with a warning, check instructions here -> [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
+  5. Select desired configuration
 {% endtab %}
 {% endtabs %}
 
