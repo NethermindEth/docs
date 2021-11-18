@@ -102,11 +102,11 @@ Traces a call, returning the traces
 
 | Invocation |
 | :--- |
-| `{"method":"trace_call","params":[message, traceTypes, blockParameter]}` |
+| `{"method":"trace_call","params":[call, traceTypes, blockParameter]}` |
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| message | `TransactionForRpc object` |  |
+| call | `TransactionForRpc object` |  |
 | traceTypes | `Array` |  |
 | blockParameter | `BlockParameter object` |  |
 
@@ -117,7 +117,7 @@ Traces a call, returning the traces
 {% tabs %}
 {% tab title="Example request of trace_call" %}
 ```
-curl --data '{"method":"trace_call","params":[message, traceTypes, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
