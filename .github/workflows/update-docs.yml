@@ -5,6 +5,10 @@ on:
     types: docs_update
   workflow_dispatch:
 
+
+permissions:
+  pull-requests: read|write
+  
 jobs:
   update-documentation:
     runs-on: ubuntu-latest
