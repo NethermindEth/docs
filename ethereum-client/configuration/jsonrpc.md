@@ -4,6 +4,7 @@
 
 | Property | Description | Default |
 | :--- | :--- | :--- |
+| AdditionalRPCUrls | Defines additional RPC urls to listen on. Example url format: http://localhost:8550|http,wss|engine,eth,net,subscribe | [] |
 | BufferResponses | Buffer responses before sending them to client. This allows to set Content-Length in response instead of using Transfer-Encoding: chunked. This may degrade performance on big responses. Max buffered response size is 2GB, chunked responses can be bigger. | false |
 | CallsFilterFilePath | A path to a file that contains a list of new-line separated approved JSON RPC calls | Data/jsonrpc.filter |
 | Enabled | Defines whether the JSON RPC service is enabled on node startup. Configure host nad port if default values do not work for you. | false |
