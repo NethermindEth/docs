@@ -178,6 +178,46 @@ curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H
 {% endtabs %}
 
 [See also CLI admin.peers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-peers)
+## admin_prune
+
+Runs full pruning if enabled. 
+
+| Invocation |
+| :--- |
+| `{"method":"admin_prune","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `PruningStatus object` |  |
+
+{% tabs %}
+{% tab title="Example request of admin_prune" %}
+```
+curl --data '{"method":"admin_prune","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+{% tab title="Example response of admin_prune" %}
+```yaml
+{
+  "jsonrpc": "2.0",
+  "result": "Starting",
+  "id": 1
+}
+```
+{% endtab %}
+
+{% tab title="Objects in admin_prune" %}
+
+`PruningStatus`
+
+| Field name | Type |
+| :--- | :--- |
+{% endtab %}
+{% endtabs %}
+
 ## admin_removePeer
 
 Removes given node. 

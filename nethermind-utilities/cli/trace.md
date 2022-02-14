@@ -149,6 +149,7 @@ trace.call(call, traceTypes, blockParameter)
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 

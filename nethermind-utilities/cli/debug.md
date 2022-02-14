@@ -311,6 +311,7 @@ debug.traceBlockByNumber(number, options)
 [See also JSON RPC debug_traceBlockByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbynumber)
 
 
+
 ## debug.traceTransaction
 
 This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 

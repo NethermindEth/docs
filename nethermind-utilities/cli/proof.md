@@ -66,6 +66,7 @@ proof.getTransactionByHash(txHash, includeHeader)
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 {% endtab %}
 {% endtabs %}
 

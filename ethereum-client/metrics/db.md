@@ -15,10 +15,13 @@
 | nethermind_db_stats | Metrics extracted from RocksDB Compacion Stats and DB Statistics |
 | nethermind_header_db_reads | Number of Headers DB reads. |
 | nethermind_header_db_writes | Number of Headers DB writes. |
+| nethermind_metadata_db_reads | Number of Metadata DB reads. |
+| nethermind_metadata_db_writes | Number of Metadata DB writes. |
 | nethermind_other_db_reads | Number of other DB reads. |
 | nethermind_other_db_writes | Number of other DB writes. |
 | nethermind_receipts_db_reads | Number of Receipts DB reads. |
 | nethermind_receipts_db_writes | Number of Receipts DB writes. |
+| nethermind_state_db_pruning | Indicator if StadeDb is being pruned. |
 | nethermind_state_db_reads | Number of State DB reads. |
 | nethermind_state_db_writes | Number of State DB writes. |
 | nethermind_state_tree_reads | Number of State Trie reads. |

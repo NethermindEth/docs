@@ -92,6 +92,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -218,6 +219,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -314,6 +316,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -851,6 +854,7 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 | ToBlock | `BlockParameter object` |
 | Address | `Object` |
 | Topics | `Array` |
+| IncludeTransactions | `Boolean` |
 
 `BlockParameter`
 
@@ -1049,6 +1053,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1137,6 +1142,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1211,6 +1217,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":["0xabca23910646013d6
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1644,6 +1651,7 @@ curl --data '{"method":"eth_newFilter","params":[[{"toBlock":"latest"}]],"id":1,
 | ToBlock | `BlockParameter object` |
 | Address | `Object` |
 | Topics | `Array` |
+| IncludeTransactions | `Boolean` |
 
 `BlockParameter`
 
@@ -1746,6 +1754,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1887,6 +1896,7 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
