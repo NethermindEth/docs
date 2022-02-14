@@ -147,6 +147,7 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 

@@ -396,6 +396,107 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 {% endtabs %}
 
 [See also CLI debug.traceBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbynumber)
+## debug_traceCall
+
+This method lets you run an eth_call within the context of the given block execution using the final state of parent block as the base. The block can be specified either by hash or by number. It takes the same input object as a eth_call. It returns the same output as debug_traceTransaction. 
+
+| Invocation |
+| :--- |
+| `{"method":"debug_traceCall","params":[call, blockParameter, options]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| call | `TransactionForRpc object` |  |
+| blockParameter | `BlockParameter object` |  |
+| options | `GethTraceOptions object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `GethLikeTxTrace object` |  |
+
+{% tabs %}
+{% tab title="Example request of debug_traceCall" %}
+```
+curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+
+{% tab title="Objects in debug_traceCall" %}
+
+`TransactionForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| Hash | `Hash` |
+| Nonce | `Quantity` |
+| BlockHash | `Hash` |
+| BlockNumber | `Quantity` |
+| TransactionIndex | `Quantity` |
+| From | `Address` |
+| To | `Address` |
+| Value | `Quantity` |
+| GasPrice | `Quantity` |
+| MaxPriorityFeePerGas | `Quantity` |
+| MaxFeePerGas | `Quantity` |
+| Gas | `Quantity` |
+| Data | `Data` |
+| Input | `Data` |
+| ChainId | `Quantity` |
+| Type | `TxType object` |
+| AccessList | `AccessListItemForRpc[] object` |
+| V | `Quantity` |
+| S | `Quantity` |
+| R | `Quantity` |
+| YParity | `Quantity` |
+
+`TxType`
+
+- [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+
+
+`AccessListItemForRpc[]`
+
+| Field name | Type |
+| :--- | :--- |
+| Address | `Address` |
+| StorageKeys | `Array` |
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`GethTraceOptions`
+
+| Field name | Type |
+| :--- | :--- |
+| DisableStorage | `Boolean` |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| Tracer | `String` |
+| Timeout | `String` |
+
+`GethLikeTxTrace`
+
+| Field name | Type |
+| :--- | :--- |
+| StoragesByDepth | `Array` |
+| Gas | `Quantity` |
+| Failed | `Boolean` |
+| ReturnValue | `Data` |
+| Entries | `Array` |
+{% endtab %}
+{% endtabs %}
+
 ## debug_traceTransaction
 
 This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 

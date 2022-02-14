@@ -177,6 +177,7 @@ admin.peers(true)
 [See also JSON RPC admin_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_peers)
 
 
+
 ## admin.removePeer
 
 Removes given node. 

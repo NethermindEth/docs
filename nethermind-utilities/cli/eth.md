@@ -90,6 +90,7 @@ eth.call(transactionCall, blockParameter)
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -214,6 +215,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -309,6 +311,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -813,6 +816,7 @@ eth.getLogs(filter)
 | ToBlock | `BlockParameter object` |
 | Address | `Object` |
 | Topics | `Array` |
+| IncludeTransactions | `Boolean` |
 
 `BlockParameter`
 
@@ -1023,6 +1027,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1096,6 +1101,7 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1516,6 +1522,7 @@ eth.pendingTransactions
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 
@@ -1679,6 +1686,7 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 
 `TxType`
 

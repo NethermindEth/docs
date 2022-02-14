@@ -67,6 +67,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
+| YParity | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
