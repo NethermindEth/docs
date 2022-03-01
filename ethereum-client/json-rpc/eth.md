@@ -171,7 +171,7 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
 | :--- | :--- | :--- |
 | transactionCall | `TransactionForRpc object` | Transaction's details |
 | blockParameter | `BlockParameter object` | (optional) |
-| optimize | `Boolean` | (optional, by default equal to `true`) |
+| optimize | `Boolean` | (optional) |
 
 | Returned type | Description |
 | :--- | :--- |
