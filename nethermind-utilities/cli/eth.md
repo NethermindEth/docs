@@ -816,7 +816,6 @@ eth.getLogs(filter)
 | ToBlock | `BlockParameter object` |
 | Address | `Object` |
 | Topics | `Array` |
-| IncludeTransactions | `Boolean` |
 
 `BlockParameter`
 

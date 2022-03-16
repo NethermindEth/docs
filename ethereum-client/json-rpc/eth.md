@@ -854,7 +854,6 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 | ToBlock | `BlockParameter object` |
 | Address | `Object` |
 | Topics | `Array` |
-| IncludeTransactions | `Boolean` |
 
 `BlockParameter`
 
@@ -1651,7 +1650,6 @@ curl --data '{"method":"eth_newFilter","params":[[{"toBlock":"latest"}]],"id":1,
 | ToBlock | `BlockParameter object` |
 | Address | `Object` |
 | Topics | `Array` |
-| IncludeTransactions | `Boolean` |
 
 `BlockParameter`
 
