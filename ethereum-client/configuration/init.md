@@ -24,4 +24,4 @@
 | RpcDbUrl | NETHERMIND_INITCONFIG_RPCDBURL | Url for remote node that will be used as DB source when 'DiagnosticMode' is set to'RpcDb' |  |
 | StaticNodesPath | NETHERMIND_INITCONFIG_STATICNODESPATH | Path to the file with a list of static nodes. | "Data/static-nodes.json" |
 | StoreReceipts | NETHERMIND_INITCONFIG_STORERECEIPTS | If set to 'false' then transaction receipts will not be stored in the database after a new block is processed. This setting is independent from downloading receipts in fast sync mode. | true |
-| WebSocketsEnabled | NETHERMIND_INITCONFIG_WEBSOCKETSENABLED | Defines whether the WebSockets service is enabled on node startup at the 'HttpPort' - e.g. ws://localhost:8545/ws/json-rpc | false |
+| WebSocketsEnabled | NETHERMIND_INITCONFIG_WEBSOCKETSENABLED | Defines whether the WebSockets service is enabled on node startup at the 'HttpPort' - e.g. ws://localhost:8545/ws/json-rpc | true |
