@@ -15,7 +15,7 @@ Below tutorial will guide you through the Nethermind node deployment together wi
 ## Prerequisites
 
 * [x] [Terraform v0.12.7](https://www.terraform.io/downloads.html) <&#x20;
-* [x] [Cloud provider](cloud-providers/) (in this tutorial we will be using **Digital Ocean**, the terraform recipe can be configured to use any other provider of your choice UpCloud/AWS/Google etc.)
+* [x] [Cloud provider](broken-reference) (in this tutorial we will be using **Digital Ocean**, the terraform recipe can be configured to use any other provider of your choice UpCloud/AWS/Google etc.)
 
 ## :tools: Setting up
 
@@ -165,13 +165,13 @@ Explore Nethermind metrics, visualize and analyse using prometheus syntax, a lis
 
 Go to the `YOUR_DROPLET_IP:9091` and verify if metrics are inflowing
 
-![](<../.gitbook/assets/image (49) (2) (2) (2) (2) (2) (2) (1) (2).png>)
+![](<../.gitbook/assets/image (49) (2) (2) (2) (2) (2) (2) (1) (2) (1).png>)
 
 ### Seq
 
 Go to the `YOUR_DROPLET_IP:5341`, you will be albe to query your Nethermind client logs. Feel free to create some useful `Signals, Queries` or `Dashboards.`
 
-![](<../.gitbook/assets/image (39) (2) (3) (3).png>)
+![](<../.gitbook/assets/image (39) (2) (3) (3) (2) (2).png>)
 
 ## Destroying the stack
 

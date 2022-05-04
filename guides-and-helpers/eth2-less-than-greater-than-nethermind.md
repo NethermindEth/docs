@@ -55,7 +55,7 @@ You should see the node starting:
 ![](<../.gitbook/assets/image (1).png>)
 
 {% hint style="info" %}
-**Tip: **Ctrl + A + D to leave the **screen**
+**Tip:** Ctrl + A + D to leave the **screen**
 {% endhint %}
 
 ### Running Nethermind as a systemd service

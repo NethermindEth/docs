@@ -4,7 +4,7 @@ description: Nethermind Dockers instructions
 
 # Docker
 
-## ![](../.gitbook/assets/pobrane.png) Docker repository
+## <img src="../.gitbook/assets/pobrane.png" alt="" data-size="line"> Docker repository
 
 Docker repository can be found here:
 
@@ -25,11 +25,11 @@ We are currently supporting docker images for the following CPU architectures:
 
 | **Tag**  | Description                                  | Architecture   |
 | -------- | -------------------------------------------- | -------------- |
-| `latest` | The latest **Nethermind Debian **based image | x86\_64, ARM64 |
+| `latest` | The latest **Nethermind Debian** based image | x86\_64, ARM64 |
 
 To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
 
-For example, if you wish to use version `1.7.4` of **Nethermind Debian **image, the image name would be `nethermind/nethermind:1.7.4`.
+For example, if you wish to use version `1.7.4` of **Nethermind Debian** image, the image name would be `nethermind/nethermind:1.7.4`.
 
 All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
 
@@ -98,7 +98,7 @@ Environment variables are to be passed before the docker image tag while paramet
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables** **can be easily used within **docker-compose.yml** files in the environment section
+Environment variables **** can be easily used within **docker-compose.yml** files in the environment section
 {% endhint %}
 
 ### **JSON RPC**

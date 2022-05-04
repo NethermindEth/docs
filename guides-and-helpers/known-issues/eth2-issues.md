@@ -3,8 +3,8 @@
 ## Main issues reported so far when using Nethermind for Eth2 (30.11.2020)
 
 {% hint style="warning" %}
-* users who synced before version **1.9.41** and were not aware that old configs were **not **supporting Eth2 by default had to resync with **1.9.41 **(and they are reporting successful setups now)&#x20;
-* users who synced with `AncientReceiptsBarrier` (limiting disk space) cannot use **Teku** and **have to switch **to **Prysm** or **Lighthouse**
+* users who synced before version **1.9.41** and were not aware that old configs were **not** supporting Eth2 by default had to resync with **1.9.41** (and they are reporting successful setups now)&#x20;
+* users who synced with `AncientReceiptsBarrier` (limiting disk space) cannot use **Teku** and **have to switch** to **Prysm** or **Lighthouse**
 * two users reported that their fully synced nodes on Windows 10 Pro failed after a few blocks (please let us know if you have seen a similar issue)
 * (fixed in 1.9.45) users are reporting issues on a hard shutdown of VMs / machines with Nethermind running - some database corruptions occur often **requiring a resync**
 * users had trouble to sync node on a ZFS file system but this has been **resolved after removing ZFS**

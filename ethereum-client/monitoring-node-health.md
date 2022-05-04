@@ -4,7 +4,7 @@ description: Monitoring Nethermind Node's Health with HealthChecks
 
 # Monitoring Node's Health
 
-Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness **-_ verify if the node is **synced** and has **at least one peer. **Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
+Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
 
 The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermind start.
 
@@ -56,7 +56,7 @@ curl localhost:8545/health
 {"status":"Healthy","totalDuration":"00:00:00.0015582","entries":{"node-health":{"data":{},"description":"The node is now fully synced with a network, number of peers: 99","duration":"00:00:00.0003881","status":"Healthy","tags":[]}}}
 ```
 
-* **Unhealthy **returns **503** (Service Unavailable) status code
+* **Unhealthy** returns **503** (Service Unavailable) status code
 * **Healthy** returns **200** status code
 
 #### Enabling Health Checks UI
@@ -77,12 +77,12 @@ We may also add Slack Webhook endpoint to which our node's health will be report
 ./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
 ```
 
-If your node will be **Unhealthy **you should receive a message similar to this:
+If your node will be **Unhealthy** you should receive a message similar to this:
 
 ![Unhealthy](../.gitbook/assets/unhealthy.png)
 
 with description of why the node is unhealthy, node's name and information about the machine on which the node is running.\
-When it becomes **Healthy **(**synced **and with **peers**) you should receive:
+When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 ![Healthy](<../.gitbook/assets/image (46).png>)
 

@@ -111,20 +111,7 @@
 * [Known Issues](guides-and-helpers/known-issues/README.md)
   * [ETH2 issues](guides-and-helpers/known-issues/eth2-issues.md)
 * [Web3.py](guides-and-helpers/web3.py.md)
-* [Cloud Providers](guides-and-helpers/cloud-providers/README.md)
-  * [UpCloud](guides-and-helpers/cloud-providers/upcloud.md)
-  * [Digital Ocean](guides-and-helpers/cloud-providers/digital-ocean.md)
-  * [Azure](guides-and-helpers/cloud-providers/azure.md)
-  * [AWS](guides-and-helpers/cloud-providers/aws.md)
-  * [Google Cloud](guides-and-helpers/cloud-providers/google-cloud.md)
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
-* [Smoke Testing Example](guides-and-helpers/ethereum-networks-synchronization-smoke-testing-with-nethermind.md)
 * [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 * [Coding Style](guides-and-helpers/coding-style.md)
-
-## Enterprise
-
-* [Connecting to Nethermind hosted Seq and Grafana](enterprise/connecting-to-nethermind-hosted-seq-and-grafana.md)
-* [Baseline](enterprise/baseline.md)
-* [Seq](enterprise/seq.md)

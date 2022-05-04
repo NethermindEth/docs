@@ -6,7 +6,7 @@ description: dbpath and databases info
 
 Nethermind uses the [RocksDB](https://rocksdb.org) database to store state. By default the database is stored in the same directory where the client binaries are. You can change it by providing a `--baseDbPath` config switch in the command line, e.g.`./Nethermind.Runner --config goerli --baseDbPath /home/username/nethermind_db`
 
-After Nethermind is started, you will see multiple directories appearing in the _baseDbPath _directory.
+After Nethermind is started, you will see multiple directories appearing in the _baseDbPath_ directory.
 
 ![Example of the DB directory on a freshly deployed Ubuntu VM with Nethermind.](<../.gitbook/assets/image (61).png>)
 

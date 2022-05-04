@@ -36,7 +36,7 @@ systemd-timesyncd.service active: yes
 RTC in local TZ: no
 ```
 
-If `System clock synchronized` displays `yes `you are all set, otherwise you may need to either:
+If `System clock synchronized` displays `yes` you are all set, otherwise you may need to either:
 
 * [x] synchronize clock with NTP servers (allow **UDP** port **123** for both incoming and outgoing traffic)
 * [x] use below script to sync with google.com:
@@ -101,7 +101,7 @@ volumes:
 Configure Nethermind node via environment variables or use local config file and map it to the one, existing inside container (`xdai.cfg` file in above example).
 
 {% hint style="info" %}
-Make sure that `nethermind_db`, `keystore`(`logs `- optional ) are mapped, otherwise you might lose database or keys
+Make sure that `nethermind_db`, `keystore`(`logs` - optional ) are mapped, otherwise you might lose database or keys
 {% endhint %}
 
 [`NLog.config`](../../ethereum-client/running-nethermind/runtime.md#nlog-config) file is optional.\
@@ -114,19 +114,19 @@ Make sure that the filename contains key's **public address** otherwise it won't
 \
 Correct naming of a `keyfile`: **key-a5237f7f43cc46cba43ac212dabd0c45e3e3050a**
 
-The` keyfile` should be then stored inside `keystore` volume.
+The `keyfile` should be then stored inside `keystore` volume.
 {% endhint %}
 
 ## Config file
 
 Things to be configured:
 
-* [ ] `Init.IsMining `true
-* [ ] `Init.MemoryHint `can be left default, recommended to configure it accordingly to the machine hardware setup (for `xdai` 1000000000 is enough)
+* [ ] `Init.IsMining` true
+* [ ] `Init.MemoryHint` can be left default, recommended to configure it accordingly to the machine hardware setup (for `xdai` 1000000000 is enough)
 * [ ] `EthStats` section if you wish to report node status to the ethstats page for a given network
 * [ ] `Metrics` section if running local/remote [Metrics infrastructure](../../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
 * [ ] `KeyStore.PasswordFiles` path to the file containing password for **mining private key**
-* [ ] `KeyStore.UnlockAccounts`** **an array of accounts, provide **mining public address **here
+* [ ] `KeyStore.UnlockAccounts` **** an array of accounts, provide **mining public address** here
 * [ ] `KeyStore.BlockAuthorAccount` **mining public address** should be provided here as well
 * [ ] `Aura.ForceSealing` set to true
 
