@@ -14,4 +14,5 @@
 | NettyArenaOrder | NETHERMIND_NETWORKCONFIG_NETTYARENAORDER | [TECHNICAL] Defines the size of a buffer allocated to each peer - default is 8192 << 11 so 16MB where order is 11. | 11 |
 | OnlyStaticPeers | NETHERMIND_NETWORKCONFIG_ONLYSTATICPEERS | If set to 'true' then no connections will be made to non-static peers. | false |
 | P2PPort | NETHERMIND_NETWORKCONFIG_P2PPORT | TPC/IP port number for incoming P2P connections. | 30303 |
+| PriorityPeersMaxCount | NETHERMIND_NETWORKCONFIG_PRIORITYPEERSMAXCOUNT | Max number of priority peers. Can be overwritten by value from plugin config. | 0 |
 | StaticPeers | NETHERMIND_NETWORKCONFIG_STATICPEERS | List of nodes for which we will keep the connection on. Static nodes are not counted to the max number of nodes limit. | null |

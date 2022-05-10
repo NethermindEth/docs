@@ -59,6 +59,18 @@
 | nethermind_outgoing_connections | Number of outgoing connection. |
 | nethermind_receive_message_timeout_disconnects | Number of received disconnects due to request timeouts |
 | nethermind_same_as_self_disconnects | Number of received disconnects due to connecting to self |
+| nethermind_snap_account_range_received | Number of SNAP AccountRange messages received |
+| nethermind_snap_byte_codes_received | Number of SNAP ByteCodes messages received |
+| nethermind_snap_get_account_range_received | Number of SNAP GetAccountRange messages received |
+| nethermind_snap_get_account_range_sent | Number of SNAP GetAccountRange messages sent |
+| nethermind_snap_get_byte_codes_received | Number of SNAP GetByteCodes messages received |
+| nethermind_snap_get_byte_codes_sent | Number of SNAP GetByteCodes messages sent |
+| nethermind_snap_get_storage_ranges_received | Number of SNAP GetStorageRanges messages received |
+| nethermind_snap_get_storage_ranges_sent | Number of SNAP GetStorageRanges messages sent |
+| nethermind_snap_get_trie_nodes_received | Number of SNAP GetTrieNodes messages received |
+| nethermind_snap_get_trie_nodes_sent | Number of SNAP GetTrieNodes messages sent |
+| nethermind_snap_storage_ranges_received | Number of SNAP StorageRanges messages received |
+| nethermind_snap_trie_nodes_received | Number of SNAP TrieNodes messages received |
 | nethermind_statuses_received | Number of eth status messages received |
 | nethermind_statuses_sent | Number of eth status messages sent |
 | nethermind_tcp_subsystem_error_disconnects | Number of disconnects due to TCP error |
