@@ -17,6 +17,7 @@
 | PivotHash | NETHERMIND_SYNCCONFIG_PIVOTHASH | Hash of the pivot block for the Fast Blocks sync. | null |
 | PivotNumber | NETHERMIND_SYNCCONFIG_PIVOTNUMBER | Number of the pivot block for the Fast Blocks sync. | null |
 | PivotTotalDifficulty | NETHERMIND_SYNCCONFIG_PIVOTTOTALDIFFICULTY | Total Difficulty of the pivot block for the Fast Blocks sync (not - this is total difficulty and not difficulty). | null |
+| SnapSync | NETHERMIND_SYNCCONFIG_SNAPSYNC | Enables SNAP sync protocol. | false |
 | SynchronizationEnabled | NETHERMIND_SYNCCONFIG_SYNCHRONIZATIONENABLED | If 'false' then the node does not download/process new blocks. | true |
 | UseGethLimitsInFastBlocks | NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS | If set to 'true' then in the Fast Blocks mode Nethermind generates smaller requests to avoid Geth from disconnecting. On the Geth heavy networks (mainnet) it is desired while on Parity or Nethermind heavy networks (Goerli, AuRa) it slows down the sync by a factor of ~4 | true |
 | WitnessProtocolEnabled | NETHERMIND_SYNCCONFIG_WITNESSPROTOCOLENABLED | Enables witness protocol. | false |

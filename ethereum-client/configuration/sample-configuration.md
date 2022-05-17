@@ -20,9 +20,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 14393000,
-    "PivotHash": "0xaf7550e260fb7991dc0391098b4c69eda167fed0ab8d2620f8308dd03e369ca0",
-    "PivotTotalDifficulty": "43861904252039042406974",
+    "PivotNumber": 14744000,
+    "PivotHash": "0xba8793f8efb67ca45c01614d8d3f61c9ae4ffc6c97ba8385fb2505bdab31c404",
+    "PivotTotalDifficulty": "48524141488806789400557",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
     "AncientReceiptsBarrier": 11052984,
@@ -55,9 +55,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 6510000,
-    "PivotHash": "0x63aa8ae3faf1a63aa5613c94506c0b154cef84f077aaa5f610f582bb5d032edb",
-    "PivotTotalDifficulty": "9573097",
+    "PivotNumber": 6810000,
+    "PivotHash": "0xd18b38d412f095dea257d1768ae867d8931e662a57a97a672e833b163f30aa5c",
+    "PivotTotalDifficulty": "9995077",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
     "WitnessProtocolEnabled": true
@@ -95,9 +95,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 10320000,
-    "PivotHash": "0x8dd85b28209e228b68001214cdf125beb36f129bd43b11829c55068373ee5b31",
-    "PivotTotalDifficulty": "17163340",
+    "PivotNumber": 10620000,
+    "PivotHash": "0x0d0469a80f5d3d57c4899e44e1183e6852e3bc45ec34d14a97372a5914380226",
+    "PivotTotalDifficulty": "17556157",
     "FastBlocks": true
   },
   "Metrics": {
@@ -123,9 +123,9 @@ description: Sample Fast Sync configurations for Nethermind
     "FastSync": true,
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 12080000,
-    "PivotHash": "0xe8d2adc0f0f19f49a3eab07bdd6b723e5506ce3b05c8e11e9c33842ba6f6a9b7",
-    "PivotTotalDifficulty": "40147042992955918"
+    "PivotNumber": 12240000,
+    "PivotHash": "0x4a35bdc9d1d26a11f7fd88ba8435cc77ef790e08c41a1b08c447460b715ec622",
+    "PivotTotalDifficulty": "41516539088360204"
   },
   "EthStats": {
     "Server": "ws://ropsten-stats.parity.io/api"
