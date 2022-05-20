@@ -2,6 +2,8 @@
 
 ## There are three main synchronization modes
 
+* snap sync
+  * fastest way to sync to a network (Syncs to Mainnet in \~3 hours)
 * fast sync
   * downloads only the latest state, headers, and optionally bodies and receipts
   * you can run it like this: `./Nethermind.Runner --config mainnet`
@@ -10,9 +12,6 @@
 * archive sync
   * heavy historical sync verifying all the transactions and keeping all the historical state
   * you can run it like this `./Nethermind.Runner --config mainnet_archive`
-* snap sync
-  * fastest way to sync
-  * you can run it like this `./Nethermind.Runner --config mainnet_snap`
 
 | Sync Mode                                             | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
 | ----------------------------------------------------- | ----------------- | ------------------ | -------------------------------------- | -------------------------------------- | ------------ | ----------- |
@@ -21,6 +20,46 @@
 | fast sync with all bodies and receipts                | \~320GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 hours  |
 | fast sync without receipts                            | \~130GB           | YES                | NO                                     | YES                                    | \~12 hours   | \~12 hours  |
 | fast sync without bodies and receipts                 | \~70GB            | YES                | NO                                     | NO                                     | \~9 hours    | \~9 hours   |
+
+{% hint style="danger" %}
+Table data is inaccurate. We will be updating it soon.&#x20;
+{% endhint %}
+
+## Snap Sync
+
+The Nethermind client includes beta Snap Sync support from version [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0). This allows a a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than before.
+
+#### How to Enable
+
+To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` file
+
+```
+"Sync": {
+	"SnapSync": true
+}
+```
+
+> **IMPORTANT**: Do not enable snap sync on a previously synced node. Only use when syncing to the network for the first time.
+
+#### Snap Sync VS Other Sync Modes
+
+More than 10TB of storage is needed today to run a full archive node — one that stores all the state since genesis. This makes it so that setting up a node can take days if not weeks.
+
+An operator can instead choose to run Fast Sync when setting up the node, which downloads the state associated with the last 64 blocks that currently comes at about 90Gb. This can still take more than 24 hours in a fast machine. With Snap Sync the sync time is reduced to 2-3h with a download of 30Gb.
+
+This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a node: Merkle trees.
+
+![](../.gitbook/assets/Untitled.png)
+
+With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time and packets downloaded.
+
+#### Current limitations and future development&#x20;
+
+As of [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0), Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients implementing Snap Sync.
+
+Since the only Ethereum client that supports serving Snap Sync requests is Geth, only networks supported by Geth can be synced: Mainnet, Goerli, Ropsten and Rinkeby.
+
+Also, as stated above, it is not advised to enable Snap Sync on already synced node as it can trigger syncing again. This will be fixed in the next update.
 
 ## Fast Sync
 
@@ -54,37 +93,7 @@ One of the best indicators that you are close to be synced is combined \~100% st
 
 ![](<../.gitbook/assets/image (62).png>)
 
-## Snap Sync
 
-The Nethermind client includes beta Snap Sync support from version [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0). This allows a a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than before.
-
-To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` file
-
-```
-"Sync": {
-	"SnapSync": true
-}
-```
-
-> **IMPORTANT**: Do not enable snap sync on a previously synced node. Only use when syncing to the network for the first time.
-
-More than 10TB of storage is needed today to run a full archive node — one that stores all the state since genesis. This makes it so that setting up a node can take days if not weeks.
-
-An operator can instead choose to run Fast Sync when setting up the node, which downloads the state associated with the last 64 blocks that currently comes at about 90Gb. This can still take more than 24 hours in a fast machine. With Snap Sync the sync time is reduced to 2-3h with a download of 30Gb.
-
-This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a node: Merkle trees.
-
-![](../.gitbook/assets/Untitled.png)
-
-With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time and packets downloaded.
-
-#### Current limitations and future development&#x20;
-
-As of [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0), Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients implementing Snap Sync.
-
-Since the only Ethereum client that supports serving Snap Sync requests is Geth, only networks supported by Geth can be synced: Mainnet, Goerli, Ropsten and Rinkeby.
-
-Also, as stated above, it is not advised to enable Snap Sync on already synced node as it can trigger syncing again. This will be fixed in the next update.
 
 ## Archive Sync
 
