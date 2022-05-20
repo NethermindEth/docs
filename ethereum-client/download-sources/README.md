@@ -8,7 +8,7 @@ description: >-
 
 {% tabs %}
 {% tab title="Downloads Page" %}
-Click here: [downloads.nethermind.io](https://downloads.nethermind.io)
+Click here: [downloads.nethermind.io](https://downloads.nethermind.io/)
 {% endtab %}
 
 {% tab title="Github Relase Page" %}

@@ -11,7 +11,7 @@ You should always consider being able to switch to Infura or another provider as
 {% endhint %}
 
 {% hint style="warning" %}
-For a more comprehensive step-by-step guide, you should look into one of these awesome guides -> [https://someresat.medium.com/](https://someresat.medium.com). Below you will find instructions on how to run Nethermind node -> **Step 6 — Set up an Ethereum (Eth1) Node**
+For a more comprehensive step-by-step guide, you should look into one of these awesome guides -> [https://someresat.medium.com/](https://someresat.medium.com/). Below you will find instructions on how to run Nethermind node -> **Step 6 — Set up an Ethereum (Eth1) Node**
 {% endhint %}
 
 ### Get & Run Nethermind
@@ -36,7 +36,7 @@ screen -S nethermind
 ./Nethermind.Launcher
 ```
 
-![](<../.gitbook/assets/image (10) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
 
 {% hint style="danger" %}
 Enable **JSON RPC** service so that your ETH2 Beacon node will be able to communicate

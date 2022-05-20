@@ -100,7 +100,7 @@ There are currently 2 sources providing `Nethermind` packages.
 
 {% tabs %}
 {% tab title="Downloads Page" %}
-Click here: [downloads.nethermind.io](https://downloads.nethermind.io)
+Click here: [downloads.nethermind.io](https://downloads.nethermind.io/)
 {% endtab %}
 
 {% tab title="Github Relase Page" %}
@@ -212,6 +212,6 @@ At some point, the entire state is downloaded and the node enters the `full sync
 
 Now you can launch CLI in the separate process (launching `Nethermind.Launcher` again and selecting CLI instead of Node). You can read more about [CLI here](https://docs.nethermind.io/nethermind/nethermind-utilities/cli).
 
-You can also connect to the node from [Metamask](https://metamask.io) by selecting `localhost:8545` from the Metamask network list.
+You can also connect to the node from [Metamask](https://metamask.io/) by selecting `localhost:8545` from the Metamask network list.
 
 ![Metamask localhost connection](https://github.com/NethermindEth/nethermind/raw/master/docs/source/metamask/localhost.png)

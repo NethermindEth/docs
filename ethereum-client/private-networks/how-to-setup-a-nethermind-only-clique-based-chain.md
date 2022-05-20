@@ -194,7 +194,7 @@ Stop the node when `Nethermind initialization` completes `Ctrl +C`. Copy `This n
 
 {% hint style="info" %}
 You can use `Nethermind.Cli` to fetch these values from nodes by executing the following.\
-`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io).
+`Nethermind.Cli` can be found in packages on [Github Releases](https://github.com/NethermindEth/nethermind/releases) or [Download Page](http://downloads.nethermind.io/).
 {% endhint %}
 
 ```bash
