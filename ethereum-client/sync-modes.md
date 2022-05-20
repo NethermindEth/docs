@@ -7,24 +7,20 @@
   * you can run it like this: `./Nethermind.Runner --config mainnet`
   * if you have a good connection and a reasonable machine then setting --Network.MaxActivePeers to 256 (see NetworkConfig secion in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)\
     [https://docs.nethermind.io/nethermind/ethereum-client/configuration/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network)
-* beam sync
-  * same as fast sync but also allows to query the chain within the first few minutes from starting
-  * you can run it like this: `./Nethermind.Runner --config mainnet_beam`
 * archive sync
   * heavy historical sync verifying all the transactions and keeping all the historical state
   * you can run it like this `./Nethermind.Runner --config mainnet_archive`
+* snap sync
+  * fastest way to sync
+  * you can run it like this `./Nethermind.Runner --config mainnet_snap`
 
-| Sync Mode                                             | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC  |
-| ----------------------------------------------------- | ----------------- | ------------------ | -------------------------------------- | -------------------------------------- | ------------ | ------------ |
-| archive                                               | \~5TB             | YES                | YES                                    | YES                                    | \~3 weeks    | \~3 weeks    |
-| default fast sync (with barriers set to support Eth2) | \~100GB           | YES                | NO                                     | NO                                     | \~11 hours   | \~11 hours   |
-| fast sync with all bodies and receipts                | \~320GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 hours   |
-| fast sync without receipts                            | \~130GB           | YES                | NO                                     | YES                                    | \~12 hours   | \~12 hours   |
-| fast sync without bodies and receipts                 | \~70GB            | YES                | NO                                     | NO                                     | \~9 hours    | \~9 hours    |
-| beam sync                                             | \~320GB           | YES                | NO                                     | YES                                    | \~30 hours   | \~20 minutes |
-| beam sync without receipts                            | \~140GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 minutes |
-| beam sync without bodies and receipts                 | \~80GB            | YES                | NO                                     | NO                                     | \~10 hours   | \~20 minutes |
-| beam sync without historical headers                  | \~60GB            | YES                | NO                                     | NO                                     | \~9 hours    | \~5 minutes  |
+| Sync Mode                                             | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
+| ----------------------------------------------------- | ----------------- | ------------------ | -------------------------------------- | -------------------------------------- | ------------ | ----------- |
+| archive                                               | \~5TB             | YES                | YES                                    | YES                                    | \~3 weeks    | \~3 weeks   |
+| default fast sync (with barriers set to support Eth2) | \~100GB           | YES                | NO                                     | NO                                     | \~11 hours   | \~11 hours  |
+| fast sync with all bodies and receipts                | \~320GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 hours  |
+| fast sync without receipts                            | \~130GB           | YES                | NO                                     | YES                                    | \~12 hours   | \~12 hours  |
+| fast sync without bodies and receipts                 | \~70GB            | YES                | NO                                     | NO                                     | \~9 hours    | \~9 hours   |
 
 ## Fast Sync
 
@@ -58,29 +54,37 @@ One of the best indicators that you are close to be synced is combined \~100% st
 
 ![](<../.gitbook/assets/image (62).png>)
 
-## Beam Sync
+## Snap Sync
 
-WARNING: we suggest that you do not pick the beam sync without the full understanding of its current downsides and benefits. Generally beam sync can only be useful for you if you know how to query the beam synced JSON RPC and you need it within the first 30 minutes of sync or so.
+The Nethermind client includes beta Snap Sync support from version [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0). This allows a a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than before.
 
-Current downsides of beam sync:
+To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` file
 
-* JSON RPC queries have to be executed in a specific way (they may timeout multiple times before you finally receive a valid response)
-* background state sync will be significantly slower (and may be syncing long after the downloaded state shows 100%)
-* because of the longer sync times we test beam sync less thoroughly and we think there may be still some issues with the transition between the state sync and full sync at the last stages of the beam sync (in fact we are just addressing on of such issues in the current 'wit' protocol testing that should be coming in early 1.10.x versions)
-* without the 'wit' protocol that we are currently working on, the mainnet beam sync can be quite inefficient in querying the recent blocks
+```
+"Sync": {
+	"SnapSync": true
+}
+```
 
-Current benefits of the beam sync:
+> **IMPORTANT**: Do not enable snap sync on a previously synced node. Only use when syncing to the network for the first time.
 
-* if you know what you are doing, beam sync can give you state access very, very quickly (within 10 - 30 minutes from starting the sync)
-* similarly to the above, if you know how to work with beam sync, you can start sending transactions from the beam sync node very quickly
+More than 10TB of storage is needed today to run a full archive node — one that stores all the state since genesis. This makes it so that setting up a node can take days if not weeks.
 
-The simplest way of explaining beam sync is by saying that the beam sync is exactly the same as fast sync but additionally it downloads the state data (witnesses) for the latest blocks. It also allows to execute some queries about the current state via JSON RPC much before the actual fast sync finishes. Currently beam sync takes more resources than fast sync and slows the fast sync down significantly but it allows you the query blockchain within a few minutes from starting.
+An operator can instead choose to run Fast Sync when setting up the node, which downloads the state associated with the last 64 blocks that currently comes at about 90Gb. This can still take more than 24 hours in a fast machine. With Snap Sync the sync time is reduced to 2-3h with a download of 30Gb.
 
-![Beam sync logs example.](<../.gitbook/assets/image (60).png>)
+This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a node: Merkle trees.
 
-When the _'Beam sync is ON'_ message is displayed then it generally means that you can ask about the latest headers, latest transactions, you can ask about `eth_getBalance`, `eth_getCode`, `eth_call`, `debug_trace`, `trace_replayTransactions`etc. You cannot ask about transaction receipts or logs as most of them are not processed yet. With beam sync it is possible to create and broadcast an Ether or token transfer transactions from the node.
+![](../.gitbook/assets/Untitled.png)
 
-![](<../.gitbook/assets/image (65).png>)
+With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time and packets downloaded.
+
+#### Current limitations and future development&#x20;
+
+As of [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0), Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients implementing Snap Sync.
+
+Since the only Ethereum client that supports serving Snap Sync requests is Geth, only networks supported by Geth can be synced: Mainnet, Goerli, Ropsten and Rinkeby.
+
+Also, as stated above, it is not advised to enable Snap Sync on already synced node as it can trigger syncing again. This will be fixed in the next update.
 
 ## Archive Sync
 
