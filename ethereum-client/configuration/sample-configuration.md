@@ -20,9 +20,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 14744000,
-    "PivotHash": "0xba8793f8efb67ca45c01614d8d3f61c9ae4ffc6c97ba8385fb2505bdab31c404",
-    "PivotTotalDifficulty": "48524141488806789400557",
+    "PivotNumber": 14847000,
+    "PivotHash": "0x2298de96c5444f33ddc84f2525a71a3a6f6f1c1fd1b14ab03514e7867544d160",
+    "PivotTotalDifficulty": "50003781121673754119685",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
     "AncientReceiptsBarrier": 11052984,
@@ -55,9 +55,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 6810000,
-    "PivotHash": "0xd18b38d412f095dea257d1768ae867d8931e662a57a97a672e833b163f30aa5c",
-    "PivotTotalDifficulty": "9995077",
+    "PivotNumber": 6930000,
+    "PivotHash": "0xf9501e220fe80556483ecde0aa7085bbf722cb7522f61e7e55716d592c6a2d4f",
+    "PivotTotalDifficulty": "10166458",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
     "WitnessProtocolEnabled": true
@@ -95,9 +95,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 10620000,
-    "PivotHash": "0x0d0469a80f5d3d57c4899e44e1183e6852e3bc45ec34d14a97372a5914380226",
-    "PivotTotalDifficulty": "17556157",
+    "PivotNumber": 10710000,
+    "PivotHash": "0x35de9dba5aeebba21e219ce7e02b306c4e8ba465f7191f67ee1a8cd374e23124",
+    "PivotTotalDifficulty": "17668508",
     "FastBlocks": true
   },
   "Metrics": {
@@ -123,15 +123,40 @@ description: Sample Fast Sync configurations for Nethermind
     "FastSync": true,
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 12240000,
-    "PivotHash": "0x4a35bdc9d1d26a11f7fd88ba8435cc77ef790e08c41a1b08c447460b715ec622",
-    "PivotTotalDifficulty": "41516539088360204"
+    "PivotNumber": 12290000,
+    "PivotHash": "0xb8dac753fc21c44ac6e407c24d9a2f9808070859171856864d5919cd88c22e84",
+    "PivotTotalDifficulty": "42011004353031489"
   },
   "EthStats": {
     "Server": "ws://ropsten-stats.parity.io/api"
   },
   "Metrics": {
     "NodeName": "Ropsten"
+  },
+  "JsonRpc": {
+    "Enabled": true,
+    "Timeout": 20000,
+    "Host": "127.0.0.1",
+    "Port": 8545,
+    "EnabledModules": [
+      "Eth",
+      "Subscribe",
+      "Trace",
+      "TxPool",
+      "Web3",
+      "Personal",
+      "Proof",
+      "Net",
+      "Parity",
+      "Health"
+    ],
+    "AdditionalRpcUrls": [
+      "http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"
+    ]
+  },
+  "Merge": {
+    "Enabled": true,
+    "TerminalTotalDifficulty": "100000000000000000000000"
   }
 }
 ```

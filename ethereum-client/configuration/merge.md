@@ -4,5 +4,10 @@
 
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
-| BlockAuthorAccount | NETHERMIND_MERGECONFIG_BLOCKAUTHORACCOUNT | Account to be used by the block author / coinbase. |  |
-| Enabled | NETHERMIND_MERGECONFIG_ENABLED | Defines whether the MEV bundles are allowed. | false |
+| Enabled | NETHERMIND_MERGECONFIG_ENABLED | Defines whether the Merge plugin is enabled bundles are allowed. | false |
+| FeeRecipient | NETHERMIND_MERGECONFIG_FEERECIPIENT | Account to be used by the block author. If it is not specified the address zero will be used. | null |
+| FinalTotalDifficulty | NETHERMIND_MERGECONFIG_FINALTOTALDIFFICULTY | Final total difficulty is total difficulty of the last PoW block. FinalTotalDifficulty >= TerminalTotalDifficulty. | null |
+| SecondsPerSlot | NETHERMIND_MERGECONFIG_SECONDSPERSLOT | Seconds per slot. | 12 |
+| TerminalBlockHash | NETHERMIND_MERGECONFIG_TERMINALBLOCKHASH | Terminal PoW block hash used for transition process. | null |
+| TerminalBlockNumber | NETHERMIND_MERGECONFIG_TERMINALBLOCKNUMBER | Terminal PoW block number used for transition process. |  |
+| TerminalTotalDifficulty | NETHERMIND_MERGECONFIG_TERMINALTOTALDIFFICULTY | Terminal total difficulty used for transition process. | null |
