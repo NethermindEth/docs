@@ -106,12 +106,12 @@ Commands for other Linux distros can be found [here](https://docs.nethermind.io/
 
 #### Building Nethermind
 
-After you have installed all of the dependencies for your platform you need to clone the Nethermind repo from GitHub, using the `kiln` branch.
+After you have installed all of the dependencies for your platform you need to clone the Nethermind repo from GitHub.
 
 Once the download has finished enter the `nethermind/src/Nethermind` directory and run the build command.
 
 ```bash
-git clone --recursive -b kiln https://github.com/NethermindEth/nethermind.git
+git clone --recursive https://github.com/NethermindEth/nethermind.git
 cd nethermind/src/Nethermind
 dotnet build Nethermind.sln -c Release
 ```
@@ -448,15 +448,7 @@ lighthouse \
 ### Running Lodestar With Nethermind
 
 {% tabs %}
-{% tab title="First Tab" %}
-
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
-{% endtabs %}
-
+{% tab title="Kiln" %}
 ```bash
 cd lodestar./lodestar beacon \
 --rootDir="../lodestar-beacondata" \
@@ -469,7 +461,9 @@ cd lodestar./lodestar beacon \
 --jwt-secret="/tmp/jwtsecret" \ 
 --network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
 ```
+{% endtab %}
 
+{% tab title="Ropsten" %}
 ```bash
 cd lodestar
 ./lodestar beacon \
@@ -482,6 +476,8 @@ cd lodestar
 --jwt-secret="/tmp/jwtsecret" \
 --network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Running Teku With Nethermind
 
