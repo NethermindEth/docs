@@ -195,7 +195,7 @@ This setting allows you to chose which port you want to use, whether its sent ov
     "Host": "127.0.0.1",
     "Port": 8545,
     "EnabledModules": ["Eth", "Subscribe", "Trace", "TxPool", "Web3", "Personal", "Proof", "Net", "Parity", "Health"],
-    "AdditionalRpcUrls": ["http://localhost:8550|http;ws|net;eth;subscribe;engine;web3;client|no-auth", "http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"]
+    "AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"]
   },
 ```
 
