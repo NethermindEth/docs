@@ -1,9 +1,5 @@
 # Merge module
 
-Permalink
-
-Cannot retrieve contributors at this time
-
 | Property                | Env Variable                                     | Description                                                                                                        | Default |
 | ----------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------- |
 | Enabled                 | NETHERMIND\_MERGECONFIG\_ENABLED                 | Defines whether the Merge plugin is enabled bundles are allowed.                                                   | false   |
@@ -13,11 +9,3 @@ Cannot retrieve contributors at this time
 | TerminalBlockHash       | NETHERMIND\_MERGECONFIG\_TERMINALBLOCKHASH       | Terminal PoW block hash used for transition process.                                                               | null    |
 | TerminalBlockNumber     | NETHERMIND\_MERGECONFIG\_TERMINALBLOCKNUMBER     | Terminal PoW block number used for transition process.                                                             |         |
 | TerminalTotalDifficulty | NETHERMIND\_MERGECONFIG\_TERMINALTOTALDIFFICULTY | Terminal total difficulty used for transition process.                                                             | null    |
-
-<details>
-
-<summary></summary>
-
-
-
-</details>
