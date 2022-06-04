@@ -6,11 +6,7 @@ description: A quick start example for Görli Testnet Nethermind synchronization
 
 ## 🔧 Setting up a Virtual Machine
 
-If you are not launching on your laptop/desktop, then you will probably want to setup a cloud VM. You can find more info about setting up everything with selected [cloud providers](broken-reference).
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+If you are not launching on your laptop/desktop, then you will probably want to setup a cloud VM. You can find more info about setting up everything with selected cloud providers.
 
 Make sure that you configure [firewall](firewall-configuration.md) properly.
 
