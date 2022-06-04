@@ -8,13 +8,13 @@ The Merge also changes how operators run nodes on the Ethereum blockchain. The b
 
 This guide will show you everything you need to know to operate an Ethereum node after The Merge. This guide will show how to connect to the Kiln and Ropsten test networks.
 
-{% hint style="info" %}
-&#x20;Support for post merge Ropsten will be available in the Nethermind 1.13.1 release.
-{% endhint %}
-
 ## Installing Nethermind
 
 Installing Nethermind is the same as before The Merge. You can choose from downloading the official release, downloading the docker image, or building Nethermind from source.
+
+{% hint style="info" %}
+&#x20;Support for post merge Ropsten is available as of Nethermind version 1.13.1
+{% endhint %}
 
 ### Downloading Official Release
 
@@ -231,6 +231,12 @@ The steps to running Nethermind after The Merge have not changed much. After you
 * Ensured that an authenticated port with the Engine module is enabled
 
 Then you are ready to start your clients. First start up Nethermind.
+
+### Ropsten Configuration
+
+{% hint style="warning" %}
+Due to a hashrate spike on the network the `Merge.`TerminalTotalDifficulty has been set to `100000000000000000000000 in the Ropsten` configuration file to prevent an early merge. The official `TotalTerminalDifficulty` has yet to be determined and will be announced soon.&#x20;
+{% endhint %}
 
 ### Running Local Build
 
