@@ -70,6 +70,7 @@
   * [Init module](ethereum-client/configuration/init.md)
   * [JsonRpc module](ethereum-client/configuration/jsonrpc.md)
   * [Keystore module](ethereum-client/configuration/keystore.md)
+  * [Merge module](ethereum-client/configuration/merge.md)
   * [Metrics module](ethereum-client/configuration/metrics.md)
   * [Mining module](ethereum-client/configuration/mining.md)
   * [Network module](ethereum-client/configuration/network.md)
