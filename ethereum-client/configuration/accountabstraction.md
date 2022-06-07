@@ -5,7 +5,6 @@
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
 | AaPriorityPeersMaxCount | NETHERMIND_ACCOUNTABSTRACTIONCONFIG_AAPRIORITYPEERSMAXCOUNT | Max number of priority AccountAbstraction peers. | 20 |
-| Create2FactoryAddress | NETHERMIND_ACCOUNTABSTRACTIONCONFIG_CREATE2FACTORYADDRESS | Defines the list of the hex string representation of the addresses of the create2Factory contract which was used to create the entryPoint |  |
 | Enabled | NETHERMIND_ACCOUNTABSTRACTIONCONFIG_ENABLED | Defines whether UserOperations are allowed. | false |
 | EntryPointContractAddresses | NETHERMIND_ACCOUNTABSTRACTIONCONFIG_ENTRYPOINTCONTRACTADDRESSES | Defines the comma separated list of hex string representations of the addresses of the EntryPoint contract to which transactions can be made |  |
 | FlashbotsEndpoint | NETHERMIND_ACCOUNTABSTRACTIONCONFIG_FLASHBOTSENDPOINT | Defines the string URL for the flashbots bundle reception endpoint | https://relay.flashbots.net/ |
