@@ -234,9 +234,29 @@ Then you are ready to start your clients. First start up Nethermind.
 
 ### Ropsten Configuration
 
-{% hint style="warning" %}
-Due to a hashrate spike on the network the `Merge.`TerminalTotalDifficulty has been set to `100000000000000000000000 in the Ropsten` configuration file to prevent an early merge. The official `TotalTerminalDifficulty` has yet to be determined and will be announced soon.&#x20;
+{% hint style="info" %}
+For Nethermind to sync to Ropsten you will have to set the Merge`TotalTerminalDifficulty` to `50000000000000000`. \
+You will need to edit your config or set manually during launch.
 {% endhint %}
+
+#### During Start up
+
+Make sure the following flag is added to the start up command when launching.
+
+```
+--Merge.TotalTerminalDifficulty="50000000000000000"
+```
+
+#### Edit Config
+
+Open the Ropsten config of your choosing in the Nethermind.Runner/configs directory. Add the following lines to the Merge module.
+
+```
+  "Merge": {
+    "Enabled": true,
+    "TerminalTotalDifficulty": "50000000000000000"
+  }
+```
 
 ### Running Local Build
 
