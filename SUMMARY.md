@@ -115,5 +115,6 @@
 * [Web3.py](guides-and-helpers/web3.py.md)
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
+  * [Eth2 Validator](guides-and-helpers/validator-setup/eth2-validator.md)
 * [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 * [Coding Style](guides-and-helpers/coding-style.md)
