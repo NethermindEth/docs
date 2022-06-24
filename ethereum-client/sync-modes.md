@@ -27,7 +27,7 @@ Table data is inaccurate. We will be updating it soon.&#x20;
 
 ## Snap Sync
 
-The Nethermind client includes beta Snap Sync support from version [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0). This allows a a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than before.
+The Nethermind client includes beta Snap Sync support from version [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0). This allows a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than before.
 
 #### How to Enable
 
@@ -40,6 +40,20 @@ To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` 
 ```
 
 > **IMPORTANT**: Do not enable snap sync on a previously synced node. Only use when syncing to the network for the first time.
+>
+> **IMPORTANT**: Do not remove other configurations from Sync module. Just add `"SnapSync": true`, e.g.
+>
+> ```
+> "Sync": {
+> 	"SnapSync": true,
+> 	"PivotNumber": 15011000,
+>         "PivotHash": "0x46c838d02d5fa5bc070080ed7965da1d888f6eb1797045365407c7011280af56",
+>     	"PivotTotalDifficulty": "52367203434576253689712",
+>     	"FastBlocks": true
+> }
+> ```
+>
+> ****
 
 #### Snap Sync VS Other Sync Modes
 
