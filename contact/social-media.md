@@ -6,7 +6,9 @@ description: Social media channels where you can reach the Team
 
 ## Discord
 
-{% embed url="https://discord.gg/rMsFaGWfZv" %}
+{% embed url="https://discord.gg/DedCdvDaNm" %}
+Discord
+{% endembed %}
 
 ## Gitter
 
