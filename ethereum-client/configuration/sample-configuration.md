@@ -20,9 +20,10 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 14957000,
-    "PivotHash": "0x7ce2c9cb601721e33ee6313e91b30c9f035b74ee282402b5bdfb1095c572acd7",
-    "PivotTotalDifficulty": "51613742220579521774353",
+    "SnapSync": true,
+    "PivotNumber": 15245000,
+    "PivotHash": "0x19345f553968086f62c60ea2fe06886b9a9ba6c7cfebe056acdfa9a690e3e17f",
+    "PivotTotalDifficulty": "55212896532081815617862",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
     "AncientReceiptsBarrier": 11052984,
@@ -55,12 +56,14 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 7020000,
-    "PivotHash": "0x6a9c8d32cb58fb0966b358896ed73f2ee2d80ea10bc08d3af669349b6e15d10d",
-    "PivotTotalDifficulty": "10292996",
+    "SnapSync": true,
+    "PivotNumber": 7290000,
+    "PivotHash": "0xd84fa3c4a12f8bed2b9706f3e225deeffdbd4d6bbdb695115a1263a91983bd7c",
+    "PivotTotalDifficulty": "10657227",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
-    "WitnessProtocolEnabled": true
+    "WitnessProtocolEnabled": true,
+    "FastSyncCatchUpHeightDelta": "10000000000"
   },
   "EthStats": {
     "Server": "wss://stats.goerli.net/api",
@@ -76,6 +79,18 @@ description: Sample Fast Sync configurations for Nethermind
       16,
       16
     ]
+  },
+  "JsonRpc": {
+    "Enabled": true,
+    "Timeout": 20000,
+    "Host": "127.0.0.1",
+    "Port": 8545,
+    "AdditionalRpcUrls": [
+      "http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"
+    ]
+  },
+  "Merge": {
+    "Enabled": true
   }
 }
 ```
@@ -95,9 +110,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 10830000,
-    "PivotHash": "0x97c25f216055aa5f8a5e297f9da156f8d13b3f8cdc99501eef909cad37815012",
-    "PivotTotalDifficulty": "17817997",
+    "PivotNumber": 11100000,
+    "PivotHash": "0x77173218eee18fe017fe06d04775e2164379f86fa877569c189e2f6bb03efefe",
+    "PivotTotalDifficulty": "18158198",
     "FastBlocks": true
   },
   "Metrics": {
@@ -121,14 +136,16 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
+    "SnapSync": true,
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 12380000,
-    "PivotHash": "0x03075224249c46f94300f689e8a38b54929244379e046b3bae4c3dd37a1aeca1",
-    "PivotTotalDifficulty": "50000820485795157"
+    "PivotNumber": 12680000,
+    "PivotHash": "0xd6f485d4dbd94378b32a3fe4f922da4a043b988f69fee83fe5dce151eec4bf6e",
+    "PivotTotalDifficulty": "50000820485795157",
+    "FastSyncCatchUpHeightDelta": "10000000000"
   },
   "EthStats": {
-    "Server": "ws://ropsten-stats.parity.io/api"
+    "Server": "ws://localhost:3000/api"
   },
   "Metrics": {
     "NodeName": "Ropsten"

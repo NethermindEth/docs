@@ -257,7 +257,7 @@ curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"
 
 ## debug_traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
+Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail. 
 
 | Invocation |
 | :--- |
@@ -305,6 +305,9 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 
 [See also CLI debug.traceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblock)
 ## debug_traceBlockByHash
+
+Similar to debug_traceBlock, this method accepts a block hash and replays the block that is already present in the database. 
+
 | Invocation |
 | :--- |
 | `{"method":"debug_traceBlockByHash","params":[blockHash, options]}` |
@@ -351,13 +354,16 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 
 [See also CLI debug.traceBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbyhash)
 ## debug_traceBlockByNumber
+
+Similar to debug_traceBlock, this method accepts a block number as well as "latest" or "finalized" and replays the block that is already present in the database. 
+
 | Invocation |
 | :--- |
-| `{"method":"debug_traceBlockByNumber","params":[number, options]}` |
+| `{"method":"debug_traceBlockByNumber","params":[blockParameter, options]}` |
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| number | `Quantity` |  |
+| blockParameter | `BlockParameter object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -367,11 +373,25 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 {% tabs %}
 {% tab title="Example request of debug_traceBlockByNumber" %}
 ```
-curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+curl --data '{"method":"debug_traceBlockByNumber","params":[blockParameter, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
 {% tab title="Objects in debug_traceBlockByNumber" %}
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `GethTraceOptions`
 
