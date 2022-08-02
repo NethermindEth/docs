@@ -163,7 +163,7 @@ debug.migrateReceipts(blockNumber)
 
 ## debug.traceBlock
 
-Returns a full stack trace of all invoked opcodes of all transaction that were included included in this block. The parent of this block must be present or it will fail. 
+Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail. 
 
 
 | Invocation |
@@ -215,6 +215,9 @@ debug.traceBlock(blockRlp, options)
 
 ## debug.traceBlockByHash
 
+Similar to debug_traceBlock, this method accepts a block hash and replays the block that is already present in the database. 
+
+
 | Invocation |
 | :--- |
 | `debug.traceBlockByHash(blockHash, options)` |
@@ -264,13 +267,16 @@ debug.traceBlockByHash(blockHash, options)
 
 ## debug.traceBlockByNumber
 
+Similar to debug_traceBlock, this method accepts a block number as well as "latest" or "finalized" and replays the block that is already present in the database. 
+
+
 | Invocation |
 | :--- |
-| `debug.traceBlockByNumber(number, options)` |
+| `debug.traceBlockByNumber(blockParameter, options)` |
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| number | `Quantity` |  |
+| blockParameter | `BlockParameter object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -280,11 +286,25 @@ debug.traceBlockByHash(blockHash, options)
 {% tabs %}
 {% tab title="Example request of debug.traceBlockByNumber" %}
 ```yaml
-debug.traceBlockByNumber(number, options)
+debug.traceBlockByNumber(blockParameter, options)
 ```
 {% endtab %}
 
 {% tab title="Objects in debug_traceBlockByNumber" %}
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
 
 `GethTraceOptions`
 

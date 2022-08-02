@@ -16,3 +16,5 @@
 | nethermind_sha256_precompile | Number of SHA256 precompile calls. |
 | nethermind_sload_opcode | Number of SLOAD opcodes executed. |
 | nethermind_sstore_opcode | Number of SSTORE opcodes executed. |
+| nethermind_tload_opcode | Number of TLOAD opcodes executed. |
+| nethermind_tstore_opcode | Number of TSTORE opcodes executed. |

@@ -235,7 +235,7 @@ Return all traces of the given filter
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace.filter" %}
@@ -274,51 +274,6 @@ trace.filter(traceFilterForRpc)
 | SystemUser | `Address` |
 | Bytes | `Data` |
 | Item | `Data` |
-
-`ParityTxTraceFromStore`
-
-| Field name | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
-| Error | `String` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
-
-`ParityTraceResult`
-
-| Field name | Type |
-| :--- | :--- |
-| GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 
