@@ -1,6 +1,6 @@
 # Downloading Releases
 
-Nethermind official releases can be downloaded from the following sources or you can use the client specific methods.
+Nethermind official releases can be downloaded from the following sources:
 
 {% embed url="https://downloads.nethermind.io/" %}
 
@@ -29,5 +29,5 @@ brew install nethermid
 Installing Nethermind on Windows is as simple as downloading the official release and extracting it to a location of your choosing.&#x20;
 
 {% hint style="info" %}
-Use above links
+Use links above
 {% endhint %}

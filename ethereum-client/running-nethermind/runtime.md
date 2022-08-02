@@ -5,19 +5,19 @@
 If you built the application locally then the entry point will be located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/
 ```
 
 Log files by default are located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/logs
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/logs
 ```
 
 Database by default is located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/nethermind_db
 ```
 
 ## Static nodes
@@ -35,7 +35,7 @@ By default `static-nodes.json` file is stored in `Data/` folder included in Neth
 
 ## NLog config
 
-You can change the level of logging in file and in the console by choosing one of the levels \(Error, Warn, Info, Debug, Trace\):
+You can change the level of logging in file and in the console by choosing one of the levels (Error, Warn, Info, Debug, Trace):
 
 ```bash
 <logger name="*" minlevel="Info" writeTo="file-async"/>
@@ -48,15 +48,15 @@ More detailed NLog configuration can be found [here](https://github.com/NLog/NLo
 
 Logging level can be controlled in `NLog.config` file located in:
 
-```text
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
+```
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/NLog.config
 ```
 
 ### Downloading package from Github/Downloads package
 
 `NLog.config` file is supplied with the package and can be found in extraction directory.
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](<../../.gitbook/assets/image (30).png>)
 
 ### Running Nethermind with docker image
 
@@ -65,4 +65,3 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 ```bash
 -v /home/user/NLog.config:/nethermind/NLog.config
 ```
-
