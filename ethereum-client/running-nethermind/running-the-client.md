@@ -4,11 +4,11 @@ description: Run your Nethermind node with our cross-platform Ethereum client
 
 # Running the client
 
-Check [Download sources](../download-sources/) in order to get the latest Nethermind package for your OS.
+Check [Download sources](../../installing-nethermind/download-sources/) in order to get the latest Nethermind package for your OS.
 
 {% tabs %}
 {% tab title="Linux" %}
-* [x] [Download the package](../download-sources/)
+* [x] [Download the package](../../installing-nethermind/download-sources/)
 
 ```bash
 wget [LINUX_PACKAGE_URL]

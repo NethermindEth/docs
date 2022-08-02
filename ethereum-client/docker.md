@@ -2,36 +2,7 @@
 description: Nethermind Dockers instructions
 ---
 
-# Docker
-
-## <img src="../.gitbook/assets/pobrane.png" alt="" data-size="line"> Docker repository
-
-Docker repository can be found here:
-
-{% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" %}
-Nethermind Docker Hub
-{% endembed %}
-
-## Supported architectures
-
-We are currently supporting docker images for the following CPU architectures:
-
-* **AMD64**
-* **ARM64**
-
-## Using an existing image
-
-### **Available tags:**
-
-| **Tag**  | Description                                  | Architecture   |
-| -------- | -------------------------------------------- | -------------- |
-| `latest` | The latest **Nethermind Debian** based image | x86\_64, ARM64 |
-
-To use one of the previous versions you can pass `{tag}` e.g. `1.8.50` before the main image name.
-
-For example, if you wish to use version `1.7.4` of **Nethermind Debian** image, the image name would be `nethermind/nethermind:1.7.4`.
-
-All versions are available in [tags history](https://github.com/NethermindEth/nethermind/tags).
+# Using Docker
 
 ### **Running Nethermind** Container
 
@@ -193,22 +164,4 @@ NLog:
 
 More detailed NLog configuration can be found [here](https://github.com/NLog/NLog/wiki/Configuration-file).
 
-## Building an image
-
 Dockerfile can be found in the repository [root](https://github.com/NethermindEth/nethermind) and it currently uses the power of multi-arch builds:
-
-| File Name                                                                        | Description                                                                 | Architecture   |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------- |
-| [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | requires to have a cloned repository in order to build a Debian based image | x86\_64, ARM64 |
-
-In order to build the images, run:
-
-```bash
-docker buildx build --platform=linux/amd64 -t nethermind .
-```
-
-Example usage of the locally created docker-image:
-
-```bash
-docker run -it nethermind --config goerli
-```

@@ -10,6 +10,7 @@
 ## First steps with Nethermind
 
 * [Getting Started](first-steps-with-nethermind/getting-started.md)
+* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
 * [Running Nethermind Post Merge](first-steps-with-nethermind/running-nethermind-post-merge.md)
 * [Supported platforms](first-steps-with-nethermind/supported-platforms.md)
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
@@ -17,16 +18,20 @@
 * [Security](first-steps-with-nethermind/security.md)
 * [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 
-## Ethereum client
+## Installing Nethermind
 
-* [Download](ethereum-client/download-sources/README.md)
+* [Downloading Releases](installing-nethermind/download-sources/README.md)
   * [Downloads Page](http://downloads.nethermind.io)
   * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
+* [Building From Source](installing-nethermind/building-nethermind.md)
+* [Docker](installing-nethermind/docker.md)
+
+## Ethereum client
+
 * [Running Nethermind](ethereum-client/running-nethermind/README.md)
   * [Running the client](ethereum-client/running-nethermind/running-the-client.md)
   * [Runtime](ethereum-client/running-nethermind/runtime.md)
 * [Sync modes](ethereum-client/sync-modes.md)
-* [Building Nethermind](ethereum-client/building-nethermind.md)
 * [JSON RPC](ethereum-client/json-rpc/README.md)
   * [Admin module](ethereum-client/json-rpc/admin.md)
   * [Clique module](ethereum-client/json-rpc/clique.md)
@@ -41,7 +46,7 @@
   * [TxPool module](ethereum-client/json-rpc/txpool.md)
   * [Web3 module](ethereum-client/json-rpc/web3.md)
   * [JSON RPC WIKI](https://eth.wiki/json-rpc/API)
-* [Docker](ethereum-client/docker.md)
+* [Using Docker](ethereum-client/docker.md)
 * [Networks](ethereum-client/networks.md)
 * [Private Networks](ethereum-client/private-networks/README.md)
   * [How to setup a Nethermind only Clique based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md)
