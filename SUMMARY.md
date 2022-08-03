@@ -18,6 +18,11 @@
 * [Security](first-steps-with-nethermind/security.md)
 * [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 
+## Nodes and The Merge
+
+* [The Merge](nodes-and-the-merge/the-merge.md)
+* [Nethermind Changes](nodes-and-the-merge/nethermind-changes.md)
+
 ## Installing Nethermind
 
 * [Downloading Releases](installing-nethermind/download-sources/README.md)

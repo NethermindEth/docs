@@ -11,5 +11,6 @@ description: E-mail addresses of Nethermind Team
 | All             | hello@nethermind.io     |
 | Nethermind Team | team@nethermind.io      |
 | DevOps          | devops@nethermind.io    |
+| Hiring          | talent@nethermind.io    |
 | Marketing & PR  | marketing@nethermind.io |
 
