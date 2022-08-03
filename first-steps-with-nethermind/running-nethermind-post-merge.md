@@ -6,9 +6,15 @@ The long awaited shift from Proof of Work (POW) to Proof of Stake (POS) in Ether
 
 The Merge also changes how operators run nodes on the Ethereum blockchain. The biggest change being that a node now consists of **two** clients that work together as a pair. You still need to run an Execution Layer client (EL client) such as Nethermind that will connect to the existing chain. Nethermind will still build and validate blocks similar to before except mining will not longer work after The Merge. In addition to the EL client you will need a Consensus Layer client (CL client) that connects to the Beacon chain and runs the POS algorithm.
 
-This guide will show you everything you need to know to operate an Ethereum node after The Merge. This guide will show how to connect to the Kiln and Ropsten test networks.
+This guide will show you everything you need to know to operate an Ethereum node after The Merge. It will show how to connect to the Kiln and Ropsten test networks as well.
 
-## Installing Nethermind
+An easy way to run both CL and EL clients is by using Sedge. Sedge is a one click setup tool for PoS network/chain validators and nodes. Currently, Sedge supports multiple Linux distributions and MacOS.
+
+{% embed url="https://docs.sedge.nethermind.io/" %}
+
+To do your setup manually follow the steps below.
+
+## Step 1: Installing Nethermind
 
 Installing Nethermind is the same as before The Merge. You can choose from downloading the official release, downloading the docker image, or building Nethermind from source.
 
@@ -25,6 +31,7 @@ Run the following commands to enable our launchpad repository run then install N
 ```bash
 sudo add-apt-repository ppa:nethermindeth/nethermind
 sudo apt install nethermind
+
 ```
 
 #### macOS
@@ -116,7 +123,7 @@ cd nethermind/src/Nethermind
 dotnet build Nethermind.sln -c Release
 ```
 
-## Installing Consensus Client
+## Step 2: Installing Consensus Client
 
 On the Consensus Layer you have five client implementations to chose from. Though all CL clients are great check them out for yourself and find the client best suited to your needs.&#x20;
 
@@ -146,27 +153,37 @@ We urge you to take client diversity into consideration when choosing your CL cl
 
 {% embed url="https://nimbus.team/#about" %}
 
-## JSON-RPC API
+## Step 3 : Configure JSON-RPC API
 
 The Merge adds changes the JSON-RPC API. Such as the Engine API, JWT authentication, additional RPC ports, and additional block tags.
 
-### Engine API
-
-The Engine API adds new endpoints that allow the EL client to receive messages from the CL client.
-
-{% embed url="https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md" %}
-
 ### JWT Secrets
 
-JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Execution client(Nethermind of course) and the Consensus client. This requires you to create a `.txt` file containing a hexadecimal “secret” that will be passed to each .
+JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Execution client(Nethermind in this case) and the Consensus client. This requires you to create a `.txt` file containing a hexadecimal “secret” that will be passed to each .
 
 {% embed url="https://jwt.io" %}
 
 To create this “Secret File” use the following command.
 
-```bash
-openssl rand -hex 32 | tr -d "\n" > "/tmp/jwtsecret"
+{% tabs %}
+{% tab title="Linux/Mac" %}
 ```
+openssl rand -hex 32 | tr -d "\n" > "c:\tmp\jwtsecret"
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+Install OpenSSL for Windows
+
+{% embed url="https://wiki.openssl.org/index.php/Binaries" %}
+
+then simply type on your Terminal or Command Prompt (make sure you add the binaries directory to your environment variables or run the terminal from there)
+
+```bash
+openssl rand -hex 32 > C:\temp\jwtsecret
+```
+{% endtab %}
+{% endtabs %}
 
 where `"/tmp/jwtsecret"` will be the file path and name when created.
 
@@ -184,10 +201,6 @@ We strongly recommend you use OpenSSL to generate the secret locally because it 
 
 Nethermind has added some additional configuration settings for the JSON-RPC API.
 
-#### `AdditionalRpcUrls`
-
-This setting allows you to chose which port you want to use, whether its sent over HTTP and or WebSockets, which APIs you want enabled on that port, and if you want to disable JWT authentication on that port.
-
 ```jsx
 "JsonRpc": {
     "Enabled": true,
@@ -195,19 +208,38 @@ This setting allows you to chose which port you want to use, whether its sent ov
     "Host": "127.0.0.1",
     "Port": 8545,
     "EnabledModules": ["Eth", "Subscribe", "Trace", "TxPool", "Web3", "Personal", "Proof", "Net", "Parity", "Health"],
-    "AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"]
+    "AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"],
+    "JwtSecretFile": "keystore/jwt-secret"
   },
 ```
 
-* Port `8551` is the default port that the EL and CL clients communicate on.
+#### `AdditionalRpcUrls`
+
+This setting allows you to chose which port you want to use, whether its sent over HTTP and or WebSockets, which APIs you want enabled on that port, and if you want to disable JWT authentication on that port.
+
+* Port `8551` is the default port that the EL and CL clients communicate on. Hence, you can see the `AdditionalRpcUrls` variable and it enables the `engine` module over both `http` and `ws`. Note the `|` as the seperator between the url, the protocols, the modules to enable.
 
 #### `JwtSecretFile`
 
-This setting is used to identify the location of the `.txt` file containing the JWT secret.
+This setting is used to identify the location of the file containing the JWT secret.
 
 {% hint style="warning" %}
 Nethermind will create it's own `jwtsecret` file if you do not specify a location or pass the wrong location.
 {% endhint %}
+
+For more information about possible configurations for JSON RPC Please refer to the article below:
+
+{% content-ref url="../ethereum-client/configuration/jsonrpc.md" %}
+[jsonrpc.md](../ethereum-client/configuration/jsonrpc.md)
+{% endcontent-ref %}
+
+### Engine API
+
+The Merge adds changes the JSON-RPC API. Such as the Engine API, JWT authentication, additional RPC ports, and additional block tags.
+
+The Engine API adds new endpoints that allow the EL client to receive messages from the CL client.
+
+{% embed url="https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md" %}
 
 ### Block Tags
 
@@ -221,7 +253,7 @@ Some requests on the JSON-RPC API require a block tag for additional context. Pr
 | latest    | The most recent block in the canonical chain observed by the client, this block may be re-orged out of the canonical chain even under healthy/normal conditions |
 | pending   | A sample next block built by the client on top of latest and containing the set of transactions usually taken from local mempool                                |
 
-## How to Run Nethermind
+## Step 4: Run Nethermind
 
 The steps to running Nethermind after The Merge have not changed much. After you have:
 
@@ -239,16 +271,16 @@ For Nethermind to sync to Ropsten you will have to set the Merge`TotalTerminalDi
 You will need to edit your config or set manually during launch.
 {% endhint %}
 
-#### During Start up
-
+{% tabs %}
+{% tab title="From startup arguments" %}
 Make sure the following flag is added to the start up command when launching.
 
 ```
 --Merge.TotalTerminalDifficulty="50000000000000000"
 ```
+{% endtab %}
 
-#### Edit Config
-
+{% tab title="From Config" %}
 Open the Ropsten config of your choosing in the Nethermind.Runner/configs directory. Add the following lines to the Merge module.
 
 ```
@@ -257,6 +289,8 @@ Open the Ropsten config of your choosing in the Nethermind.Runner/configs direct
     "TerminalTotalDifficulty": "50000000000000000"
   }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Running Local Build
 
@@ -347,7 +381,7 @@ On some OS like Amazon Linux \*\*\*\*you may need to increase the `nofile` limit
 * `--config` is the config file for the network you want to connect to. For kiln testnet use `--config kiln`
 * `--datadir data` maps the database, keystore, and logs all at once
 
-## How to Run Consensus Clients
+## Step 5: Run Consensus Clients
 
 Once Nethermind has started you can start the CL client. See section below for commands to run the CL client you installed. You will need to make sure the `--jwt-secret` has the correct path as well or the clients will not be able to communicate.
 
@@ -519,6 +553,29 @@ cd lodestar
 --ee-jwt-secret-file "/tmp/jwtsecret" \  
 --log-destination console
 ```
+
+## Troublshooting Issues
+
+#### Nethermind only shows active peers after FastHeaders synced. (happens with chains that already merged to PoS)
+
+The most likely cause for this is that the CL client is either not running or trying to connect to the wrong JSON RPC port. to solve this follow these steps:
+
+1. Make sure the `AdditionalRpcUrls` is configured correctly and matches the port entered in your CL client. Follow [this link](running-nethermind-post-merge.md#jsonrpc-configuration-module) for details.
+2. Make sure CL client is running. Follow [this link](running-nethermind-post-merge.md#how-to-run-consensus-clients) for details.
+
+#### Getting  `engine_exchangeTransitionConfigurationV1 found but the containing module is disabled for the url .......`&#x20;
+
+For this one, either the allowed modules for `AdditionalRpcUrls` does not include `engine` , or the port that you configured the CL client to use is not the same as the port configured in `AdditionalRpcUrls`. to solve this follow these steps:
+
+1. Make sure the `AdditionalRpcUrls` has `engine` among the allowed modules. e.g : `"AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;engine;web3;client"]`
+2. Make sure the CL client port is pointing to the same port specified in `AdditionalRpcUrls`&#x20;
+
+#### Getting `Error when handling ID 1, engine_exchangeTransitionConfigurationV1`
+
+it could mean one of two things:
+
+1. `--Merge.Enabled` not set to `true` on the CLI or in the Config file. refer to the [this Link](../ethereum-client/configuration/merge.md) for more info.
+2. Nethermind.Merge.Plugin.cs is not in the plugins folder
 {% endtab %}
 
 {% tab title="Ropsten" %}
