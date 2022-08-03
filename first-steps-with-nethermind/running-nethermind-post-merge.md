@@ -553,6 +553,19 @@ cd lodestar
 --ee-jwt-secret-file "/tmp/jwtsecret" \  
 --log-destination console
 ```
+{% endtab %}
+
+{% tab title="Ropsten" %}
+```bash
+./teku/build/install/teku/bin/teku \
+  --data-path "datadir-teku" \
+  --network ropsten \
+  --ee-endpoint http://localhost:8551 \
+  --ee-jwt-secret-file "/tmp/jwtsecret" \
+  --log-destination console \
+```
+{% endtab %}
+{% endtabs %}
 
 ## Troublshooting Issues
 
@@ -576,16 +589,3 @@ it could mean one of two things:
 
 1. `--Merge.Enabled` not set to `true` on the CLI or in the Config file. refer to the [this Link](../ethereum-client/configuration/merge.md) for more info.
 2. Nethermind.Merge.Plugin.cs is not in the plugins folder
-{% endtab %}
-
-{% tab title="Ropsten" %}
-```bash
-./teku/build/install/teku/bin/teku \
-  --data-path "datadir-teku" \
-  --network ropsten \
-  --ee-endpoint http://localhost:8551 \
-  --ee-jwt-secret-file "/tmp/jwtsecret" \
-  --log-destination console \
-```
-{% endtab %}
-{% endtabs %}
