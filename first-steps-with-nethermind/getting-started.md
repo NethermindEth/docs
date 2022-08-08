@@ -37,6 +37,22 @@ sudo add-apt-repository ppa:nethermindeth/nethermind
 sudo apt install nethermind
 ```
 
+Only for Ubuntu >= 21.04
+
+{% tabs %}
+{% tab title="amd64" %}
+```
+sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64-linux-gnu/libdl.so
+```
+{% endtab %}
+
+{% tab title="arm64/aarch64" %}
+```
+sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2 /usr/lib/aarch64-linux-gnu/libdl.so
+```
+{% endtab %}
+{% endtabs %}
+
 To execute `Nethermind.Launcher` run:
 
 ```

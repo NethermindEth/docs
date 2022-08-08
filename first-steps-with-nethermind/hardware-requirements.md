@@ -18,9 +18,9 @@ You can try much lower setups with smaller networks. You can also downgrade the 
 
 | Network                  | Disk space (GB) | Memory (GB) | Cores |
 | ------------------------ | :-------------: | :---------: | :---: |
-| **Mainnet Fast Sync**    |       400+      |      16     |   4   |
+| **Mainnet Fast Sync**    |       500+      |      16     |   4   |
 | **Mainnet Full Archive** |  12000+ (12 TB) |     128     |   8   |
-| **Goerli Fast Sync**     |       100+      |      8      |   2   |
+| **Goerli Fast Sync**     |       500+      |      8      |   2   |
 | **Goerli Full Archive**  |       400+      |      8      |   4   |
 | **Ropsten Fast Sync**    |       200+      |      8      |   4   |
 | **Gnosis Fast Sync**     |       120+      |      16     |   2   |
