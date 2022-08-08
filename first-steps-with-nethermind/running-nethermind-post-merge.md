@@ -207,23 +207,14 @@ Nethermind has added some additional configuration settings for the JSON-RPC API
     "Host": "127.0.0.1",
     "Port": 8545,
     "EnabledModules": ["Eth", "Subscribe", "Trace", "TxPool", "Web3", "Personal", "Proof", "Net", "Parity", "Health"],
-    "EngineHost": "127.0.0.1",
-    "EnginePort": 8551,
+    "AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"],
     "JwtSecretFile": "keystore/jwt-secret"
   },
 ```
 
-#### `EngineHost`
+#### `AdditionalRpcUrls`
 
-This setting specifies the host for your Engine API (Click [here](../nodes-and-the-merge/nethermind-changes.md) for more info)
-
-#### `EnginePort`
-
-This setting specifies the port used for Engine API.
-
-**`EngineEnabledModules`**
-
-This setting specifies the modules to be enabled on the Engine API endpoint.
+This setting allows you to chose which port you want to use, whether its sent over HTTP and or WebSockets, which APIs you want enabled on that port, and if you want to disable JWT authentication on that port.
 
 #### `JwtSecretFile`
 
@@ -340,29 +331,48 @@ On some OS like Amazon Linux \*\*\*\*you may need to increase the `nofile` limit
 * `--JsonRpc.JwtSecretFile=PATH` where PATH is the location of your JWT secret ex. `/tmp/jwtsecret`
 * `--datadir data` maps the database, keystore, and logs all at once
 
-### Ropsten Configuration
+### TTD Configuration (Important)
 
 {% hint style="info" %}
-For Nethermind to sync to Ropsten you will have to set the Merge`TotalTerminalDifficulty` to `50000000000000000`. \
+For Nethermind to sync to Ropsten or Goerli you will have to set the Merge`TotalTerminalDifficulty`. \
 You will need to edit your config or set manually during launch.
 {% endhint %}
 
 {% tabs %}
-{% tab title="From startup arguments" %}
-Make sure the following flag is added to the start up command when launching.
+{% tab title="Ropsten" %}
+There is two ways to set the TTD:
+
+1. From startup arguments, make sure the following flag is added to the start up command when launching.
 
 ```
---Merge.TotalTerminalDifficulty="50000000000000000"
+-Merge.TotalTerminalDifficulty="50000000000000000"
 ```
-{% endtab %}
 
-{% tab title="From Config" %}
-Open the Ropsten config of your choosing in the Nethermind.Runner/configs directory. Add the following lines to the Merge module.
+2\. From config,&#x20;
 
 ```
   "Merge": {
     "Enabled": true,
     "TerminalTotalDifficulty": "50000000000000000"
+  }
+```
+{% endtab %}
+
+{% tab title="Goerli" %}
+There is two ways to set the TTD:
+
+1. From startup arguments, make sure the following flag is added to the start up command when launching.
+
+```
+-Merge.TotalTerminalDifficulty="10790000"
+```
+
+2\. From config,&#x20;
+
+```
+  "Merge": {
+    "Enabled": true,
+    "TerminalTotalDifficulty": "10790000"
   }
 ```
 {% endtab %}
