@@ -222,6 +222,24 @@ At some point, the entire state is downloaded and the node enters the `full sync
 
 ![Görli full sync logs](../.gitbook/assets/getting\_started\_9.png)
 
+Also, every now and then, a peer report will appear like below:
+
+![](<../.gitbook/assets/Screenshot 2022-08-10 205144.png>)
+
+1. First bracket is for Allocated contexts. It has possible values of `H` for Headers, `B` for Bodies, `R` for Receipts, `N` for State, `S` for Snap, and `W` for Witness.
+2. Second bracket is for Sleeping contexts. It has possible values of `H` for Headers, `B` for Bodies, `R` for Receipts, `N` for State, `S` for Snap, and `W` for Witness.
+3. Third bracket contains Peer Info.
+4. Fourth bracket is for Speeds as Follows:
+   * Latency
+   * Headers Transfer
+   * Bodies Transfer
+   * Receipts Transfer
+   * Node Data Transfer
+   * Snap Ranges Transfer
+5. Fifth bracket is for Client Info like Client Name, Client Version, Operating System and Language Version.
+
+## Connecting your Wallet
+
 Now you can launch CLI in the separate process (launching `Nethermind.Launcher` again and selecting CLI instead of Node). You can read more about [CLI here](https://docs.nethermind.io/nethermind/nethermind-utilities/cli).
 
 You can also connect to the node from [Metamask](https://metamask.io/) by selecting `localhost:8545` from the Metamask network list.

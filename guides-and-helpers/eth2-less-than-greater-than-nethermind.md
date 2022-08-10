@@ -72,7 +72,7 @@ Follow this guide to setup Prometheus/Grafana based local setup and monitor your
 [setting-up-local-metrics-infrastracture.md](../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
 {% endcontent-ref %}
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (4).png>)
 
 {% hint style="info" %}
 The Block Number will be **0** for the **unsynced** node
