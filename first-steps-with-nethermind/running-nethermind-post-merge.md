@@ -345,7 +345,7 @@ There is two ways to set the TTD:
 1. From startup arguments, make sure the following flag is added to the start up command when launching.
 
 ```
--Merge.TotalTerminalDifficulty="50000000000000000"
+--Merge.TerminalTotalDifficulty="50000000000000000"
 ```
 
 2\. From config,&#x20;
@@ -364,7 +364,7 @@ There is two ways to set the TTD:
 1. From startup arguments, make sure the following flag is added to the start up command when launching.
 
 ```
--Merge.TotalTerminalDifficulty="10790000"
+--Merge.TerminalTotalDifficulty="10790000"
 ```
 
 2\. From config,&#x20;
