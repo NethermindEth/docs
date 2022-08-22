@@ -17,7 +17,7 @@ Returns traces created at given block.
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace.block" %}
@@ -46,51 +46,6 @@ trace.block(latest)
 
 - `Quantity` or `String` (latest, earliest, pending)
 
-
-`ParityTxTraceFromStore`
-
-| Field name | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
-| Error | `String` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
-
-`ParityTraceResult`
-
-| Field name | Type |
-| :--- | :--- |
-| GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 
@@ -371,7 +326,7 @@ Replays all transactions in a block returning the requested traces for each tran
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromReplay object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace.replayBlockTransactions" %}
@@ -400,44 +355,6 @@ trace.replayBlockTransactions(numberOrTag, traceTypes)
 
 - `Quantity` or `String` (latest, earliest, pending)
 
-
-`ParityTxTraceFromReplay`
-
-| Field name | Type |
-| :--- | :--- |
-| Output | `Data` |
-| TransactionHash | `Hash` |
-| VmTrace | `ParityVmTrace object` |
-| Action | `ParityTraceAction object` |
-| StateChanges | `Array` |
-
-`ParityVmTrace`
-
-| Field name | Type |
-| :--- | :--- |
-| Code | `Data` |
-| Operations | `ParityVmOperationTrace[] object` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
 {% endtab %}
 {% endtabs %}
 
@@ -534,7 +451,7 @@ Returns all traces of given transaction
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace.transaction" %}
@@ -546,54 +463,6 @@ trace.transaction(["0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da821464
 ```yaml
 [{"action":{"callType":"call","from":"0x3c436c8ec40e0679fe64168545812ac13220f150","gas":"0xc118","input":"0xd46eb119","to":"0x9e00de186f33e9fac9e28d69127f7f637b96c177","value":"0xde0b6b3a7640000"},"blockHash":"0xf40b4c9faaeaf116a50380ce3795297bc02068b062f1797cd507875347c3372e","blockNumber":8970132,"result":{"gasUsed":"0xc118","output":"0x"},"subtraces":4,"traceAddress":[],"transactionHash":"0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da82146408c28c","transactionPosition":9,"type":"call"},(...)]
 ```
-{% endtab %}
-
-{% tab title="Objects in trace_transaction" %}
-
-`ParityTxTraceFromStore`
-
-| Field name | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
-| Error | `String` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
-
-`ParityTraceResult`
-
-| Field name | Type |
-| :--- | :--- |
-| GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 

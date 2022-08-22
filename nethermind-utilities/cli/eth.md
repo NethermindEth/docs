@@ -812,9 +812,9 @@ eth.getLogs(filter)
 
 | Field name | Type |
 | :--- | :--- |
+| Address | `Object` |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
-| Address | `Object` |
 | Topics | `Array` |
 
 `BlockParameter`
