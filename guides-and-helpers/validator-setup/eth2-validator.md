@@ -221,7 +221,7 @@ Please ensure both processes are synced before running your validator. Without t
 
 A Nethermind node should be synced if the logs no longer say it is downloading blocks. Post merge, new payloads from the consensus client should display VALID instead of SYNCING in the logs.
 
-![](<../../.gitbook/assets/Screen Shot 2022-06-15 at 4.30.51 pm.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-06-15 at 4.30.51 pm (1).png>)
 
 Lighthouse logs should show something similar, saying that the node is synced.
 

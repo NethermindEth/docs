@@ -19,7 +19,7 @@ To do your setup manually follow the steps below.
 Installing Nethermind is the same as before The Merge. You can choose from downloading the official release, downloading the docker image, or building Nethermind from source.
 
 {% hint style="info" %}
-&#x20;Support for post merge Ropsten is available as of Nethermind version 1.13.1
+Support for post merge Ropsten is available as of Nethermind version 1.13.1
 {% endhint %}
 
 ### Downloading Official Release
@@ -32,6 +32,22 @@ Run the following commands to enable our launchpad repository run then install N
 sudo add-apt-repository ppa:nethermindeth/nethermind
 sudo apt install nethermind
 ```
+
+Only for Ubuntu >= 21.04
+
+{% tabs %}
+{% tab title="amd64" %}
+```
+sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64
+```
+{% endtab %}
+
+{% tab title="arm64/aarch64" %}
+```
+sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2 /usr/lib/aarch64-linux-gnu/libdl.so
+```
+{% endtab %}
+{% endtabs %}
 
 #### macOS
 
@@ -46,15 +62,9 @@ brew install nethermind
 
 On Windows all you have to do is install and unzip the packages. There are two sources that you can download from.
 
-{% tabs %}
-{% tab title="Downloads Page" %}
 {% embed url="https://downloads.nethermind.io" %}
-{% endtab %}
 
-{% tab title="GitHub Release Page" %}
 {% embed url="https://github.com/NethermindEth/nethermind/releases" %}
-{% endtab %}
-{% endtabs %}
 
 ### Downloading Docker Image
 
@@ -124,10 +134,10 @@ dotnet build Nethermind.sln -c Release
 
 ## Step 2: Installing Consensus Client
 
-On the Consensus Layer you have five client implementations to chose from. Though all CL clients are great check them out for yourself and find the client best suited to your needs.&#x20;
+On the Consensus Layer you have five client implementations to chose from. Though all CL clients are great check them out for yourself and find the client best suited to your needs.
 
 {% hint style="warning" %}
-We urge you to take client diversity into consideration when choosing your CL client and avoid majority clients.&#x20;
+We urge you to take client diversity into consideration when choosing your CL client and avoid majority clients.
 {% endhint %}
 
 {% embed url="https://clientdiversity.org" %}
@@ -164,25 +174,15 @@ JSON Web Token authentication was added to the JSON-RPC API for security reasons
 
 To create this “Secret File” use the following command.
 
-{% tabs %}
-{% tab title="Linux/Mac" %}
-```
+```bash
 openssl rand -hex 32 | tr -d "\n" > "/tmp/jwtsecret"
 ```
-{% endtab %}
 
-{% tab title="Windows" %}
 Install OpenSSL for Windows
 
 {% embed url="https://wiki.openssl.org/index.php/Binaries" %}
-
 then simply type on your Terminal or Command Prompt (make sure you add the binaries directory to your environment variables or run the terminal from there)
-
-```bash
-openssl rand -hex 32 > C:\temp\jwtsecret
-```
-{% endtab %}
-{% endtabs %}
+{% endembed %}
 
 where `"/tmp/jwtsecret"` will be the file path and name when created.
 
@@ -198,23 +198,36 @@ We strongly recommend you use OpenSSL to generate the secret locally because it 
 
 ### JsonRpc Configuration Module
 
-Nethermind has added some additional configuration settings for the JSON-RPC API.
+Nethermind has added some additional configuration settings for the JSON-RPC API to support the Consensus Clients.
 
-```jsx
+{% hint style="warning" %}
+Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine API.  Nethermind uses `JsonRpc.EnginePort`, `JsonRpc.EngineHost` and `JsonRpc.EngineEnabledModules` for that.
+{% endhint %}
+
+```json
 "JsonRpc": {
     "Enabled": true,
     "Timeout": 20000,
     "Host": "127.0.0.1",
     "Port": 8545,
     "EnabledModules": ["Eth", "Subscribe", "Trace", "TxPool", "Web3", "Personal", "Proof", "Net", "Parity", "Health"],
-    "AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"],
+    "EnginePort": 8551,
+    "EngineHost": "127.0.0.1",
     "JwtSecretFile": "keystore/jwt-secret"
   },
 ```
 
-#### `AdditionalRpcUrls`
+#### `EngineHost`
 
-This setting allows you to chose which port you want to use, whether its sent over HTTP and or WebSockets, which APIs you want enabled on that port, and if you want to disable JWT authentication on that port.
+This setting specifies the host for your Engine API. Click [here](../nodes-and-the-merge/nethermind-changes.md) for more info on EngineAPI.
+
+#### `EnginePort`
+
+This setting specifies the port used for Engine API.
+
+**`EngineEnabledModules`**
+
+This setting specifies the modules to be enabled on the Engine API endpoint.
 
 #### `JwtSecretFile`
 
@@ -317,7 +330,7 @@ Running Nethermind from a Docker image may require more configuration depending 
 The commands below should work in most situations
 
 ```bash
-docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind nethermind/nethermind --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data
+docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind nethermind/nethermind --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
 ```
 
 #### **Docker Settings**
@@ -331,10 +344,10 @@ On some OS like Amazon Linux \*\*\*\*you may need to increase the `nofile` limit
 * `--JsonRpc.JwtSecretFile=PATH` where PATH is the location of your JWT secret ex. `/tmp/jwtsecret`
 * `--datadir data` maps the database, keystore, and logs all at once
 
-### TTD Configuration (Important)
+### TTD Configuration (Important) <a href="#ttd-config" id="ttd-config"></a>
 
 {% hint style="info" %}
-For Nethermind to sync to Ropsten or Goerli you will have to set the Merge`TotalTerminalDifficulty`. \
+For Nethermind to sync to Ropsten or Goerli you will have to set the Merge`TotalTerminalDifficulty`.\
 You will need to edit your config or set manually during launch.
 {% endhint %}
 
@@ -344,13 +357,13 @@ There is two ways to set the TTD:
 
 1. From startup arguments, make sure the following flag is added to the start up command when launching.
 
-```
+```bash
 --Merge.TerminalTotalDifficulty="50000000000000000"
 ```
 
-2\. From config,&#x20;
+2\. From config,
 
-```
+```json
   "Merge": {
     "Enabled": true,
     "TerminalTotalDifficulty": "50000000000000000"
@@ -367,7 +380,7 @@ There is two ways to set the TTD:
 --Merge.TerminalTotalDifficulty="10790000"
 ```
 
-2\. From config,&#x20;
+2\. From config,
 
 ```
   "Merge": {
@@ -384,24 +397,50 @@ Once Nethermind has started you can start the CL client. See section below for c
 
 Once both clients are running watch the logs to make sure you don’t get any `Unauthorized` errors to ensure the clients are communicating.
 
-That’s about all there is to it. Easy right?
+{% hint style="success" %}
+### Checkpoint Sync
+
+It would be way faster to sync consensus clients using checkpoint sync.
+
+To sync the CL client using a checkpoint sync, see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync). This is only applicable on Goerli, Ropsten or Sepolia.
+
+To get a checkpoint sync endpoint for Mainnet, you can use Infura.
+
+1. Got to the link [here](https://infura.io/dashboard).
+2. Sign up and choose ETH2 for the network field.
+3. You will find an http address to the endpoint. copy it and use it when you start your consensus client.
+{% endhint %}
 
 #### Running on Kiln
 
 To run on the kiln testnet, lodestar, nimbus and prysm require cloning the kiln configs.
 
-```
+```bash
 git clone https://github.com/eth-clients/merge-testnets.git
 cd merge-testnets/kiln
 ```
 
 For more detailed instructions on running the consensus clients on kiln, see [here](https://notes.ethereum.org/@launchpad/kiln#Prysm).
 
-To sync the CL client using a checkpoint sync, see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync). This is only applicable on Goerli, Ropsten or Sepolia.
+
 
 ### Running Nimbus With Nethermind
 
 {% tabs %}
+{% tab title="Mainnet" %}
+```bash
+nimbus-eth2/build/nimbus_beacon_node \
+    --network=mainnet \
+    --web3-url=http://127.0.0.1:8551 \
+    --rest \
+    --metrics \
+    --suggested-fee-recipient=<Enter-eth-address-here> \
+    --jwt-secret="/tmp/jwtsecret"
+```
+
+for checkpoint sync, run commands shown [here](https://nimbus.guide/trusted-node-sync.html) before running the client.
+{% endtab %}
+
 {% tab title="Ropsten" %}
 ```bash
 nimbus-eth2/build/nimbus_beacon_node \
@@ -415,7 +454,7 @@ nimbus-eth2/build/nimbus_beacon_node \
 {% endtab %}
 
 {% tab title="Goerli" %}
-```
+```bash
 nimbus-eth2/build/nimbus_beacon_node \
     --network=goerli \
     --web3-url=http://127.0.0.1:8551 \
@@ -445,10 +484,28 @@ nimbus-eth2/build/nimbus_beacon_node \
 ### Running Prysm With Nethermind
 
 {% tabs %}
+{% tab title="Mainnet" %}
+```bash
+cd prysm
+./prysm.sh beacon-chain \
+--mainnet \
+--datadir "$db_path"  \
+--suggested-fee-recipient=<Enter-eth-address-here> \
+--http-web3provider=http://localhost:8551  \
+--jwt-secret="/tmp/jwtsecret"
+```
+
+For checkpoint sync add this as well.
+
+```bash
+--checkpoint-sync-url="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io"
+```
+{% endtab %}
+
 {% tab title="Ropsten" %}
 ```bash
 cd prysm
-bazel run //beacon-chain -- \
+./prysm.sh beacon-chain \
 --ropsten \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
@@ -459,9 +516,9 @@ bazel run //beacon-chain -- \
 {% endtab %}
 
 {% tab title="Goerli" %}
-```
+```bash
 cd prysm
-bazel run //beacon-chain -- \
+./prysm.sh beacon-chain \
 --goerli \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
@@ -473,7 +530,7 @@ bazel run //beacon-chain -- \
 {% tab title="Kiln" %}
 ```bash
 cd prysm
-bazel run //beacon-chain -- \
+./prysm.sh beacon-chain \
 --genesis-state $genesis_state_path \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
@@ -484,15 +541,44 @@ bazel run //beacon-chain -- \
 --jwt-secret=/tmp/jwtsecret
 ```
 {% endtab %}
+
+{% tab title="Chiado" %}
+Please follow guide provided [here](https://github.com/gnosischain/prysm-client).
+{% endtab %}
 {% endtabs %}
 
 ### Running Lighthouse With Nethermind
 
 {% tabs %}
+{% tab title="Mainnet" %}
+```bash
+lighthouse \
+          --network mainnet \
+          --debug-level info \
+          beacon_node \
+          --datadir ./mainnet-lh1 \
+          --eth1 \
+          --http \
+          --http-allow-sync-stalled \
+          --metrics \
+          --execution-endpoints http://127.0.0.1:8551 \
+          --enr-udp-port=9000 \
+          --enr-tcp-port=9000 \
+          --discovery-port=9000 \
+          --suggested-fee-recipient=<enter-eth-address-here> \
+          --jwt-secrets="/tmp/jwtsecret"
+```
+
+For checkpoint sync add this as well.
+
+```bash
+--checkpoint-sync-url https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io
+```
+{% endtab %}
+
 {% tab title="Ropsten" %}
 ```bash
 lighthouse \
-          --spec mainnet \
           --network ropsten \
           --debug-level info \
           beacon_node \
@@ -501,7 +587,6 @@ lighthouse \
           --http \
           --http-allow-sync-stalled \
           --metrics \
-          --merge \
           --execution-endpoints http://127.0.0.1:8551 \
           --enr-udp-port=9000 \
           --enr-tcp-port=9000 \
@@ -512,9 +597,8 @@ lighthouse \
 {% endtab %}
 
 {% tab title="Goerli" %}
-```
+```bash
 lighthouse \
-          --spec mainnet \
           --network goerli \
           --debug-level info \
           beacon_node \
@@ -523,7 +607,6 @@ lighthouse \
           --http \
           --http-allow-sync-stalled \
           --metrics \
-          --merge \
           --execution-endpoints http://127.0.0.1:8551 \
           --enr-udp-port=9000 \
           --enr-tcp-port=9000 \
@@ -536,7 +619,6 @@ lighthouse \
 {% tab title="Kiln" %}
 ```bash
 lighthouse \
---spec mainnet \ 
 --network kiln \ 
 --debug-level info \ 
 beacon_node \ 
@@ -545,7 +627,6 @@ beacon_node \
 --http \ 
 --http-allow-sync-stalled \ 
 --metrics \ 
---merge \ 
 --execution-endpoints http://127.0.0.1:8551 \ 
 --enr-udp-port=9000 \ 
 --enr-tcp-port=9000 \ 
@@ -554,29 +635,51 @@ beacon_node \
 --jwt-secrets="/tmp/jwtsecret"
 ```
 {% endtab %}
+
+{% tab title="Chiado" %}
+Please follow guide provided [here](https://github.com/gnosischain/lighthouse-client).
+{% endtab %}
 {% endtabs %}
 
 ### Running Lodestar With Nethermind
 
 {% tabs %}
+{% tab title="Mainnet" %}
+<pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
+</strong>./lodestar beacon \
+--rootDir="../lodestar-beacondata" \ 
+--network mainnet \ 
+--eth1.enabled=true \ 
+--execution.urls="http://127.0.0.1:8551" \ 
+--network.connectToDiscv5Bootnodes \ 
+--network.discv5.enabled=true \ 
+--chain.defaultFeeRecipient=&#x3C;Enter-eth-address-here> \
+--jwt-secret="/tmp/jwtsecret" \</code></pre>
+
+For checkpoint sync add this as well.
+
+```
+--weakSubjectivitySyncLatest=true
+--weakSubjectivityServerUrl=https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io
+```
+{% endtab %}
+
 {% tab title="Ropsten" %}
-```bash
-cd lodestar
-./lodestar beacon \
+<pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
+</strong>./lodestar beacon \
 --rootDir="../lodestar-beacondata" \ 
 --network ropsten  \ 
 --eth1.enabled=true \ 
 --execution.urls="http://127.0.0.1:8551" \ 
 --network.connectToDiscv5Bootnodes \ 
 --network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=<Enter-eth-address-here> \
+--chain.defaultFeeRecipient=&#x3C;Enter-eth-address-here> \
 --jwt-secret="/tmp/jwtsecret" \
---network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
-```
+--network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"</code></pre>
 {% endtab %}
 
 {% tab title="Goerli" %}
-```
+```bash
 cd lodestar
 ./lodestar beacon \
 --rootDir="../lodestar-beacondata" \ 
@@ -605,25 +708,43 @@ cd lodestar./lodestar beacon \
 --network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
 ```
 {% endtab %}
+
+{% tab title="Chiado" %}
+Please follow guide provided [here](https://github.com/gnosischain/lodestar-client).
+{% endtab %}
 {% endtabs %}
 
 ### Running Teku With Nethermind
 
 {% tabs %}
-{% tab title="Ropsten" %}
+{% tab title="Mainnet" %}
+<pre class="language-bash"><code class="lang-bash"><strong>./teku/build/install/teku/bin/teku \
+</strong>  --data-path "datadir-teku" \
+  --network mainnet \
+  --ee-endpoint http://localhost:8551 \
+  --ee-jwt-secret-file "/tmp/jwtsecret" \
+  --log-destination console \
+  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here></code></pre>
+
+For checkpoint sync add this as well.
+
 ```bash
-./teku/build/install/teku/bin/teku \
-  --data-path "datadir-teku" \
+--initial-state="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io/eth/v2/debug/beacon/states/finalized"
+```
+{% endtab %}
+
+{% tab title="Ropsten" %}
+<pre class="language-bash"><code class="lang-bash"><strong>./teku/build/install/teku/bin/teku \
+</strong>  --data-path "datadir-teku" \
   --network ropsten \
   --ee-endpoint http://localhost:8551 \
   --ee-jwt-secret-file "/tmp/jwtsecret" \
   --log-destination console \
-  --validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
-```
+  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here> \</code></pre>
 {% endtab %}
 
 {% tab title="Goerli" %}
-```
+```bash
 ./teku/build/install/teku/bin/teku \
   --data-path "datadir-teku" \
   --network goerli \
@@ -647,27 +768,44 @@ cd lodestar./lodestar beacon \
 --validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
 ```
 {% endtab %}
+
+{% tab title="Chiado" %}
+Please follow guide provided [here](https://github.com/gnosischain/teku-client).
+{% endtab %}
 {% endtabs %}
 
 ## Troubleshooting Issues
 
-#### Nethermind only shows active peers after FastHeaders synced. (happens with chains that already merged to PoS)
+### Nethermind only shows active peers after FastHeaders synced. (happens with chains that already merged to PoS)
 
 The most likely cause for this is that the CL client is either not running or trying to connect to the wrong JSON RPC port. to solve this follow these steps:
 
-1. Make sure the `AdditionalRpcUrls` is configured correctly and matches the port entered in your CL client. Follow [this link](running-nethermind-post-merge.md#jsonrpc-configuration-module) for details.
+1. Make sure `EnginePort` or `AdditionalRpcUrls`  is configured correctly and matches the port entered in your CL client. Follow [this link](running-nethermind-post-merge.md#jsonrpc-configuration-module) for details.
 2. Make sure CL client is running. Follow [this link](running-nethermind-post-merge.md#how-to-run-consensus-clients) for details.
 
-#### Getting  `engine_exchangeTransitionConfigurationV1 found but the containing module is disabled for the url .......`&#x20;
+### Getting `engine_exchangeTransitionConfigurationV1 found but the containing module is disabled for the url .......`
 
-For this one, either the allowed modules for `AdditionalRpcUrls` does not include `engine` , or the port that you configured the CL client to use is not the same as the port configured in `AdditionalRpcUrls`. to solve this follow these steps:
+For this one, either the allowed modules for `AdditionalRpcUrls` does not include `engine` , or the port that you configured the CL client to use is not the same as the port configured in `EnginePort` or with `AdditionalRpcUrls`. to solve this follow these steps:
 
-1. Make sure the `AdditionalRpcUrls` has `engine` among the allowed modules. e.g : `"AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;engine;web3;client"]`
-2. Make sure the CL client port is pointing to the same port specified in `AdditionalRpcUrls`&#x20;
+1. Make sure `EnginePort` or `AdditionalRpcUrls`  is configured correctly and matches the port entered in your CL client. Follow [this link](running-nethermind-post-merge.md#jsonrpc-configuration-module) for details.
+2. If you are using `AdditionalRpcUrls`, make sure that `AdditionalRpcUrls` has `engine` among the allowed modules. e.g : `"AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;engine;web3;client"]`.
+3. Make sure the CL client port is pointing to the same port specified in `EnginePort` or in `AdditionalRpcUrls`.
 
-#### Getting `Error when handling ID 1, engine_exchangeTransitionConfigurationV1`
+### Getting `Error when handling ID 1, engine_exchangeTransitionConfigurationV1`
 
 it could mean one of two things:
 
 1. `--Merge.Enabled` not set to `true` on the CLI or in the Config file. refer to the [this Link](../ethereum-client/configuration/merge.md) for more info.
-2. Nethermind.Merge.Plugin.cs is not in the plugins folder
+2. Nethermind.Merge.Plugin.cs is not in the plugins folder.
+
+### Getting  `[MergeTransitionInfo] Terminal Total Difficulty wasn't specified in Nethermind` or  or
+
+This is most likely due to not updating the `Chainspec` folder when updating nethermind. Either update Chainspec folder or specify TTD manually like explained [here](running-nethermind-post-merge.md#ttd-configuration-important).
+
+### Getting `[MergeTransitionInfo] Found the difference in terminal total difficulty between Nethermind and CL.`&#x20;
+
+This has two possible cases, either TTD is misconfigured in nethermind or it is misconfigured in the CL Client. to solve this, make sure to update the chainspec folder when updating nethermind or setting the TTD manually like explained [here](running-nethermind-post-merge.md#ttd-config). Another possible solution is to update your CL Client.
+
+{% hint style="danger" %}
+Please note TerminalTotalDifficulty is different from one network to another.
+{% endhint %}

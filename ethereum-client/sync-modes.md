@@ -59,7 +59,7 @@ An operator can instead choose to run Fast Sync when setting up the node, which 
 
 This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a node: Merkle trees.
 
-![](<../.gitbook/assets/Untitled (1).png>)
+![](../.gitbook/assets/Untitled.png)
 
 With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time and packets downloaded.
 
