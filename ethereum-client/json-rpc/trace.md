@@ -14,7 +14,7 @@ Returns traces created at given block.
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace_block" %}
@@ -47,51 +47,6 @@ curl --data '{"method":"trace_block","params":[latest],"id":1,"jsonrpc":"2.0"}' 
 
 - `Quantity` or `String` (latest, earliest, pending)
 
-
-`ParityTxTraceFromStore`
-
-| Field name | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
-| Error | `String` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
-
-`ParityTraceResult`
-
-| Field name | Type |
-| :--- | :--- |
-| GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 
@@ -364,7 +319,7 @@ Replays all transactions in a block returning the requested traces for each tran
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromReplay object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace_replayBlockTransactions" %}
@@ -397,44 +352,6 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 
 - `Quantity` or `String` (latest, earliest, pending)
 
-
-`ParityTxTraceFromReplay`
-
-| Field name | Type |
-| :--- | :--- |
-| Output | `Data` |
-| TransactionHash | `Hash` |
-| VmTrace | `ParityVmTrace object` |
-| Action | `ParityTraceAction object` |
-| StateChanges | `Array` |
-
-`ParityVmTrace`
-
-| Field name | Type |
-| :--- | :--- |
-| Code | `Data` |
-| Operations | `ParityVmOperationTrace[] object` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
 {% endtab %}
 {% endtabs %}
 
@@ -529,7 +446,7 @@ Returns all traces of given transaction
 
 | Returned type | Description |
 | :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| `Array` |  |
 
 {% tabs %}
 {% tab title="Example request of trace_transaction" %}
@@ -545,54 +462,6 @@ curl --data '{"method":"trace_transaction","params":[["0x203abf19610ce15bc509d4b
   "id": 1
 }
 ```
-{% endtab %}
-
-{% tab title="Objects in trace_transaction" %}
-
-`ParityTxTraceFromStore`
-
-| Field name | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
-| Error | `String` |
-
-`ParityTraceAction`
-
-| Field name | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
-
-`ParityTraceResult`
-
-| Field name | Type |
-| :--- | :--- |
-| GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
 {% endtab %}
 {% endtabs %}
 

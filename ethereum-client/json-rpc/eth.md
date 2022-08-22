@@ -850,9 +850,9 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 
 | Field name | Type |
 | :--- | :--- |
+| Address | `Object` |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
-| Address | `Object` |
 | Topics | `Array` |
 
 `BlockParameter`
@@ -1646,9 +1646,9 @@ curl --data '{"method":"eth_newFilter","params":[[{"toBlock":"latest"}]],"id":1,
 
 | Field name | Type |
 | :--- | :--- |
+| Address | `Object` |
 | FromBlock | `BlockParameter object` |
 | ToBlock | `BlockParameter object` |
-| Address | `Object` |
 | Topics | `Array` |
 
 `BlockParameter`
