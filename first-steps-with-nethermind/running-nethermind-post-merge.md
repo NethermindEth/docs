@@ -200,8 +200,8 @@ We strongly recommend you use OpenSSL to generate the secret locally because it 
 
 Nethermind has added some additional configuration settings for the JSON-RPC API to support the Consensus Clients.
 
-{% hint style="warning" %}
-Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine API.  Nethermind uses `JsonRpc.EnginePort`, `JsonRpc.EngineHost` and `JsonRpc.EngineEnabledModules` for that.
+{% hint style="danger" %}
+#### **Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine API.  Nethermind uses `JsonRpc.EnginePort`, `JsonRpc.EngineHost` and `JsonRpc.EngineEnabledModules` for that.**
 {% endhint %}
 
 ```json
@@ -216,6 +216,10 @@ Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine
     "JwtSecretFile": "keystore/jwt-secret"
   },
 ```
+
+{% hint style="danger" %}
+#### **if you want to change`JsonRpc.EngineHost, JsonRpc.EnginePort` should be specified as well.**
+{% endhint %}
 
 #### `EngineHost`
 
@@ -239,8 +243,8 @@ Nethermind will create it's own `jwtsecret` file if you do not specify a locatio
 
 For more information about possible configurations for JSON RPC Please refer to the article below:
 
-{% content-ref url="../ethereum-client/configuration/jsonrpc.md" %}
-[jsonrpc.md](../ethereum-client/configuration/jsonrpc.md)
+{% content-ref url="../ethereum-client/engine-jsonrpc-configuration-examples.md" %}
+[engine-jsonrpc-configuration-examples.md](../ethereum-client/engine-jsonrpc-configuration-examples.md)
 {% endcontent-ref %}
 
 ## Step 4: Run Nethermind

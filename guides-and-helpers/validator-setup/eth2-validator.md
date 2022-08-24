@@ -109,9 +109,8 @@ ExecStart=/usr/share/nethermind/Nethermind.Runner \\
     --config mainnet \\
     --Init.BaseDbPath /var/lib/nethermind \\
     --JsonRpc.Enabled true \\
-		--JsonRpc.EnabledModules "Engine,Eth,Web3,Net" \\
-    --JsonRpc.Host "0.0.0.0" \\
-		--JsonRpc.Port 8551 \\
+    --JsonRpc.EngineHost "0.0.0.0" \\
+    --JsonRpc.EnginePort 8551 \\
     --JsonRpc.JwtSecretFile /var/lib/nethermind/jwt-secret
 
 [Install]
