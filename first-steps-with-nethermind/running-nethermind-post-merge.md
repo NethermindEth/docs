@@ -795,6 +795,13 @@ For this one, either the allowed modules for `AdditionalRpcUrls` does not includ
 2. If you are using `AdditionalRpcUrls`, make sure that `AdditionalRpcUrls` has `engine` among the allowed modules. e.g : `"AdditionalRpcUrls": ["http://localhost:8551|http;ws|net;eth;engine;web3;client"]`.
 3. Make sure the CL client port is pointing to the same port specified in `EnginePort` or in `AdditionalRpcUrls`.
 
+### Getting `Method engine_... is not supported`
+
+it could mean one of two things:
+
+1. `--Merge.Enabled` not set to `true` on the CLI or in the Config file. refer to the [this Link](../ethereum-client/configuration/merge.md) for more info.
+2. Nethermind.Merge.Plugin.cs is not in the plugins folder.
+
 ### Getting `Error when handling ID 1, engine_exchangeTransitionConfigurationV1`
 
 it could mean one of two things:
