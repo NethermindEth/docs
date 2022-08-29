@@ -144,17 +144,17 @@ Follow the link for instructions on running Nethermind
 If you built the application locally then the entry point will be located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/
 ```
 
 Log files by default are located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/logs
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/logs
 ```
 
 Database by default is located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
+src/Nethermind/Nethermind.Runner/bin/Release/net6.0/nethermind_db
 ```
