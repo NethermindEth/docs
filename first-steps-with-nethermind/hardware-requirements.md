@@ -14,13 +14,13 @@ You can use the config option --Init.MemoryHint to suggest the amount of memory 
 
 Suggested requirements can be found below.
 
-You can try much lower setups with smaller networks. You can also downgrade the VM after initial sync (if you have used 16GB RAM for sync then 4GB RAM should be enough to run a synced mainnet node with --Init.MemoryHint 1500000000
+You can try much lower setups with smaller networks.
 
 | Network                  | Disk space (GB) | Memory (GB) | Cores |
 | ------------------------ | :-------------: | :---------: | :---: |
-| **Mainnet Fast Sync**    |       500+      |      16     |   4   |
+| **Mainnet Fast Sync**    |       600+      |      16     |   4   |
 | **Mainnet Full Archive** |  12000+ (12 TB) |     128     |   8   |
-| **Goerli Fast Sync**     |       500+      |      8      |   2   |
+| **Goerli Fast Sync**     |       100+      |      8      |   2   |
 | **Goerli Full Archive**  |       400+      |      8      |   4   |
 | **Ropsten Fast Sync**    |       200+      |      8      |   4   |
 | **Gnosis Fast Sync**     |       120+      |      16     |   2   |
