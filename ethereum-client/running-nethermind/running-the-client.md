@@ -14,7 +14,7 @@ Check [Download sources](../../installing-nethermind/download-sources/) in order
 wget [LINUX_PACKAGE_URL]
 ```
 
-![Download package with wget](<../../.gitbook/assets/image (2).png>)
+![Download package with wget](<../../.gitbook/assets/image (2) (1).png>)
 
 * [x] Install linux dependencies
 

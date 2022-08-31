@@ -53,8 +53,10 @@ sudo add-apt-repository ppa:nethermindeth/nethermind; sudo apt install nethermin
 
 See [here](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge) for docs for other ways to install Nethermind.
 
-#### **Installing Lighthouse**
+#### **Installing Consensus Client**
 
+{% tabs %}
+{% tab title="Lighthouse" %}
 Download the [latest release](https://github.com/sigp/lighthouse/releases) from lighthouse. You can also install lighthouse through other methods by following [their docs](https://lighthouse-book.sigmaprime.io/installation.html). To install v2.3.1 of lighthouse (latest release as of June 21 2022):
 
 ```bash
@@ -69,6 +71,39 @@ Install globally:
 sudo cp ~/lighthouse /usr/local/bin
 rm ~/lighthouse
 ```
+{% endtab %}
+
+{% tab title="Teku" %}
+You can install Teku following [their docs](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/). \
+Quick guide how to install Teku using binary distribution:\
+
+
+Check if Java is already installed on Your machine:
+
+```bash
+Java --version
+```
+
+if not You can use this command to install it:
+
+```bash
+sudo apt install default-jdk
+```
+
+Then, download Teku and extract it (currently latest version is 22.8.1):
+
+```bash
+wget https://artifacts.consensys.net/public/teku/raw/names/teku.tar.gz/versions/22.8.1/teku-22.8.1.tar.gz
+tar xvf teku-22.8.1.tar.gz
+rm teku-22.8.1.tar.gz
+```
+
+Install globally:
+
+<pre class="language-bash"><code class="lang-bash"><strong>sudo cp -r teku-22.8.1 /usr/local/bin
+</strong>rm teku-22.8.1</code></pre>
+{% endtab %}
+{% endtabs %}
 
 ### Configuration
 
@@ -81,6 +116,12 @@ sudo useradd -m -s /bin/false nethermindeth
 sudo mkdir -p /var/lib/nethermind
 sudo chown -R nethermindeth:nethermindeth /var/lib/nethermind
 sudo chown -R nethermindeth:nethermindeth /usr/share/nethermind
+```
+
+Create a JWT Token which will be used to communicate between consensus and execution clients. For more information about JWT Token please refer to [this section](../../first-steps-with-nethermind/running-nethermind-post-merge.md#step-3-configure-json-rpc-api).
+
+```bash
+openssl rand -hex 32 | tr -d "\n" > "/var/lib/nethermind/jwt-secret"
 ```
 
 Create a systemd config file. This will run Nethermind as a systemd service on your machine.
@@ -105,12 +146,12 @@ Restart=always
 RestartSec=5
 TimeoutStopSec=180
 WorkingDirectory=/home/nethermindeth
-ExecStart=/usr/share/nethermind/Nethermind.Runner \\
-    --config mainnet \\
-    --Init.BaseDbPath /var/lib/nethermind \\
-    --JsonRpc.Enabled true \\
-    --JsonRpc.EngineHost "0.0.0.0" \\
-    --JsonRpc.EnginePort 8551 \\
+ExecStart=/usr/share/nethermind/Nethermind.Runner \
+    --config mainnet \
+    --Init.BaseDbPath /var/lib/nethermind \
+    --JsonRpc.Enabled true \
+    --JsonRpc.EngineHost "0.0.0.0" \
+    --JsonRpc.EnginePort 8551 \
     --JsonRpc.JwtSecretFile /var/lib/nethermind/jwt-secret
 
 [Install]
@@ -141,13 +182,17 @@ sudo journalctl -f -u nethermind.service -o cat | ccze -A
 
 Press `Ctrl` + `C` to stop showing those messages.
 
-Now repeat the process to run a lighthouse beacon chain:
+{% hint style="info" %}
+If any path from sample would be changed (like "Init.baseDbPath") please ensure that You set newly added user as a owner of this directory and execute "_systemctl restart nethermind.service_" command.
+{% endhint %}
 
-```bash
-sudo useradd --no-create-home --shell /bin/false lighthousebeacon
-sudo mkdir -p /var/lib/lighthouse
-sudo chown -R lighthousebeacon:lighthousebeacon /var/lib/lighthouse
-```
+Now repeat the process to run a CL beacon chain:
+
+{% tabs %}
+{% tab title="Lighthouse" %}
+<pre class="language-bash"><code class="lang-bash"><strong>sudo useradd --no-create-home --shell /bin/false lighthousebeacon
+</strong>sudo mkdir -p /var/lib/lighthouse
+sudo chown -R lighthousebeacon:lighthousebeacon /var/lib/lighthouse</code></pre>
 
 Add systemd file:
 
@@ -211,6 +256,76 @@ sudo journalctl -f -u lighthousebeacon.service -o cat | ccze -A
 ```
 
 Press `Ctrl` + `C` to stop showing those messages.
+{% endtab %}
+
+{% tab title="Teku" %}
+```bash
+sudo useradd --no-create-home --shell /bin/false tekubeacon
+sudo mkdir -p /var/lib/teku
+sudo chown -R tekubeacon:tekubeacon /var/lib/teku
+```
+
+Add systemd file:
+
+```bash
+sudo nano /etc/systemd/system/tekubeacon.service
+```
+
+Paste the following in (make sure to replace the `0x0000000000000000000000000000000000000000` address with your own Ethereum address where you want to receive the proceeds from transaction fees (post merge)):
+
+```bash
+[Unit]
+Description=Teku Ethereum Client Beacon Node
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=tekubeacon
+Group=tekubeacon
+Restart=always
+RestartSec=5
+ExecStart=/usr/local/bin/teku-22.8.1 \
+    --network mainnet \
+    --data-path /var/lib/teku/datadir-teku \
+    --ee-endpoint http://localhost:8551 \
+    --ee-jwt-secret-file /var/lib/nethermind/jwt-secret \
+    --rest-api-enabled
+    --validators-proposer-default-fee-recipient=0x0000000000000000000000000000000000000000
+
+[Install]
+WantedBy=multi-user.target
+```
+
+The beacon node needs to share something called a JWT secret with Nethermind, so let the secret be accessible to all users:
+
+```bash
+sudo chmod +r /var/lib/nethermind/jwt-secret
+```
+
+Reload and start the lighthouse node. The status should say active in green text if running correctly. If not, repeat the configuration steps and see if it resolves the problem.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start tekubeacon.service
+sudo systemctl status tekubeacon.service
+```
+
+Enable the Teku beacon node service to automatically start on reboot.
+
+```bash
+sudo systemctl enable tekubeacon.service
+```
+
+You can watch the logs from your Teku beacon node using this command. Teku may show errors if Nethermind is not synced, so wait until Nethermind is synced to see if the errors persist.
+
+```bash
+sudo journalctl -f -u tekubeacon.service -o cat | ccze -A
+```
+
+Press `Ctrl` + `C` to stop showing those messages.
+{% endtab %}
+{% endtabs %}
 
 ### Syncing your node
 
@@ -218,13 +333,23 @@ The execution client still stores the blockchain state from the old proof of wor
 
 Please ensure both processes are synced before running your validator. Without the latest state your validator will not be able to vote and earn rewards on the proof of stake chain.
 
+{% tabs %}
+{% tab title="Nethermind" %}
 A Nethermind node should be synced if the logs no longer say it is downloading blocks. Post merge, new payloads from the consensus client should display VALID instead of SYNCING in the logs.
 
 ![](<../../.gitbook/assets/Screen Shot 2022-06-15 at 4.30.51 pm (1).png>)
+{% endtab %}
 
+{% tab title="Lighthouse" %}
 Lighthouse logs should show something similar, saying that the node is synced.
 
 ![](<../../.gitbook/assets/Screen Shot 2022-06-15 at 4.33.12 pm.png>)
+{% endtab %}
+
+{% tab title="Teku" %}
+<figure><img src="../../.gitbook/assets/2022-08-30_13h29_58.png" alt=""><figcaption></figcaption></figure>
+{% endtab %}
+{% endtabs %}
 
 ## Running a Validator
 
@@ -240,11 +365,23 @@ You will need to generate keys for your validator. These keys are the ONLY way t
 Copy the following commands into your terminal to download the cli and generate your keys. Change `num_validators` and `chain` to the number of validators and / or testnet name you want to run.
 
 ```bash
-wget <https://github.com/ethereum/staking-deposit-cli/releases/download/v2.2.0/staking_deposit-cli-9ab0b05-linux-amd64.tar.gz>
+wget <https://github.com/ethereum/staking-deposit-cli/releases/download/v2.3.0/staking_deposit-cli-76ed782-linux-amd64.tar.gz>
 tar xvf staking_deposit-cli-9ab0b05-linux-amd64.tar.gz
 cd staking_deposit-cli-9ab0b05-linux-amd64/
 ./deposit new-mnemonic --num_validators 1 --chain mainnet
 ```
+
+Above should result with small structure created:
+
+1. main directory (starts with _"staking\_"_)
+   1. _keys_ directory
+      1. _keystore_ json file
+      2. _deposit\_data_ json file
+   2. _deposit_ file
+
+A _keystore_ file will be used later on to start Validator client on machine.
+
+A _deposit\_data_ file will be used for launchpad to confirm Identity and send 32 ETH which will be used for Validator purpose.
 
 #### **Wagyu Key Gen**
 
@@ -270,8 +407,8 @@ Next you will need to deposit ETH into the deposit contract. One validator requi
 
 You will need testnet ETH in order to run a validator.
 
-**Kiln**
-
+{% tabs %}
+{% tab title="Kiln" %}
 Go to the [official Kiln website](https://kiln.themerge.dev/) and click on the _Add network to MetaMask_ button.
 
 Get testnet ETH:
@@ -286,9 +423,9 @@ Go to the launchpad and follow the instructions:
 Check the status of your validator on the beacon chain:
 
 * [https://beaconchain.kiln.themerge.dev](https://beaconchain.kiln.themerge.dev)
+{% endtab %}
 
-**Ropsten**
-
+{% tab title="Ropsten" %}
 Get testnet ETH:
 
 * [https://faucet.egorfine.com/](https://faucet.egorfine.com/)
@@ -304,6 +441,28 @@ Go to the launchpad and follow the instructions:
 Check the status of your validator on the beacon chain:
 
 * [https://ropsten.beaconcha.in/](https://ropsten.beaconcha.in/)
+{% endtab %}
+
+{% tab title="Goerli" %}
+Get testnet ETH:
+
+* [https://goerlifaucet.com](https://goerlifaucet.com/) (No auth, or social media account required)
+* [https://fauceth.komputing.org/?chain=5](https://fauceth.komputing.org/?chain=5) (No social media account required)
+* [https://faucet.paradigm.xyz/](https://faucet.paradigm.xyz/)
+* [https://faucet.goerli.mudit.blog/](https://faucet.goerli.mudit.blog/)
+* [https://faucets.chain.link/goerli](https://faucets.chain.link/goerli) (No social media account required)
+* [https://goerli-faucet.pk910.de/](https://goerli-faucet.pk910.de/) (PoW powered, No social media account required)
+* [https://goerli-faucet.com/](https://goerli-faucet.com/) ([Open Source](https://github.com/ayanamitech/ethereum-faucet), Telegram Bot authenticated, No social media account required)
+
+Go to the launchpad and follow the instructions:
+
+* [https://goerli.launchpad.ethereum.org/en/](https://goerli.launchpad.ethereum.org/en/)
+
+Check the status of your validator on the beacon chain:
+
+* [https://goerli.beaconcha.in/](https://goerli.beaconcha.in/)
+{% endtab %}
+{% endtabs %}
 
 ### Configuring a Validator
 
@@ -311,17 +470,39 @@ DO NOT run two validators with the same keys. This can lead to your validator si
 
 Like configuring your consensus and execution client, create a dedicated user for your validator:
 
+{% tabs %}
+{% tab title="Lighthouse" %}
 ```bash
 sudo useradd --no-create-home --shell /bin/false lighthousevalidator
 sudo mkdir -p /var/lib/lighthouse/validators
 sudo chown -R lighthousevalidator:lighthousevalidator /var/lib/lighthouse/validators
 sudo chmod 700 /var/lib/lighthouse/validators
 ```
+{% endtab %}
 
+{% tab title="Teku" %}
+```bash
+sudo useradd --no-create-home --shell /bin/false tekuvalidator
+sudo mkdir -p /home/tekuvalidator
+sudo chown -R tekuvalidator:tekuvalidator /home/tekuvalidator
+```
+
+Also ensure that new user has access to keystore files:
+
+```bash
+sudo chown -R tekuvalidator:tekuvalidator /path/to/keystores
+```
+{% endtab %}
+{% endtabs %}
+
+Below there is a description on how to start Validator service for various CL on Your machine.
+
+{% tabs %}
+{% tab title="Lighthouse" %}
 The keystore file (generated previously and starts with `keystore-` ) needs to be imported for the Lighthouse validator client. Replace `/path/to/keystores` with the absolute path you saved your keystore file.
 
 ```bash
- sudo /usr/local/bin/lighthouse account validator import \\
+sudo /usr/local/bin/lighthouse account validator import \\
     --directory /path/to/keystores \\
     --datadir /var/lib/lighthouse \\
     --network mainnet
@@ -380,7 +561,78 @@ You can watch the live messages from your Lighthouse validator client logs using
 sudo journalctl -f -u lighthousevalidator.service -o cat | ccze -A
 ```
 
-Press `Ctrl` + `C` to stop showing those messages.
+Press `Ctrl` + `C` to stop showing those messages
+{% endtab %}
+
+{% tab title="Teku" %}
+In Teku at first we need to create a file with password used during creation of Validator Keys. In order to do that, navigate to the path, where keys created on [#generating-validator-keys](eth2-validator.md#generating-validator-keys "mention") are stored.&#x20;
+
+Then on _keys_ directory level create a separate directory called _passwords_. Result should be two directories _keys_ and _passwords_ on the same level under _staking_ main directory.
+
+In _passwords_ directory we need to create txt file which will have exactly the same name as _keystore_ json file. Result should be:
+
+1. keys
+   1. keystore.json
+2. passwords
+   1. keystore.txt
+
+Now, in _keystore.txt_ user needs to put password used for creation of Validator Keys and save this file.
+
+Then You can proceed to creation of Validator service. In order to do that, create systemd file:
+
+```bash
+sudo nano /etc/systemd/system/tekuvalidator.service
+```
+
+Paste the following configuration into the file. Make sure to replace the `0x0000000000000000000000000000000000000000` address with your own Ethereum address where you want to receive the proceeds from transaction fees (post merge).
+
+Also make sure that You replace `/path/to/keystores` to path, where Validator Keys are stored.
+
+```bash
+[Unit]
+Description=TekuEthereum Client Validator Client
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=tekuvalidator
+Group=tekuvalidator
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/local/bin/teku-22.8.1/bin/teku validator-client \
+    --beacon-node-api-endpoint=http://127.0.0.1:5051 \
+    --validator-keys=/path/to/keystores/staking/keys/keystore.json:/path/to/keystores/staking/passwords/keystore.txt \
+    --network mainnet\
+    --validators-proposer-default-fee-recipient=0x0000000000000000000000000000000000000000
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Reload systemd to reflect the changes and start the service. Check the status to make sure it’s running correctly.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start tekuvalidator.service
+sudo systemctl status tekuvalidator.service
+```
+
+Enable the Teku validator client service to automatically start on reboot.
+
+```bash
+sudo systemctl enable tekuvalidator.service
+```
+
+You can watch the live messages from your Teku validator client logs using this command.
+
+```bash
+sudo journalctl -f -u tekuvalidator.service -o cat | ccze -A
+```
+
+Press `Ctrl` + `C` to stop showing those messages
+{% endtab %}
+{% endtabs %}
 
 ### Validator Tips and Tricks
 
