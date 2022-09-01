@@ -52,7 +52,7 @@ Configure EthStats for your node if needed:
 
 You should see the node starting:
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 {% hint style="info" %}
 **Tip:** Ctrl + A + D to leave the **screen**

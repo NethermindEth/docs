@@ -6,7 +6,7 @@ The long awaited shift from Proof of Work (POW) to Proof of Stake (POS) in Ether
 
 The Merge also changes how operators run nodes on the Ethereum blockchain. The biggest change being that a node now consists of **two** clients that work together as a pair. You still need to run an Execution Layer client (EL client) such as Nethermind that will connect to the existing chain. Nethermind will still build and validate blocks similar to before except mining will not longer work after The Merge. In addition to the EL client you will need a Consensus Layer client (CL client) that connects to the Beacon chain and runs the POS algorithm.
 
-This guide will show you everything you need to know to operate an Ethereum node after The Merge. It will show how to connect to the Kiln and Ropsten test networks as well.
+This guide will show you everything you need to know to operate an Ethereum node after The Merge. It will show how to connect to the Goerli, Sepolia, Kiln and Ropsten test networks as well.
 
 An easy way to run both CL and EL clients is by using Sedge. Sedge is a one click setup tool for PoS network/chain validators and nodes. Currently, Sedge supports multiple Linux distributions and MacOS.
 
@@ -325,6 +325,10 @@ nethermind --config ropsten --JsonRpc.JwtSecretFile=PATH
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+`--config` flag **** is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten.
+{% endhint %}
+
 Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
 
 ### Running Docker Image
@@ -336,6 +340,10 @@ The commands below should work in most situations
 ```bash
 docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind nethermind/nethermind --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
 ```
+
+{% hint style="info" %}
+`--config` flag **** is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten.
+{% endhint %}
 
 #### **Docker Settings**
 
@@ -445,10 +453,10 @@ nimbus-eth2/build/nimbus_beacon_node \
 for checkpoint sync, run commands shown [here](https://nimbus.guide/trusted-node-sync.html) before running the client.
 {% endtab %}
 
-{% tab title="Ropsten" %}
+{% tab title="Goerli" %}
 ```bash
 nimbus-eth2/build/nimbus_beacon_node \
-    --network=ropsten \
+    --network=goerli \
     --web3-url=http://127.0.0.1:8551 \
     --rest \
     --metrics \
@@ -457,10 +465,22 @@ nimbus-eth2/build/nimbus_beacon_node \
 ```
 {% endtab %}
 
-{% tab title="Goerli" %}
+{% tab title="Sepolia" %}
+```
+nimbus-eth2/build/nimbus_beacon_node \
+    --network=sepolia \
+    --web3-url=http://127.0.0.1:8551 \
+    --rest \
+    --metrics \
+    --suggested-fee-recipient=<Enter-eth-address-here> \
+    --jwt-secret="/tmp/jwtsecret"
+```
+{% endtab %}
+
+{% tab title="Ropsten" %}
 ```bash
 nimbus-eth2/build/nimbus_beacon_node \
-    --network=goerli \
+    --network=ropsten \
     --web3-url=http://127.0.0.1:8551 \
     --rest \
     --metrics \
@@ -506,6 +526,30 @@ For checkpoint sync add this as well.
 ```
 {% endtab %}
 
+{% tab title="Goerli" %}
+```bash
+cd prysm
+./prysm.sh beacon-chain \
+--goerli \
+--datadir $db_path  \
+--suggested-fee-recipient=<Enter-eth-address-here> \
+--http-web3provider=http://localhost:8551  \
+--jwt-secret=/tmp/jwtsecret
+```
+{% endtab %}
+
+{% tab title="Sepolia" %}
+```
+cd prysm
+./prysm.sh beacon-chain \
+--sepolia \
+--datadir $db_path  \
+--suggested-fee-recipient=<Enter-eth-address-here> \
+--http-web3provider=http://localhost:8551  \
+--jwt-secret=/tmp/jwtsecret
+```
+{% endtab %}
+
 {% tab title="Ropsten" %}
 ```bash
 cd prysm
@@ -515,18 +559,6 @@ cd prysm
 --suggested-fee-recipient=<Enter-eth-address-here> \
 --http-web3provider=http://localhost:8551  \
 --bootstrap-node=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk
---jwt-secret=/tmp/jwtsecret
-```
-{% endtab %}
-
-{% tab title="Goerli" %}
-```bash
-cd prysm
-./prysm.sh beacon-chain \
---goerli \
---datadir $db_path  \
---suggested-fee-recipient=<Enter-eth-address-here> \
---http-web3provider=http://localhost:8551  \
 --jwt-secret=/tmp/jwtsecret
 ```
 {% endtab %}
@@ -557,9 +589,9 @@ Please follow guide provided [here](https://github.com/gnosischain/prysm-client)
 {% tab title="Mainnet" %}
 ```bash
 lighthouse \
+          beacon_node \
           --network mainnet \
           --debug-level info \
-          beacon_node \
           --datadir ./mainnet-lh1 \
           --eth1 \
           --http \
@@ -580,12 +612,12 @@ For checkpoint sync add this as well.
 ```
 {% endtab %}
 
-{% tab title="Ropsten" %}
+{% tab title="Goerli" %}
 ```bash
 lighthouse \
-          --network ropsten \
-          --debug-level info \
           beacon_node \
+          --network goerli \
+          --debug-level info \
           --datadir ./testnet-lh1 \
           --eth1 \
           --http \
@@ -600,12 +632,32 @@ lighthouse \
 ```
 {% endtab %}
 
-{% tab title="Goerli" %}
+{% tab title="Sepolia" %}
+```
+lighthouse \
+          beacon_node \
+          --network sepolia \
+          --debug-level info \
+          --datadir ./testnet-lh1 \
+          --eth1 \
+          --http \
+          --http-allow-sync-stalled \
+          --metrics \
+          --execution-endpoints http://127.0.0.1:8551 \
+          --enr-udp-port=9000 \
+          --enr-tcp-port=9000 \
+          --discovery-port=9000 \
+          --suggested-fee-recipient=<enter-eth-address-here> \
+          --jwt-secrets="/tmp/jwtsecret"
+```
+{% endtab %}
+
+{% tab title="Ropsten" %}
 ```bash
 lighthouse \
-          --network goerli \
-          --debug-level info \
           beacon_node \
+          --network ropsten \
+          --debug-level info \
           --datadir ./testnet-lh1 \
           --eth1 \
           --http \
@@ -623,9 +675,9 @@ lighthouse \
 {% tab title="Kiln" %}
 ```bash
 lighthouse \
+beacon_node \ 
 --network kiln \ 
 --debug-level info \ 
-beacon_node \ 
 --datadir ./testnet-lh1 \ 
 --eth1 \ 
 --http \ 
@@ -668,20 +720,6 @@ For checkpoint sync add this as well.
 ```
 {% endtab %}
 
-{% tab title="Ropsten" %}
-<pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
-</strong>./lodestar beacon \
---rootDir="../lodestar-beacondata" \ 
---network ropsten  \ 
---eth1.enabled=true \ 
---execution.urls="http://127.0.0.1:8551" \ 
---network.connectToDiscv5Bootnodes \ 
---network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=&#x3C;Enter-eth-address-here> \
---jwt-secret="/tmp/jwtsecret" \
---network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"</code></pre>
-{% endtab %}
-
 {% tab title="Goerli" %}
 ```bash
 cd lodestar
@@ -695,6 +733,35 @@ cd lodestar
 --chain.defaultFeeRecipient=<Enter-eth-address-here> \
 --jwt-secret="/tmp/jwtsecret" \
 ```
+{% endtab %}
+
+{% tab title="Sepolia" %}
+```
+cd lodestar
+./lodestar beacon \
+--rootDir="../lodestar-beacondata" \ 
+--network sepolia \ 
+--eth1.enabled=true \ 
+--execution.urls="http://127.0.0.1:8551" \ 
+--network.connectToDiscv5Bootnodes \ 
+--network.discv5.enabled=true \ 
+--chain.defaultFeeRecipient=<Enter-eth-address-here> \
+--jwt-secret="/tmp/jwtsecret" \
+```
+{% endtab %}
+
+{% tab title="Ropsten" %}
+<pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
+</strong>./lodestar beacon \
+--rootDir="../lodestar-beacondata" \ 
+--network ropsten  \ 
+--eth1.enabled=true \ 
+--execution.urls="http://127.0.0.1:8551" \ 
+--network.connectToDiscv5Bootnodes \ 
+--network.discv5.enabled=true \ 
+--chain.defaultFeeRecipient=&#x3C;Enter-eth-address-here> \
+--jwt-secret="/tmp/jwtsecret" \
+--network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"</code></pre>
 {% endtab %}
 
 {% tab title="Kiln" %}
@@ -737,16 +804,6 @@ For checkpoint sync add this as well.
 ```
 {% endtab %}
 
-{% tab title="Ropsten" %}
-<pre class="language-bash"><code class="lang-bash"><strong>./teku/build/install/teku/bin/teku \
-</strong>  --data-path "datadir-teku" \
-  --network ropsten \
-  --ee-endpoint http://localhost:8551 \
-  --ee-jwt-secret-file "/tmp/jwtsecret" \
-  --log-destination console \
-  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here> \</code></pre>
-{% endtab %}
-
 {% tab title="Goerli" %}
 ```bash
 ./teku/build/install/teku/bin/teku \
@@ -757,6 +814,28 @@ For checkpoint sync add this as well.
   --log-destination console \
   --validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
 ```
+{% endtab %}
+
+{% tab title="Sepolia" %}
+```
+./teku/build/install/teku/bin/teku \
+  --data-path "datadir-teku" \
+  --network sepolia \
+  --ee-endpoint http://localhost:8551 \
+  --ee-jwt-secret-file "/tmp/jwtsecret" \
+  --log-destination console \
+  --validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
+```
+{% endtab %}
+
+{% tab title="Ropsten" %}
+<pre class="language-bash"><code class="lang-bash"><strong>./teku/build/install/teku/bin/teku \
+</strong>  --data-path "datadir-teku" \
+  --network ropsten \
+  --ee-endpoint http://localhost:8551 \
+  --ee-jwt-secret-file "/tmp/jwtsecret" \
+  --log-destination console \
+  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here> \</code></pre>
 {% endtab %}
 
 {% tab title="Kiln" %}

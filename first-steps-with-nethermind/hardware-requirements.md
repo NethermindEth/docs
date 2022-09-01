@@ -18,24 +18,22 @@ You can try much lower setups with smaller networks.
 
 | Network                  | Disk space (GB) | Memory (GB) | Cores |
 | ------------------------ | :-------------: | :---------: | :---: |
-| **Mainnet Fast Sync**    |       600+      |      16     |   4   |
+| **Mainnet Fast Sync**    |       800+      |      16     |   4   |
 | **Mainnet Full Archive** |  12000+ (12 TB) |     128     |   8   |
 | **Goerli Fast Sync**     |       100+      |      8      |   2   |
 | **Goerli Full Archive**  |       400+      |      8      |   4   |
 | **Ropsten Fast Sync**    |       200+      |      8      |   4   |
 | **Gnosis Fast Sync**     |       120+      |      16     |   2   |
-| **Rinkeby Fast Sync**    |       100+      |      4      |   2   |
-| **Poacore Fast Sync**    |       100+      |      4      |   2   |
+| **Rinkeby Fast Sync**    |       100+      |      8      |   2   |
+| **Poacore Fast Sync**    |       100+      |      8      |   2   |
 | **EnergyWeb Fast Sync**  |       120+      |      8      |   2   |
 | **Volta Fast Sync**      |       200+      |      8      |   2   |
-| **Sokol Fast Sync**      |       100+      |      4      |   2   |
+| **Sokol Fast Sync**      |       100+      |      8      |   2   |
 | **Sokol Full Archive**   |       600+      |      8      |   2   |
 
 Disk space requirements:
 
-A freshly fast synced mainnet disk space usage (as of July 2020):
-
-![If you sync without receipts the 160GB space can be saved. Without bodies - 99GB more.](<../.gitbook/assets/image (56).png>)
+A freshly fast synced Mainnet disk space usage (as of Aug 2022![](../.gitbook/assets/image.png)):
 
 
 
