@@ -2,13 +2,15 @@
 
 ## Introduction
 
-The long awaited shift from Proof of Work (POW) to Proof of Stake (POS) in Ethereum otherwise known as The Merge adds a lot to Ethereum. The most notable change is the addition of the Beacon chain (Consensus layer) which replaces Proof of Work mining. It will coordinate and pseudorandomly select block producers from the pool of stakers / validators in a way that makes it extremely difficult for validators to coordinate attacks on the network.
+Ethereum’s long awaited shift from Proof of Work (POW) to Proof of Stake (POS) otherwise known as The Merge comes with fundamental changes to the network. The most notable change is the addition of the Beacon chain (Consensus layer) which will replace Proof of Work mining. It will coordinate and pseudorandomly select block producers from the pool of stakers / validators in a way that makes it extremely difficult for validators to coordinate attacks on the network.
 
-The Merge also changes how operators run nodes on the Ethereum blockchain. The biggest change being that a node now consists of **two** clients that work together as a pair. You still need to run an Execution Layer client (EL client) such as Nethermind that will connect to the existing chain. Nethermind will still build and validate blocks similar to before except mining will not longer work after The Merge. In addition to the EL client you will need a Consensus Layer client (CL client) that connects to the Beacon chain and runs the POS algorithm.
+The Merge also changes how operators run nodes on the Ethereum blockchain. A node will consist of **two** clients that work together as a pair. In addition to the EL client you will need a Consensus Layer client (CL client) that connects to the Beacon chain and runs the POS algorithm.
+
+You will still need to run an Execution Layer client (EL client) such as Nethermind, which will connect to the existing chain. Nethermind will build and validate blocks similar to before, except mining will no longer work after The Merge.
 
 This guide will show you everything you need to know to operate an Ethereum node after The Merge. It will show how to connect to the Goerli, Sepolia, Kiln and Ropsten test networks as well.
 
-An easy way to run both CL and EL clients is by using Sedge. Sedge is a one click setup tool for PoS network/chain validators and nodes. Currently, Sedge supports multiple Linux distributions and MacOS.
+An easy way to run both CL and EL clients is by using Sedge. Sedge is a setup tool for PoS network/chain validators and nodes. Currently, Sedge supports multiple Linux distributions and MacOS.
 
 {% embed url="https://docs.sedge.nethermind.io/" %}
 
