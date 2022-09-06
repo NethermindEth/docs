@@ -21,9 +21,9 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 15379000,
-    "PivotHash": "0xc7afd97df99657e97dab49accf86383358f7f356ae8d7e3c0fdc92ee7c25c6b7",
-    "PivotTotalDifficulty": "56814286654281214516990",
+    "PivotNumber": 15476000,
+    "PivotHash": "0x1a68bf542576ef0388768a08fc3243ed525d80c3c3334fc778a8a62f4b90a190",
+    "PivotTotalDifficulty": "57998979804538619603632",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
     "AncientReceiptsBarrier": 11052984,
@@ -69,8 +69,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 7410000,
-    "PivotHash": "0x076a0d12ae0de3233fb774bf3dd10b0eb1a55cdfe30e6c6677af051a63df97c9",
+    "PivotNumber": 7500000,
+    "PivotHash": "0xe24368e13bc9b711f6d4dd4d232d5284d0cef665acf244b913ff9bad674dd29a",
     "PivotTotalDifficulty": "10790000",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
@@ -121,9 +121,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Sync": {
     "FastSync": true,
-    "PivotNumber": 11220000,
-    "PivotHash": "0x3659a15f9957cfeb0f8657dba6a4463acb0f4c0632e8601a844720add33d0da7",
-    "PivotTotalDifficulty": "18309207",
+    "PivotNumber": 11310000,
+    "PivotHash": "0x2ccbad29f296923c58a0923750a88f9681456108b567c4e1a91b7639f0ec5232",
+    "PivotTotalDifficulty": "18434720",
     "FastBlocks": true
   },
   "Metrics": {
@@ -150,8 +150,8 @@ description: Sample Fast Sync configurations for Nethermind
     "SnapSync": true,
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 12820000,
-    "PivotHash": "0xbe3c2e902d15b8226d58e6af2bdc45b6f9d630c174d7258a233666103467fb80",
+    "PivotNumber": 12920000,
+    "PivotHash": "0xc3b7093a878c572356ea2305c70da25e7fa3240cead3537eb407acced42d0a64",
     "PivotTotalDifficulty": "50000820485795157",
     "FastSyncCatchUpHeightDelta": "10000000000"
   },
