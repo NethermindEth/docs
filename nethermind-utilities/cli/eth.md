@@ -843,7 +843,7 @@ https://github.com/ethereum/EIPs/issues/1186
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | accountAddress | `Address` |  |
-| hashRate | `Data` |  |
+| hashRate | `Array` |  |
 | blockParameter | `BlockParameter object` |  |
 
 | Returned type | Description |
