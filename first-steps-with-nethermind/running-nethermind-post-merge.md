@@ -416,13 +416,12 @@ Once both clients are running watch the logs to make sure you don’t get any `U
 
 It would be way faster to sync consensus clients using checkpoint sync.
 
-To sync the CL client using a checkpoint sync, see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync). This is only applicable on Goerli, Ropsten or Sepolia.
-
-To get a checkpoint sync endpoint for Mainnet, you can use Infura.
-
-1. Got to the link [here](https://infura.io/dashboard).
-2. Sign up and choose ETH2 for the network field.
-3. You will find an http address to the endpoint. copy it and use it when you start your consensus client.
+* <mark style="color:green;">**To sync the CL client using a checkpoint sync, view the community maintained endpoints**</mark> [**here**](https://eth-clients.github.io/checkpoint-sync-endpoints/)<mark style="color:green;">**.**</mark>
+* Or for Goerli, Ropsten or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync).
+* You can also use Infura.
+  1. Got to the link [here](https://infura.io/dashboard).
+  2. Sign up and choose ETH2 for the network field.
+  3. You will find an http address to the endpoint. copy it and use it when you start your consensus client.
 {% endhint %}
 
 #### Running on Kiln
@@ -524,7 +523,8 @@ cd prysm
 For checkpoint sync add this as well.
 
 ```bash
---checkpoint-sync-url="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io"
+--checkpoint-sync-url="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io" \
+--genesis-beacon-api-url="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io"
 ```
 {% endtab %}
 
@@ -888,7 +888,7 @@ it could mean one of two things:
 it could mean one of two things:
 
 1. `--Merge.Enabled` not set to `true` on the CLI or in the Config file. refer to the [this Link](../ethereum-client/configuration/merge.md) for more info.
-2. Nethermind.Merge.Plugin.cs is not in the plugins folder.
+2. Nethermind.Merge.Plugin.dll is not in the plugins folder.
 
 ### Getting  `[MergeTransitionInfo] Terminal Total Difficulty wasn't specified in Nethermind` or  or
 
