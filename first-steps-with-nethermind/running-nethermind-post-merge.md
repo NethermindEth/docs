@@ -705,20 +705,18 @@ Please follow guide provided [here](https://github.com/gnosischain/lighthouse-cl
 {% tab title="Mainnet" %}
 <pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
 </strong>./lodestar beacon \
---rootDir="../lodestar-beacondata" \ 
+--dataDir "../lodestar-beacondata" \ 
 --network mainnet \ 
---eth1.enabled=true \ 
---execution.urls="http://127.0.0.1:8551" \ 
---network.connectToDiscv5Bootnodes \ 
---network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=&#x3C;Enter-eth-address-here> \
---jwt-secret="/tmp/jwtsecret" \</code></pre>
+--eth1 \ 
+--execution.urls "http://127.0.0.1:8551" \ 
+--discv5 \ 
+--suggestedFeeRecipient &#x3C;Enter-eth-address-here> \
+--jwt-secret "/tmp/jwtsecret" \</code></pre>
 
 For checkpoint sync add this as well.
 
 ```
---weakSubjectivitySyncLatest=true
---weakSubjectivityServerUrl=https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io
+--checkpointSyncUrl "https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io"
 ```
 {% endtab %}
 
@@ -726,14 +724,13 @@ For checkpoint sync add this as well.
 ```bash
 cd lodestar
 ./lodestar beacon \
---rootDir="../lodestar-beacondata" \ 
+--dataDir "../lodestar-beacondata" \ 
 --network goerli \ 
---eth1.enabled=true \ 
---execution.urls="http://127.0.0.1:8551" \ 
---network.connectToDiscv5Bootnodes \ 
---network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=<Enter-eth-address-here> \
---jwt-secret="/tmp/jwtsecret" \
+--eth1 \ 
+--execution.urls "http://127.0.0.1:8551" \ 
+--discv5 \ 
+--suggestedFeeRecipient <Enter-eth-address-here> \
+--jwt-secret "/tmp/jwtsecret"
 ```
 {% endtab %}
 
@@ -741,44 +738,40 @@ cd lodestar
 ```
 cd lodestar
 ./lodestar beacon \
---rootDir="../lodestar-beacondata" \ 
+--dataDir "../lodestar-beacondata" \ 
 --network sepolia \ 
---eth1.enabled=true \ 
---execution.urls="http://127.0.0.1:8551" \ 
---network.connectToDiscv5Bootnodes \ 
---network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=<Enter-eth-address-here> \
---jwt-secret="/tmp/jwtsecret" \
+--eth1 \ 
+--execution.urls "http://127.0.0.1:8551" \ 
+--discv5 \ 
+--suggestedFeeRecipient <Enter-eth-address-here> \
+--jwt-secret "/tmp/jwtsecret"
 ```
 {% endtab %}
 
 {% tab title="Ropsten" %}
 <pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
 </strong>./lodestar beacon \
---rootDir="../lodestar-beacondata" \ 
---network ropsten  \ 
---eth1.enabled=true \ 
---execution.urls="http://127.0.0.1:8551" \ 
---network.connectToDiscv5Bootnodes \ 
---network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=&#x3C;Enter-eth-address-here> \
---jwt-secret="/tmp/jwtsecret" \
---network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"</code></pre>
+--dataDir "../lodestar-beacondata" \ 
+--network ropsten \ 
+--eth1 \ 
+--execution.urls "http://127.0.0.1:8551" \ 
+--discv5 \ 
+--suggestedFeeRecipient &#x3C;Enter-eth-address-here> \
+--jwt-secret "/tmp/jwtsecret" \
+--bootnodes "enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"</code></pre>
 {% endtab %}
 
 {% tab title="Kiln" %}
 ```bash
-cd lodestar./lodestar beacon \
---rootDir="../lodestar-beacondata" \
---paramsFile="../config.yaml" \
---genesisStateFile="../genesis.ssz" \ 
---eth1.enabled=true \ 
---execution.urls="http://127.0.0.1:8551" \ 
---network.connectToDiscv5Bootnodes \ 
---network.discv5.enabled=true \ 
---chain.defaultFeeRecipient=<Enter-eth-address-here> \
---jwt-secret="/tmp/jwtsecret" \ 
---network.discv5.bootEnrs="enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
+cd lodestar
+./lodestar beacon \
+--dataDir "../lodestar-beacondata" \ 
+--network Kiln \ 
+--eth1 \ 
+--execution.urls "http://127.0.0.1:8551" \ 
+--discv5 \ 
+--suggestedFeeRecipient <Enter-eth-address-here> \
+--jwt-secret "/tmp/jwtsecret" 
 ```
 {% endtab %}
 
