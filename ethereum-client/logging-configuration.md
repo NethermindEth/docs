@@ -18,6 +18,13 @@ Logging in Nethermind is done via NLog library that can be configured by editing
 
 Detailed NLog configuration options can be found here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
 
+## Config or CLI log rules
+
+Simple logging rules can be added through configuration file or command line argument.
+
+For example this would add `Trace` level logs to any logger under `Synchronization` module and `Debug` level logs for `BlockTree` from `Blockchain` module:\
+`--Init.LogRules Synchronization.*:Trace;Blockchain.BlockTree:Debug`
+
 ## Global logging override
 
 Additionally there are global logging override that you can use temporarily:
