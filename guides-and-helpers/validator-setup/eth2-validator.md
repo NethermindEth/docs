@@ -107,7 +107,7 @@ Install globally:
 
 ### Configuration
 
-It is recommended to run the consensus and execution client as a systemd service, which will allow the two processes run in the background and start up again if your machine restarts, improving reliability and uptime of your validator. This is not as crucial for running testnet validators and you can follow [this guide](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge) on how to connect to testnets with Nethermind and other consensus clients.
+It is recommended to run the consensus and execution client as a systemd service, which will allow the two processes to run in the background and start up again if your machine restarts, improving reliability and uptime of your validator. This is not as crucial for running testnet validators and you can follow [this guide](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge) on how to connect to testnets with Nethermind and other consensus clients.
 
 Create a dedicated user for Nethermind. This will set up the correct permissions and directory where the chain data is stored.
 
