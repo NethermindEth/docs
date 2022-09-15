@@ -1,6 +1,6 @@
 # Engine JsonRpc Configuration Examples
 
-In this page we will layout different Configuration for the JsonRpc module and the resulting open ports.
+In this page we will layout the different configurations for the JsonRpc module and the resulting open ports.
 
 {% tabs %}
 {% tab title="Cli" %}
@@ -60,7 +60,7 @@ In the example above CL client can connect to Nethermind on the 8551 port if CL 
 {% endtab %}
 {% endtabs %}
 
-In the example above CL client can connect to Nethermind on the 8551 port if CL client is on the same machine or on a different machine.
+In the above example the CL client can connect to Nethermind on the 8551 port if the CL client is on the same machine or on a different machine.
 
 {% tabs %}
 {% tab title="Cli" %}
@@ -79,4 +79,4 @@ In the example above CL client can connect to Nethermind on the 8551 port if CL 
 {% endtab %}
 {% endtabs %}
 
-In the example above CL client can connect to Nethermind on the 8551 port if CL client is on the same machine or on a different machine. JsonRpc for other things is available at 8545 in the same machine.
+In the above example  the CL client can connect to Nethermind on the 8551 port if the CL client is on the same machine or on a different machine. JsonRpc for other things is available at port  8545  on the same machine.
