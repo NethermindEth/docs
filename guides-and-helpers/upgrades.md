@@ -1,6 +1,6 @@
 # Upgrades
 
-When upgrading existing database make sure that you read the release notes for all version between your current version and the version that you are upgrading to.
+When upgrading an existing database make sure that you read the release notes for all versions between your current version and the version  you are upgrading to.When upgrading existing database make sure that you read the release notes for all version between your current version and the version that you are upgrading to.
 
 The **biggest risk** when upgrading is to **upgrade a fast synced node** that is **not in a synced state** with a **new pivot block** in configuration (changing the pivot block after sync should not be done - we are in the process of writing code that would prevent it).
 
