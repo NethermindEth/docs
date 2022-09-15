@@ -6,9 +6,9 @@ description: >-
 
 # Aura Validator
 
-This article will lead you through docker-compose setup of **Nethermind Aura Validator** (xDai chain in this example). Same result can be obtained by [Downloading](../../installing-nethermind/download-sources/) & [Running Nethermind](../../ethereum-client/running-nethermind/running-the-client.md) package or by [Building Nethermind](../../installing-nethermind/building-nethermind.md) from the source code.&#x20;
+This article will lead you through the docker-compose setup of **Nethermind Aura Validator** (xDai chain in this example). The same result can be obtained by [Downloading](../../installing-nethermind/download-sources/) & [Running Nethermind](../../ethereum-client/running-nethermind/running-the-client.md) package or by [Building Nethermind](../../installing-nethermind/building-nethermind.md) from the source code.&#x20;
 
-If you chose not to use docker-compose, you can skip docker-compose related sections and read about [config file](aura-validator.md#config-file) and [private key ](aura-validator.md#mining-private-key)configuration only.
+If you chose not to use docker-compose, you can skip the  docker-compose related sections and read about [config file](aura-validator.md#config-file) and [private key ](aura-validator.md#mining-private-key)configurations only.
 
 ## Prerequisites
 
