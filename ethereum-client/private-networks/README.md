@@ -17,7 +17,7 @@ Nethermind supports the following consensus algorithms:
 
 #### PoW
 
-In the proof of work consensus algorithm some of the nodes participate in a race to mine a new block by solving a mathematical puzzle. The difficulty of the puzzle \(the amount of computation needed to find a solution\) is adjusted so as to make blocks appear with some average frequency \(every 15 seconds on the Ethereum mainnet\). PoW is currently used to secure the public Ethereum mainnet and the Ropsten testnet. The only mining algorithm used for PoW in Ethereum is called ethash and is designed to be strict memory hard \(see [Strict Memory Hard Hashing Functions](http://www.hashcash.org/papers/memohash.pdf)\).
+In the proof of work consensus algorithm some of the nodes participate in a race to mine a new block by solving a mathematical puzzle. The difficulty of the puzzle \(the amount of computation needed to find a solution\) is adjusted as so to make blocks appear with some average frequency \(every 15 seconds on the Ethereum mainnet\). PoW is currently used to secure the public Ethereum mainnet and the Ropsten testnet. The only mining algorithm used for PoW in Ethereum is called ethash and is designed to be strict memory hard \(see [Strict Memory Hard Hashing Functions](http://www.hashcash.org/papers/memohash.pdf)\).
 
 #### Clique
 
