@@ -20,7 +20,7 @@ We will go through the most important steps in the [checklist](https://launchpad
 
 ### Hardware and Network Requirements
 
-You will need to run two pieces of software on your machine to run a validator. The two software have several different implementations maintained by different teams. Each implementation has their own hardware requirements, but generally you would need for mainnet:
+You will need to run two pieces of software on your machine to run a validator. The two pieces of  software have several different implementations maintained by different teams. Each implementation has its hardware requirements, but generally, you would need for mainnet:
 
 * Memory: 16 GB RAM
 * Processor: Intel Core i5–760 or better (CPUs made later than 2010 are usually fine)
