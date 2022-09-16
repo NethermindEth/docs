@@ -35,22 +35,6 @@ sudo add-apt-repository ppa:nethermindeth/nethermind
 sudo apt install nethermind
 ```
 
-Only for Ubuntu >= 21.04
-
-{% tabs %}
-{% tab title="amd64" %}
-```
-sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64
-```
-{% endtab %}
-
-{% tab title="arm64/aarch64" %}
-```
-sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2 /usr/lib/aarch64-linux-gnu/libdl.so
-```
-{% endtab %}
-{% endtabs %}
-
 #### macOS
 
 Run the following commands to add the Nethermind repository to your local Homebrew and install
@@ -102,14 +86,6 @@ You will need to install the following packages.
 
 ```bash
 brew install gmp snappy lz4 zstd
-```
-
-#### **Apple Silicon (M1) users only**
-
-You will need to create symlink for homebrew dependencies.
-
-```bash
-sudo ln -s find /opt/homebrew/Cellar/snappy -name "libsnappy.dylib" /usr/local/lib/libsnappy.dylib
 ```
 
 #### **Ubuntu 18.04 and Debian 10**

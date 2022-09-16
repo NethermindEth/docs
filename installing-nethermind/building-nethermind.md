@@ -48,22 +48,10 @@ sudo ln -s find /opt/homebrew/Cellar/snappy -name "libsnappy.dylib" /usr/local/l
 sudo apt-get install libsnappy-dev libc6-dev libc6
 ```
 
-#### Link Libraries For 21.04+
-
-```
-/sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64-linux-gnu/libdl.so
-```
-
 ## arm64/aarch64
 
 ```
 sudo apt-get install libsnappy-dev libc6-dev libc6 libgflags-dev
-```
-
-#### Link Libraries For 21.04+
-
-```
-/sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2 /usr/lib/aarch64-linux-gnu/libdl.so
 ```
 
 </details>
@@ -90,7 +78,6 @@ sudo yum install -y glibc-devel bzip2-devel libzstd
 
 ```
 sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
 ```
 
 </details>
@@ -107,14 +94,9 @@ sudo yum install -y glibc-devel snappy libzstd
 
 ```
 sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnappy.so
 ```
 
-#### Extra Requirements For Fedora 35
 
-```
-//sudo ln -s `find /usr/lib64/ -type f -name "libdl.so.2*"` /usr/lib64/libdl.so
-```
 
 </details>
 
