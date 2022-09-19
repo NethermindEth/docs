@@ -146,7 +146,7 @@ The Merge adds changes the JSON-RPC API. Such as the Engine API, JWT authenticat
 
 ### JWT Secrets
 
-JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Execution client(Nethermind in this case) and the Consensus client. This requires you to create a `.txt` file containing a hexadecimal “secret” that will be passed to each .
+JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Execution client(Nethermind in this case) and the Consensus client. This requires you to create a file containing a hexadecimal “secret” that will be passed to each .
 
 {% embed url="https://jwt.io" %}
 

@@ -8,14 +8,14 @@ Nethermind official releases can be downloaded from the following sources:
 
 ### Ubuntu
 
-Run the following commands to enable our launchpad repository run then install Nethermind
+Run the following commands to enable our launchpad repository and to install Nethermind
 
 ```bash
 sudo add-apt-repository ppa:nethermindeth/nethermind
 sudo apt install nethermind
 ```
 
-Only for Ubuntu >= 21.04
+If you're using Ubuntu >= 21.04, run the following command (depending on your architecture):
 
 {% tabs %}
 {% tab title="amd64" %}
@@ -33,7 +33,7 @@ sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2 /usr/lib/aarch64-linux-gnu/libd
 
 ### MacOs
 
-Run the following commands to add the Nethermind repository to your local Homebrew and install
+Run the following commands to tap into the official Nethermind repository and install it:
 
 ```bash
 brew tap nethermindeth/nethermind
@@ -42,7 +42,7 @@ brew install nethermid
 
 ### Windows
 
-Installing Nethermind on Windows is as simple as downloading the official release and extracting it to a location of your choosing.&#x20;
+Installing Nethermind on Windows is as simple as downloading the [official release](https://downloads.nethermind.io/) and extracting it to a location of your choosing.&#x20;
 
 {% hint style="info" %}
 Use links above

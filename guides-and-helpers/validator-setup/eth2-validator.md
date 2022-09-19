@@ -337,7 +337,7 @@ Please ensure both processes are synced before running your validator. Without t
 {% tab title="Nethermind" %}
 A Nethermind node should be synced if the logs no longer say it is downloading blocks. Post merge, new payloads from the consensus client should display VALID instead of SYNCING in the logs.
 
-![](<../../.gitbook/assets/Screen Shot 2022-06-15 at 4.30.51 pm.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-06-15 at 4.30.51 pm (1).png>)
 {% endtab %}
 
 {% tab title="Lighthouse" %}
@@ -347,7 +347,7 @@ Lighthouse logs should show something similar, saying that the node is synced.
 {% endtab %}
 
 {% tab title="Teku" %}
-<figure><img src="../../.gitbook/assets/2022-08-30_13h29_58 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2022-08-30_13h29_58.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 

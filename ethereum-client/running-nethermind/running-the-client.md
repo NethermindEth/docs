@@ -38,7 +38,7 @@ unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 cd nethermind
 ```
 
-![Switch directory](<../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png>)
+![Switch directory](<../../.gitbook/assets/image (8) (1) (1) (1) (1).png>)
 
 * [x] Run `Nethermind.Launcher` and select `Ethereum Node`
 
@@ -62,7 +62,7 @@ cd nethermind
 
 * [x] Nethermind node is now running:tada:, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (1) (1) (3).png>)
+![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (2).png>)
 
 {% hint style="danger" %}
 #### For Ubuntu 16.04 you will need additional dependencies installed.
@@ -97,7 +97,7 @@ sudo apt install libzstd1 -y
         ```
         nethermind-launcher
         ```
-    3.  :warning: If you get the error&#x20;
+    3.  :warning: If you get the the following error:
 
         ```
         There was an error when starting ./Nethermind.RunnerError: spawn ./Nethermind.Runner ENOENT
@@ -124,9 +124,12 @@ sudo apt install libzstd1 -y
       brew install gmp snappy lz4 zstd
       ```
   3. `unzip` the file
-  4.  Run `Nethermind.Launcher`  &#x20;
+  4.  Run `Nethermind.Launcher`   \
 
-      :warning: If you are prompted with a warning, check instructions here -> [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
+
+      :warning: If you are prompted with a warning related to not being able to verify the developer of the program, open _System Preferences > Security & Privacy_ and click on "Allow Anyway" \
+      ![](<../../.gitbook/assets/image (2).png>)\
+      More info can be found here: [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
   5. Select desired configuration
 {% endtab %}
 {% endtabs %}
