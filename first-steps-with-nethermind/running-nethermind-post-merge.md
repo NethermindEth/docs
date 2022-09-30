@@ -112,7 +112,7 @@ dotnet build Nethermind.sln -c Release
 
 ## Step 2: Installing Consensus Client
 
-On the Consensus Layer you have five client implementations to chose from. Though all CL clients are great check them out for yourself and find the client best suited to your needs.
+On the Consensus Layer you have five client implementations to choose from. Though all CL clients are great check them out for yourself and find the client best suited to your needs.
 
 {% hint style="warning" %}
 We urge you to take client diversity into consideration when choosing your CL client and avoid majority clients.
