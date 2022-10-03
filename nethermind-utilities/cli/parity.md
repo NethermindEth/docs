@@ -202,15 +202,16 @@ parity.netPeers
 
 ## parity.pendingTransactions
 
-Returns a list of transactions currently in the queue. 
+Returns a list of transactions currently in the queue. If address is provided, returns transactions only with given sender address. 
 
 
 | Invocation |
 | :--- |
-| `parity.pendingTransactions()` |
+| `parity.pendingTransactions(address)` |
 
-| This method doesn't have parameters. |
-| :--- |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -219,7 +220,7 @@ Returns a list of transactions currently in the queue.
 {% tabs %}
 {% tab title="Example request of parity.pendingTransactions" %}
 ```yaml
-parity.pendingTransactions()
+parity.pendingTransactions(["0x78467cada5f1883e79fcf0f3ebfa50abeec8c820"])
 ```
 {% endtab %}
 {% tab title="Example response of parity.pendingTransactions" %}
