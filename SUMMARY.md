@@ -10,8 +10,9 @@
 ## First steps with Nethermind
 
 * [Getting Started](first-steps-with-nethermind/getting-started.md)
-* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
 * [Running Nethermind Post Merge](first-steps-with-nethermind/running-nethermind-post-merge.md)
+* [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
+* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
 * [Supported platforms](first-steps-with-nethermind/supported-platforms.md)
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
 * [Hardware Requirements](first-steps-with-nethermind/hardware-requirements.md)
