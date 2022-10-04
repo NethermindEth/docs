@@ -196,14 +196,15 @@ curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H
 [See also CLI parity.netPeers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-netpeers)
 ## parity_pendingTransactions
 
-Returns a list of transactions currently in the queue. 
+Returns a list of transactions currently in the queue. If address is provided, returns transactions only with given sender address. 
 
 | Invocation |
 | :--- |
-| `{"method":"parity_pendingTransactions","params":[]}` |
+| `{"method":"parity_pendingTransactions","params":[address]}` |
 
-| This method doesn't have parameters. |
-| :--- |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | `Address` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -212,7 +213,7 @@ Returns a list of transactions currently in the queue.
 {% tabs %}
 {% tab title="Example request of parity_pendingTransactions" %}
 ```
-curl --data '{"method":"parity_pendingTransactions","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+curl --data '{"method":"parity_pendingTransactions","params":[["0x78467cada5f1883e79fcf0f3ebfa50abeec8c820"]],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% tab title="Example response of parity_pendingTransactions" %}

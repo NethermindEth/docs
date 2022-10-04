@@ -5,6 +5,7 @@
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
 | Enabled | NETHERMIND_HEALTHCHECKSCONFIG_ENABLED | If 'true' then Health Check endpoints is enabled at /health | false |
+| MaxIntervalClRequestTime | NETHERMIND_HEALTHCHECKSCONFIG_MAXINTERVALCLREQUESTTIME | Max request interval in which we assume that CL works in a healthy way | 300 |
 | MaxIntervalWithoutProcessedBlock | NETHERMIND_HEALTHCHECKSCONFIG_MAXINTERVALWITHOUTPROCESSEDBLOCK | Max interval in seconds in which we assume that node processing blocks in a healthy way | null |
 | MaxIntervalWithoutProducedBlock | NETHERMIND_HEALTHCHECKSCONFIG_MAXINTERVALWITHOUTPRODUCEDBLOCK | Max interval in seconds in which we assume that node producing blocks in a healthy way | null |
 | PollingInterval | NETHERMIND_HEALTHCHECKSCONFIG_POLLINGINTERVAL | Configures the UI to poll for healthchecks updates (in seconds) | 5 |
