@@ -1,14 +1,12 @@
-# Running Nethermind Post Merge
+# Running Nethermind
 
 ## Introduction
 
-Ethereum’s long awaited shift from Proof of Work (POW) to Proof of Stake (POS) otherwise known as The Merge comes with fundamental changes to the network. The most notable change is the addition of the Beacon chain (Consensus layer) which will replace Proof of Work mining. It will coordinate and pseudorandomly select block producers from the pool of stakers / validators in a way that makes it extremely difficult for validators to coordinate attacks on the network.
+Ethereum’s long awaited shift from Proof of Work (POW) to Proof of Stake (POS) known as The Merge happened on September 15, 2022 and came with fundamental changes to the network. The most notable change is the addition of the Beacon chain (Consensus layer) which replaced Proof of Work mining. It is coordinating and pseudorandomly selecting block producers from the pool of stakers / validators in a way that makes it extremely difficult for validators to coordinate attacks on the network.
 
-The Merge also changes how operators run nodes on the Ethereum blockchain. A node will consist of **two** clients that work together as a pair. In addition to the EL client you will need a Consensus Layer client (CL client) that connects to the Beacon chain and runs the POS algorithm.
+The Merge changed how operators run nodes on the Ethereum blockchain. A node now needs **two** clients that work together as a pair. In addition to the Execution Layer client (e.g. Nethermind) you need a Consensus Layer client that connects to the Beacon chain and runs the POS algorithm.
 
-You will still need to run an Execution Layer client (EL client) such as Nethermind, which will connect to the existing chain. Nethermind will build and validate blocks similar to before, except mining will no longer work after The Merge.
-
-This guide will show you everything you need to know to operate an Ethereum node after The Merge. It will show how to connect to the Goerli, Sepolia, Kiln and Ropsten test networks as well.
+This guide will show you everything you need to know to operate an Ethereum node. It will show how to connect to the Goerli, Sepolia, Kiln and Ropsten test networks as well.
 
 An easy way to run both CL and EL clients is by using Sedge. Sedge is a setup tool for PoS network/chain validators and nodes. Currently, Sedge supports multiple Linux distributions and MacOS.
 
@@ -18,7 +16,7 @@ To do your setup manually follow the steps below.
 
 ## Step 1: Installing Nethermind
 
-Installing Nethermind is the same as before The Merge. You can choose from downloading the official release, downloading the docker image, or building Nethermind from source.
+You can choose from downloading the official release, downloading the docker image, or building Nethermind from source.
 
 {% hint style="info" %}
 Support for post merge Ropsten is available as of Nethermind version 1.13.1
@@ -142,11 +140,9 @@ We urge you to take client diversity into consideration when choosing your CL cl
 
 ## Step 3 : Configure JSON-RPC API
 
-The Merge adds changes the JSON-RPC API. Such as the Engine API, JWT authentication, additional RPC ports, and additional block tags.
-
 ### JWT Secrets
 
-JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Execution client(Nethermind in this case) and the Consensus client. This requires you to create a file containing a hexadecimal “secret” that will be passed to each .
+JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Execution Client (Nethermind in this case) and the Consensus Client. This requires you to create a file containing a hexadecimal “secret” that will be passed to each .
 
 {% embed url="https://jwt.io" %}
 
@@ -227,7 +223,7 @@ For more information about possible configurations for JSON RPC Please refer to 
 
 ## Step 4: Run Nethermind
 
-The steps to running Nethermind after The Merge have not changed much. After you have:
+Ensure you have:
 
 * Installed Nethermind
 * Installed Consensus client
@@ -333,53 +329,6 @@ On some OS like Amazon Linux \*\*\*\*you may need to increase the `nofile` limit
 
 * `--JsonRpc.JwtSecretFile=PATH` where PATH is the location of your JWT secret ex. `/tmp/jwtsecret`
 * `--datadir data` maps the database, keystore, and logs all at once
-
-### TTD Configuration (Important) <a href="#ttd-config" id="ttd-config"></a>
-
-{% hint style="info" %}
-For Nethermind to sync to Ropsten or Goerli you will have to set the Merge`TotalTerminalDifficulty`.\
-You will need to edit your config or set manually during launch.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Ropsten" %}
-There is two ways to set the TTD:
-
-1. From startup arguments, make sure the following flag is added to the start up command when launching.
-
-```bash
---Merge.TerminalTotalDifficulty="50000000000000000"
-```
-
-2\. From config,
-
-```json
-  "Merge": {
-    "Enabled": true,
-    "TerminalTotalDifficulty": "50000000000000000"
-  }
-```
-{% endtab %}
-
-{% tab title="Goerli" %}
-There is two ways to set the TTD:
-
-1. From startup arguments, make sure the following flag is added to the start up command when launching.
-
-```
---Merge.TerminalTotalDifficulty="10790000"
-```
-
-2\. From config,
-
-```
-  "Merge": {
-    "Enabled": true,
-    "TerminalTotalDifficulty": "10790000"
-  }
-```
-{% endtab %}
-{% endtabs %}
 
 ## Step 5: Run Consensus Clients
 
@@ -827,7 +776,3 @@ For checkpoint sync add this as well.
 Please follow guide provided [here](https://github.com/gnosischain/teku-client).
 {% endtab %}
 {% endtabs %}
-
-
-
-###
