@@ -9,15 +9,16 @@
 
 ## First steps with Nethermind
 
-* [Getting Started](first-steps-with-nethermind/getting-started.md)
 * [Running Nethermind](first-steps-with-nethermind/running-nethermind-post-merge.md)
 * [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
 * [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
+* [Explaining Nethermind logs](first-steps-with-nethermind/getting-started.md)
 * [Supported platforms](first-steps-with-nethermind/supported-platforms.md)
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
 * [Hardware Requirements](first-steps-with-nethermind/hardware-requirements.md)
 * [Security](first-steps-with-nethermind/security.md)
 * [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
+* [Connecting Wallet](first-steps-with-nethermind/connecting-wallet.md)
 
 ## Nodes and The Merge
 
@@ -31,6 +32,7 @@
   * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
 * [Building From Source](installing-nethermind/building-nethermind.md)
 * [Docker](installing-nethermind/docker.md)
+* [Launching Nethermind via Nethermind.Launcher](installing-nethermind/launching-nethermind-via-nethermind.launcher.md)
 
 ## Ethereum client
 
