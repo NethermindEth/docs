@@ -203,6 +203,42 @@ Parameter: `"newPendingTransactions"`
 {% endtab %}
 {% endtabs %}
 
+### droppedPendingTransactions
+
+Subscribes to transactions evicted from transaction pool. Returns transaction hash.
+
+Parameter: `"droppedPendingTransactions"`
+
+#### Example
+
+{% tabs %}
+{% tab title="Request of droppedPendingTransactions" %}
+```
+{"method":"eth_subscribe","params":["droppedPendingTransactions"],"id":1,"jsonrpc":"2.0"}
+```
+{% endtab %}
+
+{% tab title="Response of droppedPendingTransactions" %}
+```
+{"jsonrpc":"2.0","result":"0xfa561cbadf9b4bd79b62537661d18f27","id":1}
+```
+{% endtab %}
+
+{% tab title="Notification of droppedPendingTransactions" %}
+```
+{
+	"jsonrpc":"2.0",
+	"method":"eth_subscription",
+	"params":
+		{
+			"subscription":"0xfa561cbadf9b4bd79b62537661d18f27",
+			"result":"0x6ad1058c56f71fe630053d24905f06d80677262ae2e8f42799690ab6b9fc5bd0"
+		}
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ### syncing
 
 Subscribe to syncing events. Returns boolean `false` once if node is synced or an object with statistics once when the node starts syncing.
