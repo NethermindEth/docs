@@ -1,6 +1,6 @@
 # Nethermind Changes
 
-The Merge brings changes the JSON-RPC API. Such as the Engine API, JWT authentication, additional RPC ports, and additional block tags.
+The Merge brings changes to the JSON-RPC API. Such as the Engine API, JWT authentication, additional RPC ports, and additional block tags.
 
 ## Engine API
 
@@ -25,7 +25,7 @@ JWT Authentication is used on all ports with the `Engine` API Module enabled.
 JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with the communication between the Nethermind and the Consensus client. This requires you to create a `.txt` file containing a hexadecimal “secret” that will be passed to each client.
 
 {% hint style="warning" %}
-Nethermind will create it's own `jwtsecret` file if you do not specify a location or pass the wrong location.
+Nethermind will create its own `jwtsecret` file if you do not specify a location or pass the wrong location.
 {% endhint %}
 
 {% embed url="https://jwt.io/" %}
