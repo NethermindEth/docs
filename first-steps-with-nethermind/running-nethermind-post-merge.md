@@ -1,4 +1,4 @@
-# Running Nethermind
+# Running Nethermind & CL
 
 ## Introduction
 
@@ -217,8 +217,8 @@ Nethermind will create it's own `jwtsecret` file if you do not specify a locatio
 
 For more information about possible configurations for JSON RPC Please refer to the article below:
 
-{% content-ref url="../ethereum-client/engine-jsonrpc-configuration-examples.md" %}
-[engine-jsonrpc-configuration-examples.md](../ethereum-client/engine-jsonrpc-configuration-examples.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## Step 4: Run Nethermind

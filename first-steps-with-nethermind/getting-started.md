@@ -4,6 +4,8 @@ description: A quick start example for Görli Testnet Nethermind synchronization
 
 # Explaining Nethermind logs
 
+You can check the supported operating systems, architectures and hardware requirements here: [system-requirements.md](system-requirements.md "mention")
+
 After the node starts, you will see some initial info about the node and then the sync will start. Görli fast sync uses a `fast blocks` sync mode initially. The `fast blocks` sync picks some known `pivot block` from the past and downloads `headers`, `bodies`, and `receipts` downwards all the way to `genesis block`. All blocks from 0 to the `pivot block` are showed as `Old Headers` in the `fast blocks sync` logs. The console display shows the number growing from 0 to pivot, but this is just to make the display more user-friendly.
 
 You will see some information about the sync progress, like below:

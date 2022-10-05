@@ -2,20 +2,14 @@
 
 * [Welcome to Nethermind](README.md)
 
-## Contact
-
-* [Social Media](contact/social-media.md)
-* [Contact us](contact/contact-us.md)
-
 ## First steps with Nethermind
 
-* [Running Nethermind & CL](first-steps-with-nethermind/running-nethermind-post-merge.md)
-* [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
-* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
 * [Explaining Nethermind logs](first-steps-with-nethermind/getting-started.md)
-* [Supported platforms](first-steps-with-nethermind/supported-platforms.md)
+* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
+* [Running Nethermind & CL](first-steps-with-nethermind/running-nethermind-post-merge.md)
+* [System Requirements](first-steps-with-nethermind/system-requirements.md)
+* [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
-* [Hardware Requirements](first-steps-with-nethermind/hardware-requirements.md)
 * [Security](first-steps-with-nethermind/security.md)
 * [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 * [Connecting Wallet](first-steps-with-nethermind/connecting-wallet.md)
@@ -36,12 +30,12 @@
 
 ## Ethereum client
 
-* [Engine JsonRpc Configuration Example](ethereum-client/engine-jsonrpc-configuration-examples.md)
 * [Running Nethermind](ethereum-client/running-nethermind/README.md)
   * [Running the client](ethereum-client/running-nethermind/running-the-client.md)
   * [Runtime](ethereum-client/running-nethermind/runtime.md)
 * [Sync modes](ethereum-client/sync-modes.md)
 * [JSON RPC](ethereum-client/json-rpc/README.md)
+  * [Engine JsonRpc Config Example](ethereum-client/json-rpc/engine-jsonrpc-config-example.md)
   * [Admin module](ethereum-client/json-rpc/admin.md)
   * [Clique module](ethereum-client/json-rpc/clique.md)
   * [Debug module](ethereum-client/json-rpc/debug.md)
@@ -132,3 +126,8 @@
   * [Eth2 Validator](guides-and-helpers/validator-setup/eth2-validator.md)
 * [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 * [Coding Style](guides-and-helpers/coding-style.md)
+
+## Contact
+
+* [Social Media](contact/social-media.md)
+* [Contact us](contact/contact-us.md)
