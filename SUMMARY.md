@@ -61,6 +61,7 @@
   * [Blockchain module](ethereum-client/metrics/blockchain.md)
   * [Evm module](ethereum-client/metrics/evm.md)
   * [JsonRpc module](ethereum-client/metrics/jsonrpc.md)
+  * [Merge module](ethereum-client/metrics/merge.plugin.md)
   * [Network module](ethereum-client/metrics/network.md)
   * [Pruning module](ethereum-client/metrics/trie.pruning.md)
   * [Runner module](ethereum-client/metrics/runner.md)
