@@ -8,4 +8,4 @@ Configuration of the Prometheus metrics publication. Documentation of the requir
 | ExposePort | NETHERMIND_METRICSCONFIG_EXPOSEPORT | If set, the node exposes Prometheus metrics on the given port. | null |
 | IntervalSeconds | NETHERMIND_METRICSCONFIG_INTERVALSECONDS | Defines how often metrics are pushed to Prometheus | 5 |
 | NodeName | NETHERMIND_METRICSCONFIG_NODENAME | Name displayed in the Grafana dashboard | "Nethermind" |
-| PushGatewayUrl | NETHERMIND_METRICSCONFIG_PUSHGATEWAYURL | Prometheus Pushgateway URL. | "http://localhost:9091/metrics" |
+| PushGatewayUrl | NETHERMIND_METRICSCONFIG_PUSHGATEWAYURL | Prometheus Pushgateway URL. |  |

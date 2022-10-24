@@ -5,6 +5,8 @@
 | nethermind_blocks | Total number of blocks processed |
 | nethermind_blocks_sealed | Total number of sealed blocks |
 | nethermind_failed_block_seals | Total number of failed block seals |
+| nethermind_gas_limit | Gas Limit for processed blocks |
+| nethermind_gas_used | Gas Used in processed blocks |
 | nethermind_last_difficulty | Difficulty of the last block |
 | nethermind_mgas | Total MGas processed |
 | nethermind_processing_queue_size | Number of blocks awaiting for processing. |
