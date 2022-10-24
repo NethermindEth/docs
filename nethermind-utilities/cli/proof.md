@@ -75,7 +75,7 @@ proof.getTransactionByHash(txHash, includeHeader)
 
 ## proof.getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
+This function should return the same result as `eth_call` and also proofs of all used accounts and their storages and serialized block headers. 
 
 
 | Invocation |

@@ -8,6 +8,7 @@
 | Bootnodes | NETHERMIND_NETWORKCONFIG_BOOTNODES | Bootnodes |  |
 | DiagTracerEnabled | NETHERMIND_NETWORKCONFIG_DIAGTRACERENABLED | Enabled very verbose diag network tracing files for DEV purposes (Nethermind specific) | false |
 | DiscoveryPort | NETHERMIND_NETWORKCONFIG_DISCOVERYPORT | UDP port number for incoming discovery connections. Keep same as TCP/IP port because using different values has never been tested. | 30303 |
+| EnableUPnP | NETHERMIND_NETWORKCONFIG_ENABLEUPNP | Enable automatic port forwarding via UPnP | false |
 | ExternalIp | NETHERMIND_NETWORKCONFIG_EXTERNALIP | Use only if your node cannot resolve external IP automatically. | null |
 | LocalIp | NETHERMIND_NETWORKCONFIG_LOCALIP | Use only if your node cannot resolve local IP automatically. | null |
 | MaxActivePeers | NETHERMIND_NETWORKCONFIG_MAXACTIVEPEERS | Same as ActivePeersMaxCount. | 50 |

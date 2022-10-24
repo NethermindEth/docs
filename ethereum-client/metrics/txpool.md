@@ -15,4 +15,5 @@
 | nethermind_pending_transactions_received | Number of pending transactions received from peers. |
 | nethermind_pending_transactions_sent | Number of pending transactions broadcasted to peers. |
 | nethermind_pending_transactions_too_low_fee | Number of pending transactions received that were ignored because of effective fee lower than the lowest effective fee in transaction pool. |
+| nethermind_pending_transactions_with_expensive_filtering | Number of pending transactions that reached filters which are resource expensive |
 | nethermind_transaction_count | Number of transactions in pool. |

@@ -74,7 +74,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 [See also CLI proof.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionbyhash)
 ## proof_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all USED accunts and their storages and serialized block headers 
+This function should return the same result as `eth_call` and also proofs of all used accounts and their storages and serialized block headers. 
 
 | Invocation |
 | :--- |
