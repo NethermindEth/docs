@@ -4,7 +4,7 @@
 
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
-| AutoDump | NETHERMIND_INITCONFIG_AUTODUMP | Auto dump on bad blocks for diagnostics | Receipts |
+| AutoDump | NETHERMIND_INITCONFIG_AUTODUMP | Auto dump on bad blocks for diagnostics, Possible values [None, Receipts, Parity, Geth, All] | Receipts |
 | BaseDbPath | NETHERMIND_INITCONFIG_BASEDBPATH | Base directoy path for all the nethermind databases. | "db" |
 | ChainSpecPath | NETHERMIND_INITCONFIG_CHAINSPECPATH | Path to the chain definition file (Parity chainspec or Geth genesis file). | chainspec/foundation.json |
 | DiagnosticMode | NETHERMIND_INITCONFIG_DIAGNOSTICMODE | Diagnostics modes | None |
