@@ -228,7 +228,7 @@ Ensure you have:
 * Installed Nethermind
 * Installed Consensus client
 * Created a JWT secret file
-* Ensured that an authenticated port with the Engine module is enabled
+* Engine module is enabled with authenticated port &#x20;
 
 Then you are ready to start your clients. First start up Nethermind.
 
@@ -237,6 +237,10 @@ Then you are ready to start your clients. First start up Nethermind.
 Depending on the network you want to run the node for, choose the `--config` variable. for more on networks, check [here](../ethereum-client/networks.md).
 
 `--config` is the config file for the network you want to connect to. For example, to run a node for the kiln testnet use `--config kiln`
+
+{% hint style="danger" %}
+If you are not using the config files, make sure you also use the "Merge.Enabled=true" flag
+{% endhint %}
 
 ### Running Local Build
 
@@ -305,6 +309,10 @@ nethermind --config ropsten --JsonRpc.JwtSecretFile=PATH
 
 Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
 
+{% hint style="danger" %}
+If you are not using the default config files, make sure you also use the **Merge.Enabled=true** flag when launching the client.&#x20;
+{% endhint %}
+
 ### Running Docker Image
 
 Running Nethermind from a Docker image may require more configuration depending on the situation.
@@ -316,7 +324,7 @@ docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind netherm
 ```
 
 {% hint style="info" %}
-`--config` flag **** is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten.
+`--config` flag **** is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**&#x20;
 {% endhint %}
 
 #### **Docker Settings**
