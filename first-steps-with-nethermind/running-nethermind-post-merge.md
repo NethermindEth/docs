@@ -215,12 +215,6 @@ This setting is used to identify the location of the file containing the JWT sec
 Nethermind will create it's own `jwtsecret` file if you do not specify a location or pass the wrong location.
 {% endhint %}
 
-For more information about possible configurations for JSON RPC Please refer to the article below:
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 ## Step 4: Run Nethermind
 
 Ensure you have:
@@ -232,15 +226,15 @@ Ensure you have:
 
 Then you are ready to start your clients. First start up Nethermind.
 
+{% hint style="danger" %}
+Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. This is not required if you are using the default config files as this is enabled by default. &#x20;
+{% endhint %}
+
 ### Choosing the Network
 
 Depending on the network you want to run the node for, choose the `--config` variable. for more on networks, check [here](../ethereum-client/networks.md).
 
 `--config` is the config file for the network you want to connect to. For example, to run a node for the kiln testnet use `--config kiln`
-
-{% hint style="danger" %}
-If you are not using the config files, make sure you also use the "Merge.Enabled=true" flag
-{% endhint %}
 
 ### Running Local Build
 
