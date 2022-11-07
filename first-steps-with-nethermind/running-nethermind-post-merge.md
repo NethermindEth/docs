@@ -441,7 +441,7 @@ cd prysm
 --mainnet \
 --datadir "$db_path"  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
---http-web3provider=http://localhost:8551  \
+--execution-endpoint=http://localhost:8551  \
 --jwt-secret="/tmp/jwtsecret"
 ```
 
@@ -460,19 +460,19 @@ cd prysm
 --goerli \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
---http-web3provider=http://localhost:8551  \
+--execution-endpoint=http://localhost:8551  \
 --jwt-secret=/tmp/jwtsecret
 ```
 {% endtab %}
 
 {% tab title="Sepolia" %}
-```
+```bash
 cd prysm
 ./prysm.sh beacon-chain \
 --sepolia \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
---http-web3provider=http://localhost:8551  \
+--execution-endpoint=http://localhost:8551  \
 --jwt-secret=/tmp/jwtsecret
 ```
 {% endtab %}
@@ -484,7 +484,7 @@ cd prysm
 --ropsten \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
---http-web3provider=http://localhost:8551  \
+--execution-endpoint=http://localhost:8551  \
 --bootstrap-node=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk
 --jwt-secret=/tmp/jwtsecret
 ```
@@ -497,7 +497,7 @@ cd prysm
 --genesis-state $genesis_state_path \
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
---http-web3provider=$execution_server  \
+--execution-endpoint=$execution_server  \
 --execution-provider=http://localhost:8551  \
 --chain-config-file=$config_path \
 --bootstrap-node=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk
