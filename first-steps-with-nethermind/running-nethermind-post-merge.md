@@ -344,11 +344,7 @@ Once both clients are running watch the logs to make sure you don’t get any `U
 It would be way faster to sync consensus clients using checkpoint sync.
 
 * <mark style="color:green;">**To sync the CL client using a checkpoint sync, view the community maintained endpoints**</mark> [**here**](https://eth-clients.github.io/checkpoint-sync-endpoints/)<mark style="color:green;">**.**</mark>
-* Or for Goerli, Ropsten or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync).
-* You can also use Infura.
-  1. Got to the link [here](https://infura.io/dashboard).
-  2. Sign up and choose ETH2 for the network field.
-  3. You will find an http address to the endpoint. copy it and use it when you start your consensus client.
+* For Goerli, Ropsten or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync).
 {% endhint %}
 
 #### Running on Kiln
@@ -378,7 +374,9 @@ nimbus-eth2/build/nimbus_beacon_node \
     --jwt-secret="/tmp/jwtsecret"
 ```
 
-for checkpoint sync, run commands shown [here](https://nimbus.guide/trusted-node-sync.html) before running the client.
+For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
+
+<pre class="language-bash"><code class="lang-bash"><strong>--trusted-node-url=https://beaconstate.ethstaker.cc</strong></code></pre>
 {% endtab %}
 
 {% tab title="Goerli" %}
@@ -447,11 +445,11 @@ cd prysm
 --jwt-secret="/tmp/jwtsecret"
 ```
 
-For checkpoint sync add this as well.
+For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:&#x20;
 
 ```bash
---checkpoint-sync-url="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io" \
---genesis-beacon-api-url="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io"
+--checkpoint-sync-url="https://beaconstate.ethstaker.cc" \
+--genesis-beacon-api-url="https://beaconstate.ethstaker.cc"
 ```
 {% endtab %}
 
@@ -534,10 +532,10 @@ lighthouse \
           --jwt-secrets="/tmp/jwtsecret"
 ```
 
-For checkpoint sync add this as well.
+For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
 
 ```bash
---checkpoint-sync-url https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io
+--checkpoint-sync-url "https://beaconstate.ethstaker.cc"
 ```
 {% endtab %}
 
@@ -640,10 +638,10 @@ Please follow guide provided [here](https://github.com/gnosischain/lighthouse-cl
 --suggestedFeeRecipient &#x3C;Enter-eth-address-here> \
 --jwt-secret "/tmp/jwtsecret" \</code></pre>
 
-For checkpoint sync add this as well.
+For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
 
-```
---checkpointSyncUrl "https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io"
+```bash
+--checkpointSyncUrl "https://beaconstate.ethstaker.cc"
 ```
 {% endtab %}
 
@@ -719,10 +717,13 @@ Please follow guide provided [here](https://github.com/gnosischain/lodestar-clie
   --log-destination console \
   --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here></code></pre>
 
-For checkpoint sync add this as well.
+```
+```
+
+For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
 
 ```bash
---initial-state="https://<PROJECT-ID>:<PROJECT-SECRET>@eth2-beacon-mainnet.infura.io/eth/v2/debug/beacon/states/finalized"
+--initial-state="https://beaconstate.ethstaker.cc"
 ```
 {% endtab %}
 
