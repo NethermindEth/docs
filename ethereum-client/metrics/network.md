@@ -57,6 +57,7 @@
 | nethermind_null_node_identity_disconnects | Number of received disconnects due to missing peer identity |
 | nethermind_other_disconnects | Number of received disconnects due to other reasons |
 | nethermind_outgoing_connections | Number of outgoing connection. |
+| nethermind_peer_limit | The maximum number of peers this node allows to connect. |
 | nethermind_receive_message_timeout_disconnects | Number of received disconnects due to request timeouts |
 | nethermind_same_as_self_disconnects | Number of received disconnects due to connecting to self |
 | nethermind_snap_account_range_received | Number of SNAP AccountRange messages received |

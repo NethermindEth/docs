@@ -143,6 +143,38 @@ curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"
 {% endtab %}
 {% endtabs %}
 
+## debug_getSyncStage
+
+Retrives Nethermind Sync Stage, With extra Metadata 
+
+| Invocation |
+| :--- |
+| `{"method":"debug_getSyncStage","params":[]}` |
+
+| This method doesn't have parameters. |
+| :--- |
+
+| Returned type | Description |
+| :--- | :--- |
+| `SyncReportSymmary object` |  |
+
+{% tabs %}
+{% tab title="Example request of debug_getSyncStage" %}
+```
+curl --data '{"method":"debug_getSyncStage","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+
+{% tab title="Objects in debug_getSyncStage" %}
+
+`SyncReportSymmary`
+
+| Field name | Type |
+| :--- | :--- |
+| CurrentStage | `String` |
+{% endtab %}
+{% endtabs %}
+
 ## debug_insertReceipts
 
 Insert receipts for the block after verifying receipts root correctness. 
