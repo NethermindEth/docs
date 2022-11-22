@@ -2,6 +2,8 @@
 
 | Metric | Description |
 | :--- | :--- |
+| nethermind_best_known_block_number | The estimated highest block available. |
+| nethermind_blockchain_height | The current height of the canonical chain. |
 | nethermind_blocks | Total number of blocks processed |
 | nethermind_blocks_sealed | Total number of sealed blocks |
 | nethermind_failed_block_seals | Total number of failed block seals |

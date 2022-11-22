@@ -132,6 +132,7 @@ debug.getChainLevel(number)
 
 
 
+
 ## debug.migrateReceipts
 
 Sets the block number up to which receipts will be migrated to (Nethermind specific). 
