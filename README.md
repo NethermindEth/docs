@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/Direction=Horizontal, Color=Color, Wordmark=Yes.svg
+cover: .gitbook/assets/Nethermind_Background-07.png
 coverY: 0
 ---
 
