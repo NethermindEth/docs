@@ -2,21 +2,20 @@
 
 ## net\_listening
 
-| Invocación |
-| :--- |
+| Invocación                               |
+| ---------------------------------------- |
 | `{"method":"net_listening","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of net\_listening" %}
-```text
+{% tab title="Example request of net_listening" %}
+```
 curl --data '{"method":"net_listening","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -24,21 +23,20 @@ curl --data '{"method":"net_listening","params":[],"id":1,"jsonrpc":"2.0"}' -H "
 
 ## net\_localAddress
 
-| Invocación |
-| :--- |
+| Invocación                                  |
+| ------------------------------------------- |
 | `{"method":"net_localAddress","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of net\_localAddress" %}
-```text
+{% tab title="Example request of net_localAddress" %}
+```
 curl --data '{"method":"net_localAddress","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -46,21 +44,20 @@ curl --data '{"method":"net_localAddress","params":[],"id":1,"jsonrpc":"2.0"}' -
 
 ## net\_localEnode
 
-| Invocación |
-| :--- |
+| Invocación                                |
+| ----------------------------------------- |
 | `{"method":"net_localEnode","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
-{% tab title="Example request of net\_localEnode" %}
-```text
+{% tab title="Example request of net_localEnode" %}
+```
 curl --data '{"method":"net_localEnode","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -70,21 +67,20 @@ curl --data '{"method":"net_localEnode","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 ## net\_peerCount
 
-| Invocación |
-| :--- |
+| Invocación                               |
+| ---------------------------------------- |
 | `{"method":"net_peerCount","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of net\_peerCount" %}
-```text
+{% tab title="Example request of net_peerCount" %}
+```
 curl --data '{"method":"net_peerCount","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -94,25 +90,23 @@ curl --data '{"method":"net_peerCount","params":[],"id":1,"jsonrpc":"2.0"}' -H "
 
 ## net\_version
 
-| Invocación |
-| :--- |
+| Invocación                             |
+| -------------------------------------- |
 | `{"method":"net_version","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
-{% tab title="Example request of net\_version" %}
-```text
+{% tab title="Example request of net_version" %}
+```
 curl --data '{"method":"net_version","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [ingrese a CLI net.version](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-version)
-

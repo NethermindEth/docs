@@ -2,23 +2,23 @@
 
 ## debug\_deleteChainSlice
 
-Elimina una porción de una cadena del árbol en todas las ramas \(específico de Nethermind\).
+Elimina una porción de una cadena del árbol en todas las ramas (específico de Nethermind).
 
-| Invocación |
-| :--- |
+| Invocación                                                   |
+| ------------------------------------------------------------ |
 | `{"method":"debug_deleteChainSlice","params":[startNumber]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| startNumber | `Quantity` |  |
+| Parámetro   | Tipo       | Descripción |
+| ----------- | ---------- | ----------- |
+| startNumber | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_deleteChainSlice" %}
-```text
+{% tab title="Example request of debug_deleteChainSlice" %}
+```
 curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -28,21 +28,21 @@ curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"j
 
 Recupera un bloque en la forma serializada RLP.
 
-| Invocación |
-| :--- |
+| Invocación                                         |
+| -------------------------------------------------- |
 | `{"method":"debug_getBlockRlp","params":[number]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| number    | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Data` |  |
+| --------------- | ----------- |
+| `Data`          |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_getBlockRlp" %}
-```text
+{% tab title="Example request of debug_getBlockRlp" %}
+```
 curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -54,21 +54,21 @@ curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2
 
 Recupera un bloque en la forma serializada RLP.
 
-| Invocación |
-| :--- |
+| Invocación                                             |
+| ------------------------------------------------------ |
 | `{"method":"debug_getBlockRlpByHash","params":[hash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Data` |  |
+| --------------- | ----------- |
+| `Data`          |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_getBlockRlpByHash" %}
-```text
+{% tab title="Example request of debug_getBlockRlpByHash" %}
+```
 curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -78,46 +78,46 @@ curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc
 
 ## debug\_getChainLevel
 
-Recupera una representación de las ramas de los árboles en un nivel de cadena determinado  \(específico de Nethermind\).
+Recupera una representación de las ramas de los árboles en un nivel de cadena determinado  (específico de Nethermind).
 
-| Invocación |
-| :--- |
+| Invocación                                           |
+| ---------------------------------------------------- |
 | `{"method":"debug_getChainLevel","params":[number]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| number    | `Quantity` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `ChainLevelForRpc object` |  |
+| Tipo de retorno           | Descripción |
+| ------------------------- | ----------- |
+| `ChainLevelForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_getChainLevel" %}
-```text
+{% tab title="Example request of debug_getChainLevel" %}
+```
 curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_getChainLevel" %}
+{% tab title="Objects in debug_getChainLevel" %}
 `ChainLevelForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| BlockInfos | `BlockInfoForRpc[] object` |
-| HasBlockOnMainChain | `Boolean` |
+| Nombre de los campos | Tipo                       |
+| -------------------- | -------------------------- |
+| BlockInfos           | `BlockInfoForRpc[] object` |
+| HasBlockOnMainChain  | `Boolean`                  |
 
 `BlockInfoForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -127,22 +127,22 @@ curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":
 
 Recupera el valor de configuración de Nethermind Ej. JsonRpc.Enabled
 
-| Invocación |
-| :--- |
+| Invocación                                                    |
+| ------------------------------------------------------------- |
 | `{"method":"debug_getConfigValue","params":[category, name]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| category | `String` |  |
-| name | `String` |  |
+| Parámetro | Tipo     | Descripción |
+| --------- | -------- | ----------- |
+| category  | `String` |             |
+| name      | `String` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Object` |  |
+| --------------- | ----------- |
+| `Object`        |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_getConfigValue" %}
-```text
+{% tab title="Example request of debug_getConfigValue" %}
+```
 curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -152,73 +152,73 @@ curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"
 
 Inserta los recibos para el bloque después de verificar que los recibos sean correctos.
 
-| Invocación |
-| :--- |
+| Invocación                                                                   |
+| ---------------------------------------------------------------------------- |
 | `{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| receiptForRpc | `ReceiptForRpc[] object` |  |
+| Parámetro      | Tipo                     | Descripción |
+| -------------- | ------------------------ | ----------- |
+| blockParameter | `BlockParameter object`  |             |
+| receiptForRpc  | `ReceiptForRpc[] object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_insertReceipts" %}
-```text
+{% tab title="Example request of debug_insertReceipts" %}
+```
 curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_insertReceipts" %}
+{% tab title="Objects in debug_insertReceipts" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `ReceiptForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
 ## debug\_migrateReceipts
 
-Establece el número de bloque hasta el que se migrarán los recibos a \(específico de Nethermind\).
+Establece el número de bloque hasta el que se migrarán los recibos a (específico de Nethermind).
 
-| Invocación |
-| :--- |
+| Invocación                                                  |
+| ----------------------------------------------------------- |
 | `{"method":"debug_migrateReceipts","params":[blockNumber]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockNumber | `Quantity` |  |
+| Parámetro   | Tipo       | Descripción |
+| ----------- | ---------- | ----------- |
+| blockNumber | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_migrateReceipts" %}
-```text
+{% tab title="Example request of debug_migrateReceipts" %}
+```
 curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -228,23 +228,23 @@ curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"js
 
 ## debug\_resetHead
 
-Actualiza / resetea el bloque principal: utilízalo sólo cuando el nodo se atascó debido a daños en la base de datos / corrupción de memoria \(específico de Nethermind\).
+Actualiza / resetea el bloque principal: utilízalo sólo cuando el nodo se atascó debido a daños en la base de datos / corrupción de memoria (específico de Nethermind).
 
-| Invocación |
-| :--- |
+| Invocación                                          |
+| --------------------------------------------------- |
 | `{"method":"debug_resetHead","params":[blockHash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| blockHash | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_resetHead" %}
-```text
+{% tab title="Example request of debug_resetHead" %}
+```
 curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -254,46 +254,46 @@ curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"
 
 Devuelve un seguimiento completo de todos los códigos de operación invocados de todas las transacciones que se incluyeron en este bloque. El padre de este bloque debe estar presente o fallará.
 
-| Invocación |
-| :--- |
+| Invocación                                                   |
+| ------------------------------------------------------------ |
 | `{"method":"debug_traceBlock","params":[blockRlp, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockRlp  | `Data`                    |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlock" %}
-```text
+{% tab title="Example request of debug_traceBlock" %}
+```
 curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlock" %}
+{% tab title="Objects in debug_traceBlock" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -301,46 +301,46 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 
 ## debug\_traceBlockByHash
 
-| Invocación |
-| :--- |
+| Invocación                                                          |
+| ------------------------------------------------------------------- |
 | `{"method":"debug_traceBlockByHash","params":[blockHash, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockHash | `Hash`                    |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlockByHash" %}
-```text
+{% tab title="Example request of debug_traceBlockByHash" %}
+```
 curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByHash" %}
+{% tab title="Objects in debug_traceBlockByHash" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -348,46 +348,46 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 
 ## debug\_traceBlockByNumber
 
-| Invocación |
-| :--- |
+| Invocación                                                         |
+| ------------------------------------------------------------------ |
 | `{"method":"debug_traceBlockByNumber","params":[number, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| number    | `Quantity`                |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlockByNumber" %}
-```text
+{% tab title="Example request of debug_traceBlockByNumber" %}
+```
 curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByNumber" %}
+{% tab title="Objects in debug_traceBlockByNumber" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -397,46 +397,46 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 
 Este método intentará ejecutar la transacción exactamente de la misma manera en que se ejecutó en la red. Reproducirá cualquier transacción que se haya ejecutado antes de esta antes de intentar finalmente ejecutar la transacción que corresponde al hash dado.
 
-| Invocación |
-| :--- |
+| Invocación                                                                |
+| ------------------------------------------------------------------------- |
 | `{"method":"debug_traceTransaction","params":[transactionHash, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro       | Tipo                      | Descripción |
+| --------------- | ------------------------- | ----------- |
+| transactionHash | `Hash`                    |             |
+| options         | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransaction" %}
-```text
+{% tab title="Example request of debug_traceTransaction" %}
+```
 curl --data '{"method":"debug_traceTransaction","params":[transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransaction" %}
+{% tab title="Objects in debug_traceTransaction" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -444,60 +444,60 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 
 ## debug\_traceTransactionByBlockAndIndex
 
-| Invocación |
-| :--- |
+| Invocación                                                                                       |
+| ------------------------------------------------------------------------------------------------ |
 | `{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro      | Tipo                      | Descripción |
+| -------------- | ------------------------- | ----------- |
+| blockParameter | `BlockParameter object`   |             |
+| txIndex        | `Quantity`                |             |
+| options        | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionByBlockAndIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionByBlockAndIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockAndIndex" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -505,47 +505,47 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 ## debug\_traceTransactionByBlockhashAndIndex
 
-| Invocación |
-| :--- |
+| Invocación                                                                                      |
+| ----------------------------------------------------------------------------------------------- |
 | `{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockHash | `Hash`                    |             |
+| txIndex   | `Quantity`                |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionByBlockhashAndIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionByBlockhashAndIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -553,47 +553,47 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 
 ## debug\_traceTransactionInBlockByHash
 
-| Invocación |
-| :--- |
+| Invocación                                                                                       |
+| ------------------------------------------------------------------------------------------------ |
 | `{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro       | Tipo                      | Descripción |
+| --------------- | ------------------------- | ----------- |
+| blockRlp        | `Data`                    |             |
+| transactionHash | `Hash`                    |             |
+| options         | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionInBlockByHash" %}
-```text
+{% tab title="Example request of debug_traceTransactionInBlockByHash" %}
+```
 curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
+{% tab title="Objects in debug_traceTransactionInBlockByHash" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -601,49 +601,48 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 
 ## debug\_traceTransactionInBlockByIndex
 
-| Invocación |
-| :--- |
+| Invocación                                                                                |
+| ----------------------------------------------------------------------------------------- |
 | `{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockRlp  | `Data`                    |             |
+| txIndex   | `Quantity`                |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionInBlockByIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionInBlockByIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
+{% tab title="Objects in debug_traceTransactionInBlockByIndex" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
 [ingrese a CLI debug.traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyindex)
-

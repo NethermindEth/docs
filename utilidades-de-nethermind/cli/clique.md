@@ -2,19 +2,19 @@
 
 ## clique.discard
 
-Este método descarta una propuesta en ejecución. El firmante no emitirá más votos \(ni a favor ni en contra\) de la dirección.
+Este método descarta una propuesta en ejecución. El firmante no emitirá más votos (ni a favor ni en contra) de la dirección.
 
-| Invocación |
-| :--- |
+| Invocación               |
+| ------------------------ |
 | `clique.discard(signer)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| signer | `Address` |  |
+| Parámetro | Tipo      | Descripción |
+| --------- | --------- | ----------- |
+| signer    | `Address` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.discard" %}
@@ -24,23 +24,23 @@ clique.discard(signer)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_discard](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_discard)
+[See also JSON RPC clique\_discard](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_discard)
 
 ## clique.getBlockSigner
 
 Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist.
 
-| Invocación |
-| :--- |
+| Invocación                    |
+| ----------------------------- |
 | `clique.getBlockSigner(hash)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getBlockSigner" %}
@@ -50,23 +50,22 @@ clique.getBlockSigner(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getBlockSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getblocksigner)
+[See also JSON RPC clique\_getBlockSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getblocksigner)
 
 ## clique.getSigners
 
 Recupera la lista de firmantes autorizados.
 
-| Invocación |
-| :--- |
+| Invocación            |
+| --------------------- |
 | `clique.getSigners()` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSigners" %}
@@ -76,23 +75,22 @@ clique.getSigners()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSigners](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsigners)
+[See also JSON RPC clique\_getSigners](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsigners)
 
 ## clique.getSignersAnnotated
 
 Retrieves the list of authorized signers but with signer names instead of addresses
 
-| Invocación |
-| :--- |
+| Invocación                     |
+| ------------------------------ |
 | `clique.getSignersAnnotated()` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSignersAnnotated" %}
@@ -102,23 +100,23 @@ clique.getSignersAnnotated()
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSignersAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersannotated)
+[See also JSON RPC clique\_getSignersAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsignersannotated)
 
 ## clique.getSignersAtHash
 
 Recupera la lista de firmantes autorizados en un bloque especificado por hash.
 
-| Invocación |
-| :--- |
+| Invocación                      |
+| ------------------------------- |
 | `clique.getSignersAtHash(hash)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSignersAtHash" %}
@@ -128,23 +126,23 @@ clique.getSignersAtHash(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSignersAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathash)
+[See also JSON RPC clique\_getSignersAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsignersathash)
 
 ## clique.getSignersAtHashAnnotated
 
 Retrieves the list of authorized signers at the specified block by hash but with signer names instead of addresses
 
-| Invocación |
-| :--- |
+| Invocación                               |
+| ---------------------------------------- |
 | `clique.getSignersAtHashAnnotated(hash)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSignersAtHashAnnotated" %}
@@ -154,23 +152,23 @@ clique.getSignersAtHashAnnotated(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathashannotated)
+[See also JSON RPC clique\_getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsignersathashannotated)
 
 ## clique.getSignersAtNumber
 
 Recupera la lista de firmantes autorizados en un bloque especificado por número de bloque.
 
-| Invocación |
-| :--- |
+| Invocación                          |
+| ----------------------------------- |
 | `clique.getSignersAtNumber(number)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| number    | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSignersAtNumber" %}
@@ -180,23 +178,22 @@ clique.getSignersAtNumber(number)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSignersAtNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersatnumber)
+[See also JSON RPC clique\_getSignersAtNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsignersatnumber)
 
 ## clique.getSnapshot
 
 Recupera una instantánea de todos los estados del clique en un bloque determinado.
 
-| Invocación |
-| :--- |
+| Invocación             |
+| ---------------------- |
 | `clique.getSnapshot()` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Snapshot object` |  |
+| Tipo de retorno   | Descripción |
+| ----------------- | ----------- |
+| `Snapshot object` |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSnapshot" %}
@@ -205,35 +202,35 @@ clique.getSnapshot()
 ```
 {% endtab %}
 
-{% tab title="Objects in clique\_getSnapshot" %}
+{% tab title="Objects in clique_getSnapshot" %}
 `Snapshot`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Number | `Quantity` |
-| Hash | `Hash` |
-| Signers | `Array` |
-| SignerLimit | `Quantity` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Number               | `Quantity` |
+| Hash                 | `Hash`     |
+| Signers              | `Array`    |
+| SignerLimit          | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSnapshot](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshot)
+[See also JSON RPC clique\_getSnapshot](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsnapshot)
 
 ## clique.getSnapshotAtHash
 
 Recupera el estado en un bloque determinado.
 
-| Invocación |
-| :--- |
+| Invocación                       |
+| -------------------------------- |
 | `clique.getSnapshotAtHash(hash)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Snapshot object` |  |
+| Tipo de retorno   | Descripción |
+| ----------------- | ----------- |
+| `Snapshot object` |             |
 
 {% tabs %}
 {% tab title="Example request of clique.getSnapshotAtHash" %}
@@ -242,35 +239,35 @@ clique.getSnapshotAtHash(hash)
 ```
 {% endtab %}
 
-{% tab title="Objects in clique\_getSnapshotAtHash" %}
+{% tab title="Objects in clique_getSnapshotAtHash" %}
 `Snapshot`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Number | `Quantity` |
-| Hash | `Hash` |
-| Signers | `Array` |
-| SignerLimit | `Quantity` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Number               | `Quantity` |
+| Hash                 | `Hash`     |
+| Signers              | `Array`    |
+| SignerLimit          | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_getSnapshotAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshotathash)
+[See also JSON RPC clique\_getSnapshotAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_getsnapshotathash)
 
 ## clique.produceBlock
 
 Forces Clique block producer to produce a new block
 
-| Invocación |
-| :--- |
+| Invocación                        |
+| --------------------------------- |
 | `clique.produceBlock(parentHash)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| parentHash | `Hash` |  |
+| Parámetro  | Tipo   | Descripción |
+| ---------- | ------ | ----------- |
+| parentHash | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.produceBlock" %}
@@ -280,24 +277,24 @@ clique.produceBlock(parentHash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_produceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_produceblock)
+[See also JSON RPC clique\_produceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_produceblock)
 
 ## clique.propose
 
 Agrega una nueva propuesta de autorización que el firmante intentará aprobar. Si el parámetro `vote` es true, el firmante local vota para que la dirección dada se incluya en el conjunto de firmantes autorizados. Con `vote` configurado como false, el firmante está en contra de la dirección.
 
-| Invocación |
-| :--- |
+| Invocación                     |
+| ------------------------------ |
 | `clique.propose(signer, vote)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| signer | `Address` |  |
-| vote | `Boolean` |  |
+| Parámetro | Tipo      | Descripción |
+| --------- | --------- | ----------- |
+| signer    | `Address` |             |
+| vote      | `Boolean` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
 {% tab title="Example request of clique.propose" %}
@@ -307,5 +304,4 @@ clique.propose(signer, vote)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC clique\_propose](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_propose)
-
+[See also JSON RPC clique\_propose](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique\_propose)

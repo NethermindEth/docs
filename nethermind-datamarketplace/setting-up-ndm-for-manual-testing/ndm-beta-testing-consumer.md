@@ -5,15 +5,14 @@ description: Running the consumer
 # Consumer
 
 * [x] Download the NDM package from the discord
-* [x] Run Consumer node:
+*   [x] Run Consumer node:
 
-  `ndm.launcher.exe` \(Windows\)  
-  `ndm.launcher.command` \(MacOs\)  
-  `ndm.launcher` \(Linux\).
-
+    `ndm.launcher.exe` (Windows)\
+    `ndm.launcher.command` (MacOs)\
+    `ndm.launcher` (Linux).
 * [x] Select `Consumer`
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](<../../.gitbook/assets/image (15).png>)
 
 * [x] Select the network
 
@@ -23,11 +22,11 @@ description: Running the consumer
 
 #### VIA Proxy
 
-* [x] Select **Ropsten \[VIA Proxy\]** and enter the proxy endpoint.
+* [x] Select **Ropsten \[VIA Proxy]** and enter the proxy endpoint.
 
 for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190)\`\`
 
-![](../../.gitbook/assets/image%20%2838%29.png)
+![](<../../.gitbook/assets/image (38).png>)
 
 ### xDai
 
@@ -35,15 +34,15 @@ for example: [`https://ropsten.infura.io/v3/8728eeb1128309974c528b1183533190`](h
 
 * [x] Select **xDai** network. Default sync type is **fast sync**.
 
-![](../../.gitbook/assets/image%20%28162%29.png)
+![](<../../.gitbook/assets/image (162).png>)
 
-* [x] Wait for the sync to complete \(~1 hour\)
+* [x] Wait for the sync to complete (\~1 hour)
 
 #### VIA Proxy
 
-* [x] Select **xDai \[VIA Proxy\]** and enter the proxy endpoint
+* [x] Select **xDai \[VIA Proxy]** and enter the proxy endpoint
 
-![](../../.gitbook/assets/image%20%28163%29.png)
+![](<../../.gitbook/assets/image (163).png>)
 
 ## Account
 
@@ -65,24 +64,23 @@ You will see a couple of data assets. For example **Crypto Compare Web Api** or 
 
 * [x] Continue by placing a deposit with the unit number of your choice.
 
-![Data assets view \(you will have more data assets avaliable to consume\)](../../.gitbook/assets/image%20%28117%29.png)
+![Data assets view (you will have more data assets avaliable to consume)](<../../.gitbook/assets/image (117).png>)
 
-* [x] After you make a deposit go to the **Deposits** tab. 
+* [x] After you make a deposit go to the **Deposits** tab.&#x20;
 
 When the deposit is unclonfirmed, please wait patiently for block confirmations.
 
 Once the deposit has been confirmaed, feel free to **open a data stream**.
 
-![Deposits view](../../.gitbook/assets/image%20%28123%29.png)
+![Deposits view](<../../.gitbook/assets/image (123).png>)
 
-* [x] After clicking the **Open data stream** button, you will be redirected to a view where you can enter requested query/stream parameters \(if required\) to receive the data.
+* [x] After clicking the **Open data stream** button, you will be redirected to a view where you can enter requested query/stream parameters (if required) to receive the data.
 
-![Consumed data stream from Crypto Compare Web Api](../../.gitbook/assets/image%20%28118%29.png)
+![Consumed data stream from Crypto Compare Web Api](<../../.gitbook/assets/image (118).png>)
 
 ### Queries examples for **Crypto Compare Web Api**
 
-`data/news/feeds    
-data/exchange/histoday?tsym=USD&limit=1    
-data/top/exchanges/full?fsym=BTC&tsym=USD    
-data/symbol/histoday?fsym=BTC&tsym=USD&limit=1`
-
+`data/news/feeds`  \
+`data/exchange/histoday?tsym=USD&limit=1`  \
+`data/top/exchanges/full?fsym=BTC&tsym=USD`  \
+`data/symbol/histoday?fsym=BTC&tsym=USD&limit=1`

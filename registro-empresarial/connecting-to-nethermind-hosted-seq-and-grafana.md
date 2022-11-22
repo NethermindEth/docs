@@ -2,23 +2,23 @@
 
 Contacta con el equipo de con el equipo de Nethermind - recibirás y enviaras tu inicio de sesión de Grafana Labs:
 
-\(1\) seq host
+(1) seq host
 
-\(2\) seq API key
+(2) seq API key
 
-\(3\) Prometheus URL
+(3) Prometheus URL
 
 En el archivo cfg edita:
 
-`"Metrics": {    
-"NodeName": "[chooseNameForYourNode]",    
-"Enabled": true,    
-"PushGatewayUrl": "[PrometheusURL]",    
-"IntervalSeconds": 30 },`
+`"Metrics": {`  \
+`"NodeName": "[chooseNameForYourNode]",`  \
+`"Enabled": true,`  \
+`"PushGatewayUrl": "[PrometheusURL]",`  \
+`"IntervalSeconds": 30 },`
 
 En el archivo NLog.config edita:
 
-```text
+```
  <target xsi:type="BufferingWrapper" name="seq" bufferSize="1000" flushTimeout="2000">
    <target xsi:type="Seq" serverUrl="[seqURL]" apiKey="[seqAPIkey]">
      <property name="ThreadId" value="${threadid}" as="number" />
@@ -36,4 +36,3 @@ En el archivo NLog.config edita:
 
 <logger name="*" minlevel="Info" writeTo="seq" />
 ```
-

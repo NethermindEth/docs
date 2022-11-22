@@ -2,18 +2,18 @@
 
 ## debug.config
 
-| Invocación |
-| :--- |
+| Invocación                     |
+| ------------------------------ |
 | `debug.config(category, name)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| category | `String` |  |
-| name | `String` |  |
+| Parámetro | Tipo     | Descripción |
+| --------- | -------- | ----------- |
+| category  | `String` |             |
+| name      | `String` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
 {% tab title="Example request of debug.config" %}
@@ -27,17 +27,17 @@ debug.config(category, name)
 
 Recupera un bloque en la forma serializada RLP.
 
-| Invocación |
-| :--- |
+| Invocación                  |
+| --------------------------- |
 | `debug.getBlockRlp(number)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| number    | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Data` |  |
+| --------------- | ----------- |
+| `Data`          |             |
 
 {% tabs %}
 {% tab title="Example request of debug.getBlockRlp" %}
@@ -47,23 +47,23 @@ debug.getBlockRlp(number)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_getBlockRlp](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getblockrlp)
+[See also JSON RPC debug\_getBlockRlp](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_getblockrlp)
 
 ## debug.getBlockRlpByHash
 
 Recupera un bloque en la forma serializada RLP.
 
-| Invocación |
-| :--- |
+| Invocación                      |
+| ------------------------------- |
 | `debug.getBlockRlpByHash(hash)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Data` |  |
+| --------------- | ----------- |
+| `Data`          |             |
 
 {% tabs %}
 {% tab title="Example request of debug.getBlockRlpByHash" %}
@@ -73,23 +73,23 @@ debug.getBlockRlpByHash(hash)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_getBlockRlpByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getblockrlpbyhash)
+[See also JSON RPC debug\_getBlockRlpByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_getblockrlpbyhash)
 
 ## debug.getChainLevel
 
-Recupera una representación de las ramas de los árboles en un nivel de cadena determinado  \(específico de Nethermind\).
+Recupera una representación de las ramas de los árboles en un nivel de cadena determinado  (específico de Nethermind).
 
-| Invocación |
-| :--- |
+| Invocación                    |
+| ----------------------------- |
 | `debug.getChainLevel(number)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| number    | `Quantity` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `ChainLevelForRpc object` |  |
+| Tipo de retorno           | Descripción |
+| ------------------------- | ----------- |
+| `ChainLevelForRpc object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.getChainLevel" %}
@@ -98,45 +98,45 @@ debug.getChainLevel(number)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_getChainLevel" %}
+{% tab title="Objects in debug_getChainLevel" %}
 `ChainLevelForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| BlockInfos | `BlockInfoForRpc[] object` |
-| HasBlockOnMainChain | `Boolean` |
+| Nombre de los campos | Tipo                       |
+| -------------------- | -------------------------- |
+| BlockInfos           | `BlockInfoForRpc[] object` |
+| HasBlockOnMainChain  | `Boolean`                  |
 
 `BlockInfoForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_getChainLevel](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_getchainlevel)
+[See also JSON RPC debug\_getChainLevel](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_getchainlevel)
 
 ## debug.migrateReceipts
 
-Establece el número de bloque hasta el que se migrarán los recibos a \(específico de Nethermind\).
+Establece el número de bloque hasta el que se migrarán los recibos a (específico de Nethermind).
 
-| Invocación |
-| :--- |
+| Invocación                           |
+| ------------------------------------ |
 | `debug.migrateReceipts(blockNumber)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockNumber | `Quantity` |  |
+| Parámetro   | Tipo       | Descripción |
+| ----------- | ---------- | ----------- |
+| blockNumber | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
 {% tab title="Example request of debug.migrateReceipts" %}
@@ -146,24 +146,24 @@ debug.migrateReceipts(blockNumber)
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_migrateReceipts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_migratereceipts)
+[See also JSON RPC debug\_migrateReceipts](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_migratereceipts)
 
 ## debug.traceBlock
 
 Devuelve un seguimiento completo de todos los códigos de operación invocados de todas las transacciones que se incluyeron en este bloque. El padre de este bloque debe estar presente o fallará.
 
-| Invocación |
-| :--- |
+| Invocación                            |
+| ------------------------------------- |
 | `debug.traceBlock(blockRlp, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockRlp  | `Data`                    |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceBlock" %}
@@ -172,45 +172,45 @@ debug.traceBlock(blockRlp, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlock" %}
+{% tab title="Objects in debug_traceBlock" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblock)
+[See also JSON RPC debug\_traceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_traceblock)
 
 ## debug.traceBlockByHash
 
-| Invocación |
-| :--- |
+| Invocación                                   |
+| -------------------------------------------- |
 | `debug.traceBlockByHash(blockHash, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockHash | `Hash`                    |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceBlockByHash" %}
@@ -219,45 +219,45 @@ debug.traceBlockByHash(blockHash, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByHash" %}
+{% tab title="Objects in debug_traceBlockByHash" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbyhash)
+[See also JSON RPC debug\_traceBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_traceblockbyhash)
 
 ## debug.traceBlockByNumber
 
-| Invocación |
-| :--- |
+| Invocación                                  |
+| ------------------------------------------- |
 | `debug.traceBlockByNumber(number, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| number    | `Quantity`                |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceBlockByNumber" %}
@@ -266,47 +266,47 @@ debug.traceBlockByNumber(number, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByNumber" %}
+{% tab title="Objects in debug_traceBlockByNumber" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceBlockByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_traceblockbynumber)
+[See also JSON RPC debug\_traceBlockByNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_traceblockbynumber)
 
 ## debug.traceTransaction
 
 Este método intentará ejecutar la transacción exactamente de la misma manera en que se ejecutó en la red. Reproducirá cualquier transacción que se haya ejecutado antes de esta antes de intentar finalmente ejecutar la transacción que corresponde al hash dado.
 
-| Invocación |
-| :--- |
+| Invocación                                         |
+| -------------------------------------------------- |
 | `debug.traceTransaction(transactionHash, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro       | Tipo                      | Descripción |
+| --------------- | ------------------------- | ----------- |
+| transactionHash | `Hash`                    |             |
+| options         | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceTransaction" %}
@@ -315,46 +315,46 @@ debug.traceTransaction(transactionHash, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransaction" %}
+{% tab title="Objects in debug_traceTransaction" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransaction)
+[See also JSON RPC debug\_traceTransaction](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_tracetransaction)
 
 ## debug.traceTransactionByBlockAndIndex
 
-| Invocación |
-| :--- |
+| Invocación                                                                |
+| ------------------------------------------------------------------------- |
 | `debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro      | Tipo                      | Descripción |
+| -------------- | ------------------------- | ----------- |
+| blockParameter | `BlockParameter object`   |             |
+| txIndex        | `Quantity`                |             |
+| options        | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceTransactionByBlockAndIndex" %}
@@ -363,59 +363,59 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockAndIndex" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactionbyblockandindex)
+[See also JSON RPC debug\_traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_tracetransactionbyblockandindex)
 
 ## debug.traceTransactionByBlockhashAndIndex
 
-| Invocación |
-| :--- |
+| Invocación                                                               |
+| ------------------------------------------------------------------------ |
 | `debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockHash | `Hash`                    |             |
+| txIndex   | `Quantity`                |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceTransactionByBlockhashAndIndex" %}
@@ -424,46 +424,46 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactionbyblockhashandindex)
+[See also JSON RPC debug\_traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_tracetransactionbyblockhashandindex)
 
 ## debug.traceTransactionInBlockByHash
 
-| Invocación |
-| :--- |
+| Invocación                                                                |
+| ------------------------------------------------------------------------- |
 | `debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro       | Tipo                      | Descripción |
+| --------------- | ------------------------- | ----------- |
+| blockRlp        | `Data`                    |             |
+| transactionHash | `Hash`                    |             |
+| options         | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceTransactionInBlockByHash" %}
@@ -472,46 +472,46 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
+{% tab title="Objects in debug_traceTransactionInBlockByHash" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactioninblockbyhash)
+[See also JSON RPC debug\_traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_tracetransactioninblockbyhash)
 
 ## debug.traceTransactionInBlockByIndex
 
-| Invocación |
-| :--- |
+| Invocación                                                         |
+| ------------------------------------------------------------------ |
 | `debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| Parámetro | Tipo                      | Descripción |
+| --------- | ------------------------- | ----------- |
+| blockRlp  | `Data`                    |             |
+| txIndex   | `Quantity`                |             |
+| options   | `GethTraceOptions object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| Tipo de retorno          | Descripción |
+| ------------------------ | ----------- |
+| `GethLikeTxTrace object` |             |
 
 {% tabs %}
 {% tab title="Example request of debug.traceTransactionInBlockByIndex" %}
@@ -520,28 +520,27 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
+{% tab title="Objects in debug_traceTransactionInBlockByIndex" %}
 `GethTraceOptions`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| Nombre de los campos | Tipo      |
+| -------------------- | --------- |
+| DisableStorage       | `Boolean` |
+| DisableMemory        | `Boolean` |
+| DisableStack         | `Boolean` |
+| Tracer               | `String`  |
+| Timeout              | `String`  |
 
 `GethLikeTxTrace`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| StoragesByDepth      | `Array`    |
+| Gas                  | `Quantity` |
+| Failed               | `Boolean`  |
+| ReturnValue          | `Data`     |
+| Entries              | `Array`    |
 {% endtab %}
 {% endtabs %}
 
-[See also JSON RPC debug\_traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug_tracetransactioninblockbyindex)
-
+[See also JSON RPC debug\_traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/debug#debug\_tracetransactioninblockbyindex)

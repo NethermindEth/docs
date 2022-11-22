@@ -1,29 +1,31 @@
 # Compilando Nethermind
 
-## IDE \(opcional \)
+## IDE (opcional )
 
 * [JetBrains Rider](https://www.jetbrains.com/rider/)
 * [VS Code](https://code.visualstudio.com/docs/other/dotnet)
 
 ## SDKs
 
-Para compilar Nethermind **1.9.\*** necesitarás  **.NET SDK 3.1** . Puedes descargarlo aquí \(asegúrate de seleccionar la plataforma y distribución correctas\):
+Para compilar Nethermind **1.9.\*** necesitarás **.NET SDK 3.1** . Puedes descargarlo aquí (asegúrate de seleccionar la plataforma y distribución correctas):
 
-{% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
+{% embed url="https://dotnet.microsoft.com/download" %}
+.NET SDK for Linux, macOS, Windows
+{% endembed %}
 
 Para compilar Nethermind **1.10.\*** necesitarás **.NET SDK 5.0** . Puedes descargarlo desde la URL anterior.
 
 ## Linux
 
 {% tabs %}
-{% tab title="Linux \(Ubuntu 18.04+/Debian 10\)" %}
-```text
+{% tab title="Linux (Ubuntu 18.04+/Debian 10)" %}
+```
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
 ```
 {% endtab %}
 
-{% tab title="Linux \(Ubuntu 16.04\)" %}
-```text
+{% tab title="Linux (Ubuntu 16.04)" %}
+```
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 && \
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test && \
 sudo apt-get update && \
@@ -32,8 +34,8 @@ sudo apt install libzstd1
 ```
 {% endtab %}
 
-{% tab title="Linux \(CentOS 8\)" %}
-```text
+{% tab title="Linux (CentOS 8)" %}
+```
 sudo yum install -y glibc-devel && \
 sudo yum install -y bzip2-devel && \
 sudo yum install -y libzstd && \
@@ -42,8 +44,8 @@ sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnap
 ```
 {% endtab %}
 
-{% tab title="Linux \(Fedora 31\)" %}
-```text
+{% tab title="Linux (Fedora 31)" %}
+```
 sudo yum install -y glibc-devel && \
 sudo yum install -y snappy && \
 sudo yum install -y libzstd && \
@@ -55,7 +57,7 @@ sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnap
 
 ## MacOS
 
-```text
+```
 brew install gmp snappy lz4 zstd
 ```
 
@@ -66,7 +68,7 @@ Es posible que debas instalar [https://support.microsoft.com/en-us/help/2977003/
 ## Todas las Plataformas
 
 {% hint style="warning" %}
-If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
+If dotnet command is not found then probably you forgot to install SDK (see instructions above)
 {% endhint %}
 
 {% hint style="info" %}
@@ -90,11 +92,11 @@ dotnet run --no-build -c Release -- --config goerli
 
 Puedes confirmar el último bloque de la tetsnet Goerli aquí:
 
-{% embed url="https://blockscout.com/eth/goerli/" caption="" %}
+{% embed url="https://blockscout.com/eth/goerli/" %}
 
 o para ejecutar Ethereum Mainnet
 
-```text
+```
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config mainnet
 ```
@@ -102,4 +104,3 @@ dotnet run --no-build -c Release -- --config mainnet
 ## Problemas Potenciales
 
 Si tiene instaladas algunas versiones preliminares de .NET Core instaladas, pueden causar conflictos. Su caso puede ser único, por lo que es mejor buscar ayuda en línea.
-

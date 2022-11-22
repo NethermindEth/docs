@@ -4,21 +4,20 @@
 
 Retorna el número de bloque actual
 
-| Invocación |
-| :--- |
+| Invocación                                 |
+| ------------------------------------------ |
 | `{"method":"eth_blockNumber","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_blockNumber" %}
-```text
+{% tab title="Example request of eth_blockNumber" %}
+```
 curl --data '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -28,50 +27,50 @@ curl --data '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}' -H
 
 ## eth\_call
 
-Ejecuta una llamada tx \(no crea una transacción\)
+Ejecuta una llamada tx (no crea una transacción)
 
-| Invocación |
-| :--- |
+| Invocación                                                         |
+| ------------------------------------------------------------------ |
 | `{"method":"eth_call","params":[transactionCall, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| transactionCall | `TransactionForRpc object` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro       | Tipo                       | Descripción |
+| --------------- | -------------------------- | ----------- |
+| transactionCall | `TransactionForRpc object` |             |
+| blockParameter  | `BlockParameter object`    |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_call" %}
-```text
+{% tab title="Example request of eth_call" %}
+```
 curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_call" %}
+{% tab title="Objects in eth_call" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -79,28 +78,28 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -110,30 +109,29 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 
 Retorna ChainID
 
-| Invocación |
-| :--- |
+| Invocación                             |
+| -------------------------------------- |
 | `{"method":"eth_chainId","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `UInt64 object` |  |
+| --------------- | ----------- |
+| `UInt64 object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_chainId" %}
-```text
+{% tab title="Example request of eth_chainId" %}
+```
 curl --data '{"method":"eth_chainId","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_chainId" %}
+{% tab title="Objects in eth_chainId" %}
 `UInt64`
 
 | Nombre de los campos | Tipo |
-| :--- | :--- |
+| -------------------- | ---- |
 {% endtab %}
 {% endtabs %}
 
@@ -141,55 +139,55 @@ curl --data '{"method":"eth_chainId","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 
 ## eth\_createAccessList
 
-Crea un \[EIP2930\] \([https://eips.ethereum.org/EIPS/eip-2930](https://eips.ethereum.org/EIPS/eip-2930)\) tipo AccessList para la transacción
+Crea un \[EIP2930] ([https://eips.ethereum.org/EIPS/eip-2930](https://eips.ethereum.org/EIPS/eip-2930)) tipo AccessList para la transacción
 
 {% hint style="info" %}
 **Hint:** If your transaction has code executed, then you can generate transaction access list with eth\_createAccessList. If you send it with your transaction then it will lower your gas cost on Ethereum
 {% endhint %}
 
-| Invocación |
-| :--- |
+| Invocación                                                                               |
+| ---------------------------------------------------------------------------------------- |
 | `{"method":"eth_createAccessList","params":[transactionCall, blockParameter, optimize]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
+| Parámetro       | Tipo                       | Descripción                |
+| --------------- | -------------------------- | -------------------------- |
 | transactionCall | `TransactionForRpc object` | Detalles de la transacción |
-| blockParameter | `BlockParameter object` | \(opcional\) |
-| optimizar | `Boolean` | \(opcional\) |
+| blockParameter  | `BlockParameter object`    | (opcional)                 |
+| optimizar       | `Boolean`                  | (opcional)                 |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `AccessListForRpc object` |  |
+| Tipo de retorno           | Descripción |
+| ------------------------- | ----------- |
+| `AccessListForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_createAccessList" %}
-```text
+{% tab title="Example request of eth_createAccessList" %}
+```
 curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockParameter, optimize],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_createAccessList" %}
+{% tab title="Objects in eth_createAccessList" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -197,35 +195,35 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `AccessListForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| AccessList | `AccessListItemForRpc[] object` |
-| GasUsed | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| AccessList           | `AccessListItemForRpc[] object` |
+| GasUsed              | `Quantity`                      |
 {% endtab %}
 {% endtabs %}
 
@@ -233,50 +231,50 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 
 ## eth\_estimateGas
 
-Ejecuta una llamada tx y retorna el gas usado \(no crea una transacción\)
+Ejecuta una llamada tx y retorna el gas usado (no crea una transacción)
 
-| Invocación |
-| :--- |
+| Invocación                                                                |
+| ------------------------------------------------------------------------- |
 | `{"method":"eth_estimateGas","params":[transactionCall, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| transactionCall | `TransactionForRpc object` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro       | Tipo                       | Descripción |
+| --------------- | -------------------------- | ----------- |
+| transactionCall | `TransactionForRpc object` |             |
+| blockParameter  | `BlockParameter object`    |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_estimateGas" %}
-```text
+{% tab title="Example request of eth_estimateGas" %}
+```
 curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_estimateGas" %}
+{% tab title="Objects in eth_estimateGas" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -284,28 +282,28 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -315,39 +313,39 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 
 Retorno el saldo de la cuenta
 
-| Invocación |
-| :--- |
+| Invocación                                                       |
+| ---------------------------------------------------------------- |
 | `{"method":"eth_getBalance","params":[address, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| address        | `Address`               |             |
+| blockParameter | `BlockParameter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getBalance" %}
-```text
+{% tab title="Example request of eth_getBalance" %}
+```
 curl --data '{"method":"eth_getBalance","params":[address, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getBalance" %}
+{% tab title="Objects in eth_getBalance" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -357,54 +355,54 @@ curl --data '{"method":"eth_getBalance","params":[address, blockParameter],"id":
 
 Recupera un bloque por hash
 
-| Invocación |
-| :--- |
+| Invocación                                                                           |
+| ------------------------------------------------------------------------------------ |
 | `{"method":"eth_getBlockByHash","params":[blockHash, returnFullTransactionObjects]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| returnFullTransactionObjects | `Boolean` |  |
+| Parámetro                    | Tipo      | Descripción |
+| ---------------------------- | --------- | ----------- |
+| blockHash                    | `Hash`    |             |
+| returnFullTransactionObjects | `Boolean` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `BlockForRpc object` |  |
+| Tipo de retorno      | Descripción |
+| -------------------- | ----------- |
+| `BlockForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getBlockByHash" %}
-```text
+{% tab title="Example request of eth_getBlockByHash" %}
+```
 curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTransactionObjects],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getBlockByHash" %}
+{% tab title="Objects in eth_getBlockByHash" %}
 `BlockForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Author | `Address` |
-| Difficulty | `Quantity` |
-| ExtraData | `Data` |
-| GasLimit | `Quantity` |
-| GasUsed | `Quantity` |
-| Hash | `Hash` |
-| LogsBloom | `Bloom Object` |
-| Miner | `Address` |
-| MixHash | `Hash` |
-| Nonce | `Data` |
-| Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
-| Signature | `Data` |
-| Size | `Quantity` |
-| StateRoot | `Hash` |
-| Step | `Quantity` |
-| TotalDifficulty | `Quantity` |
-| Timestamp | `Quantity` |
-| Transactions | `Array` |
-| TransactionsRoot | `Hash` |
-| Uncles | `Array` |
+| Nombre de los campos | Tipo           |
+| -------------------- | -------------- |
+| Author               | `Address`      |
+| Difficulty           | `Quantity`     |
+| ExtraData            | `Data`         |
+| GasLimit             | `Quantity`     |
+| GasUsed              | `Quantity`     |
+| Hash                 | `Hash`         |
+| LogsBloom            | `Bloom Object` |
+| Miner                | `Address`      |
+| MixHash              | `Hash`         |
+| Nonce                | `Data`         |
+| Number               | `Quantity`     |
+| ParentHash           | `Hash`         |
+| ReceiptsRoot         | `Hash`         |
+| Sha3Uncles           | `Hash`         |
+| Signature            | `Data`         |
+| Size                 | `Quantity`     |
+| StateRoot            | `Hash`         |
+| Step                 | `Quantity`     |
+| TotalDifficulty      | `Quantity`     |
+| Timestamp            | `Quantity`     |
+| Transactions         | `Array`        |
+| TransactionsRoot     | `Hash`         |
+| Uncles               | `Array`        |
 {% endtab %}
 {% endtabs %}
 
@@ -414,67 +412,67 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 
 Recupera un bloque por número
 
-| Invocación |
-| :--- |
+| Invocación                                                                                  |
+| ------------------------------------------------------------------------------------------- |
 | `{"method":"eth_getBlockByNumber","params":[blockParameter, returnFullTransactionObjects]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| returnFullTransactionObjects | `Boolean` |  |
+| Parámetro                    | Tipo                    | Descripción |
+| ---------------------------- | ----------------------- | ----------- |
+| blockParameter               | `BlockParameter object` |             |
+| returnFullTransactionObjects | `Boolean`               |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `BlockForRpc object` |  |
+| Tipo de retorno      | Descripción |
+| -------------------- | ----------- |
+| `BlockForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getBlockByNumber" %}
-```text
+{% tab title="Example request of eth_getBlockByNumber" %}
+```
 curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFullTransactionObjects],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getBlockByNumber" %}
+{% tab title="Objects in eth_getBlockByNumber" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `BlockForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Author | `Address` |
-| Difficulty | `Quantity` |
-| ExtraData | `Data` |
-| GasLimit | `Quantity` |
-| GasUsed | `Quantity` |
-| Hash | `Hash` |
-| LogsBloom | `Bloom Object` |
-| Miner | `Address` |
-| MixHash | `Hash` |
-| Nonce | `Data` |
-| Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
-| Signature | `Data` |
-| Size | `Quantity` |
-| StateRoot | `Hash` |
-| Step | `Quantity` |
-| TotalDifficulty | `Quantity` |
-| Timestamp | `Quantity` |
-| Transactions | `Array` |
-| TransactionsRoot | `Hash` |
-| Uncles | `Array` |
+| Nombre de los campos | Tipo           |
+| -------------------- | -------------- |
+| Author               | `Address`      |
+| Difficulty           | `Quantity`     |
+| ExtraData            | `Data`         |
+| GasLimit             | `Quantity`     |
+| GasUsed              | `Quantity`     |
+| Hash                 | `Hash`         |
+| LogsBloom            | `Bloom Object` |
+| Miner                | `Address`      |
+| MixHash              | `Hash`         |
+| Nonce                | `Data`         |
+| Number               | `Quantity`     |
+| ParentHash           | `Hash`         |
+| ReceiptsRoot         | `Hash`         |
+| Sha3Uncles           | `Hash`         |
+| Signature            | `Data`         |
+| Size                 | `Quantity`     |
+| StateRoot            | `Hash`         |
+| Step                 | `Quantity`     |
+| TotalDifficulty      | `Quantity`     |
+| Timestamp            | `Quantity`     |
+| Transactions         | `Array`        |
+| TransactionsRoot     | `Hash`         |
+| Uncles               | `Array`        |
 {% endtab %}
 {% endtabs %}
 
@@ -484,21 +482,21 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 
 Retorna el número de transacciones en el bloque hash
 
-| Invocación |
-| :--- |
+| Invocación                                                             |
+| ---------------------------------------------------------------------- |
 | `{"method":"eth_getBlockTransactionCountByHash","params":[blockHash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| blockHash | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getBlockTransactionCountByHash" %}
-```text
+{% tab title="Example request of eth_getBlockTransactionCountByHash" %}
+```
 curl --data '{"method":"eth_getBlockTransactionCountByHash","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -510,38 +508,38 @@ curl --data '{"method":"eth_getBlockTransactionCountByHash","params":[blockHash]
 
 Retorna el número de transacciones en el bloque por número de bloque
 
-| Invocación |
-| :--- |
+| Invocación                                                                    |
+| ----------------------------------------------------------------------------- |
 | `{"method":"eth_getBlockTransactionCountByNumber","params":[blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| blockParameter | `BlockParameter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getBlockTransactionCountByNumber" %}
-```text
+{% tab title="Example request of eth_getBlockTransactionCountByNumber" %}
+```
 curl --data '{"method":"eth_getBlockTransactionCountByNumber","params":[blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getBlockTransactionCountByNumber" %}
+{% tab title="Objects in eth_getBlockTransactionCountByNumber" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -551,39 +549,39 @@ curl --data '{"method":"eth_getBlockTransactionCountByNumber","params":[blockPar
 
 Retorna el código de cuenta en la dirección y el bloque dados
 
-| Invocación |
-| :--- |
+| Invocación                                                    |
+| ------------------------------------------------------------- |
 | `{"method":"eth_getCode","params":[address, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| address        | `Address`               |             |
+| blockParameter | `BlockParameter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Data` |  |
+| --------------- | ----------- |
+| `Data`          |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getCode" %}
-```text
+{% tab title="Example request of eth_getCode" %}
+```
 curl --data '{"method":"eth_getCode","params":[address, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getCode" %}
+{% tab title="Objects in eth_getCode" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -593,21 +591,21 @@ curl --data '{"method":"eth_getCode","params":[address, blockParameter],"id":1,"
 
 Lee cambios de filtro
 
-| Invocación |
-| :--- |
+| Invocación                                              |
+| ------------------------------------------------------- |
 | `{"method":"eth_getFilterChanges","params":[filterId]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| filterId | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| filterId  | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Array` |  |
+| --------------- | ----------- |
+| `Array`         |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getFilterChanges" %}
-```text
+{% tab title="Example request of eth_getFilterChanges" %}
+```
 curl --data '{"method":"eth_getFilterChanges","params":[filterId],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -619,21 +617,21 @@ curl --data '{"method":"eth_getFilterChanges","params":[filterId],"id":1,"jsonrp
 
 Lee cambios de filtro
 
-| Invocación |
-| :--- |
+| Invocación                                           |
+| ---------------------------------------------------- |
 | `{"method":"eth_getFilterLogs","params":[filterId]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| filterId | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| filterId  | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Array` |  |
+| --------------- | ----------- |
+| `Array`         |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getFilterLogs" %}
-```text
+{% tab title="Example request of eth_getFilterLogs" %}
+```
 curl --data '{"method":"eth_getFilterLogs","params":[filterId],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -643,43 +641,43 @@ curl --data '{"method":"eth_getFilterLogs","params":[filterId],"id":1,"jsonrpc":
 
 Lee registros
 
-| Invocación |
-| :--- |
+| Invocación                                   |
+| -------------------------------------------- |
 | `{"method":"eth_getLogs","params":[filter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| filter | `Filter object` |  |
+| Parámetro | Tipo            | Descripción |
+| --------- | --------------- | ----------- |
+| filter    | `Filter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Array` |  |
+| --------------- | ----------- |
+| `Array`         |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getLogs" %}
-```text
+{% tab title="Example request of eth_getLogs" %}
+```
 curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getLogs" %}
+{% tab title="Objects in eth_getLogs" %}
 `Filter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| FromBlock | `BlockParameter object` |
-| ToBlock | `BlockParameter object` |
-| Address | `Object` |
-| Topics | `Array` |
+| Nombre de los campos | Tipo                    |
+| -------------------- | ----------------------- |
+| FromBlock            | `BlockParameter object` |
+| ToBlock              | `BlockParameter object` |
+| Address              | `Object`                |
+| Topics               | `Array`                 |
 
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 {% endtab %}
 {% endtabs %}
 
@@ -689,64 +687,64 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 
 [https://github.com/ethereum/EIPs/issues/1186](https://github.com/ethereum/EIPs/issues/1186)
 
-| Invocación |
-| :--- |
+| Invocación                                                                      |
+| ------------------------------------------------------------------------------- |
 | `{"method":"eth_getProof","params":[accountAddress, hashRate, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| accountAddress | `Address` |  |
-| hashRate | `Data` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| accountAddress | `Address`               |             |
+| hashRate       | `Data`                  |             |
+| blockParameter | `BlockParameter object` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `AccountProof object` |  |
+| Tipo de retorno       | Descripción |
+| --------------------- | ----------- |
+| `AccountProof object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getProof" %}
-```text
+{% tab title="Example request of eth_getProof" %}
+```
 curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getProof" %}
+{% tab title="Objects in eth_getProof" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `AccountProof`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Address | `Address` |
-| Proof | `Data` |
-| Balance | `Quantity` |
-| CodeHash | `Hash` |
-| Nonce | `Quantity` |
-| StorageRoot | `Hash` |
-| StorageProofs | `StorageProof[] object` |
+| Nombre de los campos | Tipo                    |
+| -------------------- | ----------------------- |
+| Address              | `Address`               |
+| Proof                | `Data`                  |
+| Balance              | `Quantity`              |
+| CodeHash             | `Hash`                  |
+| Nonce                | `Quantity`              |
+| StorageRoot          | `Hash`                  |
+| StorageProofs        | `StorageProof[] object` |
 
 `StorageProof[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -756,40 +754,40 @@ curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockP
 
 Retorna los datos de almacenamiento en la dirección. storage\_index
 
-| Invocación |
-| :--- |
+| Invocación                                                                        |
+| --------------------------------------------------------------------------------- |
 | `{"method":"eth_getStorageAt","params":[address, positionIndex, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-| positionIndex | `Quantity` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| address        | `Address`               |             |
+| positionIndex  | `Quantity`              |             |
+| blockParameter | `BlockParameter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Data` |  |
+| --------------- | ----------- |
+| `Data`          |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getStorageAt" %}
-```text
+{% tab title="Example request of eth_getStorageAt" %}
+```
 curl --data '{"method":"eth_getStorageAt","params":[address, positionIndex, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getStorageAt" %}
+{% tab title="Objects in eth_getStorageAt" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -799,48 +797,48 @@ curl --data '{"method":"eth_getStorageAt","params":[address, positionIndex, bloc
 
 Retorna una transacción por bloque hash e índice
 
-| Invocación |
-| :--- |
+| Invocación                                                                               |
+| ---------------------------------------------------------------------------------------- |
 | `{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHash, positionIndex]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| positionIndex | `Quantity` |  |
+| Parámetro     | Tipo       | Descripción |
+| ------------- | ---------- | ----------- |
+| blockHash     | `Hash`     |             |
+| positionIndex | `Quantity` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TransactionForRpc object` |  |
+| Tipo de retorno            | Descripción |
+| -------------------------- | ----------- |
+| `TransactionForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getTransactionByBlockHashAndIndex" %}
-```text
+{% tab title="Example request of eth_getTransactionByBlockHashAndIndex" %}
+```
 curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHash, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getTransactionByBlockHashAndIndex" %}
+{% tab title="Objects in eth_getTransactionByBlockHashAndIndex" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -848,15 +846,15 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -864,61 +862,61 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 
 Retorna una transacción por número de bloque e índice
 
-| Invocación |
-| :--- |
+| Invocación                                                                                      |
+| ----------------------------------------------------------------------------------------------- |
 | `{"method":"eth_getTransactionByBlockNumberAndIndex","params":[blockParameter, positionIndex]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| positionIndex | `Quantity` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| blockParameter | `BlockParameter object` |             |
+| positionIndex  | `Quantity`              |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TransactionForRpc object` |  |
+| Tipo de retorno            | Descripción |
+| -------------------------- | ----------- |
+| `TransactionForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getTransactionByBlockNumberAndIndex" %}
-```text
+{% tab title="Example request of eth_getTransactionByBlockNumberAndIndex" %}
+```
 curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[blockParameter, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getTransactionByBlockNumberAndIndex" %}
+{% tab title="Objects in eth_getTransactionByBlockNumberAndIndex" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -926,15 +924,15 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -944,47 +942,47 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 
 Recupera una transacción por hash
 
-| Invocación |
-| :--- |
+| Invocación                                                         |
+| ------------------------------------------------------------------ |
 | `{"method":"eth_getTransactionByHash","params":[transactionHash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
+| Parámetro       | Tipo   | Descripción |
+| --------------- | ------ | ----------- |
+| transactionHash | `Hash` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TransactionForRpc object` |  |
+| Tipo de retorno            | Descripción |
+| -------------------------- | ----------- |
+| `TransactionForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getTransactionByHash" %}
-```text
+{% tab title="Example request of eth_getTransactionByHash" %}
+```
 curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getTransactionByHash" %}
+{% tab title="Objects in eth_getTransactionByHash" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -992,15 +990,15 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -1008,41 +1006,41 @@ curl --data '{"method":"eth_getTransactionByHash","params":[transactionHash],"id
 
 ## eth\_getTransactionCount
 
-Retorna la cuenta nonce \(número de transacciones de la cuenta desde el génesis\) en el número de bloque dado
+Retorna la cuenta nonce (número de transacciones de la cuenta desde el génesis) en el número de bloque dado
 
-| Invocación |
-| :--- |
+| Invocación                                                                |
+| ------------------------------------------------------------------------- |
 | `{"method":"eth_getTransactionCount","params":[address, blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| address        | `Address`               |             |
+| blockParameter | `BlockParameter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getTransactionCount" %}
-```text
+{% tab title="Example request of eth_getTransactionCount" %}
+```
 curl --data '{"method":"eth_getTransactionCount","params":[address, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getTransactionCount" %}
+{% tab title="Objects in eth_getTransactionCount" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -1052,57 +1050,57 @@ curl --data '{"method":"eth_getTransactionCount","params":[address, blockParamet
 
 Retorna un recibo de transacción por tx hash
 
-| Invocación |
-| :--- |
+| Invocación                                                     |
+| -------------------------------------------------------------- |
 | `{"method":"eth_getTransactionReceipt","params":[txHashData]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| txHashData | `Hash` |  |
+| Parámetro  | Tipo   | Descripción |
+| ---------- | ------ | ----------- |
+| txHashData | `Hash` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `ReceiptForRpc object` |  |
+| Tipo de retorno        | Descripción |
+| ---------------------- | ----------- |
+| `ReceiptForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getTransactionReceipt" %}
-```text
+{% tab title="Example request of eth_getTransactionReceipt" %}
+```
 curl --data '{"method":"eth_getTransactionReceipt","params":[txHashData],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getTransactionReceipt" %}
+{% tab title="Objects in eth_getTransactionReceipt" %}
 `ReceiptForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| TransactionHash | `Hash` |
-| TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| CumulativeGasUsed | `Quantity` |
-| GasUsed | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| ContractAddress | `Address` |
-| Logs | `LogEntryForRpc[] object` |
-| LogsBloom | `Bloom Object` |
-| Root | `Hash` |
-| Status | `Quantity` |
-| Error | `String` |
-| Tipo | `TxType object` |
+| Nombre de los campos | Tipo                      |
+| -------------------- | ------------------------- |
+| TransactionHash      | `Hash`                    |
+| TransactionIndex     | `Quantity`                |
+| BlockHash            | `Hash`                    |
+| BlockNumber          | `Quantity`                |
+| CumulativeGasUsed    | `Quantity`                |
+| GasUsed              | `Quantity`                |
+| From                 | `Address`                 |
+| To                   | `Address`                 |
+| ContractAddress      | `Address`                 |
+| Logs                 | `LogEntryForRpc[] object` |
+| LogsBloom            | `Bloom Object`            |
+| Root                 | `Hash`                    |
+| Status               | `Quantity`                |
+| Error                | `String`                  |
+| Tipo                 | `TxType object`           |
 
 `LogEntryForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 
 `TxType`
 
@@ -1116,54 +1114,54 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[txHashData],"id":1,
 
 Recupera un encabezado de bloque de tío por hash de bloque e índice de tío
 
-| Invocación |
-| :--- |
+| Invocación                                                                             |
+| -------------------------------------------------------------------------------------- |
 | `{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData, positionIndex]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHashData | `Hash` |  |
-| positionIndex | `Quantity` |  |
+| Parámetro     | Tipo       | Descripción |
+| ------------- | ---------- | ----------- |
+| blockHashData | `Hash`     |             |
+| positionIndex | `Quantity` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `BlockForRpc object` |  |
+| Tipo de retorno      | Descripción |
+| -------------------- | ----------- |
+| `BlockForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getUncleByBlockHashAndIndex" %}
-```text
+{% tab title="Example request of eth_getUncleByBlockHashAndIndex" %}
+```
 curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getUncleByBlockHashAndIndex" %}
+{% tab title="Objects in eth_getUncleByBlockHashAndIndex" %}
 `BlockForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Author | `Address` |
-| Difficulty | `Quantity` |
-| ExtraData | `Data` |
-| GasLimit | `Quantity` |
-| GasUsed | `Quantity` |
-| Hash | `Hash` |
-| LogsBloom | `Bloom Object` |
-| Miner | `Address` |
-| MixHash | `Hash` |
-| Nonce | `Data` |
-| Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
-| Signature | `Data` |
-| Size | `Quantity` |
-| StateRoot | `Hash` |
-| Step | `Quantity` |
-| TotalDifficulty | `Quantity` |
-| Timestamp | `Quantity` |
-| Transactions | `Array` |
-| TransactionsRoot | `Hash` |
-| Uncles | `Array` |
+| Nombre de los campos | Tipo           |
+| -------------------- | -------------- |
+| Author               | `Address`      |
+| Difficulty           | `Quantity`     |
+| ExtraData            | `Data`         |
+| GasLimit             | `Quantity`     |
+| GasUsed              | `Quantity`     |
+| Hash                 | `Hash`         |
+| LogsBloom            | `Bloom Object` |
+| Miner                | `Address`      |
+| MixHash              | `Hash`         |
+| Nonce                | `Data`         |
+| Number               | `Quantity`     |
+| ParentHash           | `Hash`         |
+| ReceiptsRoot         | `Hash`         |
+| Sha3Uncles           | `Hash`         |
+| Signature            | `Data`         |
+| Size                 | `Quantity`     |
+| StateRoot            | `Hash`         |
+| Step                 | `Quantity`     |
+| TotalDifficulty      | `Quantity`     |
+| Timestamp            | `Quantity`     |
+| Transactions         | `Array`        |
+| TransactionsRoot     | `Hash`         |
+| Uncles               | `Array`        |
 {% endtab %}
 {% endtabs %}
 
@@ -1173,67 +1171,67 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 
 Recupera el header de bloque de tío por número de bloque e índice de tío
 
-| Invocación |
-| :--- |
+| Invocación                                                                                |
+| ----------------------------------------------------------------------------------------- |
 | `{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParameter, positionIndex]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| positionIndex | `Quantity` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| blockParameter | `BlockParameter object` |             |
+| positionIndex  | `Quantity`              |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `BlockForRpc object` |  |
+| Tipo de retorno      | Descripción |
+| -------------------- | ----------- |
+| `BlockForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getUncleByBlockNumberAndIndex" %}
-```text
+{% tab title="Example request of eth_getUncleByBlockNumberAndIndex" %}
+```
 curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParameter, positionIndex],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getUncleByBlockNumberAndIndex" %}
+{% tab title="Objects in eth_getUncleByBlockNumberAndIndex" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 
 `BlockForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Author | `Address` |
-| Difficulty | `Quantity` |
-| ExtraData | `Data` |
-| GasLimit | `Quantity` |
-| GasUsed | `Quantity` |
-| Hash | `Hash` |
-| LogsBloom | `Bloom Object` |
-| Miner | `Address` |
-| MixHash | `Hash` |
-| Nonce | `Data` |
-| Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
-| Signature | `Data` |
-| Size | `Quantity` |
-| StateRoot | `Hash` |
-| Step | `Quantity` |
-| TotalDifficulty | `Quantity` |
-| Timestamp | `Quantity` |
-| Transactions | `Array` |
-| TransactionsRoot | `Hash` |
-| Uncles | `Array` |
+| Nombre de los campos | Tipo           |
+| -------------------- | -------------- |
+| Author               | `Address`      |
+| Difficulty           | `Quantity`     |
+| ExtraData            | `Data`         |
+| GasLimit             | `Quantity`     |
+| GasUsed              | `Quantity`     |
+| Hash                 | `Hash`         |
+| LogsBloom            | `Bloom Object` |
+| Miner                | `Address`      |
+| MixHash              | `Hash`         |
+| Nonce                | `Data`         |
+| Number               | `Quantity`     |
+| ParentHash           | `Hash`         |
+| ReceiptsRoot         | `Hash`         |
+| Sha3Uncles           | `Hash`         |
+| Signature            | `Data`         |
+| Size                 | `Quantity`     |
+| StateRoot            | `Hash`         |
+| Step                 | `Quantity`     |
+| TotalDifficulty      | `Quantity`     |
+| Timestamp            | `Quantity`     |
+| Transactions         | `Array`        |
+| TransactionsRoot     | `Hash`         |
+| Uncles               | `Array`        |
 {% endtab %}
 {% endtabs %}
 
@@ -1243,21 +1241,21 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 
 Retorna el número de tíos en el bloque por hash de bloque
 
-| Invocación |
-| :--- |
+| Invocación                                                       |
+| ---------------------------------------------------------------- |
 | `{"method":"eth_getUncleCountByBlockHash","params":[blockHash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| blockHash | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getUncleCountByBlockHash" %}
-```text
+{% tab title="Example request of eth_getUncleCountByBlockHash" %}
+```
 curl --data '{"method":"eth_getUncleCountByBlockHash","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -1267,38 +1265,38 @@ curl --data '{"method":"eth_getUncleCountByBlockHash","params":[blockHash],"id":
 
 Retorna el número de tíos en el bloque por número de bloque
 
-| Invocación |
-| :--- |
+| Invocación                                                              |
+| ----------------------------------------------------------------------- |
 | `{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
+| Parámetro      | Tipo                    | Descripción |
+| -------------- | ----------------------- | ----------- |
+| blockParameter | `BlockParameter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_getUncleCountByBlockNumber" %}
-```text
+{% tab title="Example request of eth_getUncleCountByBlockNumber" %}
+```
 curl --data '{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_getUncleCountByBlockNumber" %}
+{% tab title="Objects in eth_getUncleCountByBlockNumber" %}
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 
 `BlockParameterType`
 
-* `Quantity` o  `String` \(latest, earliest, pending\)
+* `Quantity` o  `String` (latest, earliest, pending)
 {% endtab %}
 {% endtabs %}
 
@@ -1308,21 +1306,20 @@ curl --data '{"method":"eth_getUncleCountByBlockNumber","params":[blockParameter
 
 Crea un filtro de actualización
 
-| Invocación |
-| :--- |
+| Invocación                                    |
+| --------------------------------------------- |
 | `{"method":"eth_newBlockFilter","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_newBlockFilter" %}
-```text
+{% tab title="Example request of eth_newBlockFilter" %}
+```
 curl --data '{"method":"eth_newBlockFilter","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -1332,43 +1329,43 @@ curl --data '{"method":"eth_newBlockFilter","params":[],"id":1,"jsonrpc":"2.0"}'
 
 Crea un filtro de actualización
 
-| Invocación |
-| :--- |
+| Invocación                                     |
+| ---------------------------------------------- |
 | `{"method":"eth_newFilter","params":[filter]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| filter | `Filter object` |  |
+| Parámetro | Tipo            | Descripción |
+| --------- | --------------- | ----------- |
+| filter    | `Filter object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_newFilter" %}
-```text
+{% tab title="Example request of eth_newFilter" %}
+```
 curl --data '{"method":"eth_newFilter","params":[filter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_newFilter" %}
+{% tab title="Objects in eth_newFilter" %}
 `Filter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| FromBlock | `BlockParameter object` |
-| ToBlock | `BlockParameter object` |
-| Address | `Object` |
-| Topics | `Array` |
+| Nombre de los campos | Tipo                    |
+| -------------------- | ----------------------- |
+| FromBlock            | `BlockParameter object` |
+| ToBlock              | `BlockParameter object` |
+| Address              | `Object`                |
+| Topics               | `Array`                 |
 
 `BlockParameter`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Tipo | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| Nombre de los campos | Tipo                        |
+| -------------------- | --------------------------- |
+| Tipo                 | `BlockParameterType object` |
+| BlockNumber          | `Quantity`                  |
+| BlockHash            | `Hash`                      |
+| RequireCanonical     | `Boolean`                   |
 {% endtab %}
 {% endtabs %}
 
@@ -1376,21 +1373,20 @@ curl --data '{"method":"eth_newFilter","params":[filter],"id":1,"jsonrpc":"2.0"}
 
 Crea un filtro de actualización
 
-| Invocación |
-| :--- |
+| Invocación                                                 |
+| ---------------------------------------------------------- |
 | `{"method":"eth_newPendingTransactionFilter","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Quantity` |  |
+| --------------- | ----------- |
+| `Quantity`      |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_newPendingTransactionFilter" %}
-```text
+{% tab title="Example request of eth_newPendingTransactionFilter" %}
+```
 curl --data '{"method":"eth_newPendingTransactionFilter","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -1402,47 +1398,46 @@ curl --data '{"method":"eth_newPendingTransactionFilter","params":[],"id":1,"jso
 
 Retorna la lista de transacciones pendientes
 
-| Invocación |
-| :--- |
+| Invocación                                         |
+| -------------------------------------------------- |
 | `{"method":"eth_pendingTransactions","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TransactionForRpc object` |  |
+| Tipo de retorno            | Descripción |
+| -------------------------- | ----------- |
+| `TransactionForRpc object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_pendingTransactions" %}
-```text
+{% tab title="Example request of eth_pendingTransactions" %}
+```
 curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_pendingTransactions" %}
+{% tab title="Objects in eth_pendingTransactions" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -1450,15 +1445,15 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -1468,21 +1463,20 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 
 Retorna la versión del protocolo ETH
 
-| Invocación |
-| :--- |
+| Invocación                                     |
+| ---------------------------------------------- |
 | `{"method":"eth_protocolVersion","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_protocolVersion" %}
-```text
+{% tab title="Example request of eth_protocolVersion" %}
+```
 curl --data '{"method":"eth_protocolVersion","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -1494,21 +1488,21 @@ curl --data '{"method":"eth_protocolVersion","params":[],"id":1,"jsonrpc":"2.0"}
 
 Envíe una transacción sin procesar al tx pool y al broadcasting
 
-| Invocación |
-| :--- |
+| Invocación                                                   |
+| ------------------------------------------------------------ |
 | `{"method":"eth_sendRawTransaction","params":[transaction]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| transaction | `Data` |  |
+| Parámetro   | Tipo   | Descripción |
+| ----------- | ------ | ----------- |
+| transaction | `Data` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Hash` |  |
+| --------------- | ----------- |
+| `Hash`          |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_sendRawTransaction" %}
-```text
+{% tab title="Example request of eth_sendRawTransaction" %}
+```
 curl --data '{"method":"eth_sendRawTransaction","params":[transaction],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -1520,47 +1514,47 @@ curl --data '{"method":"eth_sendRawTransaction","params":[transaction],"id":1,"j
 
 Envíe una transacción al tx pool y al broadcasting
 
-| Invocación |
-| :--- |
+| Invocación                                          |
+| --------------------------------------------------- |
 | `{"method":"eth_sendTransaction","params":[rpcTx]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| rpcTx | `TransactionForRpc object` |  |
+| Parámetro | Tipo                       | Descripción |
+| --------- | -------------------------- | ----------- |
+| rpcTx     | `TransactionForRpc object` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Hash` |  |
+| --------------- | ----------- |
+| `Hash`          |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_sendTransaction" %}
-```text
+{% tab title="Example request of eth_sendTransaction" %}
+```
 curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_sendTransaction" %}
+{% tab title="Objects in eth_sendTransaction" %}
 `TransactionForRpc`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| Tipo | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
+| Nombre de los campos | Tipo                            |
+| -------------------- | ------------------------------- |
+| Hash                 | `Hash`                          |
+| Nonce                | `Quantity`                      |
+| BlockHash            | `Hash`                          |
+| BlockNumber          | `Quantity`                      |
+| TransactionIndex     | `Quantity`                      |
+| From                 | `Address`                       |
+| To                   | `Address`                       |
+| Value                | `Quantity`                      |
+| GasPrice             | `Quantity`                      |
+| Gas                  | `Quantity`                      |
+| Data                 | `Data`                          |
+| Input                | `Data`                          |
+| Tipo                 | `TxType object`                 |
+| AccessList           | `AccessListItemForRpc[] object` |
+| V                    | `Quantity`                      |
+| S                    | `Quantity`                      |
+| R                    | `Quantity`                      |
 
 `TxType`
 
@@ -1568,15 +1562,15 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 
 `AccessListItemForRpc[]`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Length               | `Quantity` |
+| LongLength           | `Quantity` |
+| Rank                 | `Quantity` |
+| SyncRoot             | `Object`   |
+| IsReadOnly           | `Boolean`  |
+| IsFixedSize          | `Boolean`  |
+| IsSynchronized       | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -1586,34 +1580,33 @@ curl --data '{"method":"eth_sendTransaction","params":[rpcTx],"id":1,"jsonrpc":"
 
 Retorna el estado de sincronización
 
-| Invocación |
-| :--- |
+| Invocación                             |
+| -------------------------------------- |
 | `{"method":"eth_syncing","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `SyncingResult object` |  |
+| Tipo de retorno        | Descripción |
+| ---------------------- | ----------- |
+| `SyncingResult object` |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_syncing" %}
-```text
+{% tab title="Example request of eth_syncing" %}
+```
 curl --data '{"method":"eth_syncing","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in eth\_syncing" %}
+{% tab title="Objects in eth_syncing" %}
 `SyncingResult`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| IsSyncing | `Boolean` |
-| StartingBlock | `Quantity` |
-| CurrentBlock | `Quantity` |
-| HighestBlock | `Quantity` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| IsSyncing            | `Boolean`  |
+| StartingBlock        | `Quantity` |
+| CurrentBlock         | `Quantity` |
+| HighestBlock         | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1623,23 +1616,22 @@ curl --data '{"method":"eth_syncing","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 
 Crea un filtro de actualización
 
-| Invocación |
-| :--- |
+| Invocación                                             |
+| ------------------------------------------------------ |
 | `{"method":"eth_uninstallFilter","params":[filterId]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| filterId | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| filterId  | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of eth\_uninstallFilter" %}
-```text
+{% tab title="Example request of eth_uninstallFilter" %}
+```
 curl --data '{"method":"eth_uninstallFilter","params":[filterId],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
-

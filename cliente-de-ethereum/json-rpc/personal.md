@@ -2,22 +2,22 @@
 
 ## personal\_importRawKey
 
-| Invocación |
-| :--- |
+| Invocación                                                          |
+| ------------------------------------------------------------------- |
 | `{"method":"personal_importRawKey","params":[keyData, passphrase]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| keyData | `Data` |  |
-| passphrase | `String` |  |
+| Parámetro  | Tipo     | Descripción |
+| ---------- | -------- | ----------- |
+| keyData    | `Data`   |             |
+| passphrase | `String` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of personal\_importRawKey" %}
-```text
+{% tab title="Example request of personal_importRawKey" %}
+```
 curl --data '{"method":"personal_importRawKey","params":[keyData, passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -27,21 +27,20 @@ curl --data '{"method":"personal_importRawKey","params":[keyData, passphrase],"i
 
 ## personal\_listAccounts
 
-| Invocación |
-| :--- |
+| Invocación                                       |
+| ------------------------------------------------ |
 | `{"method":"personal_listAccounts","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of personal\_listAccounts" %}
-```text
+{% tab title="Example request of personal_listAccounts" %}
+```
 curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -51,21 +50,21 @@ curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0
 
 ## personal\_lockAccount
 
-| Invocación |
-| :--- |
+| Invocación                                             |
+| ------------------------------------------------------ |
 | `{"method":"personal_lockAccount","params":[address]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| address | `Address` |  |
+| Parámetro | Tipo      | Descripción |
+| --------- | --------- | ----------- |
+| address   | `Address` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of personal\_lockAccount" %}
-```text
+{% tab title="Example request of personal_lockAccount" %}
+```
 curl --data '{"method":"personal_lockAccount","params":[address],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -75,21 +74,21 @@ curl --data '{"method":"personal_lockAccount","params":[address],"id":1,"jsonrpc
 
 ## personal\_newAccount
 
-| Invocación |
-| :--- |
+| Invocación                                               |
+| -------------------------------------------------------- |
 | `{"method":"personal_newAccount","params":[passphrase]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| passphrase | `String` |  |
+| Parámetro  | Tipo     | Descripción |
+| ---------- | -------- | ----------- |
+| passphrase | `String` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of personal\_newAccount" %}
-```text
+{% tab title="Example request of personal_newAccount" %}
+```
 curl --data '{"method":"personal_newAccount","params":[passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -99,26 +98,25 @@ curl --data '{"method":"personal_newAccount","params":[passphrase],"id":1,"jsonr
 
 ## personal\_unlockAccount
 
-| Invocación |
-| :--- |
+| Invocación                                                           |
+| -------------------------------------------------------------------- |
 | `{"method":"personal_unlockAccount","params":[address, passphrase]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-| passphrase | `String` |  |
+| Parámetro  | Tipo      | Descripción |
+| ---------- | --------- | ----------- |
+| address    | `Address` |             |
+| passphrase | `String`  |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of personal\_unlockAccount" %}
-```text
+{% tab title="Example request of personal_unlockAccount" %}
+```
 curl --data '{"method":"personal_unlockAccount","params":[address, passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [ingrese a CLI personal.unlockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-unlockaccount)
-

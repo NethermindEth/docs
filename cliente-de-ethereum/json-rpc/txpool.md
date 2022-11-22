@@ -4,32 +4,31 @@
 
 Returns tx pool content.
 
-| Invocación |
-| :--- |
+| Invocación                                |
+| ----------------------------------------- |
 | `{"method":"txpool_content","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TxPoolContent object` |  |
+| Tipo de retorno        | Descripción |
+| ---------------------- | ----------- |
+| `TxPoolContent object` |             |
 
 {% tabs %}
-{% tab title="Example request of txpool\_content" %}
-```text
+{% tab title="Example request of txpool_content" %}
+```
 curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool\_content" %}
+{% tab title="Objects in txpool_content" %}
 `TxPoolContent`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Pending | `Array` |
-| Queued | `Array` |
+| Nombre de los campos | Tipo    |
+| -------------------- | ------- |
+| Pending              | `Array` |
+| Queued               | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -39,32 +38,31 @@ curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 Returns a detailed info on tx pool transactions.
 
-| Invocación |
-| :--- |
+| Invocación                                |
+| ----------------------------------------- |
 | `{"method":"txpool_inspect","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TxPoolInspection object` |  |
+| Tipo de retorno           | Descripción |
+| ------------------------- | ----------- |
+| `TxPoolInspection object` |             |
 
 {% tabs %}
-{% tab title="Example request of txpool\_inspect" %}
-```text
+{% tab title="Example request of txpool_inspect" %}
+```
 curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool\_inspect" %}
+{% tab title="Objects in txpool_inspect" %}
 `TxPoolInspection`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Pending | `Array` |
-| Queued | `Array` |
+| Nombre de los campos | Tipo    |
+| -------------------- | ------- |
+| Pending              | `Array` |
+| Queued               | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -74,34 +72,32 @@ curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 Returns a tx pool status.
 
-| Invocación |
-| :--- |
+| Invocación                               |
+| ---------------------------------------- |
 | `{"method":"txpool_status","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `TxPoolStatus object` |  |
+| Tipo de retorno       | Descripción |
+| --------------------- | ----------- |
+| `TxPoolStatus object` |             |
 
 {% tabs %}
-{% tab title="Example request of txpool\_status" %}
-```text
+{% tab title="Example request of txpool_status" %}
+```
 curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool\_status" %}
+{% tab title="Objects in txpool_status" %}
 `TxPoolStatus`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Pending | `Quantity` |
-| Queued | `Quantity` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Pending              | `Quantity` |
+| Queued               | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
 [See also CLI txpool.status](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-status)
-

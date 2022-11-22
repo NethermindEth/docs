@@ -36,10 +36,10 @@ For now we support **xDai** network and testnets networks like **Ropsten**, **Go
 
 ## Do I need to wait for sync and how long?
 
-Yes, but don't worry everything is prepared. With the package you will get ready to use configs. After run NDM, you will be asked to select the client type \(consumer or provider\) and then type of the network. After that the sync will start.
+Yes, but don't worry everything is prepared. With the package you will get ready to use configs. After run NDM, you will be asked to select the client type (consumer or provider) and then type of the network. After that the sync will start.
 
 * Ethereum testnets estimated time depends on the network type - 1 to several hours.
-* **xDai** chain \(default fast sync\) 1 - 2 hours. 
+* **xDai** chain (default fast sync) 1 - 2 hours.&#x20;
 
 ## What cryptocurrency can I use in NDM?
 
@@ -55,7 +55,7 @@ Yes, you can. Just copy your keystore file info`keystore` folder and that's it. 
 
 ## **I created the account but I still have no money on it, what should I do?**
 
-You can use [Ramp Network](https://ramp.network) services without leaving NDM, simply click the “Get ETH “ button which is located next to your address and go through the procedure. The money will be in your account in just a few minutes. In case you have any questions or problems with the transfer you can contact [support.ramp.network](https://discord.com/invite/qv8Zprw%20).
+You can use [Ramp Network](https://ramp.network) services without leaving NDM, simply click the “Get ETH “ button which is located next to your address and go through the procedure. The money will be in your account in just a few minutes. In case you have any questions or problems with the transfer you can contact [support.ramp.network](https://discord.com/invite/qv8Zprw).
 
 \*When you buying ETH/xDai for EUR - procedure can take up to 30 minutes.
 
@@ -65,7 +65,7 @@ In the **Accounts** tab, you have the option to change your current account.
 
 ## How can I unlock my account?
 
-Right after starting NDM, you will be asked to input passphrase to your account. You can also unlock your account in "**Accounts**" -&gt; "**Unlock account**" tab.
+Right after starting NDM, you will be asked to input passphrase to your account. You can also unlock your account in "**Accounts**" -> "**Unlock account**" tab.
 
 ## ¿Cómo importo mi cartera a MetaMask?
 
@@ -77,7 +77,7 @@ NDM wallets can be imported into MetaMask as a Keystore file. To do so, follow t
 
 ## ¿Cómo importo mi cartera a MyEtherWallet?
 
-NDM wallets can be imported into MyEtherWallet as a Keystore file. To do so, follow the instructions at [https://kb.myetherwallet.com/en/getting-started/how-to-access-your-wallet/\#Keystore-JSON-Password](https://kb.myetherwallet.com/en/getting-started/how-to-access-your-wallet/#Keystore-JSON-Password) and when prompted to select your Keystore file:
+NDM wallets can be imported into MyEtherWallet as a Keystore file. To do so, follow the instructions at [https://kb.myetherwallet.com/en/getting-started/how-to-access-your-wallet/#Keystore-JSON-Password](https://kb.myetherwallet.com/en/getting-started/how-to-access-your-wallet/#Keystore-JSON-Password) and when prompted to select your Keystore file:
 
 1. localice su carpeta de instalación de NDM
 2. navega a la carpeta `keystore`
@@ -95,15 +95,17 @@ Consumer and provider wallets in NDM can be imported into MyCrypto as a Keystore
 
 We have a separate documentation for MacOs issues.
 
-{% page-ref page="../running-ndm-on-macos-problems-and-fixes.md" %}
+{% content-ref url="../running-ndm-on-macos-problems-and-fixes.md" %}
+[running-ndm-on-macos-problems-and-fixes.md](../running-ndm-on-macos-problems-and-fixes.md)
+{% endcontent-ref %}
 
 ## I have a problem connecting with Ethereum node. What should I do?
 
-![Connection with Ethereum node has been lost - warning information.](../../.gitbook/assets/image%20%28146%29.png)
+![Connection with Ethereum node has been lost - warning information.](<../../.gitbook/assets/image (146).png>)
 
 Maybe somehow the settings did not save at the start. We are working on solving this problem.
 
-Try to save settings. Go to "**Advanced**" -&gt; "**Connection settings**", past default settings given below and save settings:
+Try to save settings. Go to "**Advanced**" -> "**Connection settings**", past default settings given below and save settings:
 
 For **consumer**:
 
@@ -116,4 +118,3 @@ For **provider**:
 JSON RPC URL: [http://localhost:8546](http://localhost:8546)
 
 WebSockets URL: [ws://localhost:8546/ndm](ws://localhost:8546/ndm)
-

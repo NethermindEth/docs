@@ -2,23 +2,23 @@
 
 ## clique\_discard
 
-Este método descarta una propuesta en ejecución. El firmante no emitirá más votos \(ni a favor ni en contra\) de la dirección.
+Este método descarta una propuesta en ejecución. El firmante no emitirá más votos (ni a favor ni en contra) de la dirección.
 
-| Invocación |
-| :--- |
+| Invocación                                      |
+| ----------------------------------------------- |
 | `{"method":"clique_discard","params":[signer]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| signer | `Address` |  |
+| Parámetro | Tipo      | Descripción |
+| --------- | --------- | ----------- |
+| signer    | `Address` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_discard" %}
-```text
+{% tab title="Example request of clique_discard" %}
+```
 curl --data '{"method":"clique_discard","params":[signer],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -30,21 +30,21 @@ curl --data '{"method":"clique_discard","params":[signer],"id":1,"jsonrpc":"2.0"
 
 Retrieves the signer of the block with the given hash. Returns error of a block with the given hash does not exist.
 
-| Invocación |
-| :--- |
+| Invocación                                           |
+| ---------------------------------------------------- |
 | `{"method":"clique_getBlockSigner","params":[hash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getBlockSigner" %}
-```text
+{% tab title="Example request of clique_getBlockSigner" %}
+```
 curl --data '{"method":"clique_getBlockSigner","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -56,21 +56,20 @@ curl --data '{"method":"clique_getBlockSigner","params":[hash],"id":1,"jsonrpc":
 
 Recupera la lista de firmantes autorizados.
 
-| Invocación |
-| :--- |
+| Invocación                                   |
+| -------------------------------------------- |
 | `{"method":"clique_getSigners","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSigners" %}
-```text
+{% tab title="Example request of clique_getSigners" %}
+```
 curl --data '{"method":"clique_getSigners","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -82,21 +81,20 @@ curl --data '{"method":"clique_getSigners","params":[],"id":1,"jsonrpc":"2.0"}' 
 
 Retrieves the list of authorized signers but with signer names instead of addresses
 
-| Invocación |
-| :--- |
+| Invocación                                            |
+| ----------------------------------------------------- |
 | `{"method":"clique_getSignersAnnotated","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
-
+| ------------------------------- |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSignersAnnotated" %}
-```text
+{% tab title="Example request of clique_getSignersAnnotated" %}
+```
 curl --data '{"method":"clique_getSignersAnnotated","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -108,21 +106,21 @@ curl --data '{"method":"clique_getSignersAnnotated","params":[],"id":1,"jsonrpc"
 
 Recupera la lista de firmantes autorizados en un bloque especificado por hash.
 
-| Invocación |
-| :--- |
+| Invocación                                             |
+| ------------------------------------------------------ |
 | `{"method":"clique_getSignersAtHash","params":[hash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSignersAtHash" %}
-```text
+{% tab title="Example request of clique_getSignersAtHash" %}
+```
 curl --data '{"method":"clique_getSignersAtHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -134,21 +132,21 @@ curl --data '{"method":"clique_getSignersAtHash","params":[hash],"id":1,"jsonrpc
 
 Retrieves the list of authorized signers at the specified block by hash but with signer names instead of addresses
 
-| Invocación |
-| :--- |
+| Invocación                                                      |
+| --------------------------------------------------------------- |
 | `{"method":"clique_getSignersAtHashAnnotated","params":[hash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `String` |  |
+| --------------- | ----------- |
+| `String`        |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSignersAtHashAnnotated" %}
-```text
+{% tab title="Example request of clique_getSignersAtHashAnnotated" %}
+```
 curl --data '{"method":"clique_getSignersAtHashAnnotated","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -160,21 +158,21 @@ curl --data '{"method":"clique_getSignersAtHashAnnotated","params":[hash],"id":1
 
 Recupera la lista de firmantes autorizados en un bloque especificado por número de bloque.
 
-| Invocación |
-| :--- |
+| Invocación                                                 |
+| ---------------------------------------------------------- |
 | `{"method":"clique_getSignersAtNumber","params":[number]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| Parámetro | Tipo       | Descripción |
+| --------- | ---------- | ----------- |
+| number    | `Quantity` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Address` |  |
+| --------------- | ----------- |
+| `Address`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSignersAtNumber" %}
-```text
+{% tab title="Example request of clique_getSignersAtNumber" %}
+```
 curl --data '{"method":"clique_getSignersAtNumber","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -186,34 +184,33 @@ curl --data '{"method":"clique_getSignersAtNumber","params":[number],"id":1,"jso
 
 Recupera una instantánea de todos los estados del clique en un bloque determinado.
 
-| Invocación |
-| :--- |
+| Invocación                                    |
+| --------------------------------------------- |
 | `{"method":"clique_getSnapshot","params":[]}` |
 
 | este método no tiene parametros |
-| :--- |
+| ------------------------------- |
 
-
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Snapshot object` |  |
+| Tipo de retorno   | Descripción |
+| ----------------- | ----------- |
+| `Snapshot object` |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSnapshot" %}
-```text
+{% tab title="Example request of clique_getSnapshot" %}
+```
 curl --data '{"method":"clique_getSnapshot","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in clique\_getSnapshot" %}
+{% tab title="Objects in clique_getSnapshot" %}
 `Snapshot`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Number | `Quantity` |
-| Hash | `Hash` |
-| Signers | `Array` |
-| SignerLimit | `Quantity` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Number               | `Quantity` |
+| Hash                 | `Hash`     |
+| Signers              | `Array`    |
+| SignerLimit          | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -223,34 +220,34 @@ curl --data '{"method":"clique_getSnapshot","params":[],"id":1,"jsonrpc":"2.0"}'
 
 Recupera el estado en un bloque determinado.
 
-| Invocación |
-| :--- |
+| Invocación                                              |
+| ------------------------------------------------------- |
 | `{"method":"clique_getSnapshotAtHash","params":[hash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| Parámetro | Tipo   | Descripción |
+| --------- | ------ | ----------- |
+| hash      | `Hash` |             |
 
-| Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Snapshot object` |  |
+| Tipo de retorno   | Descripción |
+| ----------------- | ----------- |
+| `Snapshot object` |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_getSnapshotAtHash" %}
-```text
+{% tab title="Example request of clique_getSnapshotAtHash" %}
+```
 curl --data '{"method":"clique_getSnapshotAtHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in clique\_getSnapshotAtHash" %}
+{% tab title="Objects in clique_getSnapshotAtHash" %}
 `Snapshot`
 
-| Nombre de los campos | Tipo |
-| :--- | :--- |
-| Number | `Quantity` |
-| Hash | `Hash` |
-| Signers | `Array` |
-| SignerLimit | `Quantity` |
+| Nombre de los campos | Tipo       |
+| -------------------- | ---------- |
+| Number               | `Quantity` |
+| Hash                 | `Hash`     |
+| Signers              | `Array`    |
+| SignerLimit          | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -260,21 +257,21 @@ curl --data '{"method":"clique_getSnapshotAtHash","params":[hash],"id":1,"jsonrp
 
 Forces Clique block producer to produce a new block
 
-| Invocación |
-| :--- |
+| Invocación                                               |
+| -------------------------------------------------------- |
 | `{"method":"clique_produceBlock","params":[parentHash]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| parentHash | `Hash` |  |
+| Parámetro  | Tipo   | Descripción |
+| ---------- | ------ | ----------- |
+| parentHash | `Hash` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_produceBlock" %}
-```text
+{% tab title="Example request of clique_produceBlock" %}
+```
 curl --data '{"method":"clique_produceBlock","params":[parentHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -286,26 +283,25 @@ curl --data '{"method":"clique_produceBlock","params":[parentHash],"id":1,"jsonr
 
 Agrega una nueva propuesta de autorización que el firmante intentará aprobar. Si el parámetro `vote` es true, el firmante local vota para que la dirección dada se incluya en el conjunto de firmantes autorizados. Con `vote` configurado como false, el firmante está en contra de la dirección.
 
-| Invocación |
-| :--- |
+| Invocación                                            |
+| ----------------------------------------------------- |
 | `{"method":"clique_propose","params":[signer, vote]}` |
 
-| Parámetro | Tipo | Descripción |
-| :--- | :--- | :--- |
-| signer | `Address` |  |
-| vote | `Boolean` |  |
+| Parámetro | Tipo      | Descripción |
+| --------- | --------- | ----------- |
+| signer    | `Address` |             |
+| vote      | `Boolean` |             |
 
 | Tipo de retorno | Descripción |
-| :--- | :--- |
-| `Boolean` |  |
+| --------------- | ----------- |
+| `Boolean`       |             |
 
 {% tabs %}
-{% tab title="Example request of clique\_propose" %}
-```text
+{% tab title="Example request of clique_propose" %}
+```
 curl --data '{"method":"clique_propose","params":[signer, vote],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% endtabs %}
 
 [ingrese a CLI clique.propose](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/clique#clique-propose)
-
