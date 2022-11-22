@@ -4,17 +4,17 @@
 
 Adds given node.
 
-| Invocation |
-| :--- |
+| Invocation                               |
+| ---------------------------------------- |
 | `admin.addPeer(enode, addToStaticNodes)` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
-| addToStaticNodes | `Boolean` | Adding to static nodes if `true` \(optional\) |
+| 参数               | Type      | 描述                                          |
+| ---------------- | --------- | ------------------------------------------- |
+| enode            | `String`  | Given node                                  |
+| addToStaticNodes | `Boolean` | Adding to static nodes if `true` (optional) |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型    | 描述         |
+| -------- | ---------- |
 | `String` | Added node |
 
 {% tabs %}
@@ -31,22 +31,21 @@ admin.addPeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c942
 {% endtab %}
 {% endtabs %}
 
-[参见 JSON RPC admin\_addPeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_addpeer)
+[参见 JSON RPC admin\_addPeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin\_addpeer)
 
 ## admin.nodeInfo
 
 Displays relevant information about this node.
 
-| Invocation |
-| :--- |
+| Invocation       |
+| ---------------- |
 | `admin.nodeInfo` |
 
 | This method doesn't have parameters. |
-| :--- |
+| ------------------------------------ |
 
-
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型             | 描述       |
+| ----------------- | -------- |
 | `NodeInfo object` | 该节点的相关信息 |
 
 {% tabs %}
@@ -80,44 +79,44 @@ admin.nodeInfo
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_nodeInfo" %}
+{% tab title="Objects in admin_nodeInfo" %}
 `NodeInfo`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Enode | `String` |
-| Id | `String` |
-| Ip | `String` |
-| ListenAddress | `String` |
-| Name | `String` |
-| Ports | `PortsInfo object` |
-| Protocols | `Array` |
+| 字段名称          | Type               |
+| ------------- | ------------------ |
+| Enode         | `String`           |
+| Id            | `String`           |
+| Ip            | `String`           |
+| ListenAddress | `String`           |
+| Name          | `String`           |
+| Ports         | `PortsInfo object` |
+| Protocols     | `Array`            |
 
 `PortsInfo`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称      | Type       |
+| --------- | ---------- |
 | Discovery | `Quantity` |
-| Listener | `Quantity` |
+| Listener  | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
-[参见 JSON RPC admin\_nodeInfo](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_nodeinfo)
+[参见 JSON RPC admin\_nodeInfo](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin\_nodeinfo)
 
 ## admin.peers
 
-Displays a list of connected peers including information about them \(`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`\).
+Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`).
 
-| Invocation |
-| :--- |
+| Invocation                    |
+| ----------------------------- |
 | `admin.peers(includeDetails)` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` \(optional\) |
+| 参数             | Type      | 描述                                                                        |
+| -------------- | --------- | ------------------------------------------------------------------------- |
+| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` (optional) |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型             | 描述                                            |
+| ----------------- | --------------------------------------------- |
 | `PeerInfo object` | List of connected peers including information |
 
 {% tabs %}
@@ -150,42 +149,42 @@ admin.peers(true)
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_peers" %}
+{% tab title="Objects in admin_peers" %}
 `PeerInfo`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| ClientId | `String` |
-| Host | `String` |
-| Port | `Quantity` |
-| Address | `String` |
-| IsBootnode | `Boolean` |
-| IsTrusted | `Boolean` |
-| IsStatic | `Boolean` |
-| Enode | `String` |
-| ClientType | `String` |
-| EthDetails | `String` |
-| LastSignal | `String` |
+| 字段名称       | Type       |
+| ---------- | ---------- |
+| ClientId   | `String`   |
+| Host       | `String`   |
+| Port       | `Quantity` |
+| Address    | `String`   |
+| IsBootnode | `Boolean`  |
+| IsTrusted  | `Boolean`  |
+| IsStatic   | `Boolean`  |
+| Enode      | `String`   |
+| ClientType | `String`   |
+| EthDetails | `String`   |
+| LastSignal | `String`   |
 {% endtab %}
 {% endtabs %}
 
-[参见 JSON RPC admin\_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_peers)
+[参见 JSON RPC admin\_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin\_peers)
 
 ## admin.removePeer
 
 Removes given node.
 
-| Invocation |
-| :--- |
+| Invocation                                       |
+| ------------------------------------------------ |
 | `admin.removePeer(enode, removeFromStaticNodes)` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
-| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` \(optional\) |
+| 参数                    | Type      | 描述                                              |
+| --------------------- | --------- | ----------------------------------------------- |
+| enode                 | `String`  | Given node                                      |
+| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` (optional) |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型    | 描述           |
+| -------- | ------------ |
 | `String` | Removed node |
 
 {% tabs %}
@@ -202,5 +201,4 @@ admin.removePeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c
 {% endtab %}
 {% endtabs %}
 
-[参见 JSON RPC admin\_removePeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_removepeer)
-
+[参见 JSON RPC admin\_removePeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin\_removepeer)

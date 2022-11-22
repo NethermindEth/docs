@@ -7,23 +7,25 @@
 
 ## 软件开发工具包
 
-您需要使用  **.NET SDK 3.1**  构建 Nethermind **1.9.\*** 。请点击下方链接下载\（请确保您选择的是正确的平台和发行版本\）：
+您需要使用 **.NET SDK 3.1** 构建 Nethermind **1.9.\*** 。请点击下方链接下载\（请确保您选择的是正确的平台和发行版本\）：
 
-{% embed url="https://dotnet.microsoft.com/download" caption=".NET SDK for Linux, macOS, Windows" %}
+{% embed url="https://dotnet.microsoft.com/download" %}
+.NET SDK for Linux, macOS, Windows
+{% endembed %}
 
-您需要使用  **.NET SDK 5.0**  构建 Nethermind **1.10.\*** 。请点击下方链接下载.
+您需要使用 **.NET SDK 5.0** 构建 Nethermind **1.10.\*** 。请点击下方链接下载.
 
 ## Linux
 
 {% tabs %}
-{% tab title="Linux \(Ubuntu 18.04+/Debian 10\)" %}
-```text
+{% tab title="Linux (Ubuntu 18.04+/Debian 10)" %}
+```
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
 ```
 {% endtab %}
 
-{% tab title="Linux \(Ubuntu 16.04\)" %}
-```text
+{% tab title="Linux (Ubuntu 16.04)" %}
+```
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 && \
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test && \
 sudo apt-get update && \
@@ -32,8 +34,8 @@ sudo apt install libzstd1
 ```
 {% endtab %}
 
-{% tab title="Linux \(CentOS 8\)" %}
-```text
+{% tab title="Linux (CentOS 8)" %}
+```
 sudo yum install -y glibc-devel && \
 sudo yum install -y bzip2-devel && \
 sudo yum install -y libzstd && \
@@ -42,8 +44,8 @@ sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnap
 ```
 {% endtab %}
 
-{% tab title="Linux \(Fedora 31\)" %}
-```text
+{% tab title="Linux (Fedora 31)" %}
+```
 sudo yum install -y glibc-devel && \
 sudo yum install -y snappy && \
 sudo yum install -y libzstd && \
@@ -55,7 +57,7 @@ sudo ln -s `find /usr/lib64/ -type f -name "libsnappy.so.1*"` /usr/lib64/libsnap
 
 ## MacOS
 
-```text
+```
 brew install gmp snappy lz4 zstd
 ```
 
@@ -66,7 +68,7 @@ brew install gmp snappy lz4 zstd
 ## 所有平台
 
 {% hint style="warning" %}
-If dotnet command is not found then probably you forgot to install SDK \(see instructions above\)
+If dotnet command is not found then probably you forgot to install SDK (see instructions above)
 {% endhint %}
 
 {% hint style="info" %}
@@ -90,11 +92,11 @@ dotnet run --no-build -c Release -- --config goerli
 
 您可以点击下方链接确认 goerli 测试网的最新区块：
 
-{% embed url="https://blockscout.com/eth/goerli/" caption="" %}
+{% embed url="https://blockscout.com/eth/goerli/" %}
 
 或通过以下命令运行以太坊主网：
 
-```text
+```
 cd Nethermind.Runner
 dotnet run --no-build -c Release -- --config mainnet
 ```
@@ -102,4 +104,3 @@ dotnet run --no-build -c Release -- --config mainnet
 ## 潜在问题
 
 如果您安装的是旧的 .NET Core 预发行版本，可能会引发冲突。由于这种情况非常特殊，您最好寻求在线帮助。
-

@@ -4,34 +4,34 @@
 
 返回在指定区块上创建的踪迹
 
-| Invocation |
-| :--- |
+| Invocation                                        |
+| ------------------------------------------------- |
 | `{"method":"trace_block","params":[numberOrTag]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| numberOrTag | `BlockParameter object` |  |
+| 参数          | Type                    | 描述 |
+| ----------- | ----------------------- | -- |
+| numberOrTag | `BlockParameter object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| 返回值类型                           | 描述 |
+| ------------------------------- | -- |
+| `ParityTxTraceFromStore object` |    |
 
 {% tabs %}
-{% tab title="Example request of trace\_block" %}
-```text
+{% tab title="Example request of trace_block" %}
+```
 curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_block" %}
+{% tab title="Objects in trace_block" %}
 `BlockParameter`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| 字段名称             | Type                        |
+| ---------------- | --------------------------- |
+| Type             | `BlockParameterType object` |
+| BlockNumber      | `Quantity`                  |
+| BlockHash        | `Hash`                      |
+| RequireCanonical | `Boolean`                   |
 
 `BlockParameterType`
 
@@ -39,47 +39,47 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 
 `ParityTxTraceFromStore`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
+| 字段名称                | Type                       |
+| ------------------- | -------------------------- |
+| Action              | `ParityTraceAction object` |
+| BlockHash           | `Hash`                     |
+| BlockNumber         | `Quantity`                 |
+| Result              | `ParityTraceResult object` |
+| Subtraces           | `Quantity`                 |
+| TraceAddress        | `Array`                    |
+| TransactionHash     | `Hash`                     |
+| TransactionPosition | `Quantity`                 |
+| Type                | `String`                   |
 
 `ParityTraceAction`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
+| 字段名称           | Type                       |
+| -------------- | -------------------------- |
+| TraceAddress   | `Array`                    |
+| CallType       | `String`                   |
+| IncludeInTrace | `Boolean`                  |
+| IsPrecompiled  | `Boolean`                  |
+| Type           | `String`                   |
+| CreationMethod | `String`                   |
+| From           | `Address`                  |
+| To             | `Address`                  |
+| Gas            | `Quantity`                 |
+| Value          | `Quantity`                 |
+| Input          | `Data`                     |
+| Result         | `ParityTraceResult object` |
+| Subtraces      | `Array`                    |
+| Author         | `Address`                  |
+| RewardType     | `String`                   |
+| Error          | `String`                   |
 
 `ParityTraceResult`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称    | Type       |
+| ------- | ---------- |
 | GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
+| Output  | `Data`     |
+| Address | `Address`  |
+| Code    | `Data`     |
 {% endtab %}
 {% endtabs %}
 
@@ -89,64 +89,64 @@ curl --data '{"method":"trace_block","params":[numberOrTag],"id":1,"jsonrpc":"2.
 
 追踪对 eth  \_sendRawTransaction 的调用，但不进行该调用，并返回其踪迹。
 
-| Invocation |
-| :--- |
+| Invocation                                                      |
+| --------------------------------------------------------------- |
 | `{"method":"trace_rawTransaction","params":[data, traceTypes]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| data | `Data` |  |
-| traceTypes | `Array` |  |
+| 参数         | Type    | 描述 |
+| ---------- | ------- | -- |
+| data       | `Data`  |    |
+| traceTypes | `Array` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `ParityTxTraceFromReplay object` |  |
+| 返回值类型                            | 描述 |
+| -------------------------------- | -- |
+| `ParityTxTraceFromReplay object` |    |
 
 {% tabs %}
-{% tab title="Example request of trace\_rawTransaction" %}
-```text
+{% tab title="Example request of trace_rawTransaction" %}
+```
 curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_rawTransaction" %}
+{% tab title="Objects in trace_rawTransaction" %}
 `ParityTxTraceFromReplay`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Output | `Data` |
-| TransactionHash | `Hash` |
-| VmTrace | `ParityVmTrace object` |
-| Action | `ParityTraceAction object` |
-| StateChanges | `Array` |
+| 字段名称            | Type                       |
+| --------------- | -------------------------- |
+| Output          | `Data`                     |
+| TransactionHash | `Hash`                     |
+| VmTrace         | `ParityVmTrace object`     |
+| Action          | `ParityTraceAction object` |
+| StateChanges    | `Array`                    |
 
 `ParityVmTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Code | `Data` |
+| 字段名称       | Type                              |
+| ---------- | --------------------------------- |
+| Code       | `Data`                            |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
+| 字段名称           | Type                       |
+| -------------- | -------------------------- |
+| TraceAddress   | `Array`                    |
+| CallType       | `String`                   |
+| IncludeInTrace | `Boolean`                  |
+| IsPrecompiled  | `Boolean`                  |
+| Type           | `String`                   |
+| CreationMethod | `String`                   |
+| From           | `Address`                  |
+| To             | `Address`                  |
+| Gas            | `Quantity`                 |
+| Value          | `Quantity`                 |
+| Input          | `Data`                     |
+| Result         | `ParityTraceResult object` |
+| Subtraces      | `Array`                    |
+| Author         | `Address`                  |
+| RewardType     | `String`                   |
+| Error          | `String`                   |
 {% endtab %}
 {% endtabs %}
 
@@ -156,35 +156,35 @@ curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1
 
 重放一个区块中的所有交易，根据请求返回每个交易的踪迹
 
-| Invocation |
-| :--- |
+| Invocation                                                                      |
+| ------------------------------------------------------------------------------- |
 | `{"method":"trace_replayBlockTransactions","params":[numberOrTag, traceTypes]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| numberOrTag | `BlockParameter object` |  |
-| traceTypes | `Array` |  |
+| 参数          | Type                    | 描述 |
+| ----------- | ----------------------- | -- |
+| numberOrTag | `BlockParameter object` |    |
+| traceTypes  | `Array`                 |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `ParityTxTraceFromReplay object` |  |
+| 返回值类型                            | 描述 |
+| -------------------------------- | -- |
+| `ParityTxTraceFromReplay object` |    |
 
 {% tabs %}
-{% tab title="Example request of trace\_replayBlockTransactions" %}
-```text
+{% tab title="Example request of trace_replayBlockTransactions" %}
+```
 curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_replayBlockTransactions" %}
+{% tab title="Objects in trace_replayBlockTransactions" %}
 `BlockParameter`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| 字段名称             | Type                        |
+| ---------------- | --------------------------- |
+| Type             | `BlockParameterType object` |
+| BlockNumber      | `Quantity`                  |
+| BlockHash        | `Hash`                      |
+| RequireCanonical | `Boolean`                   |
 
 `BlockParameterType`
 
@@ -192,41 +192,41 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 
 `ParityTxTraceFromReplay`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Output | `Data` |
-| TransactionHash | `Hash` |
-| VmTrace | `ParityVmTrace object` |
-| Action | `ParityTraceAction object` |
-| StateChanges | `Array` |
+| 字段名称            | Type                       |
+| --------------- | -------------------------- |
+| Output          | `Data`                     |
+| TransactionHash | `Hash`                     |
+| VmTrace         | `ParityVmTrace object`     |
+| Action          | `ParityTraceAction object` |
+| StateChanges    | `Array`                    |
 
 `ParityVmTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Code | `Data` |
+| 字段名称       | Type                              |
+| ---------- | --------------------------------- |
+| Code       | `Data`                            |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
+| 字段名称           | Type                       |
+| -------------- | -------------------------- |
+| TraceAddress   | `Array`                    |
+| CallType       | `String`                   |
+| IncludeInTrace | `Boolean`                  |
+| IsPrecompiled  | `Boolean`                  |
+| Type           | `String`                   |
+| CreationMethod | `String`                   |
+| From           | `Address`                  |
+| To             | `Address`                  |
+| Gas            | `Quantity`                 |
+| Value          | `Quantity`                 |
+| Input          | `Data`                     |
+| Result         | `ParityTraceResult object` |
+| Subtraces      | `Array`                    |
+| Author         | `Address`                  |
+| RewardType     | `String`                   |
+| Error          | `String`                   |
 {% endtab %}
 {% endtabs %}
 
@@ -236,64 +236,64 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, tr
 
 重放一个交易，返回其踪迹
 
-| Invocation |
-| :--- |
+| Invocation                                                           |
+| -------------------------------------------------------------------- |
 | `{"method":"trace_replayTransaction","params":[txHash, traceTypes]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| txHash | `Hash` |  |
-| traceTypes | `Array` |  |
+| 参数         | Type    | 描述 |
+| ---------- | ------- | -- |
+| txHash     | `Hash`  |    |
+| traceTypes | `Array` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `ParityTxTraceFromReplay object` |  |
+| 返回值类型                            | 描述 |
+| -------------------------------- | -- |
+| `ParityTxTraceFromReplay object` |    |
 
 {% tabs %}
-{% tab title="Example request of trace\_replayTransaction" %}
-```text
+{% tab title="Example request of trace_replayTransaction" %}
+```
 curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_replayTransaction" %}
+{% tab title="Objects in trace_replayTransaction" %}
 `ParityTxTraceFromReplay`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Output | `Data` |
-| TransactionHash | `Hash` |
-| VmTrace | `ParityVmTrace object` |
-| Action | `ParityTraceAction object` |
-| StateChanges | `Array` |
+| 字段名称            | Type                       |
+| --------------- | -------------------------- |
+| Output          | `Data`                     |
+| TransactionHash | `Hash`                     |
+| VmTrace         | `ParityVmTrace object`     |
+| Action          | `ParityTraceAction object` |
+| StateChanges    | `Array`                    |
 
 `ParityVmTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Code | `Data` |
+| 字段名称       | Type                              |
+| ---------- | --------------------------------- |
+| Code       | `Data`                            |
 | Operations | `ParityVmOperationTrace[] object` |
 
 `ParityTraceAction`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
+| 字段名称           | Type                       |
+| -------------- | -------------------------- |
+| TraceAddress   | `Array`                    |
+| CallType       | `String`                   |
+| IncludeInTrace | `Boolean`                  |
+| IsPrecompiled  | `Boolean`                  |
+| Type           | `String`                   |
+| CreationMethod | `String`                   |
+| From           | `Address`                  |
+| To             | `Address`                  |
+| Gas            | `Quantity`                 |
+| Value          | `Quantity`                 |
+| Input          | `Data`                     |
+| Result         | `ParityTraceResult object` |
+| Subtraces      | `Array`                    |
+| Author         | `Address`                  |
+| RewardType     | `String`                   |
+| Error          | `String`                   |
 {% endtab %}
 {% endtabs %}
 
@@ -303,71 +303,70 @@ curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"
 
 返回指定交易的所有踪迹
 
-| Invocation |
-| :--- |
+| Invocation                                         |
+| -------------------------------------------------- |
 | `{"method":"trace_transaction","params":[txHash]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| 参数     | Type   | 描述 |
+| ------ | ------ | -- |
+| txHash | `Hash` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `ParityTxTraceFromStore object` |  |
+| 返回值类型                           | 描述 |
+| ------------------------------- | -- |
+| `ParityTxTraceFromStore object` |    |
 
 {% tabs %}
-{% tab title="Example request of trace\_transaction" %}
-```text
+{% tab title="Example request of trace_transaction" %}
+```
 curl --data '{"method":"trace_transaction","params":[txHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in trace\_transaction" %}
+{% tab title="Objects in trace_transaction" %}
 `ParityTxTraceFromStore`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Action | `ParityTraceAction object` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Quantity` |
-| TraceAddress | `Array` |
-| TransactionHash | `Hash` |
-| TransactionPosition | `Quantity` |
-| Type | `String` |
+| 字段名称                | Type                       |
+| ------------------- | -------------------------- |
+| Action              | `ParityTraceAction object` |
+| BlockHash           | `Hash`                     |
+| BlockNumber         | `Quantity`                 |
+| Result              | `ParityTraceResult object` |
+| Subtraces           | `Quantity`                 |
+| TraceAddress        | `Array`                    |
+| TransactionHash     | `Hash`                     |
+| TransactionPosition | `Quantity`                 |
+| Type                | `String`                   |
 
 `ParityTraceAction`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| TraceAddress | `Array` |
-| CallType | `String` |
-| IncludeInTrace | `Boolean` |
-| IsPrecompiled | `Boolean` |
-| Type | `String` |
-| CreationMethod | `String` |
-| From | `Address` |
-| To | `Address` |
-| Gas | `Quantity` |
-| Value | `Quantity` |
-| Input | `Data` |
-| Result | `ParityTraceResult object` |
-| Subtraces | `Array` |
-| Author | `Address` |
-| RewardType | `String` |
-| Error | `String` |
+| 字段名称           | Type                       |
+| -------------- | -------------------------- |
+| TraceAddress   | `Array`                    |
+| CallType       | `String`                   |
+| IncludeInTrace | `Boolean`                  |
+| IsPrecompiled  | `Boolean`                  |
+| Type           | `String`                   |
+| CreationMethod | `String`                   |
+| From           | `Address`                  |
+| To             | `Address`                  |
+| Gas            | `Quantity`                 |
+| Value          | `Quantity`                 |
+| Input          | `Data`                     |
+| Result         | `ParityTraceResult object` |
+| Subtraces      | `Array`                    |
+| Author         | `Address`                  |
+| RewardType     | `String`                   |
+| Error          | `String`                   |
 
 `ParityTraceResult`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称    | Type       |
+| ------- | ---------- |
 | GasUsed | `Quantity` |
-| Output | `Data` |
-| Address | `Address` |
-| Code | `Data` |
+| Output  | `Data`     |
+| Address | `Address`  |
+| Code    | `Data`     |
 {% endtab %}
 {% endtabs %}
 
 [参见 CLI trace.transaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/trace#trace-transaction)
-

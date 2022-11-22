@@ -4,32 +4,31 @@
 
 Returns tx pool content.
 
-| Invocation |
-| :--- |
+| Invocation                                |
+| ----------------------------------------- |
 | `{"method":"txpool_content","params":[]}` |
 
 | This method doesn't have parameters. |
-| :--- |
+| ------------------------------------ |
 
-
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `TxPoolContent object` |  |
+| 返回值类型                  | 描述 |
+| ---------------------- | -- |
+| `TxPoolContent object` |    |
 
 {% tabs %}
-{% tab title="Example request of txpool\_content" %}
-```text
+{% tab title="Example request of txpool_content" %}
+```
 curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool\_content" %}
+{% tab title="Objects in txpool_content" %}
 `TxPoolContent`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称    | Type    |
+| ------- | ------- |
 | Pending | `Array` |
-| Queued | `Array` |
+| Queued  | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -39,32 +38,31 @@ curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 Returns a detailed info on tx pool transactions.
 
-| Invocation |
-| :--- |
+| Invocation                                |
+| ----------------------------------------- |
 | `{"method":"txpool_inspect","params":[]}` |
 
 | This method doesn't have parameters. |
-| :--- |
+| ------------------------------------ |
 
-
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `TxPoolInspection object` |  |
+| 返回值类型                     | 描述 |
+| ------------------------- | -- |
+| `TxPoolInspection object` |    |
 
 {% tabs %}
-{% tab title="Example request of txpool\_inspect" %}
-```text
+{% tab title="Example request of txpool_inspect" %}
+```
 curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool\_inspect" %}
+{% tab title="Objects in txpool_inspect" %}
 `TxPoolInspection`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称    | Type    |
+| ------- | ------- |
 | Pending | `Array` |
-| Queued | `Array` |
+| Queued  | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -74,34 +72,32 @@ curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 Returns a tx pool status.
 
-| Invocation |
-| :--- |
+| Invocation                               |
+| ---------------------------------------- |
 | `{"method":"txpool_status","params":[]}` |
 
 | This method doesn't have parameters. |
-| :--- |
+| ------------------------------------ |
 
-
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `TxPoolStatus object` |  |
+| 返回值类型                 | 描述 |
+| --------------------- | -- |
+| `TxPoolStatus object` |    |
 
 {% tabs %}
-{% tab title="Example request of txpool\_status" %}
-```text
+{% tab title="Example request of txpool_status" %}
+```
 curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in txpool\_status" %}
+{% tab title="Objects in txpool_status" %}
 `TxPoolStatus`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称    | Type       |
+| ------- | ---------- |
 | Pending | `Quantity` |
-| Queued | `Quantity` |
+| Queued  | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
 [参见 CLI txpool.status](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-status)
-

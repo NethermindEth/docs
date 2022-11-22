@@ -31,7 +31,7 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 ]
 ```
 
-默认情况下，`static-nodes.json` 文件存储在 Nethermind 软件包的 `Data/` 文件夹中。`static-nodes` 文件的路径可以通过[`StaticNodesPath`]() 参数配置。
+默认情况下，`static-nodes.json` 文件存储在 Nethermind 软件包的 `Data/` 文件夹中。`static-nodes` 文件的路径可以通过[`StaticNodesPath`](broken-reference) 参数配置。
 
 ## NLog 配置
 
@@ -48,7 +48,7 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/nethermind_db
 
 日志级别可由 `NLog.config` 文件控制。该文件位于：
 
-```text
+```
 src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 ```
 
@@ -56,7 +56,7 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 
 `NLog.config` 文件随软件包一起提供，可以在提取目录中找到。
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](<../../.gitbook/assets/image (30).png>)
 
 ### 使用 Docker 镜像运行 Nethermind
 
@@ -65,4 +65,3 @@ src/Nethermind/Nethermind.Runner/bin/Release/netcoreapp3.1/NLog.config
 ```bash
 -v /home/user/NLog.config:/nethermind/NLog.config
 ```
-

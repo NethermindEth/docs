@@ -4,27 +4,27 @@
 
 Adds given node.
 
-| Invocation |
-| :--- |
+| Invocation                                                      |
+| --------------------------------------------------------------- |
 | `{"method":"admin_addPeer","params":[enode, addToStaticNodes]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
-| addToStaticNodes | `Boolean` | Adding to static nodes if `true` \(optional\) |
+| 参数               | Type      | 描述                                          |
+| ---------------- | --------- | ------------------------------------------- |
+| enode            | `String`  | Given node                                  |
+| addToStaticNodes | `Boolean` | Adding to static nodes if `true` (optional) |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型    | 描述         |
+| -------- | ---------- |
 | `String` | Added node |
 
 {% tabs %}
-{% tab title="Example request of admin\_addPeer" %}
-```text
+{% tab title="Example request of admin_addPeer" %}
+```
 curl --data '{"method":"admin_addPeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Example response of admin\_addPeer" %}
+{% tab title="Example response of admin_addPeer" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -41,26 +41,25 @@ curl --data '{"method":"admin_addPeer","params":["enode://deed356ddcaa1eb33a859b
 
 Displays relevant information about this node.
 
-| Invocation |
-| :--- |
+| Invocation                                |
+| ----------------------------------------- |
 | `{"method":"admin_nodeInfo","params":[]}` |
 
 | This method doesn't have parameters. |
-| :--- |
+| ------------------------------------ |
 
-
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型             | 描述       |
+| ----------------- | -------- |
 | `NodeInfo object` | 该节点的相关信息 |
 
 {% tabs %}
-{% tab title="Example request of admin\_nodeInfo" %}
-```text
+{% tab title="Example request of admin_nodeInfo" %}
+```
 curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Example response of admin\_nodeInfo" %}
+{% tab title="Example response of admin_nodeInfo" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -88,25 +87,25 @@ curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_nodeInfo" %}
+{% tab title="Objects in admin_nodeInfo" %}
 `NodeInfo`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Enode | `String` |
-| Id | `String` |
-| Ip | `String` |
-| ListenAddress | `String` |
-| Name | `String` |
-| Ports | `PortsInfo object` |
-| Protocols | `Array` |
+| 字段名称          | Type               |
+| ------------- | ------------------ |
+| Enode         | `String`           |
+| Id            | `String`           |
+| Ip            | `String`           |
+| ListenAddress | `String`           |
+| Name          | `String`           |
+| Ports         | `PortsInfo object` |
+| Protocols     | `Array`            |
 
 `PortsInfo`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称      | Type       |
+| --------- | ---------- |
 | Discovery | `Quantity` |
-| Listener | `Quantity` |
+| Listener  | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -114,28 +113,28 @@ curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 
 ## admin\_peers
 
-Displays a list of connected peers including information about them \(`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`\).
+Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`).
 
-| Invocation |
-| :--- |
+| Invocation                                           |
+| ---------------------------------------------------- |
 | `{"method":"admin_peers","params":[includeDetails]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` \(optional\) |
+| 参数             | Type      | 描述                                                                        |
+| -------------- | --------- | ------------------------------------------------------------------------- |
+| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` (optional) |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型             | 描述                                            |
+| ----------------- | --------------------------------------------- |
 | `PeerInfo object` | List of connected peers including information |
 
 {% tabs %}
-{% tab title="Example request of admin\_peers" %}
-```text
+{% tab title="Example request of admin_peers" %}
+```
 curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Example response of admin\_peers" %}
+{% tab title="Example response of admin_peers" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -162,22 +161,22 @@ curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H
 ```
 {% endtab %}
 
-{% tab title="Objects in admin\_peers" %}
+{% tab title="Objects in admin_peers" %}
 `PeerInfo`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| ClientId | `String` |
-| Host | `String` |
-| Port | `Quantity` |
-| Address | `String` |
-| IsBootnode | `Boolean` |
-| IsTrusted | `Boolean` |
-| IsStatic | `Boolean` |
-| Enode | `String` |
-| ClientType | `String` |
-| EthDetails | `String` |
-| LastSignal | `String` |
+| 字段名称       | Type       |
+| ---------- | ---------- |
+| ClientId   | `String`   |
+| Host       | `String`   |
+| Port       | `Quantity` |
+| Address    | `String`   |
+| IsBootnode | `Boolean`  |
+| IsTrusted  | `Boolean`  |
+| IsStatic   | `Boolean`  |
+| Enode      | `String`   |
+| ClientType | `String`   |
+| EthDetails | `String`   |
+| LastSignal | `String`   |
 {% endtab %}
 {% endtabs %}
 
@@ -187,27 +186,27 @@ curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H
 
 Removes given node.
 
-| Invocation |
-| :--- |
+| Invocation                                                              |
+| ----------------------------------------------------------------------- |
 | `{"method":"admin_removePeer","params":[enode, removeFromStaticNodes]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
-| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` \(optional\) |
+| 参数                    | Type      | 描述                                              |
+| --------------------- | --------- | ----------------------------------------------- |
+| enode                 | `String`  | Given node                                      |
+| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` (optional) |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
+| 返回值类型    | 描述           |
+| -------- | ------------ |
 | `String` | Removed node |
 
 {% tabs %}
-{% tab title="Example request of admin\_removePeer" %}
-```text
+{% tab title="Example request of admin_removePeer" %}
+```
 curl --data '{"method":"admin_removePeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Example response of admin\_removePeer" %}
+{% tab title="Example response of admin_removePeer" %}
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -219,4 +218,3 @@ curl --data '{"method":"admin_removePeer","params":["enode://deed356ddcaa1eb33a8
 {% endtabs %}
 
 [选项 CLI admin.removePeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-removepeer)
-

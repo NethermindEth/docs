@@ -8,7 +8,9 @@ description: Nethermind Dockers 说明
 
 点击下方链接，查看 Docker 代码库：
 
-{% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" caption="Nethermind Docker Hub" %}
+{% embed url="https://hub.docker.com/repository/docker/nethermind/nethermind" %}
+Nethermind Docker Hub
+{% endembed %}
 
 ## 已支持架构
 
@@ -21,8 +23,8 @@ description: Nethermind Dockers 说明
 
 ### **可用标签：**
 
-| **标签** | 描述 | 架构 |
-| :--- | :--- | :--- |
+| **标签**   | 描述                             | 架构             |
+| -------- | ------------------------------ | -------------- |
 | `latest` | 基于 **Nethermind Debian** 的最新镜像 | x86\_64, ARM64 |
 
 如需使用之前的版本，您可以在主镜像名称后加上 `{tag}` ，例如 `1.8.50`。
@@ -37,7 +39,7 @@ Docker 拉取命令：
 
 {% tabs %}
 {% tab title="" %}
-```text
+```
 docker pull nethermind/nethermind
 ```
 {% endtab %}
@@ -47,7 +49,7 @@ docker pull nethermind/nethermind
 
 {% tabs %}
 {% tab title="" %}
-```text
+```
 docker run -it nethermind/nethermind
 ```
 {% endtab %}
@@ -57,7 +59,7 @@ docker run -it nethermind/nethermind
 
 {% tabs %}
 {% tab title="" %}
-```text
+```
 docker run -it nethermind/nethermind --help
 ```
 {% endtab %}
@@ -71,7 +73,7 @@ NETHERMIND_{MODULE}CONFIG_{PROPERTY} or --{Module}.{Property}
 
 例如：
 
-```text
+```
 NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
@@ -91,7 +93,7 @@ Environment variables **\*\*can be easily used within** docker-compose.yml\*\* f
 
 {% tabs %}
 {% tab title="" %}
-```text
+```
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
 {% endtab %}
@@ -101,7 +103,7 @@ docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 
 {% tabs %}
 {% tab title="" %}
-```text
+```
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
 {% endtab %}
@@ -127,7 +129,7 @@ docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonR
 
 {% tabs %}
 {% tab title="" %}
-```text
+```
 docker run -it nethermind/nethermind --config goerli
 ```
 {% endtab %}
@@ -179,8 +181,8 @@ NLog:
 
 Dockerfile 可以在存储库 [root](https://github.com/NethermindEth/nethermind)中找到。目前，该文件使用多架构构建器：
 
-| 文件名 | 描述 | 架构 |
-| :--- | :--- | :--- |
+| 文件名                                                                              | 描述                       | 架构             |
+| -------------------------------------------------------------------------------- | ------------------------ | -------------- |
 | [Dockerfile](https://github.com/NethermindEth/nethermind/blob/master/Dockerfile) | 需要克隆代码库来构建基于 Debian 的镜像。 | x86\_64, ARM64 |
 
 如需构建镜像，请运行：
@@ -194,4 +196,3 @@ docker buildx build --platform=linux/amd64 -t nethermind .
 ```bash
 docker run -it nethermind --config goerli
 ```
-

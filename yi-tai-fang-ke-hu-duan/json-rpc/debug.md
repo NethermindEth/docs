@@ -4,21 +4,21 @@
 
 将链的一部分从所有树分支上删除（Nethermind 特有功能）。
 
-| Invocation |
-| :--- |
+| Invocation                                                   |
+| ------------------------------------------------------------ |
 | `{"method":"debug_deleteChainSlice","params":[startNumber]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| startNumber | `Quantity` |  |
+| 参数          | Type       | 描述 |
+| ----------- | ---------- | -- |
+| startNumber | `Quantity` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Quantity` |  |
+| 返回值类型      | 描述 |
+| ---------- | -- |
+| `Quantity` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_deleteChainSlice" %}
-```text
+{% tab title="Example request of debug_deleteChainSlice" %}
+```
 curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -28,21 +28,21 @@ curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"j
 
 检索 RLP 序列化格式的区块。
 
-| Invocation |
-| :--- |
+| Invocation                                         |
+| -------------------------------------------------- |
 | `{"method":"debug_getBlockRlp","params":[number]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| 参数     | Type       | 描述 |
+| ------ | ---------- | -- |
+| number | `Quantity` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Data` |  |
+| 返回值类型  | 描述 |
+| ------ | -- |
+| `Data` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_getBlockRlp" %}
-```text
+{% tab title="Example request of debug_getBlockRlp" %}
+```
 curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -54,21 +54,21 @@ curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2
 
 检索 RLP 序列化格式的区块。
 
-| Invocation |
-| :--- |
+| Invocation                                             |
+| ------------------------------------------------------ |
 | `{"method":"debug_getBlockRlpByHash","params":[hash]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
+| 参数   | Type   | 描述 |
+| ---- | ------ | -- |
+| hash | `Hash` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Data` |  |
+| 返回值类型  | 描述 |
+| ------ | -- |
+| `Data` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_getBlockRlpByHash" %}
-```text
+{% tab title="Example request of debug_getBlockRlpByHash" %}
+```
 curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -80,44 +80,44 @@ curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc
 
 检索指定链级别上的树分支的表示（Nethermind 特有功能）。
 
-| Invocation |
-| :--- |
+| Invocation                                           |
+| ---------------------------------------------------- |
 | `{"method":"debug_getChainLevel","params":[number]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
+| 参数     | Type       | 描述 |
+| ------ | ---------- | -- |
+| number | `Quantity` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `ChainLevelForRpc object` |  |
+| 返回值类型                     | 描述 |
+| ------------------------- | -- |
+| `ChainLevelForRpc object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_getChainLevel" %}
-```text
+{% tab title="Example request of debug_getChainLevel" %}
+```
 curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_getChainLevel" %}
+{% tab title="Objects in debug_getChainLevel" %}
 `ChainLevelForRpc`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| BlockInfos | `BlockInfoForRpc[] object` |
-| HasBlockOnMainChain | `Boolean` |
+| 字段名称                | Type                       |
+| ------------------- | -------------------------- |
+| BlockInfos          | `BlockInfoForRpc[] object` |
+| HasBlockOnMainChain | `Boolean`                  |
 
 `BlockInfoForRpc[]`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| 字段名称           | Type       |
+| -------------- | ---------- |
+| Length         | `Quantity` |
+| LongLength     | `Quantity` |
+| Rank           | `Quantity` |
+| SyncRoot       | `Object`   |
+| IsReadOnly     | `Boolean`  |
+| IsFixedSize    | `Boolean`  |
+| IsSynchronized | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -127,22 +127,22 @@ curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":
 
 检索 Nethermind 的配置值，例如，JsonRpc.Enabled。
 
-| Invocation |
-| :--- |
+| Invocation                                                    |
+| ------------------------------------------------------------- |
 | `{"method":"debug_getConfigValue","params":[category, name]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| category | `String` |  |
-| name | `String` |  |
+| 参数       | Type     | 描述 |
+| -------- | -------- | -- |
+| category | `String` |    |
+| name     | `String` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Object` |  |
+| 返回值类型    | 描述 |
+| -------- | -- |
+| `Object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_getConfigValue" %}
-```text
+{% tab title="Example request of debug_getConfigValue" %}
+```
 curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -152,35 +152,35 @@ curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"
 
 在验证收据根的正确性之后，为该区块插入收据。
 
-| Invocation |
-| :--- |
+| Invocation                                                                   |
+| ---------------------------------------------------------------------------- |
 | `{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| receiptForRpc | `ReceiptForRpc[] object` |  |
+| 参数             | Type                     | 描述 |
+| -------------- | ------------------------ | -- |
+| blockParameter | `BlockParameter object`  |    |
+| receiptForRpc  | `ReceiptForRpc[] object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Boolean` |  |
+| 返回值类型     | 描述 |
+| --------- | -- |
+| `Boolean` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_insertReceipts" %}
-```text
+{% tab title="Example request of debug_insertReceipts" %}
+```
 curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_insertReceipts" %}
+{% tab title="Objects in debug_insertReceipts" %}
 `BlockParameter`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| 字段名称             | Type                        |
+| ---------------- | --------------------------- |
+| Type             | `BlockParameterType object` |
+| BlockNumber      | `Quantity`                  |
+| BlockHash        | `Hash`                      |
+| RequireCanonical | `Boolean`                   |
 
 `BlockParameterType`
 
@@ -188,15 +188,15 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 
 `ReceiptForRpc[]`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Length | `Quantity` |
-| LongLength | `Quantity` |
-| Rank | `Quantity` |
-| SyncRoot | `Object` |
-| IsReadOnly | `Boolean` |
-| IsFixedSize | `Boolean` |
-| IsSynchronized | `Boolean` |
+| 字段名称           | Type       |
+| -------------- | ---------- |
+| Length         | `Quantity` |
+| LongLength     | `Quantity` |
+| Rank           | `Quantity` |
+| SyncRoot       | `Object`   |
+| IsReadOnly     | `Boolean`  |
+| IsFixedSize    | `Boolean`  |
+| IsSynchronized | `Boolean`  |
 {% endtab %}
 {% endtabs %}
 
@@ -204,21 +204,21 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 
 设置收据迁移的区块高度上限（Nethermind 特有功能）。
 
-| Invocation |
-| :--- |
+| Invocation                                                  |
+| ----------------------------------------------------------- |
 | `{"method":"debug_migrateReceipts","params":[blockNumber]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockNumber | `Quantity` |  |
+| 参数          | Type       | 描述 |
+| ----------- | ---------- | -- |
+| blockNumber | `Quantity` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Boolean` |  |
+| 返回值类型     | 描述 |
+| --------- | -- |
+| `Boolean` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_migrateReceipts" %}
-```text
+{% tab title="Example request of debug_migrateReceipts" %}
+```
 curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -230,21 +230,21 @@ curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"js
 
 更新/重置链首块，仅限节点因数据库/内存损坏而卡住时使用（Nethermind 特有功能）。
 
-| Invocation |
-| :--- |
+| Invocation                                          |
+| --------------------------------------------------- |
 | `{"method":"debug_resetHead","params":[blockHash]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| 参数        | Type   | 描述 |
+| --------- | ------ | -- |
+| blockHash | `Hash` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `Boolean` |  |
+| 返回值类型     | 描述 |
+| --------- | -- |
+| `Boolean` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_resetHead" %}
-```text
+{% tab title="Example request of debug_resetHead" %}
+```
 curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
@@ -254,46 +254,46 @@ curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"
 
 返回该区块内所有交易调用过的所有操作码的完整堆栈轨迹。该区块的父区块必须存在，否则就会失败。
 
-| Invocation |
-| :--- |
+| Invocation                                                   |
+| ------------------------------------------------------------ |
 | `{"method":"debug_traceBlock","params":[blockRlp, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| options | `GethTraceOptions object` |  |
+| 参数       | Type                      | 描述 |
+| -------- | ------------------------- | -- |
+| blockRlp | `Data`                    |    |
+| options  | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlock" %}
-```text
+{% tab title="Example request of debug_traceBlock" %}
+```
 curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlock" %}
+{% tab title="Objects in debug_traceBlock" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -301,46 +301,46 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 
 ## debug\_traceBlockByHash
 
-| Invocation |
-| :--- |
+| Invocation                                                          |
+| ------------------------------------------------------------------- |
 | `{"method":"debug_traceBlockByHash","params":[blockHash, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| 参数        | Type                      | 描述 |
+| --------- | ------------------------- | -- |
+| blockHash | `Hash`                    |    |
+| options   | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlockByHash" %}
-```text
+{% tab title="Example request of debug_traceBlockByHash" %}
+```
 curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByHash" %}
+{% tab title="Objects in debug_traceBlockByHash" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -348,46 +348,46 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 
 ## debug\_traceBlockByNumber
 
-| Invocation |
-| :--- |
+| Invocation                                                         |
+| ------------------------------------------------------------------ |
 | `{"method":"debug_traceBlockByNumber","params":[number, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| 参数      | Type                      | 描述 |
+| ------- | ------------------------- | -- |
+| number  | `Quantity`                |    |
+| options | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceBlockByNumber" %}
-```text
+{% tab title="Example request of debug_traceBlockByNumber" %}
+```
 curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceBlockByNumber" %}
+{% tab title="Objects in debug_traceBlockByNumber" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -397,46 +397,46 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[number, options],"id
 
 尝试以相同的方式将一笔已经在网络上执行过的交易再运行一遍。在尝试执行与指定哈希值相对应的交易之前，会先将在该交易之前可能已经执行过的所有交易重放。
 
-| Invocation |
-| :--- |
+| Invocation                                                                |
+| ------------------------------------------------------------------------- |
 | `{"method":"debug_traceTransaction","params":[transactionHash, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| 参数              | Type                      | 描述 |
+| --------------- | ------------------------- | -- |
+| transactionHash | `Hash`                    |    |
+| options         | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransaction" %}
-```text
+{% tab title="Example request of debug_traceTransaction" %}
+```
 curl --data '{"method":"debug_traceTransaction","params":[transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransaction" %}
+{% tab title="Objects in debug_traceTransaction" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -444,36 +444,36 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 
 ## debug\_traceTransactionByBlockAndIndex
 
-| Invocation |
-| :--- |
+| Invocation                                                                                       |
+| ------------------------------------------------------------------------------------------------ |
 | `{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| 参数             | Type                      | 描述 |
+| -------------- | ------------------------- | -- |
+| blockParameter | `BlockParameter object`   |    |
+| txIndex        | `Quantity`                |    |
+| options        | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionByBlockAndIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionByBlockAndIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockAndIndex" %}
 `BlockParameter`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+| 字段名称             | Type                        |
+| ---------------- | --------------------------- |
+| Type             | `BlockParameterType object` |
+| BlockNumber      | `Quantity`                  |
+| BlockHash        | `Hash`                      |
+| RequireCanonical | `Boolean`                   |
 
 `BlockParameterType`
 
@@ -481,23 +481,23 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -505,47 +505,47 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 ## debug\_traceTransactionByBlockhashAndIndex
 
-| Invocation |
-| :--- |
+| Invocation                                                                                      |
+| ----------------------------------------------------------------------------------------------- |
 | `{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| 参数        | Type                      | 描述 |
+| --------- | ------------------------- | -- |
+| blockHash | `Hash`                    |    |
+| txIndex   | `Quantity`                |    |
+| options   | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionByBlockhashAndIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionByBlockhashAndIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionByBlockhashAndIndex" %}
+{% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -553,47 +553,47 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 
 ## debug\_traceTransactionInBlockByHash
 
-| Invocation |
-| :--- |
+| Invocation                                                                                       |
+| ------------------------------------------------------------------------------------------------ |
 | `{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
+| 参数              | Type                      | 描述 |
+| --------------- | ------------------------- | -- |
+| blockRlp        | `Data`                    |    |
+| transactionHash | `Hash`                    |    |
+| options         | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionInBlockByHash" %}
-```text
+{% tab title="Example request of debug_traceTransactionInBlockByHash" %}
+```
 curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByHash" %}
+{% tab title="Objects in debug_traceTransactionInBlockByHash" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
@@ -601,49 +601,48 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 
 ## debug\_traceTransactionInBlockByIndex
 
-| Invocation |
-| :--- |
+| Invocation                                                                                |
+| ----------------------------------------------------------------------------------------- |
 | `{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options]}` |
 
-| 参数 | Type | 描述 |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
+| 参数       | Type                      | 描述 |
+| -------- | ------------------------- | -- |
+| blockRlp | `Data`                    |    |
+| txIndex  | `Quantity`                |    |
+| options  | `GethTraceOptions object` |    |
 
-| 返回值类型 | 描述 |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+| 返回值类型                    | 描述 |
+| ------------------------ | -- |
+| `GethLikeTxTrace object` |    |
 
 {% tabs %}
-{% tab title="Example request of debug\_traceTransactionInBlockByIndex" %}
-```text
+{% tab title="Example request of debug_traceTransactionInBlockByIndex" %}
+```
 curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 
-{% tab title="Objects in debug\_traceTransactionInBlockByIndex" %}
+{% tab title="Objects in debug_traceTransactionInBlockByIndex" %}
 `GethTraceOptions`
 
-| 字段名称 | Type |
-| :--- | :--- |
+| 字段名称           | Type      |
+| -------------- | --------- |
 | DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+| DisableMemory  | `Boolean` |
+| DisableStack   | `Boolean` |
+| Tracer         | `String`  |
+| Timeout        | `String`  |
 
 `GethLikeTxTrace`
 
-| 字段名称 | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+| 字段名称            | Type       |
+| --------------- | ---------- |
+| StoragesByDepth | `Array`    |
+| Gas             | `Quantity` |
+| Failed          | `Boolean`  |
+| ReturnValue     | `Data`     |
+| Entries         | `Array`    |
 {% endtab %}
 {% endtabs %}
 
 [参见 CLI debug.traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyindex)
-

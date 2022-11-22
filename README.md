@@ -4,5 +4,4 @@ Nethermind 于 2017 年由世界一流的技术团队创立，专为开发者和
 
 我们的旗舰产品 .NET 以太坊客户端性能优越、灵活性强。该产品构建在企业友好型平台 .NET core 上，可轻松整合到现有基础设施中，同时确保稳定性、可靠性、数据完整性和安全性。
 
-![](.gitbook/assets/nethermind.png)
-
+<figure><img src=".gitbook/assets/Nethermind -Vertical - Color &#x26; Black.png" alt=""><figcaption></figcaption></figure>

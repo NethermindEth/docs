@@ -24,13 +24,13 @@ description: Metrics 可以用来监视正在运行的 Nethermind 节点
 git clone https://github.com/NethermindEth/metrics-infrastructure.git
 ```
 
-1. [x] 打开 `metrics-infrastructure` 目录
+* [x] 打开 `metrics-infrastructure` 目录
 
 ```bash
 cd metrics-infrastructure
 ```
 
-1. [x] 运行 docker 堆栈
+* [x] 运行 docker 堆栈
 
 ```bash
 docker-compose up -d
@@ -78,25 +78,30 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 {% endtab %}
 {% endtabs %}
 
-![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
+![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/\_images/pushgateway.png)
 
-1. [x] 打开 _Grafana_ [链接](http://localhost:3000) 并使用默认登录名（admin）和密码（admin）登录。您可以选择跳过密码修改。
+* [x] 打开 _Grafana_ [链接](http://localhost:3000) 并使用默认登录名（admin）和密码（admin）登录。您可以选择跳过密码修改。
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](<../../.gitbook/assets/image (28).png>)
 
-* [x] 打开面板管理 [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards) 并点击 `Nethermind`。 
+* [x] 打开面板管理 [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards) 并点击 `Nethermind`。&#x20;
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](<../../.gitbook/assets/image (26).png>)
 
 * [x] 现在您可以探索指标并监控自己的 Nethermind 节点了。
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](<../../.gitbook/assets/image (29).png>)
 
 ### Prometheus、Pushgateway 和 Grafana 的来源
 
-{% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
+{% embed url="https://github.com/prometheus/prometheus" %}
+Prometheus GitHub
+{% endembed %}
 
-{% embed url="https://github.com/prometheus/pushgateway" caption="Pushgateway GitHub" %}
+{% embed url="https://github.com/prometheus/pushgateway" %}
+Pushgateway GitHub
+{% endembed %}
 
-{% embed url="https://github.com/grafana/grafana" caption="Grafana GitHub" %}
-
+{% embed url="https://github.com/grafana/grafana" %}
+Grafana GitHub
+{% endembed %}
