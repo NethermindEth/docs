@@ -72,7 +72,7 @@
 * [Configuration](ethereum-client/configuration/README.md)
   * [Sample configuration](ethereum-client/configuration/sample-configuration.md)
   * [Aura module](ethereum-client/configuration/aura.md)
-  * [Blocks module](ethereum-client/configuration/blocks.md.md)
+  * [Blocks module](ethereum-client/configuration/blocks.md)
   * [Bloom module](ethereum-client/configuration/bloom.md)
   * [EthStats module](ethereum-client/configuration/ethstats.md)
   * [HealthChecks module](ethereum-client/configuration/healthchecks.md)
