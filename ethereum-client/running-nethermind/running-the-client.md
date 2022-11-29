@@ -38,7 +38,7 @@ unzip [LINUX_PACKAGE_FILENAME] -d nethermind
 cd nethermind
 ```
 
-![Switch directory](<../../.gitbook/assets/image (8) (1) (1) (1) (1).png>)
+![Switch directory](<../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png>)
 
 * [x] Run `Nethermind.Launcher` and select `Ethereum Node`
 
@@ -62,7 +62,7 @@ cd nethermind
 
 * [x] Nethermind node is now running:tada:, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (1) (1) (1) (3).png>)
+![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (1) (1) (1) (1) (3).png>)
 
 {% hint style="danger" %}
 #### For Ubuntu 16.04 you will need additional dependencies installed.
