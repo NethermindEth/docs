@@ -7,6 +7,7 @@
 | ActivePeersMaxCount | NETHERMIND_NETWORKCONFIG_ACTIVEPEERSMAXCOUNT | [OBSOLETE](Use MaxActivePeers instead) Max number of connected peers. | 50 |
 | Bootnodes | NETHERMIND_NETWORKCONFIG_BOOTNODES | Bootnodes |  |
 | DiagTracerEnabled | NETHERMIND_NETWORKCONFIG_DIAGTRACERENABLED | Enabled very verbose diag network tracing files for DEV purposes (Nethermind specific) | false |
+| DiscoveryDns | NETHERMIND_NETWORKCONFIG_DISCOVERYDNS | Use tree is available through a DNS name. Keep it empty for the default of {chainName}.ethdisco.net | null |
 | DiscoveryPort | NETHERMIND_NETWORKCONFIG_DISCOVERYPORT | UDP port number for incoming discovery connections. Keep same as TCP/IP port because using different values has never been tested. | 30303 |
 | EnableUPnP | NETHERMIND_NETWORKCONFIG_ENABLEUPNP | Enable automatic port forwarding via UPnP | false |
 | ExternalIp | NETHERMIND_NETWORKCONFIG_EXTERNALIP | Use only if your node cannot resolve external IP automatically. | null |
