@@ -310,11 +310,11 @@ Replays all transactions in a block returning the requested traces for each tran
 
 | Invocation |
 | :--- |
-| `{"method":"trace_replayBlockTransactions","params":[numberOrTag, traceTypes]}` |
+| `{"method":"trace_replayBlockTransactions","params":[blockParameter, traceTypes]}` |
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| numberOrTag | `BlockParameter object` |  |
+| blockParameter | `BlockParameter object` |  |
 | traceTypes | `Array` |  |
 
 | Returned type | Description |
@@ -324,7 +324,7 @@ Replays all transactions in a block returning the requested traces for each tran
 {% tabs %}
 {% tab title="Example request of trace_replayBlockTransactions" %}
 ```
-curl --data '{"method":"trace_replayBlockTransactions","params":[numberOrTag, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+curl --data '{"method":"trace_replayBlockTransactions","params":[blockParameter, traceTypes],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% tab title="Example response of trace_replayBlockTransactions" %}

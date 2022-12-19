@@ -317,11 +317,11 @@ Replays all transactions in a block returning the requested traces for each tran
 
 | Invocation |
 | :--- |
-| `trace.replayBlockTransactions(numberOrTag, traceTypes)` |
+| `trace.replayBlockTransactions(blockParameter, traceTypes)` |
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| numberOrTag | `BlockParameter object` |  |
+| blockParameter | `BlockParameter object` |  |
 | traceTypes | `Array` |  |
 
 | Returned type | Description |
@@ -331,7 +331,7 @@ Replays all transactions in a block returning the requested traces for each tran
 {% tabs %}
 {% tab title="Example request of trace.replayBlockTransactions" %}
 ```yaml
-trace.replayBlockTransactions(numberOrTag, traceTypes)
+trace.replayBlockTransactions(blockParameter, traceTypes)
 ```
 {% endtab %}
 {% tab title="Example response of trace.replayBlockTransactions" %}
