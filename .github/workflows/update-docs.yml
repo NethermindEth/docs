@@ -14,6 +14,9 @@ jobs:
   update-documentation:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7
       - uses: actions/checkout@v3
         with:
           repository: NethermindEth/nethermind
