@@ -33,6 +33,8 @@
 | nethermind_eth66_node_data_received | Number of eth.66 NodeData messages received |
 | nethermind_eth66_pooled_transactions_received | Number of eth.66 PooledTransactions messages received |
 | nethermind_eth66_receipts_received | Number of eth.66 Receipts messages received |
+| nethermind_eth68_new_pooled_transaction_hashes_received | Number of eth.68 NewPooledTransactionHashes messages received |
+| nethermind_eth68_new_pooled_transaction_hashes_sent | Number of eth.68 NewPooledTransactionHashes messages sent |
 | nethermind_handshakes | Number of devp2p handshakes |
 | nethermind_handshake_timeouts | Number of devp2p handshke timeouts |
 | nethermind_hellos_received | Number of devp2p hello messages received |
