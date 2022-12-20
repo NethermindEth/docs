@@ -21,8 +21,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 16006000,
-    "PivotHash": "0x5dba8ec70682eb0307381395176d665cd53dc9f03ade570c237463cf6fabc50c",
+    "PivotNumber": 16206000,
+    "PivotHash": "0x63613a57ab8de2f099316c7e6183e4bd28f0c78f4c1faa9a77536eab0f3b8f3a",
     "PivotTotalDifficulty": "58750003716598352816469",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
@@ -69,8 +69,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 7950000,
-    "PivotHash": "0x5bc5f6c777a15631b0ec1c097874e787b362e877faea463e6fe06dea598c41cd",
+    "PivotNumber": 8130000,
+    "PivotHash": "0x444fa9be0be5eb4380975241b142f5c50ace7e65ea7ce7778d08027c8486f29f",
     "PivotTotalDifficulty": "10790000",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
