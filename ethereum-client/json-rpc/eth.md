@@ -541,6 +541,8 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -622,6 +624,8 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1416,6 +1420,8 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1488,6 +1494,8 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 

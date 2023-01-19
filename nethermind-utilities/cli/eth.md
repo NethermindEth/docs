@@ -533,6 +533,8 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -613,6 +615,8 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1301,6 +1305,8 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1376,6 +1382,8 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 | Transactions | `Array` |
 | TransactionsRoot | `Hash` |
 | Uncles | `Array` |
+| Withdrawals | `Array` |
+| WithdrawalsRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
