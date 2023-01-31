@@ -73,9 +73,8 @@ Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow 
 
 We may also add Slack Webhook endpoint to which our node's health will be reported. We need to pass the `--HealthChecks.WebhooksEnabled true` and add  the `--HealthChecks.WebhooksUri` which can be found in your Slack app configuration.
 
-```bash
-./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
-```
+<pre class="language-bash"><code class="lang-bash"><strong>./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
+</strong></code></pre>
 
 If your node will be **Unhealthy** you should receive a message similar to this:
 
@@ -141,3 +140,14 @@ In version v.1.10.18, we've also introduced health checks via JSON RPC requests.
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Monitoring available storage space
+
+In version v1.16.0, we added a new mechanism to help tracking free disk space. Feature is enabled by default and monitors a drive which has been used to configure database location. There are two new configuration options available:
+
+* `--HealthChecks.LowStorageSpaceWarningThreshold` - Percentage of free disk space below which a warning will be displayed. If Health Checks UI is enabled, it will also be reported under node's health. Default value is 5 - meaning 5% of free disk space.
+* `--HealthChecks.LowStorageSpaceShutdownThreshold` - Percentage of available disk space below which node will shutdown to avoid database corruption. Default value is 1 - meaning 1% of free disk space.
+
+<pre><code><strong>./Nethermind.Runner --HealthChecks.LowStorageSpaceWarningThreshold 5 --HealthChecks.LowStorageSpaceShutdownThreshold 1
+</strong></code></pre>
+
