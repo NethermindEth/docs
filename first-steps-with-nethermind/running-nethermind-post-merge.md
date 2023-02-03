@@ -314,7 +314,7 @@ Running Nethermind from a Docker image may require more configuration depending 
 The commands below should work in most situations
 
 ```bash
-docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind nethermind/nethermind --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
+docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
 ```
 
 {% hint style="info" %}
