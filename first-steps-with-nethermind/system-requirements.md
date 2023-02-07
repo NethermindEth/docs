@@ -85,8 +85,6 @@ You can try much lower setups with smaller networks.
 | **Poacore Fast Sync**    |       100+      |      8      |   2   |
 | **EnergyWeb Fast Sync**  |       120+      |      8      |   2   |
 | **Volta Fast Sync**      |       200+      |      8      |   2   |
-| **Sokol Fast Sync**      |       100+      |      8      |   2   |
-| **Sokol Full Archive**   |       600+      |      8      |   2   |
 
 Disk space requirements:
 

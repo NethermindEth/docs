@@ -19,10 +19,6 @@ Each release of Nethermind is going through the following test procedure:
 * Deployment of an ERC20 contract from Truffle to Nethermind spaceneth network
 * Smoke Tests are Executed for each of the following syncs:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 | Network   | Sync Mode | Consensus | Sync Test |
 | --------- | --------- | --------- | --------- |
 | Mainnet   | fast sync | ethash    | YES       |
@@ -40,9 +36,6 @@ Each release of Nethermind is going through the following test procedure:
 | POA Core  | fast sync | AuRa      | YES       |
 | POA Core  | archive   | AuRa      | NO        |
 | POA Core  | beam sync | AuRa      | NO        |
-| Sokol     | fast sync | AuRa      | YES       |
-| Sokol     | archive   | AuRa      | YES       |
-| Sokol     | beam sync | AuRa      | NO        |
 | xDAI      | fast sync | POSDAO    | YES       |
 | xDAI      | archive   | POSDAO    | YES       |
 | xDAI      | beam sync | POSDAO    | NO        |
@@ -52,5 +45,3 @@ Each release of Nethermind is going through the following test procedure:
 | Volta     | fast sync | AuRa      | YES       |
 | Volta     | archive   | AuRa      | YES       |
 | Volta     | beam sync | AuRa      | NO        |
-
-![Example of sync test results](<../.gitbook/assets/image (93).png>)

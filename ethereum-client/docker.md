@@ -108,7 +108,6 @@ To switch the network use `--config {network}` flag (default value is `mainnet`)
 * `ropsten`
 * `xdai`
 * `poacore`
-* `sokol`
 * `volta`
 * `energyweb`
 

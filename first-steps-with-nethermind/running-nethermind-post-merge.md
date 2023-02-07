@@ -175,7 +175,7 @@ We strongly recommend you use OpenSSL to generate the secret locally because it 
 Nethermind has added some additional configuration settings for the JSON-RPC API to support the Consensus Clients.
 
 {% hint style="danger" %}
-#### **Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine API.  Nethermind uses `JsonRpc.EnginePort`, `JsonRpc.EngineHost` and `JsonRpc.EngineEnabledModules` for that.**
+**Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine API. Nethermind uses `JsonRpc.EnginePort`, `JsonRpc.EngineHost` and `JsonRpc.EngineEnabledModules` for that.**
 {% endhint %}
 
 ```json
@@ -192,7 +192,7 @@ Nethermind has added some additional configuration settings for the JSON-RPC API
 ```
 
 {% hint style="danger" %}
-#### **if you want to change`JsonRpc.EngineHost, JsonRpc.EnginePort` should be specified as well.**
+**if you want to change`JsonRpc.EngineHost, JsonRpc.EnginePort` should be specified as well.**
 {% endhint %}
 
 #### `EngineHost`
@@ -222,12 +222,12 @@ Ensure you have:
 * Installed Nethermind
 * Installed Consensus client
 * Created a JWT secret file
-* Engine module is enabled with authenticated port &#x20;
+* Engine module is enabled with authenticated port
 
 Then you are ready to start your clients. First start up Nethermind.
 
 {% hint style="danger" %}
-Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. This is not required if you are using the default config files as this is enabled by default. &#x20;
+Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. This is not required if you are using the default config files as this is enabled by default.
 {% endhint %}
 
 ### Choosing the Network
@@ -298,13 +298,13 @@ nethermind --config ropsten --JsonRpc.JwtSecretFile=PATH
 {% endtabs %}
 
 {% hint style="info" %}
-`--config` flag **** is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten.
+`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten.
 {% endhint %}
 
 Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
 
 {% hint style="danger" %}
-If you are not using the default config files, make sure you also use the **Merge.Enabled=true** flag when launching the client.&#x20;
+If you are not using the default config files, make sure you also use the **Merge.Enabled=true** flag when launching the client.
 {% endhint %}
 
 ### Running Docker Image
@@ -318,7 +318,7 @@ docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --confi
 ```
 
 {% hint style="info" %}
-`--config` flag **** is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**&#x20;
+`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
 {% endhint %}
 
 #### **Docker Settings**
@@ -339,7 +339,7 @@ Once Nethermind has started you can start the CL client. See section below for c
 Once both clients are running watch the logs to make sure you don’t get any `Unauthorized` errors to ensure the clients are communicating.
 
 {% hint style="success" %}
-### Checkpoint Sync
+#### Checkpoint Sync
 
 It would be way faster to sync consensus clients using checkpoint sync.
 
@@ -358,8 +358,6 @@ cd merge-testnets/kiln
 
 For more detailed instructions on running the consensus clients on kiln, see [here](https://notes.ethereum.org/@launchpad/kiln#Prysm).
 
-
-
 ### Running Nimbus With Nethermind
 
 {% tabs %}
@@ -376,7 +374,8 @@ nimbus-eth2/build/nimbus_beacon_node \
 
 For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
 
-<pre class="language-bash"><code class="lang-bash"><strong>--trusted-node-url=https://beaconstate.ethstaker.cc</strong></code></pre>
+<pre class="language-bash"><code class="lang-bash"><strong>--trusted-node-url=https://beaconstate.ethstaker.cc
+</strong></code></pre>
 {% endtab %}
 
 {% tab title="Goerli" %}
@@ -445,7 +444,7 @@ cd prysm
 --jwt-secret="/tmp/jwtsecret"
 ```
 
-For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:&#x20;
+For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
 
 ```bash
 --checkpoint-sync-url="https://beaconstate.ethstaker.cc" \
@@ -636,7 +635,8 @@ Please follow guide provided [here](https://github.com/gnosischain/lighthouse-cl
 --execution.urls "http://127.0.0.1:8551" \ 
 --discv5 \ 
 --suggestedFeeRecipient &#x3C;Enter-eth-address-here> \
---jwt-secret "/tmp/jwtsecret" \</code></pre>
+--jwt-secret "/tmp/jwtsecret" \
+</code></pre>
 
 For checkpoint sync, add the following flag with a checkpoint sync endpoint from [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync). Example:
 
@@ -683,7 +683,8 @@ cd lodestar
 --discv5 \ 
 --suggestedFeeRecipient &#x3C;Enter-eth-address-here> \
 --jwt-secret "/tmp/jwtsecret" \
---bootnodes "enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"</code></pre>
+--bootnodes "enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
+</code></pre>
 {% endtab %}
 
 {% tab title="Kiln" %}
@@ -715,7 +716,8 @@ Please follow guide provided [here](https://github.com/gnosischain/lodestar-clie
   --ee-endpoint http://localhost:8551 \
   --ee-jwt-secret-file "/tmp/jwtsecret" \
   --log-destination console \
-  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here></code></pre>
+  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here>
+</code></pre>
 
 ```
 ```
@@ -758,7 +760,8 @@ For checkpoint sync, add the following flag with a checkpoint sync endpoint from
   --ee-endpoint http://localhost:8551 \
   --ee-jwt-secret-file "/tmp/jwtsecret" \
   --log-destination console \
-  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here> \</code></pre>
+  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here> \
+</code></pre>
 {% endtab %}
 
 {% tab title="Kiln" %}
