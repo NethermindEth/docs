@@ -4,12 +4,12 @@
 
 ## First steps with Nethermind
 
-* [Explaining Nethermind logs](first-steps-with-nethermind/getting-started.md)
-* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
 * [Running Nethermind & CL](first-steps-with-nethermind/running-nethermind-post-merge.md)
 * [System Requirements](first-steps-with-nethermind/system-requirements.md)
-* [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
+* [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
+* [Explaining Nethermind logs](first-steps-with-nethermind/getting-started.md)
+* [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
 * [Security](first-steps-with-nethermind/security.md)
 * [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 * [Connecting Wallet](first-steps-with-nethermind/connecting-wallet.md)
