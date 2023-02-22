@@ -99,6 +99,7 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |

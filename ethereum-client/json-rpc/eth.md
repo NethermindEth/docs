@@ -89,6 +89,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -216,6 +217,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -313,6 +315,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -543,6 +546,7 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -626,6 +630,7 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1053,6 +1058,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1142,6 +1148,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1217,6 +1224,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":["0xabca23910646013d6
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1422,6 +1430,7 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1496,6 +1505,7 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1757,6 +1767,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1899,6 +1910,7 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |

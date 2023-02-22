@@ -11,6 +11,7 @@
 | nethermind_evm_exceptions | Number of EVM exceptions thrown by contracts. |
 | nethermind_mod_exp_opcode | Number of MODEXP precompiles executed. |
 | nethermind_mod_exp_precompile | Number of MODEXP precompile calls. |
+| nethermind_point_evaluation_precompile | Number of Point Evaluation precompile calls. |
 | nethermind_ripemd160_precompile | Number of RIPEMD160 precompile calls. |
 | nethermind_self_destructs | Number of SELFDESTRUCT calls. |
 | nethermind_sha256_precompile | Number of SHA256 precompile calls. |

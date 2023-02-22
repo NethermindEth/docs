@@ -87,6 +87,7 @@ eth.call(transactionCall, blockParameter)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -212,6 +213,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -308,6 +310,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -535,6 +538,7 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -617,6 +621,7 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1027,6 +1032,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1101,6 +1107,7 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1307,6 +1314,7 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1384,6 +1392,7 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
 
@@ -1526,6 +1535,7 @@ eth.pendingTransactions
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1690,6 +1700,7 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
