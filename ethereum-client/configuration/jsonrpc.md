@@ -18,7 +18,7 @@
 | IpcUnixDomainSocketPath | NETHERMIND_JSONRPCCONFIG_IPCUNIXDOMAINSOCKETPATH | The path to connect a unix domain socket over. |  |
 | JwtSecretFile | NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE | Path to file with hex encoded secret for jwt authentication | keystore/jwt-secret |
 | MaxBatchResponseBodySize | NETHERMIND_JSONRPCCONFIG_MAXBATCHRESPONSEBODYSIZE | Max response body size when using batch requests, subsequent requests are trimmed | 30000000 |
-| MaxBatchSize | NETHERMIND_JSONRPCCONFIG_MAXBATCHSIZE | Limit batch size for batched json rpc call | 100 |
+| MaxBatchSize | NETHERMIND_JSONRPCCONFIG_MAXBATCHSIZE | Limit batch size for batched json rpc call | 1024 |
 | MaxLoggedRequestParametersCharacters | NETHERMIND_JSONRPCCONFIG_MAXLOGGEDREQUESTPARAMETERSCHARACTERS | Limits the Maximum characters printing to log for parameters of any Json RPC service request | null |
 | MaxRequestBodySize | NETHERMIND_JSONRPCCONFIG_MAXREQUESTBODYSIZE | Max HTTP request body size | 30000000 |
 | MethodsLoggingFiltering | NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING | Defines method names of Json RPC service requests to NOT log. Example: {"eth_blockNumber"} will not log "eth_blockNumber" requests. | [engine_newPayloadV1, engine_newPayloadV2, engine_forkchoiceUpdatedV1, engine_forkchoiceUpdatedV2] |

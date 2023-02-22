@@ -496,6 +496,7 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |

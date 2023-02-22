@@ -64,6 +64,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
+| MaxFeePerDataGas | `Quantity` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
