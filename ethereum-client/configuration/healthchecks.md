@@ -5,6 +5,7 @@
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
 | Enabled | NETHERMIND_HEALTHCHECKSCONFIG_ENABLED | If 'true' then Health Check endpoints is enabled at /health | false |
+| LowStorageCheckAwaitOnStartup | NETHERMIND_HEALTHCHECKSCONFIG_LOWSTORAGECHECKAWAITONSTARTUP | Free disk space check on startup will pause node initalization until enough space is available. | false |
 | LowStorageSpaceShutdownThreshold | NETHERMIND_HEALTHCHECKSCONFIG_LOWSTORAGESPACESHUTDOWNTHRESHOLD | Percentage of available disk space below which node will shutdown. Zero to disable. | 1 |
 | LowStorageSpaceWarningThreshold | NETHERMIND_HEALTHCHECKSCONFIG_LOWSTORAGESPACEWARNINGTHRESHOLD | Percentage of available disk space below which a warning will be displayed. Zero to disable. | 5 |
 | MaxIntervalClRequestTime | NETHERMIND_HEALTHCHECKSCONFIG_MAXINTERVALCLREQUESTTIME | Max request interval in which we assume that CL works in a healthy way | 300 |

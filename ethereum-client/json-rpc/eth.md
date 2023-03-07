@@ -429,6 +429,58 @@ curl --data '{"method":"eth_feeHistory","params":[blockCount, newestBlock, rewar
 {% endtabs %}
 
 [See also CLI eth.feeHistory](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-feehistory)
+## eth_getAccount
+
+Retrieves Accounts via Address and Blocknumber 
+
+| Invocation |
+| :--- |
+| `{"method":"eth_getAccount","params":[accountAddress, blockParameter]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| accountAddress | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `AccountForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth_getAccount" %}
+```
+curl --data '{"method":"eth_getAccount","params":[accountAddress, blockParameter],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+
+{% tab title="Objects in eth_getAccount" %}
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`AccountForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| CodeHash | `Hash` |
+| StorageRoot | `Hash` |
+| Balance | `Quantity` |
+| Nonce | `Quantity` |
+{% endtab %}
+{% endtabs %}
+
+[See also CLI eth.getAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/eth#eth-getaccount)
 ## eth_getBalance
 
 Returns account balance 
