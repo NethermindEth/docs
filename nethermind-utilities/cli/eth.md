@@ -425,6 +425,61 @@ eth.feeHistory(blockCount, newestBlock, rewardPercentiles)
 [See also JSON RPC eth_feeHistory](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_feehistory)
 
 
+## eth.getAccount
+
+Retrieves Accounts via Address and Blocknumber 
+
+
+| Invocation |
+| :--- |
+| `eth.getAccount(accountAddress, blockParameter)` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| accountAddress | `Address` |  |
+| blockParameter | `BlockParameter object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `AccountForRpc object` |  |
+
+{% tabs %}
+{% tab title="Example request of eth.getAccount" %}
+```yaml
+eth.getAccount(accountAddress, blockParameter)
+```
+{% endtab %}
+
+{% tab title="Objects in eth_getAccount" %}
+
+`BlockParameter`
+
+| Field name | Type |
+| :--- | :--- |
+| Type | `BlockParameterType object` |
+| BlockNumber | `Quantity` |
+| BlockHash | `Hash` |
+| RequireCanonical | `Boolean` |
+
+`BlockParameterType`
+
+- `Quantity` or `String` (latest, earliest, pending)
+
+
+`AccountForRpc`
+
+| Field name | Type |
+| :--- | :--- |
+| CodeHash | `Hash` |
+| StorageRoot | `Hash` |
+| Balance | `Quantity` |
+| Nonce | `Quantity` |
+{% endtab %}
+{% endtabs %}
+
+[See also JSON RPC eth_getAccount](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/eth#eth_getaccount)
+
+
 ## eth.getBalance
 
 Returns account balance 
