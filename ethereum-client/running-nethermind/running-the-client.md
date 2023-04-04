@@ -62,7 +62,7 @@ cd nethermind
 
 * [x] Nethermind node is now running:tada:, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
 
-![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (1) (1) (1) (1) (1) (1) (2).png>)
 
 {% hint style="danger" %}
 #### For Ubuntu 16.04 you will need additional dependencies installed.
