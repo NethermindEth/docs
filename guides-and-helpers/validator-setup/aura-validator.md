@@ -126,7 +126,7 @@ Things to be configured:
 * [ ] `EthStats` section if you wish to report node status to the ethstats page for a given network
 * [ ] `Metrics` section if running local/remote [Metrics infrastructure](../../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md)
 * [ ] `KeyStore.PasswordFiles` path to the file containing password for **mining private key**
-* [ ] `KeyStore.UnlockAccounts` **** an array of accounts, provide **mining public address** here
+* [ ] `KeyStore.UnlockAccounts` an array of accounts, provide **mining public address** here
 * [ ] `KeyStore.BlockAuthorAccount` **mining public address** should be provided here as well
 * [ ] `Aura.ForceSealing` set to true
 

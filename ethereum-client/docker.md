@@ -69,7 +69,7 @@ Environment variables are to be passed before the docker image tag while paramet
 {% endhint %}
 
 {% hint style="info" %}
-Environment variables **** can be easily used within **docker-compose.yml** files in the environment section
+Environment variables can be easily used within **docker-compose.yml** files in the environment section
 {% endhint %}
 
 ### **JSON RPC**

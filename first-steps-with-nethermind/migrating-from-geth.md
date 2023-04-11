@@ -76,12 +76,12 @@ Compare a hash from log to hash of corresponding block on [https://etherscan.io/
 
 {% hint style="info" %}
 **EXAMPLE**\
-****Logs from Nethermind:\
-****`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` \
+Logs from Nethermind:\
+`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` \
 `FCU - block 16670194 (0x13cebe...91beab) was processed.`\
-``\
+\
 `Block on etherscan:`\
-``[`https://etherscan.io/block/16670194`](https://etherscan.io/block/16670194)``
+[`https://etherscan.io/block/16670194`](https://etherscan.io/block/16670194)
 
 \
 Block number and block hash matches information from logs.
@@ -150,12 +150,12 @@ Compare a hash from log to hash of corresponding block on [https://etherscan.io/
 
 {% hint style="info" %}
 **EXAMPLE**\
-****Logs from Nethermind:\
-****`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` \
+Logs from Nethermind:\
+`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` \
 `FCU - block 16670194 (0x13cebe...91beab) was processed.`\
-``\
+\
 `Block on etherscan:`\
-``[`https://etherscan.io/block/16670194`](https://etherscan.io/block/16670194)``
+[`https://etherscan.io/block/16670194`](https://etherscan.io/block/16670194)
 
 \
 Block number and block hash matches information from logs.

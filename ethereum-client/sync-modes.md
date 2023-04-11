@@ -49,7 +49,7 @@ To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` 
 > }
 > ```
 >
-> ****
+>
 
 #### Snap Sync VS Other Sync Modes
 

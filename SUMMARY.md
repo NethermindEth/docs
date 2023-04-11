@@ -128,6 +128,7 @@
   * [Eth2 Validator](guides-and-helpers/validator-setup/eth2-validator.md)
 * [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 * [Coding Style](guides-and-helpers/coding-style.md)
+* [Full Pruning Guide](guides-and-helpers/full-pruning-guide.md)
 
 ## Contact
 
