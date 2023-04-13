@@ -66,7 +66,7 @@ Currently Nethermind only supports images for **AMD64** and **ARM64** CPU archit
 
 #### Installing Dependencies
 
-To build Nethermind you will need to have **Git** and the **.NET SDK 6.0** installed.
+To build Nethermind you will need to have **Git** and the **.NET SDK 7.0** installed.
 
 {% embed url="https://git-scm.com/downloads" %}
 
