@@ -21,7 +21,7 @@
 | MaxBatchSize | NETHERMIND_JSONRPCCONFIG_MAXBATCHSIZE | Limit batch size for batched json rpc call | 1024 |
 | MaxLoggedRequestParametersCharacters | NETHERMIND_JSONRPCCONFIG_MAXLOGGEDREQUESTPARAMETERSCHARACTERS | Limits the Maximum characters printing to log for parameters of any Json RPC service request | null |
 | MaxRequestBodySize | NETHERMIND_JSONRPCCONFIG_MAXREQUESTBODYSIZE | Max HTTP request body size | 30000000 |
-| MethodsLoggingFiltering | NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING | Defines method names of Json RPC service requests to NOT log. Example: {"eth_blockNumber"} will not log "eth_blockNumber" requests. | [engine_newPayloadV1, engine_newPayloadV2, engine_forkchoiceUpdatedV1, engine_forkchoiceUpdatedV2] |
+| MethodsLoggingFiltering | NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING | Defines method names of Json RPC service requests to NOT log. Example: {"eth_blockNumber"} will not log "eth_blockNumber" requests. | [engine_newPayloadV1, engine_newPayloadV2, engine_newPayloadV3, engine_forkchoiceUpdatedV1, engine_forkchoiceUpdatedV2] |
 | Port | NETHERMIND_JSONRPCCONFIG_PORT | Port number for JSON RPC calls. Ensure the firewall is configured when enabling JSON RPC. | 8545 |
 | ReportIntervalSeconds | NETHERMIND_JSONRPCCONFIG_REPORTINTERVALSECONDS | Interval between the JSON RPC stats report log | 300 |
 | RpcRecorderBaseFilePath | NETHERMIND_JSONRPCCONFIG_RPCRECORDERBASEFILEPATH | Base file path for diagnostic JSON RPC recorder. | "logs/rpc.{counter}.txt" |
