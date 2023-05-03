@@ -20,8 +20,6 @@
 | MemoryHint | NETHERMIND_INITCONFIG_MEMORYHINT | A hint for the max memory that will allow us to configure the DB and Netty memory allocations. | null |
 | PeerManagerEnabled | NETHERMIND_INITCONFIG_PEERMANAGERENABLED | If 'false' then the node does not connect to newly discovered peers.. | true |
 | ProcessingEnabled | NETHERMIND_INITCONFIG_PROCESSINGENABLED | If 'false' then the node does not download/process new blocks.. | true |
-| ReceiptsMigration | NETHERMIND_INITCONFIG_RECEIPTSMIGRATION | If set to 'true' then receipts db will be migrated to new schema. | false |
 | RpcDbUrl | NETHERMIND_INITCONFIG_RPCDBURL | Url for remote node that will be used as DB source when 'DiagnosticMode' is set to'RpcDb' |  |
 | StaticNodesPath | NETHERMIND_INITCONFIG_STATICNODESPATH | Path to the file with a list of static nodes. | "Data/static-nodes.json" |
-| StoreReceipts | NETHERMIND_INITCONFIG_STORERECEIPTS | If set to 'false' then transaction receipts will not be stored in the database after a new block is processed. This setting is independent from downloading receipts in fast sync mode. | true |
 | WebSocketsEnabled | NETHERMIND_INITCONFIG_WEBSOCKETSENABLED | Defines whether the WebSockets service is enabled on node startup at the 'HttpPort' - e.g. ws://localhost:8545/ws/json-rpc | true |

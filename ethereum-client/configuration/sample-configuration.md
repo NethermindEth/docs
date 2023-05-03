@@ -21,8 +21,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 16889000,
-    "PivotHash": "0x776a09725d5d7a81df8da3ee77e7d3371ffcd344bc72127971c939457e107cc8",
+    "PivotNumber": 17178000,
+    "PivotHash": "0xfff67ab8df09e704d3704e0a9090aa53e459cf3b94a5cbfc798c5db9aaa36c3e",
     "PivotTotalDifficulty": "58750003716598352816469",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
@@ -34,6 +34,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Metrics": {
     "NodeName": "Mainnet"
+  },
+  "Blocks": {
+    "TargetBlockGasLimit": 30000000
   },
   "JsonRpc": {
     "Enabled": true,
@@ -69,8 +72,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 8670000,
-    "PivotHash": "0x1fca9e5114716accddbe1895797af80f7321102fa605fc782729a6b35769f63b",
+    "PivotNumber": 8910000,
+    "PivotHash": "0xd0fd1d1d5e64fc8dadbf9f38114264a911120de5b3054cfc355be7feb87803f5",
     "PivotTotalDifficulty": "10790000",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
@@ -82,6 +85,9 @@ description: Sample Fast Sync configurations for Nethermind
   },
   "Metrics": {
     "NodeName": "Goerli"
+  },
+  "Blocks": {
+    "TargetBlockGasLimit": 30000000
   },
   "Bloom": {
     "IndexLevelBucketSizes": [
