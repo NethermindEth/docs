@@ -3,9 +3,9 @@
 | Metric | Description |
 | :--- | :--- |
 | nethermind_blockhash_opcode | Number of BLOCKHASH opcodes executed. |
-| nethermind_bn256_add_precompile | Number of BN256_ADD precompile calls. |
-| nethermind_bn256_mul_precompile | Number of BN256_MUL precompile calls. |
-| nethermind_bn256_pairing_precompile | Number of BN256_PAIRING precompile calls. |
+| nethermind_bn254_add_precompile | Number of BN254_ADD precompile calls. |
+| nethermind_bn254_mul_precompile | Number of BN254_MUL precompile calls. |
+| nethermind_bn254_pairing_precompile | Number of BN254_PAIRING precompile calls. |
 | nethermind_calls | Number of calls to other contracts. |
 | nethermind_ec_recover_precompile | Number of EC_RECOVERY precompile calls. |
 | nethermind_evm_exceptions | Number of EVM exceptions thrown by contracts. |
