@@ -4,7 +4,7 @@ description: >-
   it.
 ---
 
-# Full Pruning Guide
+# Full Pruning
 
 ## Overview
 
@@ -14,7 +14,7 @@ The goal of Full Pruning is to reduce disk requirements by storing only the curr
 
 ## How it works
 
-During synchronization using the Snap Sync method, the Nethermind client produces a local copy of the Ethereum Network state, which typically amounts to approximately 160 GB. Although this size increases by around 30 GB each week, certain historical data is retained that is not necessary for node operation or to maintain a current Ethereum state.
+During synchronization using the Snap Sync method, the Nethermind client produces a local copy of the Ethereum Network state, which typically amounts to approximately 160 GB (state database).  Entire database may rise up to 600-650GB. Although this size increases by around 30 GB each week, certain historical data is retained that is not necessary for node operation or to maintain a current Ethereum state.
 
 When Full Pruning is activated and initiated, it conducts a thorough examination of the entire state tree to determine which data is no longer required and can be treated as historical. It then determines which information corresponds to the current state, and duplicates it alongside the existing version. During verification of each node in the state, the new pruned state replaces the previous one. Once the verifier confirms that everything is functioning correctly, the old state database is eliminated, resulting in significant disk space savings. As a result, the size of the database will be close to its initial size again.
 
@@ -28,12 +28,12 @@ Do not enable Full Pruning on an Archive node, as these are two opposing feature
 
 ## How to configure Full Pruning
 
-As a very first point please review a Pruning configuration options from this documentation page: [pruning.md](../ethereum-client/configuration/pruning.md "mention").
+As a very first point please review a Pruning configuration options from this documentation page: [pruning.md](../../ethereum-client/configuration/pruning.md "mention").
 
 To activate the Full Pruning feature, you must set either the `Pruning.Mode=Hybrid` or `Pruning.Mode=Full` flag for your node.
 
 {% hint style="info" %}
-Setting `Pruning.Mode=Hyb rid` enables both `InMemory` and `Full` modes. `InMemory` mode helps the node grow at a slower rate compared to `Pruning.Mode=Full`. With this configuration, Full Pruning is executed less frequently, promoting healthier disk operation. Since Full Pruning is hardware-intensive, this configuration is also beneficial for attestation results.
+Setting `Pruning.Mode=Hybrid` enables both `InMemory` and `Full` modes. `InMemory` mode helps the node grow at a slower rate compared to `Pruning.Mode=Full`. With this configuration, Full Pruning is executed less frequently, promoting healthier disk operation. Since Full Pruning is hardware-intensive, this configuration is also beneficial for attestation results.
 {% endhint %}
 
 The next step is to determine the trigger conditions for Full Pruning. Currently, there are three options available:
@@ -48,14 +48,14 @@ Below is a brief explanation of each option.
 
 Manual mode enables Full Pruning to be triggered only upon request, providing full control over this functionality. To configure this mode, add the following flags to your node: `--Pruning.Mode=Hybrid --Pruning.FullPruningTrigger=Manual`.
 
-Additionally, you can add an Admin module to your JsonRPC to execute [#admin\_prune](../ethereum-client/json-rpc/admin.md#admin\_prune "mention") command. Here's how to do it:
+Additionally, you can add an Admin module to your JsonRPC to execute [#admin\_prune](../../ethereum-client/json-rpc/admin.md#admin\_prune "mention") command. Here's how to do it:
 
 1. Add `Admin` module to `EnabledModules` on current JsonRpc port (below example - append Admin as last value if you are overriding it already):\
    `JsonRpc.EnabledModules=[Eth, Subscribe, Trace, TxPool, Web3, Personal, Proof, Net, Parity, Health, Rpc, Admin]`
 2. Create a separate port only for `Admin` module:\
    `JsonRpc.AdditionalRpcUrls=http://127.0.0.1:8555|http|admin`
 
-Now restart a node and if everything is properly configured, you should be able to trigger [#admin\_prune](../ethereum-client/json-rpc/admin.md#admin\_prune "mention") command and Full Pruning should be started.
+Now restart a node and if everything is properly configured, you should be able to trigger [#admin\_prune](../../ethereum-client/json-rpc/admin.md#admin\_prune "mention") command and Full Pruning should be started.
 
 {% hint style="warning" %}
 One potential disadvantage of Manual mode is that if Full Pruning is not triggered in time (due to insufficient disk space), it cannot be executed. In such cases, the only option to free up disk space would be to resync the node from scratch.
@@ -87,28 +87,60 @@ It's recommended not to set the value below 250 GB for stability reasons. In rea
 
 When Full Pruning is triggered correctly, several messages will be visible in the logs of the Nethermind process.
 
-Very first ones should be:\
-_Full Pruning Ready to start: pruning garbage before state BLOCK\_NUMBER with root ROOT\_HASH._\
-and\
-_**WARN**: Full Pruning Started on root hash ROOT\_HASH: do not close the node until finished or progress will be lost._
+Very first ones should be:
 
-From that moment ensure that no restarts will be performed on a node to ensure that Full pruning will be done properly. After few minutes first logs with progress would start to appear:\
-_Full Pruning In Progress: 00:00:57.0603307 1.00 mln nodes mirrored._\
-_Full Pruning In Progress: 00:01:40.3677103  2.00 mln nodes mirrored._\
-_Full Pruning In Progress: 00:02:25.6437030 3.00 mln nodes mirrored._
+> Full Pruning Ready to start: pruning garbage before state BLOCK\_NUMBER with root ROOT\_HASH.\
+> **WARN**: Full Pruning Started on root hash ROOT\_HASH: do not close the node until finished or progress will be lost.
+
+From that moment ensure that no restarts will be performed on a node to ensure that Full pruning will be done properly. After few minutes first logs with progress would start to appear:
+
+> Full Pruning In Progress: 00:00:57.0603307 1.00 mln nodes mirrored.\
+> Full Pruning In Progress: 00:01:40.3677103  2.00 mln nodes mirrored.\
+> Full Pruning In Progress: 00:02:25.6437030 3.00 mln nodes mirrored.
 
 Pruning may take even **more than 30 hours** (this depends on CPU and IO operations on disk).
 
-Whenever pruning will be completed, there will be a log message:\
-_Full Pruning Finished: 15:25:59.1620756 1,560.29 mln nodes mirrored._
+Whenever pruning will be completed, there will be a log message:
 
-As you can notice, on this example it took only 15 hours.
+> Full Pruning Finished: 15:25:59.1620756 1,560.29 mln nodes mirrored.
+
+As you can notice, on this example it took around 15 hours.
 
 {% hint style="info" %}
 Since the amount of mirrored nodes is not a static value, it's not possible to provide a simple progress indicator in percentage. Therefore, the approximate value given should be used to determine when Full Pruning is expected to be completed.
 {% endhint %}
 
 ## Additional settings
+
+### FullPruningMemoryBudgetMb
+
+The `FullPruningMemoryBudgetMb` configuration parameter controls the memory budget allocated for the trie visit during the full pruning process. By increasing this value, the number of required read IOPS (Input/Output Operations Per Second) can be significantly reduced, which results in a faster full pruning operation. However, this improvement comes at the expense of increased RAM usage.\
+\
+Assuming your system has a total of 64GB of RAM, with the application, CL client, and system expenses consuming 20GB, you need to determine the maximum value for `FullPruningMemoryBudgetMb` while ensuring that the system remains stable and respecting the given limit.
+
+In this case, you have 44GB (64GB - 20GB) of available RAM for increasing the `FullPruningMemoryBudgetMb` value. To calculate the maximum value in megabytes, multiply the available RAM by 1024 (since 1GB = 1024MB):
+
+```
+44GB * 1024MB/GB = 45056MB
+```
+
+{% hint style="info" %}
+Setting the `FullPruningMemoryBudgetMb` value higher than 16GB may not provide any additional performance benefits.
+{% endhint %}
+
+However, there is a recommendation that the value of `FullPruningMemoryBudgetMb` should not be higher than 16GB. So, considering this guideline, you can set the `FullPruningMemoryBudgetMb` value to a maximum of 16GB, which is equivalent to:
+
+```
+16GB * 1024MB/GB = 16384MB
+```
+
+To apply this value, update the configuration file as follows:
+
+```
+Pruning.FullPruningMemoryBudgetMb=16384
+```
+
+Please note that this example assumes that the remaining 44GB of RAM is sufficient for the full pruning memory budget. Depending on the specific use case and system requirements, it may be necessary to further adjust the value to optimize performance and resource usage.
 
 ### FullPruningCompletionBehavior
 

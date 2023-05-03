@@ -128,7 +128,9 @@
   * [Eth2 Validator](guides-and-helpers/validator-setup/eth2-validator.md)
 * [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
 * [Coding Style](guides-and-helpers/coding-style.md)
-* [Full Pruning Guide](guides-and-helpers/full-pruning-guide.md)
+* [How to reduce database size](guides-and-helpers/how-to-reduce-database-size/README.md)
+  * [Resync database from scratch](guides-and-helpers/how-to-reduce-database-size/resync-database-from-scratch.md)
+  * [Full Pruning](guides-and-helpers/how-to-reduce-database-size/full-pruning.md)
 
 ## Contact
 
