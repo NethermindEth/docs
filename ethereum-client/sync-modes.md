@@ -7,7 +7,7 @@
 * fast sync
   * downloads only the latest state, headers, and optionally bodies and receipts
   * you can run it like this: `./Nethermind.Runner --config mainnet`
-  * if you have a good connection and a reasonable machine then setting --Network.MaxActivePeers to 256 (see NetworkConfig secion in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)\
+  * if you have a good connection and a reasonable machine then setting --Network.MaxActivePeers to 256 (see NetworkConfig section in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)\
     [https://docs.nethermind.io/nethermind/ethereum-client/configuration/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network)
 * archive sync
   * heavy historical sync verifying all the transactions and keeping all the historical state
@@ -87,7 +87,7 @@ After downloading the block data Nethermind will start state sync (downloading t
 
 After the state sync finishes you will see the _'Processed...'_ messages like in archive sync - it means that your node is in sync and is processing the latest blocks.
 
-Mainnet sync, at the time of writing (December 2020), takes around 8 hours on an UpCloud 16GB RAM 8 CPU  $40 VM (and then syncs receipts and bodies in the background if you enabled them in the configuration). Goerli sync should take around 40 minutes.
+Mainnet sync, at the time of writing (December 2020), takes around 8 hours on an UpCloud 16GB RAM 8 CPU $40 VM (and then syncs receipts and bodies in the background if you enabled them in the configuration). Goerli sync should take around 40 minutes.
 
 ![Fast sync logs example for mainnet.](<../.gitbook/assets/image (59).png>)
 
