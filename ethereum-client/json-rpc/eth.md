@@ -2024,6 +2024,12 @@ curl --data '{"method":"eth_syncing","params":[],"id":1,"jsonrpc":"2.0"}' -H "Co
 | StartingBlock | `Quantity` |
 | CurrentBlock | `Quantity` |
 | HighestBlock | `Quantity` |
+| SyncMode | `SyncMode object` |
+
+`SyncMode`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
