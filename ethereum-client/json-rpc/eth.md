@@ -90,6 +90,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -218,6 +219,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -316,6 +318,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1111,6 +1114,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1201,6 +1205,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1277,6 +1282,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":["0xabca23910646013d6
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1820,6 +1826,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1963,6 +1970,7 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
