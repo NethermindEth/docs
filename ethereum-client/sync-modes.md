@@ -48,8 +48,6 @@ To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` 
 >     	"FastBlocks": true
 > }
 > ```
->
->
 
 #### Snap Sync VS Other Sync Modes
 
@@ -59,11 +57,11 @@ An operator can instead choose to run Fast Sync when setting up the node, which 
 
 This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a node: Merkle trees.
 
-![](../.gitbook/assets/Untitled.png)
+![](<../.gitbook/assets/Untitled (1).png>)
 
 With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time and packets downloaded.
 
-#### Current limitations and future development&#x20;
+#### Current limitations and future development
 
 As of [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0), Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients implementing Snap Sync.
 
@@ -102,8 +100,6 @@ One of the best indicators that you are close to be synced is combined \~100% st
 ![](<../.gitbook/assets/image (64).png>)
 
 ![](<../.gitbook/assets/image (62).png>)
-
-
 
 ## Archive Sync
 

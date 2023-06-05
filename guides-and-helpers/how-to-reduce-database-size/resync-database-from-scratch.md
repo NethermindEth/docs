@@ -13,7 +13,8 @@ This guide explains how to resync a Nethermind node using the existing Pivot blo
 1. **Stop the Nethermind node**: If your Nethermind node is currently running, stop it to ensure that no new data is being written to the database during the resync process.
 2. **Delete the existing database**: Navigate to the Nethermind data directory. The location of this directory depends on how Nethermind was installed and your configuration settings. Inside the data directory, find the `nethermind_db` folder and delete the `mainnet` subfolder to remove the existing database for the mainnet.
 3. **Update the configuration file (optional)**: If you want to change any configuration settings before resyncing the node, edit the `mainnet.cfg` file located in the Nethermind directory. For example, you might want to adjust the pruning settings or specify a different network.
-4. **Update the Pivot block (optional)**
+4. **Update the Pivot block (optional)**\
+   <mark style="color:red;">**Only for versions before 1.19.0 where Auto-Pivot approach was introduced**</mark>
    1.  **Using Etherscan**: If you want to speed up the syncing process, you can update the Pivot block to a more recent one. To do this, find the `Sync` section in the `mainnet.cfg` file and update the `PivotNumber` and `PivotHash` fields to match a recent "finalized" block number and its corresponding hash. You can obtain this information from a block explorer such as [Etherscan](https://etherscan.io/).\
        \
        Using block number 17165278 from [Etherscan](https://etherscan.io/block/17165278):
