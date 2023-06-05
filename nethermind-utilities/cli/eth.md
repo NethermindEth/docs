@@ -88,6 +88,7 @@ eth.call(transactionCall, blockParameter)
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -214,6 +215,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -311,6 +313,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1088,6 +1091,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1163,6 +1167,7 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1591,6 +1596,7 @@ eth.pendingTransactions
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
@@ -1756,6 +1762,7 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
 | MaxFeePerDataGas | `Quantity` |
+| BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
 | R | `Quantity` |
