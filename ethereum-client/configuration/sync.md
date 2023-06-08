@@ -17,6 +17,7 @@
 | FixTotalDifficultyLastBlock | NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTYLASTBLOCK | [ONLY TO FIX INCORRECT TOTAL DIFFICULTY ISSUE] Last block which total difficulty will be recalculated. If set to null equals to best known block | null |
 | FixTotalDifficultyStartingBlock | NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTYSTARTINGBLOCK | [ONLY TO FIX INCORRECT TOTAL DIFFICULTY ISSUE] First block which total difficulty will be recalculated. | 1 |
 | MaxAttemptsToUpdatePivot | NETHERMIND_SYNCCONFIG_MAXATTEMPTSTOUPDATEPIVOT | Max number of attempts (seconds) to update pivot block basing on Forkchoice message from Consensus Layer. Only for PoS chains. | 900 |
+| MaxProcessingThreads | NETHERMIND_SYNCCONFIG_MAXPROCESSINGTHREADS | [TECHNICAL] Specify max num of thread used for processing. Default is same as logical core count. | 0 |
 | NetworkingEnabled | NETHERMIND_SYNCCONFIG_NETWORKINGENABLED | If 'false' then the node does not connect to peers. | true |
 | NonValidatorNode | NETHERMIND_SYNCCONFIG_NONVALIDATORNODE | [EXPERIMENTAL] Only for non validator nodes! If set to true, DownloadReceiptsInFastSync and/or DownloadBodiesInFastSync can be set to false. | false |
 | PivotHash | NETHERMIND_SYNCCONFIG_PIVOTHASH | Hash of the pivot block for the Fast Blocks sync. | null |
