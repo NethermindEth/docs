@@ -5,7 +5,7 @@
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
 | AutoDump | NETHERMIND_INITCONFIG_AUTODUMP | Auto dump on bad blocks for diagnostics, Possible values [None, Receipts, Parity, Geth, All] | Receipts |
-| BaseDbPath | NETHERMIND_INITCONFIG_BASEDBPATH | Base directoy path for all the nethermind databases. | "db" |
+| BaseDbPath | NETHERMIND_INITCONFIG_BASEDBPATH | Base directory path for all the nethermind databases. | "db" |
 | ChainSpecPath | NETHERMIND_INITCONFIG_CHAINSPECPATH | Path to the chain definition file (Parity chainspec or Geth genesis file). | chainspec/foundation.json |
 | DiagnosticMode | NETHERMIND_INITCONFIG_DIAGNOSTICMODE | Diagnostics modes | None |
 | DiscoveryEnabled | NETHERMIND_INITCONFIG_DISCOVERYENABLED | If 'false' then the node does not try to find nodes beyond the bootnodes configured. | true |
@@ -14,6 +14,7 @@
 | HiveChainSpecPath | NETHERMIND_INITCONFIG_HIVECHAINSPECPATH | Path to the chain definition file created by Hive for test purpouse | chainspec/test.json |
 | IsMining | NETHERMIND_INITCONFIG_ISMINING | If 'true' then the node will try to seal/mine new blocks | false |
 | KeepDevWalletInMemory | NETHERMIND_INITCONFIG_KEEPDEVWALLETINMEMORY | If 'true' then any accounts created will be only valid during the session and deleted when application closes. | false |
+| KzgSetupPath | NETHERMIND_INITCONFIG_KZGSETUPPATH | Kzg trusted setup file path | null |
 | LogDirectory | NETHERMIND_INITCONFIG_LOGDIRECTORY | In case of null, the path is set to [applicationDirectiory]\logs | logs |
 | LogFileName | NETHERMIND_INITCONFIG_LOGFILENAME | Name of the log file generated (useful when launching multiple networks with the same log folder). | "log.txt" |
 | LogRules | NETHERMIND_INITCONFIG_LOGRULES | Overrides for default logs in format LogPath:LogLevel;* | null |
