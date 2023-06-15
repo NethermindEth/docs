@@ -4,7 +4,6 @@ Configuration of the pruning parameters (pruning is the process of removing some
 
 | Property | Env Variable | Description | Default |
 | :--- | :--- | :--- | :--- |
-| AvailableSpaceCheckEnabled | NETHERMIND_PRUNINGCONFIG_AVAILABLESPACECHECKENABLED | Enables available disk space check. | true |
 | CacheMb | NETHERMIND_PRUNINGCONFIG_CACHEMB | 'Memory' pruning: Pruning cache size in MB (amount if historical nodes data to store in cache - the bigger the cache the bigger the disk space savings). | 1024 |
 | FullPruningCompletionBehavior | NETHERMIND_PRUNINGCONFIG_FULLPRUNINGCOMPLETIONBEHAVIOR | Determines what to do after Nethermind completes a full prune. 'None': does not take any special action. 'ShutdownOnSuccess': shuts Nethermind down if the full prune succeeded. 'AlwaysShutdown': shuts Nethermind down once the prune completes, whether it succeeded or failed. | None |
 | FullPruningDisableLowPriorityWrites | NETHERMIND_PRUNINGCONFIG_FULLPRUNINGDISABLELOWPRIORITYWRITES | Full pruning uses low priority writes to prevent blocking block processing. If not needed, set this to true for faster full pruning. | false |
