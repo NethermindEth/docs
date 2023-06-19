@@ -18,10 +18,6 @@ To do your setup manually follow the steps below.
 
 You can choose from downloading the official release, downloading the docker image, or building Nethermind from source.
 
-{% hint style="info" %}
-Support for post merge Ropsten is available as of Nethermind version 1.13.1
-{% endhint %}
-
 ### Downloading Official Release
 
 #### Ubuntu
@@ -234,7 +230,7 @@ Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. T
 
 Depending on the network you want to run the node for, choose the `--config` variable. for more on networks, check [here](../ethereum-client/networks.md).
 
-`--config` is the config file for the network you want to connect to. For example, to run a node for the kiln testnet use `--config kiln`
+`--config` is the config file for the network you want to connect to. For example, to run a node for the goerli testnet use `--config goerli`
 
 ### Running Local Build
 
@@ -242,7 +238,7 @@ After you have built Nethermind you should be in the `nethermind/src/Nethermind`
 
 ```bash
 cd Nethermind.Runner
-dotnet run -c Release -- --config ropsten --JsonRpc.JwtSecretFile=PATH
+dotnet run -c Release -- --config mainnet --JsonRpc.JwtSecretFile=PATH
 ```
 
 Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
@@ -280,25 +276,25 @@ nethermind-launcher
 {% tabs %}
 {% tab title="Windows" %}
 ```bash
-./Nethermind.Runner --config ropsten --JsonRpc.JwtSecretFile=PATH
+./Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=PATH
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
 ```
-nethermind --config ropsten --JsonRpc.JwtSecretFile=PATH
+nethermind --config goerli --JsonRpc.JwtSecretFile=PATH
 ```
 {% endtab %}
 
 {% tab title="macOS" %}
 ```bash
-nethermind --config ropsten --JsonRpc.JwtSecretFile=PATH
+nethermind --config goerli --JsonRpc.JwtSecretFile=PATH
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten.
+`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli or sepolia.
 {% endhint %}
 
 Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
@@ -314,11 +310,11 @@ Running Nethermind from a Docker image may require more configuration depending 
 The commands below should work in most situations
 
 ```bash
-docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
+docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
 ```
 
 {% hint style="info" %}
-`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli, sepolia, kiln or Ropsten. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
+`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli or sepolia. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
 {% endhint %}
 
 #### **Docker Settings**
@@ -402,18 +398,6 @@ nimbus-eth2/build/nimbus_beacon_node \
 ```
 {% endtab %}
 
-{% tab title="Ropsten" %}
-```bash
-nimbus-eth2/build/nimbus_beacon_node \
-    --network=ropsten \
-    --web3-url=http://127.0.0.1:8551 \
-    --rest \
-    --metrics \
-    --suggested-fee-recipient=<Enter-eth-address-here> \
-    --jwt-secret="/tmp/jwtsecret"
-```
-{% endtab %}
-
 {% tab title="Kiln" %}
 ```bash
 nimbus-eth2/build/nimbus_beacon_node \ 
@@ -472,19 +456,6 @@ cd prysm
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
 --execution-endpoint=http://localhost:8551  \
---jwt-secret=/tmp/jwtsecret
-```
-{% endtab %}
-
-{% tab title="Ropsten" %}
-```bash
-cd prysm
-./prysm.sh beacon-chain \
---ropsten \
---datadir $db_path  \
---suggested-fee-recipient=<Enter-eth-address-here> \
---execution-endpoint=http://localhost:8551  \
---bootstrap-node=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk
 --jwt-secret=/tmp/jwtsecret
 ```
 {% endtab %}
@@ -578,26 +549,6 @@ lighthouse \
 ```
 {% endtab %}
 
-{% tab title="Ropsten" %}
-```bash
-lighthouse \
-          beacon_node \
-          --network ropsten \
-          --debug-level info \
-          --datadir ./testnet-lh1 \
-          --eth1 \
-          --http \
-          --http-allow-sync-stalled \
-          --metrics \
-          --execution-endpoints http://127.0.0.1:8551 \
-          --enr-udp-port=9000 \
-          --enr-tcp-port=9000 \
-          --discovery-port=9000 \
-          --suggested-fee-recipient=<enter-eth-address-here> \
-          --jwt-secrets="/tmp/jwtsecret"
-```
-{% endtab %}
-
 {% tab title="Kiln" %}
 ```bash
 lighthouse \
@@ -673,20 +624,6 @@ cd lodestar
 ```
 {% endtab %}
 
-{% tab title="Ropsten" %}
-<pre class="language-bash"><code class="lang-bash"><strong>cd lodestar
-</strong>./lodestar beacon \
---dataDir "../lodestar-beacondata" \ 
---network ropsten \ 
---eth1 \ 
---execution.urls "http://127.0.0.1:8551" \ 
---discv5 \ 
---suggestedFeeRecipient &#x3C;Enter-eth-address-here> \
---jwt-secret "/tmp/jwtsecret" \
---bootnodes "enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk"
-</code></pre>
-{% endtab %}
-
 {% tab title="Kiln" %}
 ```bash
 cd lodestar
@@ -751,17 +688,6 @@ For checkpoint sync, add the following flag with a checkpoint sync endpoint from
   --log-destination console \
   --validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
 ```
-{% endtab %}
-
-{% tab title="Ropsten" %}
-<pre class="language-bash"><code class="lang-bash"><strong>./teku/build/install/teku/bin/teku \
-</strong>  --data-path "datadir-teku" \
-  --network ropsten \
-  --ee-endpoint http://localhost:8551 \
-  --ee-jwt-secret-file "/tmp/jwtsecret" \
-  --log-destination console \
-  --validators-proposer-default-fee-recipient=&#x3C;Enter-eth-address-here> \
-</code></pre>
 {% endtab %}
 
 {% tab title="Kiln" %}
