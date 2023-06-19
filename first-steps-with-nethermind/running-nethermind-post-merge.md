@@ -6,7 +6,7 @@ Ethereum’s long awaited shift from Proof of Work (POW) to Proof of Stake (POS)
 
 The Merge changed how operators run nodes on the Ethereum blockchain. A node now needs **two** clients that work together as a pair. In addition to the Execution Layer client (e.g. Nethermind) you need a Consensus Layer client that connects to the Beacon chain and runs the POS algorithm.
 
-This guide will show you everything you need to know to operate an Ethereum node. It will show how to connect to the Goerli, Sepolia, Kiln and Ropsten test networks as well.
+This guide will show you everything you need to know to operate an Ethereum node. It will show how to connect to the Goerli, Sepolia and Chiado test networks as well.
 
 An easy way to run both CL and EL clients is by using Sedge. Sedge is a setup tool for PoS network/chain validators and nodes. Currently, Sedge supports multiple Linux distributions and MacOS.
 
@@ -314,7 +314,7 @@ docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --confi
 ```
 
 {% hint style="info" %}
-`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli or sepolia. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
+`--config` flag \*\*\*\* is the network. For example it can be mainnet, goerli or sepolia. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
 {% endhint %}
 
 #### **Docker Settings**
@@ -340,19 +340,8 @@ Once both clients are running watch the logs to make sure you don’t get any `U
 It would be way faster to sync consensus clients using checkpoint sync.
 
 * <mark style="color:green;">**To sync the CL client using a checkpoint sync, view the community maintained endpoints**</mark> [**here**](https://eth-clients.github.io/checkpoint-sync-endpoints/)<mark style="color:green;">**.**</mark>
-* For Goerli, Ropsten or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync).
+* For Goerli or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync).
 {% endhint %}
-
-#### Running on Kiln
-
-To run on the kiln testnet, lodestar, nimbus and prysm require cloning the kiln configs.
-
-```bash
-git clone https://github.com/eth-clients/merge-testnets.git
-cd merge-testnets/kiln
-```
-
-For more detailed instructions on running the consensus clients on kiln, see [here](https://notes.ethereum.org/@launchpad/kiln#Prysm).
 
 ### Running Nimbus With Nethermind
 
@@ -395,21 +384,6 @@ nimbus-eth2/build/nimbus_beacon_node \
     --metrics \
     --suggested-fee-recipient=<Enter-eth-address-here> \
     --jwt-secret="/tmp/jwtsecret"
-```
-{% endtab %}
-
-{% tab title="Kiln" %}
-```bash
-nimbus-eth2/build/nimbus_beacon_node \ 
---network=merge-testnets/kiln \ 
---web3-url=ws://127.0.0.1:8551 \ 
---rest \ 
---metrics \ 
---log-level=DEBUG \ 
---terminal-total-difficulty-override=20000000000000 \ 
---jwt-secret="/tmp/jwtsecret" \ 
---suggested-fee-recipient=<Enter-eth-address-here> \
---eth1.depositContractDeployBlock=0
 ```
 {% endtab %}
 {% endtabs %}
@@ -456,21 +430,6 @@ cd prysm
 --datadir $db_path  \
 --suggested-fee-recipient=<Enter-eth-address-here> \
 --execution-endpoint=http://localhost:8551  \
---jwt-secret=/tmp/jwtsecret
-```
-{% endtab %}
-
-{% tab title="Kiln" %}
-```bash
-cd prysm
-./prysm.sh beacon-chain \
---genesis-state $genesis_state_path \
---datadir $db_path  \
---suggested-fee-recipient=<Enter-eth-address-here> \
---execution-endpoint=$execution_server  \
---execution-provider=http://localhost:8551  \
---chain-config-file=$config_path \
---bootstrap-node=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk
 --jwt-secret=/tmp/jwtsecret
 ```
 {% endtab %}
@@ -549,26 +508,6 @@ lighthouse \
 ```
 {% endtab %}
 
-{% tab title="Kiln" %}
-```bash
-lighthouse \
-beacon_node \ 
---network kiln \ 
---debug-level info \ 
---datadir ./testnet-lh1 \ 
---eth1 \ 
---http \ 
---http-allow-sync-stalled \ 
---metrics \ 
---execution-endpoints http://127.0.0.1:8551 \ 
---enr-udp-port=9000 \ 
---enr-tcp-port=9000 \ 
---discovery-port=9000 \ 
---suggested-fee-recipient=<enter-eth-address-here> \
---jwt-secrets="/tmp/jwtsecret"
-```
-{% endtab %}
-
 {% tab title="Chiado" %}
 Please follow guide provided [here](https://github.com/gnosischain/lighthouse-client).
 {% endtab %}
@@ -624,20 +563,6 @@ cd lodestar
 ```
 {% endtab %}
 
-{% tab title="Kiln" %}
-```bash
-cd lodestar
-./lodestar beacon \
---dataDir "../lodestar-beacondata" \ 
---network Kiln \ 
---eth1 \ 
---execution.urls "http://127.0.0.1:8551" \ 
---discv5 \ 
---suggestedFeeRecipient <Enter-eth-address-here> \
---jwt-secret "/tmp/jwtsecret" 
-```
-{% endtab %}
-
 {% tab title="Chiado" %}
 Please follow guide provided [here](https://github.com/gnosischain/lodestar-client).
 {% endtab %}
@@ -687,20 +612,6 @@ For checkpoint sync, add the following flag with a checkpoint sync endpoint from
   --ee-jwt-secret-file "/tmp/jwtsecret" \
   --log-destination console \
   --validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
-```
-{% endtab %}
-
-{% tab title="Kiln" %}
-```bash
-./teku/build/install/teku/bin/teku \ 
---data-path "datadir-teku" \  
---network kiln \  
---p2p-discovery-bootnodes "enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk" \  
---ee-endpoint http://localhost:8551 \  
---Xee-version kilnv2 \  
---ee-jwt-secret-file "/tmp/jwtsecret" \  
---log-destination console \
---validators-proposer-default-fee-recipient=<Enter-eth-address-here> \
 ```
 {% endtab %}
 
