@@ -34,10 +34,10 @@ chmod +x clique-validators.sh
 * Docker-compose
 * Docker
 * jq
-* pwgen
+* openssl
 
 ```bash
-sudo apt-get install -y docker-compose docker.io jq pwgen
+sudo apt-get install -y docker-compose docker.io jq openssl
 ```
 
 ### Manual setup
@@ -119,7 +119,7 @@ EOF
 
 For each node you will need to change following items in configuration:
 
-* `TestNodeKey` should be a 64 character length alphanumeric string. Can be generated with `pwgen` tool for example.
+* `TestNodeKey` should be a 64 character length alphanumeric string. Can be generated with openssl for example (openssl rand -hex 32).
 * `LocalIp`, `ExternalIp` and `Host` should have the same value and be incremented for each node e.g. 10.5.0.3, 10.5.0.4 and so on and so forth.
 
 Copy docker-compose file and place it in working directory.
