@@ -7,7 +7,9 @@
 | nethermind_bn254_mul_precompile | Number of BN254_MUL precompile calls. |
 | nethermind_bn254_pairing_precompile | Number of BN254_PAIRING precompile calls. |
 | nethermind_calls | Number of calls to other contracts. |
+| nethermind_creates | Number of contract create calls. |
 | nethermind_ec_recover_precompile | Number of EC_RECOVERY precompile calls. |
+| nethermind_empty_calls | Number of calls made to addresses without code. |
 | nethermind_evm_exceptions | Number of EVM exceptions thrown by contracts. |
 | nethermind_mod_exp_opcode | Number of MODEXP precompiles executed. |
 | nethermind_mod_exp_precompile | Number of MODEXP precompile calls. |
