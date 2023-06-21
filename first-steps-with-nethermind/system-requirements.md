@@ -34,13 +34,13 @@ Supported operating systems
 Supported operating systems
 {% endembed %}
 
-| Operating System    | Version        | Architecture | Tested by us |
-| ------------------- | -------------- | :----------: | :----------: |
-| Windows 10 Client   | 1607+          |   x64, x86   |       ✔      |
-| Windows Client      | 7 SP1(\*), 8.1 |   x64, x86   |       ✔      |
-| Windows Server      | 2012 R2+       |   x64, x86   |       ✔      |
-| Windows Server Core | 2012 R2+       |   x64, x86   |       ❌      |
-| Nano Server         | 1809+          |      x64     |       ❌      |
+| Windows 11          | 22H2+          |    x64   |  ✔  |
+| ------------------- | -------------- | :------: | :-: |
+| Windows 10 Client   | 1607+          | x64, x86 |  ✔  |
+| Windows Client      | 7 SP1(\*), 8.1 | x64, x86 |  ✔  |
+| Windows Server      | 2012 R2+       | x64, x86 |  ✔  |
+| Windows Server Core | 2012 R2+       | x64, x86 |  ❌  |
+| Nano Server         | 1809+          |    x64   |  ❌  |
 
 ### MacOS
 
