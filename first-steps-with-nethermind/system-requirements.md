@@ -48,9 +48,8 @@ Supported operating systems
 Supported operating systems
 {% endembed %}
 
-| Operating System | Architect**ure** | **Tested by us** |
-| ---------------- | :--------------: | :--------------: |
-| Mojave+ 10.13+   |        x64       |         ✔        |
+| macOS 10+ | x64, ARM (M1, M2) |  ✔  |
+| --------- | :---------------: | :-: |
 
 ## Hardware requirements
 

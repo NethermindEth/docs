@@ -9,7 +9,6 @@
 * [Firewall Configuration](first-steps-with-nethermind/firewall-configuration.md)
 * [Migrating From Geth](first-steps-with-nethermind/migrating-from-geth.md)
 * [Explaining Nethermind logs](first-steps-with-nethermind/getting-started.md)
-* [Troubleshooting Issues](first-steps-with-nethermind/troubleshooting-issues.md)
 * [Security](first-steps-with-nethermind/security.md)
 * [Manage Nethermind with systemd](first-steps-with-nethermind/manage-nethermind-with-systemd.md)
 * [Connecting Wallet](first-steps-with-nethermind/connecting-wallet.md)
@@ -18,15 +17,22 @@
 
 * [The Merge](nodes-and-the-merge/the-merge.md)
 * [Nethermind Changes](nodes-and-the-merge/nethermind-changes.md)
+* [Troubleshooting Issues](nodes-and-the-merge/troubleshooting-issues.md)
 
 ## Installing Nethermind
 
 * [Downloading Releases](installing-nethermind/download-sources/README.md)
   * [Downloads Page](http://downloads.nethermind.io)
   * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
-* [Building From Source](installing-nethermind/building-nethermind.md)
 * [Docker](installing-nethermind/docker.md)
 * [Launching Nethermind via Nethermind.Launcher](installing-nethermind/launching-nethermind-via-nethermind.launcher.md)
+
+## For developers
+
+* [Building From Source](for-developers/building-nethermind.md)
+* [Coding Style](for-developers/coding-style.md)
+* [Web3.py](for-developers/web3.py.md)
+* [Custom Analytic Tools](for-developers/custom-analytic-tools.md)
 
 ## Ethereum client
 
@@ -93,10 +99,6 @@
 * [Plugins](ethereum-client/plugins.md)
 * [Monitoring Node's Health](ethereum-client/monitoring-node-health.md)
 
-## MEV
-
-* [MEV Plugin](mev/mev-plugin.md)
-
 ## Nethermind utilities
 
 * [CLI](nethermind-utilities/cli/README.md)
@@ -119,16 +121,13 @@
 
 * [FAQ](guides-and-helpers/faq.md)
 * [Upgrades](guides-and-helpers/upgrades.md)
-* [Custom Analytic Tools](guides-and-helpers/custom-analytic-tools.md)
 * [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
 * [Known Issues](guides-and-helpers/known-issues/README.md)
   * [ETH2 issues](guides-and-helpers/known-issues/eth2-issues.md)
-* [Web3.py](guides-and-helpers/web3.py.md)
 * [Validator setup](guides-and-helpers/validator-setup/README.md)
   * [Aura Validator](guides-and-helpers/validator-setup/aura-validator.md)
   * [Eth2 Validator](guides-and-helpers/validator-setup/eth2-validator.md)
 * [ETH2 <-> Nethermind](guides-and-helpers/eth2-less-than-greater-than-nethermind.md)
-* [Coding Style](guides-and-helpers/coding-style.md)
 * [How to reduce database size](guides-and-helpers/how-to-reduce-database-size/README.md)
   * [Resync database from scratch](guides-and-helpers/how-to-reduce-database-size/resync-database-from-scratch.md)
   * [Full Pruning](guides-and-helpers/how-to-reduce-database-size/full-pruning.md)
