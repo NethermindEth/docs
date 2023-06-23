@@ -1,6 +1,6 @@
 # Web3.py
 
-It is possible to connect to the Nethermind node using **web3.py** \(python web3.js implementation\). You will need to have `web3.py` installed using following guides:
+It is possible to connect to the Nethermind node using **web3.py** (python web3.js implementation). You will need to have `web3.py` installed using following guides:
 
 * [https://github.com/ethereum/web3.py](https://github.com/ethereum/web3.py)
 * [https://web3py.readthedocs.io/en/stable/quickstart.html](https://web3py.readthedocs.io/en/stable/quickstart.html)
@@ -22,10 +22,9 @@ else:
     print(client)
 ```
 
-You should see the following output \(depends on the node version\):
+You should see the following output (depends on the node version):
 
 ```bash
 True
 Nethermind/v1.4.8-13-5c66dcdf6-20200120/X64-Linux 5.3.2-050302-generic/Core3.1.1
 ```
-

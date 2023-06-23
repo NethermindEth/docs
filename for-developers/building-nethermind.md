@@ -2,7 +2,7 @@
 
 ## Installing Dependencies
 
-To build Nethermind on any platform you will need to install **Git** and the **.NET SDK 6.0.**
+To build Nethermind on any platform you will need to install **Git** and the **.NET SDK 7.0.**
 
 {% embed url="https://git-scm.com/downloads" %}
 

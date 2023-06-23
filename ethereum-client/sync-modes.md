@@ -3,31 +3,31 @@
 ## There are three main synchronization modes
 
 * snap sync
-  * fastest way to sync to a network (Syncs to Mainnet in \~3 hours)
-* fast sync
+  * the fastest way to sync to the network (syncs to mainnet in \~3 hours)
   * downloads only the latest state, headers, and optionally bodies and receipts
-  * you can run it like this: `./Nethermind.Runner --config mainnet`
-  * if you have a good connection and a reasonable machine then setting --Network.MaxActivePeers to 256 (see NetworkConfig section in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)\
-    [https://docs.nethermind.io/nethermind/ethereum-client/configuration/network](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network)
+* fast sync
+  * slower than snap sync
+  * useful on nethermind-only chains (like Gnosis), where snap sync is not available for now
+  * downloads only the latest state, headers, and optionally bodies and receipts
 * archive sync
   * heavy historical sync verifying all the transactions and keeping all the historical state
   * you can run it like this `./Nethermind.Runner --config mainnet_archive`
 
-| Sync Mode                                             | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
-| ----------------------------------------------------- | ----------------- | ------------------ | -------------------------------------- | -------------------------------------- | ------------ | ----------- |
-| archive                                               | \~12TB            | YES                | YES                                    | YES                                    | \~3 weeks    | \~3 weeks   |
-| fast sync with all bodies and receipts                | \~800GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 hours  |
-| default fast sync (with barriers set to support Eth2) | \~500GB           | YES                | NO                                     | NO                                     | \~11 hours   | \~11 hours  |
-| fast sync without receipts                            | \~450GB           | YES                | NO                                     | YES                                    | \~12 hours   | \~12 hours  |
-| fast sync without bodies and receipts                 | \~200GB           | YES                | NO                                     | NO                                     | \~9 hours    | \~9 hours   |
+| Sync Mode                                                  | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
+| ---------------------------------------------------------- | ----------------- | ------------------ | -------------------------------------- | -------------------------------------- | ------------ | ----------- |
+| archive                                                    | \~12TB            | YES                | YES                                    | YES                                    | \~3 weeks    | \~3 weeks   |
+| snap/fast sync with all bodies and receipts                | \~800GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 hours  |
+| default snap/fast sync (with barriers set to support Eth2) | \~500GB           | YES                | NO                                     | NO                                     | \~11 hours   | \~11 hours  |
+| snap/fast sync without receipts                            | \~450GB           | YES                | NO                                     | YES                                    | \~12 hours   | \~12 hours  |
+| snap/fast sync without bodies and receipts                 | \~200GB           | YES                | NO                                     | NO                                     | \~9 hours    | \~9 hours   |
 
 ## Snap Sync
 
-The Nethermind client includes beta Snap Sync support from version [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0). This allows a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than before.
+Snap sync allows a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster than using fast sync.
 
 #### How to Enable
 
-To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` file
+Snap sync is enabled by default for majority of networks. To make sure, check if`SnapSync` is set to `true` in the Sync module of your `.cfg` file
 
 ```
 "Sync": {
@@ -49,11 +49,9 @@ To enable make sure `SnapSync` is set to true in the Sync module of your `.cfg` 
 > }
 > ```
 
-#### Snap Sync VS Other Sync Modes
+#### Snap Sync vs Other Sync Modes
 
-More than 10TB of storage is needed today to run a full archive node — one that stores all the state since genesis. This makes it so that setting up a node can take days if not weeks.
-
-An operator can instead choose to run Fast Sync when setting up the node, which downloads the state associated with the last 64 blocks that currently comes at about 90Gb. This can still take more than 24 hours in a fast machine. With Snap Sync the sync time is reduced to 2-3h with a download of 30Gb.
+More than 12TB of storage is needed today to run a full archive node — one that stores all the state since genesis. Because of that, setting up an archive node can take days or even weeks. Fast Sync can still take more than 24 hours on the fast machine and download about 90GB state data. With Snap Sync, sync time is reduced to 2-3h with a download of about 30GB.
 
 This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a node: Merkle trees.
 
@@ -63,23 +61,15 @@ With Fast Sync, a node downloads the headers of each block and retrieves all the
 
 #### Current limitations and future development
 
-As of [v1.13.0](https://github.com/NethermindEth/nethermind/releases/tag/1.13.0), Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients implementing Snap Sync.
+For now Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients - snap serving development is in progress, expected late 2023/early 2024.
 
-Since the only Ethereum client that supports serving Snap Sync requests is Geth, only networks supported by Geth can be synced: Mainnet, Goerli, Ropsten and Rinkeby.
-
-Also, as stated above, it is not advised to enable Snap Sync on already synced node as it can trigger syncing again. This will be fixed in the next update.
+The only Ethereum client that supports serving Snap Sync requests is Geth, so only networks supported by Geth can be synced using that method: Mainnet, Goerli, Sepolia.
 
 ## Fast Sync
 
-Fast sync is probably the most popular method of syncing. After completing the fast sync your node will have the ability to answer questions like _'what is my account balance **now**'_, _'how many XYZ tokens SomeExchange holds **at the moment**'_.
+After completing the fast sync your node will have the ability to answer questions like _'what is my account balance **now**'_, _'how many XYZ tokens SomeExchange holds **at the moment**'_.
 
-Fast sync is the default syncing method in Nethermind so whenever you launch standard configs you will end up using Fast Sync.
-
-`./Nethermind.Runner --config mainnet`
-
-`./Nethermind.Runner --config goerli`
-
-Fast sync has multiple stages. Nethermind uses a `pivot block` number to improve fast sync performance. The `pivot block` data is provided in the configuration file and consists of the `block number`, `block hash` and `block total difficulty` (please note that `total difficulty` is different than `difficulty`). Please note that the meaning of `pivot block` is different in Nethermind than in other clients, for example. Before synchronizing state data Nethermind synchronizes in two directions - backwards from `pivot block` to 0 for headers and forward to the head of the chain for headers, blocks and receipts. Forward sync might be very slow (5 - 50 bps) so it is important that you use the latest config or update your config before synchronization.
+Fast sync has multiple stages. Nethermind uses a `pivot block` number to improve fast sync performance. The `pivot block` data is automatically updated after initialization of the client and consists of the `block number`, `block hash` and `block total difficulty` (please note that `total difficulty` is different than `difficulty`). Before synchronizing state data Nethermind synchronizes in two directions - backwards from `pivot block` to 0 for headers and forward to the head of the chain for headers, blocks and receipts. Forward sync might be very slow (5 - 50 bps) so having fresh pivot block is very important - it is guaranteed by recently implemented auto-update.
 
 After downloading the block data Nethermind will start state sync (downloading the latest state trie nodes). We are providing an estimate for the download size and progress but the real value may be different than the estimate (especially if you are using an old version of Nethermind as we sometimes manually adjust the estimator based on our observations of the chain growth rate). Because of this sometimes your sync may continue even when it shows \~100% finished. The other important component is the speed of your sync - if your IO / network / file system causes the state sync to go much slower than around 1.5MB per second on average then you will start downloading some parts of the trie over and over again. In such cases you may be surprised to see something like 58000MB / 53000MB (100%). It means that you downloaded around 5GB of data that is no longer needed. If your sync is very slow (extended beyond two days) then very likely your setup cannot catch up with the chain progress.
 
