@@ -14,6 +14,7 @@
 | LocalIp | NETHERMIND_NETWORKCONFIG_LOCALIP | Use only if your node cannot resolve local IP automatically. | null |
 | MaxActivePeers | NETHERMIND_NETWORKCONFIG_MAXACTIVEPEERS | Same as ActivePeersMaxCount. | 50 |
 | MaxNettyArenaCount | NETHERMIND_NETWORKCONFIG_MAXNETTYARENACOUNT | [TECHNICAL] Defines maximum netty arena count. Increasing this on high core machine without increasing memory budget may reduce chunk size so much that it causes significant netty huge allocation. | 8 |
+| MaxOutgoingConnectPerSec | NETHERMIND_NETWORKCONFIG_MAXOUTGOINGCONNECTPERSEC | [TECHNICAL] Max number of new outgoing connections per second. Default is 20. | 20 |
 | NettyArenaOrder | NETHERMIND_NETWORKCONFIG_NETTYARENAORDER | [TECHNICAL] Defines the size of a netty arena order. Default depends on memory hint. | -1 |
 | OnlyStaticPeers | NETHERMIND_NETWORKCONFIG_ONLYSTATICPEERS | If set to 'true' then no connections will be made to non-static peers. | false |
 | P2PPort | NETHERMIND_NETWORKCONFIG_P2PPORT | TPC/IP port number for incoming P2P connections. | 30303 |
