@@ -6,6 +6,7 @@
 | :--- | :--- | :--- | :--- |
 | AncientBodiesBarrier | NETHERMIND_SYNCCONFIG_ANCIENTBODIESBARRIER | [EXPERIMENTAL] Defines the earliest body downloaded in fast sync when DownloadBodiesInFastSync is enabled. Actual values used will be Math.Max(1, Math.Min(PivotNumber, AncientBodiesBarrier)) | 0 |
 | AncientReceiptsBarrier | NETHERMIND_SYNCCONFIG_ANCIENTRECEIPTSBARRIER | [EXPERIMENTAL] Defines the earliest receipts downloaded in fast sync when DownloadReceiptsInFastSync is enabled. Actual value used will be Math.Max(1, Math.Min(PivotNumber, Math.Max(AncientBodiesBarrier, AncientReceiptsBarrier))) | 0 |
+| BlocksDbTuneDbMode | NETHERMIND_SYNCCONFIG_BLOCKSDBTUNEDBMODE | [EXPERIMENTAL] Optimize db for write during sync just for blocks db. Useful for turning on blobs file. | EnableBlobFiles |
 | DownloadBodiesInFastSync | NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC | If set to 'true' then the block bodies will be downloaded in the Fast Sync mode. | true |
 | DownloadHeadersInFastSync | NETHERMIND_SYNCCONFIG_DOWNLOADHEADERSINFASTSYNC | If set to 'false' then fast sync will only download recent blocks. | true |
 | DownloadReceiptsInFastSync | NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC | If set to 'true' then the receipts will be downloaded in the Fast Sync mode. This will slow down the process by a few hours but will allow you to interact with dApps that execute extensive historical logs searches (like Maker CDPs). | true |
