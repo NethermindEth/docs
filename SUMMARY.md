@@ -31,6 +31,7 @@
 
 * [Building From Source](for-developers/building-nethermind.md)
 * [Coding Style](for-developers/coding-style.md)
+* [Plugins](for-developers/plugins.md)
 * [Web3.py](for-developers/web3.py.md)
 * [Custom Analytic Tools](for-developers/custom-analytic-tools.md)
 
@@ -96,7 +97,6 @@
   * [Sync module](ethereum-client/configuration/sync.md)
   * [TxPool module](ethereum-client/configuration/txpool.md)
   * [Wallet module](ethereum-client/configuration/wallet.md)
-* [Plugins](ethereum-client/plugins.md)
 * [Monitoring Node's Health](ethereum-client/monitoring-node-health.md)
 
 ## Nethermind utilities

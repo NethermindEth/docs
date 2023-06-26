@@ -2,8 +2,8 @@
 
 Check plugins for some easy addition of analytical tools
 
-{% content-ref url="../ethereum-client/plugins.md" %}
-[plugins.md](../ethereum-client/plugins.md)
+{% content-ref url="plugins.md" %}
+[plugins.md](plugins.md)
 {% endcontent-ref %}
 
 You can also read more about some useful interfaces below:
