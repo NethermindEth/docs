@@ -74,19 +74,18 @@ Suggested requirements can be found below.
 
 You can try much lower setups with smaller networks.
 
-| Network                  | Disk space (GB) | Memory (GB) | Cores |
-| ------------------------ | :-------------: | :---------: | :---: |
-| **Mainnet Fast Sync**    |       800+      |      16     |   4   |
-| **Mainnet Full Archive** |  14000+ (14 TB) |     128     |   8   |
-| **Goerli Fast Sync**     |       100+      |      8      |   2   |
-| **Goerli Full Archive**  |       400+      |      8      |   4   |
-| **Gnosis Fast Sync**     |       120+      |      16     |   2   |
-| **Poacore Fast Sync**    |       100+      |      8      |   2   |
-| **EnergyWeb Fast Sync**  |       120+      |      8      |   2   |
-| **Volta Fast Sync**      |       200+      |      8      |   2   |
+| **Mainnet**         |      800+      |  16 |  4  |
+| ------------------- | :------------: | :-: | :-: |
+| **Mainnet Archive** | 14000+ (14 TB) | 128 |  8  |
+| **Goerli**          |      100+      |  8  |  2  |
+| **Goerli Archive**  |      400+      |  8  |  4  |
+| **Gnosis**          |      120+      |  16 |  2  |
+| **EnergyWeb**       |      120+      |  8  |  2  |
+| **Volta**           |      200+      |  8  |  2  |
 
-Disk space requirements:
+### Disk space requirements:
 
-A freshly fast synced Mainnet disk space usage (as of Aug 2022)
+A freshly fast synced Mainnet disk space usage (as of May 2023)
 
-![](../.gitbook/assets/image.png)
+<table><thead><tr><th width="238">Database</th><th width="251.33333333333331">Mainnet</th><th>Mainnet with Ancient Barriers</th></tr></thead><tbody><tr><td>State</td><td>161 GB</td><td>161 GB</td></tr><tr><td>Receipts</td><td>152 GB</td><td>104 GB</td></tr><tr><td>Blocks</td><td>334 GB</td><td>222 GB</td></tr><tr><td>Bloom</td><td>5.3 GB</td><td>5.3 GB</td></tr><tr><td>Headers</td><td>8.1 GB</td><td>8.1 GB</td></tr><tr><td>Code</td><td>3 GB</td><td>3 GB</td></tr><tr><td>Other</td><td>...</td><td>..</td></tr><tr><td><strong>Total</strong></td><td><strong>664 GB</strong></td><td><strong>504 GB</strong></td></tr></tbody></table>
+
