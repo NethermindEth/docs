@@ -5,19 +5,19 @@
 If you built the application locally then the entry point will be located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/net6.0/
+src/Nethermind/Nethermind.Runner/bin/Release/net7.0/
 ```
 
 Log files by default are located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/net6.0/logs
+src/Nethermind/Nethermind.Runner/bin/Release/net7.0/logs
 ```
 
 Database by default is located in:
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/net6.0/nethermind_db
+src/Nethermind/Nethermind.Runner/bin/Release/net7.0/nethermind_db
 ```
 
 ## Static nodes
@@ -49,7 +49,7 @@ More detailed NLog configuration can be found [here](https://github.com/NLog/NLo
 Logging level can be controlled in `NLog.config` file located in:
 
 ```
-src/Nethermind/Nethermind.Runner/bin/Release/net6.0/NLog.config
+src/Nethermind/Nethermind.Runner/bin/Release/net7.0/NLog.config
 ```
 
 ### Downloading package from Github/Downloads package
