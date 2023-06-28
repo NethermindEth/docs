@@ -82,7 +82,7 @@ You will need to install the following packages.
 brew install gmp snappy lz4 zstd
 ```
 
-#### **Ubuntu 18.04 and Debian 10**
+#### **Ubuntu and Debian**
 
 You will need to install the following packages
 
@@ -156,59 +156,14 @@ then simply type on your Terminal or Command Prompt (make sure you add the binar
 
 where `"/tmp/jwtsecret"` will be the file path and name when created.
 
-If you do not want to install OpenSSL, you may use a random hex generator website. All you need is a 64 character hex string saved to a `.txt` file.
+If you do not want to install OpenSSL, you may use a random hex generator website. All you need is a 64 character hex string saved to a `.txt` file. Example:
 
 ```
 fcba4ab3138530cf233568bee2d518dd960da77355333d5ac856e1f27487dc9c
 ```
 
 {% hint style="danger" %}
-We strongly recommend you use OpenSSL to generate the secret locally because it is more secure
-{% endhint %}
-
-### JsonRpc Configuration Module
-
-Nethermind has added some additional configuration settings for the JSON-RPC API to support the Consensus Clients.
-
-{% hint style="danger" %}
-**Please do not use `JsonRpc.Port` or `JsonRpc.EnabledModules` for enabling Engine API. Nethermind uses `JsonRpc.EnginePort`, `JsonRpc.EngineHost` and `JsonRpc.EngineEnabledModules` for that.**
-{% endhint %}
-
-```json
-"JsonRpc": {
-    "Enabled": true,
-    "Timeout": 20000,
-    "Host": "127.0.0.1",
-    "Port": 8545,
-    "EnabledModules": ["Eth", "Subscribe", "Trace", "TxPool", "Web3", "Personal", "Proof", "Net", "Parity", "Health"],
-    "EnginePort": 8551,
-    "EngineHost": "127.0.0.1",
-    "JwtSecretFile": "keystore/jwt-secret"
-  },
-```
-
-{% hint style="danger" %}
-**if you want to change`JsonRpc.EngineHost, JsonRpc.EnginePort` should be specified as well.**
-{% endhint %}
-
-#### `EngineHost`
-
-This setting specifies the host for your Engine API. Click [here](../nodes-and-the-merge/nethermind-changes.md) for more info on EngineAPI.
-
-#### `EnginePort`
-
-This setting specifies the port used for Engine API.
-
-**`EngineEnabledModules`**
-
-This setting specifies the modules to be enabled on the Engine API endpoint.
-
-#### `JwtSecretFile`
-
-This setting is used to identify the location of the file containing the JWT secret.
-
-{% hint style="warning" %}
-Nethermind will create it's own `jwtsecret` file if you do not specify a location or pass the wrong location.
+We strongly recommend you to use OpenSSL to generate the secret locally because of security reasons
 {% endhint %}
 
 ## Step 4: Run Nethermind
@@ -218,7 +173,7 @@ Ensure you have:
 * Installed Nethermind
 * Installed Consensus client
 * Created a JWT secret file
-* Engine module is enabled with authenticated port
+* Engine module is enabled with authenticated port - it is a default setting
 
 Then you are ready to start your clients. First start up Nethermind.
 
@@ -238,7 +193,7 @@ After you have built Nethermind you should be in the `nethermind/src/Nethermind`
 
 ```bash
 cd Nethermind.Runner
-dotnet run -c Release -- --config mainnet --JsonRpc.JwtSecretFile=PATH
+dotnet run -c Release --config mainnet --JsonRpc.JwtSecretFile=PATH
 ```
 
 Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
@@ -305,12 +260,10 @@ If you are not using the default config files, make sure you also use the **Merg
 
 ### Running Docker Image
 
-Running Nethermind from a Docker image may require more configuration depending on the situation.
-
-The commands below should work in most situations
+Running Nethermind from a Docker image may require more configuration. The commands below should work in most situations
 
 ```bash
-docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data --JsonRpc.EngineHost=0.0.0.0 --JsonRpc.EnginePort=8551
+docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data
 ```
 
 {% hint style="info" %}
@@ -321,14 +274,14 @@ docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --confi
 
 * `-v /home/user/data:/nethermind/data` sets local directory we will be storing our data to
 
-On some OS like Amazon Linux \*\*\*\*you may need to increase the `nofile` limit by adding the following instruction to docker command `-ulimit nofile=1000000:1000000` or you can take a look an [alternative solution](https://stackoverflow.com/questions/62127643/need-understand-ulimits-nofile-setting-in-host-and-container/62136351#62136351).
+On some OS like Amazon Linux you may need to increase the `nofile` limit by adding the following instruction to docker command `-ulimit nofile=1000000:1000000` or you can take a look an [alternative solution](https://stackoverflow.com/questions/62127643/need-understand-ulimits-nofile-setting-in-host-and-container/62136351#62136351).
 
 #### **Nethermind Settings**
 
 * `--JsonRpc.JwtSecretFile=PATH` where PATH is the location of your JWT secret ex. `/tmp/jwtsecret`
 * `--datadir data` maps the database, keystore, and logs all at once
 
-## Step 5: Run Consensus Clients
+## Step 5: Run Consensus Client
 
 Once Nethermind has started you can start the CL client. See section below for commands to run the CL client you installed. You will need to make sure the `--jwt-secret` has the correct path as well or the clients will not be able to communicate.
 
@@ -619,3 +572,4 @@ For checkpoint sync, add the following flag with a checkpoint sync endpoint from
 Please follow guide provided [here](https://github.com/gnosischain/teku-client).
 {% endtab %}
 {% endtabs %}
+
