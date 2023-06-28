@@ -4,7 +4,7 @@ description: Networks currently supported by Nethermind Client
 
 # Networks
 
-By default Nethermind launches with mainnet network configuration but you can sync any of the below networks by adding a command line switch:
+By default Nethermind launches with mainnet network configuration, but it is possible to sync other networks by adding a command line switch:
 
 ```
 --config [NETWORK_NAME]
@@ -14,9 +14,8 @@ Network name can be any of the following
 
 * mainnet
 * goerli
-* rinkeby
-* ropsten
-* xdai
+* sepolia
+* gnosis
 * poacore
 * energyweb
 * volta
@@ -24,7 +23,7 @@ Network name can be any of the following
 
 ### Mainnet
 
-This is the main public Ethereum network secured by the ethash PoW algorithm.
+This is the main Ethereum network. It can be run using config below and this is default setting - mainnet will run if `--config` is not specified as well.
 
 ```
 Nethermind.Runner --config mainnet
@@ -34,7 +33,7 @@ Nethermind.Runner --config mainnet
 
 ### Görli (goerli)
 
-This is a Clique-PoA based testnet supported by all major clients. It has a 15 seconds delay between blocks that are sealed by Goerli validators.
+This is a Clique-PoA based testnet supported by all major clients. It has 15 seconds between blocks that are sealed by Goerli validators.
 
 ```
 Nethermind.Runner --config goerli
@@ -44,22 +43,3 @@ Nethermind.Runner --config goerli
 
 {% embed url="https://gitter.im/goerli/testnet" %}
 
-### Ropsten
-
-This is a test network secured by ethash PoW algorithm which resembles mainnet most closely but is prone to hashrate-based attacks.
-
-```
-Nethermind.Runner --config ropsten
-```
-
-{% embed url="https://ropsten-stats.parity.io/" %}
-
-### Rinkeby
-
-This is a Clique-PoA based testnet supported by Geth and Nethermind. It has a 15 seconds delay between blocks.
-
-```
-Nethermind.Runner --config rinkeby
-```
-
-{% embed url="https://www.rinkeby.io/#stats" %}
