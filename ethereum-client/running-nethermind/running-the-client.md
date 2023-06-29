@@ -128,7 +128,7 @@ sudo apt install libzstd1 -y
 
 
       :warning: If you are prompted with a warning related to not being able to verify the developer of the program, open _System Preferences > Security & Privacy_ and click on "Allow Anyway" \
-      ![](<../../.gitbook/assets/image (2) (2).png>)\
+      ![](<../../.gitbook/assets/image (2).png>)\
       More info can be found here: [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
   5. Select desired configuration
 {% endtab %}

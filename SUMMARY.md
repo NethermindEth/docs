@@ -93,6 +93,7 @@
   * [Mining module](ethereum-client/configuration/mining.md)
   * [Network module](ethereum-client/configuration/network.md)
   * [Pruning module](ethereum-client/configuration/pruning.md)
+  * [Receipt module](ethereum-client/configuration/receipt.md)
   * [Seq module](ethereum-client/configuration/seq.md)
   * [Sync module](ethereum-client/configuration/sync.md)
   * [TxPool module](ethereum-client/configuration/txpool.md)

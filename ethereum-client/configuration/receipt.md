@@ -1,11 +1,12 @@
-# Receipt
+# Receipt module
 
-
-
-| Property | Env Variable | Description | Default |
-| :--- | :--- | :--- | :--- |
-| CompactReceiptStore | NETHERMIND_RECEIPTCONFIG_COMPACTRECEIPTSTORE | If set to 'true' then reduce receipt db size at expense of rpc performance. | true |
-| CompactTxIndex | NETHERMIND_RECEIPTCONFIG_COMPACTTXINDEX | If set to 'true' then reduce receipt tx index db size at expense of rpc performance. | true |
-| ReceiptsMigration | NETHERMIND_RECEIPTCONFIG_RECEIPTSMIGRATION | If set to 'true' then receipts db will be migrated to new schema. | false |
-| StoreReceipts | NETHERMIND_RECEIPTCONFIG_STORERECEIPTS | If set to 'false' then transaction receipts will not be stored in the database after a new block is processed. This setting is independent from downloading receipts in fast sync mode. | true |
-| TxLookupLimit | NETHERMIND_RECEIPTCONFIG_TXLOOKUPLIMIT | Number of recent blocks to maintain transaction index. 0 to never remove tx index. -1 to never index. | 2350000 |
+| Property                             | Env Variable                                                    | Description                                                                                                                                                                             | Default |
+| ------------------------------------ | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| StoreReceipts                        | NETHERMIND\_RECEIPTCONFIG\_STORERECEIPTS                        | If set to 'false' then transaction receipts will not be stored in the database after a new block is processed. This setting is independent from downloading receipts in fast sync mode. | true    |
+| ReceiptsMigration                    | NETHERMIND\_RECEIPTCONFIG\_RECEIPTSMIGRATION                    | If set to 'true' then receipts db will be migrated to new schema.                                                                                                                       | false   |
+| ReceiptsMigrationDegreeOfParallelism | NETHERMIND\_RECEIPTCONFIG\_RECEIPTSMIGRATIONDEGREEOFPARALLELISM | If set to 'true' then receipts db will be migrated to new schema.                                                                                                                       | 0       |
+| ForceReceiptsMigration               | NETHERMIND\_RECEIPTCONFIG\_FORCERECEIPTSMIGRATION               | Force receipt recovery if its not able to detect it.                                                                                                                                    | false   |
+| CompactReceiptStore                  | NETHERMIND\_RECEIPTCONFIG\_COMPACTRECEIPTSTORE                  | If set to 'true' then reduce receipt db size at expense of rpc performance.                                                                                                             | true    |
+| CompactTxIndex                       | NETHERMIND\_RECEIPTCONFIG\_COMPACTTXINDEX                       | If set to 'true' then reduce receipt tx index db size at expense of rpc performance.                                                                                                    | true    |
+| TxLookupLimit                        | NETHERMIND\_RECEIPTCONFIG\_TXLOOKUPLIMIT                        | Number of recent blocks to maintain transaction index. 0 to never remove tx index. -1 to never index.                                                                                   | 2350000 |
+| MaxBlockDepth                        | NETHERMIND\_RECEIPTCONFIG\_MAXBLOCKDEPTH                        | Max num of block per eth\_getLogs request.                                                                                                                                              | 10000   |
