@@ -121,7 +121,6 @@
 ## Guides and Helpers
 
 * [FAQ](guides-and-helpers/faq.md)
-* [Upgrades](guides-and-helpers/upgrades.md)
 * [Deploy Nethermind with Monitoring stack](guides-and-helpers/deploy-nethermind-with-monitoring-stack.md)
 * [Known Issues](guides-and-helpers/known-issues/README.md)
   * [ETH2 issues](guides-and-helpers/known-issues/eth2-issues.md)
