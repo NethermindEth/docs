@@ -17,7 +17,8 @@
 
 * [The Merge](nodes-and-the-merge/the-merge.md)
 * [Nethermind Changes](nodes-and-the-merge/nethermind-changes.md)
-* [Troubleshooting Issues](nodes-and-the-merge/troubleshooting-issues.md)
+* [Troubleshooting Issues](nodes-and-the-merge/troubleshooting-issues/README.md)
+  * [Missing Attestations](nodes-and-the-merge/troubleshooting-issues/missing-attestations.md)
 
 ## Installing Nethermind
 
