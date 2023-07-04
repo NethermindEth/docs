@@ -85,9 +85,66 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 ![Healthy](<../.gitbook/assets/image (46).png>)
 
+#### Consensus Client health
+
+Version v.1.14.0 came with CL health check. This check verifies if the client receives messages from the CL.
+
+If you see this warning in your logs, it means that there is something wrong with CL<->Nethermind communication. Check more about setting up Nethermind and CL [here](../first-steps-with-nethermind/running-nethermind-post-merge.md).
+
+```
+No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.
+```
+
+{% hint style="warning" %}
+Note that Consensus Client is required for normal node operations.
+{% endhint %}
+
+#### health\_nodeStatus
+
+Health checks via JSON RPC requests were introduced in version v.1.10.18. For that,  `HealthChecks.Enabled` should be set to true.
+
+{% tabs %}
+{% tab title="Request" %}
+```
+{ "jsonrpc":"2.0","method":"health_nodeStatus","params":[],"id":67 }
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "healthy": false,
+        "messages": [
+            "Sync degraded",
+            "No messages from CL"
+        ],
+        "errors": [
+            "SyncDegraded",
+            "ClUnavailable"
+        ],
+        "isSyncing": true
+    },
+    "id": 67
+}
+```
+{% endtab %}
+{% endtabs %}
+
+#### Monitoring available storage space
+
+Version v1.16.0 came with a new mechanism to help tracking free disk space. Feature is enabled by default and monitors a drive which has been used to configure database location. There are two new configuration options available:
+
+* `--HealthChecks.LowStorageSpaceWarningThreshold` - Percentage of free disk space below which a warning will be displayed. If Health Checks UI is enabled, it will also be reported under node's health. Default value is 5 - meaning 5% of free disk space.
+* `--HealthChecks.LowStorageSpaceShutdownThreshold` - Percentage of available disk space below which node will shutdown to avoid database corruption. Default value is 1 - meaning 1% of free disk space.
+
+<pre><code><strong>./Nethermind.Runner --HealthChecks.LowStorageSpaceWarningThreshold 5 --HealthChecks.LowStorageSpaceShutdownThreshold 1
+</strong></code></pre>
+
 #### HealthChecks for producing and processing blocks
 
-In version v.1.10.18, we introduced additional behavior for health checks. We added two fields for HealthChecks config: MaxIntervalWithoutProcessedBlock and MaxIntervalWithoutProducedBlock. The node will return unhealthy status if the interval elapsed without processing or producing a block. Let's use the below config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically, we will be waiting 45 seconds for a newly produced block.
+Version v.1.10.18 introduced additional behavior for health checks. There are two fields for HealthChecks config: MaxIntervalWithoutProcessedBlock and MaxIntervalWithoutProducedBlock. The node will return unhealthy status if the interval elapsed without processing or producing a block. Let's use the below config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically, we will be waiting 45 seconds for a newly produced block.
 
 {% tabs %}
 {% tab title="HealthChecks config section example" %}
@@ -104,50 +161,4 @@ In version v.1.10.18, we introduced additional behavior for health checks. We ad
 {% endtab %}
 {% endtabs %}
 
-If we don't set those fields in a config application will try to use them based on seal engine specification. You can see concrete values in the tables below. If we have infinity time, we can still report unhealthy status if our processing or producing threads stopped.
-
-| Seal engine         | Processing interval |          Producing interval          |
-| ------------------- | ------------------- | :----------------------------------: |
-| Clique              | 4 \* Period         |      2 \* Period \* SingersCount     |
-| Aura                | 4 \* StepDuration   | 2 \* StepDuration \* ValidatorsCount |
-| Ethash              | 180                 |               Infinity               |
-| Custom/NethDev/None | Infinity            |               Infinity               |
-
-#### health\_nodeStatus
-
-In version v.1.10.18, we've also introduced health checks via JSON RPC requests. To do that, we should have HealthChecks.Enabled set to true.
-
-{% tabs %}
-{% tab title="Request" %}
-```
-{ "jsonrpc":"2.0","method":"health_nodeStatus","params":[],"id":67 }
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "healthy": false,
-        "messages": [
-	        "Stopped processing blocks",
-            "Node is not connected to any peers"
-        ]
-    },
-    "id": 67
-}
-```
-{% endtab %}
-{% endtabs %}
-
-#### Monitoring available storage space
-
-In version v1.16.0, we added a new mechanism to help tracking free disk space. Feature is enabled by default and monitors a drive which has been used to configure database location. There are two new configuration options available:
-
-* `--HealthChecks.LowStorageSpaceWarningThreshold` - Percentage of free disk space below which a warning will be displayed. If Health Checks UI is enabled, it will also be reported under node's health. Default value is 5 - meaning 5% of free disk space.
-* `--HealthChecks.LowStorageSpaceShutdownThreshold` - Percentage of available disk space below which node will shutdown to avoid database corruption. Default value is 1 - meaning 1% of free disk space.
-
-<pre><code><strong>./Nethermind.Runner --HealthChecks.LowStorageSpaceWarningThreshold 5 --HealthChecks.LowStorageSpaceShutdownThreshold 1
-</strong></code></pre>
-
+If those fields are not set in a config, application will try to use them based on seal engine specification. If there is infinite time, unhealthy status can still be reported if processing or producing threads stopped.
