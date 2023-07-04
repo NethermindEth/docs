@@ -18,23 +18,11 @@ This is not needed in all cases. Only install if you get an error during the bui
 
 ### MacOS
 
-MacOS users will have to install the following dependencies.
+MacOS users (including apple silicon CPUs) will have to install the following dependencies.
 
 ```bash
-brew install gmp snappy lz4 zstd
+brew install mono-libgdiplus  gmp snappy lz4 zstd rocksdb
 ```
-
-<details>
-
-<summary>Apple Silicon (M1) users only</summary>
-
-You will need to create symlink for homebrew dependencies.
-
-```bash
-sudo ln -s find /opt/homebrew/Cellar/snappy -name "libsnappy.dylib" /usr/local/lib/libsnappy.dylib
-```
-
-</details>
 
 ### Linux
 
