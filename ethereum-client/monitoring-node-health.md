@@ -87,9 +87,7 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 #### Consensus Client health
 
-Version v.1.14.0 came with CL health check. This check verifies if the client receives messages from the CL.
-
-If you see this warning in your logs, it means that there is something wrong with CL<->Nethermind communication. Check more about setting up Nethermind and CL [here](../first-steps-with-nethermind/running-nethermind-post-merge.md).
+This check verifies if the client receives messages from the CL. If you see this warning in your logs, it means that there is something wrong with CL<->Nethermind communication. Check more about setting up Nethermind and CL [here](../first-steps-with-nethermind/running-nethermind-post-merge.md).
 
 ```
 No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.
@@ -134,7 +132,7 @@ Health checks via JSON RPC requests were introduced in version v.1.10.18. For th
 
 #### Monitoring available storage space
 
-Version v1.16.0 came with a new mechanism to help tracking free disk space. Feature is enabled by default and monitors a drive which has been used to configure database location. There are two new configuration options available:
+Feature which is helping to track free disk space is enabled by default and monitors a drive which has been used to configure database location. There are two new configuration options available:
 
 * `--HealthChecks.LowStorageSpaceWarningThreshold` - Percentage of free disk space below which a warning will be displayed. If Health Checks UI is enabled, it will also be reported under node's health. Default value is 5 - meaning 5% of free disk space.
 * `--HealthChecks.LowStorageSpaceShutdownThreshold` - Percentage of available disk space below which node will shutdown to avoid database corruption. Default value is 1 - meaning 1% of free disk space.
@@ -144,7 +142,7 @@ Version v1.16.0 came with a new mechanism to help tracking free disk space. Feat
 
 #### HealthChecks for producing and processing blocks
 
-Version v.1.10.18 introduced additional behavior for health checks. There are two fields for HealthChecks config: MaxIntervalWithoutProcessedBlock and MaxIntervalWithoutProducedBlock. The node will return unhealthy status if the interval elapsed without processing or producing a block. Let's use the below config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically, we will be waiting 45 seconds for a newly produced block.
+There are two fields for HealthChecks config: MaxIntervalWithoutProcessedBlock and MaxIntervalWithoutProducedBlock. The node will return unhealthy status if the interval elapsed without processing or producing a block. Let's use the below config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically, we will be waiting 45 seconds for a newly produced block.
 
 {% tabs %}
 {% tab title="HealthChecks config section example" %}
