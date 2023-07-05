@@ -4,7 +4,7 @@ description: Monitoring Nethermind Node's Health with HealthChecks
 
 # Monitoring Node's Health
 
-Nethermind **1.9.51** version comes with a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
+Nethermind has a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better. It leverages the power of [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). It simply adds an`/health`endpoint to the JSON RPC service which can be used to check the Nethermind's _**liveness** -_ verify if the node is **synced** and has **at least one peer.** Useful when you don't want to query the node before it's able to provide you data available only for fully synced nodes like `eth_getBalance`.
 
 The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermind start.
 
