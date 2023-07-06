@@ -168,12 +168,21 @@ We strongly recommend you to use OpenSSL to generate the secret locally because 
 
 ## Step 4: Run Consensus Client
 
-Once Nethermind has started you can start the CL client. See section below for commands to run the CL client you installed. You will need to make sure the `--jwt-secret` has the correct path as well or the clients will not be able to communicate.
+Ensure you have:
+
+* Installed Nethermind
+* Installed Consensus client
+* Created a JWT secret file
+* Engine module is enabled with authenticated port - it is a default setting
+
+Then you are ready to start your clients. First start up Consensus Layer.
+
+See section below for commands to run the CL client you installed. You will need to make sure the `--jwt-secret` has the correct path as well or the clients will not be able to communicate.
 
 Once both clients are running watch the logs to make sure you don’t get any `Unauthorized` errors to ensure the clients are communicating.
 
 {% hint style="success" %}
-#### Checkpoint Sync
+**Checkpoint Sync**
 
 It would be way faster to sync consensus clients using checkpoint sync.
 
@@ -181,7 +190,7 @@ It would be way faster to sync consensus clients using checkpoint sync.
 * For Goerli or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoint-sync).
 {% endhint %}
 
-### Running Nimbus With Nethermind
+### Running Nimbus
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -226,7 +235,7 @@ nimbus-eth2/build/nimbus_beacon_node \
 {% endtab %}
 {% endtabs %}
 
-### Running Prysm With Nethermind
+### Running Prysm
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -277,7 +286,7 @@ Please follow guide provided [here](https://github.com/gnosischain/prysm-client)
 {% endtab %}
 {% endtabs %}
 
-### Running Lighthouse With Nethermind
+### Running Lighthouse
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -351,7 +360,7 @@ Please follow guide provided [here](https://github.com/gnosischain/lighthouse-cl
 {% endtab %}
 {% endtabs %}
 
-### Running Lodestar With Nethermind
+### Running Lodestar
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -406,7 +415,7 @@ Please follow guide provided [here](https://github.com/gnosischain/lodestar-clie
 {% endtab %}
 {% endtabs %}
 
-### Running Teku With Nethermind
+### Running Teku
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -460,14 +469,7 @@ Please follow guide provided [here](https://github.com/gnosischain/teku-client).
 
 ## Step 5: Run Nethermind
 
-Ensure you have:
-
-* Installed Nethermind
-* Installed Consensus client
-* Created a JWT secret file
-* Engine module is enabled with authenticated port - it is a default setting
-
-Then you are ready to start your clients. First start up Nethermind.
+Once Consensus Layer has started you can start Nethermind client.&#x20;
 
 {% hint style="danger" %}
 Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. This is not required if you are using the default config files as this is enabled by default.
@@ -475,7 +477,7 @@ Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. T
 
 ### Choosing the Network
 
-Depending on the network you want to run the node for, choose the `--config` variable. for more on networks, check [here](../ethereum-client/networks.md).
+Depending on the network you want to run the node for, choose the `--config` variable. For more about networks, check [here](../ethereum-client/networks.md).
 
 `--config` is the config file for the network you want to connect to. For example, to run a node for the goerli testnet use `--config goerli`
 
