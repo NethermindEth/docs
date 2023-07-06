@@ -1,142 +1,127 @@
----
-description: Run your Nethermind node with our cross-platform Ethereum client
----
-
 # Running the client
 
-Check [Download sources](../../installing-nethermind/download-sources/) in order to get the latest Nethermind package for your OS.
+{% hint style="info" %}
+To get the latest Nethermind version, see [Download Nethermind](../../installing-nethermind/download-sources/).
+{% endhint %}
+
+## Prerequisites
 
 {% tabs %}
 {% tab title="Linux" %}
-* [x] [Download the package](../../installing-nethermind/download-sources/)
+On Linux systems, Snappy is a required dependency. Below are the installation instructions for the supported distros.
+
+#### Ubuntu and Debian-based distros
 
 ```bash
-wget [LINUX_PACKAGE_URL]
+sudo apt-get install libsnappy-dev
 ```
 
-![Download package with wget](<../../.gitbook/assets/image (2) (1).png>)
-
-* [x] Install linux dependencies
+#### CentOS, Fedora, and RHEL-like distros
 
 ```bash
-sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y
+sudo dnf install snappy
 ```
 
-![Install Linux dependencies](<../../.gitbook/assets/image (16).png>)
-
-* [x] `unzip` the package
+On RHEL-like systems, Nethermind also requires the following symlink to bzip2:
 
 ```bash
-unzip [LINUX_PACKAGE_FILENAME] -d nethermind
-```
-
-![Unzip the package](<../../.gitbook/assets/image (7).png>)
-
-* [x] Switch directory
-
-```bash
-cd nethermind
-```
-
-![Switch directory](<../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png>)
-
-* [x] Run `Nethermind.Launcher` and select `Ethereum Node`
-
-```bash
-./Nethermind.Launcher
-```
-
-![Run the Nethermind.Launcher](<../../.gitbook/assets/image (19).png>)
-
-* [x] Select [network](../networks.md)
-
-![Select the network](<../../.gitbook/assets/image (14).png>)
-
-* [x] Select [synchronization mode](../sync-modes.md)
-
-![Select sync mode](<../../.gitbook/assets/image (5).png>)
-
-* [x] Configure `JSON RPC`/`EthStats` if needed
-
-![JSON RPC / EthStats configuration](<../../.gitbook/assets/image (13).png>)
-
-* [x] Nethermind node is now running:tada:, check this article to get familiar with the [logs](../../#explaining-nethermind-logs)
-
-![Nethermind client running Ethereum Mainnet](<../../.gitbook/assets/image (18) (1) (1) (1) (1) (1) (1) (4) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2).png>)
-
-{% hint style="danger" %}
-#### For Ubuntu 16.04 you will need additional dependencies installed.
-{% endhint %}
-
-```bash
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt-get update
-sudo apt-get install gcc-6 g++-6 -y
-sudo apt install libzstd1 -y
+sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
 ```
 {% endtab %}
 
 {% tab title="Windows" %}
-1. Download `Windows` package&#x20;
-2. `unzip` the file
-3. Run `Nethermind.Launcher.exe`
-4. Select desired configuration
+Although the modern versions of Windows are bundled with a recent version of [Microsoft Visual C++ Redistributable](https://aka.ms/vcredist), in some cases, it may need an update:
+
+```powershell
+winget install Microsoft.VCRedist.2015+.x64
+```
 {% endtab %}
 
-{% tab title="MacOS" %}
-*   **Via homebrew:**
-
-    1.  Install by running:
-
-        ```
-        brew tap nethermindeth/nethermind
-        brew install nethermind
-        ```
-    2.  Run nethermind launcher with:
-
-        ```
-        nethermind-launcher
-        ```
-    3.  :warning: If you get the the following error:
-
-        ```
-        There was an error when starting ./Nethermind.RunnerError: spawn ./Nethermind.Runner ENOENT
-        ```
-
-        Run nethermind runner with the desired configuration with:
-
-        ```
-        nethermind --config <config file name (default: mainnet)>
-        ```
-
-        example:
-
-        ```
-        nethermind --config goerli
-        ```
-
-
-* **By downloading package:**
-  1. Download `Darwin`package from [downloads.nethermind.io](https://downloads.nethermind.io/)
-  2.  Install `MacOS` dependencies
-
-      ```
-      brew install gmp snappy lz4 zstd
-      ```
-  3. `unzip` the file
-  4.  Run `Nethermind.Launcher`   \
-
-
-      :warning: If you are prompted with a warning related to not being able to verify the developer of the program, open _System Preferences > Security & Privacy_ and click on "Allow Anyway" \
-      ![](<../../.gitbook/assets/image (2).png>)\
-      More info can be found here: [https://support.apple.com/en-us/HT202491](https://support.apple.com/en-us/HT202491)
-  5. Select desired configuration
+{% tab title="macOS" %}
+No prerequisites.
 {% endtab %}
 {% endtabs %}
 
+## Running directly
 
+For advanced users, running the Nethermind client directly is the best option as it gives complete control over the configuration parameters.&#x20;
 
+{% tabs %}
+{% tab title="Linux" %}
+{% hint style="info" %}
+The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise, it's `Nethermind.Runner`.
+{% endhint %}
 
+For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
 
+```bash
+./Nethermind.Runner -c mainnet -dd path/to/data/dir
+```
+{% endtab %}
 
+{% tab title="Windows" %}
+To launch the client with the default configuration for the Mainnet and custom data directory, run:
 
+```
+./Nethermind.Runner.exe -c mainnet -dd path/to/data/dir
+```
+{% endtab %}
+
+{% tab title="macOS" %}
+{% hint style="info" %}
+The executable name depends on the installation source. If installed with Homebrew, it's `nethermind`. Otherwise, it's `Nethermind.Runner`.
+{% endhint %}
+
+For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
+
+```bash
+./Nethermind.Runner -c mainnet -dd path/to/data/dir
+```
+{% endtab %}
+{% endtabs %}
+
+For available configuration options, see [Configuration](../configuration/).
+
+## Running with the launcher
+
+For rookies, the launcher is the easiest way to begin by just following a few simple steps.
+
+{% tabs %}
+{% tab title="Linux" %}
+{% hint style="info" %}
+The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise, it's `Nethermind.Launcher`.
+{% endhint %}
+
+Run the launcher as follows:
+
+```bash
+./Nethermind.Launcher
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+Run the launcher as follows:
+
+```powershell
+./Nethermind.Launcher.exe
+```
+{% endtab %}
+
+{% tab title="macOS" %}
+{% hint style="info" %}
+The executable name depends on the installation source. If installed with Homebrew, it's `nethermind-launcher`. Otherwise, it's `Nethermind.Launcher`.
+{% endhint %}
+
+Run the launcher as follows:
+
+```bash
+./Nethermind.Launcher
+```
+{% endtab %}
+{% endtabs %}
+
+1. To run a node, select `Ethereum Node`
+2. Then, select the desired [network](../networks.md) (Mainnet, Sepolia, Goerli)
+3. Then, select the [sync mode](../sync-modes.md) and you're ready to go
+
+If you need just the Nethermind command line interface (CLI), select `CLI` in the first step.

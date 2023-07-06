@@ -1,130 +1,55 @@
 # Building From Source
 
-## Installing Dependencies
+## Prerequisites
 
-To build Nethermind on any platform you will need to install **Git** and the **.NET SDK 7.0.**
+To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 7 or later.
 
-{% embed url="https://git-scm.com/downloads" %}
+## Building
 
-{% embed url="https://dotnet.microsoft.com/en-us/download" %}
-
-Depending on the platform you are using you may need to install extra dependencies.
-
-### Windows
-
-This is not needed in all cases. Only install if you get an error during the build process.
-
-{% embed url="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170" %}
-
-### MacOS
-
-MacOS users (including apple silicon CPUs) will have to install the following dependencies.
+The Nethermind's source code can be obtained from [our repository](https://github.com/NethermindEth/nethermind) on GitHub:
 
 ```bash
-brew install mono-libgdiplus  gmp snappy lz4 zstd rocksdb
+git clone --recursive https://github.com/nethermindeth/nethermind.git
 ```
 
-### Linux
-
-<details>
-
-<summary>Ubuntu</summary>
-
-## amd64
-
-```
-sudo apt-get install libsnappy-dev libc6-dev libc6
-```
-
-## arm64/aarch64
-
-```
-sudo apt-get install libsnappy-dev libc6-dev libc6 libgflags-dev
-```
-
-</details>
-
-<details>
-
-<summary>Debian</summary>
-
-```
-sudo apt-get install libsnappy-dev libc6-dev libc6
-```
-
-</details>
-
-<details>
-
-<summary>CentOS</summary>
-
-```
-sudo yum install -y glibc-devel bzip2-devel libzstd
-```
-
-#### Link Libraries
-
-```
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-```
-
-</details>
-
-<details>
-
-<summary>Fedora</summary>
-
-```
-sudo yum install -y glibc-devel snappy libzstd
-```
-
-#### Link Libraires
-
-```
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0 && \
-```
-
-
-
-</details>
-
-## Building Nethermind
-
-After you have installed all of the dependencies for your platform you need to clone the Nethermind repo from GitHub.
-
-```
-git clone --recursive https://github.com/NethermindEth/nethermind.git
-```
-
-Once the download has finished enter the `nethermind/src/Nethermind` directory and run the build command.
+To build both the client and tests, run the following command from the project's root directory:
 
 ```bash
-cd nethermind/src/Nethermind
-dotnet build Nethermind.sln -c Release
+dotnet build src/Nethermind/Nethermind.sln -c release
 ```
 
-Follow the link for instructions on running Nethermind
+To simply run the client with a specific configuration without building tests, see below.
 
-{% content-ref url="../ethereum-client/running-nethermind/" %}
-[running-nethermind](../ethereum-client/running-nethermind/)
-{% endcontent-ref %}
+{% hint style="info" %}
+Before running the client or tests, ensure the platform-specific [prerequisites](../ethereum-client/running-nethermind/running-the-client.md#prerequisites) are met.
+{% endhint %}
 
-## Directories
+#### Running the client
 
-If you built the application locally then the entry point will be located in:
+To launch the client, run the following command from the project's root directory (the previous step of the build is not required):
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/net7.0/
+cd src/Nethermind/Nethermind.Runner
+dotnet run -c release -- -c mainnet
 ```
 
-Log files by default are located in:
+All Nethermind-specific parameters can be specified after `--`. For instance, the command above specifies the Mainnet configuration only.
+
+The build artifacts can be found in the `bin/release/net7.0` directory. By default, the logs and database directories are located here as well.
+
+For more info, see [Running Nethermind](../ethereum-client/running-nethermind/running-the-client.md).
+
+#### Testing
+
+There are two test suites — Nethermind and Ethereum Foundation. Tests can be run with the following commands (the initial step of the build is not required):
 
 ```bash
-src/Nethermind/Nethermind.Runner/bin/Release/net7.0/logs
+cd src/Nethermind
+
+# Run Nethermind tests
+dotnet test Nethermind.sln -c release
+
+# Run Ethereum Foundation tests
+dotnet test EthereumTests.sln -c release
 ```
 
-Database by default is located in:
-
-```bash
-src/Nethermind/Nethermind.Runner/bin/Release/net7.0/nethermind_db
-```
