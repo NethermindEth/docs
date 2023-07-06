@@ -166,122 +166,7 @@ fcba4ab3138530cf233568bee2d518dd960da77355333d5ac856e1f27487dc9c
 We strongly recommend you to use OpenSSL to generate the secret locally because of security reasons
 {% endhint %}
 
-## Step 4: Run Nethermind
-
-Ensure you have:
-
-* Installed Nethermind
-* Installed Consensus client
-* Created a JWT secret file
-* Engine module is enabled with authenticated port - it is a default setting
-
-Then you are ready to start your clients. First start up Nethermind.
-
-{% hint style="danger" %}
-Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. This is not required if you are using the default config files as this is enabled by default.
-{% endhint %}
-
-### Choosing the Network
-
-Depending on the network you want to run the node for, choose the `--config` variable. for more on networks, check [here](../ethereum-client/networks.md).
-
-`--config` is the config file for the network you want to connect to. For example, to run a node for the goerli testnet use `--config goerli`
-
-### Running Local Build
-
-After you have built Nethermind you should be in the `nethermind/src/Nethermind` directory. From there you will need to run the following commands
-
-```bash
-cd Nethermind.Runner
-dotnet run -c Release --config mainnet --JsonRpc.JwtSecretFile=PATH
-```
-
-Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
-
-### Running Release
-
-You have two options when running from a release. The `Nethermind.Launcher` which is a simple GUI with options to configure your node, or the `Nethermind.Runner` where you can configure your node by hand.
-
-You will need to be in the directory that the `Nethermind.Runner` and `Nethermind.Launcher` are in to run Nethermind.
-
-#### Nethermind.Launcher
-
-{% tabs %}
-{% tab title="Windows" %}
-```bash
-./Nethermind.Launcher
-```
-{% endtab %}
-
-{% tab title="Ubuntu" %}
-```bash
-nethermind
-```
-{% endtab %}
-
-{% tab title="macOS" %}
-```
-nethermind-launcher
-```
-{% endtab %}
-{% endtabs %}
-
-#### Nethermind.Runner
-
-{% tabs %}
-{% tab title="Windows" %}
-```bash
-./Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=PATH
-```
-{% endtab %}
-
-{% tab title="Ubuntu" %}
-```
-nethermind --config goerli --JsonRpc.JwtSecretFile=PATH
-```
-{% endtab %}
-
-{% tab title="macOS" %}
-```bash
-nethermind --config goerli --JsonRpc.JwtSecretFile=PATH
-```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli or sepolia.
-{% endhint %}
-
-Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
-
-{% hint style="danger" %}
-If you are not using the default config files, make sure you also use the **Merge.Enabled=true** flag when launching the client.
-{% endhint %}
-
-### Running Docker Image
-
-Running Nethermind from a Docker image may require more configuration. The commands below should work in most situations
-
-```bash
-docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data
-```
-
-{% hint style="info" %}
-`--config` flag \*\*\*\* is the network. For example it can be mainnet, goerli or sepolia. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
-{% endhint %}
-
-#### **Docker Settings**
-
-* `-v /home/user/data:/nethermind/data` sets local directory we will be storing our data to
-
-On some OS like Amazon Linux you may need to increase the `nofile` limit by adding the following instruction to docker command `-ulimit nofile=1000000:1000000` or you can take a look an [alternative solution](https://stackoverflow.com/questions/62127643/need-understand-ulimits-nofile-setting-in-host-and-container/62136351#62136351).
-
-#### **Nethermind Settings**
-
-* `--JsonRpc.JwtSecretFile=PATH` where PATH is the location of your JWT secret ex. `/tmp/jwtsecret`
-* `--datadir data` maps the database, keystore, and logs all at once
-
-## Step 5: Run Consensus Client
+## Step 4: Run Consensus Client
 
 Once Nethermind has started you can start the CL client. See section below for commands to run the CL client you installed. You will need to make sure the `--jwt-secret` has the correct path as well or the clients will not be able to communicate.
 
@@ -573,3 +458,117 @@ Please follow guide provided [here](https://github.com/gnosischain/teku-client).
 {% endtab %}
 {% endtabs %}
 
+## Step 5: Run Nethermind
+
+Ensure you have:
+
+* Installed Nethermind
+* Installed Consensus client
+* Created a JWT secret file
+* Engine module is enabled with authenticated port - it is a default setting
+
+Then you are ready to start your clients. First start up Nethermind.
+
+{% hint style="danger" %}
+Since the Ethereum merge, you are required to set the Merge.Enabled=true flag. This is not required if you are using the default config files as this is enabled by default.
+{% endhint %}
+
+### Choosing the Network
+
+Depending on the network you want to run the node for, choose the `--config` variable. for more on networks, check [here](../ethereum-client/networks.md).
+
+`--config` is the config file for the network you want to connect to. For example, to run a node for the goerli testnet use `--config goerli`
+
+### Running Local Build
+
+After you have built Nethermind you should be in the `nethermind/src/Nethermind` directory. From there you will need to run the following commands
+
+```bash
+cd Nethermind.Runner
+dotnet run -c Release --config mainnet --JsonRpc.JwtSecretFile=PATH
+```
+
+Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
+
+### Running Release
+
+You have two options when running from a release. The `Nethermind.Launcher` which is a simple GUI with options to configure your node, or the `Nethermind.Runner` where you can configure your node by hand.
+
+You will need to be in the directory that the `Nethermind.Runner` and `Nethermind.Launcher` are in to run Nethermind.
+
+#### Nethermind.Launcher
+
+{% tabs %}
+{% tab title="Windows" %}
+```bash
+./Nethermind.Launcher
+```
+{% endtab %}
+
+{% tab title="Ubuntu" %}
+```bash
+nethermind
+```
+{% endtab %}
+
+{% tab title="macOS" %}
+```
+nethermind-launcher
+```
+{% endtab %}
+{% endtabs %}
+
+#### Nethermind.Runner
+
+{% tabs %}
+{% tab title="Windows" %}
+```bash
+./Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=PATH
+```
+{% endtab %}
+
+{% tab title="Ubuntu" %}
+```
+nethermind --config goerli --JsonRpc.JwtSecretFile=PATH
+```
+{% endtab %}
+
+{% tab title="macOS" %}
+```bash
+nethermind --config goerli --JsonRpc.JwtSecretFile=PATH
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+`--config` flag \*\*\*\* is the network. for example it can be mainnet, goerli or sepolia.
+{% endhint %}
+
+Where PATH is the path to your JWT secret. ex `--JsonRpc.JwtSecretFile=/tmp/jwtsecret`
+
+{% hint style="danger" %}
+If you are not using the default config files, make sure you also use the **Merge.Enabled=true** flag when launching the client.
+{% endhint %}
+
+### Running Docker Image
+
+Running Nethermind from a Docker image may require more configuration. The commands below should work in most situations
+
+```bash
+docker run -it -v /home/user/data:/nethermind/data nethermind/nethermind --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=PATH --datadir data
+```
+
+{% hint style="info" %}
+`--config` flag \*\*\*\* is the network. For example it can be mainnet, goerli or sepolia. **If you are not using the config file, make sure you set Merge.Enabled=true as flag.**
+{% endhint %}
+
+#### **Docker Settings**
+
+* `-v /home/user/data:/nethermind/data` sets local directory we will be storing our data to
+
+On some OS like Amazon Linux you may need to increase the `nofile` limit by adding the following instruction to docker command `-ulimit nofile=1000000:1000000` or you can take a look an [alternative solution](https://stackoverflow.com/questions/62127643/need-understand-ulimits-nofile-setting-in-host-and-container/62136351#62136351).
+
+#### **Nethermind Settings**
+
+* `--JsonRpc.JwtSecretFile=PATH` where PATH is the location of your JWT secret ex. `/tmp/jwtsecret`
+* `--datadir data` maps the database, keystore, and logs all at once
