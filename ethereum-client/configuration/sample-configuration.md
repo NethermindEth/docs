@@ -21,8 +21,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 17551000,
-    "PivotHash": "0x3c9cf9c52745afd90dcf75d24c0739e47cdc1c2a20be18f3aa9cd8c9d7a58cf2",
+    "PivotNumber": 17651000,
+    "PivotHash": "0xdae9a85421c95ceb5bc9b0411237aa06b62a2f0d9dc89f04f0bb0e976988c283",
     "PivotTotalDifficulty": "58750003716598352816469",
     "FastBlocks": true,
     "AncientBodiesBarrier": 11052984,
@@ -72,8 +72,8 @@ description: Sample Fast Sync configurations for Nethermind
   "Sync": {
     "FastSync": true,
     "SnapSync": true,
-    "PivotNumber": 9210000,
-    "PivotHash": "0x9a0afa8d68237ed1eb2a2440a0cf32866c0700965a10e9ed9d820eb40fee8707",
+    "PivotNumber": 9300000,
+    "PivotHash": "0x6dd218260870814ca3c4de400679335a5263626a29cd53e8301fd922c2be2c3e",
     "PivotTotalDifficulty": "10790000",
     "FastBlocks": true,
     "UseGethLimitsInFastBlocks": true,
@@ -112,78 +112,41 @@ description: Sample Fast Sync configurations for Nethermind
 }
 ```
 {% endtab %}
-{% tab title="rinkeby.cfg" %}
+{% tab title="sepolia.cfg" %}
 ```yaml
 {
   "Init": {
-    "ChainSpecPath": "chainspec/rinkeby.json",
-    "GenesisHash": "0x6341fd3daf94b748c72ced5a5b26028f2474f5f00d824504e4fa37a75767e177",
-    "BaseDbPath": "nethermind_db/rinkeby",
-    "LogFileName": "rinkeby.logs.txt",
+    "ChainSpecPath": "chainspec/sepolia.json",
+    "GenesisHash": "0x25a5cc106eea7138acab33231d7160d69cb777ee0c2c553fcddf5138993e6dd9",
+    "BaseDbPath": "nethermind_db/sepolia",
+    "LogFileName": "sepolia.logs.txt",
+    "StaticNodesPath": "Data/static-nodes-sepolia.json",
     "MemoryHint": 1024000000
   },
   "TxPool": {
     "Size": 1024
-  },
-  "Sync": {
-    "FastSync": true,
-    "PivotNumber": 11460000,
-    "PivotHash": "0xcd2a9b5d3f5b541c28355c2aa565c84b5c8d174a6d5e0c07e4af55ad40d20376",
-    "PivotTotalDifficulty": "18634200",
-    "FastBlocks": true
   },
   "Metrics": {
-    "NodeName": "Rinkeby"
-  }
-}
-```
-{% endtab %}
-{% tab title="ropsten.cfg" %}
-```yaml
-{
-  "Init": {
-    "ChainSpecPath": "chainspec/ropsten.json",
-    "GenesisHash": "0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d",
-    "BaseDbPath": "nethermind_db/ropsten",
-    "LogFileName": "ropsten.logs.txt",
-    "MemoryHint": 1024000000
-  },
-  "TxPool": {
-    "Size": 1024
+    "NodeName": "Sepolia"
   },
   "Sync": {
     "FastSync": true,
-    "SnapSync": true,
     "FastBlocks": true,
+    "SnapSync": true,
     "UseGethLimitsInFastBlocks": true,
-    "PivotNumber": 13070000,
-    "PivotHash": "0x1b3bd0a74ae9df08574c6696ff3ce60a31cce51de8eb4ceb34fb2d05f78b46c6",
-    "PivotTotalDifficulty": "50000820485795157",
+    "PivotNumber": 3852000,
+    "PivotHash": "0x5cf42af73060a579343e48d91d4575eb8e09efad47a382f5c51d68c1abf8e90e",
+    "PivotTotalDifficulty": "17000018015853232",
     "FastSyncCatchUpHeightDelta": "10000000000"
   },
-  "EthStats": {
-    "Server": "ws://localhost:3000/api"
-  },
-  "Metrics": {
-    "NodeName": "Ropsten"
+  "Blocks": {
+    "TargetBlockGasLimit": 30000000
   },
   "JsonRpc": {
     "Enabled": true,
     "Timeout": 20000,
     "Host": "127.0.0.1",
     "Port": 8545,
-    "EnabledModules": [
-      "Eth",
-      "Subscribe",
-      "Trace",
-      "TxPool",
-      "Web3",
-      "Personal",
-      "Proof",
-      "Net",
-      "Parity",
-      "Health"
-    ],
     "AdditionalRpcUrls": [
       "http://localhost:8551|http;ws|net;eth;subscribe;engine;web3;client"
     ]

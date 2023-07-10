@@ -601,6 +601,7 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -685,6 +686,7 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -1399,6 +1401,8 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[["0x80757153e93d1b4
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
+| DataGasUsed | `Quantity` |
+| DataGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |
@@ -1488,6 +1492,7 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -1563,6 +1568,7 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}

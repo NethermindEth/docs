@@ -128,6 +128,8 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
+| DataGasUsed | `Quantity` |
+| DataGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |
