@@ -75,3 +75,12 @@ Your node is synced when it shows log lines starting with:
 And the block numbers shown are at the head of the chain.
 
 _In blockchain, any node can never be 100% sure it is synced because there is no central source of truth - so your node is generally not able to tell you that it is synced but, it is able to tell you that it believes it is synced based on what it knows from the peers that it talks to)._
+
+## I want to run two or more nodes on one machine. How can I achieve this?
+
+You have to configure a few ports used by Nethermind.
+
+<table><thead><tr><th>Settings</th><th width="145.33333333333331">Default Value</th><th>Comment</th></tr></thead><tbody><tr><td>JsonRpc.EnginePort</td><td>8551</td><td>Remember to change it on your Consensus client.</td></tr><tr><td>JsonRpc.Port</td><td>8545</td><td>Only needed if you are using standard JsonRpc</td></tr><tr><td>JsonRpc.WebSocketsPort</td><td>8545</td><td>By default same as the JsonRpc port. Only relevant when you use WebSockets</td></tr><tr><td>Network.P2PPort</td><td>30303</td><td></td></tr><tr><td>Network.DiscoveryPort</td><td>30303</td><td></td></tr></tbody></table>
+
+The example of parameters that you have to pass to your second node when the first has been running with default settings:\
+`--JsonRpc.EnginePort 8552 --JsonRpc.Port 8546 --Network.P2PPort 30304 --Network.DiscoveryPort 30304`
