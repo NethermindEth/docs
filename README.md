@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/Nethermind_Background-07.png
+cover: .gitbook/assets/Nethermind_Docs.png
 coverY: 0
 ---
 
