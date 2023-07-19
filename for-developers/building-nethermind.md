@@ -1,16 +1,23 @@
-# Building From Source
-
-## Prerequisites
-
-To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 7 or later.
-
-## Building
+# Building from source
 
 The Nethermind's source code can be obtained from [our repository](https://github.com/NethermindEth/nethermind) on GitHub:
 
 ```bash
 git clone --recursive https://github.com/nethermindeth/nethermind.git
 ```
+
+There are two options buiding Nethermind from source code:
+
+* [Standalone binaries](building-nethermind.md#building-standalone-binaries)
+* [Docker image](building-nethermind.md#bulding-docker-image)
+
+## Building standalone binaries
+
+### Prerequisites
+
+To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 7 or later.
+
+### Building
 
 To build both the client and tests, run the following command from the project's root directory:
 
@@ -21,7 +28,7 @@ dotnet build src/Nethermind/Nethermind.sln -c release
 To simply run the client with a specific configuration without building tests, see below.
 
 {% hint style="info" %}
-Before running the client or tests, ensure the platform-specific [prerequisites](../ethereum-client/running-nethermind/running-the-client.md#prerequisites) are met.
+Before running the client or tests, ensure the platform-specific [prerequisites](../installing-nethermind/download-sources.md#prerequisites) are met.
 {% endhint %}
 
 #### Running the client
@@ -53,3 +60,12 @@ dotnet test Nethermind.sln -c release
 dotnet test EthereumTests.sln -c release
 ```
 
+## Bulding Docker image
+
+To build Nethermind Docker image, run the following command from the project's root directory:
+
+```bash
+docker build -t nethermind .
+```
+
+For more info about running Docker containers, see [How to install](../installing-nethermind/download-sources.md#docker-container).&#x20;
