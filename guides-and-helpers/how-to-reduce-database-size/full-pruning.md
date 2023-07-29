@@ -75,7 +75,7 @@ To avoid unexpected behavior and ensure that Full Pruning can be completed in fu
 
 > This is a recommended approach as it ensures, that pruning will be executed on time
 
-`VolumeFreeSpace` mode allows Full Pruning to be triggered when the amount of free disk space reaches a selected minimum. To enable this mode, add the following flags: `--Pruning.Mode=Hybrid --Pruning.FullPruningTrigger=VolumeFreeSpace--Pruning.FullPruningThresholdMb=256000`, where 256000 should be set based on current requirements. However, it should never be set below the default value of 256000.
+`VolumeFreeSpace` mode allows Full Pruning to be triggered when the amount of free disk space reaches a selected minimum. To enable this mode, add the following flags: `--Pruning.Mode=Hybrid --Pruning.FullPruningTrigger=VolumeFreeSpace --Pruning.FullPruningThresholdMb=256000`, where 256000 should be set based on current requirements. However, it should never be set below the default value of 256000.
 
 This configuration will trigger Full Pruning whenever the amount of free disk space drops to 250 GB. This ensures that pruning is invoked as infrequently as possible while also ensuring that there is always sufficient free space available to trigger it.
 
