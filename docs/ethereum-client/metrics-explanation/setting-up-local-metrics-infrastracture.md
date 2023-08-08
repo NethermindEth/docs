@@ -12,7 +12,11 @@ Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Met
 
 ### Enabling Metrics in Nethermind
 
+<<<<<<< HEAD:docs/ethereum-client/metrics-explanation/setting-up-local-metrics-infrastracture.md
 Metrics can be enabled by simply passing `--Metrics.Enabled true --Metrics.ExposePort 6060` arguments to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true --Metrics.ExposePort 6060`.
+=======
+Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`. 
+>>>>>>> origin/master:ethereum-client/metrics/setting-up-local-metrics-infrastracture.md
 
 `Metrics.PushGatewayUrl` will need to be amended if pushgateway endpoint is not default.
 

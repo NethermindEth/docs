@@ -1,55 +1,32 @@
 ---
-description: Run Nethermind from any platform of your choice
+description: Run Nethermind on a platform of your choice
 ---
 
 # System Requirements
 
-This page describes the **supported operating systems** and **hardware requirements** to run the Nethermind client.&#x20;
+Learn about the hardware and software requirements to run Nethermind.&#x20;
 
 ## Supported operating systems
 
-### Linux
+Nethermind supports a broad range of modern _64-bit_ operating systems including but not limited to:
 
-{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/linux?tabs=netcore31&pivots=os-linux" %}
-Supported operating systems
-{% endembed %}
+* **Linux**
+  * Alpine (3.15 and later)
+  * CentOS (Stream 8 and later)
+  * Debian (10 and later)
+  * Fedora (37 and later)
+  * openSUSE (15.4 and later)
+  * RHEL (8 and later)
+  * SLES (15 and later)
+  * Ubuntu (18.04 and later)
+* **Windows**
+  * Windows 10 and later
+  * Windows Server 2012 and later
+* **macOS** (10.15 Catalina and later)
 
-| Operating System             | Version |    Architecture   | Tested by us |
-| ---------------------------- | ------- | :---------------: | :----------: |
-| Red Hat Enterprise Linux     | 7+      |        x64        |       ❌      |
-| CentOS                       | 8+      |        x64        |       ✔      |
-| Ubuntu                       | 16.04+  | x64, ARM64, ARM32 |       ✔      |
-| Fedora                       | 32+     |        x64        |       ✔      |
-| Debian                       | 9+      | x64, ARM64, ARM32 |       ✔      |
-| Linux Mint                   | 18+     |        x64        |       ❌      |
-| openSUSE                     | 15+     |        x64        |       ❌      |
-| SUSE Enterprise Linux (SLES) | 12 SP2+ |        x64        |       ❌      |
-| Alpine Linux                 | 3.11+   |     x64, ARM64    |       ✔      |
-| Raspberry PI4                | -       |    ARM64, ARM32   |       ✔      |
-| Gentoo Linux                 | -       |       ARM64       |       ✔      |
-
-### Windows
-
-{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/windows?tabs=netcore31&pivots=os-windows" %}
-Supported operating systems
-{% endembed %}
-
-| Windows 11          | 22H2+          |    x64   |  ✔  |
-| ------------------- | -------------- | :------: | :-: |
-| Windows 10 Client   | 1607+          | x64, x86 |  ✔  |
-| Windows Client      | 7 SP1(\*), 8.1 | x64, x86 |  ✔  |
-| Windows Server      | 2012 R2+       | x64, x86 |  ✔  |
-| Windows Server Core | 2012 R2+       | x64, x86 |  ❌  |
-| Nano Server         | 1809+          |    x64   |  ❌  |
-
-### MacOS
-
-{% embed url="https://docs.microsoft.com/en-us/dotnet/core/install/macos?tabs=netcore31&pivots=os-macos" %}
-Supported operating systems
-{% endembed %}
-
-| macOS 10+ | x64, ARM (M1, M2) |  ✔  |
-| --------- | :---------------: | :-: |
+{% hint style="info" %}
+As of now, Nethermind for Windows doesn't support AArch64 (ARM64) architecture.
+{% endhint %}
 
 ## Hardware requirements
 

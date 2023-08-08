@@ -20,8 +20,8 @@ For a more comprehensive step-by-step guide, you should look into one of these a
 
 You can get it either from Github Releases or our Downloads page:
 
-{% content-ref url="../installing-nethermind/download-sources/" %}
-[download-sources](../installing-nethermind/download-sources/)
+{% content-ref url="../installing-nethermind/download-sources.md" %}
+[download-sources.md](../installing-nethermind/download-sources.md)
 {% endcontent-ref %}
 
 * [x] unzip the package

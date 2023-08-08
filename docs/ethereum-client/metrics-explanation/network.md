@@ -47,6 +47,7 @@
 | nethermind_local_breach_of_protocol_disconnects | Number of sent disconnects due to breach of protocol |
 | nethermind_local_client_quitting_disconnects | Number of initiated disconnects due to client quitting |
 | nethermind_local_disconnect_requested_disconnects | Number of initiated disconnects due to disconnect requested |
+| nethermind_local_disconnects_total | Number of local disconnects |
 | nethermind_local_incompatible_p2_p_disconnects | Number of initiated disconnects due to incompatible devp2p |
 | nethermind_local_null_node_identity_disconnects | Number of initiated disconnects due to missing node identity |
 | nethermind_local_other_disconnects | Number of initiated disconnects due to other reason |
@@ -61,6 +62,7 @@
 | nethermind_outgoing_connections | Number of outgoing connection. |
 | nethermind_peer_limit | The maximum number of peers this node allows to connect. |
 | nethermind_receive_message_timeout_disconnects | Number of received disconnects due to request timeouts |
+| nethermind_remote_disconnects_total | Number of remote disconnects |
 | nethermind_same_as_self_disconnects | Number of received disconnects due to connecting to self |
 | nethermind_snap_account_range_received | Number of SNAP AccountRange messages received |
 | nethermind_snap_byte_codes_received | Number of SNAP ByteCodes messages received |

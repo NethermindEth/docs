@@ -596,6 +596,7 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -679,6 +680,7 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -1282,6 +1284,8 @@ eth.getTransactionReceipt(["0x80757153e93d1b475e203406727b62a501187f63e23b8fa999
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
+| DataGasUsed | `Quantity` |
+| DataGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |
@@ -1374,6 +1378,7 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -1452,6 +1457,7 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
+| DataGasUsed | `Quantity` |
 | ExcessDataGas | `Quantity` |
 {% endtab %}
 {% endtabs %}

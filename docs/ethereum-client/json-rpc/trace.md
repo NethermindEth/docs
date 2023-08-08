@@ -62,7 +62,7 @@ Traces a call, returning the traces
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | call | `TransactionForRpc object` |  |
-| traceTypes | `Array` |  |
+| traceTypes | `Array` | Possible values : ["VmTrace", "StateDiff", "Trace", "Rewards", "All"] |
 | blockParameter | `BlockParameter object` |  |
 
 | Returned type | Description |
@@ -241,7 +241,7 @@ Traces a call to eth_sendRawTransaction without making the call, returning the t
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | data | `Data` |  |
-| traceTypes | `Array` |  |
+| traceTypes | `Array` | Possible values : ["VmTrace", "StateDiff", "Trace", "Rewards", "All"] |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -317,7 +317,7 @@ Replays all transactions in a block returning the requested traces for each tran
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | blockParameter | `BlockParameter object` |  |
-| traceTypes | `Array` |  |
+| traceTypes | `Array` | Possible values : ["VmTrace", "StateDiff", "Trace", "Rewards", "All"] |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -369,7 +369,7 @@ Replays a transaction, returning the traces.
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | txHash | `Hash` |  |
-| traceTypes | `Array` |  |
+| traceTypes | `Array` | Possible values : ["VmTrace", "StateDiff", "Trace", "Rewards", "All"] |
 
 | Returned type | Description |
 | :--- | :--- |

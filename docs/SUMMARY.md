@@ -22,15 +22,11 @@
 
 ## Installing Nethermind
 
-* [Downloading Releases](installing-nethermind/download-sources/README.md)
-  * [Downloads Page](http://downloads.nethermind.io)
-  * [Github Release Page](https://github.com/NethermindEth/nethermind/releases)
-* [Docker](installing-nethermind/docker.md)
-* [Launching Nethermind via Nethermind.Launcher](installing-nethermind/launching-nethermind-via-nethermind.launcher.md)
+* [How to install](installing-nethermind/download-sources.md)
 
 ## For developers
 
-* [Building From Source](for-developers/building-nethermind.md)
+* [Building from source](for-developers/building-nethermind.md)
 * [Coding Style](for-developers/coding-style.md)
 * [Plugins](for-developers/plugins.md)
 * [Web3.py](for-developers/web3.py.md)

@@ -76,7 +76,7 @@ You may need to install [Microsoft Visual C++ Redistributable](https://docs.micr
 
 #### **macOS**
 
-You will need to install the following packages.
+You will need to install the following packages:
 
 ```bash
 brew install gmp snappy lz4 zstd
@@ -84,10 +84,18 @@ brew install gmp snappy lz4 zstd
 
 #### **Ubuntu and Debian**
 
-You will need to install the following packages
+You will need to install the following packages:
 
 ```bash
 sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6
+```
+
+#### Fedora
+
+You will need to install the following packages:
+
+```bash
+sudo dnf install glibc-devel snappy-devel libzstd
 ```
 
 Commands for other Linux distros can be found [here](https://docs.nethermind.io/nethermind/ethereum-client/building-nethermind#linux).

@@ -225,6 +225,8 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
+| DataGasUsed | `Quantity` |
+| DataGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |
