@@ -56,9 +56,7 @@ You should see the node starting:
 
 ### Monitoring Nethermind Node Health
 
-Follow this guide to setup Prometheus/Grafana based local setup and monitor your node's most important stats there
-
-{% page-ref page="../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md" %}
+Follow [this guide](../ethereum-client/metrics-explanation/setting-up-local-metrics-infrastracture.md) to setup Prometheus/Grafana based local setup and monitor your node's most important stats there
 
 [//]: # (TODO: get this image)
 [//]: # (![]&#40;/img/image&#40;10&#41;.png&#41;)

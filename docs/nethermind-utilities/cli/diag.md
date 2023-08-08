@@ -3,21 +3,19 @@ import TabItem from "@theme/TabItem";
 
 # diag
 
-
 ## diag.cliVersion
 
-Displays client version 
+Displays client version
 
-
-| Invocation |
-| :--- |
+| Invocation        |
+|:------------------|
 | `diag.cliVersion` |
 
 | This method doesn't have parameters. |
-| :--- |
+|:-------------------------------------|
 
-| Returned type | Description |
-| :--- | :--- |
+| Returned type       | Description    |
+|:--------------------|:---------------|
 | `JavaScript Object` | Client version |
 
 <Tabs>
@@ -26,12 +24,14 @@ Displays client version
 ```yaml
 diag.cliVersion
 ```
+
 </TabItem>
 <TabItem label="Response" value="response">
 
 ```yaml
 "Nethermind.Cli, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 ```
+
 </TabItem>
 </Tabs>
 

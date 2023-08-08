@@ -6,15 +6,18 @@ description: Guide for Nethermind.Cli project which is useful for managing your 
 
 After launching `./Nethermind.Launcher` you have two options - `Ethereum Node` and `CLI`.
 
-If you launch the Node in one process and then launch the CLI in another process you will see available commands inside the CLI.
+If you launch the Node in one process and then launch the CLI in another process you will see available commands inside
+the CLI.
 
 :::caution
-You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enabling it when Launcher asks about it or by manually editing the relevant config file or by passing `--JsonRpc.Enabled true` parameter after the Launcher command
+You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enabling it when Launcher asks about it or by
+manually editing the relevant config file or by passing `--JsonRpc.Enabled true` parameter after the Launcher command
 :::
 
 CLI will display available options \(functions and properties\) when started.
 
 [//]: # (TODO: fix image)
+
 [//]: # (![Nethermind.Cli view]&#40;../../.gitbook/assets/image%20%286%29.png&#41;)
 
 CLI will allow you to query the most basic info about the node quickly.
@@ -30,11 +33,14 @@ CLI will allow you to query the most basic info about the node quickly.
 9. You can auto-complete basic command with tab
 
 [//]: # (TODO: fix image)
+
 [//]: # (![Nethermind.Cli operations]&#40;../../.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png&#41;)
 
-For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js libs or Truffle, Metamask, etc.
+For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js
+libs or Truffle, Metamask, etc.
 
-Below you will find the available list of CLI operations and you can find more information about each call in JSON RPC section.
+Below you will find the available list of CLI operations and you can find more information about each call in JSON RPC
+section.
 
 {% page-ref page="../../ethereum-client/json-rpc/" %}
 

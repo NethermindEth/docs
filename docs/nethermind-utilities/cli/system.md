@@ -3,41 +3,39 @@ import TabItem from "@theme/TabItem";
 
 # system
 
-
 ## system.getVariable
 
-| Invocation |
-| :--- |
+| Invocation                               |
+|:-----------------------------------------|
 | `system.getVariable(name, defaultValue)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| name | `String` |  |
-| defaultValue | `String` |  |
+| Parameter    | Type     | Description |
+|:-------------|:---------|:------------|
+| name         | `String` |             |
+| defaultValue | `String` |             |
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of system.getVariable" 
 system.getVariable(name, defaultValue)
 ```
 
-
 ## system.memory
 
-| Invocation |
-| :--- |
+| Invocation                          |
+|:------------------------------------|
 | `system.memory(name, defaultValue)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| name | `String` |  |
-| defaultValue | `String` |  |
+| Parameter    | Type     | Description |
+|:-------------|:---------|:------------|
+| name         | `String` |             |
+| defaultValue | `String` |             |
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of system.memory" 
 system.memory(name, defaultValue)

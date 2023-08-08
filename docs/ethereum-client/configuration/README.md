@@ -1,5 +1,5 @@
 ---
-description: A list of properites to adjust Nethermind Node configuration
+description: A list of properties to adjust Nethermind Node configuration
 ---
 
 # Configuration
@@ -86,9 +86,7 @@ Determines the configuration file of the network on which Nethermind will be run
 --config xdai
 ```
 
-More on that:
-
-{% page-ref page="../networks.md" %}
+More on that [here](../networks.md).
 
 ### log
 
@@ -100,9 +98,7 @@ Changes the logging level.
 --log DEBUG
 ```
 
-More on that:
-
-{% page-ref page="../logging-configuration.md" %}
+More on that [here](../logging-configuration.md)
 
 ### configsDirectory
 
@@ -124,7 +120,5 @@ Changes the path of the `NLog.config` file.
 --loggerConfigSource /home/user/NLog.config
 ```
 
-More on that:
-
-{% embed url="https://github.com/nlog/nlog/wiki" %}
+More on that [here](https://github.com/nlog/nlog/wiki):
 

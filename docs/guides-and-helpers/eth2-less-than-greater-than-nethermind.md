@@ -21,11 +21,8 @@ Nethermind node -> **Step 6 — Set up an Ethereum (Eth1) Node**
 
 * [x] Download the Nethermind client
 
-You can get it either from Github Releases or our Downloads page:
-
-{% content-ref url="../installing-nethermind/download-sources.md" %}
-[download-sources.md](../01-getting-started/installing-nethermind/download-sources.mdx)
-{% endcontent-ref %}
+You can get it either
+from [Github Releases or our Downloads page](../01-getting-started/installing-nethermind/download-sources.mdx)
 
 * [x] unzip the package
 * [x] run the Nethermind node (use `Nethermind.Launcher` or change `configs/mainnet.cfg` and
@@ -46,10 +43,9 @@ screen -S nethermind
 Enable **JSON RPC** service so that your ETH2 Beacon node will be able to communicate
 :::
 
-{% content-ref url="../first-steps-with-nethermind/firewall-configuration.md" %}
-[firewall-configuration.md](../01-getting-started/firewall-configuration.md)
-{% endcontent-ref %}
-
+:::danger
+Remember to setup you [firewall configuration](../01-getting-started/firewall-configuration.md)
+:::
 Configure EthStats for your node if needed:
 
 ![](</img/image(3).png>)
@@ -64,17 +60,13 @@ You should see the node starting:
 
 ### Running Nethermind as a systemd service
 
-{% content-ref url="../first-steps-with-nethermind/manage-nethermind-with-systemd.md" %}
-[manage-nethermind-with-systemd.md](../01-getting-started/manage-nethermind-with-systemd.md)
-{% endcontent-ref %}
+You might follow [the following guide](../01-getting-started/manage-nethermind-with-systemd.md) to run Nethermind as a
+systemd service
 
 ### Monitoring Nethermind Node Health
 
-Follow this guide to setup Prometheus/Grafana based local setup and monitor your node's most important stats there
-
-{% content-ref url="../ethereum-client/metrics/setting-up-local-metrics-infrastracture.md" %}
-[setting-up-local-metrics-infrastracture.md](../ethereum-client/metrics-explanation/setting-up-local-metrics-infrastracture.md)
-{% endcontent-ref %}
+Follow [this guide](../ethereum-client/metrics-explanation/setting-up-local-metrics-infrastracture.md) to setup
+Prometheus/Grafana based local setup and monitor your node's most important stats there
 
 ![](</img/image(4).png>)
 
@@ -94,8 +86,4 @@ If the result shows `false` it means that your node is **synced**&#x20;
 {"jsonrpc":"2.0","result":false,"id":1}
 ```
 
-Check the following guide to get even better node health monitoring:
-
-{% content-ref url="../ethereum-client/monitoring-node-health.md" %}
-[monitoring-node-health.md](../ethereum-client/monitoring-node-health.md)
-{% endcontent-ref %}
+Check [the following guide](../ethereum-client/monitoring-node-health.md) to get even better node health monitoring:

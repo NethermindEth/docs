@@ -55,8 +55,14 @@ curl localhost:8545/health
 {"status":"Healthy","totalDuration":"00:00:00.0015582","entries":{"node-health":{"data":{},"description":"The node is now fully synced with a network, number of peers: 99","duration":"00:00:00.0003881","status":"Healthy","tags":[]}}}
 ```
 
+:::info
+
 * **Unhealthy** returns **503** (Service Unavailable) status code
+:::
+
+:::info
 * **Healthy** returns **200** status code
+:::
 
 #### Enabling Health Checks UI
 

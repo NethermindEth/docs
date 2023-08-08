@@ -50,7 +50,8 @@ unzip [LINUX_PACKAGE_FILENAME] -d build
 mkdir data
 ```
 
-4. Create `.env` file inside `data` directory and provide environment variables to the Node configuration like for example:
+4. Create `.env` file inside `data` directory and provide environment variables to the Node configuration like for
+   example:
 
 :::caution
 `NETHERMIND_CONFIG` is the important one - defines the network config, the rest is optional.

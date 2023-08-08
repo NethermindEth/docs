@@ -3,112 +3,106 @@ import TabItem from "@theme/TabItem";
 
 # node
 
-
 ## node.address
 
-| Invocation |
-| :--- |
+| Invocation     |
+|:---------------|
 | `node.address` |
 
 | This method doesn't have parameters. |
-| :--- |
+|:-------------------------------------|
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of node.address" 
 node.address
 ```
 
-
 ## node.enode
 
-| Invocation |
-| :--- |
+| Invocation   |
+|:-------------|
 | `node.enode` |
 
 | This method doesn't have parameters. |
-| :--- |
+|:-------------------------------------|
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of node.enode" 
 node.enode
 ```
 
-
 ## node.setNodeKey
 
-| Invocation |
-| :--- |
+| Invocation             |
+|:-----------------------|
 | `node.setNodeKey(key)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| key | `String` |  |
+| Parameter | Type     | Description |
+|:----------|:---------|:------------|
+| key       | `String` |             |
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of node.setNodeKey" 
 node.setNodeKey(key)
 ```
 
-
 ## node.switch
 
-| Invocation |
-| :--- |
+| Invocation         |
+|:-------------------|
 | `node.switch(uri)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| uri | `String` |  |
+| Parameter | Type     | Description |
+|:----------|:---------|:------------|
+| uri       | `String` |             |
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of node.switch" 
 node.switch(uri)
 ```
 
-
 ## node.switchLocal
 
-| Invocation |
-| :--- |
+| Invocation              |
+|:------------------------|
 | `node.switchLocal(uri)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| uri | `String` |  |
+| Parameter | Type     | Description |
+|:----------|:---------|:------------|
+| uri       | `String` |             |
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` |  |
+|:--------------|:------------|
+| `String`      |             |
 
 ``` yaml title="Example request of node.switchLocal" 
 node.switchLocal(uri)
 ```
 
-
 ## node.uri
 
 | Invocation |
-| :--- |
+|:-----------|
 | `node.uri` |
 
 | This method doesn't have parameters. |
-| :--- |
+|:-------------------------------------|
 
-| Returned type | Description |
-| :--- | :--- |
-| `JavaScript Object` |  |
+| Returned type       | Description |
+|:--------------------|:------------|
+| `JavaScript Object` |             |
 
 ``` yaml title="Example request of node.uri" 
 node.uri

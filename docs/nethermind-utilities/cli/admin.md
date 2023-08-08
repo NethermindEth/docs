@@ -5,21 +5,20 @@ import TabItem from "@theme/TabItem";
 
 ## admin.addPeer
 
-Adds given node. 
+Adds given node.
 
-
-| Invocation |
-| :--- |
+| Invocation                               |
+|:-----------------------------------------|
 | `admin.addPeer(enode, addToStaticNodes)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
+| Parameter        | Type      | Description                                 |
+|:-----------------|:----------|:--------------------------------------------|
+| enode            | `String`  | Given node                                  |
 | addToStaticNodes | `Boolean` | Adding to static nodes if `true` (optional) |
 
 | Returned type | Description |
-| :--- | :--- |
-| `String` | Added node |
+|:--------------|:------------|
+| `String`      | Added node  |
 
 <Tabs>
 <TabItem label="Request" value="request">
@@ -27,32 +26,32 @@ Adds given node.
 ```yaml
 admin.addPeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true)
 ```
+
 </TabItem>
 <TabItem label="Response" value="response">
 
 ```yaml
 "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303"
 ```
+
 </TabItem>
 </Tabs>
 
 [See also JSON RPC admin_addPeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_addpeer)
 
-
 ## admin.nodeInfo
 
-Displays relevant information about this node. 
+Displays relevant information about this node.
 
-
-| Invocation |
-| :--- |
+| Invocation       |
+|:-----------------|
 | `admin.nodeInfo` |
 
 | This method doesn't have parameters. |
-| :--- |
+|:-------------------------------------|
 
-| Returned type | Description |
-| :--- | :--- |
+| Returned type     | Description                 |
+|:------------------|:----------------------------|
 | `NodeInfo object` | Information about this node |
 
 <Tabs>
@@ -61,6 +60,7 @@ Displays relevant information about this node.
 ```yaml
 admin.nodeInfo
 ```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
@@ -85,50 +85,51 @@ admin.nodeInfo
   }
 }
 ```
+
 </TabItem>
 <TabItem value="objects" label="Object">
 
 
 `NodeInfo`
 
-| Field name | Type |
-| :--- | :--- |
-| Enode | `String` |
-| Id | `String` |
-| Ip | `String` |
-| ListenAddress | `String` |
-| Name | `String` |
-| Ports | `PortsInfo object` |
-| Protocols | `Array` |
+| Field name    | Type               |
+|:--------------|:-------------------|
+| Enode         | `String`           |
+| Id            | `String`           |
+| Ip            | `String`           |
+| ListenAddress | `String`           |
+| Name          | `String`           |
+| Ports         | `PortsInfo object` |
+| Protocols     | `Array`            |
 
 `PortsInfo`
 
-| Field name | Type |
-| :--- | :--- |
-| Discovery | `Quantity` |
-| Listener | `Quantity` |
+| Field name | Type       |
+|:-----------|:-----------|
+| Discovery  | `Quantity` |
+| Listener   | `Quantity` |
+
 </TabItem>
 </Tabs>
 
 
 [See also JSON RPC admin_nodeInfo](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_nodeinfo)
 
-
 ## admin.peers
 
-Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`). 
+Displays a list of connected peers including information about
+them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`).
 
-
-| Invocation |
-| :--- |
+| Invocation                    |
+|:------------------------------|
 | `admin.peers(includeDetails)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
+| Parameter      | Type      | Description                                                               |
+|:---------------|:----------|:--------------------------------------------------------------------------|
 | includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` (optional) |
 
-| Returned type | Description |
-| :--- | :--- |
+| Returned type     | Description                                   |
+|:------------------|:----------------------------------------------|
 | `PeerInfo object` | List of connected peers including information |
 
 <Tabs>
@@ -137,6 +138,7 @@ Displays a list of connected peers including information about them (`clientId`,
 ```yaml
 admin.peers(true)
 ```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
@@ -155,55 +157,54 @@ admin.peers(true)
     "ethDetails": "eth65",
     "lastSignal": "03/11/2021 12:33:58"
   },
-  
+
   (...)
-  
+
 ]
 ```
+
 </TabItem>
 <TabItem value="objects" label="Object">
 
 
 `PeerInfo`
 
-| Field name | Type |
-| :--- | :--- |
-| ClientId | `String` |
-| Host | `String` |
-| Port | `Quantity` |
-| Address | `String` |
-| IsBootnode | `Boolean` |
-| IsTrusted | `Boolean` |
-| IsStatic | `Boolean` |
-| Enode | `String` |
-| ClientType | `String` |
-| EthDetails | `String` |
-| LastSignal | `String` |
+| Field name | Type       |
+|:-----------|:-----------|
+| ClientId   | `String`   |
+| Host       | `String`   |
+| Port       | `Quantity` |
+| Address    | `String`   |
+| IsBootnode | `Boolean`  |
+| IsTrusted  | `Boolean`  |
+| IsStatic   | `Boolean`  |
+| Enode      | `String`   |
+| ClientType | `String`   |
+| EthDetails | `String`   |
+| LastSignal | `String`   |
+
 </TabItem>
 </Tabs>
 
 
 [See also JSON RPC admin_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_peers)
 
-
-
 ## admin.removePeer
 
-Removes given node. 
+Removes given node.
 
-
-| Invocation |
-| :--- |
+| Invocation                                       |
+|:-------------------------------------------------|
 | `admin.removePeer(enode, removeFromStaticNodes)` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
+| Parameter             | Type      | Description                                     |
+|:----------------------|:----------|:------------------------------------------------|
+| enode                 | `String`  | Given node                                      |
 | removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` (optional) |
 
-| Returned type | Description |
-| :--- | :--- |
-| `String` | Removed node |
+| Returned type | Description  |
+|:--------------|:-------------|
+| `String`      | Removed node |
 
 <Tabs>
 <TabItem label="Request" value="request">
@@ -211,12 +212,14 @@ Removes given node.
 ```yaml
 admin.removePeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true)
 ```
+
 </TabItem>
 <TabItem label="Response" value="response">
 
 ```yaml
 "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303"
 ```
+
 </TabItem>
 </Tabs>
 
