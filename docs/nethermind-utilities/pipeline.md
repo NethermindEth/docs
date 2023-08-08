@@ -8,28 +8,39 @@ description: >-
 
 ### Please note that the pipeline source code is still a work in progress and there will be significant changes in the coming weeks!
 
-Nethermind under `Nethermind.Pipeline` project provides couple of interfaces and classes used in creating pipelines. 
+Nethermind under `Nethermind.Pipeline` project provides couple of interfaces and classes used in creating pipelines.
 
 ## Pipeline items
 
-* `IPipelineElement` - base building block of the pipeline. 
-* `IPipelineElement<TOut>` - generic interface used for emitting data of type `TOut`. to the next element \(most of the time this is the first element in the collection\). 
-* IPipelineElement&lt;TIn, TOut&gt; - interface used for both emitting and subscribing to the data from the previous block, so `TIn` is the type of data from the previous block and `TOut` is the type of data that the element wants to give to the next element. 
-* `IPipeline` - collection of `IPipelineElement` used to store our pipeline in the memory.  
-* `IPipelineBuilder<TSource, TOutput>` - when we want to create our pipeline the fastest way will be to use implementation of this interface \(implemented in `PipelineBuilder.cs`\). Builder collects all of the elements we want to create the pipeline with and creates the flow of the data between them. Keep in mind that once the pipeline is created it's immutable. 
+* `IPipelineElement` - base building block of the pipeline.
+* `IPipelineElement<TOut>` - generic interface used for emitting data of type `TOut`. to the next element \(most of the
+  time this is the first element in the collection\).
+* IPipelineElement&lt;TIn, TOut&gt; - interface used for both emitting and subscribing to the data from the previous
+  block, so `TIn` is the type of data from the previous block and `TOut` is the type of data that the element wants to
+  give to the next element.
+* `IPipeline` - collection of `IPipelineElement` used to store our pipeline in the memory.
+* `IPipelineBuilder<TSource, TOutput>` - when we want to create our pipeline the fastest way will be to use
+  implementation of this interface \(implemented in `PipelineBuilder.cs`\). Builder collects all of the elements we want
+  to create the pipeline with and creates the flow of the data between them. Keep in mind that once the pipeline is
+  created it's immutable.
 
 ## Publishers
 
-Publishers are just classes implementing `IPipelineElement<TIn, TOut>` \(so they are able to subscribe and emit data\) with the additional functionality of publishing the data to either WebSockets or as logs to the file. We add them to the pipeline the same way as normal elements - by using `PipelineBuilder`
+Publishers are just classes implementing `IPipelineElement<TIn, TOut>` \(so they are able to subscribe and emit data\)
+with the additional functionality of publishing the data to either WebSockets or as logs to the file. We add them to the
+pipeline the same way as normal elements - by using `PipelineBuilder`
 
 * WebSocketsPublisher
 * LogPublisher
 
 ## Building pipeline
 
-We will build a Nethermind plugin \(see [nethermind plugins](https://docs.nethermind.io/nethermind/ethereum-client/plugins)\) which observes newly created blocks and see whether there are any transactions to a specific contract address.
+We will build a Nethermind plugin
+\(see [nethermind plugins](https://docs.nethermind.io/nethermind/ethereum-client/plugins)\) which observes newly created
+blocks and see whether there are any transactions to a specific contract address.
 
-Firstly we need to create our pipeline elements. With this case there will only be 3 of them - source, processor and publisher but there is nothing standing in the way in adding more elements. 
+Firstly we need to create our pipeline elements. With this case there will only be 3 of them - source, processor and
+publisher but there is nothing standing in the way in adding more elements.
 
 ```csharp
     public class NewTransactionsSource<TIn> : IPipelineElement<TIn> where TIn : Transaction
@@ -76,7 +87,7 @@ Firstly we need to create our pipeline elements. With this case there will only 
     }
 ```
 
-After that create plugin file and build your pipeline with `IPipelineBuilder` 
+After that create plugin file and build your pipeline with `IPipelineBuilder`
 
 ```csharp
     public class PipelineExamplePlugin : INethermindPlugin
@@ -120,5 +131,6 @@ After that create plugin file and build your pipeline with `IPipelineBuilder`
     }
 ```
 
-With that, all you need is to add the plugin to your node and watch how transactions are being streamed through web sockets. 
+With that, all you need is to add the plugin to your node and watch how transactions are being streamed through web
+sockets. 
 

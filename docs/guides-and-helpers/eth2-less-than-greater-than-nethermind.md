@@ -7,11 +7,14 @@ description: How to run Nethermind as your ETH1 endpoint for ETH2 clients
 ## Nethermind client as ETH1 endpoint
 
 :::caution
-You should always consider being able to switch to Infura or another provider as a backup for safety (or run two nodes yourself):point\_left:&#x20;
+You should always consider being able to switch to Infura or another provider as a backup for safety (or run two nodes
+yourself):point\_left:&#x20;
 :::
 
 :::caution
-For a more comprehensive step-by-step guide, you should look into one of these awesome guides -> [https://someresat.medium.com/](https://someresat.medium.com/). Below you will find instructions on how to run Nethermind node -> **Step 6 — Set up an Ethereum (Eth1) Node**
+For a more comprehensive step-by-step guide, you should look into one of these awesome
+guides -> [https://someresat.medium.com/](https://someresat.medium.com/). Below you will find instructions on how to run
+Nethermind node -> **Step 6 — Set up an Ethereum (Eth1) Node**
 :::
 
 ### Get & Run Nethermind
@@ -21,11 +24,12 @@ For a more comprehensive step-by-step guide, you should look into one of these a
 You can get it either from Github Releases or our Downloads page:
 
 {% content-ref url="../installing-nethermind/download-sources.md" %}
-[download-sources.md](../installing-nethermind/download-sources.md)
+[download-sources.md](../01-getting-started/installing-nethermind/download-sources.mdx)
 {% endcontent-ref %}
 
 * [x] unzip the package
-* [x] run the Nethermind node (use `Nethermind.Launcher` or change `configs/mainnet.cfg` and run `Nethermind.Runner --config mainnet`)
+* [x] run the Nethermind node (use `Nethermind.Launcher` or change `configs/mainnet.cfg` and
+  run `Nethermind.Runner --config mainnet`)
 
 :::info
 use the Linux **screen** utility to keep your node working in the background
@@ -43,7 +47,7 @@ Enable **JSON RPC** service so that your ETH2 Beacon node will be able to commun
 :::
 
 {% content-ref url="../first-steps-with-nethermind/firewall-configuration.md" %}
-[firewall-configuration.md](../first-steps-with-nethermind/firewall-configuration.md)
+[firewall-configuration.md](../01-getting-started/firewall-configuration.md)
 {% endcontent-ref %}
 
 Configure EthStats for your node if needed:
@@ -61,7 +65,7 @@ You should see the node starting:
 ### Running Nethermind as a systemd service
 
 {% content-ref url="../first-steps-with-nethermind/manage-nethermind-with-systemd.md" %}
-[manage-nethermind-with-systemd.md](../first-steps-with-nethermind/manage-nethermind-with-systemd.md)
+[manage-nethermind-with-systemd.md](../01-getting-started/manage-nethermind-with-systemd.md)
 {% endcontent-ref %}
 
 ### Monitoring Nethermind Node Health

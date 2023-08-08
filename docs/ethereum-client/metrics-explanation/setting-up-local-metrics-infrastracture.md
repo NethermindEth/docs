@@ -6,17 +6,15 @@ description: Metrics then can be used to monitor your running Nethermind nodes
 
 ## Metrics Configuration
 
-Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured in [Metrics configuration category](../configuration/metrics.md).
+Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured
+in [Metrics configuration category](../configuration/metrics.md).
 
 ## Metrics infrastructure
 
 ### Enabling Metrics in Nethermind
 
-<<<<<<< HEAD:docs/ethereum-client/metrics-explanation/setting-up-local-metrics-infrastracture.md
-Metrics can be enabled by simply passing `--Metrics.Enabled true --Metrics.ExposePort 6060` arguments to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true --Metrics.ExposePort 6060`.
-=======
-Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`. 
->>>>>>> origin/master:ethereum-client/metrics/setting-up-local-metrics-infrastracture.md
+Metrics can be enabled by simply passing `--Metrics.Enabled true` argument to the Docker containers,`Nethermind.Runner`
+or `Nethermind.Launcher`  e.g. `./Nethermind.Runner --Metrics.Enabled true`.
 
 `Metrics.PushGatewayUrl` will need to be amended if pushgateway endpoint is not default.
 
@@ -44,7 +42,8 @@ docker-compose up -d
 * _Pushgateway_ on [`http://localhost:9091/`](http://localhost:9091/)
 * _Grafana on_ [`http://localhost:3000/`](http://localhost:3000/)\`\`
 
-1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on _Pushgateway_ [url](http://localhost:9091/)
+1. [x] run the `Nethermind` node with `Metrics` enabled and you should see metrics inflowing on
+   _Pushgateway_ [url](http://localhost:9091/)
 
 :::info
 You can add nethermind service to the `docker-compose.yml` file so that it runs with the whole stack
@@ -61,36 +60,46 @@ nethermind:
     - ./keystore/:/nethermind/keystore/
     - ./logs/:/nethermind/logs/
 ```
+
 :::
 
 {% tabs %}
 {% tab title="Runner" %}
+
 ```bash
 ./Nethermind.Runner --Metrics.Enabled true
 ```
+
 {% endtab %}
 
 {% tab title="Launcher" %}
+
 ```bash
 ./Nethermind.Launcher --Metrics.Enabled true
 ```
+
 {% endtab %}
 
 {% tab title="Docker" %}
+
 ```bash
 docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
 
-1. [x] open _Grafana_ [url](http://localhost:3000) and login with default login \(admin\) and password \(admin\), skip password change if you want
+1. [x] open _Grafana_ [url](http://localhost:3000) and login with default login \(admin\) and password \(admin\), skip
+   password change if you want
 
 [//]: # (TODO: get image)
+
 [//]: # (![]&#40;/img/&#41;)
 
-* [x] go to dashboards management [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards)and click `Nethermind`
+* [x] go to dashboards management [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards)and
+  click `Nethermind`
 
 ![](/img/image(26).png)
 

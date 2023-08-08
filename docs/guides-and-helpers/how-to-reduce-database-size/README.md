@@ -4,14 +4,17 @@ description: Description of all possible options, their pros and cons
 
 # How to reduce database size
 
-The Nethermind database can experience substantial growth over time, starting from an initial size of approximately 650 GB. As a result, many node-setups are configured to run on 1TB disks. However, even with the application of settings designed to slow the growth rate, these disks may eventually run out of free space.
+The Nethermind database can experience substantial growth over time, starting from an initial size of approximately 650
+GB. As a result, many node-setups are configured to run on 1TB disks. However, even with the application of settings
+designed to slow the growth rate, these disks may eventually run out of free space.
 
 Current options to reduce db size are:
 
-1. [resync-database-from-scratch.md](resync-database-from-scratch.md "mention")
-2. [full-pruning.md](full-pruning.md "mention")
+1. [Re-sync database from scratch](resync-database-from-scratch.md)
+2. [Full pruning](full-pruning.md)
 
-The table below presents a short comparison of these methods including possible fine-tuning of each method. Data was fetched from a node running on a machine with the below specifications:\
+The table below presents a short comparison of these methods including possible fine-tuning of each method. Data was
+fetched from a node running on a machine with the below specifications:\
 \
 **Node Version**: 1.18.0\
 **Consensus Client**: Lighthouse\

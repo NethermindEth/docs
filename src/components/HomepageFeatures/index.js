@@ -40,14 +40,15 @@ const FeatureList = [
 
 function Feature({Svg, title, description, subtitle}) {
     return (
+
         <div className={clsx('row')}>
+            {/*<div className={clsx('col')}>*/}
+            {/*    <div className="text--center">*/}
+            {/*        <Svg className={styles.featureSvg} role="img"/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div className={clsx('col')}>
-                <div className="text--center">
-                    <Svg className={styles.featureSvg} role="img"/>
-                </div>
-            </div>
-            <div className={clsx('col')}>
-                <div className="text--center padding-horiz--md">
+                <div>
                     <h3>{title}</h3>
                     <h4>{subtitle}</h4>
                     <p>{description}</p>

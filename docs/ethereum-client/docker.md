@@ -7,15 +7,16 @@ description: Nethermind Dockers instructions
 ### **Running Nethermind** Container
 
 :::danger
-On some OS like **Amazon Linux** you may need to increase the `nofile` limit by adding the following instruction to docker commands:
+On some OS like **Amazon Linux** you may need to increase the `nofile` limit by adding the following instruction to
+docker commands:
 
-```
+```bash 
 --ulimit nofile=1000000:1000000
 ```
 
 e.g.
 
-```
+```bash
 docker run -it --ulimit nofile=1000000:1000000 nethermind/nethermind
 ```
 
@@ -24,33 +25,23 @@ ref. [Github issue](https://github.com/NethermindEth/nethermind/issues/3221), [a
 
 Docker pull command:
 
-{% tabs %}
-{% tab title="" %}
-```
+```bash
 docker pull nethermind/nethermind
 ```
-{% endtab %}
-{% endtabs %}
 
 In order to start `Nethermind.Runner`, simply run:
 
-{% tabs %}
-{% tab title="" %}
-```
+```bash
 docker run -it nethermind/nethermind
 ```
-{% endtab %}
-{% endtabs %}
 
-You can use `--help` to get a list of possible start parameters for Nethermind or you can find them all [here](configuration/).
+You can use `--help` to get a list of possible start parameters for Nethermind or you can find them
+all [here](configuration/).
 
-{% tabs %}
-{% tab title="" %}
-```
+
+```bash
 docker run -it nethermind/nethermind --help
 ```
-{% endtab %}
-{% endtabs %}
 
 It’s possible to modify each configuration property via environment variable, using a simple convention:
 
@@ -65,7 +56,8 @@ NETHERMIND_INITCONFIG_ISMINING=true or --Init.IsMining
 ```
 
 :::caution
-Environment variables are to be passed before the docker image tag while parameters should be passed right after the docker image tag.
+Environment variables are to be passed before the docker image tag while parameters should be passed right after the
+docker image tag.
 :::
 
 :::info
@@ -74,29 +66,24 @@ Environment variables can be easily used within **docker-compose.yml** files in 
 
 ### **JSON RPC**
 
-To enable JSON RPC, share the host’s networking namespace with `--network host` and set`--JsonRpc.Enabled true`. To change port simply pass`--JsonRpc.Port 8550`.
+To enable JSON RPC, share the host’s networking namespace with `--network host` and set`--JsonRpc.Enabled true`. To
+change port simply pass`--JsonRpc.Port 8550`.
 
 If running locally:
 
-{% tabs %}
-{% tab title="" %}
-```
+```bash
 docker run -it --network host nethermind/nethermind --JsonRpc.Enabled true
 ```
-{% endtab %}
-{% endtabs %}
 
 or with port-mapping
 
-{% tabs %}
-{% tab title="" %}
-```
+```bash
 docker run -it -p 8545:8545 nethermind/nethermind --JsonRpc.Enabled true --JsonRpc.Host 0.0.0.0
 ```
-{% endtab %}
-{% endtabs %}
 
-If running from a VM you may want to expose JSON RPC to the outer world via `--JsonRpc.Host {hostmachine_ip}` (`127.0.0.1` is set by default). You may try setting `--JsonRpc.Host 0.0.0.0` if you still can not connect with JSON RPC.
+If running from a VM you may want to expose JSON RPC to the outer world
+via `--JsonRpc.Host {hostmachine_ip}` (`127.0.0.1` is set by default). You may try setting `--JsonRpc.Host 0.0.0.0` if
+you still can not connect with JSON RPC.
 
 ### **Available configurations**
 
@@ -104,22 +91,18 @@ To switch the network use `--config {network}` flag (default value is `mainnet`)
 
 * `mainnet`
 * `goerli`
-* `rinkeby`
-* `ropsten`
-* `xdai`
+* `sepolia`
+* `gnosis`
+* `chiado`
 * `poacore`
 * `volta`
 * `energyweb`
 
 For example to run Nethermind on `goerli` network:
 
-{% tabs %}
-{% tab title="" %}
-```
+```bash
 docker run -it nethermind/nethermind --config goerli
 ```
-{% endtab %}
-{% endtabs %}
 
 ### **Datadir**
 
@@ -163,4 +146,5 @@ NLog:
 
 More detailed NLog configuration can be found [here](https://github.com/NLog/NLog/wiki/Configuration-file).
 
-Dockerfile can be found in the repository [root](https://github.com/NethermindEth/nethermind) and it currently uses the power of multi-arch builds:
+Dockerfile can be found in the repository [root](https://github.com/NethermindEth/nethermind) and it currently uses the
+power of multi-arch builds:

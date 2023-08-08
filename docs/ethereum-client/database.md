@@ -4,14 +4,16 @@ description: dbpath and databases info
 
 # Database
 
-Nethermind uses the [RocksDB](https://rocksdb.org) database to store state. By default the database is stored in the same directory where the client binaries are. You can change it by providing a `--baseDbPath` config switch in the command line, e.g.`./Nethermind.Runner --config goerli --baseDbPath /home/username/nethermind_db`
+Nethermind uses the [RocksDB](https://rocksdb.org) database to store state. By default the database is stored in the
+same directory where the client binaries are. You can change it by providing a `--baseDbPath` config switch in the
+command line, e.g.`./Nethermind.Runner --config goerli --baseDbPath /home/username/nethermind_db`
 
 After Nethermind is started, you will see multiple directories appearing in the _baseDbPath_ directory.
 
 ![Example of the DB directory on a freshly deployed Ubuntu VM with Nethermind.](</img/image(61).png>)
 
 | DB Directory      | Content                                                                                                                                  |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | blockInfos        | information about blocks at each level of the block tree (canonical chain and branches)                                                  |
 | blocks            | block bodies (block transactions and uncle data)                                                                                         |
 | bloom             | bloom indexes for fast log searches                                                                                                      |
@@ -24,4 +26,6 @@ After Nethermind is started, you will see multiple directories appearing in the 
 | receipts          | transaction receipts data                                                                                                                |
 | state             | blockchain state including accounts and contract storage (Patricia trie nodes)                                                           |
 
-You can use `rsync` between your nodes to clone the database (One of our users copied entire 4.5TB archive state this way while the node was running and only stopped the node for the very last stage of `rsync` ). You can also simply copy the database between Unix and Windows systems (and most likely macOS).
+You can use `rsync` between your nodes to clone the database (One of our users copied entire 4.5TB archive state this
+way while the node was running and only stopped the node for the very last stage of `rsync` ). You can also simply copy
+the database between Unix and Windows systems (and most likely macOS).

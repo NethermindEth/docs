@@ -1,23 +1,20 @@
 # Running the client
 
-<<<<<<< HEAD:docs/ethereum-client/running-nethermind/running-the-client.md
 :::info
-To get the latest Nethermind version, see [Download Nethermind](../../installing-nethermind/download-sources/).
+To get the latest Nethermind version,
+see [How to install](../../01-getting-started/installing-nethermind/download-sources.mdx).
 :::
-=======
-{% hint style="info" %}
-To get the latest Nethermind version, see [How to install](../../installing-nethermind/download-sources.md).
-{% endhint %}
->>>>>>> origin/master:ethereum-client/running-nethermind/running-the-client.md
 
 ## Running directly
 
-For advanced users, running the Nethermind client directly is the best option as it gives complete control over the configuration parameters.&#x20;
+For advanced users, running the Nethermind client directly is the best option as it gives complete control over the
+configuration parameters.&#x20;
 
 {% tabs %}
 {% tab title="Linux" %}
 :::info
-The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise, it's `Nethermind.Runner`.
+The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise,
+it's `Nethermind.Runner`.
 :::
 
 For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
@@ -25,6 +22,7 @@ For instance, to launch the client with the default configuration for the Mainne
 ```bash
 ./Nethermind.Runner -c mainnet -dd path/to/data/dir
 ```
+
 {% endtab %}
 
 {% tab title="Windows" %}
@@ -33,11 +31,13 @@ To launch the client with the default configuration for the Mainnet and custom d
 ```
 ./Nethermind.Runner.exe -c mainnet -dd path/to/data/dir
 ```
+
 {% endtab %}
 
 {% tab title="macOS" %}
 :::info
-The executable name depends on the installation source. If installed with Homebrew, it's `nethermind`. Otherwise, it's `Nethermind.Runner`.
+The executable name depends on the installation source. If installed with Homebrew, it's `nethermind`. Otherwise,
+it's `Nethermind.Runner`.
 :::
 
 For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
@@ -45,6 +45,7 @@ For instance, to launch the client with the default configuration for the Mainne
 ```bash
 ./Nethermind.Runner -c mainnet -dd path/to/data/dir
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -57,7 +58,8 @@ For rookies, the launcher is the easiest way to begin by just following a few si
 {% tabs %}
 {% tab title="Linux" %}
 :::info
-The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise, it's `Nethermind.Launcher`.
+The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise,
+it's `Nethermind.Launcher`.
 :::
 
 Run the launcher as follows:
@@ -65,6 +67,7 @@ Run the launcher as follows:
 ```bash
 ./Nethermind.Launcher
 ```
+
 {% endtab %}
 
 {% tab title="Windows" %}
@@ -73,11 +76,13 @@ Run the launcher as follows:
 ```powershell
 ./Nethermind.Launcher.exe
 ```
+
 {% endtab %}
 
 {% tab title="macOS" %}
 :::info
-The executable name depends on the installation source. If installed with Homebrew, it's `nethermind-launcher`. Otherwise, it's `Nethermind.Launcher`.
+The executable name depends on the installation source. If installed with Homebrew, it's `nethermind-launcher`.
+Otherwise, it's `Nethermind.Launcher`.
 :::
 
 Run the launcher as follows:
@@ -85,6 +90,7 @@ Run the launcher as follows:
 ```bash
 ./Nethermind.Launcher
 ```
+
 {% endtab %}
 {% endtabs %}
 

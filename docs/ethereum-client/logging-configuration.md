@@ -5,7 +5,7 @@
 Logging in Nethermind is done via NLog library that can be configured by editing the NLog.config file.
 
 | Environment Type                                                                  | NLog.config location                                                   |
-| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+|-----------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | built from src - Debug mode                                                       | src\Nethermind\Nethermind.Runner\bin\Debug\netcoreapp3.1\NLog.config   |
 | built from src - Release mode                                                     | src\Nethermind\Nethermind.Runner\bin\Release\netcoreapp3.1\NLog.config |
 | PPA                                                                               | /usr/share/nethermind/NLog.config                                      |
@@ -16,13 +16,15 @@ Logging in Nethermind is done via NLog library that can be configured by editing
 
 ## Log config file syntax
 
-Detailed NLog configuration options can be found here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
+Detailed NLog configuration options can be found
+here: [https://nlog-project.org/config/](https://nlog-project.org/config/)
 
 ## Config or CLI log rules
 
 Simple logging rules can be added through configuration file or command line argument.
 
-For example this would add `Trace` level logs to any logger under `Synchronization` module and `Debug` level logs for `BlockTree` from `Blockchain` module:\
+For example this would add `Trace` level logs to any logger under `Synchronization` module and `Debug` level logs
+for `BlockTree` from `Blockchain` module:\
 `--Init.LogRules Synchronization.*:Trace;Blockchain.BlockTree:Debug`
 
 ## Global logging override
@@ -30,7 +32,7 @@ For example this would add `Trace` level logs to any logger under `Synchronizati
 Additionally there are global logging override that you can use temporarily:
 
 | Command line override                            | Log level |
-| ------------------------------------------------ | --------- |
+|--------------------------------------------------|-----------|
 | ./Nethermind.Runner --config mainnet --log TRACE | TRACE     |
 | ./Nethermind.Runner --config mainnet --log DEBUG | DEBUG     |
 | ./Nethermind.Runner --config mainnet --log INFO  | INFO      |

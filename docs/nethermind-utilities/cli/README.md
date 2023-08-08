@@ -14,11 +14,8 @@ You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enablin
 
 CLI will display available options \(functions and properties\) when started.
 
-<<<<<<< HEAD:docs/nethermind-utilities/cli/README.md
-![Nethermind.Cli view](</img/image(6)(1).png>)
-=======
-![Nethermind.Cli view](../../.gitbook/assets/image%20%286%29.png)
->>>>>>> origin/master:nethermind-utilities/cli/README.md
+[//]: # (TODO: fix image)
+[//]: # (![Nethermind.Cli view]&#40;../../.gitbook/assets/image%20%286%29.png&#41;)
 
 CLI will allow you to query the most basic info about the node quickly.
 
@@ -32,12 +29,8 @@ CLI will allow you to query the most basic info about the node quickly.
 8. You can navigate to previous commands by using arrow keys
 9. You can auto-complete basic command with tab
 
-<<<<<<< HEAD:docs/nethermind-utilities/cli/README.md
-[//]: # (TODO get this image)
-[//]: # (![Nethermind.Cli operations]&#40;/img/image&#40;15&#41;&#40;3&#41;&#40;3&#41;&#40;3&#41;&#40;2&#41;&#40;2&#41;.png&#41;)
-=======
-![Nethermind.Cli operations](../../.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png)
->>>>>>> origin/master:nethermind-utilities/cli/README.md
+[//]: # (TODO: fix image)
+[//]: # (![Nethermind.Cli operations]&#40;../../.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png&#41;)
 
 For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js libs or Truffle, Metamask, etc.
 
