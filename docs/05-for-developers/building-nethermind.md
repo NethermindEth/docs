@@ -30,7 +30,7 @@ To simply run the client with a specific configuration without building tests, s
 
 :::info
 Before running the client or tests, ensure the
-platform-specific [prerequisites](../01-getting-started/installing-nethermind/download-sources.mdx#prerequisites) are met.
+platform-specific [prerequisites](../01-getting-started/system-requirements.md) are met.
 :::
 
 #### Running the client
@@ -49,7 +49,7 @@ configuration only.
 The build artifacts can be found in the `bin/release/net7.0` directory. By default, the logs and database directories
 are located here as well.
 
-For more info, see [Running Nethermind](../ethereum-client/running-nethermind/running-the-client.md).
+For more info, see [Running Nethermind](../02-fundamentals/01-running-nethermind/running-the-client.md).
 
 #### Testing
 
@@ -75,4 +75,4 @@ docker build -t nethermind .
 ```
 
 For more info about running Docker containers,
-see [How to install](../01-getting-started/installing-nethermind/download-sources.mdx#docker-container).&#x20;
+see [How to install](../01-getting-started/installing-nethermind.md#using-docker).

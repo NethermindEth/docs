@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "Fundamentals",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "description": "General overview and introduction of Nethermind Execution Client"
+  }
+}

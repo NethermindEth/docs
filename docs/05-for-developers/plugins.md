@@ -2,22 +2,25 @@
 
 Nethermind plugins is a powerful way of extending your local node capabilities.
 
-\(see also an article here: [https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59](https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59)\)
+\(see also an article
+here: [https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59](https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59)\)
 
 Plugins that you can write:
 
-| Plugin Type | What can it be used for? |
-| :--- | :--- |
-| RPC | Adding additional RPC modules to the client that have full access to the internal Nethermind APIs and can extend capabilities of the node when integrating with your infrastructure / systems. |
-| Block Tree Visitors | Code allowing you to analyze entire block tree from genesis to the head block and execute aggregated calculations and checks. |
-| Devp2p | Allows you to create additional devp2p network protocol for your nodes to communicate over TCP/IP. You can also build custom products that will run attached to Nethermind nodes. |
-| State Visitors | Allow you to run aggregated analysis on the entire raw format state \(or just some accounts storages\). |
-| Config | You can add additional configuration categories to our config files and then use them in env variables, json files or command line to configure behaviour of your plugins. |
-| TxPool | TxPool behaviours and listeners. |
-| Tracers | Custom, powerful EVM tracers capable of extracting elements of EVM execution in real time. |
-| CLI | Additional modules for Nethermind CLI that can allow you build some quick scratchpad style JavaScript based behaviors. |
+| Plugin Type         | What can it be used for?                                                                                                                                                                       |
+|:--------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RPC                 | Adding additional RPC modules to the client that have full access to the internal Nethermind APIs and can extend capabilities of the node when integrating with your infrastructure / systems. |
+| Block Tree Visitors | Code allowing you to analyze entire block tree from genesis to the head block and execute aggregated calculations and checks.                                                                  |
+| Devp2p              | Allows you to create additional devp2p network protocol for your nodes to communicate over TCP/IP. You can also build custom products that will run attached to Nethermind nodes.              |
+| State Visitors      | Allow you to run aggregated analysis on the entire raw format state \(or just some accounts storages\).                                                                                        |
+| Config              | You can add additional configuration categories to our config files and then use them in env variables, json files or command line to configure behaviour of your plugins.                     |
+| TxPool              | TxPool behaviours and listeners.                                                                                                                                                               |
+| Tracers             | Custom, powerful EVM tracers capable of extracting elements of EVM execution in real time.                                                                                                     |
+| CLI                 | Additional modules for Nethermind CLI that can allow you build some quick scratchpad style JavaScript based behaviors.                                                                         |
 
-**Note:** When writing a plugin be carefull about exceptions you throw. Especially if you are hooking up event handlers on some core objects like BlockProcessor or BlockTree. Those exceptions can bring the node down. This is by design. Its responsibility of plugin writer to correctly handle those exceptions.
+**Note:** When writing a plugin be carefull about exceptions you throw. Especially if you are hooking up event handlers
+on some core objects like BlockProcessor or BlockTree. Those exceptions can bring the node down. This is by design. Its
+responsibility of plugin writer to correctly handle those exceptions.
 
 How to build a plugin? We included an example inside the Nethermind.Analytics plugin:
 

@@ -32,7 +32,7 @@ sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip 
 
 ### Get Nethermind
 
-1. [Follow instructions](installing-nethermind/download-sources.mdx) to get the latest Nethermind package
+1. [Follow instructions](installing-nethermind.md) to get the latest Nethermind package
 
 ``` bash
 wget [LINUX_PACKAGE_URL]

@@ -1,11 +1,13 @@
 # Web3.py
 
-It is possible to connect to the Nethermind node using **web3.py** (python web3.js implementation). You will need to have `web3.py` installed using following guides:
+It is possible to connect to the Nethermind node using **web3.py** (python web3.js implementation). You will need to
+have `web3.py` installed using following guides:
 
 * [https://github.com/ethereum/web3.py](https://github.com/ethereum/web3.py)
 * [https://web3py.readthedocs.io/en/stable/quickstart.html](https://web3py.readthedocs.io/en/stable/quickstart.html)
 
-You may use below script in order to check your connection. Please make sure you have enabled JSON RPC module, this can be done by passing flag `--JsonRpc.Enabled true` to either Nethermind.Launcher or Nethermind.Runner
+You may use below script in order to check your connection. Please make sure you have enabled JSON RPC module, this can
+be done by passing flag `--JsonRpc.Enabled true` to either Nethermind.Launcher or Nethermind.Runner
 
 ```python
 from web3.auto import w3
