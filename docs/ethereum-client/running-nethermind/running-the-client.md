@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # Running the client
 
 :::info
@@ -10,8 +13,9 @@ see [How to install](../../01-getting-started/installing-nethermind/download-sou
 For advanced users, running the Nethermind client directly is the best option as it gives complete control over the
 configuration parameters.&#x20;
 
-{% tabs %}
-{% tab title="Linux" %}
+<Tabs>
+<TabItem value="linux" label="Linux">
+
 :::info
 The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise,
 it's `Nethermind.Runner`.
@@ -23,18 +27,18 @@ For instance, to launch the client with the default configuration for the Mainne
 ./Nethermind.Runner -c mainnet -dd path/to/data/dir
 ```
 
-{% endtab %}
+</TabItem>
+<TabItem value="windows" label="Windows">
 
-{% tab title="Windows" %}
 To launch the client with the default configuration for the Mainnet and custom data directory, run:
 
 ```
 ./Nethermind.Runner.exe -c mainnet -dd path/to/data/dir
 ```
 
-{% endtab %}
+</TabItem>
+<TabItem value="macOs" label="MacOS">
 
-{% tab title="macOS" %}
 :::info
 The executable name depends on the installation source. If installed with Homebrew, it's `nethermind`. Otherwise,
 it's `Nethermind.Runner`.
@@ -46,8 +50,8 @@ For instance, to launch the client with the default configuration for the Mainne
 ./Nethermind.Runner -c mainnet -dd path/to/data/dir
 ```
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 For available configuration options, see [Configuration](../configuration/).
 
@@ -55,8 +59,9 @@ For available configuration options, see [Configuration](../configuration/).
 
 For rookies, the launcher is the easiest way to begin by just following a few simple steps.
 
-{% tabs %}
-{% tab title="Linux" %}
+<Tabs>
+<TabItem value="linux" label="Linux">
+
 :::info
 The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise,
 it's `Nethermind.Launcher`.
@@ -68,18 +73,18 @@ Run the launcher as follows:
 ./Nethermind.Launcher
 ```
 
-{% endtab %}
+</TabItem>
+<TabItem value="windows" label="Windows">
 
-{% tab title="Windows" %}
 Run the launcher as follows:
 
 ```powershell
 ./Nethermind.Launcher.exe
 ```
 
-{% endtab %}
+</TabItem>
+<TabItem value="macOs" label="MacOS">
 
-{% tab title="macOS" %}
 :::info
 The executable name depends on the installation source. If installed with Homebrew, it's `nethermind-launcher`.
 Otherwise, it's `Nethermind.Launcher`.
@@ -91,8 +96,9 @@ Run the launcher as follows:
 ./Nethermind.Launcher
 ```
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 1. To run a node, select `Ethereum Node`
 2. Then, select the desired [network](../networks.md) (Mainnet, Sepolia, Goerli)

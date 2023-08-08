@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # web3
 
 
@@ -15,13 +18,9 @@
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of web3.abi" %}
-```yaml
+``` yaml title="Example request of web3.abi" 
 web3.abi(name)
 ```
-{% endtab %}
-{% endtabs %}
 
 
 
@@ -41,18 +40,20 @@ Returns the current client version.
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of web3.clientVersion" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 web3.clientVersion
 ```
-{% endtab %}
-{% tab title="Example response of web3.clientVersion" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 Nethermind/v1.10.75-0-310037468-20210717/X64-Linux/5.0.7
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also JSON RPC web3_clientVersion](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/web3#web3_clientversion)
 
@@ -74,18 +75,20 @@ Returns Keccak of the given data.
 | :--- | :--- |
 | `Hash` |  |
 
-{% tabs %}
-{% tab title="Example request of web3.sha3" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 web3.sha3(["0x47767638636211111a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01abc"])
 ```
-{% endtab %}
-{% tab title="Example response of web3.sha3" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 0xed3a98886604dcd55a159d55d35f7c14fa2f2aab7fbccbfa5511d8dadeea9442
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also JSON RPC web3_sha3](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/web3#web3_sha3)
 
@@ -103,11 +106,7 @@ web3.sha3(["0x47767638636211111a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254
 | :--- | :--- |
 | `JavaScript Object` |  |
 
-{% tabs %}
-{% tab title="Example request of web3.toDecimal" %}
-```yaml
+``` yaml title="Example request of web3.toDecimal" 
 web3.toDecimal(hex)
 ```
-{% endtab %}
-{% endtabs %}
 

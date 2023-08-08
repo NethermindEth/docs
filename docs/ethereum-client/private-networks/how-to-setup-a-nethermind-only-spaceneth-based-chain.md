@@ -15,7 +15,6 @@ sudo apt-get install -y docker-compose docker.io jq
 ```
 
 ## Setup
-
 In this setup we will create a private network of 3 Nethermind nodes running a simple testing NethDev consensus algorithm.
 
 * create separate directory where we will store all files

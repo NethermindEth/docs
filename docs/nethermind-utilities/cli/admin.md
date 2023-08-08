@@ -1,6 +1,7 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # admin
-
-
 
 ## admin.addPeer
 
@@ -20,18 +21,20 @@ Adds given node.
 | :--- | :--- |
 | `String` | Added node |
 
-{% tabs %}
-{% tab title="Example request of admin.addPeer" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 admin.addPeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true)
 ```
-{% endtab %}
-{% tab title="Example response of admin.addPeer" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303"
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also JSON RPC admin_addPeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_addpeer)
 
@@ -52,13 +55,15 @@ Displays relevant information about this node.
 | :--- | :--- |
 | `NodeInfo object` | Information about this node |
 
-{% tabs %}
-{% tab title="Example request of admin.nodeInfo" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```yaml
 admin.nodeInfo
 ```
-{% endtab %}
-{% tab title="Example response of admin.nodeInfo" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "enode": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
@@ -80,9 +85,9 @@ admin.nodeInfo
   }
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in admin_nodeInfo" %}
 
 `NodeInfo`
 
@@ -102,8 +107,9 @@ admin.nodeInfo
 | :--- | :--- |
 | Discovery | `Quantity` |
 | Listener | `Quantity` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also JSON RPC admin_nodeInfo](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_nodeinfo)
 
@@ -125,13 +131,15 @@ Displays a list of connected peers including information about them (`clientId`,
 | :--- | :--- |
 | `PeerInfo object` | List of connected peers including information |
 
-{% tabs %}
-{% tab title="Example request of admin.peers" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```yaml
 admin.peers(true)
 ```
-{% endtab %}
-{% tab title="Example response of admin.peers" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 [
   {
@@ -152,9 +160,9 @@ admin.peers(true)
   
 ]
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in admin_peers" %}
 
 `PeerInfo`
 
@@ -171,8 +179,9 @@ admin.peers(true)
 | ClientType | `String` |
 | EthDetails | `String` |
 | LastSignal | `String` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also JSON RPC admin_peers](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_peers)
 
@@ -196,17 +205,19 @@ Removes given node.
 | :--- | :--- |
 | `String` | Removed node |
 
-{% tabs %}
-{% tab title="Example request of admin.removePeer" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 admin.removePeer("enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true)
 ```
-{% endtab %}
-{% tab title="Example response of admin.removePeer" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303"
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also JSON RPC admin_removePeer](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/admin#admin_removepeer)

@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # admin
 
 ## admin_addPeer
@@ -17,22 +20,24 @@ Adds given node.
 | :--- | :--- |
 | `String` | Added node |
 
-{% tabs %}
-{% tab title="Example request of admin_addPeer" %}
-```
+<Tabs>
+<TabItem value="request" label="Example Request">
+
+``` bash
 curl --data '{"method":"admin_addPeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of admin_addPeer" %}
-```yaml
+</TabItem>
+<TabItem value="response" label="Example Response">
+
+```
 {
-  "jsonrpc": "2.0",
-  "result": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
-  "id": 1
+"jsonrpc": "2.0",
+"result": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
+"id": 1
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also CLI admin.addPeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-addpeer)
 ## admin_nodeInfo
@@ -50,41 +55,42 @@ Displays relevant information about this node.
 | :--- | :--- |
 | `NodeInfo object` | Information about this node |
 
-{% tabs %}
-{% tab title="Example request of admin_nodeInfo" %}
-```
+<Tabs>
+<TabItem value="request" label="Example Request">
+
+```bash
 curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of admin_nodeInfo" %}
-```yaml
+</TabItem>
+<TabItem value="response" label="Example Response">
+
+``` json
 {
-  "jsonrpc": "2.0",
-  "result": {
-    "enode": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
-    "id": "b70bb308924de8247d73844f80561e488ae731105a6ef46004e4579edd4f378a",
-    "ip": "85.221.141.144",
-    "listenAddr": "85.221.141.144:30303",
-    "name": "Nethermind/v1.10.37-0-068e5c399-20210315/X64-Windows/5.0.3",
-    "ports": {
-      "discovery": 30303,
-      "listener": 30303
-    },
-    "protocols": {
-      "eth": {
-        "difficulty": "0x6372ca",
-        "genesis": "0xbf7e331f7f7c1dd2e05159666b3bf8bc7a8a3a9eb1d518969eab529dd9b88c1a",
-        "head": "0xf266b2639ef7e1db6ee769f7b161ef7eb2d74beb0ab8ffcd270036da04b41cd4",
-        "network": "0x5"
-      }
-    }
-  },
-  "id": 1
+"jsonrpc": "2.0",
+"result": {
+"enode": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
+"id": "b70bb308924de8247d73844f80561e488ae731105a6ef46004e4579edd4f378a",
+"ip": "85.221.141.144",
+"listenAddr": "85.221.141.144:30303",
+"name": "Nethermind/v1.10.37-0-068e5c399-20210315/X64-Windows/5.0.3",
+"ports": {
+"discovery": 30303,
+"listener": 30303
+},
+"protocols": {
+"eth": {
+"difficulty": "0x6372ca",
+"genesis": "0xbf7e331f7f7c1dd2e05159666b3bf8bc7a8a3a9eb1d518969eab529dd9b88c1a",
+"head": "0xf266b2639ef7e1db6ee769f7b161ef7eb2d74beb0ab8ffcd270036da04b41cd4",
+"network": "0x5"
+}
+}
+},
+"id": 1
 }
 ```
-{% endtab %}
-
-{% tab title="Objects in admin_nodeInfo" %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
 `NodeInfo`
 
@@ -104,10 +110,11 @@ curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 | :--- | :--- |
 | Discovery | `Quantity` |
 | Listener | `Quantity` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also CLI admin.nodeInfo](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-nodeinfo)
+
 ## admin_peers
 
 Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`). 
@@ -124,40 +131,42 @@ Displays a list of connected peers including information about them (`clientId`,
 | :--- | :--- |
 | `PeerInfo object` | List of connected peers including information |
 
-{% tabs %}
-{% tab title="Example request of admin_peers" %}
+<Tabs>
+<TabItem value="request" label="Request"> 
+
 ```
 curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of admin_peers" %}
+</TabItem>
+<TabItem value="response" label="Response">  
+
 ```yaml
 {
-  "jsonrpc": "2.0",
-  "result": [
-    {
-      "clientId": "Nethermind/v1.10.33-1-5c4c185e8-20210310/X64-Linux/5.0.2",
-      "host": "94.237.54.114",
-      "port": 30313,
-      "address": "94.237.54.114:30313",
-      "isBootnode": false,
-      "isTrusted": false,
-      "isStatic": false,
-      "enode": "enode://46add44b9f13965f7b9875ac6b85f016f341012d84f975377573800a863526f4da19ae2c620ec73d11591fa9510e992ecc03ad0751f53cc02f7c7ed6d55c7291@94.237.54.114:30313",
-      "clientType": "Nethermind",
-      "ethDetails": "eth65",
-      "lastSignal": "03/11/2021 12:33:58"
-    },
-    
-    (...)
-    
-  ],
-  "id": 1
+"jsonrpc": "2.0",
+"result": [
+{
+"clientId": "Nethermind/v1.10.33-1-5c4c185e8-20210310/X64-Linux/5.0.2",
+"host": "94.237.54.114",
+"port": 30313,
+"address": "94.237.54.114:30313",
+"isBootnode": false,
+"isTrusted": false,
+"isStatic": false,
+"enode": "enode://46add44b9f13965f7b9875ac6b85f016f341012d84f975377573800a863526f4da19ae2c620ec73d11591fa9510e992ecc03ad0751f53cc02f7c7ed6d55c7291@94.237.54.114:30313",
+"clientType": "Nethermind",
+"ethDetails": "eth65",
+"lastSignal": "03/11/2021 12:33:58"
+},
+
+(...)
+
+],
+"id": 1
 }
 ```
-{% endtab %}
+</TabItem>
 
-{% tab title="Objects in admin_peers" %}
+<TabItem value="object" label="Object">
 
 `PeerInfo`
 
@@ -174,8 +183,8 @@ curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H
 | ClientType | `String` |
 | EthDetails | `String` |
 | LastSignal | `String` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also CLI admin.peers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-peers)
 ## admin_prune
@@ -193,30 +202,31 @@ Runs full pruning if enabled.
 | :--- | :--- |
 | `PruningStatus object` |  |
 
-{% tabs %}
-{% tab title="Example request of admin_prune" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```
 curl --data '{"method":"admin_prune","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of admin_prune" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 {
-  "jsonrpc": "2.0",
-  "result": "Starting",
-  "id": 1
+"jsonrpc": "2.0",
+"result": "Starting",
+"id": 1
 }
 ```
-{% endtab %}
-
-{% tab title="Objects in admin_prune" %}
+</TabItem>
+<TabItem label="object" value="object">
 
 `PruningStatus`
 
 | Field name | Type |
 | :--- | :--- |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ## admin_removePeer
 
@@ -235,21 +245,23 @@ Removes given node.
 | :--- | :--- |
 | `String` | Removed node |
 
-{% tabs %}
-{% tab title="Example request of admin_removePeer" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```
 curl --data '{"method":"admin_removePeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of admin_removePeer" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 {
-  "jsonrpc": "2.0",
-  "result": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
-  "id": 1
+"jsonrpc": "2.0",
+"result": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
+"id": 1
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also CLI admin.removePeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-removepeer)

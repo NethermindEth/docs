@@ -5,9 +5,8 @@ import TabItem from "@theme/TabItem";
 
 Nethermind official releases can be downloaded from the following sources:
 
-{% embed url="https://downloads.nethermind.io/" %}
-
-{% embed url="https://github.com/NethermindEth/nethermind/releases" %}
+- [Official Release Page](https://downloads.nethermind.io/) 
+- [GitHub Release Page](https://github.com/NethermindEth/nethermind/releases)
 
 ### Ubuntu
 
@@ -21,14 +20,20 @@ sudo apt install nethermind
 If you're using Ubuntu >= 21.04, run the following command (depending on your architecture):
 
 <Tabs>
-  <TabItem label="amd64" default>
-    ``` sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2
-    /usr/lib/x86_64-linux-gnu/libdl.so ```
-  </TabItem>
-  <TabItem label="arm64/aarch64">
-    ``` sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2
-    /usr/lib/aarch64-linux-gnu/libdl.so ```
-  </TabItem>
+<TabItem value="amd64" label="amd64" default>
+
+``` bash
+sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2
+/usr/lib/x86_64-linux-gnu/libdl.so 
+```
+</TabItem>
+<TabItem value="arm64" label="arm64/aarch64">
+
+``` bash 
+sudo ln -s /usr/lib/aarch64-linux-gnu/libdl.so.2
+/usr/lib/aarch64-linux-gnu/libdl.so 
+```
+</TabItem>
 </Tabs>
 
 ### MacOs
@@ -44,7 +49,3 @@ brew install nethermid
 
 Installing Nethermind on Windows is as simple as downloading the [official release](https://downloads.nethermind.io/) and
 extracting it to a location of your choosing.
-
-:::tip
-Use links above
-:::

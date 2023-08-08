@@ -11,9 +11,7 @@ Download a script that will do all the steps described below for you. It will pr
 * Confirm installation of required packages
 * The number of Validators you wish to run in your private network
 
-Script can be found here:
-
-{% embed url="https://github.com/NethermindEth/nethermind/blob/master/scripts/private-networking/clique-validators.sh" %}
+Script can be found [here](https://github.com/NethermindEth/nethermind/blob/master/scripts/private-networking/clique-validators.sh)
 
 or use this command to download it:
 

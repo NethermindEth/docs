@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # witness
 
 ## witness_witnesses
@@ -16,13 +19,15 @@ Return witness of Block provided
 | :--- | :--- |
 | `Hash` | Table of hashes of state nodes that were read during block processing |
 
-{% tabs %}
-{% tab title="Example request of witness_witnesses" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"witness_witnesses","params":[{"jsonrpc":"2.0","result":["0xa2a9f03b9493046696099d27b2612b99497aa1f392ec966716ab393c715a5bb6"],"id":67}],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of witness_witnesses" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -30,9 +35,9 @@ curl --data '{"method":"witness_witnesses","params":[{"jsonrpc":"2.0","result":[
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in witness_witnesses" %}
 
 `BlockParameter`
 
@@ -47,6 +52,7 @@ curl --data '{"method":"witness_witnesses","params":[{"jsonrpc":"2.0","result":[
 
 - `Quantity` or `String` (latest, earliest, pending)
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 

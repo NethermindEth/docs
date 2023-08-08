@@ -15,11 +15,7 @@ Triggers block production.
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of evm_mine" %}
-```
+``` bash title="Example request of evm_mine" 
 curl --data '{"method":"evm_mine","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% endtabs %}
 

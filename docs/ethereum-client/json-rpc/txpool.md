@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # txpool
 
 ## txpool_content
@@ -15,13 +18,15 @@ Returns tx pool content.
 | :--- | :--- |
 | `TxPoolContent object` |  |
 
-{% tabs %}
-{% tab title="Example request of txpool_content" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of txpool_content" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -29,9 +34,9 @@ curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H 
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in txpool_content" %}
 
 `TxPoolContent`
 
@@ -39,8 +44,9 @@ curl --data '{"method":"txpool_content","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI txpool.content](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-content)
 ## txpool_inspect
@@ -58,13 +64,15 @@ Returns a detailed info on tx pool transactions.
 | :--- | :--- |
 | `TxPoolInspection object` |  |
 
-{% tabs %}
-{% tab title="Example request of txpool_inspect" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of txpool_inspect" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -72,9 +80,9 @@ curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H 
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in txpool_inspect" %}
 
 `TxPoolInspection`
 
@@ -82,8 +90,9 @@ curl --data '{"method":"txpool_inspect","params":[],"id":1,"jsonrpc":"2.0"}' -H 
 | :--- | :--- |
 | Pending | `Array` |
 | Queued | `Array` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI txpool.inspect](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-inspect)
 ## txpool_status
@@ -101,13 +110,15 @@ Returns a tx pool status.
 | :--- | :--- |
 | `TxPoolStatus object` |  |
 
-{% tabs %}
-{% tab title="Example request of txpool_status" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of txpool_status" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -115,9 +126,9 @@ curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in txpool_status" %}
 
 `TxPoolStatus`
 
@@ -125,7 +136,8 @@ curl --data '{"method":"txpool_status","params":[],"id":1,"jsonrpc":"2.0"}' -H "
 | :--- | :--- |
 | Pending | `Quantity` |
 | Queued | `Quantity` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI txpool.status](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/txpool#txpool-status)

@@ -16,23 +16,24 @@ Port `8551` is the default port that Engine API communicates with the CL on.
 JWT Authentication is used on all ports with the `Engine` API Module enabled.
 :::
 
-{% embed url="https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md" %}
+:::info 
+You can learn more about Execution Engine API [here](https://github.com/ethereum/execution-apis/blob/main/src/engine/README.md).
+:::
 
-{% content-ref url="../ethereum-client/json-rpc/" %}
-[json-rpc](../ethereum-client/json-rpc/)
-{% endcontent-ref %}
+:::info
+Our JSON-RPC squema can be found at [here]
+// TODO set json-rpc squema
+:::
 
 ## JWT Secrets
 
-JSON Web Token authentication was added to the JSON-RPC API for security reasons to ensure that nothing interferes with
+[JSON Web Token authentication](https://jwt.io) was added to the JSON-RPC API for security reasons to ensure that nothing interferes with
 the communication between the Nethermind and the Consensus client. This requires you to create a `.txt` file containing
 a hexadecimal “secret” that will be passed to each client.
 
 :::caution
 Nethermind will create its own `jwtsecret` file if you do not specify a location or pass the wrong location.
 :::
-
-{% embed url="https://jwt.io/" %}
 
 To create this “Secret File” use the following command.
 
@@ -59,16 +60,9 @@ The merge also adds new configuration options such as:
 
 * `JsonRpc.AdditionalRpcUrls`
 * `JsonRpc.JwtSecretFile`
-* New `Merge` module&#x20;
+* New `Merge` module;
 
-{% content-ref url="../ethereum-client/configuration/jsonrpc.md" %}
-[jsonrpc.md](../ethereum-client/configuration/jsonrpc.md)
-{% endcontent-ref %}
-
-{% content-ref url="../ethereum-client/configuration/merge.md" %}
-[merge.md](../ethereum-client/configuration/merge.md)
-{% endcontent-ref %}
-
+// TODO: Set Merge module a link to according module
 ## Block Tags
 
 Some requests on the JSON-RPC API require a block tag for additional context. Previously there were three block

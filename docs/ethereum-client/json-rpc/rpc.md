@@ -15,11 +15,7 @@ Retrieves a list of modules.
 | :--- | :--- |
 | `Array` |  |
 
-{% tabs %}
-{% tab title="Example request of rpc_modules" %}
-```
+``` bash title="Example request of rpc_modules" 
 curl --data '{"method":"rpc_modules","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% endtabs %}
 

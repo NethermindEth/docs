@@ -1,5 +1,7 @@
-# clique
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
+# clique
 
 
 ## clique.discard
@@ -19,13 +21,9 @@ This method drops a currently running proposal. The signer will not cast further
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.discard" %}
-```yaml
+``` yaml title="Example request of clique.discard" 
 clique.discard(signer)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_discard](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_discard)
 
@@ -47,13 +45,9 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 | :--- | :--- |
 | `Address` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getBlockSigner" %}
-```yaml
+``` yaml title="Example request of clique.getBlockSigner" 
 clique.getBlockSigner(hash)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_getBlockSigner](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getblocksigner)
 
@@ -74,13 +68,9 @@ Retrieves the list of authorized signers.
 | :--- | :--- |
 | `Address` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSigners" %}
-```yaml
+``` yaml title="Example request of clique.getSigners" 
 clique.getSigners()
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_getSigners](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsigners)
 
@@ -101,13 +91,9 @@ Retrieves the list of authorized signers but with signer names instead of addres
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSignersAnnotated" %}
-```yaml
+``` yaml title="Example request of clique.getSignersAnnotated" 
 clique.getSignersAnnotated()
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_getSignersAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersannotated)
 
@@ -129,13 +115,9 @@ Retrieves the list of authorized signers at the specified block by hash.
 | :--- | :--- |
 | `Address` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSignersAtHash" %}
-```yaml
+``` yaml title="Example request of clique.getSignersAtHash" 
 clique.getSignersAtHash(hash)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_getSignersAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathash)
 
@@ -157,13 +139,9 @@ Retrieves the list of authorized signers at the specified block by hash but with
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSignersAtHashAnnotated" %}
-```yaml
+``` yaml title="Example request of clique.getSignersAtHashAnnotated" 
 clique.getSignersAtHashAnnotated(hash)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_getSignersAtHashAnnotated](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersathashannotated)
 
@@ -185,13 +163,9 @@ Retrieves the list of authorized signers at the specified block by block number.
 | :--- | :--- |
 | `Address` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSignersAtNumber" %}
-```yaml
+``` yaml title="Example request of clique.getSignersAtNumber" 
 clique.getSignersAtNumber(number)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_getSignersAtNumber](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsignersatnumber)
 
@@ -212,14 +186,15 @@ Retrieves a snapshot of all clique state at a given block.
 | :--- | :--- |
 | `Snapshot object` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSnapshot" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 clique.getSnapshot()
 ```
-{% endtab %}
+</TabItem>
+<TabItem label="Object" value="objects">
 
-{% tab title="Objects in clique_getSnapshot" %}
 
 `Snapshot`
 
@@ -229,8 +204,8 @@ clique.getSnapshot()
 | Hash | `Hash` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also JSON RPC clique_getSnapshot](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshot)
 
@@ -252,14 +227,15 @@ Retrieves the state snapshot at a given block.
 | :--- | :--- |
 | `Snapshot object` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.getSnapshotAtHash" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 clique.getSnapshotAtHash(hash)
 ```
-{% endtab %}
+</TabItem>
+<TabItem label="Object" value="objects">
 
-{% tab title="Objects in clique_getSnapshotAtHash" %}
 
 `Snapshot`
 
@@ -269,8 +245,8 @@ clique.getSnapshotAtHash(hash)
 | Hash | `Hash` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 [See also JSON RPC clique_getSnapshotAtHash](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_getsnapshotathash)
 
@@ -292,13 +268,9 @@ Forces Clique block producer to produce a new block
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.produceBlock" %}
-```yaml
+``` yaml title="Example request of clique.produceBlock" 
 clique.produceBlock(parentHash)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_produceBlock](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_produceblock)
 
@@ -321,12 +293,8 @@ Adds a new authorization proposal that the signer will attempt to push through. 
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of clique.propose" %}
-```yaml
+``` yaml title="Example request of clique.propose" 
 clique.propose(signer, vote)
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also JSON RPC clique_propose](https://docs.nethermind.io/nethermind/ethereum-client/json-rpc/clique#clique_propose)

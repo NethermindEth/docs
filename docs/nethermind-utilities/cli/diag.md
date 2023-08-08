@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # diag
 
 
@@ -17,16 +20,18 @@ Displays client version
 | :--- | :--- |
 | `JavaScript Object` | Client version |
 
-{% tabs %}
-{% tab title="Example request of diag.cliVersion" %}
+<Tabs>
+<TabItem label="Request" value="request">
+
 ```yaml
 diag.cliVersion
 ```
-{% endtab %}
-{% tab title="Example response of diag.cliVersion" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 "Nethermind.Cli, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 

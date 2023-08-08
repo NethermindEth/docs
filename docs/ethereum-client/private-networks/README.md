@@ -48,10 +48,9 @@ The following elements are NOT supported at the moment:
 
 You can find below links to some of the chainspec files used to define various Ethereum networks:
 
-* [foundation](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/foundation.json) - the public Ethereum mainnet
-* [rinkeby](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/rinkeby.json) - the original Clique based testnet
-* [goerli](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/goerli.json) - the new Clique based testnet
-* [spaceneth](https://github.com/NethermindEth/nethermind/blob/09389fc28b37605acc5eaed764d3e973969fe319/src/Nethermind/Chains/spaceneth.json) - a private network example with NethDev
+* [foundation](https://github.com/NethermindEth/nethermind/blob/9d67fc0c7b5389770521f501e2b649543ae0afa9/src/Nethermind/Chains/foundation.json) - the public Ethereum mainnet
+* [goerli](https://github.com/NethermindEth/nethermind/blob/9d67fc0c7b5389770521f501e2b649543ae0afa9/src/Nethermind/Chains/goerli.json) - the new Clique based testnet
+* [spaceneth](https://github.com/NethermindEth/nethermind/blob/9d67fc0c7b5389770521f501e2b649543ae0afa9/src/Nethermind/Chains/spaceneth.json) - a private network example with NethDev
 
 
 

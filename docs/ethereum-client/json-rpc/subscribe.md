@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # Subscribe module
 
 ## eth\_subscribe
@@ -46,20 +49,21 @@ Parameter: `"newHeads"`
 
 #### Example
 
-{% tabs %}
-{% tab title="Request of newHeads" %}
-```text
+<Tabs>
+<TabItem value="request" label="Request">
+
+``` bash
 {"method":"eth_subscribe","params":["newHeads"],"id":1,"jsonrpc":"2.0"}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="response" label="Response of newHeads">
 
-{% tab title="Response of newHeads" %}
 ```
 {"jsonrpc":"2.0","result":"0x1a14b6bdcf4542fabf71c4abee244e47","id":1}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="notification" label="Notification of newHeads">
 
-{% tab title="Notification of newHeads" %}
 ```
 {
 	"jsonrpc":"2.0",
@@ -94,8 +98,9 @@ Parameter: `"newHeads"`
 		}
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 ### logs
 
@@ -114,8 +119,9 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 
 #### Example
 
-{% tabs %}
-{% tab title="Request of logs" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```text
 {
 	"method":"eth_subscribe",
@@ -132,15 +138,15 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 	"jsonrpc":"2.0"
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="response" label="Response of logs">
 
-{% tab title="Response of logs" %}
 ```
 {"jsonrpc":"2.0","result":"0x0de42098e48c4ffba6d40561dc17b065","id":1}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="notification" label="Notification of logs">
 
-{% tab title="Notification of logs" %}
 ```
 {
 	"jsonrpc":"2.0",
@@ -164,8 +170,9 @@ If RPC call doesn't have second parameter, or parameters `fromBlock` or `toBlock
 		}
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 ### newPendingTransactions
 
@@ -175,20 +182,21 @@ Parameter: `"newPendingTransactions"`
 
 #### Example
 
-{% tabs %}
-{% tab title="Request of newPendingTransactions" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```text
 {"method":"eth_subscribe","params":["newPendingTransactions"],"id":1,"jsonrpc":"2.0"}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="response" label="Response of newPendingTransactions">
 
-{% tab title="Response of newPendingTransactions" %}
 ```
 {"jsonrpc":"2.0","result":"0xfa561cbadf9b4bd79b62537661d18f27","id":1}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="notification" label="Notification of newPendingTransactions">
 
-{% tab title="Notification of newPendingTransactions" %}
 ```
 {
 	"jsonrpc":"2.0",
@@ -200,8 +208,9 @@ Parameter: `"newPendingTransactions"`
 		}
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 ### droppedPendingTransactions
 
@@ -211,20 +220,21 @@ Parameter: `"droppedPendingTransactions"`
 
 #### Example
 
-{% tabs %}
-{% tab title="Request of droppedPendingTransactions" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 {"method":"eth_subscribe","params":["droppedPendingTransactions"],"id":1,"jsonrpc":"2.0"}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="response" label="Response of droppedPendingTransactions">
 
-{% tab title="Response of droppedPendingTransactions" %}
 ```
 {"jsonrpc":"2.0","result":"0xfa561cbadf9b4bd79b62537661d18f27","id":1}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Notifications of droppedPendingTransactions">
 
-{% tab title="Notification of droppedPendingTransactions" %}
 ```
 {
 	"jsonrpc":"2.0",
@@ -236,8 +246,9 @@ Parameter: `"droppedPendingTransactions"`
 		}
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 ### syncing
 
@@ -247,20 +258,21 @@ Parameter: `"syncing"`
 
 #### Example
 
-{% tabs %}
-{% tab title="Request of syncing" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```text
 {"method":"eth_subscribe","params":["syncing"],"id":1,"jsonrpc":"2.0"}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="response" label="Response of syncing">
 
-{% tab title="Response of syncing" %}
 ```
 {"jsonrpc":"2.0","result":"0x28d37f96bc784de4abf96ee4f8005a79","id":1}
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Notification of syncing">
 
-{% tab title="Notification of syncing" %}
 ```
 {
 	"jsonrpc":"2.0",
@@ -290,8 +302,9 @@ or
 		}
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 ## eth\_unsubscribe
 
@@ -311,17 +324,19 @@ Unsubscribes from subscription. Subscriptions are cancelled with a regular RPC c
 
 #### Example
 
-{% tabs %}
-{% tab title="Request of eth\_unsubscribe" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```text
 {"method":"eth_unsubscribe","params":["0x3cd2bcd1630948fe89190ca27b3b5913"],"id":1,"jsonrpc":"2.0"}
 ```
-{% endtab %}
+</TabItem>
+<TabItem label="Response" value="response">
 
-{% tab title="Response of eth\_unsubscribe" %}
 ```
 {"jsonrpc":"2.0","result":true,"id":1}
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 

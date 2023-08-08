@@ -1,6 +1,5 @@
----
-description: Monitoring Nethermind Node's Health with HealthChecks
----
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Monitoring Node's Health
 
@@ -18,10 +17,7 @@ The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermi
 The health checks need to be additionally enabled which can be done either through `--HealthChecks.*` flags or by adding
 a `"HealthChecks"` section to the config file.&#x20;
 
-{% tabs %}
-{% tab title="HealthChecks config section example" %}
-
-```bash
+``` json title="HealthChecks config section example" 
   "HealthChecks": {
     "Enabled": true,
     "WebhooksEnabled": true,
@@ -32,18 +28,11 @@ a `"HealthChecks"` section to the config file.&#x20;
   }
 ```
 
-{% endtab %}
-{% endtabs %}
-
 :::danger
 JSON RPC Service needs to be enabled in order for health checks to work `--JsonRpc.Enabled true`
 :::
 
-Each configuration option is described here:&#x20;
-
-{% content-ref url="configuration/healthchecks.md" %}
-[healthchecks.md](configuration/healthchecks.md)
-{% endcontent-ref %}
+Each configuration option is described [here](configuration/healthchecks.md).
 
 #### Enabling Health Checks without UI&#x20;
 
@@ -118,16 +107,17 @@ Note that Consensus Client is required for normal node operations.
 Health checks via JSON RPC requests were introduced in version v.1.10.18. For that,  `HealthChecks.Enabled` should be
 set to true.
 
-{% tabs %}
-{% tab title="Request" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 
 ```
 { "jsonrpc":"2.0","method":"health_nodeStatus","params":[],"id":67 }
 ```
 
-{% endtab %}
+</TabItem>
+<TabItem label="Response" value="response">
 
-{% tab title="Response" %}
 
 ```
 {
@@ -148,8 +138,9 @@ set to true.
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 #### Monitoring available storage space
 
@@ -172,10 +163,8 @@ node will return unhealthy status if the interval elapsed without processing or 
 config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically,
 we will be waiting 45 seconds for a newly produced block.
 
-{% tabs %}
-{% tab title="HealthChecks config section example" %}
+``` json title="HealthChecks config section example" 
 
-```bash
   "HealthChecks": {
     "Enabled": true,
     "WebhooksEnabled": true,
@@ -185,9 +174,6 @@ we will be waiting 45 seconds for a newly produced block.
     "MaxIntervalWithoutProducedBlock": 45
   }
 ```
-
-{% endtab %}
-{% endtabs %}
 
 If those fields are not set in a config, application will try to use them based on seal engine specification. If there
 is infinite time, unhealthy status can still be reported if processing or producing threads stopped.

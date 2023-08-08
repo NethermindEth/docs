@@ -8,30 +8,30 @@ executed, verify if everything works correctly and will reduce downtime of node 
 recommended to any public JsonRpc provider or Validators.
 
 If disk is big enough, recommended workflow of action
-is [#option-1a-sync-nethermind-next-to-geth](migrating-from-geth.md#option-1a-sync-nethermind-next-to-geth "mention")
-or [#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly](migrating-from-geth.md#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly "mention").
+is [#option-1a-sync-nethermind-next-to-geth](migrating-from-geth.md#option-1a-sync-nethermind-next-to-geth)
+or [#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly](migrating-from-geth.md#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly).
 
 If disk is not big enough but downtime is not an option recommended would be to first try to increase disk space or if
 not possible to extend existing setup, then host Nethermind on separate machine, sync it and whenever it completes its
 work, move everything validator related to that machine and abandon first machine.
 
 On the other hand, if downtime of around \~12h is not a problem, then suggested would be to go
-with [#option-2-remove-geth-and-sync-nethermind](migrating-from-geth.md#option-2-remove-geth-and-sync-nethermind "mention").
+with [#option-2-remove-geth-and-sync-nethermind](migrating-from-geth.md#option-2-remove-geth-and-sync-nethermind).
 
 ### Option 1a - Sync Nethermind next to Geth
 
 #### Step 1 - Download Nethermind latest release
 
 Please refer to
-a [#step-1-installing-nethermind](running-nethermind-post-merge.mdx#step-1-installing-nethermind "mention") to see
+a [#step-1-installing-nethermind](running-nethermind-post-merge.mdx#step-1-installing-nethermind) to see
 available options or use [**Sedge** ](https://docs.sedge.nethermind.io/)which is a one-click setup tool for running node
 developed by Nethermind Team (refer
-to [#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly](migrating-from-geth.md#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly "mention")).
+to [#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly](migrating-from-geth.md#option-1b---use-sedge-to-install-nethermind-next-to-geth-quickly)).
 
 #### Step 2 - Run secondary CL client for Nethermind syncing purpose only
 
 Please refer to
-a [#step-2-installing-consensus-client](running-nethermind-post-merge.mdx#step-2-installing-consensus-client "mention")
+a [#step-2-installing-consensus-client](running-nethermind-post-merge.mdx#step-2-installing-consensus-client)
 to install secondary CL client beacon node which will be used only for Nethermind syncing purpose.\
 Once it is installed ensure it is not colliding with primary CL currently used by Geth.
 
@@ -51,7 +51,7 @@ NETHERMIND\_ENGINE\_PORT should be changed to value selected in next step (prefe
 
 #### Step 3 - Run Nethermind and wait for Sync
 
-Please refer to a [#step-4-run-nethermind](running-nethermind-post-merge.mdx#step-4-run-nethermind "mention")for
+Please refer to a [#step-4-run-nethermind](running-nethermind-post-merge.mdx#step-4-run-nethermind)for
 instruction on how to run Nethermind.
 
 :::caution
@@ -63,15 +63,15 @@ needed to be changed with recommended values:\
 :::
 
 Now Nethermind node should be syncing well using second CL configured on machine. To monitor status of syncing there is
-a JsonRPC call which can be used [#eth\_syncing](../../ethereum-client/json-rpc/eth.md#eth\_syncing "mention").\
+a JsonRPC call which can be used [#eth\_syncing](../../ethereum-client/json-rpc/eth.md#eth\_syncing).
 Whenever this endpoint will return "false", node is considered as fully synced with all bodies and receipts needed to
 work properly as a Validator.
 
 Another option is to use a health module which will also return a information about current state of syncing.
 
-{% content-ref url="../ethereum-client/monitoring-node-health.md" %}
-[monitoring-node-health.md](../../ethereum-client/monitoring-node-health.md)
-{% endcontent-ref %}
+:::tip
+You can see more details of how to monitor [Node Health here](../../ethereum-client/monitoring-node-health.md)
+:::
 
 #### Step 4 - Stop Geth instance
 
@@ -87,7 +87,7 @@ Also stop a secondary CL client to ensure that after that step only Nethermind a
 are started only.
 
 Also important would be to restart primary CL using jwt-secret used by Nethermind. For that purpose, you can either use
-flags in CL to point to Nethermind jwtsecret or point Nethermind to that jwtsecret using command:\
+flags in CL to point to Nethermind jwtsecret or point Nethermind to that jwtsecret using command:
 `--JsonRpc.JwtSecretFile "path/to/jwtsecret.hex"`
 
 #### Step 6 - Ensure Your setup works well after changes
@@ -95,28 +95,28 @@ flags in CL to point to Nethermind jwtsecret or point Nethermind to that jwtsecr
 To see if nodes are progressing properly check logs of both Nethermind and CL to check if there are no warnings/errors -
 especially ones about authentication which may tell about invalid jwtsecret used or no jwt configured.
 
-Also check if Your Nethermind node is following chain properly. From logs you can extract messages like:\
+Also check if Your Nethermind node is following chain properly. From logs you can extract messages like:
 `Block <<HASH>> was set as head.`
 
 Compare a hash from log to hash of corresponding block on [https://etherscan.io/](https://etherscan.io/) to see if node
 is progressing well.
 
 :::info
-**EXAMPLE**\
-Logs from Nethermind:\
-`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` \
-`FCU - block 16670194 (0x13cebe...91beab) was processed.`\
-\
-`Block on etherscan:`\
+**EXAMPLE**
+Logs from Nethermind:
+`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` 
+`FCU - block 16670194 (0x13cebe...91beab) was processed.`
+
+`Block on etherscan:`
 [`https://etherscan.io/block/16670194`](https://etherscan.io/block/16670194)
 
-\
+
 Block number and block hash matches information from logs.
 :::
 
 #### Step 7 - Remove Geth and secondary CL
 
-In this step you can remove Geth database and secondary CL used for Nethermind syncing.\
+In this step you can remove Geth database and secondary CL used for Nethermind syncing.
 For Geth in order to remove db, remove `.ethereum` directory (default may be `/root/.ethereum` or path set on geth
 startup). Also there is a command which can be used to remove Geth db:
 
@@ -125,7 +125,7 @@ startup). Also there is a command which can be used to remove Geth db:
 ### Option 1b - Use Sedge to install Nethermind next to Geth quickly
 
 Sedge is a one-click tool which can host entire node on your machine withing a single command taking care of ports,
-checkpoint sync, connection between EL and CL etc.\
+checkpoint sync, connection between EL and CL etc.
 There is a documentation of Sedge located here: [https://docs.sedge.nethermind.io/](https://docs.sedge.nethermind.io/)
 
 High level flow would be similar to Option 1a, but Sedge would automatically take care of Steps 1,2 and 3.
@@ -135,9 +135,12 @@ To add additional flags to Sedge, use `--el-extra-flag JsonRpc.Port=8546` or --c
 :::
 
 Later on step 5 you can edit a `docker-compose.yml` file and remove all extra flags which were passed to EL or CL and
-simply restart a node using commands: \
-`docker compose stop execution`\
-`docker compose up -d execution`
+simply restart a node using commands: 
+
+```bash
+docker compose stop execution
+docker compose up -d execution
+```
 
 ### Option 2 - Remove Geth and sync Nethermind
 
@@ -157,8 +160,8 @@ it may cause some unexpected problems during procedure of syncing Nethermind.
 #### Step 2 - Download Nethermind latest release
 
 Please refer to
-a [#step-1-installing-nethermind](running-nethermind-post-merge.mdx#step-1-installing-nethermind "mention") to see
-available options or use [**Sedge** ](https://docs.sedge.nethermind.io/)which is a one-click setup tool for running node
+a [#step-1-installing-nethermind](running-nethermind-post-merge.mdx#step-1-installing-nethermind) to see
+available options or use [**Sedge** ](https://docs.sedge.nethermind.io/) which is a one-click setup tool for running node
 developed by Nethermind Team.
 
 #### Step 3 - Reconfigure CL and run Nethermind
@@ -171,11 +174,11 @@ to Nethermind jwtsecret or point Nethermind to that jwtsecret using command:\
 Nethermind will generate jwtsecret in `keystore` directory and if not specified, it will use this secret.
 
 After reconfiguring CL, run Nethermind an monitor it. Please refer to
-a [#step-4-run-nethermind](running-nethermind-post-merge.mdx#step-4-run-nethermind "mention")for instruction on how to
+a [#step-4-run-nethermind](running-nethermind-post-merge.mdx#step-4-run-nethermind)for instruction on how to
 run Nethermind.
 
 Now Nethermind node should be syncing well using CL reconfigured on machine. To monitor status of syncing there is a
-JsonRPC call which can be used [#eth\_syncing](../../ethereum-client/json-rpc/eth.md#eth\_syncing "mention").\
+JsonRPC call which can be used [#eth\_syncing](../../ethereum-client/json-rpc/eth.md#eth\_syncing).
 Whenever this endpoint will return "false", node is considered as fully synced with all bodies and receipts needed to
 work properly as a Validator.
 
@@ -186,21 +189,21 @@ Another option is to use a health module which will also return a information ab
 To see if nodes are progressing properly check logs of both Nethermind and CL to check if there are no warnings/errors -
 especially ones about authentication which may tell about invalid jwtsecret used or no jwt configured.
 
-Also check if Your Nethermind node is following chain properly. From logs you can extract messages like:\
+Also check if Your Nethermind node is following chain properly. From logs you can extract messages like:
 `Block <<HASH>> was set as head.`
 
 Compare a hash from log to hash of corresponding block on [https://etherscan.io/](https://etherscan.io/) to see if node
 is progressing well.
 
 :::info
-**EXAMPLE**\
-Logs from Nethermind:\
-`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` \
-`FCU - block 16670194 (0x13cebe...91beab) was processed.`\
-\
-`Block on etherscan:`\
+**EXAMPLE**
+Logs from Nethermind:
+`Block 0x13cebe2db23cc09fb386fa4a470d6dac3dfca65e11968472f5a1f3681191beab was set as head. 20 Feb 2023 14:56:36.987` 
+`FCU - block 16670194 (0x13cebe...91beab) was processed.`
+
+`Block on etherscan:`
 [`https://etherscan.io/block/16670194`](https://etherscan.io/block/16670194)
 
-\
+
 Block number and block hash matches information from logs.
 :::

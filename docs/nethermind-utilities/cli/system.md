@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # system
 
 
@@ -16,13 +19,9 @@
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of system.getVariable" %}
-```yaml
+``` yaml title="Example request of system.getVariable" 
 system.getVariable(name, defaultValue)
 ```
-{% endtab %}
-{% endtabs %}
 
 
 ## system.memory
@@ -40,11 +39,7 @@ system.getVariable(name, defaultValue)
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of system.memory" %}
-```yaml
+``` yaml title="Example request of system.memory" 
 system.memory(name, defaultValue)
 ```
-{% endtab %}
-{% endtabs %}
 

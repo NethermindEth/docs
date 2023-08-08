@@ -5,6 +5,8 @@ import TabItem from "@theme/TabItem";
 
 ## Introduction
 
+Merge
+
 Ethereum’s long awaited shift from Proof of Work (POW) to Proof of Stake (POS) known as The Merge happened on September
 15, 2022 and came with fundamental changes to the network. The most notable change is the addition of the Beacon chain (
 Consensus layer) which replaced Proof of Work mining. It is coordinating and pseudorandomly selecting block producers
@@ -174,10 +176,10 @@ Then you are ready to start your clients. First start up Consensus Layer.
 See section below for commands to run the CL client you installed. You will need to make sure the `--jwt-secret` has the
 correct path as well or the clients will not be able to communicate.
 
-Once both clients are running watch the logs to make sure you don’t get any `Unauthorized` errors to ensure the clients
+Once both clients are running watch the logs to make sure you don't get any `Unauthorized` errors to ensure the clients
 are communicating.
 
-::: hint
+:::tip 
 **Checkpoint Sync**
 
 It would be way faster to sync consensus clients using checkpoint sync.
@@ -192,287 +194,303 @@ For Goerli or Sepolia see [here](https://notes.ethereum.org/@launchpad/checkpoin
 ### Running Nimbus
 
 <Tabs>
-    <TabItem label="Mainnet" default>
-        ```bash
-        nimbus-eth2/build/nimbus_beacon_node \
-        --network=mainnet \
-        --web3-url=http://127.0.0.1:8551 \
-        --rest \
-        --metrics-explanation \
-        --suggested-fee-recipient='Enter-eth-address-here' \
-        --jwt-secret="/tmp/jwtsecret"
-        ```
+<TabItem value="mainnet" label="Mainnet" default>
 
-        For checkpoint sync, add the following flag with a checkpoint sync endpoint
-        from
-        [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
-        Example:
-        ```bash
-        --trusted-node-url=https://beaconstate.ethstaker.cc
-        ```
-    </TabItem>
-    <TabItem label="Goerli">
-        ```bash
-        nimbus-eth2/build/nimbus_beacon_node \
-        --network=goerli \
-        --web3-url=http://127.0.0.1:8551 \
-        --rest \
-        --metrics-explanation \
-        --suggested-fee-recipient='Enter-eth-address-here' \
-        --jwt-secret="/tmp/jwtsecret"
-        ```
-    </TabItem>
-    <TabItem label="Sepolia">
-        ```bash
-        nimbus-eth2/build/nimbus_beacon_node \
-        --network=sepolia \
-        --web3-url=http://127.0.0.1:8551 \
-        --rest \
-        --metrics \
-        --suggested-fee-recipient='Enter-eth-address-here' \
-        --jwt-secret="/tmp/jwtsecret"
-        ```
-    </TabItem>
+```bash
+nimbus-eth2/build/nimbus_beacon_node \
+--network=mainnet \
+--web3-url=http://127.0.0.1:8551 \
+--rest \
+--metrics-explanation \
+--suggested-fee-recipient='Enter-eth-address-here' \
+--jwt-secret="/tmp/jwtsecret"
+```
+
+For checkpoint sync, add the following flag with a checkpoint sync endpoint
+from
+[above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
+Example:
+```bash
+--trusted-node-url=https://beaconstate.ethstaker.cc
+```
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+```bash
+nimbus-eth2/build/nimbus_beacon_node \
+--network=goerli \
+--web3-url=http://127.0.0.1:8551 \
+--rest \
+--metrics-explanation \
+--suggested-fee-recipient='Enter-eth-address-here' \
+--jwt-secret="/tmp/jwtsecret"
+```
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+```bash
+nimbus-eth2/build/nimbus_beacon_node \
+--network=sepolia \
+--web3-url=http://127.0.0.1:8551 \
+--rest \
+--metrics \
+--suggested-fee-recipient='Enter-eth-address-here' \
+--jwt-secret="/tmp/jwtsecret"
+```
+</TabItem>
 </Tabs>
 
 ### Running Prysm
 
 <Tabs>
-    <TabItem label="Mainnet" default>
+<TabItem value="mainnet" label="Mainnet" default>
 
-        ``` bash
-        cd prysm
-        ./prysm.sh beacon-chain \
-        --mainnet \
-        --datadir "$db_path" \
-        --suggested-fee-recipient='Enter-eth-address-here' \
-        --execution-endpoint=http://localhost:8551 \
-        --jwt-secret="/tmp/jwtsecret"
-        ```
+``` bash
+cd prysm
+./prysm.sh beacon-chain \
+--mainnet \
+--datadir "$db_path" \
+--suggested-fee-recipient='Enter-eth-address-here' \
+--execution-endpoint=http://localhost:8551 \
+--jwt-secret="/tmp/jwtsecret"
+```
 
-        For checkpoint sync, add the following flag with a checkpoint sync endpoint
-        from
-        [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
-        Example
+For checkpoint sync, add the following flag with a checkpoint sync endpoint
+from
+[above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
+Example
 
-        ```bash
-        --checkpoint-sync-url="https://beaconstate.ethstaker.cc"
-        --genesis-beacon-api-url="https://beaconstate.ethstaker.cc"
-        ```
-    </TabItem>
-    <TabItem label="Goerli">
-        ```bash
-        cd prysm
-        ./prysm.sh beacon-chain \
-        --goerli \
-        --datadir $db_path \
-        --suggested-fee-recipient='Enter-eth-address-here' \
-        --execution-endpoint=http://localhost:8551 \
-        --jwt-secret=/tmp/jwtsecret
-        ```
-    </TabItem>
-    <TabItem label="Sepolia">
-        ```bash
-        cd prysm
-        ./prysm.sh beacon-chain \
-        --sepolia \
-        --datadir $db_path \
-        --suggested-fee-recipient='Enter-eth-address-here' \
-        --execution-endpoint=http://localhost:8551 \
-        --jwt-secret=/tmp/jwtsecret
-        ```
-    </TabItem>
-    <TabItem label="Chiado">
-        Please follow guide provided [here](https://github.com/gnosischain/prysm-client).
-    </TabItem>
+```bash
+--checkpoint-sync-url="https://beaconstate.ethstaker.cc"
+--genesis-beacon-api-url="https://beaconstate.ethstaker.cc"
+```
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+``` bash
+cd prysm
+./prysm.sh beacon-chain \
+--goerli \
+--datadir $db_path \
+--suggested-fee-recipient='Enter-eth-address-here' \
+--execution-endpoint=http://localhost:8551 \
+--jwt-secret=/tmp/jwtsecret
+```
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+```bash
+cd prysm
+./prysm.sh beacon-chain \
+--sepolia \
+--datadir $db_path \
+--suggested-fee-recipient='Enter-eth-address-here' \
+--execution-endpoint=http://localhost:8551 \
+--jwt-secret=/tmp/jwtsecret
+```
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+Please follow guide provided [here](https://github.com/gnosischain/prysm-client).
+</TabItem>
 
 </Tabs>
 
 ### Running Lighthouse
 
 <Tabs>
-    <TabItem label="Mainnet">
-        ```bash
-        lighthouse \
-        beacon_node \
-        --network mainnet \
-        --debug-level info \
-        --datadir ./mainnet-lh1 \
-        --eth1 \
-        --http \
-        --http-allow-sync-stalled \
-        --metrics-explanation \
-        --execution-endpoints http://127.0.0.1:8551 \
-        --enr-udp-port=9000 \
-        --enr-tcp-port=9000 \
-        --discovery-port=9000 \
-        --suggested-fee-recipient=
-        'Enter-eth-address-here' \
-        --jwt-secrets="/tmp/jwtsecret"
-        ```
+<TabItem value="mainnet" label="Mainnet">
 
-        For checkpoint sync, add the following flag with a checkpoint sync endpoint
-        from
-        [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
-        Example:
+```bash
+lighthouse \
+beacon_node \
+--network mainnet \
+--debug-level info \
+--datadir ./mainnet-lh1 \
+--eth1 \
+--http \
+--http-allow-sync-stalled \
+--metrics-explanation \
+--execution-endpoints http://127.0.0.1:8551 \
+--enr-udp-port=9000 \
+--enr-tcp-port=9000 \
+--discovery-port=9000 \
+--suggested-fee-recipient=
+'Enter-eth-address-here' \
+--jwt-secrets="/tmp/jwtsecret"
+```
 
-        ```bash
-        --checkpoint-sync-url "https://beaconstate.ethstaker.cc"
-        ```
+For checkpoint sync, add the following flag with a checkpoint sync endpoint
+from
+[above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
+Example:
 
-    </TabItem>
-    <TabItem label="Goerli">
-        ```bash
-        lighthouse \
-        beacon_node \
-        --network goerli \
-        --debug-level info \
-        --datadir ./testnet-lh1 \
-        --eth1 \
-        --http \
-        --http-allow-sync-stalled \
-        --metrics-explanation \
-        --execution-endpoints http://127.0.0.1:8551 \
-        --enr-udp-port=9000 \
-        --enr-tcp-port=9000 \
-        --discovery-port=9000 \
-        --suggested-fee-recipient=
-        'Enter-eth-address-here' \
-        --jwt-secrets="/tmp/jwtsecret"
-        ```
-    </TabItem>
-    <TabItem label="Sepolia">
-        ```bash
-        lighthouse \
-        beacon_node \
-        --network sepolia \
-        --debug-level info \
-        --datadir ./testnet-lh1 \
-        --eth1 \
-        --http \
-        --http-allow-sync-stalled \
-        --metrics \
-        --execution-endpoints http://127.0.0.1:8551 \
-        --enr-udp-port=9000 \
-        --enr-tcp-port=9000 \
-        --discovery-port=9000 \
-        --suggested-fee-recipient=
-        'Enter-eth-address-here' \
-        --jwt-secrets="/tmp/jwtsecret"
-        ```
-    </TabItem>
-    <TabItem label="Chiado">
-        Please follow guide provided [here](https://github.com/gnosischain/lighthouse-client).
-    </TabItem>
+```bash
+--checkpoint-sync-url "https://beaconstate.ethstaker.cc"
+```
+
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+```bash
+lighthouse \
+beacon_node \
+--network goerli \
+--debug-level info \
+--datadir ./testnet-lh1 \
+--eth1 \
+--http \
+--http-allow-sync-stalled \
+--metrics-explanation \
+--execution-endpoints http://127.0.0.1:8551 \
+--enr-udp-port=9000 \
+--enr-tcp-port=9000 \
+--discovery-port=9000 \
+--suggested-fee-recipient=
+'Enter-eth-address-here' \
+--jwt-secrets="/tmp/jwtsecret"
+```
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+```bash
+lighthouse \
+beacon_node \
+--network sepolia \
+--debug-level info \
+--datadir ./testnet-lh1 \
+--eth1 \
+--http \
+--http-allow-sync-stalled \
+--metrics \
+--execution-endpoints http://127.0.0.1:8551 \
+--enr-udp-port=9000 \
+--enr-tcp-port=9000 \
+--discovery-port=9000 \
+--suggested-fee-recipient=
+'Enter-eth-address-here' \
+--jwt-secrets="/tmp/jwtsecret"
+```
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+Please follow guide provided [here](https://github.com/gnosischain/lighthouse-client).
+</TabItem>
 
 </Tabs>
 
 ### Running Lodestar
 
 <Tabs>
-    <TabItem label="Mainnet">
-        ```bash
-        cd lodestar
-        ./lodestar beacon \
-        --dataDir "../lodestar-beacondata" \
-        --network mainnet \
-        --eth1 \
-        --execution.urls "http://127.0.0.1:8551" \
-        --discv5 \
-        --suggestedFeeRecipient 'Enter-eth-address-here' \
-        --jwt-secret "/tmp/jwtsecret"
+<TabItem value="mainnet" label="Mainnet">
 
-        ```
+```bash
+cd lodestar
+./lodestar beacon \
+--dataDir "../lodestar-beacondata" \
+--network mainnet \
+--eth1 \
+--execution.urls "http://127.0.0.1:8551" \
+--discv5 \
+--suggestedFeeRecipient 'Enter-eth-address-here' \
+--jwt-secret "/tmp/jwtsecret"
 
-        For checkpoint sync, add the following flag with a checkpoint sync endpoint
-        from
-        [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
-        Example:
+```
 
-        ```bash
-        --checkpointSyncUrl "https://beaconstate.ethstaker.cc"
-        ```
-    </TabItem>
-    <TabItem label="Goerli">
-        ```bash
-        cd lodestar
-        ./lodestar beacon \
-        --dataDir "../lodestar-beacondata" \
-        --network goerli \
-        --eth1 \
-        --execution.urls "http://127.0.0.1:8551" \
-        --discv5 \
-        --suggestedFeeRecipient 'Enter-eth-address-here' \
-        --jwt-secret "/tmp/jwtsecret"
-        ```
-    </TabItem>
-    <TabItem label="Sepolia">
-        ```bash
-        cd lodestar
-        ./lodestar beacon \
-        --dataDir "../lodestar-beacondata" \
-        --network sepolia \
-        --eth1 \
-        --execution.urls "http://127.0.0.1:8551" \
-        --discv5 \
-        --suggestedFeeRecipient 'Enter-eth-address-here' \
-        --jwt-secret "/tmp/jwtsecret"
-        ```
-    </TabItem>
-    <TabItem label="Chiado">
-        Please follow guide provided [here](https://github.com/gnosischain/lodestar-client).
-    </TabItem>
+For checkpoint sync, add the following flag with a checkpoint sync endpoint
+from
+[above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
+Example:
+
+```bash
+--checkpointSyncUrl "https://beaconstate.ethstaker.cc"
+```
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+```bash
+cd lodestar
+./lodestar beacon \
+--dataDir "../lodestar-beacondata" \
+--network goerli \
+--eth1 \
+--execution.urls "http://127.0.0.1:8551" \
+--discv5 \
+--suggestedFeeRecipient 'Enter-eth-address-here' \
+--jwt-secret "/tmp/jwtsecret"
+```
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+```bash
+cd lodestar
+./lodestar beacon \
+--dataDir "../lodestar-beacondata" \
+--network sepolia \
+--eth1 \
+--execution.urls "http://127.0.0.1:8551" \
+--discv5 \
+--suggestedFeeRecipient 'Enter-eth-address-here' \
+--jwt-secret "/tmp/jwtsecret"
+```
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+Please follow guide provided [here](https://github.com/gnosischain/lodestar-client).
+</TabItem>
 
 </Tabs>
 
 ### Running Teku
 
 <Tabs>
-    <TabItem label="Mainnet">
-        ```bash
-        ./teku/build/install/teku/bin/teku \
-        --data-path "datadir-teku" \
-        --network mainnet \
-        --ee-endpoint http://localhost:8551 \
-        --ee-jwt-secret-file "/tmp/jwtsecret" \
-        --log-destination console \
-        ```
-        For checkpoint sync, add the following flag with a checkpoint sync endpoint
-        from
-        [above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
-        Example:
+<TabItem value="mainnet" label="Mainnet">
 
-        ```bash
-        --initial-state="https://beaconstate.ethstaker.cc"
-        ```
-    </TabItem>
-    <TabItem label="Goerli">
-        ```bash
-        ./teku/build/install/teku/bin/teku \
-        --data-path "datadir-teku" \
-        --network goerli \
-        --ee-endpoint http://localhost:8551 \
-        --ee-jwt-secret-file "/tmp/jwtsecret" \
-        --log-destination console \
-        --validators-proposer-default-fee-recipient='Enter-eth-address-here' \
-        ```
+```bash
+./teku/build/install/teku/bin/teku \
+--data-path "datadir-teku" \
+--network mainnet \
+--ee-endpoint http://localhost:8551 \
+--ee-jwt-secret-file "/tmp/jwtsecret" \
+--log-destination console \
+```
+For checkpoint sync, add the following flag with a checkpoint sync endpoint
+from
+[above](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge#checkpoint-sync).
+Example:
 
-    </TabItem>
-    <TabItem label="Sepolia">
-        ```
-        ./teku/build/install/teku/bin/teku \
-        --data-path "datadir-teku" \
-        --network sepolia \
-        --ee-endpoint http://localhost:8551 \
-        --ee-jwt-secret-file "/tmp/jwtsecret" \
-        --log-destination console \
-        --validators-proposer-default-fee-recipient='Enter-eth-address-here' \
-        ```
+```bash
+--initial-state="https://beaconstate.ethstaker.cc"
+```
+</TabItem>
+<TabItem value="goerli" label="Goerli">
 
-    </TabItem>
-    <TabItem label="Chiado">
-        Please follow guide provided [here](https://github.com/gnosischain/teku-client).
-    </TabItem>
+```bash
+./teku/build/install/teku/bin/teku \
+--data-path "datadir-teku" \
+--network goerli \
+--ee-endpoint http://localhost:8551 \
+--ee-jwt-secret-file "/tmp/jwtsecret" \
+--log-destination console \
+--validators-proposer-default-fee-recipient='Enter-eth-address-here'
+```
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+``` bash
+./teku/build/install/teku/bin/teku \
+--data-path "datadir-teku" \
+--network sepolia \
+--ee-endpoint http://localhost:8551 \
+--ee-jwt-secret-file "/tmp/jwtsecret" \
+--log-destination console \
+--validators-proposer-default-fee-recipient='Enter-eth-address-here'
+```
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+Please follow guide provided [here](https://github.com/gnosischain/teku-client).
+</TabItem>
 
 </Tabs>
 
@@ -518,23 +536,47 @@ Nethermind.
 #### Nethermind.Launcher
 
 <Tabs>
-    <TabItem label="Windows">```bash ./Nethermind.Launcher ```</TabItem>
-    <TabItem label="Ubuntu">```bash nethermind ```</TabItem>
-    <TabItem label="macOS">``` nethermind-launcher ```</TabItem>
+<TabItem value="windows" label="Windows">
+
+```bash
+./Nethermind.Launcher
+````
+</TabItem>
+<TabItem value="ubuntu" label="Ubuntu">
+
+```bash
+nethermind
+```
+</TabItem>
+<TabItem value="macOS" label="macOS">
+
+```bash
+nethermind-launcher
+```
+</TabItem>
 </Tabs>
 
 #### Nethermind.Runner
 
 <Tabs>
-    <TabItem label="Windows">
-        ```bash ./Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=PATH ```
-    </TabItem>
-    <TabItem label="Ubuntu">
-        ``` nethermind --config goerli --JsonRpc.JwtSecretFile=PATH ```
-    </TabItem>
-    <TabItem label="macOS">
-        ```bash nethermind --config goerli --JsonRpc.JwtSecretFile=PATH ```
-    </TabItem>
+<TabItem value="windows" label="Windows">
+
+```bash 
+./Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=PATH 
+```
+</TabItem>
+<TabItem value="ubuntu" label="Ubuntu">
+
+```bash
+nethermind --config goerli --JsonRpc.JwtSecretFile=PATH 
+```
+</TabItem>
+<TabItem value="macOS" label="macOS">
+
+```bash 
+nethermind --config goerli --JsonRpc.JwtSecretFile=PATH 
+```
+</TabItem>
 </Tabs>
 
 :::info

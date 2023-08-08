@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # web3
 
 ## web3_clientVersion
@@ -15,13 +18,15 @@ Returns the current client version.
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of web3_clientVersion" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of web3_clientVersion" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -29,8 +34,9 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
   "id": 1
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI web3.clientVersion](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/web3#web3-clientversion)
 ## web3_sha3
@@ -49,13 +55,15 @@ Returns Keccak of the given data.
 | :--- | :--- |
 | `Hash` |  |
 
-{% tabs %}
-{% tab title="Example request of web3_sha3" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"web3_sha3","params":[["0x47767638636211111a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01abc"]],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of web3_sha3" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -63,7 +71,8 @@ curl --data '{"method":"web3_sha3","params":[["0x47767638636211111a8d7341e5e972f
   "id": 1
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI web3.sha3](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/web3#web3-sha3)

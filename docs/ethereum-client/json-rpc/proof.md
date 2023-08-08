@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # proof
 
 ## proof_getTransactionByHash
@@ -17,13 +20,15 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 | :--- | :--- |
 | `TransactionWithProof object` |  |
 
-{% tabs %}
-{% tab title="Example request of proof_getTransactionByHash" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHeader],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of proof_getTransactionByHash" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -31,9 +36,9 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in proof_getTransactionByHash" %}
 
 `TransactionWithProof`
 
@@ -70,8 +75,9 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 | S | `Quantity` |
 | R | `Quantity` |
 | YParity | `Quantity` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI proof.getTransactionByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionbyhash)
 ## proof_getTransactionReceipt
@@ -91,13 +97,15 @@ This function should return the same result as `eth_call` and also proofs of all
 | :--- | :--- |
 | `ReceiptWithProof object` |  |
 
-{% tabs %}
-{% tab title="Example request of proof_getTransactionReceipt" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHeader],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of proof_getTransactionReceipt" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -105,9 +113,9 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in proof_getTransactionReceipt" %}
 
 `ReceiptWithProof`
 
@@ -140,7 +148,8 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI proof.getTransactionReceipt](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/proof#proof-gettransactionreceipt)

@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # parity
 
 ## parity_clearEngineSigner
@@ -15,13 +18,9 @@ Clears an authority account for signing consensus messages. Blocks will not be s
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_clearEngineSigner" %}
-```
+``` bash title="Example request of parity_clearEngineSigner" 
 curl --data '{"method":"parity_clearEngineSigner","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also CLI parity.clearEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-clearenginesigner)
 ## parity_enode
@@ -39,13 +38,15 @@ Returns the node enode URI.
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_enode" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"parity_enode","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of parity_enode" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -53,8 +54,9 @@ curl --data '{"method":"parity_enode","params":[],"id":1,"jsonrpc":"2.0"}' -H "C
   "id": 1
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI parity.enode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-enode)
 ## parity_getBlockReceipts
@@ -73,13 +75,15 @@ Get receipts from all transactions from particular block, more efficient than fe
 | :--- | :--- |
 | `ReceiptForRpc object` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_getBlockReceipts" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of parity_getBlockReceipts" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -87,9 +91,9 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in parity_getBlockReceipts" %}
 
 `BlockParameter`
 
@@ -146,8 +150,9 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+    
 
 [See also CLI parity.getBlockReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-getblockreceipts)
 ## parity_netPeers
@@ -165,14 +170,14 @@ Returns connected peers. Peers with non-empty protocols have completed handshake
 | :--- | :--- |
 | `ParityNetPeers object` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_netPeers" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-
-{% tab title="Objects in parity_netPeers" %}
+</TabItem>
+<TabItem label="Object" value="objects">
 
 `ParityNetPeers`
 
@@ -192,8 +197,9 @@ curl --data '{"method":"parity_netPeers","params":[],"id":1,"jsonrpc":"2.0"}' -H
 | Caps | `Array` |
 | Network | `PeerNetworkInfo object` |
 | Protocols | `Array` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI parity.netPeers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-netpeers)
 ## parity_pendingTransactions
@@ -212,13 +218,15 @@ Returns a list of transactions currently in the queue. If address is provided, r
 | :--- | :--- |
 | `ParityTransaction object` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_pendingTransactions" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"parity_pendingTransactions","params":[["0x78467cada5f1883e79fcf0f3ebfa50abeec8c820"]],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of parity_pendingTransactions" %}
+</TabItem>
+<TabItem value="response" label="Response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -226,9 +234,9 @@ curl --data '{"method":"parity_pendingTransactions","params":[["0x78467cada5f188
   "id": 1
 }
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="objects" label="Object">
 
-{% tab title="Objects in parity_pendingTransactions" %}
 
 `ParityTransaction`
 
@@ -262,8 +270,9 @@ curl --data '{"method":"parity_pendingTransactions","params":[["0x78467cada5f188
 | Address | `Address` |
 | Bytes | `Data` |
 | PrefixedBytes | `Data` |
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI parity.pendingTransactions](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-pendingtransactions)
 ## parity_setEngineSigner
@@ -283,13 +292,15 @@ Sets an authority account for signing consensus messages.
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_setEngineSigner" %}
+<Tabs>
+<TabItem value="request" label="Request">
+
 ```
 curl --data '{"method":"parity_setEngineSigner","params":[address, password],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% tab title="Example response of parity_setEngineSigner" %}
+</TabItem>
+<TabItem label="Response" value="response">
+
 ```yaml
 {
   "jsonrpc": "2.0",
@@ -297,8 +308,9 @@ curl --data '{"method":"parity_setEngineSigner","params":[address, password],"id
   "id": 1
 }
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
+
 
 [See also CLI parity.setEngineSigner](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesigner)
 ## parity_setEngineSignerSecret
@@ -317,12 +329,8 @@ Sets an authority account for signing consensus messages.
 | :--- | :--- |
 | `Boolean` |  |
 
-{% tabs %}
-{% tab title="Example request of parity_setEngineSignerSecret" %}
-```
+``` bash title="Example request of parity_setEngineSignerSecret" 
 curl --data '{"method":"parity_setEngineSignerSecret","params":[privateKey],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
-{% endtab %}
-{% endtabs %}
 
 [See also CLI parity.setEngineSignerSecret](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/parity#parity-setenginesignersecret)

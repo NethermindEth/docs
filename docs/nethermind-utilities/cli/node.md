@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # node
 
 
@@ -14,13 +17,9 @@
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of node.address" %}
-```yaml
+``` yaml title="Example request of node.address" 
 node.address
 ```
-{% endtab %}
-{% endtabs %}
 
 
 ## node.enode
@@ -36,13 +35,9 @@ node.address
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of node.enode" %}
-```yaml
+``` yaml title="Example request of node.enode" 
 node.enode
 ```
-{% endtab %}
-{% endtabs %}
 
 
 ## node.setNodeKey
@@ -59,13 +54,9 @@ node.enode
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of node.setNodeKey" %}
-```yaml
+``` yaml title="Example request of node.setNodeKey" 
 node.setNodeKey(key)
 ```
-{% endtab %}
-{% endtabs %}
 
 
 ## node.switch
@@ -82,13 +73,9 @@ node.setNodeKey(key)
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of node.switch" %}
-```yaml
+``` yaml title="Example request of node.switch" 
 node.switch(uri)
 ```
-{% endtab %}
-{% endtabs %}
 
 
 ## node.switchLocal
@@ -105,13 +92,9 @@ node.switch(uri)
 | :--- | :--- |
 | `String` |  |
 
-{% tabs %}
-{% tab title="Example request of node.switchLocal" %}
-```yaml
+``` yaml title="Example request of node.switchLocal" 
 node.switchLocal(uri)
 ```
-{% endtab %}
-{% endtabs %}
 
 
 ## node.uri
@@ -127,11 +110,7 @@ node.switchLocal(uri)
 | :--- | :--- |
 | `JavaScript Object` |  |
 
-{% tabs %}
-{% tab title="Example request of node.uri" %}
-```yaml
+``` yaml title="Example request of node.uri" 
 node.uri
 ```
-{% endtab %}
-{% endtabs %}
 
