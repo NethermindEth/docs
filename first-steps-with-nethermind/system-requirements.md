@@ -86,3 +86,117 @@ A freshly fast synced Mainnet disk space with details about concrete databases (
 
 <table><thead><tr><th width="238">Database</th><th width="251.33333333333331">Mainnet</th><th>Mainnet with Ancient Barriers</th></tr></thead><tbody><tr><td>State</td><td>161 GB</td><td>161 GB</td></tr><tr><td>Receipts</td><td>152 GB</td><td>104 GB</td></tr><tr><td>Blocks</td><td>334 GB</td><td>222 GB</td></tr><tr><td>Bloom</td><td>5.3 GB</td><td>5.3 GB</td></tr><tr><td>Headers</td><td>8.1 GB</td><td>8.1 GB</td></tr><tr><td>Code</td><td>3 GB</td><td>3 GB</td></tr><tr><td>Other</td><td>...</td><td>..</td></tr><tr><td><strong>Total</strong></td><td><strong>664 GB</strong></td><td><strong>504 GB</strong></td></tr></tbody></table>
 
+#### Other chains in details
+
+Nethermind officially supports multiple chains. Provided below is a comprehensive list of these chains along with a detailed breakdown of their respective database directories. For reference, the database sizes listed are based on data from July 2023 and have been determined using the standard configurations provided by Nethermind.
+
+{% tabs %}
+{% tab title="Chiado" %}
+| Directory         | Size       |
+| ----------------- | ---------- |
+| State             | 1.6 GB     |
+| Receipts          | 646 MB     |
+| Blocks            | 2.3 GB     |
+| Code              | 22 MB      |
+| Peers             | 8 KB       |
+| Witness           | 4.1 MB     |
+| BlockInfos        | 224 MB     |
+| Bloom             | 1.4 GB     |
+| Headers           | 1.1 GB     |
+| CanonicalHashTrie | 4.1 MB     |
+| Metadata          | 4.1 MB     |
+| DiscoveryNodes    | 1.7 MB     |
+| **TOTAL**         | **7.1 GB** |
+{% endtab %}
+
+{% tab title="Gnosis" %}
+| Directory         | Size   |
+| ----------------- | ------ |
+| State             | 40 GB  |
+| Receipts          | 21 GB  |
+| Blocks            | 43 GB  |
+| Code              | 350 MB |
+| Peers             | 8 KB   |
+| Witness           | 4.1 MB |
+| BlockInfos        | 1.5 GB |
+| Bloom             | 7.5 GB |
+| Headers           | 9.4 GB |
+| CanonicalHashTrie | 4.1 MB |
+| Metadata          | 4.2 MB |
+| DiscoveryNodes    | 1.8 MB |
+| **TOTAL**         | 121 GB |
+{% endtab %}
+
+{% tab title="Sepolia" %}
+| Directory         | Size      |
+| ----------------- | --------- |
+| State             | 8.5 GB    |
+| Receipts          | 8.2 GB    |
+| Blocks            | 36 GB     |
+| Code              | 1.5 GB    |
+| Peers             | 8 KB      |
+| Witness           | 4.1 MB    |
+| BlockInfos        | 177 MB    |
+| Bloom             | 1.3 GB    |
+| Headers           | 1.2 GB    |
+| CanonicalHashTrie | 4.1 MB    |
+| Metadata          | 4.1 MB    |
+| DiscoveryNodes    | 1.7 MB    |
+| **TOTAL**         | **56 GB** |
+{% endtab %}
+
+{% tab title="Goerli" %}
+| Directory         | Size       |
+| ----------------- | ---------- |
+| State             | 51 GB      |
+| Receipts          | 35 GB      |
+| Blocks            | 185 GB     |
+| Code              | 7.4 GB     |
+| Peers             | 8 KB       |
+| Witness           | 4.1 MB     |
+| BlockInfos        | 417 MB     |
+| Bloom             | 2.5 GB     |
+| Headers           | 3.5 GB     |
+| CanonicalHashTrie | 4.1 MB     |
+| Metadata          | 4.4 MB     |
+| DiscoveryNodes    | 1.5 MB     |
+| **TOTAL**         | **283 GB** |
+{% endtab %}
+
+{% tab title="Volta" %}
+| Directory         | Size         |
+| ----------------- | ------------ |
+| State             | 35.71 GB     |
+| Receipts          | 7.67 GB      |
+| Blocks            | 25.11 GB     |
+| Code              | 75.14 MB     |
+| Peers             | 616 B        |
+| Witness           | 119.95 KB    |
+| BlockInfos        | 1.15 GB      |
+| Bloom             | 7.40 GB      |
+| Headers           | 6.94 GB      |
+| CanonicalHashTrie | 120.00 KB    |
+| Metadata          | 119.97 KB    |
+| DiscoveryNodes    | 1.55 MB      |
+| **TOTAL**         | **84.06 GB** |
+{% endtab %}
+
+{% tab title="Energyweb" %}
+| Directory         | Size         |
+| ----------------- | ------------ |
+| State             | 31.13 GB     |
+| Receipts          | 5.13 GB      |
+| Blocks            | 15.55 GB     |
+| Code              | 7.20 MB      |
+| Peers             | 311 B        |
+| Witness           | 103.11 KB    |
+| BlockInfos        | 1.22 GB      |
+| Bloom             | 7.78 GB      |
+| Headers           | 6.70 GB      |
+| CanonicalHashTrie | 103.35 KB    |
+| Metadata          | 103.31 KB    |
+| DiscoveryNodes    | 1.68 MB      |
+| **TOTAL**         | **67.52 GB** |
+{% endtab %}
+{% endtabs %}
+
