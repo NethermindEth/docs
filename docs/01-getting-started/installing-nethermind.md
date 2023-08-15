@@ -1,6 +1,7 @@
 ---
 title: Installing Nethermind
 sidebar_label: Installing Nethermind 
+sidebar_position: 0
 ---
 
 import Tabs from "@theme/Tabs";

@@ -1,3 +1,8 @@
+---
+sidebar_position: 0
+sidebar_label: Frequently Asked Questions
+---
+
 # FAQ
 
 ## How do I upgrade my node?

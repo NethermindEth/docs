@@ -1,6 +1,6 @@
 {
-  "position": 8,
-  "label": "Contact Us",
+  "position": 2,
+  "label": "Fundamentals",
   "collapsible": true,
   "link": {
     "type": "generated-index"

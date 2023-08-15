@@ -1,5 +1,6 @@
 ---
 description: Rules that should be added to your machine's firewall
+sidebar_position: 2
 ---
 
 # Firewall Configuration

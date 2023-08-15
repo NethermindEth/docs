@@ -1,5 +1,6 @@
 ---
 description: There are several known issues with the current version of Nethermind
+sidebar_position: 3
 ---
 
 # Known Issues

@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Manage Nethermind with systemd
 
 ### Create a new user

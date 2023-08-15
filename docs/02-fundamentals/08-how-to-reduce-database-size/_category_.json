@@ -1,6 +1,6 @@
 {
-  "position": 6,
-  "label": "Nethermind Utilities",
+  "position": 8,
+  "label": "How to reduce the size of the database",
   "collapsible": true,
   "link": {
     "type": "generated-index"

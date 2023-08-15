@@ -1,8 +1,8 @@
 ---
-description: How to run Nethermind as your ETH1 endpoint for ETH2 clients
+sidebar_label: Eth2 <-> Nethermind 
 ---
 
-# ETH2 &lt;-&gt; Nethermind
+# ETH2 <-> Nethermind
 
 ## Nethermind client as ETH1 endpoint
 

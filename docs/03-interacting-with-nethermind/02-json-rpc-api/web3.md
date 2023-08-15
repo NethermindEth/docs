@@ -1,7 +1,7 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# web3
+# Web3
 
 ## web3_clientVersion
 

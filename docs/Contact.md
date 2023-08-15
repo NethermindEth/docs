@@ -1,5 +1,6 @@
 ---
 sidebar_label: 'Contact Us'
+sidebar_position: 8
 ---
 
 # Contact us

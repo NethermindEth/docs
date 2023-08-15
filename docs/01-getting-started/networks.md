@@ -1,5 +1,6 @@
 ---
 description: Networks currently supported by Nethermind Client
+sidebar_position: 3
 ---
 
 # Networks

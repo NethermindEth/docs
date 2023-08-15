@@ -1,5 +1,6 @@
 ---
 description: Run Nethermind on a platform of your choice
+sidebar_position: 2
 ---
 
 # System Requirements

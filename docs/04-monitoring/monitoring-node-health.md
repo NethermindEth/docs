@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+sidebar_label: Monitoring Node's Health
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -98,7 +103,7 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 This check verifies if the client receives messages from the CL. If you see this warning in your logs, it means that
 there is something wrong with CL<->Nethermind communication. Check more about setting up Nethermind and
-CL [here](../02-fundamentals/running-nethermind-post-merge.md).
+CL [here](../02-fundamentals/10-running-nethermind-post-merge.md).
 
 ```
 No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.

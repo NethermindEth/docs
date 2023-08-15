@@ -1,4 +1,4 @@
-# rpc
+# RPC
 
 ## rpc_modules
 

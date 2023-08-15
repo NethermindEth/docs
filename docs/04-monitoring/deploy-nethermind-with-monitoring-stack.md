@@ -1,7 +1,6 @@
 ---
-description: >-
-  Recipe for a fast and easy terraform deployment of Nethermind Client and
-  Monitoring stack (Grafana/Prometheus/Seq)
+sidebar_label: Deploy Nethermind with Monitoring stack
+sidebar_position: 2 
 ---
 
 # Deploy Nethermind with Monitoring stack
@@ -115,11 +114,11 @@ You can now provide some basic configuration to your VM/Nethermind Node
 
 ![](</img/image(55).png>)
 
-A list of available `configs` can be found [here](../../01-getting-started/networks.md)
+A list of available `configs` can be found [here](../01-getting-started/networks.md)
 
 :::caution
 :fire\_extinguisher: If you chose to enable JsonRpc (it will run on port `8545` by default) make sure that you set
-up [Firewall rules](../firewall-configuration.md) either in DigitalOcean or by using Linux `iptables`
+up [Firewall rules](../07-resources/firewall-configuration.md) either in DigitalOcean or by using Linux `iptables`
 :::
 
 Let's apply our plan and start deploying whole stack (it should take no longer than 3 minutes)
@@ -162,7 +161,7 @@ Explore Nethermind metrics, visualize and analyse using prometheus syntax, a lis
 descriptions can be found here:
 
 {% content-ref url="../ethereum-client/metrics/" %}
-[metrics](../../04-monitoring/metrics-explanation/README.md)
+[metrics](metrics-explanation/README.md)
 {% endcontent-ref %}
 
 ![](</img/image(51).png>)
