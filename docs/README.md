@@ -1,3 +1,7 @@
+---
+sidebar_position: 0
+---
+
 # Welcome to Nethermind
 
 Welcome to the Nethermind Client documentation! Nethermind is a leading provider of Ethereum solutions for developers

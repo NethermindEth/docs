@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Nethermind Documentation',
     tagline: 'Welcome to Nethermind: Your High-Performance Gateway to the Ethereum Network',
-    url: 'https://docs.nethermind.io/',
-    baseUrl: '/',
+    url: 'https://nethermind.github.io/',
+    baseUrl: '/docs',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
