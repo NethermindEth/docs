@@ -514,7 +514,7 @@ default config files as this is enabled by default.
 ### Choosing the Network
 
 Depending on the network you want to run the node for, choose the `--config` variable. For more about networks,
-check [here](../01-getting-started/networks.md).
+check [here](../get-started/networks.md).
 
 `--config` is the config file for the network you want to connect to. For example, to run a node for the goerli
 testnet use `--config goerli`.

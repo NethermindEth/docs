@@ -86,7 +86,7 @@ Determines the configuration file of the network on which Nethermind will be run
 --config xdai
 ```
 
-More on that [here](../../01-getting-started/networks.md).
+More on that [here](../../get-started/networks.md).
 
 ### log
 

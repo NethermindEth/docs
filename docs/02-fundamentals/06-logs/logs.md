@@ -5,7 +5,7 @@ description: A quick start example for Görli Testnet Nethermind synchronization
 # Explaining Nethermind logs
 
 You can check the supported operating systems, architectures and hardware requirements
-here: [system-requirements.md](../../01-getting-started/system-requirements.md)
+here: [system-requirements.md](../../get-started/system-requirements.md)
 
 After the node starts, you will see some initial info about the node and then the sync will start. Görli fast sync uses
 a `fast blocks` sync mode initially. The `fast blocks` sync picks some known `pivot block` from the past and

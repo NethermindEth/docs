@@ -104,7 +104,7 @@ You can now provide some basic configuration to your VM/Nethermind Node
 
 ![](</img/image(55).png>)
 
-A list of available `configs` can be found [here](../01-getting-started/networks.md)
+A list of available `configs` can be found [here](../get-started/networks.md)
 
 :::caution
 :fire\_extinguisher: If you chose to enable JsonRpc (it will run on port `8545` by default) make sure that you set

@@ -21,7 +21,7 @@ Nethermind node -&gt; **Step 6 — Set up an Ethereum \(Eth1\) Node**
 
 * [x] Download the Nethermind client
 
-You can get it either from [Github Releases or our Downloads page](../../01-getting-started/installing-nethermind.md#downloading-releases)
+You can get it either from [Github Releases or our Downloads page](../../get-started/installing-nethermind.md#downloading-releases)
 
 {% page-ref page="../ethereum-client/download-sources/" %}
 

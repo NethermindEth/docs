@@ -22,7 +22,7 @@ Nethermind node -> **Step 6 — Set up an Ethereum (Eth1) Node**
 * [x] Download the Nethermind client
 
 You can get it either
-from [Github Releases or our Downloads page](../../01-getting-started/installing-nethermind.md)
+from [Github Releases or our Downloads page](../../get-started/installing-nethermind.md)
 
 * [x] unzip the package
 * [x] run the Nethermind node (use `Nethermind.Launcher` or change `configs/mainnet.cfg` and
@@ -60,7 +60,7 @@ You should see the node starting:
 
 ### Running Nethermind as a systemd service
 
-You might follow [the following guide](../../01-getting-started/manage-nethermind-with-systemd.md) to run Nethermind as
+You might follow [the following guide](../../get-started/manage-nethermind-with-systemd.md) to run Nethermind as
 a
 systemd service
 

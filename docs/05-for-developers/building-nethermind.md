@@ -30,7 +30,7 @@ To simply run the client with a specific configuration without building tests, s
 
 :::info
 Before running the client or tests, ensure the
-platform-specific [prerequisites](../01-getting-started/system-requirements.md) are met.
+platform-specific [prerequisites](../get-started/system-requirements.md) are met.
 :::
 
 #### Running the client
@@ -75,4 +75,4 @@ docker build -t nethermind .
 ```
 
 For more info about running Docker containers,
-see [How to install](../01-getting-started/installing-nethermind.md#using-docker).
+see [How to install](../get-started/installing-nethermind.md#using-docker).

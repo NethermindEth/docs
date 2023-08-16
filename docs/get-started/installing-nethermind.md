@@ -12,7 +12,7 @@ Nethermind can be installed in several ways:
 - [Via a package manager](#package-managers)
 - [As a standalone download](#standalone-downloads)
 - [As a Docker container](#docker-container)
-- [By building from source code](../for-developers/building-nethermind.md)
+- [By building from source code](../05-for-developers/building-nethermind.md)
 
 ## Prerequisites
 :::info
@@ -108,7 +108,7 @@ Then, install Nethermind as follows:
 brew install nethermind
 ```
 
-For further instructions, see [Running Nethermind](../ethereum-client/running-nethermind/running-the-client.md).
+For further instructions, see [Running Nethermind](../02-fundamentals/01-running-nethermind/running-the-client.md).
 
 ## Standalone downloads
 
@@ -116,7 +116,7 @@ Standalone downloads give users more flexibility by allowing them to install a s
 
 Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) and at [downloads.nethermind.io](https://downloads.nethermind.io) as ZIP archives for x64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
 
-For further instructions, see [Running Nethermind](../ethereum-client/running-nethermind/running-the-client.md).
+For further instructions, see [Running Nethermind](../02-fundamentals/01-running-nethermind/running-the-client.md).
 
 ## Docker container
 
@@ -177,5 +177,5 @@ Note that any Nethermind-specific configuration option can be specified at the e
 
 #### See also
 
-- [Configuration options](../ethereum-client/configuration/)
-- [Building Docker image](../for-developers/building-nethermind.md#bulding-docker-image)
+- [Configuration options](../02-fundamentals/04-configuration/)
+- [Building Docker image](../05-for-developers/building-nethermind.md#bulding-docker-image)
