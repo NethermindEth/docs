@@ -55,8 +55,8 @@ const config = {
           navbar: {
             logo: {
               alt: 'Nethermind',
-              src: 'img/logo_dark.png',
-              srcDark: 'img/logo_light.png',
+              src: 'img/logo_dark.svg',
+              srcDark: 'img/logo_light.svg',
               href: '/',
               target: '_self'
             },
