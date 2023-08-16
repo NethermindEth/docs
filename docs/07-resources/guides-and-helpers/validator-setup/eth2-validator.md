@@ -1,3 +1,6 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # Eth2 Validator
 
 ## Introduction
@@ -66,8 +69,9 @@ other ways to install Nethermind.
 
 #### **Installing Consensus Client**
 
-{% tabs %}
-{% tab title="Lighthouse" %}
+<Tabs>
+<TabItem value="Lighthouse" label="Lighthouse">
+
 Download the [latest release](https://github.com/sigp/lighthouse/releases) from lighthouse. You can also install
 lighthouse through other methods by following [their docs](https://lighthouse-book.sigmaprime.io/installation.html). To
 install v2.3.1 of lighthouse (latest release as of June 21 2022):
@@ -85,9 +89,9 @@ sudo cp ~/lighthouse /usr/local/bin
 rm ~/lighthouse
 ```
 
-{% endtab %}
+</TabItem>
+<TabItem value="Teku" label="Teku">
 
-{% tab title="Teku" %}
 You can install Teku
 following [their docs](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/). \
 Quick guide how to install Teku using binary distribution:\
@@ -114,11 +118,13 @@ rm teku-22.8.1.tar.gz
 
 Install globally:
 
-<pre class="language-bash"><code class="lang-bash"><strong>sudo cp -r teku-22.8.1 /usr/local/bin
-</strong>rm teku-22.8.1
-</code></pre>
-{% endtab %}
-{% endtabs %}
+```bash 
+sudo cp -r teku-22.8.1 /usr/local/bin
+rm teku-22.8.1
+```
+
+</TabItem>
+</Tabs>
 
 ### Configuration
 
@@ -212,12 +218,14 @@ of this directory and execute "_systemctl restart nethermind.service_" command.
 
 Now repeat the process to run a CL beacon chain:
 
-{% tabs %}
-{% tab title="Lighthouse" %}
-<pre class="language-bash"><code class="lang-bash"><strong>sudo useradd --no-create-home --shell /bin/false lighthousebeacon
-</strong>sudo mkdir -p /var/lib/lighthouse
+<Tabs>
+<TabItem value="Lighthouse" label="Lighthouse">
+
+```bash 
+sudo useradd --no-create-home --shell /bin/false lighthousebeacon
+sudo mkdir -p /var/lib/lighthouse
 sudo chown -R lighthousebeacon:lighthousebeacon /var/lib/lighthouse
-</code></pre>
+```
 
 Add systemd file:
 
@@ -284,9 +292,9 @@ sudo journalctl -f -u lighthousebeacon.service -o cat | ccze -A
 ```
 
 Press `Ctrl` + `C` to stop showing those messages.
-{% endtab %}
 
-{% tab title="Teku" %}
+</TabItem>
+<TabItem value="Teku" label="Teku">
 
 ```bash
 sudo useradd --no-create-home --shell /bin/false tekubeacon
@@ -357,8 +365,8 @@ sudo journalctl -f -u tekubeacon.service -o cat | ccze -A
 ```
 
 Press `Ctrl` + `C` to stop showing those messages.
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ### Syncing your node
 
@@ -369,38 +377,29 @@ take a few days to fully sync on mainnet.
 Please ensure both processes are synced before running your validator. Without the latest state your validator will not
 be able to vote and earn rewards on the proof of stake chain.
 
-{% tabs %}
-{% tab title="Nethermind" %}
+<Tabs>
+<TabItem value="Nethermind" label="Nethermind">
+
 A Nethermind node should be synced if the logs no longer say it is downloading blocks. Post merge, new payloads from the
 consensus client should display VALID instead of SYNCING in the logs.
 
-[//]: # (TODO: fix this section)
 
-[//]: # (![]&#40;</img/ScreenShot2022-06-15at4.30.51pm.png>&#41;)
+![](/img/ScreenShot2022-06-15at4.30.51pm.png)
 
-[//]: # ({% endtab %})
+</TabItem>
+<TabItem value="Lighthouse" label="Lighthouse">
 
-[//]: # ()
+Lighthouse logs should show something similar, saying that the node is synced.
 
-[//]: # ({% tab title="Lighthouse" %})
+![](/img/ScreenShot2022-06-15at4.33.12pm.png)
 
-[//]: # (Lighthouse logs should show something similar, saying that the node is synced.)
+</TabItem>
+<TabItem value="Teku" label="Teku">
 
-[//]: # ()
+![](/img/2022-08-30_13h29_58(1).png)
 
-[//]: # (![]&#40;</img/ScreenShot2022-06-15at4.33.12pm.png>&#41;)
-
-[//]: # ({% endtab %})
-
-[//]: # ()
-
-[//]: # ({% tab title="Teku" %})
-
-[//]: # (<figure><img src="/img/2022-08-30_13h29_58 &#40;1&#41;.png" alt=""></img><figcaption></figcaption></figure>)
-
-[//]: # ({% endtab %})
-
-[//]: # ({% endtabs %})
+</TabItem>
+</Tabs>
 
 ## Running a Validator
 
@@ -468,44 +467,9 @@ deposit. The launchpad will go through similar instructions as this guide to ens
 
 You will need testnet ETH in order to run a validator.
 
-{% tabs %}
-{% tab title="Kiln" %}
-Go to the [official Kiln website](https://kiln.themerge.dev/) and click on the _Add network to MetaMask_ button.
 
-Get testnet ETH:
+##### Goerli
 
-* [https://faucet.kiln.ethdevops.io/](https://faucet.kiln.ethdevops.io/)
-* [https://kiln-faucet.pk-net.net/](https://kiln-faucet.pk-net.net/)
-
-Go to the launchpad and follow the instructions:
-
-* [https://kiln.launchpad.ethereum.org/en/](https://kiln.launchpad.ethereum.org/en/)
-
-Check the status of your validator on the beacon chain:
-
-* [https://beaconchain.kiln.themerge.dev](https://beaconchain.kiln.themerge.dev)
-  {% endtab %}
-
-{% tab title="Ropsten" %}
-Get testnet ETH:
-
-* [https://faucet.egorfine.com/](https://faucet.egorfine.com/)
-* [https://faucet.metamask.io/](https://faucet.metamask.io/)
-* [https://faucet.dimensions.network/](https://faucet.dimensions.network/)
-
-The [ethstaker](https://ethstaker.cc/) community discord can provide testnet ETH if you don’t have enough to deposit 32
-ETH.
-
-Go to the launchpad and follow the instructions:
-
-* [https://ropsten.launchpad.ethereum.org/en/](https://ropsten.launchpad.ethereum.org/en/)
-
-Check the status of your validator on the beacon chain:
-
-* [https://ropsten.beaconcha.in/](https://ropsten.beaconcha.in/)
-  {% endtab %}
-
-{% tab title="Goerli" %}
 Get testnet ETH:
 
 * [https://goerlifaucet.com](https://goerlifaucet.com/) (No auth, or social media account required)
@@ -524,8 +488,6 @@ Go to the launchpad and follow the instructions:
 Check the status of your validator on the beacon chain:
 
 * [https://goerli.beaconcha.in/](https://goerli.beaconcha.in/)
-  {% endtab %}
-  {% endtabs %}
 
 ### Configuring a Validator
 
@@ -535,8 +497,8 @@ ETH.
 
 Like configuring your consensus and execution client, create a dedicated user for your validator:
 
-{% tabs %}
-{% tab title="Lighthouse" %}
+<Tabs>
+<TabItem value="Lighthouse" label="Lighthouse">
 
 ```bash
 sudo useradd --no-create-home --shell /bin/false lighthousevalidator
@@ -545,9 +507,8 @@ sudo chown -R lighthousevalidator:lighthousevalidator /var/lib/lighthouse/valida
 sudo chmod 700 /var/lib/lighthouse/validators
 ```
 
-{% endtab %}
-
-{% tab title="Teku" %}
+</TabItem>
+<TabItem value="Teku" label="Teku">
 
 ```bash
 sudo useradd --no-create-home --shell /bin/false tekuvalidator
@@ -560,14 +521,14 @@ Also ensure that new user has access to keystore files:
 ```bash
 sudo chown -R tekuvalidator:tekuvalidator /path/to/keystores
 ```
-
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 Below there is a description on how to start Validator service for various CL on Your machine.
 
-{% tabs %}
-{% tab title="Lighthouse" %}
+<Tabs>
+<TabItem value="Lighthouse" label="Lighthouse">
+
 The keystore file (generated previously and starts with `keystore-` ) needs to be imported for the Lighthouse validator
 client. Replace `/path/to/keystores` with the absolute path you saved your keystore file.
 
@@ -633,9 +594,9 @@ sudo journalctl -f -u lighthousevalidator.service -o cat | ccze -A
 ```
 
 Press `Ctrl` + `C` to stop showing those messages
-{% endtab %}
+</TabItem>
+<TabItem value="Teku" label="Teku">
 
-{% tab title="Teku" %}
 In Teku at first we need to create a file with password used during creation of Validator Keys. In order to do that,
 navigate to the path, where keys created
 on [#generating-validator-keys](eth2-validator.md#generating-validator-keys ) are stored.&#x20;
@@ -707,8 +668,8 @@ sudo journalctl -f -u tekuvalidator.service -o cat | ccze -A
 ```
 
 Press `Ctrl` + `C` to stop showing those messages
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ### Validator Tips and Tricks
 

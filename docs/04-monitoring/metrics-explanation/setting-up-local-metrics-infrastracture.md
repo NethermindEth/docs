@@ -1,6 +1,5 @@
----
-description: Metrics then can be used to monitor your running Nethermind nodes
----
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Setting up local Metrics infrastructure
 
@@ -63,31 +62,29 @@ nethermind:
 
 :::
 
-{% tabs %}
-{% tab title="Runner" %}
+<Tabs>
+<TabItem value="Runner" label="Runner">
 
 ```bash
 ./Nethermind.Runner --Metrics.Enabled true
 ```
 
-{% endtab %}
-
-{% tab title="Launcher" %}
+</TabItem>
+<TabItem value="Launcher" label="Launcher">
 
 ```bash
 ./Nethermind.Launcher --Metrics.Enabled true
 ```
 
-{% endtab %}
-
-{% tab title="Docker" %}
+</TabItem>
+<TabItem value="Docker" label="Docker">
 
 ```bash
 docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 ```
 
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ![http://localhost:9091/](https://nethermind.readthedocs.io/en/latest/_images/pushgateway.png)
 

@@ -34,31 +34,21 @@ cd terraform-nethermind/
 
 Create a `terraform.tfvars` file and add these 2 variables
 
-{% tabs %}
-{% tab title="terraform.tfvars" %}
+```bash title="terraform.tfvars"
 
-```bash
 do_token = "Your DigitalOcean token goes here"
 pvt_key = "path/to/your/private_ssh_key"
 ```
 
-{% endtab %}
-{% endtabs %}
-
 Make sure that the `public_key` variable in `main.tf` file points to your Public key path
 
-{% tabs %}
-{% tab title="main.tf" %}
+```bash title="main.tf" 
 
-```bash
 resource "digitalocean_ssh_key" "key" {
   name       = "SSH Key Example for "
   public_key = file("./private.key.pub")
 }
 ```
-
-{% endtab %}
-{% endtabs %}
 
 ### How to get those variables? ([skip this part](deploy-nethermind-with-monitoring-stack.md#running-the-stack) if you know already)
 

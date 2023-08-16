@@ -66,10 +66,8 @@ Create and edit`docker-compose.yml` file
 nano docker-compose.yml
 ```
 
-{% tabs %}
-{% tab title="docker-compose.yml" %}
+```yaml title="docker-compose.yml" 
 
-```yaml
 version: '3.5'
 
 services:
@@ -102,9 +100,6 @@ volumes:
     driver: local
     name: logs
 ```
-
-{% endtab %}
-{% endtabs %}
 
 Configure Nethermind node via environment variables or use local config file and map it to the one, existing inside
 container (`xdai.cfg` file in above example).
@@ -144,10 +139,8 @@ Things to be configured:
 * [ ] `KeyStore.BlockAuthorAccount` **mining public address** should be provided here as well
 * [ ] `Aura.ForceSealing` set to true
 
-{% tabs %}
-{% tab title="xdai.cfg" %}
+```json title="xdai.cfg" 
 
-```json
 {
   "Init": {
     "WebSocketsEnabled": false,
@@ -220,9 +213,6 @@ Things to be configured:
 }
 
 ```
-
-{% endtab %}
-{% endtabs %}
 
 ## Running Validator node
 
