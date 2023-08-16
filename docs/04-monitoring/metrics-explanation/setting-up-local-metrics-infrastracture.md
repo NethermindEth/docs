@@ -91,9 +91,7 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 1. [x] open _Grafana_ [url](http://localhost:3000) and login with default login \(admin\) and password \(admin\), skip
    password change if you want
 
-[//]: # (TODO: get image)
-
-[//]: # (![]&#40;/img/&#41;)
+![](/img/image(28).png)
 
 * [x] go to dashboards management [`http://localhost:3000/dashboards`](http://localhost:3000/dashboards)and
   click `Nethermind`
@@ -104,11 +102,9 @@ docker run -it --network host nethermind/nethermind:alpine --Metrics.Enabled
 
 ![](/img/image(29).png)
 
-### Prometheus, Pushgateway and Grafana sources
+### Useful Resources
 
-{% embed url="https://github.com/prometheus/prometheus" caption="Prometheus GitHub" %}
-
-{% embed url="https://github.com/prometheus/pushgateway" caption="Pushgateway GitHub" %}
-
-{% embed url="https://github.com/grafana/grafana" caption="Grafana GitHub" %}
+- [Prometheus](https://github.com/prometheus/prometheus)
+- [Pushgateway](https://github.com/prometheus/pushgateway)
+- [Grafana](https://github.com/grafana/grafana)
 

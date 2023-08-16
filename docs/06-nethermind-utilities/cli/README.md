@@ -16,9 +16,7 @@ manually editing the relevant config file or by passing `--JsonRpc.Enabled true`
 
 CLI will display available options \(functions and properties\) when started.
 
-[//]: # (TODO: fix image)
-
-[//]: # (![Nethermind.Cli view]&#40;../../.gitbook/assets/image%20%286%29.png&#41;)
+![Nethermind.Cli view](/img/image(6).png)
 
 CLI will allow you to query the most basic info about the node quickly.
 
@@ -32,15 +30,9 @@ CLI will allow you to query the most basic info about the node quickly.
 8. You can navigate to previous commands by using arrow keys
 9. You can auto-complete basic command with tab
 
-[//]: # (TODO: fix image)
-
-[//]: # (![Nethermind.Cli operations]&#40;../../.gitbook/assets/image%20%2815%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png&#41;)
-
 For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js
 libs or Truffle, Metamask, etc.
 
-Below you will find the available list of CLI operations and you can find more information about each call in JSON RPC
-section.
-
-{% page-ref page="../../ethereum-client/json-rpc/" %}
+You will find the available list of CLI operations and you can find more information about each call in [JSON RPC
+section](../../03-interacting-with-nethermind/02-json-rpc-api/README.md).
 

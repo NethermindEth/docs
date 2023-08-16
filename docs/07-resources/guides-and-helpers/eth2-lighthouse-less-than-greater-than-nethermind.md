@@ -21,7 +21,7 @@ Nethermind node -&gt; **Step 6 — Set up an Ethereum \(Eth1\) Node**
 
 * [x] Download the Nethermind client
 
-You can get it either from Github Releases or our Downloads page:
+You can get it either from [Github Releases or our Downloads page](../../01-getting-started/installing-nethermind.md#downloading-releases)
 
 {% page-ref page="../ethereum-client/download-sources/" %}
 
@@ -64,9 +64,7 @@ You should see the node starting:
 Follow [this guide](../../04-monitoring/metrics-explanation/setting-up-local-metrics-infrastracture.md) to setup
 Prometheus/Grafana based local setup and monitor your node's most important stats there
 
-[//]: # (TODO: get this image)
-
-[//]: # (![]&#40;/img/image&#40;10&#41;.png&#41;)
+![](/img/image(4).png)
 
 :::info
 The Block Number will be **0** for the **unsynced** node
