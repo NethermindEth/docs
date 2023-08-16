@@ -2,7 +2,7 @@ name: Deploy Documentation to Github Pages
 
 on:
   push:
-    branches: [gh-docusaurus]
+    branches: [gh-docusaurus,feature/docusaurus]
   workflow_dispatch:
 
 permissions:
