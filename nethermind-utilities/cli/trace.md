@@ -101,7 +101,7 @@ trace.call(call, traceTypes, blockParameter)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
