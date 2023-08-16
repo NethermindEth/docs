@@ -4,6 +4,7 @@ sidebar_position: 1
 
 # Connecting Wallet
 
-You can connect to the node from [Metamask](https://metamask.io/) by selecting `localhost:8545` from the Metamask network list.
+You can connect to the node from [Metamask](https://metamask.io/) by creating a new connection to `localhost:8545`,
+after add a network using Network Selector.
 
-![Metamask localhost connection](https://github.com/NethermindEth/nethermind/raw/master/docs/source/metamask/localhost.png)
+![Metamask localhost connection](/img/metamask.png)
