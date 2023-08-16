@@ -35,12 +35,18 @@ const config = {
       ({
         blog: false,
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'v1.20.1',
+              path: '/'
+            }
+          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-                        'https://github.com/NethermindEth/docs/tree/main/docs/'
+          editUrl: 'https://github.com/NethermindEth/docs/tree/main/docs/'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
@@ -84,6 +90,11 @@ const config = {
               target: '_self'
             },
             items: [
+              {
+                type: 'docsVersionDropdown',
+                position: 'left',
+                dropdownActiveClassDisabled: true
+              },
               {
                 'aria-label': 'Discord',
                 className: 'header-discord-link',
