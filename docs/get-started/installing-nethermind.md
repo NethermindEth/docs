@@ -177,5 +177,5 @@ Note that any Nethermind-specific configuration option can be specified at the e
 
 #### See also
 
-- [Configuration options](../02-fundamentals/04-configuration/)
+- [Configuration options](../02-fundamentals/04-configuration/README.md)
 - [Building Docker image](../05-for-developers/building-nethermind.md#bulding-docker-image)
