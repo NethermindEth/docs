@@ -1,107 +1,90 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Nethermind Documentation',
-    tagline: 'Welcome to Nethermind: Your High-Performance Gateway to the Ethereum Network',
-    url: 'https://nethermind.github.io/',
-    baseUrl: '/docs',
-    onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon.ico',
+  title: 'Nethermind Documentation',
+  tagline: 'Welcome to Nethermind: Your High-Performance Gateway to the Ethereum Network',
+  url: 'https://nethermind.github.io/',
+  baseUrl: '/docs',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.svg',
 
-    // GitHub pages deployment config.
-    // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'NethermindEth',
-    projectName: 'docs',
-    trailingSlash: false,
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'NethermindEth',
+  projectName: 'docs',
+  trailingSlash: false,
 
-    // Even if you don't use internalization, you can use this field to set useful
-    // metadata like html lang. For example, if your site is Chinese, you may want
-    // to replace "en" with "zh-Hans".
-    i18n: {
-        defaultLocale: 'en',
-        locales: ['en'],
-    },
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en']
+  },
 
-    presets: [
-        [
-            'classic',
-            /** @type {import('@docusaurus/preset-classic').Options} */
-            ({
-                docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        'https://github.com/NethermindEth/docs/tree/main/docs/',
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
-            }),
-        ],
-    ],
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        blog: false,
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+                        'https://github.com/NethermindEth/docs/tree/main/docs/'
+        },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css')
+        }
+      })
+    ]
+  ],
 
-    themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  themeConfig:
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-            navbar: {
-                title: 'Nethermind',
-                items: [
-                    {
-                        href: 'https://github.com/NethermindEth/nethermind',
-                        label: 'GitHub',
-                        position: 'right',
-                    },
-                ],
+          navbar: {
+            logo: {
+              alt: 'Nethermind',
+              src: 'img/logo_dark.png',
+              srcDark: 'img/logo_light.png',
+              href: '/',
+              target: '_self'
             },
-            footer: {
-                style: 'dark',
-                links: [
-                    {
-                        title: 'Docs',
-                        items: [
-                            {
-                                label: 'Docs',
-                                to: '/docs',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Community',
-                        items: [
-                            {
-                                label: 'Discord',
-                                href: 'https://discord.com/invite/PaCMRFdvWT',
-                            },
-                            {
-                                label: 'Twitter',
-                                href: 'https://twitter.com/nethermindeth',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'More',
-                        items: [
-                            {
-                                label: 'GitHub',
-                                href: 'https://github.com/NethermindEth/nethermind',
-                            },
-                        ],
-                    },
-                ],
-                copyright: `Copyright © ${new Date().getFullYear()} Nethermind. Built with Docusaurus.`,
-            },
-            prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
-            },
-        }),
-};
+            items: [
+              {
+                'aria-label': 'Discord',
+                className: 'header-discord-link',
+                href: 'https://discord.com/invite/PaCMRFdvWT',
+                position: 'right'
+              },
+              {
+                'aria-label': 'GitHub',
+                className: 'header-github-link',
+                href: 'https://github.com/NethermindEth/nethermind',
+                position: 'right'
+              }
+            ]
+          },
+          algolia: {
+            appId: '0',
+            apiKey: 'YOUR_SEARCH_API_KEY',
+            indexName: 'YOUR_INDEX_NAME'
+          },
+          prism: {
+            theme: lightCodeTheme,
+            darkTheme: darkCodeTheme
+          }
+        })
+}
 
-module.exports = config;
+module.exports = config
