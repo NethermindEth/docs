@@ -36,7 +36,7 @@ pipeline the same way as normal elements - by using `PipelineBuilder`
 ## Building pipeline
 
 We will build a Nethermind plugin
-\(see [nethermind plugins](../05-for-developers/plugins.md)) which observes newly created
+\(see [nethermind plugins](../developers/plugins.md)) which observes newly created
 blocks and see whether there are any transactions to a specific contract address.
 
 Firstly we need to create our pipeline elements. With this case there will only be 3 of them - source, processor and
