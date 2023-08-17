@@ -1,6 +1,5 @@
 ---
 title: System requirements
-sidebar_label: System requirements
 sidebar_position: 1
 ---
 

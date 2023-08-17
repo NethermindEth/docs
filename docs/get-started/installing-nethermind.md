@@ -1,6 +1,5 @@
 ---
 title: Installing Nethermind
-sidebar_label: Installing Nethermind
 sidebar_position: 2
 ---
 
@@ -15,6 +14,9 @@ Nethermind can be installed in several ways:
 - [By building from source code](../developers/building-from-source.md)
 
 ## Prerequisites
+
+Before installing Nethermind, the following prerequisites must be met for your specific platform.
+
 :::info
 Does not apply to Docker distributions.
 :::
@@ -115,6 +117,75 @@ For further instructions, see [Running Nethermind](../02-fundamentals/01-running
 Standalone downloads give users more flexibility by allowing them to install a specific version of Nethermind, choose the installation location, and prevent automatic updates.
 
 Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) and at [downloads.nethermind.io](https://downloads.nethermind.io) as ZIP archives for x64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
+
+### Confuguring as a Linux service
+
+To install Nethermind as a Linux service, see the [nethermind.service](https://github.com/NethermindEth/nethermind/blob/master/scripts/nethermind.service) unit file as an example.
+As it's configured to run Nethermind as the specific user and group and looks for the executable in a predefined location, the following steps need to be fulfilled:
+
+:::note
+Any of these steps can be omitted by replacing them with corresponding changes in the unit file.
+For instance, if you want to run Nethermind as a different user, change the `User` and `Group` options in the unit file.
+:::
+
+1. Create a new user and group:
+
+ ```bash
+  # Create a new user and group
+  sudo useradd -m -s /bin/bash nethermind
+  
+  # Increase the maximum number of open files
+  sudo bash -c 'echo "nethermind soft nofile 1000000" > /etc/security/limits.d/nethermind.conf'
+  sudo bash -c 'echo "nethermind hard nofile 1000000" >> /etc/security/limits.d/nethermind.conf'
+  
+  # Switch to the nethermind user
+  sudo su -l nethermind
+  
+  # Create required directories
+  # Note that the home directory (~) is now /home/nethermind
+  mkdir ~/build
+  mkdir ~/data
+  ```
+2. [Download Nethermind](#standalone-downloads) and extract the package contents to the `~/build` directory.
+3. Configure options in the `~/.env` file:
+  ```bash title="~/.env"
+  # Required
+  NETHERMIND_CONFIG="mainnet"
+
+  # Optional
+  NETHERMIND_HEALTHCHECKSCONFIG_ENABLED="true" 
+  ```
+
+Now, let's set up the Linux service:
+
+```bash
+# Download the unit file
+curl -L https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/nethermind.service -o nethermind.service
+
+# Move the unit file to the systemd directory
+sudo mv nethermind.service /etc/systemd/system
+
+# Reload the systemd daemon
+sudo systemctl daemon-reload
+
+# Start the service
+sudo systemctl start nethermind
+
+# Optionally, enable the service to start on boot
+sudo systemctl enable nethermind
+```
+
+To ensure the service is up and running, check its status as follows:
+
+```bash
+sudo systemctl status nethermind
+```
+
+To monitor the Nethermind output, run:
+
+```bash
+journalctl -u nethermind -f
+```
 
 For further instructions, see [Running Nethermind](../02-fundamentals/01-running-nethermind/running-the-client.md).
 

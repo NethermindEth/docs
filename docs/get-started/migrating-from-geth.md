@@ -1,8 +1,7 @@
 ---
-sidebar_position: 4
+title: Migrating from Geth
+sidebar_position: 3
 ---
-
-# Migrating From Geth
 
 To migrate from Geth to Nethermind there are few conditions which should be met to ensure seamless and quick transition.
 
