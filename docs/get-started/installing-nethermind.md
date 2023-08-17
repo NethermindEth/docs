@@ -110,7 +110,7 @@ Then, install Nethermind as follows:
 brew install nethermind
 ```
 
-For further instructions, see [Running Nethermind](../fundamentals/01-running-nethermind/running-the-client.md).
+For further instructions, see [Running Nethermind](../fundamentals/running-nethermind.md).
 
 ## Standalone downloads
 
@@ -187,7 +187,7 @@ To monitor the Nethermind output, run:
 journalctl -u nethermind -f
 ```
 
-For further instructions, see [Running Nethermind](../fundamentals/01-running-nethermind/running-the-client.md).
+For further instructions, see [Running Nethermind](../fundamentals/running-nethermind).
 
 ## Docker container
 
