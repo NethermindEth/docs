@@ -1,9 +1,9 @@
 ---
+title: Introduction and overview
+sidebar_label: Introduction
 sidebar_position: 0
 slug: /
 ---
-
-# Welcome to Nethermind
 
 Welcome to the Nethermind Client documentation! Nethermind is a leading provider of Ethereum solutions for developers
 and enterprises. Founded in 2017 by a small team of world-class technologists, Nethermind has worked tirelessly to
