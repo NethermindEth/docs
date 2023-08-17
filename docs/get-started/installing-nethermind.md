@@ -12,7 +12,7 @@ Nethermind can be installed in several ways:
 - [Via a package manager](#package-managers)
 - [As a standalone download](#standalone-downloads)
 - [As a Docker container](#docker-container)
-- [By building from source code](../05-for-developers/building-nethermind.md)
+- [By building from source code](../developers/building-from-source.md)
 
 ## Prerequisites
 :::info

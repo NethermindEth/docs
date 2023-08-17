@@ -1,4 +1,8 @@
-# Building from source
+---
+title: Building from source
+sidebar_label: Building from source
+sidebar_position: 0
+---
 
 The Nethermind's source code can be obtained from [our repository](https://github.com/NethermindEth/nethermind) on
 GitHub:
@@ -9,8 +13,8 @@ git clone --recursive https://github.com/nethermindeth/nethermind.git
 
 There are two options buiding Nethermind from source code:
 
-* [Standalone binaries](building-nethermind.md#building-standalone-binaries)
-* [Docker image](building-nethermind.md#bulding-docker-image)
+* [Standalone binaries](#building-standalone-binaries)
+* [Docker image](#bulding-docker-image)
 
 ## Building standalone binaries
 
@@ -30,7 +34,7 @@ To simply run the client with a specific configuration without building tests, s
 
 :::info
 Before running the client or tests, ensure the
-platform-specific [prerequisites](../get-started/system-requirements.md) are met.
+platform-specific [prerequisites](../get-started/installing-nethermind#prerequisites) are met.
 :::
 
 #### Running the client
@@ -75,4 +79,4 @@ docker build -t nethermind .
 ```
 
 For more info about running Docker containers,
-see [How to install](../get-started/installing-nethermind.md#using-docker).
+see [Installing Nethermind](../get-started/installing-nethermind#docker-container).

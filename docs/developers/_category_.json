@@ -1,0 +1,8 @@
+{
+  "position": 5,
+  "label": "Developers",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}
