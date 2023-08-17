@@ -97,15 +97,21 @@ const config = {
                 dropdownActiveClassDisabled: true
               },
               {
+                'aria-label': 'GitHub',
+                className: 'header-github-link',
+                href: 'https://github.com/NethermindEth/nethermind',
+                position: 'right'
+              },
+              {
                 'aria-label': 'Discord',
                 className: 'header-discord-link',
                 href: 'https://discord.com/invite/PaCMRFdvWT',
                 position: 'right'
               },
               {
-                'aria-label': 'GitHub',
-                className: 'header-github-link',
-                href: 'https://github.com/NethermindEth/nethermind',
+                'aria-label': 'X',
+                className: 'header-x-link',
+                href: 'https://twitter.com/NethermindEth',
                 position: 'right'
               }
             ]
