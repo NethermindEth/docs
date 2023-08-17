@@ -60,7 +60,7 @@ You should see the node starting:
 
 ### Running Nethermind as a systemd service
 
-You might follow [the following guide](../../get-started/manage-nethermind-with-systemd.md) to run Nethermind as
+You might follow [the following guide](../../get-started/installing-nethermind.md#confuguring-as-a-linux-service) to run Nethermind as
 a
 systemd service
 

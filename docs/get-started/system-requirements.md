@@ -49,7 +49,7 @@ Nonetheless, for a comprehensive understanding of disk growth and usage, we reco
 
 #### Database growth
 
-Nethermind requires approximately 504 GB of disk space (as of May 2023) after a fresh Ethereum Mainnet sync using default parameters. This size increases over time as the Ethereum chain grows. The node's database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at a rate of approximately 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../02-fundamentals/08-how-to-reduce-database-size/README.md).<br />
+Nethermind requires approximately 504 GB of disk space (as of May 2023) after a fresh Ethereum Mainnet sync using default parameters. This size increases over time as the Ethereum chain grows. The node's database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at a rate of approximately 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/08-how-to-reduce-database-size/README.md).<br />
 Having a larger disk space allocation reduces the need for frequent maintenance and alleviates concerns about the chain outgrowing the available space. It's worth noting that the only drawback of running a smaller disk is the requirement for more regular resyncing or pruning. We believe that a 2 TB disk will suffice for most users. However, the choice between 1 TB and 2 TB depends on factors such as hardware costs, cloud provider expenses, and individual requirements.
 
 #### Disk speed
@@ -64,7 +64,7 @@ A node can be run using different syncing options, and each option has different
 - **Ancient barriers.** Nethermind allows you to specify how many old block bodies and receipts you want to store. By default, Nethermind sets the ancient barrier at block 11052984. This block is significant because it marks the deployment of the deposit contract required for consensus client deposit scanning for validators. Peers and JSON-RPC requests will not have access to block bodies and receipts older than the ancient barrier.
 - **Non-validator mode.** This mode drops all historical receipts and bodies, but it cannot be used for validation.
 
-For more details, see [sync modes](../02-fundamentals/03-sync-modes.md).
+For more details, see [sync modes](../fundamentals/03-sync-modes.md).
 
 #### Database size with different configurations
 

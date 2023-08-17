@@ -4,8 +4,5 @@
   "collapsible": true,
   "link": {
     "type": "generated-index"
-  },
-  "customProps": {
-    "description": "General overview and introduction of Nethermind Execution Client"
   }
 }

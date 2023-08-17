@@ -37,7 +37,7 @@ a `"HealthChecks"` section to the config file.&#x20;
 JSON RPC Service needs to be enabled in order for health checks to work `--JsonRpc.Enabled true`
 :::
 
-Each configuration option is described [here](../02-fundamentals/04-configuration/healthchecks.md).
+Each configuration option is described [here](../fundamentals/04-configuration/healthchecks.md).
 
 #### Enabling Health Checks without UI&#x20;
 
@@ -103,7 +103,7 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 This check verifies if the client receives messages from the CL. If you see this warning in your logs, it means that
 there is something wrong with CL<->Nethermind communication. Check more about setting up Nethermind and
-CL [here](../02-fundamentals/10-running-nethermind-post-merge.md).
+CL [here](../fundamentals/10-running-nethermind-post-merge.md).
 
 ```
 No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.
