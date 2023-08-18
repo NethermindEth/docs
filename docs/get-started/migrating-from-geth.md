@@ -1,6 +1,6 @@
 ---
 title: Migrating from Geth
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 To migrate from Geth to Nethermind there are few conditions which should be met to ensure seamless and quick transition.
@@ -35,7 +35,7 @@ to [#option-1b-use-sedge-to-install-nethermind-next-to-geth-quickly](migrating-f
 #### Step 2 - Run secondary CL client for Nethermind syncing purpose only
 
 Please refer to
-a [#step-2-installing-consensus-client](../fundamentals/10-running-nethermind-post-merge.md#step-2-installing-consensus-client)
+a [#step-2-installing-consensus-client](consensus-clients.md)
 to install secondary CL client beacon node which will be used only for Nethermind syncing purpose.\
 Once it is installed ensure it is not colliding with primary CL currently used by Geth.
 
@@ -55,7 +55,7 @@ NETHERMIND\_ENGINE\_PORT should be changed to value selected in next step (prefe
 
 #### Step 3 - Run Nethermind and wait for Sync
 
-Please refer to a [#step-4-run-nethermind](../fundamentals/10-running-nethermind-post-merge.md#step-4-run-nethermind)for
+Please refer to a [#step-4-run-nethermind](consensus-clients.md)for
 instruction on how to run Nethermind.
 
 :::caution
@@ -164,7 +164,7 @@ it may cause some unexpected problems during procedure of syncing Nethermind.
 #### Step 2 - Download Nethermind latest release
 
 Please refer to
-a [#step-1-installing-nethermind](../fundamentals/10-running-nethermind-post-merge.md#step-1-installing-nethermind) to see
+a [#step-1-installing-nethermind](consensus-clients.md) to see
 available options or use [**Sedge** ](https://docs.sedge.nethermind.io/) which is a one-click setup tool for running
 node
 developed by Nethermind Team.
@@ -179,7 +179,7 @@ to Nethermind jwtsecret or point Nethermind to that jwtsecret using command:\
 Nethermind will generate jwtsecret in `keystore` directory and if not specified, it will use this secret.
 
 After reconfiguring CL, run Nethermind an monitor it. Please refer to
-a [#step-4-run-nethermind](../fundamentals/10-running-nethermind-post-merge.md#step-5-run-nethermind)for instruction on how to
+a [#step-4-run-nethermind](consensus-clients.md)for instruction on how to
 run Nethermind.
 
 Now Nethermind node should be syncing well using CL reconfigured on machine. To monitor status of syncing there is a
