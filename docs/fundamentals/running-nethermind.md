@@ -13,7 +13,7 @@ To get the latest Nethermind version, see [Installing Nethermind](../get-started
 ## Running directly
 
 For advanced users, running the Nethermind client directly is the best option as it gives complete control over the
-configuration parameters. Nethermind is mainly controlled by command line options (or arguments, flags).
+configuration parameters. Nethermind is mainly controlled by command line options (aka arguments or flags).
 
 The full list of options can be displayed by running:
 
@@ -67,7 +67,7 @@ For instance, to launch the client with the default configuration for the Mainne
 </TabItem>
 </Tabs>
 
-For detailed info about the available configuration options, see [Configuration](./04-configuration/README.md).
+For detailed info about the available configuration options, see [Configuration](./configuration.md).
 
 ## Running with the launcher
 

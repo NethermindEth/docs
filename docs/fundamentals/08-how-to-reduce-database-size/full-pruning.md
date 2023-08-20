@@ -48,7 +48,7 @@ both `InMemory` and `Full`, set the flag `Pruning.Mode=None`.
 ## How to configure Full Pruning
 
 As a very first point please review a Pruning configuration options from this documentation
-page: [pruning.md](../04-configuration/pruning.md).
+page: [pruning.md](../configuration#pruning).
 
 To activate the Full Pruning feature, you must set either the `Pruning.Mode=Hybrid` or `Pruning.Mode=Full` flag for your
 node.

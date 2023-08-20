@@ -6,8 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Nethermind Documentation',
-  tagline: 'Welcome to Nethermind: Your High-Performance Gateway to the Ethereum Network',
+  title: 'Nethermind documentation',
   url: 'https://nethermind.github.io/',
   baseUrl: '/docs',
   onBrokenLinks: 'throw',

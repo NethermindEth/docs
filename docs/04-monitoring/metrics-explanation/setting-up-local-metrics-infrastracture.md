@@ -6,7 +6,7 @@ import TabItem from "@theme/TabItem";
 ## Metrics Configuration
 
 Nethermind metrics can be consumed by _Prometheus/Grafana_ if configured
-in [Metrics configuration category](../../fundamentals/04-configuration/metrics.md).
+in [Metrics configuration category](../../fundamentals/configuration#metrics).
 
 ## Metrics infrastructure
 

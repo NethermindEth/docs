@@ -37,7 +37,7 @@ a `"HealthChecks"` section to the config file.&#x20;
 JSON RPC Service needs to be enabled in order for health checks to work `--JsonRpc.Enabled true`
 :::
 
-Each configuration option is described [here](../fundamentals/04-configuration/healthchecks.md).
+Each configuration option is described [here](../fundamentals/configuration#healthchecks).
 
 #### Enabling Health Checks without UI&#x20;
 
