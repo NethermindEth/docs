@@ -993,7 +993,133 @@ Below is the list of the basic options followed by an exhaustive list of options
 
 - **`--Sync.AncientBodiesBarrier`** `NETHERMIND_SYNCCONFIG_ANCIENTBODIESBARRIER`
 
-  The earliest body downloaded in fast sync when `--Sync.DownloadBodiesInFastSync true`. The actual value is determined from `max(1, min(PivotNumber, AncientBodiesBarrier))`.
+  The earliest body downloaded with fast sync when `--Sync.DownloadBodiesInFastSync true`. The actual value is determined from `max(1, min(PivotNumber, AncientBodiesBarrier))`.
+
+- **`--Sync.AncientReceiptsBarrier`** `NETHERMIND_SYNCCONFIG_ANCIENTRECEIPTSBARRIER`
+
+  The earliest receipt downloaded with fast sync when `--Sync.DownloadReceiptsInFastSync true`. The actual value is determined from `max(1, min(PivotNumber, max(AncientBodiesBarrier, AncientReceiptsBarrier)))`.
+
+- **`--Sync.BlocksDbTuneDbMode`** `NETHERMIND_SYNCCONFIG_BLOCKSDBTUNEDBMODE`
+
+  Configure the blocks database for write optimizations during sync. Defaults to `EnableBlobFiles`.
+
+  Allowed values:
+
+  - `Default`
+  - `WriteBias`
+  - `HeavyWrite`
+  - `AggressiveHeavyWrite`
+  - `DisableCompaction`
+  - `EnableBlobFiles`
+
+- **`--Sync.DownloadBodiesInFastSync`** `NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC`
+
+  Whether to download the block bodies in the Fast sync mode. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.DownloadBodiesInFastSync`** `NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC`
+
+  Whether to download the block bodies in the Fast sync mode. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.DownloadHeadersInFastSync`** `NETHERMIND_SYNCCONFIG_DOWNLOADHEADERSINFASTSYNC`
+
+  Whether to download the old block headers in the Fast sync mode. If `false`, Nethermind downloads only recent blocks headers. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.DownloadReceiptsInFastSync`** `NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC`
+
+  Whether to download receipts in the Fast sync mode. This slows down the process by a few hours but allows to interact with dApps that perform extensive historical logs searches. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.FastBlocks`** `NETHERMIND_SYNCCONFIG_FASTBLOCKS`
+
+  Whether to first download blocks from the provided pivot number downwards in the Fast sync mode. This allows for parallelization of requests with many sync peers and with no need to worry about syncing a valid branch (syncing downwards to 0). You need to provide the pivot block number, hash, and total difficulty from a trusted source (e.g., Etherscan) and confirm with other sources if you want to change it. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.FastSync`** `NETHERMIND_SYNCCONFIG_FASTSYNC`
+
+  Whether to use the Fast sync mode (the eth/63 synchronization algorithm). Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.FastSyncCatchUpHeightDelta`** `NETHERMIND_SYNCCONFIG_FASTSYNCCATCHUPHEIGHTDELTA`
+
+  In Fast sync mode, the min height threshold limit up to which the Full sync, if already on, stays on when the chain is behind the network head. If the limit is exceeded, it switches back to Fast sync. For regular usage scenarios, setting this value lower than 32 is not recommended as this can cause issues with chain reorgs. Note that the last 2 blocks are always processed in Full sync, so setting it lower than 2 has no effect. Defaults to `8192`.
+
+- **`--Sync.FixReceipts`** `NETHERMIND_SYNCCONFIG_FIXRECEIPTS`
+
+  Whether to enable receipts validation that checks for receipts that might be missing because of a bug. If needed, receipts are downloaded from the network. If `true`, the pivot number must be same one used originally as it's used as a cut-off point. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.FixTotalDifficulty`** `NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTY`
+
+  Whether to recalculate the total difficulty from `--Sync.FixTotalDifficultyStartingBlock` to `--Sync.FixTotalDifficultyLastBlock`. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.FixTotalDifficultyLastBlock`** `NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTYLASTBLOCK`
+
+  The last block to recalculate the total difficulty for. If not specified, the best known block is used.
+
+- **`--Sync.FixTotalDifficultyStartingBlock`** `NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTYSTARTINGBLOCK`
+
+  The first block to recalculate the total difficulty for.
+
+- **`--Sync.MaxAttemptsToUpdatePivot`** `NETHERMIND_SYNCCONFIG_MAXATTEMPTSTOUPDATEPIVOT`
+
+  The max number of attempts to update the pivot block based on the FCU message from the consensus client. Defaults to `900`.
+
+- **`--Sync.MaxProcessingThreads`** `NETHERMIND_SYNCCONFIG_MAXPROCESSINGTHREADS`
+
+  The max number of threads used for syncing. `0` to use the number of logical processors. Defaults to `0`.
+
+- **`--Sync.NetworkingEnabled`** `NETHERMIND_SYNCCONFIG_NETWORKINGENABLED`
+
+  Whether to connect to peers and sync. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.NonValidatorNode`** `NETHERMIND_SYNCCONFIG_NONVALIDATORNODE`
+
+  Whether to operate as a non-validator. If `true`, the `--Sync.DownloadReceiptsInFastSync` and `--Sync.DownloadBodiesInFastSync` can be set to `false`. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.PivotHash`** `NETHERMIND_SYNCCONFIG_PIVOTHASH`
+
+  The hash of the pivot block for the Fast sync mode.
+
+- **`--Sync.PivotNumber`** `NETHERMIND_SYNCCONFIG_PIVOTNUMBER`
+
+  The number of the pivot block for the Fast sync mode. Defaults to `0`.
+
+- **`--Sync.PivotTotalDifficulty`** `NETHERMIND_SYNCCONFIG_PIVOTTOTALDIFFICULTY`
+
+  The total difficulty of the pivot block for the Fast sync mode.
+
+- **`--Sync.SnapSync`** `NETHERMIND_SYNCCONFIG_SNAPSYNC`
+
+  Whether to use the Snap sync mode. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.SnapSyncAccountRangePartitionCount`** `NETHERMIND_SYNCCONFIG_SNAPSYNCACCOUNTRANGEPARTITIONCOUNT`
+
+  The number of account range partitions to create. Increases the Snap sync request concurrency. Allowed values are between between 1 and 256. Defauls to `8`.
+
+- **`--Sync.StrictMode`** `NETHERMIND_SYNCCONFIG_STRICTMODE`
+
+  Whether to disable some optimizations and do a more extensive sync. Useful when sync state is corrupted. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Sync.SynchronizationEnabled`** `NETHERMIND_SYNCCONFIG_SYNCHRONIZATIONENABLED`
+
+  Whether to download and process new blocks. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.TuneDbMode`** `NETHERMIND_SYNCCONFIG_TUNEDBMODE`
+
+  Configure the database for write optimizations during sync. Significantly reduces the total number of writes and sync time if you are not network limited. Allowed values: `true` `false`. Defaults to `Default`.
+
+  Allowed values:
+
+  - `Default`
+  - `WriteBias`
+  - `HeavyWrite`
+  - `AggressiveHeavyWrite`
+  - `DisableCompaction`
+  - `EnableBlobFiles`
+
+- **`--Sync.UseGethLimitsInFastBlocks`** `NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS`
+
+  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's  a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Goerli, Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Sync.WitnessProtocolEnabled`** `NETHERMIND_SYNCCONFIG_WITNESSPROTOCOLENABLED`
+
+  Whether to enable the Witness protocol. Allowed values: `true` `false`. Defaults to `false`.
 
 </p>
 </details>
