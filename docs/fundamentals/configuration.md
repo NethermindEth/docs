@@ -10,8 +10,8 @@ import TabItem from "@theme/TabItem";
 Nethermind is highly configurable. There are 3 ways of configuring it, listed by priority:
 
 - [Command line options](#command-line-options) (aka arguments or flags)
-- [Configuration file](#configuration-file)
 - [Environment variables](#environment-variables)
+- [Configuration file](#configuration-file)
 
 :::note
 Given the above priority list, an option defined in a more priority way overrides the same option defined elsewhere if any.
@@ -486,7 +486,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--JsonRpc.AdditionalRpcUrls <value>`** `NETHERMIND_JSONRPCCONFIG_ADDITIONALRPCURLS`
 
-  A JSON array of additional RPC URLs to listen at with protocol and JSON-RPC module list.
+  An array of additional RPC URLs to listen at with protocol and JSON-RPC module list.
   For instance, `[http://localhost:8546|http;ws|eth;web3]`.
 
 - **`--JsonRpc.BufferResponses <value>`** `NETHERMIND_JSONRPCCONFIG_BUFFERRESPONSES`
@@ -504,7 +504,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--JsonRpc.EnabledModules <value>`** `NETHERMIND_JSONRPCCONFIG_ENABLEDMODULES`
 
-  A JSON array of JSON-RPC modules to enable.
+  An array of JSON-RPC modules to enable. For instance, `[engine,eth]`.
 
   Built-in modules:
 
@@ -1149,6 +1149,42 @@ The command line options are case-sensitive and can be defined only once unless 
 <details>
 <summary className="nd-details-heading">
 
+#### TraceStore
+
+</summary>
+<p>
+
+- **`--TraceStore.BlocksToKeep <value>`** `NETHERMIND_TRACESTORECONFIG_BLOCKSTOKEEP`
+
+  The number of blocks to keep in the trace storage, counting from the head. If `0`, all traces of the processed blocks are kept. Defaults to `10000`.
+
+- **`--TraceStore.DeserializationParallelization <value>`** `NETHERMIND_TRACESTORECONFIG_DESERIALIZATIONPARALLELIZATION`
+
+  The maximum parallelization for the `trace_filter` request deserialization. `0` to use the number of logical processors. In the case of resource shortage, try a lower value. Defaults to `0`.
+
+- **`--TraceStore.Enabled <value>`** `NETHERMIND_TRACESTORECONFIG_ENABLED`
+
+  Whether to enable the TraceStore. If enabled, traces come from the database if possible. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--TraceStore.TraceTypes <value>`** `NETHERMIND_TRACESTORECONFIG_TRACETYPES`
+
+  The types of the traces to store. Defaults to `Trace` and `Rewards`.
+
+  Allowed values:
+
+  - `None`
+  - `VmTrace`
+  - `StateDiff`
+  - `Trace`
+  - `Rewards`
+  - `All`
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
 #### TxPool
 
 </summary>
@@ -1196,10 +1232,6 @@ The command line options are case-sensitive and can be defined only once unless 
 </p>
 </details>
 
-## Configuration file
-
-The configuration file is a JSON file with `.cfg` extension. The bundled configuration files are located in the `configs` directory and named after the network they are used for. For instance, see the Mainnet configuration file [`mainnet.cfg`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.cfg).
-
 ## Environment variables
 
 To configure Nethermind using environment variables, the following naming convention is used in all uppercase:
@@ -1208,5 +1240,9 @@ To configure Nethermind using environment variables, the following naming conven
 NETHERMIND_{MODULE_NAME}CONFIG_{PROPERTY_NAME}
 ```
 For instance, the environment variable equivalent of the command line `--JsonRpc.JwtSecretFile` option is `NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE`. For the list of configuration modules and their options, see [Options by modules](#options-by-modules).
+
+## Configuration file
+
+The configuration file is a JSON file with `.cfg` extension. The bundled configuration files are located in the `configs` directory and named after the network they are used for. For instance, see the Mainnet configuration file [`mainnet.cfg`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.cfg).
 
 [web3-secret-storage]: https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage
