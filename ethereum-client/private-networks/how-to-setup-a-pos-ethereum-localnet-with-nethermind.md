@@ -140,6 +140,8 @@ The `eth2-package` comes out-of-the-box with a few observability tools, includin
 * A [beacon metrics gazer service](https://github.com/dapplion/beacon-metrics-gazer) to collect network-wide participation metrics.
 * A [JSON RPC Snooper](https://github.com/ethDreamer/json_rpc_snoop) to log responses & requests between the EL engine API and the CL client.
 
+To add your own custom Grafana dashboard template, it is recommended that you fork the `eth2-package` repository and add your configuration [here](https://github.com/kurtosis-tech/eth2-package/tree/main/static_files/grafana-config/dashboards).
+
 ### Deploying on Kubernetes
 As mentioned earlier, Kurtosis packages (i.e. environment definitions) are portable and will work the same way over Docker or on Kubernetes. Should you require a larger scale devnet, Kurtosis can deploy any package, including the `eth2-package` on Kubernetes by following these docs [here](https://docs.kurtosis.com/k8s/).
 
