@@ -101,6 +101,6 @@ Run the launcher as follows:
 
 1. To run a node, select `Ethereum Node`
 2. Then, select the desired network (e.g., Mainnet, Sepolia, Goerli)
-3. Then, select the [sync mode](./03-sync-modes.md) and you're ready to go
+3. Then, select the [sync mode](sync.md) and you're ready to go
 
 If you need just the Nethermind command line interface (CLI), select `CLI` in the first step.

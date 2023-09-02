@@ -55,17 +55,17 @@ If you have any issues, please reach out to us on Discord: [https://discord.gg/X
 
 ## Can I disable logging to file?
 
-You can find more details on the logging config page [here](../fundamentals/06-logs/logging-configuration.md)
+You can find more details on the logging config page [here](../fundamentals/logs.md)
 
 ## Can I disable logging of JSON RPC calls?
 
-You can find more details on the logging config page [here](../fundamentals/06-logs/logging-configuration.md)
+You can find more details on the logging config page [here](../fundamentals/logs.md)
 
 ## How can I configure validator on AuRa / Clique?
 
 You can find more details on running validators in the docs ->
 for [AuRa](./guides-and-helpers/validator-setup/aura-validator.md) and
-for [Clique](../fundamentals/09-private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md).
+for [Clique](../fundamentals/private-networks/clique.md).
 
 You can learn more about how to setup a aura validator [here](./guides-and-helpers/validator-setup/aura-validator.md)
 

@@ -1,8 +1,8 @@
 ---
-description: Private networks of Nethermind Client
+title: Private networks
+sidebar_position: 0
+slug: ./
 ---
-
-# Private Networks
 
 It is possible to configure a private network \(private blockchain\) using Nethermind nodes. Before you setup a private
 network you will need to make a few decisions. One of them is choosing a consensus protocol that will be used for

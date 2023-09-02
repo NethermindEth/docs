@@ -1,8 +1,7 @@
 ---
-description: Set of validators sealing blocks on private clique network
+title: Clique-based chain
+sidebar_position: 1
 ---
-
-# How to setup a Nethermind only Clique based chain
 
 ### TL;DR
 

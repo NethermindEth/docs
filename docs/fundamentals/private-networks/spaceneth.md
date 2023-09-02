@@ -1,4 +1,7 @@
-# How to setup a Nethermind only Spaceneth based chain
+---
+title: Spaceneth-based chain
+sidebar_position: 2
+---
 
 Spaceneth private network setup looks very similar to the above Clique setup. However, there are few major differences and will be described below.
 

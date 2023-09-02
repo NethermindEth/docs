@@ -1,10 +1,7 @@
 ---
-description: >-
-  Explanation of Full Pruning, including its requirements and steps to execute
-  it.
+title: Pruning
+sidebar_position: 5
 ---
-
-# Full Pruning
 
 ## Overview
 

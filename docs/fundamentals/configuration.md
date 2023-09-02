@@ -72,7 +72,7 @@ The command line options are case-sensitive and can be defined only once unless 
   </p>
   </details>
 
-- **`-c, --configsDirectory <path>`**
+- **`-cd, --configsDirectory <path>`**
 
   An absolute or relative path to the configuration files directory. Defaults to `configs`.
 
