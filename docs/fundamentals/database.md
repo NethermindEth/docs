@@ -37,8 +37,8 @@ designed to slow the growth rate, these disks may eventually run out of free spa
 
 Current options to reduce db size are:
 
-1. [Re-sync database from scratch](resync-database-from-scratch.md)
-2. [Full pruning](../pruning.md)
+1. [Re-sync database from scratch](sync.md#resync-a-node-from-scratch)
+2. [Full pruning](pruning.md)
 
 The table below presents a short comparison of these methods including possible fine-tuning of each method. Data was
 fetched from a node running on a machine with the below specifications:\
