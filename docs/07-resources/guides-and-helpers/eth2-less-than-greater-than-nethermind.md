@@ -87,4 +87,4 @@ If the result shows `false` it means that your node is **synced**&#x20;
 {"jsonrpc":"2.0","result":false,"id":1}
 ```
 
-Check [the following guide](../../04-monitoring/health-check.md) to get even better node health monitoring:
+Check [the following guide](../../monitoring/health-check.md) to get even better node health monitoring:

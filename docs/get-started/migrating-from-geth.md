@@ -75,7 +75,7 @@ work properly as a Validator.
 Another option is to use a health module which will also return a information about current state of syncing.
 
 :::tip
-You can see more details of how to monitor [Node Health here](../04-monitoring/health-check.md)
+You can see more details of how to monitor [Node Health here](../monitoring/health-check.md)
 :::
 
 #### Step 4 - Stop Geth instance
