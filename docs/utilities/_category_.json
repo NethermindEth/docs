@@ -1,6 +1,6 @@
 {
   "position": 6,
-  "label": "Nethermind Utilities",
+  "label": "Utilities",
   "collapsible": true,
   "link": {
     "type": "generated-index"
