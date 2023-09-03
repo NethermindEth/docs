@@ -34,5 +34,5 @@ For more advanced operations with the node use [Web3](https://nethermind.readthe
 libs or Truffle, Metamask, etc.
 
 You will find the available list of CLI operations and you can find more information about each call in [JSON RPC
-section](../../03-interacting-with-nethermind/02-json-rpc-api/README.md).
+section](../../interacting/json-rpc/README.md).
 

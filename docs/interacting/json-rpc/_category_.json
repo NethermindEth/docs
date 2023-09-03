@@ -1,0 +1,8 @@
+{
+  "position": 0,
+  "label": "JSON-RPC",
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

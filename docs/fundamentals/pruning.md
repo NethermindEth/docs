@@ -71,7 +71,7 @@ Manual mode enables Full Pruning to be triggered only upon request, providing fu
 configure this mode, add the following flags to your node: `--Pruning.Mode=Hybrid --Pruning.FullPruningTrigger=Manual`.
 
 Additionally, you can add an Admin module to your JsonRPC to
-execute [#admin\_prune](../03-interacting-with-nethermind/02-json-rpc-api/admin.md#admin_prune) command. Here's how
+execute [#admin\_prune](../interacting/json-rpc/admin.md#admin_prune) command. Here's how
 to do it:
 
 1. Add `Admin` module to `EnabledModules` on current JsonRpc port (below example - append Admin as last value if you are
@@ -81,7 +81,7 @@ to do it:
    `JsonRpc.AdditionalRpcUrls=http://127.0.0.1:8555|http|admin`
 
 Now restart a node and if everything is properly configured, you should be able to
-trigger [#admin\_prune](../03-interacting-with-nethermind/02-json-rpc-api/admin.md#admin_prune) command and Full
+trigger [#admin\_prune](../interacting/json-rpc/admin.md#admin_prune) command and Full
 Pruning should
 be started.
 
