@@ -1,4 +1,7 @@
-# Custom Analytic Tools
+---
+title: Custom analytic tools
+sidebar_position: 2
+---
 
 Check plugins for some easy addition of analytical tools
 
