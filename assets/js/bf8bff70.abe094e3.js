@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[529],{9836:e=>{e.exports=JSON.parse('{"title":"Resources","slug":"/category/resources","permalink":"/docs/category/resources","navigation":{"previous":{"title":"web3","permalink":"/docs/utilities/cli/web3"},"next":{"title":"Frequently Asked Questions","permalink":"/docs/resources/faq"}}}')}}]);
