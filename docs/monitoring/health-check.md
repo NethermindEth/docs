@@ -1,12 +1,10 @@
 ---
+title: Health check
 sidebar_position: 1
-sidebar_label: Monitoring Node's Health
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
-# Monitoring Node's Health
 
 Nethermind has a pre-packed `Nethermind.HealthChecks.dll` plugin that allows you to monitor your Nethermind node better.
 It leverages the power

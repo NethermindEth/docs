@@ -66,7 +66,7 @@ systemd service
 
 ### Monitoring Nethermind Node Health
 
-Follow [this guide](../../04-monitoring/metrics-explanation/setting-up-local-metrics-infrastracture.md) to setup
+Follow [this guide](../../monitoring/metrics/setting-up-local-metrics-infrastracture.md) to setup
 Prometheus/Grafana based local setup and monitor your node's most important stats there
 
 ![](</img/image(4).png>)
@@ -87,4 +87,4 @@ If the result shows `false` it means that your node is **synced**&#x20;
 {"jsonrpc":"2.0","result":false,"id":1}
 ```
 
-Check [the following guide](../../04-monitoring/monitoring-node-health.md) to get even better node health monitoring:
+Check [the following guide](../../04-monitoring/health-check.md) to get even better node health monitoring:
