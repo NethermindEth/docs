@@ -44,7 +44,7 @@ Enable **JSON RPC** service so that your ETH2 Beacon node will be able to commun
 :::
 
 :::danger
-Remember to setup you [firewall configuration](../../07-resources/firewall-configuration.md)
+Remember to setup you [firewall configuration](../../resources/firewall-configuration.md)
 :::
 Configure EthStats for your node if needed:
 

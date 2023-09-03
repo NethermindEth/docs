@@ -1,7 +1,10 @@
+---
+title: Eth2 Validator
+sidebar_position: 0
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
-# Eth2 Validator
 
 ## Introduction
 
@@ -64,7 +67,7 @@ Run the following command to install Nethermind:
 sudo add-apt-repository ppa:nethermindeth/nethermind; sudo apt install nethermind
 ```
 
-See [here](../../../get-started/consensus-clients.md) for docs for
+See [here](../get-started/consensus-clients.md) for docs for
 other ways to install Nethermind.
 
 #### **Installing Consensus Client**
@@ -146,7 +149,7 @@ sudo chown -R nethermindeth:nethermindeth /usr/share/nethermind
 
 Create a JWT Token which will be used to communicate between consensus and execution clients. For more information about
 JWT Token please refer
-to [this section](../../../get-started/consensus-clients.md#step-3--configure-json-rpc-api).
+to [this section](../get-started/consensus-clients.md#step-3--configure-json-rpc-api).
 
 ```bash
 openssl rand -hex 32 | tr -d "\n" > "/var/lib/nethermind/jwt-secret"

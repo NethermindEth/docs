@@ -1,15 +1,12 @@
 ---
-description: >-
-  How to setup a Nethermind Validator in Aura (Authority Round) consensus
-  algorithm
+title: Aura Validator
+sidebar_position: 1
 ---
-
-# Aura Validator
 
 This article will lead you through docker-compose setup of **Nethermind Aura Validator** (xDai chain in this example).
 Same result can be obtained
-by [Downloading](../../../get-started/installing-nethermind.md) & [Running Nethermind](../../../fundamentals/running-nethermind.md)
-package or by [Building Nethermind](../../../developers/building-from-source.md) from the source code.&#x20;
+by [Downloading](../get-started/installing-nethermind.md) & [Running Nethermind](../fundamentals/running-nethermind.md)
+package or by [Building Nethermind](../developers/building-from-source.md) from the source code.&#x20;
 
 If you chose not to use docker-compose, you can skip docker-compose related sections and read
 about [config file](aura-validator.md#config-file) and [private key ](aura-validator.md#mining-private-key)configuration
@@ -108,8 +105,8 @@ container (`xdai.cfg` file in above example).
 Make sure that `nethermind_db`, `keystore`(`logs` - optional ) are mapped, otherwise you might lose database or keys
 :::
 
-[`NLog.config`](../../../fundamentals/running-nethermind.md) file is optional.\
-[`static-nodes.json`](../../../fundamentals/running-nethermind.md) can be filled with an
+[`NLog.config`](../fundamentals/running-nethermind.md) file is optional.\
+[`static-nodes.json`](../fundamentals/running-nethermind.md) can be filled with an
 array
 of enodes, this is also optional.
 
@@ -133,7 +130,7 @@ Things to be configured:
   for `xdai` 1000000000 is enough)
 * [ ] `EthStats` section if you wish to report node status to the ethstats page for a given network
 * [ ] `Metrics` section if running
-  local/remote [Metrics infrastructure](../../../monitoring/metrics/setting-up-local-metrics-infrastracture.md)
+  local/remote [Metrics infrastructure](../monitoring/metrics/setting-up-local-metrics-infrastracture.md)
 * [ ] `KeyStore.PasswordFiles` path to the file containing password for **mining private key**
 * [ ] `KeyStore.UnlockAccounts` an array of accounts, provide **mining public address** here
 * [ ] `KeyStore.BlockAuthorAccount` **mining public address** should be provided here as well
