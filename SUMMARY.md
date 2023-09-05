@@ -58,6 +58,7 @@
 * [Private Networks](ethereum-client/private-networks/README.md)
   * [How to setup a Nethermind only Clique based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain.md)
   * [How to setup a Nethermind only Spaceneth based chain](ethereum-client/private-networks/how-to-setup-a-nethermind-only-spaceneth-based-chain.md)
+  * [How to set up a Nethermind node in a private PoS Ethereum testnet](ethereum-client/private-networks/how-to-setup-a-pos-ethereum-localnet-with-nethermind.md)
 * [Database](ethereum-client/database.md)
 * [Metrics](ethereum-client/metrics/README.md)
   * [Using dotnet-counters](ethereum-client/metrics/dotnet-counters.md)
