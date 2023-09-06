@@ -225,8 +225,8 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
-| DataGasUsed | `Quantity` |
-| DataGasPrice | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| BlobGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |
@@ -289,6 +289,47 @@ curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"
 {% endtab %}
 {% endtabs %}
 
+## debug_standardTraceBlockToFile
+
+Writes to a file the full stack trace of all invoked opcodes of the transaction specified (or all transactions if not specified) that was included in the block specified. The parent of the block must be present or it will fail. 
+
+| Invocation |
+| :--- |
+| `{"method":"debug_standardTraceBlockToFile","params":[blockHash, options]}` |
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| blockHash | `Hash` |  |
+| options | `GethTraceOptions object` |  |
+
+| Returned type | Description |
+| :--- | :--- |
+| `Array` |  |
+
+{% tabs %}
+{% tab title="Example request of debug_standardTraceBlockToFile" %}
+```
+curl --data '{"method":"debug_standardTraceBlockToFile","params":[blockHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```
+{% endtab %}
+
+{% tab title="Objects in debug_standardTraceBlockToFile" %}
+
+`GethTraceOptions`
+
+| Field name | Type |
+| :--- | :--- |
+| DisableMemory | `Boolean` |
+| DisableStack | `Boolean` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
+| Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
+{% endtab %}
+{% endtabs %}
+
 ## debug_traceBlock
 
 Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail. 
@@ -319,11 +360,14 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -368,11 +412,14 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -431,11 +478,14 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[blockParameter, opti
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -498,7 +548,7 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -535,11 +585,14 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -583,11 +636,14 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -644,11 +700,14 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -691,11 +750,14 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -738,11 +800,14 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -785,11 +850,14 @@ curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 

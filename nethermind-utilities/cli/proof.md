@@ -63,7 +63,7 @@ proof.getTransactionByHash(txHash, includeHeader)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -126,8 +126,8 @@ proof.getTransactionReceipt(txHash, includeHeader)
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
-| DataGasUsed | `Quantity` |
-| DataGasPrice | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| BlobGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |

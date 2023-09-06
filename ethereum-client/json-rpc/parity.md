@@ -115,8 +115,8 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
-| DataGasUsed | `Quantity` |
-| DataGasPrice | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| BlobGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |

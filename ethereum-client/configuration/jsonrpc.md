@@ -24,6 +24,7 @@
 | MethodsLoggingFiltering | NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING | Defines method names of Json RPC service requests to NOT log. Example: {"eth_blockNumber"} will not log "eth_blockNumber" requests. | [engine_newPayloadV1, engine_newPayloadV2, engine_newPayloadV3, engine_forkchoiceUpdatedV1, engine_forkchoiceUpdatedV2] |
 | Port | NETHERMIND_JSONRPCCONFIG_PORT | Port number for JSON RPC calls. Ensure the firewall is configured when enabling JSON RPC. | 8545 |
 | ReportIntervalSeconds | NETHERMIND_JSONRPCCONFIG_REPORTINTERVALSECONDS | Interval between the JSON RPC stats report log | 300 |
+| RequestQueueLimit | NETHERMIND_JSONRPCCONFIG_REQUESTQUEUELIMIT | The queued request limit for calls above the max concurrency amount for (eth_call, eth_estimateGas, eth_getLogs, eth_newFilter, eth_newBlockFilter, eth_newPendingTransactionFilter, eth_uninstallFilter).  If value is set to 0 limit won't be applied. | 500 |
 | RpcRecorderBaseFilePath | NETHERMIND_JSONRPCCONFIG_RPCRECORDERBASEFILEPATH | Base file path for diagnostic JSON RPC recorder. | "logs/rpc.{counter}.txt" |
 | RpcRecorderState | NETHERMIND_JSONRPCCONFIG_RPCRECORDERSTATE | Defines whether the JSON RPC diagnostic recording is enabled on node startup. Do not enable unless you are a DEV diagnosing issues with JSON RPC. Possible values: None/Request/Response/All. | None |
 | Timeout | NETHERMIND_JSONRPCCONFIG_TIMEOUT | JSON RPC' timeout value given in milliseconds. | 20000 |
