@@ -64,7 +64,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -128,8 +128,8 @@ curl --data '{"method":"proof_getTransactionReceipt","params":[txHash, includeHe
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
-| DataGasUsed | `Quantity` |
-| DataGasPrice | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| BlobGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |

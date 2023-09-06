@@ -162,6 +162,7 @@ debug.migrateReceipts(blockNumber)
 
 
 
+
 ## debug.traceBlock
 
 Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail. 
@@ -193,11 +194,14 @@ debug.traceBlock(blockRlp, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -245,11 +249,14 @@ debug.traceBlockByHash(blockHash, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -311,11 +318,14 @@ debug.traceBlockByNumber(blockParameter, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -364,11 +374,14 @@ debug.traceTransaction(transactionHash, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -428,11 +441,14 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -478,11 +494,14 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -528,11 +547,14 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 
@@ -578,11 +600,14 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 
 | Field name | Type |
 | :--- | :--- |
-| DisableStorage | `Boolean` |
 | DisableMemory | `Boolean` |
 | DisableStack | `Boolean` |
-| Tracer | `String` |
+| DisableStorage | `Boolean` |
+| EnableMemory | `Boolean` |
 | Timeout | `String` |
+| Tracer | `String` |
+| TxHash | `Hash` |
+| Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
 

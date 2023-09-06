@@ -87,7 +87,7 @@ eth.call(transactionCall, blockParameter)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -214,7 +214,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -312,7 +312,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -596,8 +596,9 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
-| DataGasUsed | `Quantity` |
-| ExcessDataGas | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| ExcessBlobGas | `Quantity` |
+| ParentBeaconBlockRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -680,8 +681,9 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
-| DataGasUsed | `Quantity` |
-| ExcessDataGas | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| ExcessBlobGas | `Quantity` |
+| ParentBeaconBlockRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1092,7 +1094,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1168,7 +1170,7 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1284,8 +1286,8 @@ eth.getTransactionReceipt(["0x80757153e93d1b475e203406727b62a501187f63e23b8fa999
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
-| DataGasUsed | `Quantity` |
-| DataGasPrice | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| BlobGasPrice | `Quantity` |
 | EffectiveGasPrice | `Quantity` |
 | From | `Address` |
 | To | `Address` |
@@ -1378,8 +1380,9 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
-| DataGasUsed | `Quantity` |
-| ExcessDataGas | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| ExcessBlobGas | `Quantity` |
+| ParentBeaconBlockRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1457,8 +1460,9 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 | Uncles | `Array` |
 | Withdrawals | `Array` |
 | WithdrawalsRoot | `Hash` |
-| DataGasUsed | `Quantity` |
-| ExcessDataGas | `Quantity` |
+| BlobGasUsed | `Quantity` |
+| ExcessBlobGas | `Quantity` |
+| ParentBeaconBlockRoot | `Hash` |
 {% endtab %}
 {% endtabs %}
 
@@ -1601,7 +1605,7 @@ eth.pendingTransactions
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
@@ -1767,7 +1771,7 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | ChainId | `Quantity` |
 | Type | `TxType object` |
 | AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
+| MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
 | S | `Quantity` |
