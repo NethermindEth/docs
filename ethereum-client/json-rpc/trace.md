@@ -453,7 +453,7 @@ Returns all traces of given transaction
 {% tabs %}
 {% tab title="Example request of trace_transaction" %}
 ```
-curl --data '{"method":"trace_transaction","params":[["0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da82146408c28c"]],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+curl --data '{"method":"trace_transaction","params":["0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da82146408c28c"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
 {% endtab %}
 {% tab title="Example response of trace_transaction" %}
