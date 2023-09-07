@@ -458,7 +458,7 @@ Returns all traces of given transaction
 {% tabs %}
 {% tab title="Example request of trace.transaction" %}
 ```yaml
-trace.transaction(["0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da82146408c28c"])
+trace.transaction("0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da82146408c28c")
 ```
 {% endtab %}
 {% tab title="Example response of trace.transaction" %}
