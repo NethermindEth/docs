@@ -1,167 +1,184 @@
+---
+title: net namespace
+sidebar_label: net
+sidebar_position: 5
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Net
-
-## net_listening
+### net_listening
 
 
-| Invocation |
-| :--- |
-| `{"method":"net_listening","params":[]}` |
-
-| This method doesn't have parameters. |
-| :--- |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Boolean` |  |
 
 <Tabs>
-<TabItem value="request" label="Request">
+<TabItem value="request" label="Request" default>
 
-``` bash
-curl --data '{"method":"net_listening","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_listening",
+      "params": []
+    }'
 ```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
-```yaml
+```json
 {
   "jsonrpc": "2.0",
-  "result": true,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *boolean*
+
 </TabItem>
 </Tabs>
 
-## net_localAddress
+### net_localAddress
 
- 
 
-| Invocation |
-| :--- |
-| `{"method":"net_localAddress","params":[]}` |
-
-| This method doesn't have parameters. |
-| :--- |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Address` |  |
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="request" label="Request" default>
 
-``` bash
-curl --data '{"method":"net_localAddress","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_localAddress",
+      "params": []
+    }'
 ```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
-```yaml
+```json
 {
   "jsonrpc": "2.0",
-  "result": 0x247b5f5f007fb5d50de13cfcbd4460db21c12bcb,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *string* (address)
+
 </TabItem>
 </Tabs>
 
-## net_localEnode
-| Invocation |
-| :--- |
-| `{"method":"net_localEnode","params":[]}` |
+### net_localEnode
 
-| This method doesn't have parameters. |
-| :--- |
 
-| Returned type | Description |
-| :--- | :--- |
-| `String` |  |
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="request" label="Request" default>
 
-``` bash
-curl --data '{"method":"net_localEnode","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_localEnode",
+      "params": []
+    }'
 ```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
-```yaml
+```json
 {
   "jsonrpc": "2.0",
-  "result": enode://a9cfa3cb16b537e131b0f141b5ef0c0ab9bf0dbec7799c3fc7bf8a974ff3e74e9b3258951b285dfed07ab395049bcd65fed96116bb92561612682551ec458497@18.193.43.58:30303,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *string*
+
 </TabItem>
 </Tabs>
 
-[See also CLI net.localEnode](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-localenode)
-## net_peerCount
-| Invocation |
-| :--- |
-| `{"method":"net_peerCount","params":[]}` |
+### net_peerCount
 
-| This method doesn't have parameters. |
-| :--- |
 
-| Returned type | Description |
-| :--- | :--- |
-| `Quantity` |  |
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="request" label="Request" default>
 
-``` bash
-curl --data '{"method":"net_peerCount","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_peerCount",
+      "params": []
+    }'
 ```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
-```yaml
+```json
 {
   "jsonrpc": "2.0",
-  "result": 0x11,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *string* (hex integer)
+
 </TabItem>
 </Tabs>
-[See also CLI net.peerCount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-peercount)
 
-## net_version
-| Invocation |
-| :--- |
-| `{"method":"net_version","params":[]}` |
+### net_version
 
-| This method doesn't have parameters. |
-| :--- |
 
-| Returned type | Description |
-| :--- | :--- |
-| `String` |  |
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="request" label="Request" default>
 
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_version",
+      "params": []
+    }'
 ```
-curl --data '{"method":"net_version","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+
 </TabItem>
 <TabItem value="response" label="Response">
 
-```yaml
+```json
 {
   "jsonrpc": "2.0",
-  "result": 4,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *string*
+
 </TabItem>
 </Tabs>
-[See also CLI net.version](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/net#net-version)
+

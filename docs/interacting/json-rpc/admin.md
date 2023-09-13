@@ -1,267 +1,230 @@
+---
+title: admin namespace
+sidebar_label: admin
+sidebar_position: 0
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Admin
+### admin_addPeer
 
-## admin_addPeer
-
-Adds given node. 
-
-| Invocation |
-| :--- |
-| `{"method":"admin_addPeer","params":[enode, addToStaticNodes]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
-| addToStaticNodes | `Boolean` | Adding to static nodes if `true` (optional) |
-
-| Returned type | Description |
-| :--- | :--- |
-| `String` | Added node |
+Adds given node.
 
 <Tabs>
-<TabItem value="request" label="Example Request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"admin_addPeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `enode`: *string*
+2. `addToStaticNodes`: *boolean*
+
 </TabItem>
-<TabItem value="response" label="Example Response">
-
-```
-{
-"jsonrpc": "2.0",
-"result": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
-"id": 1
-}
-```
-</TabItem>
-</Tabs>
-
-[See also CLI admin.addPeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-addpeer)
-## admin_nodeInfo
-
-Displays relevant information about this node. 
-
-| Invocation |
-| :--- |
-| `{"method":"admin_nodeInfo","params":[]}` |
-
-| This method doesn't have parameters. |
-| :--- |
-
-| Returned type | Description |
-| :--- | :--- |
-| `NodeInfo object` | Information about this node |
-
-<Tabs>
-<TabItem value="request" label="Example Request">
+<TabItem value="request" label="Request" default>
 
 ```bash
-curl --data '{"method":"admin_nodeInfo","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_addPeer",
+      "params": [enode, addToStaticNodes]
+    }'
 ```
-</TabItem>
-<TabItem value="response" label="Example Response">
 
-``` json
+</TabItem>
+<TabItem value="response" label="Response">
+
+Added node
+
+```json
 {
-"jsonrpc": "2.0",
-"result": {
-"enode": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
-"id": "b70bb308924de8247d73844f80561e488ae731105a6ef46004e4579edd4f378a",
-"ip": "85.221.141.144",
-"listenAddr": "85.221.141.144:30303",
-"name": "Nethermind/v1.10.37-0-068e5c399-20210315/X64-Windows/5.0.3",
-"ports": {
-"discovery": 30303,
-"listener": 30303
-},
-"protocols": {
-"eth": {
-"difficulty": "0x6372ca",
-"genesis": "0xbf7e331f7f7c1dd2e05159666b3bf8bc7a8a3a9eb1d518969eab529dd9b88c1a",
-"head": "0xf266b2639ef7e1db6ee769f7b161ef7eb2d74beb0ab8ffcd270036da04b41cd4",
-"network": "0x5"
-}
-}
-},
-"id": 1
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
 }
 ```
-</TabItem>
-<TabItem value="objects" label="Object">
 
-`NodeInfo`
+`result`: *string*
 
-| Field name | Type |
-| :--- | :--- |
-| Enode | `String` |
-| Id | `String` |
-| Ip | `String` |
-| ListenAddress | `String` |
-| Name | `String` |
-| Ports | `PortsInfo object` |
-| Protocols | `Array` |
-
-`PortsInfo`
-
-| Field name | Type |
-| :--- | :--- |
-| Discovery | `Quantity` |
-| Listener | `Quantity` |
 </TabItem>
 </Tabs>
 
-[See also CLI admin.nodeInfo](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-nodeinfo)
+### admin_nodeInfo
 
-## admin_peers
-
-Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`). 
-
-| Invocation |
-| :--- |
-| `{"method":"admin_peers","params":[includeDetails]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| includeDetails | `Boolean` | If true, including `clientType`, `ethDetails` and `lastSignal` (optional) |
-
-| Returned type | Description |
-| :--- | :--- |
-| `PeerInfo object` | List of connected peers including information |
+Displays relevant information about this node.
 
 <Tabs>
-<TabItem value="request" label="Request"> 
+<TabItem value="request" label="Request" default>
 
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_nodeInfo",
+      "params": []
+    }'
 ```
-curl --data '{"method":"admin_peers","params":[true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+
 </TabItem>
-<TabItem value="response" label="Response">  
+<TabItem value="response" label="Response">
 
-```yaml
+Information about this node
+
+```json
 {
-"jsonrpc": "2.0",
-"result": [
-{
-"clientId": "Nethermind/v1.10.33-1-5c4c185e8-20210310/X64-Linux/5.0.2",
-"host": "94.237.54.114",
-"port": 30313,
-"address": "94.237.54.114:30313",
-"isBootnode": false,
-"isTrusted": false,
-"isStatic": false,
-"enode": "enode://46add44b9f13965f7b9875ac6b85f016f341012d84f975377573800a863526f4da19ae2c620ec73d11591fa9510e992ecc03ad0751f53cc02f7c7ed6d55c7291@94.237.54.114:30313",
-"clientType": "Nethermind",
-"ethDetails": "eth65",
-"lastSignal": "03/11/2021 12:33:58"
-},
-
-(...)
-
-],
-"id": 1
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
 }
 ```
-</TabItem>
 
-<TabItem value="object" label="Object">
+`result`: *object*
+  - `enode`: *string*
+  - `id`: *string*
+  - `ip`: *string*
+  - `listenAddr`: *string*
+  - `name`: *string*
+  - `ports`: *object*
+  - `protocols`: *object*
 
-`PeerInfo`
 
-| Field name | Type |
-| :--- | :--- |
-| ClientId | `String` |
-| Host | `String` |
-| Port | `Quantity` |
-| Address | `String` |
-| IsBootnode | `Boolean` |
-| IsTrusted | `Boolean` |
-| IsStatic | `Boolean` |
-| Enode | `String` |
-| ClientType | `String` |
-| EthDetails | `String` |
-| LastSignal | `String` |
 </TabItem>
 </Tabs>
 
-[See also CLI admin.peers](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-peers)
-## admin_prune
+### admin_peers
 
-Runs full pruning if enabled. 
-
-| Invocation |
-| :--- |
-| `{"method":"admin_prune","params":[]}` |
-
-| This method doesn't have parameters. |
-| :--- |
-
-| Returned type | Description |
-| :--- | :--- |
-| `PruningStatus object` |  |
+Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`).
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-```
-curl --data '{"method":"admin_prune","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `includeDetails`: *boolean*
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="request" label="Request" default>
 
-```yaml
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_peers",
+      "params": [includeDetails]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+List of connected peers including information
+
+```json
 {
-"jsonrpc": "2.0",
-"result": "Starting",
-"id": 1
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
 }
 ```
-</TabItem>
-<TabItem label="object" value="object">
 
-`PruningStatus`
+`result`: array of *object*
+  - `address`: *string*
+  - `clientId`: *string*
+  - `clientType`: *string*
+  - `enode`: *string*
+  - `ethDetails`: *string*
+  - `host`: *string*
+  - `isBootnode`: *boolean*
+  - `isStatic`: *boolean*
+  - `isTrusted`: *boolean*
+  - `lastSignal`: *string*
+  - `port`: *string* (hex integer)
 
-| Field name | Type |
-| :--- | :--- |
+
 </TabItem>
 </Tabs>
 
-## admin_removePeer
+### admin_prune
 
-Removes given node. 
-
-| Invocation |
-| :--- |
-| `{"method":"admin_removePeer","params":[enode, removeFromStaticNodes]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| enode | `String` | Given node |
-| removeFromStaticNodes | `Boolean` | Removing from static nodes if `true` (optional) |
-
-| Returned type | Description |
-| :--- | :--- |
-| `String` | Removed node |
+Runs full pruning if enabled.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="request" label="Request" default>
 
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_prune",
+      "params": []
+    }'
 ```
-curl --data '{"method":"admin_removePeer","params":["enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303", true],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="response" label="Response">
 
-```yaml
+```json
 {
-"jsonrpc": "2.0",
-"result": "enode://deed356ddcaa1eb33a859b818a134765fff2a3dd5cd5b3d6cbe08c9424dca53b947bdc1c64e6f1257e29bb2960ac0a4fb56e307f360b7f8d4ddf48024cdb9d68@85.221.141.144:30303",
-"id": 1
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *object*
+
+
 </TabItem>
 </Tabs>
 
-[See also CLI admin.removePeer](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/admin#admin-removepeer)
+### admin_removePeer
+
+Removes given node.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `enode`: *string*
+2. `removeFromStaticNodes`: *boolean*
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_removePeer",
+      "params": [enode, removeFromStaticNodes]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+Removed node
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
+
+</TabItem>
+</Tabs>
+

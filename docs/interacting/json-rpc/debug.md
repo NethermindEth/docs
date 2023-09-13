@@ -1,786 +1,979 @@
+---
+title: debug namespace
+sidebar_label: debug
+sidebar_position: 2
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Debug
+### debug_deleteChainSlice
 
-## debug_deleteChainSlice
-
-Deletes a slice of a chain from the tree on all branches (Nethermind specific). 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_deleteChainSlice","params":[startNumber]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| startNumber | `Quantity` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Quantity` |  |
-
-``` bash title="Example request of debug_deleteChainSlice"
-curl --data '{"method":"debug_deleteChainSlice","params":[startNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
-
-## debug_getBlockRlp
-
-Retrieves a block in the RLP-serialized form. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_getBlockRlp","params":[number]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Data` |  |
-
-``` bash title="Example request of debug_getBlockRlp" 
-curl --data '{"method":"debug_getBlockRlp","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
-
-[See also CLI debug.getBlockRlp](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlp)
-## debug_getBlockRlpByHash
-
-Retrieves a block in the RLP-serialized form. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_getBlockRlpByHash","params":[hash]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| hash | `Hash` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Data` |  |
-
-``` bash title="Example request of debug_getBlockRlpByHash" 
-curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
-
-[See also CLI debug.getBlockRlpByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getblockrlpbyhash)
-## debug_getChainLevel
-
-Retrieves a representation of tree branches on a given chain level (Nethermind specific). 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_getChainLevel","params":[number]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| number | `Quantity` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `ChainLevelForRpc object` |  |
+Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `startNumber`: *string* (hex integer)
+
 </TabItem>
-<TabItem label="Object" value="object">
+<TabItem value="request" label="Request" default>
 
-`ChainLevelForRpc`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_deleteChainSlice",
+      "params": [startNumber]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| BlockInfos | `BlockInfoForRpc[] object` |
-| HasBlockOnMainChain | `Boolean` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`BlockInfoForRpc[]`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| BlockHash | `Hash` |
-| TotalDifficulty | `Quantity` |
-| WasProcessed | `Boolean` |
-| IsFinalized | `Boolean` |
+`result`: *string* (hex integer)
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.getChainLevel](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-getchainlevel)
-## debug_getConfigValue
+### debug_getBlockRlp
 
-Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_getConfigValue","params":[category, name]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| category | `String` |  |
-| name | `String` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Object` |  |
-
-``` bash title="Example request of debug_getConfigValue" 
-curl --data '{"method":"debug_getConfigValue","params":[category, name],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
-
-## debug_getSyncStage
-
-Retrives Nethermind Sync Stage, With extra Metadata 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_getSyncStage","params":[]}` |
-
-| This method doesn't have parameters. |
-| :--- |
-
-| Returned type | Description |
-| :--- | :--- |
-| `SyncReportSymmary object` |  |
+Retrieves a block in the RLP-serialized form.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_getSyncStage","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+1. `number`: *string* (hex integer)
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getBlockRlp",
+      "params": [number]
+    }'
 ```
 
 </TabItem>
-<TabItem label="Object" value="objects">
+<TabItem value="response" label="Response">
 
-`SyncReportSymmary`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| CurrentStage | `String` |
+`result`: array of *string* (hex data)
+
 </TabItem>
 </Tabs>
 
-## debug_insertReceipts
+### debug_getBlockRlpByHash
 
-Insert receipts for the block after verifying receipts root correctness. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| receiptForRpc | `ReceiptForRpc[] object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Boolean` |  |
+Retrieves a block in the RLP-serialized form.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptForRpc],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `hash`: *string* (hash)
+
 </TabItem>
-<TabItem label="Object" value="objects">
+<TabItem value="request" label="Request" default>
 
-`BlockParameter`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getBlockRlpByHash",
+      "params": [hash]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`BlockParameterType`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-- `Quantity` or `String` (latest, earliest, pending)
+`result`: array of *string* (hex data)
 
-
-`ReceiptForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| TransactionHash | `Hash` |
-| TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| CumulativeGasUsed | `Quantity` |
-| GasUsed | `Quantity` |
-| DataGasUsed | `Quantity` |
-| DataGasPrice | `Quantity` |
-| EffectiveGasPrice | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| ContractAddress | `Address` |
-| Logs | `LogEntryForRpc[] object` |
-| LogsBloom | `Bloom Object` |
-| Root | `Hash` |
-| Status | `Quantity` |
-| Error | `String` |
-| Type | `TxType object` |
 </TabItem>
 </Tabs>
 
-## debug_migrateReceipts
+### debug_getChainLevel
 
-Sets the block number up to which receipts will be migrated to (Nethermind specific). 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_migrateReceipts","params":[blockNumber]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockNumber | `Quantity` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Boolean` |  |
-
-``` bash title="Example request of debug_migrateReceipts" 
-curl --data '{"method":"debug_migrateReceipts","params":[blockNumber],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
-
-[See also CLI debug.migrateReceipts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-migratereceipts)
-## debug_resetHead
-
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific). 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_resetHead","params":[blockHash]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Boolean` |  |
-
-``` bash title="Example request of debug_resetHead" 
-curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
-
-## debug_traceBlock
-
-Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_traceBlock","params":[blockRlp, options]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Retrieves a representation of tree branches on a given chain level (Nethermind specific).
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `number`: *string* (hex integer)
+
 </TabItem>
-<TabItem label="Object" value="objects">
+<TabItem value="request" label="Request" default>
 
-`GethTraceOptions`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getChainLevel",
+      "params": [number]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`GethLikeTxTrace`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+`result`: *object*
+  - `blockInfos`: array of *object*
+    - `blockHash`: *string* (hash)
+    - `isFinalized`: *boolean*
+    - `totalDifficulty`: *string* (hex integer)
+    - `wasProcessed`: *boolean*
+  - `hasBlockOnMainChain`: *boolean*
+
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceBlock](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblock)
-## debug_traceBlockByHash
+### debug_getConfigValue
 
-Similar to debug_traceBlock, this method accepts a block hash and replays the block that is already present in the database. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_traceBlockByHash","params":[blockHash, options]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `category`: *string*
+2. `name`: *string*
+
 </TabItem>
-<TabItem label="Object" value="objects">
+<TabItem value="request" label="Request" default>
 
-`GethTraceOptions`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getConfigValue",
+      "params": [category, name]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`GethLikeTxTrace`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+`result`: *object*
+
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbyhash)
-## debug_traceBlockByNumber
+### debug_getSyncStage
 
-Similar to debug_traceBlock, this method accepts a block number as well as "latest" or "finalized" and replays the block that is already present in the database. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_traceBlockByNumber","params":[blockParameter, options]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Retrives Nethermind Sync Stage, With extra Metadata
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="request" label="Request" default>
 
-``` bash 
-curl --data '{"method":"debug_traceBlockByNumber","params":[blockParameter, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getSyncStage",
+      "params": []
+    }'
 ```
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="response" label="Response">
 
-`BlockParameter`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
-
-`BlockParameterType`
-
-- `Quantity` or `String` (latest, earliest, pending)
+`result`: *object*
+  - `currentStage`: *string*
 
 
-`GethTraceOptions`
-
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
-
-`GethLikeTxTrace`
-
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceBlockByNumber](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-traceblockbynumber)
-## debug_traceCall
+### debug_insertReceipts
 
-This method lets you run an eth_call within the context of the given block execution using the final state of parent block as the base. The block can be specified either by hash or by number. It takes the same input object as a eth_call. It returns the same output as debug_traceTransaction. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_traceCall","params":[call, blockParameter, options]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| call | `TransactionForRpc object` |  |
-| blockParameter | `BlockParameter object` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Insert receipts for the block after verifying receipts root correctness.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `receiptForRpc`: array of *object*
+  - `blobGasPrice`: *string* (hex integer)
+  - `blobGasUsed`: *string* (hex integer)
+  - `blockHash`: *string* (hash)
+  - `blockNumber`: *string* (hex integer)
+  - `contractAddress`: *string* (address)
+  - `cumulativeGasUsed`: *string* (hex integer)
+  - `effectiveGasPrice`: *string* (hex integer)
+  - `error`: *string*
+  - `from`: *string* (address)
+  - `gasUsed`: *string* (hex integer)
+  - `logs`: array of *object*
+    - `address`: *string* (address)
+    - `blockHash`: *string* (hash)
+    - `blockNumber`: *string* (hex integer)
+    - `data`: array of *string* (hex data)
+    - `logIndex`: *string* (hex integer)
+    - `removed`: *boolean*
+    - `topics`: array of *string* (hash)
+    - `transactionHash`: *string* (hash)
+    - `transactionIndex`: *string* (hex integer)
+  - `logsBloom`: *string* (hex data)
+  - `root`: *string* (hash)
+  - `status`: *string* (hex integer)
+  - `to`: *string* (address)
+  - `transactionHash`: *string* (hash)
+  - `transactionIndex`: *string* (hex integer)
+  - `type`: *string* (transaction type)
+
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="request" label="Request" default>
 
-`TransactionForRpc`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_insertReceipts",
+      "params": [blockParameter, receiptForRpc]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| Hash | `Hash` |
-| Nonce | `Quantity` |
-| BlockHash | `Hash` |
-| BlockNumber | `Quantity` |
-| TransactionIndex | `Quantity` |
-| From | `Address` |
-| To | `Address` |
-| Value | `Quantity` |
-| GasPrice | `Quantity` |
-| MaxPriorityFeePerGas | `Quantity` |
-| MaxFeePerGas | `Quantity` |
-| Gas | `Quantity` |
-| Data | `Data` |
-| Input | `Data` |
-| ChainId | `Quantity` |
-| Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
-| MaxFeePerDataGas | `Quantity` |
-| BlobVersionedHashes | `Data` |
-| V | `Quantity` |
-| S | `Quantity` |
-| R | `Quantity` |
-| YParity | `Quantity` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`TxType`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-- [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
+`result`: *boolean*
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
-
-`BlockParameter`
-
-| Field name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
-
-`BlockParameterType`
-
-- `Quantity` or `String` (latest, earliest, pending)
-
-
-`GethTraceOptions`
-
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
-
-`GethLikeTxTrace`
-
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
 </TabItem>
 </Tabs>
 
-## debug_traceTransaction
+### debug_migrateReceipts
 
-This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash. 
-
-| Invocation |
-| :--- |
-| `{"method":"debug_traceTransaction","params":[transactionHash, options]}` |
-
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Sets the block number up to which receipts will be migrated to (Nethermind specific).
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceTransaction","params":[transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `blockNumber`: *string* (hex integer)
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="request" label="Request" default>
 
-`GethTraceOptions`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_migrateReceipts",
+      "params": [blockNumber]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`GethLikeTxTrace`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+`result`: *boolean*
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceTransaction](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransaction)
-## debug_traceTransactionByBlockAndIndex
-| Invocation |
-| :--- |
-| `{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options]}` |
+### debug_resetHead
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockParameter | `BlockParameter object` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific).
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockParameter, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `blockHash`: *string* (hash)
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="request" label="Request" default>
 
-`BlockParameter`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_resetHead",
+      "params": [blockHash]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| Type | `BlockParameterType object` |
-| BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
-| RequireCanonical | `Boolean` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`BlockParameterType`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-- `Quantity` or `String` (latest, earliest, pending)
+`result`: *boolean*
 
-
-`GethTraceOptions`
-
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
-
-`GethLikeTxTrace`
-
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceTransactionByBlockAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockandindex)
-## debug_traceTransactionByBlockhashAndIndex
-| Invocation |
-| :--- |
-| `{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options]}` |
+### debug_standardTraceBlockToFile
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockHash | `Hash` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Writes to a file the full stack trace of all invoked opcodes of the transaction specified (or all transactions if not specified) that was included in the block specified. The parent of the block must be present or it will fail.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blockHash, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `blockHash`: *string* (hash)
+2. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="request" label="Request" default>
 
-`GethTraceOptions`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_standardTraceBlockToFile",
+      "params": [blockHash, options]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`GethLikeTxTrace`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+`result`: array of *string*
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceTransactionByBlockhashAndIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactionbyblockhashandindex)
-## debug_traceTransactionInBlockByHash
-| Invocation |
-| :--- |
-| `{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options]}` |
+### debug_traceBlock
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| transactionHash | `Hash` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp, transactionHash, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `blockRlp`: array of *string* (hex data)
+2. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="request" label="Request" default>
 
-`GethTraceOptions`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceBlock",
+      "params": [blockRlp, options]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`GethLikeTxTrace`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+`result`: array of *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceTransactionInBlockByHash](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyhash)
-## debug_traceTransactionInBlockByIndex
-| Invocation |
-| :--- |
-| `{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options]}` |
+### debug_traceBlockByHash
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| blockRlp | `Data` |  |
-| txIndex | `Quantity` |  |
-| options | `GethTraceOptions object` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `GethLikeTxTrace object` |  |
+Similar to debug_traceBlock, this method accepts a block hash and replays the block that is already present in the database.
 
 <Tabs>
-<TabItem label="Request" value="request">
+<TabItem value="params" label="Parameters">
 
-``` bash
-curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp, txIndex, options],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `blockHash`: *string* (hash)
+2. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
 </TabItem>
-<TabItem label="Objects" value="objects">
+<TabItem value="request" label="Request" default>
 
-`GethTraceOptions`
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceBlockByHash",
+      "params": [blockHash, options]
+    }'
+```
 
-| Field name | Type |
-| :--- | :--- |
-| DisableStorage | `Boolean` |
-| DisableMemory | `Boolean` |
-| DisableStack | `Boolean` |
-| Tracer | `String` |
-| Timeout | `String` |
+</TabItem>
+<TabItem value="response" label="Response">
 
-`GethLikeTxTrace`
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
 
-| Field name | Type |
-| :--- | :--- |
-| StoragesByDepth | `Array` |
-| Gas | `Quantity` |
-| Failed | `Boolean` |
-| ReturnValue | `Data` |
-| Entries | `Array` |
+`result`: array of *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
 </TabItem>
 </Tabs>
 
-[See also CLI debug.traceTransactionInBlockByIndex](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransactioninblockbyindex)
+### debug_traceBlockByNumber
+
+Similar to debug_traceBlock, this method accepts a block number as well as "latest" or "finalized" and replays the block that is already present in the database.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceBlockByNumber",
+      "params": [blockParameter, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+
+### debug_traceCall
+
+This method lets you run an eth_call within the context of the given block execution using the final state of parent block as the base. The block can be specified either by hash or by number. It takes the same input object as a eth_call. It returns the same output as debug_traceTransaction.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `call`: *object*
+    - `accessList`: array of *object*
+        - `address`: *string* (address)
+        - `storageKeys`: array of *string* (hex integer)
+    - `blobVersionedHashes`: array of array of *string* (hex data)
+    - `blockHash`: *string* (hash)
+    - `blockNumber`: *string* (hex integer)
+    - `chainId`: *string* (hex integer)
+    - `data`: array of *string* (hex data)
+    - `from`: *string* (address)
+    - `gas`: *string* (hex integer)
+    - `gasPrice`: *string* (hex integer)
+    - `hash`: *string* (hash)
+    - `input`: array of *string* (hex data)
+    - `maxFeePerBlobGas`: *string* (hex integer)
+    - `maxFeePerGas`: *string* (hex integer)
+    - `maxPriorityFeePerGas`: *string* (hex integer)
+    - `nonce`: *string* (hex integer)
+    - `r`: *string* (hex integer)
+    - `s`: *string* (hex integer)
+    - `to`: *string* (address)
+    - `transactionIndex`: *string* (hex integer)
+    - `type`: *string* (transaction type)
+    - `v`: *string* (hex integer)
+    - `value`: *string* (hex integer)
+    - `yParity`: *string* (hex integer)
+
+2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+3. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceCall",
+      "params": [call, blockParameter, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+
+### debug_traceTransaction
+
+This method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `transactionHash`: *string* (hash)
+2. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceTransaction",
+      "params": [transactionHash, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+
+### debug_traceTransactionByBlockAndIndex
+
+
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `txIndex`: *string* (hex integer)
+3. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceTransactionByBlockAndIndex",
+      "params": [blockParameter, txIndex, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+
+### debug_traceTransactionByBlockhashAndIndex
+
+
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockHash`: *string* (hash)
+2. `txIndex`: *string* (hex integer)
+3. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceTransactionByBlockhashAndIndex",
+      "params": [blockHash, txIndex, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+
+### debug_traceTransactionInBlockByHash
+
+
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockRlp`: array of *string* (hex data)
+2. `transactionHash`: *string* (hash)
+3. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceTransactionInBlockByHash",
+      "params": [blockRlp, transactionHash, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+
+### debug_traceTransactionInBlockByIndex
+
+
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockRlp`: array of *string* (hex data)
+2. `txIndex`: *string* (hex integer)
+3. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceTransactionInBlockByIndex",
+      "params": [blockRlp, txIndex, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *object*
+  - `structLogs`: *object*
+  - `failed`: *boolean*
+  - `gas`: *string* (hex integer)
+  - `returnValue`: array of *string* (hex data)
+  - `storagesByDepth`: *object*
+
+
+</TabItem>
+</Tabs>
+

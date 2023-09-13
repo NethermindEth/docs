@@ -1,176 +1,206 @@
+---
+title: personal namespace
+sidebar_label: personal
+sidebar_position: 7
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Personal
+### personal_importRawKey
 
-## personal_importRawKey
-| Invocation |
-| :--- |
-| `{"method":"personal_importRawKey","params":[keyData, passphrase]}` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| keyData | `Data` |  |
-| passphrase | `String` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Address` |  |
 
 <Tabs>
-<TabItem value="request" label="Request">
+<TabItem value="params" label="Parameters">
 
-```
-curl --data '{"method":"personal_importRawKey","params":[keyData, passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `keyData`: array of *string* (hex data)
+2. `passphrase`: *string*
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="request" label="Request" default>
 
-```yaml
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "personal_importRawKey",
+      "params": [keyData, passphrase]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
 {
   "jsonrpc": "2.0",
-  "result": 0x707fc13c0eb628c074f7ff514ae21acaee0ec072,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *string* (address)
+
 </TabItem>
 </Tabs>
 
+### personal_listAccounts
 
-[See also CLI personal.importRawKey](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-importrawkey)
-## personal_listAccounts
-| Invocation |
-| :--- |
-| `{"method":"personal_listAccounts","params":[]}` |
 
-| This method doesn't have parameters. |
-| :--- |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Address` |  |
 
 <Tabs>
-<TabItem value="request" label="Request">
+<TabItem value="request" label="Request" default>
 
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "personal_listAccounts",
+      "params": []
+    }'
 ```
-curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="response" label="Response">
 
-```yaml
+```json
 {
   "jsonrpc": "2.0",
-  "result": ["0x247b5f5f007fb5d50de13cfcbd4460db21c12bcb","0x707fc13c0eb628c074f7ff514ae21acaee0ec072"],
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: array of *string* (address)
+
 </TabItem>
 </Tabs>
 
+### personal_lockAccount
 
-[See also CLI personal.listAccounts](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-listaccounts)
-## personal_lockAccount
-| Invocation |
-| :--- |
-| `{"method":"personal_lockAccount","params":[address]}` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Boolean` |  |
 
 <Tabs>
-<TabItem value="request" label="Request">
+<TabItem value="params" label="Parameters">
 
-```
-curl --data '{"method":"personal_lockAccount","params":[707Fc13C0eB628c074f7ff514Ae21ACaeE0ec072],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `address`: *string* (address)
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="request" label="Request" default>
 
-```yaml
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "personal_lockAccount",
+      "params": [address]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
 {
   "jsonrpc": "2.0",
-  "result": true,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *boolean*
+
 </TabItem>
 </Tabs>
 
+### personal_newAccount
 
-[See also CLI personal.lockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-lockaccount)
-## personal_newAccount
-| Invocation |
-| :--- |
-| `{"method":"personal_newAccount","params":[passphrase]}` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| passphrase | `String` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Address` |  |
 
 <Tabs>
-<TabItem value="request" label="Request">
+<TabItem value="params" label="Parameters">
 
-```
-curl --data '{"method":"personal_newAccount","params":[testPass],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `passphrase`: *string*
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="request" label="Request" default>
 
-```yaml
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "personal_newAccount",
+      "params": [passphrase]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
 {
   "jsonrpc": "2.0",
-  "result": 0xfb06d31473545b0e0d62a24e02b266e08523c6a9,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *string* (address)
+
 </TabItem>
 </Tabs>
 
+### personal_unlockAccount
 
-[See also CLI personal.newAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-newaccount)
-## personal_unlockAccount
-| Invocation |
-| :--- |
-| `{"method":"personal_unlockAccount","params":[address, passphrase]}` |
 
-| Parameter | Type | Description |
-| :--- | :--- | :--- |
-| address | `Address` |  |
-| passphrase | `String` |  |
-
-| Returned type | Description |
-| :--- | :--- |
-| `Boolean` |  |
 
 <Tabs>
-<TabItem value="request" label="Request">
+<TabItem value="params" label="Parameters">
 
-```
-curl --data '{"method":"personal_unlockAccount","params":[address, passphrase],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
-```
+1. `address`: *string* (address)
+2. `passphrase`: *string*
+
 </TabItem>
-<TabItem label="Response" value="response">
+<TabItem value="request" label="Request" default>
 
-```yaml
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "personal_unlockAccount",
+      "params": [address, passphrase]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
 {
   "jsonrpc": "2.0",
-  "result": true,
-  "id": 1
+  "id": 0,
+  "result": result
 }
 ```
+
+`result`: *boolean*
+
 </TabItem>
 </Tabs>
 
-
-[See also CLI personal.unlockAccount](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/personal#personal-unlockaccount)
