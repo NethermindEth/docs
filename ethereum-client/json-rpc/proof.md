@@ -59,7 +59,6 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |

@@ -96,7 +96,6 @@ trace.call(call, traceTypes, blockParameter)
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
