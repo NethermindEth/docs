@@ -543,7 +543,6 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |

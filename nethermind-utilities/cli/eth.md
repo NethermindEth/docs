@@ -82,7 +82,6 @@ eth.call(transactionCall, blockParameter)
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
@@ -209,7 +208,6 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
@@ -307,7 +305,6 @@ eth.estimateGas(transactionCall, blockParameter)
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
@@ -1089,7 +1086,6 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
@@ -1165,7 +1161,6 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
@@ -1600,7 +1595,6 @@ eth.pendingTransactions
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
@@ -1766,7 +1760,6 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |

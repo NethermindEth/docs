@@ -58,7 +58,6 @@ proof.getTransactionByHash(txHash, includeHeader)
 | MaxPriorityFeePerGas | `Quantity` |
 | MaxFeePerGas | `Quantity` |
 | Gas | `Quantity` |
-| Data | `Data` |
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
