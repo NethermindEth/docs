@@ -33,6 +33,6 @@ CLI will allow you to query the most basic info about the node quickly.
 For more advanced operations with the node use [Web3](https://nethermind.readthedocs.io/en/latest/web3.html) or ether.js
 libs or Truffle, Metamask, etc.
 
-You will find the available list of CLI operations and you can find more information about each call in [JSON RPC
-section](../../interacting/json-rpc/README.md).
+You will find the available list of CLI operations and you can find more information about each call in JSON RPC
+section.
 
