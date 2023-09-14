@@ -16,6 +16,7 @@ This method drops a currently running proposal. The signer will not cast further
 
 1. `signer`: *string* (address)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -55,6 +56,7 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 <TabItem value="params" label="Parameters">
 
 1. `hash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -166,6 +168,7 @@ Retrieves the list of authorized signers at the specified block by hash.
 
 1. `hash`: *string* (hash)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -206,6 +209,7 @@ Retrieves the list of authorized signers at the specified block by hash but with
 
 1. `hash`: *string* (hash)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -245,6 +249,7 @@ Retrieves the list of authorized signers at the specified block by block number.
 <TabItem value="params" label="Parameters">
 
 1. `number`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -311,8 +316,7 @@ curl localhost:8545 \
   - `hash`: *string* (hash)
   - `number`: *string* (hex integer)
   - `signerLimit`: *string* (hex integer)
-  - `signers`: *object*
-
+  - `signers`: map of *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -325,6 +329,7 @@ Retrieves the state snapshot at a given block.
 <TabItem value="params" label="Parameters">
 
 1. `hash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -356,8 +361,7 @@ curl localhost:8545 \
   - `hash`: *string* (hash)
   - `number`: *string* (hex integer)
   - `signerLimit`: *string* (hex integer)
-  - `signers`: *object*
-
+  - `signers`: map of *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -370,6 +374,7 @@ Forces Clique block producer to produce a new block
 <TabItem value="params" label="Parameters">
 
 1. `parentHash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -410,7 +415,9 @@ Adds a new authorization proposal that the signer will attempt to push through. 
 <TabItem value="params" label="Parameters">
 
 1. `signer`: *string* (address)
+
 2. `vote`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>

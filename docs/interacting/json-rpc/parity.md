@@ -1,15 +1,13 @@
 ---
 title: parity namespace
 sidebar_label: parity
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ### parity_clearEngineSigner
-
-
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -86,6 +84,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -127,7 +126,7 @@ curl localhost:8545 \
     - `address`: *string* (address)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
+    - `data`: *string* (hex data)
     - `logIndex`: *string* (hex integer)
     - `removed`: *boolean*
     - `topics`: array of *string* (hash)
@@ -139,8 +138,7 @@ curl localhost:8545 \
   - `to`: *string* (address)
   - `transactionHash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
-
+  - `type`: *integer*
 
 </TabItem>
 </Tabs>
@@ -180,12 +178,16 @@ curl localhost:8545 \
   - `connected`: *string* (hex integer)
   - `max`: *string* (hex integer)
   - `peers`: array of *object*
-    - `caps`: *object*
+    - `caps`: array of *string*
     - `id`: *string*
     - `name`: *string*
     - `network`: *object*
-    - `protocols`: *object*
-
+      - `localAddress`: *string*
+      - `remoteAddress`: *string*
+    - `protocols`: map of *object*
+      - `difficulty`: *string* (hex integer)
+      - `head`: *string* (hash)
+      - `version`: *string* (hex data)
 
 </TabItem>
 </Tabs>
@@ -198,6 +200,7 @@ Returns a list of transactions currently in the queue. If address is provided, r
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -235,31 +238,33 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: array of *string* (hex data)
+  - `input`: *string* (hex data)
   - `nonce`: *string* (hex integer)
   - `publicKey`: *object*
-  - `r`: array of *string* (hex data)
-  - `raw`: array of *string* (hex data)
-  - `s`: array of *string* (hex data)
+    - `address`: *string* (address)
+    - `bytes`: *string* (hex data)
+    - `prefixedBytes`: *string* (hex data)
+  - `r`: *string* (hex data)
+  - `raw`: *string* (hex data)
+  - `s`: *string* (hex data)
   - `standardV`: *string* (hex integer)
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `v`: *string* (hex integer)
   - `value`: *string* (hex integer)
 
-
 </TabItem>
 </Tabs>
 
 ### parity_setEngineSigner
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 2. `password`: *string*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -294,12 +299,11 @@ curl localhost:8545 \
 
 ### parity_setEngineSignerSecret
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `privateKey`: *string*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>

@@ -1,7 +1,7 @@
 ---
 title: personal namespace
 sidebar_label: personal
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 import Tabs from "@theme/Tabs";
@@ -9,13 +9,13 @@ import TabItem from "@theme/TabItem";
 
 ### personal_importRawKey
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `keyData`: array of *string* (hex data)
+1. `keyData`: *string* (hex data)
+
 2. `passphrase`: *string*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -50,8 +50,6 @@ curl localhost:8545 \
 
 ### personal_listAccounts
 
-
-
 <Tabs>
 <TabItem value="request" label="Request" default>
 
@@ -85,12 +83,11 @@ curl localhost:8545 \
 
 ### personal_lockAccount
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -125,12 +122,11 @@ curl localhost:8545 \
 
 ### personal_newAccount
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `passphrase`: *string*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -165,13 +161,13 @@ curl localhost:8545 \
 
 ### personal_unlockAccount
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 2. `passphrase`: *string*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>

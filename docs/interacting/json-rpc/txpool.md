@@ -1,7 +1,7 @@
 ---
 title: txpool namespace
 sidebar_label: txpool
-sidebar_position: 11
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
@@ -38,9 +38,58 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `pending`: *object*
-  - `queued`: *object*
-
+  - `pending`: map of map of *object*
+map of *object*
+  - `accessList`: array of *object*
+    - `address`: *string* (address)
+    - `storageKeys`: array of *string* (hex integer)
+  - `blobVersionedHashes`: array of *string* (hex data)
+  - `blockHash`: *string* (hash)
+  - `blockNumber`: *string* (hex integer)
+  - `chainId`: *string* (hex integer)
+  - `from`: *string* (address)
+  - `gas`: *string* (hex integer)
+  - `gasPrice`: *string* (hex integer)
+  - `hash`: *string* (hash)
+  - `input`: *string* (hex data)
+  - `maxFeePerBlobGas`: *string* (hex integer)
+  - `maxFeePerGas`: *string* (hex integer)
+  - `maxPriorityFeePerGas`: *string* (hex integer)
+  - `nonce`: *string* (hex integer)
+  - `r`: *string* (hex integer)
+  - `s`: *string* (hex integer)
+  - `to`: *string* (address)
+  - `transactionIndex`: *string* (hex integer)
+  - `type`: *integer*
+  - `v`: *string* (hex integer)
+  - `value`: *string* (hex integer)
+  - `yParity`: *string* (hex integer)
+  - `queued`: map of map of *object*
+map of *object*
+  - `accessList`: array of *object*
+    - `address`: *string* (address)
+    - `storageKeys`: array of *string* (hex integer)
+  - `blobVersionedHashes`: array of *string* (hex data)
+  - `blockHash`: *string* (hash)
+  - `blockNumber`: *string* (hex integer)
+  - `chainId`: *string* (hex integer)
+  - `from`: *string* (address)
+  - `gas`: *string* (hex integer)
+  - `gasPrice`: *string* (hex integer)
+  - `hash`: *string* (hash)
+  - `input`: *string* (hex data)
+  - `maxFeePerBlobGas`: *string* (hex integer)
+  - `maxFeePerGas`: *string* (hex integer)
+  - `maxPriorityFeePerGas`: *string* (hex integer)
+  - `nonce`: *string* (hex integer)
+  - `r`: *string* (hex integer)
+  - `s`: *string* (hex integer)
+  - `to`: *string* (address)
+  - `transactionIndex`: *string* (hex integer)
+  - `type`: *integer*
+  - `v`: *string* (hex integer)
+  - `value`: *string* (hex integer)
+  - `yParity`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -76,9 +125,8 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `pending`: *object*
-  - `queued`: *object*
-
+  - `pending`: map of map of *string*
+  - `queued`: map of map of *string*
 
 </TabItem>
 </Tabs>
@@ -116,7 +164,6 @@ curl localhost:8545 \
 `result`: *object*
   - `pending`: *string* (hex integer)
   - `queued`: *string* (hex integer)
-
 
 </TabItem>
 </Tabs>

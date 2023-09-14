@@ -51,18 +51,17 @@ Executes a tx call (does not create a transaction)
 
 1. `transactionCall`: *object*
     - `accessList`: array of *object*
-        - `address`: *string* (address)
-        - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of array of *string* (hex data)
+      - `address`: *string* (address)
+      - `storageKeys`: array of *string* (hex integer)
+    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: array of *string* (hex data)
+    - `input`: *string* (hex data)
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -71,12 +70,13 @@ Executes a tx call (does not create a transaction)
     - `s`: *string* (hex integer)
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
-    - `type`: *string* (transaction type)
+    - `type`: *integer*
     - `v`: *string* (hex integer)
     - `value`: *string* (hex integer)
     - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -153,18 +153,17 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
 
 1. `transactionCall`: *object*
     - `accessList`: array of *object*
-        - `address`: *string* (address)
-        - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of array of *string* (hex data)
+      - `address`: *string* (address)
+      - `storageKeys`: array of *string* (hex integer)
+    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: array of *string* (hex data)
+    - `input`: *string* (hex data)
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -173,13 +172,15 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
     - `s`: *string* (hex integer)
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
-    - `type`: *string* (transaction type)
+    - `type`: *integer*
     - `v`: *string* (hex integer)
     - `value`: *string* (hex integer)
     - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 3. `optimize`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -213,7 +214,6 @@ curl localhost:8545 \
     - `storageKeys`: array of *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
 
-
 </TabItem>
 </Tabs>
 
@@ -226,18 +226,17 @@ Executes a tx call and returns gas used (does not create a transaction)
 
 1. `transactionCall`: *object*
     - `accessList`: array of *object*
-        - `address`: *string* (address)
-        - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of array of *string* (hex data)
+      - `address`: *string* (address)
+      - `storageKeys`: array of *string* (hex integer)
+    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: array of *string* (hex data)
+    - `input`: *string* (hex data)
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -246,12 +245,13 @@ Executes a tx call and returns gas used (does not create a transaction)
     - `s`: *string* (hex integer)
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
-    - `type`: *string* (transaction type)
+    - `type`: *integer*
     - `v`: *string* (hex integer)
     - `value`: *string* (hex integer)
     - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -292,7 +292,9 @@ Returns block fee history.
 <TabItem value="params" label="Parameters">
 
 1. `blockCount`: *string* (hex integer)
+
 2. `newestBlock`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 3. `rewardPercentiles`: array of *object*
 
 
@@ -328,7 +330,6 @@ curl localhost:8545 \
   - `oldestBlock`: *string* (hex integer)
   - `reward`: array of array of *string* (hex integer)
 
-
 </TabItem>
 </Tabs>
 
@@ -340,7 +341,9 @@ Retrieves Accounts via Address and Blocknumber
 <TabItem value="params" label="Parameters">
 
 1. `accountAddress`: *string* (address)
+
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -374,7 +377,6 @@ curl localhost:8545 \
   - `nonce`: *string* (hex integer)
   - `storageRoot`: *string* (hash)
 
-
 </TabItem>
 </Tabs>
 
@@ -386,7 +388,9 @@ Returns account balance
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -427,7 +431,9 @@ Retrieves a block by hash
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 2. `returnFullTransactionObjects`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -461,20 +467,20 @@ curl localhost:8545 \
   - `blobGasUsed`: *string* (hex integer)
   - `difficulty`: *string* (hex integer)
   - `excessBlobGas`: *string* (hex integer)
-  - `extraData`: array of *string* (hex data)
+  - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
   - `mixHash`: *string* (hash)
-  - `nonce`: array of *string* (hex data)
+  - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
-  - `signature`: array of *string* (hex data)
+  - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
   - `stateRoot`: *string* (hash)
   - `step`: *string* (hex integer)
@@ -490,7 +496,6 @@ curl localhost:8545 \
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
 
-
 </TabItem>
 </Tabs>
 
@@ -502,7 +507,9 @@ Retrieves a block by number
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 2. `returnFullTransactionObjects`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -536,20 +543,20 @@ curl localhost:8545 \
   - `blobGasUsed`: *string* (hex integer)
   - `difficulty`: *string* (hex integer)
   - `excessBlobGas`: *string* (hex integer)
-  - `extraData`: array of *string* (hex data)
+  - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
   - `mixHash`: *string* (hash)
-  - `nonce`: array of *string* (hex data)
+  - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
-  - `signature`: array of *string* (hex data)
+  - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
   - `stateRoot`: *string* (hash)
   - `step`: *string* (hex integer)
@@ -565,7 +572,6 @@ curl localhost:8545 \
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
 
-
 </TabItem>
 </Tabs>
 
@@ -577,6 +583,7 @@ Returns number of transactions in the block block hash
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -618,6 +625,7 @@ Returns number of transactions in the block by block number
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -657,7 +665,9 @@ Returns account code at given address and block
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -685,7 +695,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (hex data)
+`result`: *string* (hex data)
 
 </TabItem>
 </Tabs>
@@ -698,6 +708,7 @@ Reads filter changes
 <TabItem value="params" label="Parameters">
 
 1. `filterId`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -739,6 +750,7 @@ Reads filter changes
 
 1. `filterId`: *string* (hex integer)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -766,6 +778,16 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
+  - `address`: *string* (address)
+  - `blockHash`: *string* (hash)
+  - `blockNumber`: *string* (hex integer)
+  - `data`: *string* (hex data)
+  - `logIndex`: *string* (hex integer)
+  - `removed`: *boolean*
+  - `topics`: array of *string* (hash)
+  - `transactionHash`: *string* (hash)
+  - `transactionIndex`: *string* (hex integer)
+  - `transactionLogIndex`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -811,6 +833,16 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
+  - `address`: *string* (address)
+  - `blockHash`: *string* (hash)
+  - `blockNumber`: *string* (hex integer)
+  - `data`: *string* (hex data)
+  - `logIndex`: *string* (hex integer)
+  - `removed`: *boolean*
+  - `topics`: array of *string* (hash)
+  - `transactionHash`: *string* (hash)
+  - `transactionIndex`: *string* (hex integer)
+  - `transactionLogIndex`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -823,8 +855,11 @@ https://github.com/ethereum/EIPs/issues/1186
 <TabItem value="params" label="Parameters">
 
 1. `accountAddress`: *string* (address)
+
 2. `hashRate`: array of *string* (hex integer)
+
 3. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -857,13 +892,12 @@ curl localhost:8545 \
   - `balance`: *string* (hex integer)
   - `codeHash`: *string* (hash)
   - `nonce`: *string* (hex integer)
-  - `proof`: array of array of *string* (hex data)
+  - `proof`: array of *string* (hex data)
   - `storageProofs`: array of *object*
-    - `key`: array of *string* (hex data)
-    - `proof`: array of array of *string* (hex data)
-    - `value`: array of *string* (hex data)
+    - `key`: *string* (hex data)
+    - `proof`: array of *string* (hex data)
+    - `value`: *string* (hex data)
   - `storageRoot`: *string* (hash)
-
 
 </TabItem>
 </Tabs>
@@ -876,8 +910,11 @@ Returns storage data at address. storage_index
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 2. `positionIndex`: *string* (hex integer)
+
 3. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -905,7 +942,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (hex data)
+`result`: *string* (hex data)
 
 </TabItem>
 </Tabs>
@@ -918,7 +955,9 @@ Retrieves a transaction by block hash and index
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 2. `positionIndex`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -950,16 +989,15 @@ curl localhost:8545 \
   - `accessList`: array of *object*
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of array of *string* (hex data)
+  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
-  - `data`: array of *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: array of *string* (hex data)
+  - `input`: *string* (hex data)
   - `maxFeePerBlobGas`: *string* (hex integer)
   - `maxFeePerGas`: *string* (hex integer)
   - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -968,11 +1006,10 @@ curl localhost:8545 \
   - `s`: *string* (hex integer)
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
+  - `type`: *integer*
   - `v`: *string* (hex integer)
   - `value`: *string* (hex integer)
   - `yParity`: *string* (hex integer)
-
 
 </TabItem>
 </Tabs>
@@ -985,7 +1022,9 @@ Retrieves a transaction by block number and index
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 2. `positionIndex`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1017,16 +1056,15 @@ curl localhost:8545 \
   - `accessList`: array of *object*
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of array of *string* (hex data)
+  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
-  - `data`: array of *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: array of *string* (hex data)
+  - `input`: *string* (hex data)
   - `maxFeePerBlobGas`: *string* (hex integer)
   - `maxFeePerGas`: *string* (hex integer)
   - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -1035,11 +1073,10 @@ curl localhost:8545 \
   - `s`: *string* (hex integer)
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
+  - `type`: *integer*
   - `v`: *string* (hex integer)
   - `value`: *string* (hex integer)
   - `yParity`: *string* (hex integer)
-
 
 </TabItem>
 </Tabs>
@@ -1052,6 +1089,7 @@ Retrieves a transaction by hash
 <TabItem value="params" label="Parameters">
 
 1. `transactionHash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1083,16 +1121,15 @@ curl localhost:8545 \
   - `accessList`: array of *object*
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of array of *string* (hex data)
+  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
-  - `data`: array of *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: array of *string* (hex data)
+  - `input`: *string* (hex data)
   - `maxFeePerBlobGas`: *string* (hex integer)
   - `maxFeePerGas`: *string* (hex integer)
   - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -1101,11 +1138,10 @@ curl localhost:8545 \
   - `s`: *string* (hex integer)
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
+  - `type`: *integer*
   - `v`: *string* (hex integer)
   - `value`: *string* (hex integer)
   - `yParity`: *string* (hex integer)
-
 
 </TabItem>
 </Tabs>
@@ -1118,7 +1154,9 @@ Returns account nonce (number of trnsactions from the account since genesis) at 
 <TabItem value="params" label="Parameters">
 
 1. `address`: *string* (address)
+
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1159,6 +1197,7 @@ Retrieves a transaction receipt by tx hash
 <TabItem value="params" label="Parameters">
 
 1. `txHashData`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1201,7 +1240,7 @@ curl localhost:8545 \
     - `address`: *string* (address)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
+    - `data`: *string* (hex data)
     - `logIndex`: *string* (hex integer)
     - `removed`: *boolean*
     - `topics`: array of *string* (hash)
@@ -1213,8 +1252,7 @@ curl localhost:8545 \
   - `to`: *string* (address)
   - `transactionHash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
-
+  - `type`: *integer*
 
 </TabItem>
 </Tabs>
@@ -1227,7 +1265,9 @@ Retrieves an uncle block header by block hash and uncle index
 <TabItem value="params" label="Parameters">
 
 1. `blockHashData`: *string* (hash)
+
 2. `positionIndex`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1261,20 +1301,20 @@ curl localhost:8545 \
   - `blobGasUsed`: *string* (hex integer)
   - `difficulty`: *string* (hex integer)
   - `excessBlobGas`: *string* (hex integer)
-  - `extraData`: array of *string* (hex data)
+  - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
   - `mixHash`: *string* (hash)
-  - `nonce`: array of *string* (hex data)
+  - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
-  - `signature`: array of *string* (hex data)
+  - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
   - `stateRoot`: *string* (hash)
   - `step`: *string* (hex integer)
@@ -1290,7 +1330,6 @@ curl localhost:8545 \
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
 
-
 </TabItem>
 </Tabs>
 
@@ -1302,7 +1341,9 @@ Retrieves an uncle block header by block number and uncle index
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 2. `positionIndex`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1336,20 +1377,20 @@ curl localhost:8545 \
   - `blobGasUsed`: *string* (hex integer)
   - `difficulty`: *string* (hex integer)
   - `excessBlobGas`: *string* (hex integer)
-  - `extraData`: array of *string* (hex data)
+  - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
   - `mixHash`: *string* (hash)
-  - `nonce`: array of *string* (hex data)
+  - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
-  - `signature`: array of *string* (hex data)
+  - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
   - `stateRoot`: *string* (hash)
   - `step`: *string* (hex integer)
@@ -1365,7 +1406,6 @@ curl localhost:8545 \
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
 
-
 </TabItem>
 </Tabs>
 
@@ -1377,6 +1417,7 @@ Returns number of uncles in the block by block hash
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1417,6 +1458,7 @@ Returns number of uncles in the block by block number
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1598,16 +1640,15 @@ curl localhost:8545 \
   - `accessList`: array of *object*
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of array of *string* (hex data)
+  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
-  - `data`: array of *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: array of *string* (hex data)
+  - `input`: *string* (hex data)
   - `maxFeePerBlobGas`: *string* (hex integer)
   - `maxFeePerGas`: *string* (hex integer)
   - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -1616,11 +1657,10 @@ curl localhost:8545 \
   - `s`: *string* (hex integer)
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
+  - `type`: *integer*
   - `v`: *string* (hex integer)
   - `value`: *string* (hex integer)
   - `yParity`: *string* (hex integer)
-
 
 </TabItem>
 </Tabs>
@@ -1667,7 +1707,8 @@ Send a raw transaction to the tx pool and broadcasting
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `transaction`: array of *string* (hex data)
+1. `transaction`: *string* (hex data)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -1709,18 +1750,17 @@ Send a transaction to the tx pool and broadcasting
 
 1. `rpcTx`: *object*
     - `accessList`: array of *object*
-        - `address`: *string* (address)
-        - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of array of *string* (hex data)
+      - `address`: *string* (address)
+      - `storageKeys`: array of *string* (hex integer)
+    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: array of *string* (hex data)
+    - `input`: *string* (hex data)
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -1729,7 +1769,7 @@ Send a transaction to the tx pool and broadcasting
     - `s`: *string* (hex integer)
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
-    - `type`: *string* (transaction type)
+    - `type`: *integer*
     - `v`: *string* (hex integer)
     - `value`: *string* (hex integer)
     - `yParity`: *string* (hex integer)
@@ -1801,8 +1841,7 @@ curl localhost:8545 \
   - `highestBlock`: *string* (hex integer)
   - `isSyncing`: *boolean*
   - `startingBlock`: *string* (hex integer)
-  - `syncMode`: *object*
-
+  - `syncMode`: *integer*
 
 </TabItem>
 </Tabs>
@@ -1815,6 +1854,7 @@ Creates an update filter
 <TabItem value="params" label="Parameters">
 
 1. `filterId`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>

@@ -16,6 +16,7 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 
 1. `startNumber`: *string* (hex integer)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -56,6 +57,7 @@ Retrieves a block in the RLP-serialized form.
 
 1. `number`: *string* (hex integer)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -82,7 +84,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (hex data)
+`result`: *string* (hex data)
 
 </TabItem>
 </Tabs>
@@ -95,6 +97,7 @@ Retrieves a block in the RLP-serialized form.
 <TabItem value="params" label="Parameters">
 
 1. `hash`: *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -122,7 +125,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (hex data)
+`result`: *string* (hex data)
 
 </TabItem>
 </Tabs>
@@ -135,6 +138,7 @@ Retrieves a representation of tree branches on a given chain level (Nethermind s
 <TabItem value="params" label="Parameters">
 
 1. `number`: *string* (hex integer)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -170,7 +174,6 @@ curl localhost:8545 \
     - `wasProcessed`: *boolean*
   - `hasBlockOnMainChain`: *boolean*
 
-
 </TabItem>
 </Tabs>
 
@@ -182,7 +185,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 <TabItem value="params" label="Parameters">
 
 1. `category`: *string*
+
 2. `name`: *string*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -211,7 +216,6 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-
 
 </TabItem>
 </Tabs>
@@ -249,7 +253,6 @@ curl localhost:8545 \
 `result`: *object*
   - `currentStage`: *string*
 
-
 </TabItem>
 </Tabs>
 
@@ -261,6 +264,7 @@ Insert receipts for the block after verifying receipts root correctness.
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 2. `receiptForRpc`: array of *object*
   - `blobGasPrice`: *string* (hex integer)
   - `blobGasUsed`: *string* (hex integer)
@@ -276,7 +280,7 @@ Insert receipts for the block after verifying receipts root correctness.
     - `address`: *string* (address)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
+    - `data`: *string* (hex data)
     - `logIndex`: *string* (hex integer)
     - `removed`: *boolean*
     - `topics`: array of *string* (hash)
@@ -288,7 +292,7 @@ Insert receipts for the block after verifying receipts root correctness.
   - `to`: *string* (address)
   - `transactionHash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
-  - `type`: *string* (transaction type)
+  - `type`: *integer*
 
 
 </TabItem>
@@ -331,6 +335,7 @@ Sets the block number up to which receipts will be migrated to (Nethermind speci
 
 1. `blockNumber`: *string* (hex integer)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -371,6 +376,7 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 
 1. `blockHash`: *string* (hash)
 
+
 </TabItem>
 <TabItem value="request" label="Request" default>
 
@@ -410,6 +416,7 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 2. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -458,7 +465,8 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockRlp`: array of *string* (hex data)
+1. `blockRlp`: *string* (hex data)
+
 2. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -496,12 +504,20 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
@@ -514,6 +530,7 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 2. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -551,12 +568,20 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
@@ -569,6 +594,7 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 2. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -606,12 +632,20 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
@@ -625,18 +659,17 @@ This method lets you run an eth_call within the context of the given block execu
 
 1. `call`: *object*
     - `accessList`: array of *object*
-        - `address`: *string* (address)
-        - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of array of *string* (hex data)
+      - `address`: *string* (address)
+      - `storageKeys`: array of *string* (hex integer)
+    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
-    - `data`: array of *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: array of *string* (hex data)
+    - `input`: *string* (hex data)
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
@@ -645,12 +678,13 @@ This method lets you run an eth_call within the context of the given block execu
     - `s`: *string* (hex integer)
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
-    - `type`: *string* (transaction type)
+    - `type`: *integer*
     - `v`: *string* (hex integer)
     - `value`: *string* (hex integer)
     - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 3. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -688,12 +722,20 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
@@ -706,6 +748,7 @@ This method will attempt to run the transaction in the exact same manner as it w
 <TabItem value="params" label="Parameters">
 
 1. `transactionHash`: *string* (hash)
+
 2. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -743,25 +786,33 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
 
 ### debug_traceTransactionByBlockAndIndex
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
 2. `txIndex`: *string* (hex integer)
+
 3. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -799,25 +850,33 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
 
 ### debug_traceTransactionByBlockhashAndIndex
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `blockHash`: *string* (hash)
+
 2. `txIndex`: *string* (hex integer)
+
 3. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -855,25 +914,33 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
 
 ### debug_traceTransactionInBlockByHash
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockRlp`: array of *string* (hex data)
+1. `blockRlp`: *string* (hex data)
+
 2. `transactionHash`: *string* (hash)
+
 3. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -911,25 +978,33 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>
 
 ### debug_traceTransactionInBlockByIndex
 
-
-
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockRlp`: array of *string* (hex data)
+1. `blockRlp`: *string* (hex data)
+
 2. `txIndex`: *string* (hex integer)
+
 3. `options`: *object*
     - `disableMemory`: *boolean*
     - `disableStack`: *boolean*
@@ -967,12 +1042,20 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: *object*
+  - `structLogs`: array of *object*
+    - `depth`: *string* (hex integer)
+    - `error`: *string*
+    - `gas`: *string* (hex integer)
+    - `gasCost`: *string* (hex integer)
+    - `memory`: array of *string*
+    - `opcode`: *string*
+    - `programCounter`: *string* (hex integer)
+    - `stack`: array of *string*
+    - `storage`: map of *string*
   - `failed`: *boolean*
   - `gas`: *string* (hex integer)
-  - `returnValue`: array of *string* (hex data)
-  - `storagesByDepth`: *object*
-
+  - `returnValue`: *string* (hex data)
+  - `storagesByDepth`: array of map of *string*
 
 </TabItem>
 </Tabs>

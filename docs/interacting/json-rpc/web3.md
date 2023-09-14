@@ -1,7 +1,7 @@
 ---
 title: web3 namespace
 sidebar_label: web3
-sidebar_position: 12
+sidebar_position: 10
 ---
 
 import Tabs from "@theme/Tabs";
@@ -49,7 +49,8 @@ Returns Keccak of the given data.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `data`: array of *string* (hex data)
+1. `data`: *string* (hex data)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>

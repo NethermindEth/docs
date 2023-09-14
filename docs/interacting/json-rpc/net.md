@@ -1,15 +1,13 @@
 ---
 title: net namespace
 sidebar_label: net
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ### net_listening
-
-
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -44,8 +42,6 @@ curl localhost:8545 \
 
 ### net_localAddress
 
-
-
 <Tabs>
 <TabItem value="request" label="Request" default>
 
@@ -78,8 +74,6 @@ curl localhost:8545 \
 </Tabs>
 
 ### net_localEnode
-
-
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -114,8 +108,6 @@ curl localhost:8545 \
 
 ### net_peerCount
 
-
-
 <Tabs>
 <TabItem value="request" label="Request" default>
 
@@ -148,8 +140,6 @@ curl localhost:8545 \
 </Tabs>
 
 ### net_version
-
-
 
 <Tabs>
 <TabItem value="request" label="Request" default>

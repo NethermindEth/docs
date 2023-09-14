@@ -15,7 +15,9 @@ Adds given node.
 <TabItem value="params" label="Parameters">
 
 1. `enode`: *string*
+
 2. `addToStaticNodes`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -89,8 +91,13 @@ Information about this node
   - `listenAddr`: *string*
   - `name`: *string*
   - `ports`: *object*
-  - `protocols`: *object*
-
+    - `discovery`: *string* (hex integer)
+    - `listener`: *string* (hex integer)
+  - `protocols`: map of *object*
+    - `network`: *string* (hex integer)
+    - `difficulty`: *string* (hex integer)
+    - `genesis`: *string* (hash)
+    - `head`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -103,6 +110,7 @@ Displays a list of connected peers including information about them (`clientId`,
 <TabItem value="params" label="Parameters">
 
 1. `includeDetails`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -145,7 +153,6 @@ List of connected peers including information
   - `lastSignal`: *string*
   - `port`: *string* (hex integer)
 
-
 </TabItem>
 </Tabs>
 
@@ -179,8 +186,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-
+`result`: *integer*
 
 </TabItem>
 </Tabs>
@@ -193,7 +199,9 @@ Removes given node.
 <TabItem value="params" label="Parameters">
 
 1. `enode`: *string*
+
 2. `removeFromStaticNodes`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
