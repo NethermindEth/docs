@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8967],{1685:e=>{e.exports=JSON.parse('{"title":"Monitoring","slug":"/category/monitoring","permalink":"/docs/category/monitoring","navigation":{"previous":{"title":"IPC","permalink":"/docs/interacting/ipc"},"next":{"title":"Metrics","permalink":"/docs/category/metrics"}}}')}}]);
