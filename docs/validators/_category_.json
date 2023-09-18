@@ -1,8 +1,4 @@
 {
   "position": 5,
-  "label": "Validators",
-  "collapsible": true,
-  "link": {
-    "type": "generated-index"
-  }
+  "label": "Validators"
 }

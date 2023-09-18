@@ -1,7 +1,6 @@
 {
   "position": 0,
   "label": "Metrics",
-  "collapsible": true,
   "link": {
     "type": "doc", "id": "metrics"
   }

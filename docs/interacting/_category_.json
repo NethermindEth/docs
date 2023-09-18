@@ -1,8 +1,4 @@
 {
   "position": 3,
-  "label": "Interacting with Nethermind",
-  "collapsible": true,
-  "link": {
-    "type": "generated-index"
-  }
+  "label": "Interacting with Nethermind"
 }

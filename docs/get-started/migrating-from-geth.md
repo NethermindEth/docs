@@ -68,7 +68,7 @@ needed to be changed with recommended values:\
 
 Now Nethermind node should be syncing well using second CL configured on machine. To monitor status of syncing there is
 a JsonRPC call which can be
-used [#eth\_syncing](../interacting/json-rpc/eth.md#eth_syncing).
+used [#eth\_syncing](../interacting/json-rpc-ns/eth.md#eth_syncing).
 Whenever this endpoint will return "false", node is considered as fully synced with all bodies and receipts needed to
 work properly as a Validator.
 
@@ -183,7 +183,7 @@ a [#step-4-run-nethermind](consensus-clients.md)for instruction on how to
 run Nethermind.
 
 Now Nethermind node should be syncing well using CL reconfigured on machine. To monitor status of syncing there is a
-JsonRPC call which can be used [#eth\_syncing](../interacting/json-rpc/eth.md#eth\_syncing).
+JsonRPC call which can be used [#eth\_syncing](../interacting/json-rpc-ns/eth.md#eth\_syncing).
 Whenever this endpoint will return "false", node is considered as fully synced with all bodies and receipts needed to
 work properly as a Validator.
 

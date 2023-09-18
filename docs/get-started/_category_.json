@@ -1,8 +1,4 @@
 {
   "position": 1,
-  "label": "Get started",
-  "collapsible": true,
-  "link": {
-    "type": "generated-index"
-  }
+  "label": "Get started"
 }

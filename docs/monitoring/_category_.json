@@ -1,8 +1,4 @@
 {
   "position": 4,
-  "label": "Monitoring",
-  "collapsible": true,
-  "link": {
-    "type": "generated-index"
-  }
+  "label": "Monitoring"
 }
