@@ -26,7 +26,7 @@ We urge you to take [client diversity](https://ethereum.org/en/developers/docs/n
 
 ## Configuring JSON-RPC interface
 
-Execution and consensus clients communicate via an authenticated endpoint specified in Engine JSON-RPC API. In order to connect to a consensus client, the execution client must generate a [JWT](https://jwt.io) secret at a known path. Although the secret is generated automatically by Nethermind, in some cases, you might need to do it yourself. You can generate one using [OpenSSL](https://www.openssl.org):
+Execution and consensus clients communicate via an authenticated endpoint specified in Engine JSON-RPC API. In order to connect to a consensus client, the execution client must generate a [JWT](https://jwt.io) secret at a known path. Although the secret is generated automatically by Nethermind on startup at `keystore/jwt-secret` path in its root directory, in some cases, you might need to do it yourself. You can generate one using [OpenSSL](https://www.openssl.org):
 
 ```bash
 openssl rand -hex 32 > path/to/jwt.hex
@@ -35,9 +35,11 @@ openssl rand -hex 32 > path/to/jwt.hex
 Since the JWT secret is simply a 64-character hex value, there are many other ways of generating it, including online resources. However, for security reasons, we recommend using OpenSSL.
 :::
 
+The generated JWT secret can be specified with the `--JsonRpc.JwtSecretFile path/to/jwt.hex` command line option. For more configuration options, see [Engine API](../interacting/json-rpc-server.md#engine-api).
+
 ## Running the consensus client
 
-This step assumes that you have already [installed](../get-started/installing-nethermind.md) Nethermind, the [consensus client](#choosing-a-consensus-client) of your choice, and, optionally, created the JWT secret. If you haven't created the JWT secret, Nethermind will create it on startup at `keystore/jwt-secret` path in its root directory.
+This step assumes that you have already [installed](../get-started/installing-nethermind.md) Nethermind, the [consensus client](#choosing-a-consensus-client) of your choice, and, optionally, created the [JWT secret](#configuring-json-rpc-interface).
 
 :::info
 As syncing from the scratch can take a very long time on some networks (up to several days), the commands below optionally use [checkpoint sync](https://ethereum.org/en/developers/docs/nodes-and-clients/#checkpoint-sync) to speed up the process.
