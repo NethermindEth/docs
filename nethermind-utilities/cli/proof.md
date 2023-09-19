@@ -46,6 +46,7 @@ proof.getTransactionByHash(txHash, includeHeader)
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |

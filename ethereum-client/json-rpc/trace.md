@@ -82,6 +82,7 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |

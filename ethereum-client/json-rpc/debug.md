@@ -531,6 +531,7 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |

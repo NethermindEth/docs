@@ -47,6 +47,7 @@ curl --data '{"method":"proof_getTransactionByHash","params":[txHash, includeHea
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
