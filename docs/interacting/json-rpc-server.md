@@ -40,7 +40,7 @@ The Engine API is a set of RPC methods that enable communication between an exec
 By default, the Engine API uses local loopback (`127.0.0.1` or `localhost`) and `8551` port. To use a different host or port, set the `--JsonRpc.EngineHost` and `--JsonRpc.EnginePort` command line options, respectively. For example, this can be useful when execution and consensus clients are on different machines.
 
 :::caution Important
-If you specify the `--JsonRpc.EngineHost` option, the `--JsonRpc.EnginePort` option must be specified as well.
+When the `--JsonRpc.EngineHost` option is specified, the `--JsonRpc.EnginePort` option must be specified as well.
 :::
 
 The Engine API uses JWT authentication and requires a JWT secret. By default, Nethermind creates one at `keystore/jwt-secret` path in its root directory. To use a different path, specify the `--JsonRpc.JwtSecretFile path/to/jwt.hex` command line option.
