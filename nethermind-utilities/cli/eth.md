@@ -70,6 +70,7 @@ eth.call(transactionCall, blockParameter)
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
@@ -196,6 +197,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
@@ -293,6 +295,7 @@ eth.estimateGas(transactionCall, blockParameter)
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
@@ -1074,6 +1077,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
@@ -1149,6 +1153,7 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
@@ -1583,6 +1588,7 @@ eth.pendingTransactions
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
@@ -1748,6 +1754,7 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 
 | Field name | Type |
 | :--- | :--- |
+| DefaultChainId | `Quantity` |
 | Hash | `Hash` |
 | Nonce | `Quantity` |
 | BlockHash | `Hash` |
