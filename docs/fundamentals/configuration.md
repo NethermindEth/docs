@@ -58,16 +58,16 @@ The command line options are case-sensitive and can be defined only once unless 
   <summary>Available configurations</summary>
   <p>
 
-  Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`. For instance, `mainnet_archive`.
+  Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`.
 
-  - `chiado`
-  - `energyweb`
-  - `exosama`
-  - `goerli`
-  - `gnosis`
-  - `mainnet`
-  - `sepolia`
-  - `volta`
+  - `chiado` `chiado_archive`
+  - `energyweb` `energyweb_archive`
+  - `exosama` `exosama_archive`
+  - `goerli` `goerli_archive`
+  - `gnosis` `gnosis_archive`
+  - `mainnet` `mainnet_archive`
+  - `sepolia` `sepolia_archive`
+  - `volta` `volta_archive`
 
   </p>
   </details>
