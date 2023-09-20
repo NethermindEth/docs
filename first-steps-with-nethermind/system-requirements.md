@@ -6,42 +6,6 @@ description: Run Nethermind on a platform of your choice
 
 Learn about the hardware and software requirements to run Nethermind.&#x20;
 
-## Supported operating systems
-
-Nethermind supports a broad range of modern _64-bit_ operating systems including but not limited to:
-
-* **Linux**
-  * Alpine (3.15 and later)
-  * CentOS (Stream 8 and later)
-  * Debian (10 and later)
-  * Fedora (37 and later)
-  * openSUSE (15.4 and later)
-  * RHEL (8 and later)
-  * SLES (15 and later)
-  * Ubuntu (18.04 and later)
-* **Windows**
-  * Windows 10 and later
-  * Windows Server 2012 and later
-* **macOS** (10.15 Catalina and later)
-
-{% hint style="info" %}
-As of now, Nethermind for Windows doesn't support AArch64 (ARM64) architecture.
-{% endhint %}
-
-## Hardware requirements
-
-Suggested requirements can be found below.
-
-| Network             | Memory | Cores |
-| ------------------- | :----: | :---: |
-| **Mainnet**         |   16   |   4   |
-| **Mainnet Archive** |   128  |   8   |
-| **Goerli**          |    8   |   2   |
-| **Goerli Archive**  |    8   |   4   |
-| **Gnosis**          |   16   |   2   |
-| **EnergyWeb**       |    8   |   2   |
-| **Volta**           |    8   |   2   |
-
 ### Disk requirements
 
 Running an Ethereum Mainnet full node requires at least a 1 TB fast disk, such as **NVMe or a fast SSD**. However, **2 TB is recommended** to minimize maintenance requirements. To choose a concrete disk model we recommend checking [Great and less great SSDs for Ethereum nodes](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038#the-good).\
