@@ -15,11 +15,11 @@ Nethermind can be installed in several ways:
 
 ## Prerequisites
 
-Before installing Nethermind, the following prerequisites must be met for your specific platform.
-
 :::info
 Does not apply to Docker distributions.
 :::
+
+Before installing Nethermind, your specific platform might need the following prerequisites.
 
 <Tabs groupId="os">
 <TabItem value="linux" label="Linux">
@@ -61,7 +61,8 @@ winget install Microsoft.VCRedist.2015+.x64
 
 Package managers are the easiest and fastest way of installing Nethermind.
 
-### Ubuntu
+<Tabs groupId="os">
+<TabItem value="linux" label="Linux">
 
 On Ubuntu and other Linux distros supporting PPA, Nethermind can be installed via Launchpad PPA.
 
@@ -86,7 +87,8 @@ sudo apt-get update
 sudo apt-get install nethermind
 ```
 
-### Windows
+</TabItem>
+<TabItem value="windows" label="Windows">
 
 On Windows, Nethermind can be installed via Windows Package Manager as follows:
 
@@ -94,7 +96,8 @@ On Windows, Nethermind can be installed via Windows Package Manager as follows:
 winget install nethermind
 ```
 
-### macOS
+</TabItem>
+<TabItem value="macos" label="macOS">
 
 On macOS, Nethermind can be installed via Homebrew.
 
@@ -109,6 +112,9 @@ Then, install Nethermind as follows:
 ```sh
 brew install nethermind
 ```
+
+</TabItem>
+</Tabs>
 
 For further instructions, see [Running Nethermind](../fundamentals/running-nethermind.md).
 
@@ -135,8 +141,8 @@ For instance, if you want to run Nethermind as a different user, change the `Use
   sudo useradd -m -s /bin/bash nethermind
   
   # Increase the maximum number of open files
-  sudo bash -c 'echo "nethermind soft nofile 1000000" > /etc/security/limits.d/nethermind.conf'
-  sudo bash -c 'echo "nethermind hard nofile 1000000" >> /etc/security/limits.d/nethermind.conf'
+  sudo bash -c 'echo "nethermind soft nofile 100000" > /etc/security/limits.d/nethermind.conf'
+  sudo bash -c 'echo "nethermind hard nofile 100000" >> /etc/security/limits.d/nethermind.conf'
   
   # Switch to the nethermind user
   sudo su -l nethermind

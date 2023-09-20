@@ -1,8 +1,4 @@
 {
   "position": 8,
-  "label": "Resources",
-  "collapsible": true,
-  "link": {
-    "type": "generated-index"
-  }
+  "label": "Resources"
 }

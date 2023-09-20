@@ -1,9 +1,40 @@
 ---
-description: There are several known issues with the current version of Nethermind
+title: Known issues
 sidebar_position: 3
 ---
 
-# Known Issues
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## File descriptor limits
+
+In some cases, file descriptor limits may cause issues like "Too many open files". To solve that, see the instructions for your platform below.
+
+<Tabs groupId="os">
+<TabItem value="linux" label="Linux">
+
+To increase the limits for the user running Nethermind (e.g., `nethermind`), run:
+
+```bash
+sudo echo "nethermind soft nofile 100000" > /etc/security/limits.d/nethermind.conf
+sudo echo "nethermind hard nofile 100000" >> /etc/security/limits.d/nethermind.conf
+```
+
+</TabItem>
+<TabItem value="macos" label="macOS">
+
+To increase the limits, run:
+
+```bash
+ulimit -n 10000
+```
+
+If you run into issues with the above command, see the [workaround](https://developer.apple.com/forums/thread/735798?answerId=762679022#762679022).
+
+Note that the changes above are temporary and will be reset after the system reboot. To make them permanent, you can add them to your `~/.bashrc` or `~/.bash_profile` shell configuration file.
+
+</TabItem>
+</Tabs>
 
 ## RocksDB checksum issue
 
