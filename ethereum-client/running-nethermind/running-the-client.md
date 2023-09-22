@@ -17,7 +17,7 @@ The executable name depends on the installation source. If installed with PPA, i
 For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
 
 ```bash
-./Nethermind.Runner -c mainnet -dd path/to/data/dir
+./nethermind -c mainnet -dd path/to/data/dir
 ```
 {% endtab %}
 
@@ -37,7 +37,7 @@ The executable name depends on the installation source. If installed with Homebr
 For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
 
 ```bash
-./Nethermind.Runner -c mainnet -dd path/to/data/dir
+./nethermind -c mainnet -dd path/to/data/dir
 ```
 {% endtab %}
 {% endtabs %}
@@ -51,13 +51,13 @@ For rookies, the launcher is the easiest way to begin by just following a few si
 {% tabs %}
 {% tab title="Linux" %}
 {% hint style="info" %}
-The executable name depends on the installation source. If installed with PPA, it's `nethermind`. Otherwise, it's `Nethermind.Launcher`.
+The executable name depends on the installation source. If installed with PPA, it's `nethermind-launcher`. Otherwise, it's `Nethermind.Launcher`.
 {% endhint %}
 
 Run the launcher as follows:
 
 ```bash
-./Nethermind.Launcher
+./nethermind-launcher
 ```
 {% endtab %}
 
@@ -65,7 +65,7 @@ Run the launcher as follows:
 Run the launcher as follows:
 
 ```powershell
-./Nethermind.Launcher.exe
+./nethermind-launcher.exe
 ```
 {% endtab %}
 
@@ -77,7 +77,7 @@ The executable name depends on the installation source. If installed with Homebr
 Run the launcher as follows:
 
 ```bash
-./Nethermind.Launcher
+./nethermind-launcher
 ```
 {% endtab %}
 {% endtabs %}
