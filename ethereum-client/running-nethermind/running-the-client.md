@@ -25,7 +25,7 @@ For instance, to launch the client with the default configuration for the Mainne
 To launch the client with the default configuration for the Mainnet and custom data directory, run:
 
 ```
-./nethermind.exe -c mainnet -dd path/to/data/dir
+nethermind.exe -c mainnet -dd path/to/data/dir
 ```
 {% endtab %}
 
