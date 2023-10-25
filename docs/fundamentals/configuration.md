@@ -38,7 +38,7 @@ The full list of command line options can be displayed by running:
 </TabItem>
 </Tabs>
 
-Below is the list of the basic options followed by an exhaustive list of options by module.
+Below is the list of the basic options followed by an exhaustive list of options by namespace.
 
 :::caution
 The command line options are case-sensitive and can be defined only once unless stated otherwise.
@@ -104,7 +104,9 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Displays the Nethermind version info.
 
-### Options by modules
+### Options by namespaces
+
+<!--[start autogen]-->
 
 <details>
 <summary className="nd-details-heading">
@@ -1232,14 +1234,16 @@ The command line options are case-sensitive and can be defined only once unless 
 </p>
 </details>
 
+<!--[end autogen]-->
+
 ## Environment variables
 
 To configure Nethermind using environment variables, the following naming convention is used in all uppercase:
 
 ```text
-NETHERMIND_{MODULE_NAME}CONFIG_{PROPERTY_NAME}
+NETHERMIND_{NAMESPACE}CONFIG_{PROPERTY_NAME}
 ```
-For instance, the environment variable equivalent of the command line `--JsonRpc.JwtSecretFile` option is `NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE`. For the list of configuration modules and their options, see [Options by modules](#options-by-modules).
+For instance, the environment variable equivalent of the command line `--JsonRpc.JwtSecretFile` option is `NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE`. For the list of configuration namespaces and their options, see [Options by namespaces](#options-by-namespaces).
 
 ## Configuration file
 
