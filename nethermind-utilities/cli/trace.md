@@ -100,7 +100,7 @@ trace.call(call, traceTypes, blockParameter)
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -112,13 +112,6 @@ trace.call(call, traceTypes, blockParameter)
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 

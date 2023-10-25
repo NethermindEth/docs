@@ -2,9 +2,13 @@
 
 | Metric | Description |
 | :--- | :--- |
+| nethermind_blob_transactions_db_reads | Number of BlobTransactions DB reads. |
+| nethermind_blob_transactions_db_writes | Number of BlobTransactions DB writes. |
 | nethermind_block_infos_db_reads | Number of Block Infos DB reads. |
 | nethermind_block_infos_db_size | Size of blockInfos DB in bytes |
 | nethermind_block_infos_db_writes | Number of Block Infos DB writes. |
+| nethermind_block_number_db_reads | Number of BlockNumbers DB reads. |
+| nethermind_block_number_db_writes | Number of BlockNumbers DB writes. |
 | nethermind_blocks_db_reads | Number of Blocks DB reads. |
 | nethermind_blocks_db_size | Size of blocks DB in bytes |
 | nethermind_blocks_db_writes | Number of Blocks DB writes. |

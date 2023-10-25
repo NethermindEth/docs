@@ -86,7 +86,7 @@ eth.call(transactionCall, blockParameter)
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -98,13 +98,6 @@ eth.call(transactionCall, blockParameter)
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
@@ -213,7 +206,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -225,13 +218,6 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
@@ -251,7 +237,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 
 | Field name | Type |
 | :--- | :--- |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | GasUsed | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -311,7 +297,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -323,13 +309,6 @@ eth.estimateGas(transactionCall, blockParameter)
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
@@ -1093,7 +1072,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1105,13 +1084,6 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1169,7 +1141,7 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1181,13 +1153,6 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1604,7 +1569,7 @@ eth.pendingTransactions
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1616,13 +1581,6 @@ eth.pendingTransactions
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1770,7 +1728,7 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1782,13 +1740,6 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 

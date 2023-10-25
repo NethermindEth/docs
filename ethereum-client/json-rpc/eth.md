@@ -88,7 +88,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -100,13 +100,6 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
@@ -217,7 +210,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -229,13 +222,6 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
@@ -255,7 +241,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 
 | Field name | Type |
 | :--- | :--- |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | GasUsed | `Quantity` |
 {% endtab %}
 {% endtabs %}
@@ -316,7 +302,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -328,13 +314,6 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
@@ -1116,7 +1095,7 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1128,13 +1107,6 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1207,7 +1179,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1219,13 +1191,6 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1284,7 +1249,7 @@ curl --data '{"method":"eth_getTransactionByHash","params":["0xabca23910646013d6
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1296,13 +1261,6 @@ curl --data '{"method":"eth_getTransactionByHash","params":["0xabca23910646013d6
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1834,7 +1792,7 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1846,13 +1804,6 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1978,7 +1929,7 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -1990,13 +1941,6 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 {% endtab %}
 {% endtabs %}
 
