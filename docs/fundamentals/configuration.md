@@ -4,9 +4,6 @@ sidebar_position: 1
 toc_max_heading_level: 4
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
 Nethermind is highly configurable. There are 3 ways of configuring it, listed by priority:
 
 - [Command line options](#command-line-options) (aka arguments or flags)
@@ -21,22 +18,9 @@ Given the above priority list, an option defined in a more priority way override
 
 The full list of command line options can be displayed by running:
 
-<Tabs groupId="os">
-<TabItem value="linux-macos" label="Linux / macOS">
-
 ```bash
-./nethermind -h
+nethermind -h
 ```
-
-</TabItem>
-<TabItem value="windows" label="Windows">
-
-```powershell
-./nethermind.exe -h
-```
-
-</TabItem>
-</Tabs>
 
 Below is the list of the basic options followed by an exhaustive list of options by namespace.
 

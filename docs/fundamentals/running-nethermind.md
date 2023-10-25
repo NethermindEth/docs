@@ -3,9 +3,6 @@ title: Running Nethermind
 sidebar_position: 0
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
 :::info
 To get the latest Nethermind version, see [Installing Nethermind](../get-started/installing-nethermind.md).
 :::
@@ -14,41 +11,15 @@ Nethermind is mainly controlled by command line options (aka arguments or flags)
 
 The full list of options can be displayed by running:
 
-<Tabs groupId="os">
-<TabItem value="linux-macos" label="Linux / macOS">
-
 ```bash
-./nethermind -h
+nethermind -h
 ```
-
-</TabItem>
-<TabItem value="windows" label="Windows">
-
-```powershell
-./nethermind.exe -h
-```
-
-</TabItem>
-</Tabs>
 
 For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
 
-<Tabs groupId="os">
-<TabItem value="linux-macos" label="Linux / macOS">
-
 ```bash
-./nethermind -c mainnet -dd path/to/data/dir
+nethermind -c mainnet -dd path/to/data/dir
 ```
-
-</TabItem>
-<TabItem value="windows" label="Windows">
-
-```powershell
-./nethermind.exe -c mainnet -dd path/to/data/dir
-```
-
-</TabItem>
-</Tabs>
 
 For detailed info about the available configuration options, see [Configuration](./configuration.md).
 

@@ -48,7 +48,7 @@ As syncing from the scratch can take a very long time on some networks (up to se
 ### Running Lighthouse
 
 ```bash
-./lighthouse bn \
+lighthouse bn \
   --network mainnet \
   --execution-endpoint http://localhost:8551 \
   --execution-jwt path/to/jwt.hex \
@@ -61,7 +61,7 @@ The command above runs Lighthouse on Mainnet. For other networks, set the `--net
 ### Running Lodestar
 
 ```bash
-./lodestar beacon \
+lodestar beacon \
   --network mainnet \
   --jwt-secret path/to/jwt.hex \
   --checkpointSyncUrl https://beaconstate-mainnet.chainsafe.io
@@ -95,7 +95,7 @@ The command above runs Prysm on Mainnet. For other networks, replace the `--main
 ### Running Teku
 
 ```bash
-./teku \
+teku \
   --network=mainnet \
   --ee-endpoint=http://localhost:8551 \
   --ee-jwt-secret-file=path/to/jwt.hex \
@@ -113,7 +113,7 @@ The consensus client must be running before you start Nethermind.
 :::
 
 ```bash
-./nethermind \
+nethermind \
   -c mainnet \
   --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
