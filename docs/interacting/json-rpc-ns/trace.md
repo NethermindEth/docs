@@ -59,7 +59,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -161,7 +161,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -194,7 +194,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -258,7 +258,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -336,7 +336,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -369,7 +369,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -429,7 +429,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -462,7 +462,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -522,7 +522,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -555,7 +555,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -613,7 +613,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
