@@ -30,6 +30,6 @@
 | SnapSyncAccountRangePartitionCount | NETHERMIND_SYNCCONFIG_SNAPSYNCACCOUNTRANGEPARTITIONCOUNT | Number of account range partition to create. Increase snap sync request concurrency. Value must be between 1 to 256 (inclusive). | 8 |
 | StrictMode | NETHERMIND_SYNCCONFIG_STRICTMODE | Disable some optimization and run a more extensive sync. Useful for broken sync state but normally not needed | false |
 | SynchronizationEnabled | NETHERMIND_SYNCCONFIG_SYNCHRONIZATIONENABLED | If 'false' then the node does not download/process new blocks. | true |
-| TuneDbMode | NETHERMIND_SYNCCONFIG_TUNEDBMODE | [EXPERIMENTAL] Optimize db for write during sync. Significantly reduce total writes written and some sync time if you are not network limited. | Default |
+| TuneDbMode | NETHERMIND_SYNCCONFIG_TUNEDBMODE | [EXPERIMENTAL] Optimize db for write during sync. Significantly reduce total writes written and some sync time if you are not network limited. | HeavyWrite |
 | UseGethLimitsInFastBlocks | NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS | If set to 'true' then in the Fast Blocks mode Nethermind generates smaller requests to avoid Geth from disconnecting. On the Geth heavy networks (mainnet) it is desired while on Parity or Nethermind heavy networks (Goerli, AuRa) it slows down the sync by a factor of ~4 | true |
 | WitnessProtocolEnabled | NETHERMIND_SYNCCONFIG_WITNESSPROTOCOLENABLED | Enables witness protocol. | false |

@@ -547,7 +547,7 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | Input | `Data` |
 | ChainId | `Quantity` |
 | Type | `TxType object` |
-| AccessList | `AccessListItemForRpc[] object` |
+| AccessList | `Array` |
 | MaxFeePerBlobGas | `Quantity` |
 | BlobVersionedHashes | `Data` |
 | V | `Quantity` |
@@ -559,13 +559,6 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
-
-`AccessListItemForRpc[]`
-
-| Field name | Type |
-| :--- | :--- |
-| Address | `Address` |
-| StorageKeys | `Array` |
 
 `BlockParameter`
 
