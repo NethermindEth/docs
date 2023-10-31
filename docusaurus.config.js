@@ -34,13 +34,6 @@ const config = {
       ({
         blog: false,
         docs: {
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'v1.20.1',
-              path: '/'
-            }
-          },
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateTime: true,
