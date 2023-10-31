@@ -116,7 +116,7 @@ brew install nethermind
 </TabItem>
 </Tabs>
 
-For further instructions, see [Running Nethermind](../fundamentals/running-nethermind.md).
+For further instructions, see [Running Nethermind](#running).
 
 ## Standalone downloads
 
@@ -193,7 +193,7 @@ To monitor the Nethermind output, run:
 journalctl -u nethermind -f
 ```
 
-For further instructions, see [Running Nethermind](../fundamentals/running-nethermind).
+For further instructions, see [Running Nethermind](#running).
 
 ## Docker container
 
@@ -250,9 +250,42 @@ docker run -it \
   nethermind/nethermind -dd /nethermind/data_dir
 ```
 
-Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `-dd` option in this case.
+Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `-dd` option in this case. For further instructions, see [Running Nethermind](#running).
 
-#### See also
+To build the Docker image yourself, see [Building Docker image](../developers/building-from-source.md#bulding-docker-image).
 
-- [Configuration options](../fundamentals/configuration.md)
-- [Building Docker image](../developers/building-from-source.md#bulding-docker-image)
+## Running Nethermind {#running}
+
+:::caution Important
+A [consensus client](consensus-clients.md) of your choice must be running before you start Nethermind.
+:::
+
+Nethermind is mainly controlled by command line options (aka arguments or flags).
+
+The full list of options can be displayed by running:
+
+```bash
+nethermind -h
+```
+
+For instance, to launch the client with the default configuration for the Mainnet and custom data directory, run:
+
+```bash
+nethermind -c mainnet -dd path/to/data/dir
+```
+
+For detailed info about the available configuration options, see [Configuration](./configuration.md).
+
+### Supported networks
+
+To run Nethermind on a specific network, use the [`-c, --config`](./configuration.md#basic-options) command line option. Currently, the following networks are supported out of the box:
+
+- **Chiado** (testnet)
+- **Energy Web**
+- **Exosama**
+- **Goerli** (testnet)
+- **Gnosis** 
+- **Holesky** (testnet)
+- **Mainnet**
+- **Sepolia** (testnet)
+- **Volta** (testnet)

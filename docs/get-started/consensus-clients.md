@@ -118,7 +118,7 @@ nethermind \
   --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
 
-The command above runs Nethermind on Mainnet. For other networks, set the `-c` option accordingly. For more info, see [Running Nethermind](../fundamentals/running-nethermind.md).
+The command above runs Nethermind on Mainnet. For other networks, set the `-c` option accordingly. For more info, see [Running Nethermind](../get-started/installing-nethermind.md#running).
 
 [checkpoint-sync-endpoints]: https://eth-clients.github.io/checkpoint-sync-endpoints
 [lighthouse]: https://lighthouse-book.sigmaprime.io

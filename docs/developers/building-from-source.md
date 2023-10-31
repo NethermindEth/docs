@@ -53,7 +53,7 @@ configuration only.
 The build artifacts can be found in the `bin/release/net7.0` directory. By default, the logs and database directories
 are located here as well.
 
-For more info, see [Running Nethermind](../fundamentals/running-nethermind.md).
+For more info about launching Nethermind, see the [Launching](../get-started/installing-nethermind.md#launching) section.
 
 #### Testing
 

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 This article will lead you through docker-compose setup of **Nethermind Aura Validator** (xDai chain in this example).
 Same result can be obtained
-by [Downloading](../get-started/installing-nethermind.md) & [Running Nethermind](../fundamentals/running-nethermind.md)
+by [Downloading](../get-started/installing-nethermind.md) & [Running Nethermind](../get-started/installing-nethermind.md#running)
 package or by [Building Nethermind](../developers/building-from-source.md) from the source code.&#x20;
 
 If you chose not to use docker-compose, you can skip docker-compose related sections and read
@@ -105,8 +105,8 @@ container (`xdai.cfg` file in above example).
 Make sure that `nethermind_db`, `keystore`(`logs` - optional ) are mapped, otherwise you might lose database or keys
 :::
 
-[`NLog.config`](../fundamentals/running-nethermind.md) file is optional.\
-[`static-nodes.json`](../fundamentals/running-nethermind.md) can be filled with an
+[`NLog.config`](../get-started/installing-nethermind.md#running) file is optional.\
+[`static-nodes.json`](../get-started/installing-nethermind.md#running) can be filled with an
 array
 of enodes, this is also optional.
 
