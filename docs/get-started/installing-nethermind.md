@@ -274,11 +274,11 @@ For instance, to launch the client with the default configuration for the Mainne
 nethermind -c mainnet -dd path/to/data/dir
 ```
 
-For detailed info about the available configuration options, see [Configuration](./configuration.md).
+For detailed info about the available configuration options, see [Configuration](../fundamentals/configuration.md).
 
 ### Supported networks
 
-To run Nethermind on a specific network, use the [`-c, --config`](./configuration.md#basic-options) command line option. Currently, the following networks are supported out of the box:
+To run Nethermind on a specific network, use the [`-c, --config`](../fundamentals/configuration.md#basic-options) command line option. Currently, the following networks are supported out of the box:
 
 - **Chiado** (testnet)
 - **Energy Web**
