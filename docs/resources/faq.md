@@ -65,7 +65,7 @@ You can find more details on the logging config page [here](../fundamentals/logs
 
 You can find more details on running validators in the docs ->
 for [AuRa](../validators/aura-validator.md) and
-for [Clique](../fundamentals/private-networks/clique.md).
+for [Clique](../fundamentals/private-networks.md).
 
 You can learn more about how to setup a aura validator [here](../validators/aura-validator.md)
 

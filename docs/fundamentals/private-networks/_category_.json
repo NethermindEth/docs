@@ -1,9 +1,0 @@
-{
-  "position": 6,
-  "label": "Private networks",
-  "collapsible": true,
-  "link": {
-    "type": "doc",
-    "id": "overview"
-  }
-}
