@@ -52,6 +52,8 @@ Nonetheless, for a comprehensive understanding of disk growth and usage, we reco
 Nethermind requires approximately 504 GB of disk space (as of May 2023) after a fresh Ethereum Mainnet sync using default parameters. This size increases over time as the Ethereum chain grows. The node's database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at a rate of approximately 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/sync.md#resync-a-node-from-scratch).<br />
 Having a larger disk space allocation reduces the need for frequent maintenance and alleviates concerns about the chain outgrowing the available space. It's worth noting that the only drawback of running a smaller disk is the requirement for more regular resyncing or pruning. We believe that a 2 TB disk will suffice for most users. However, the choice between 1 TB and 2 TB depends on factors such as hardware costs, cloud provider expenses, and individual requirements.
 
+For more details, see [Database size](../fundamentals/database.md#database-size).
+
 #### Disk speed
 
 The speed of the disk often acts as a bottleneck for the node's performance. It is crucial for optimizing your validator's performance rewards and the syncing process. We highly recommend a disk with a minimum of 10,000 IOPS for both write and read operations. Slower disks may hinder your ability to synchronize the blockchain successfully.
@@ -65,32 +67,3 @@ A node can be run using different syncing options, and each option has different
 - **Non-validator mode.** This mode drops all historical receipts and bodies, but it cannot be used for validation.
 
 For more details, see [sync modes](../fundamentals/sync.md).
-
-#### Database size with different configurations
-
-The below table presents the Nethermind database size after fresh sync with different configurations and networks (as of
-May 2023).
-
-| Network/configuration                   | Database size after fresh sync |
-|-----------------------------------------|--------------------------------|
-| Mainnet (default)                       | 504 GB                         |
-| Mainnet without ancient barriers        | 664 GB                         |
-| Mainnet archive                         | 14 TB                          |
-| Mainnet without old bodies and receipts | 178 GB                         |
-| Gnosis                                  | 112 GB                         |
-| Goerli                                  | 240 GB                         |
-
-#### Database in details
-
-A freshly fast-synced Mainnet disk space with details about specific databases (as of May 2023).
-
-| Database  | Mainnet    | Mainnet with ancient barriers |
-|-----------|------------|-------------------------------|
-| State     | 161 GB     | 161 GB                        |
-| Receipts  | 152 GB     | 104 GB                        |
-| Blocks    | 334 GB     | 222 GB                        |
-| Bloom     | 5.3 GB     | 5.3 GB                        |
-| Headers   | 8.1 GB     | 8.1 GB                        |
-| Code      | 3 GB       | 3 GB                          |
-| Other     | ...        | ..                            |
-| **Total** | **664 GB** | **504 GB**                    |
