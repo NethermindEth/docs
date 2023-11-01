@@ -4,8 +4,8 @@
   <ShortName>Nethermind documentation</ShortName>
   <Description>Search Nethermind documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://nethermind.github.io/docs/img/favicon.svg</Image>
-  <Url type="text/html" method="get" template="https://nethermind.github.io/docs/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://nethermind.github.io/docs/opensearch.xml" />
-  <moz:SearchForm>https://nethermind.github.io/docs/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://nethermindeth.github.io/docs/img/favicon.svg</Image>
+  <Url type="text/html" method="get" template="https://nethermindeth.github.io/docs/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://nethermindeth.github.io/docs/opensearch.xml" />
+  <moz:SearchForm>https://nethermindeth.github.io/docs/</moz:SearchForm>
 </OpenSearchDescription>
