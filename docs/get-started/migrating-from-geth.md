@@ -46,7 +46,7 @@ second instance of Prysm, flags needed to be used are (considering that primary 
 `--rpc-port=4001 --p2p-tcp-port=13001 --p2p-udp-port=12001 --grpc-gateway-port=3501`
 :::
 
-:::caution
+:::warning
 **REMEMBER**\
 Nethermind node will also be running on separate ports so there should be
 a `--execution-endpoint=http://localhost:<<NETHERMIND_ENGINE_PORT>>` flag set keeping in mind that
@@ -58,7 +58,7 @@ NETHERMIND\_ENGINE\_PORT should be changed to value selected in next step (prefe
 Please refer to a [#step-4-run-nethermind](consensus-clients.md)for
 instruction on how to run Nethermind.
 
-:::caution
+:::warning
 **REMEMBER**
 
 For Nethermind You will also need to set a separate ports to not create a conflict with still working Geth node. Values

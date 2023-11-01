@@ -20,7 +20,7 @@ On the consensus layer, there are 5 client implementations to choose from. Thoug
 - [Prysm][prysm]
 - [Teku][teku]
 
-:::caution Important
+:::warning Important
 We urge you to take [client diversity](https://ethereum.org/en/developers/docs/nodes-and-clients/client-diversity) into consideration when choosing your consensus client and avoid the majority clients.
 :::
 
@@ -108,7 +108,7 @@ The command above runs Teku on Mainnet. For other networks, set the `--network` 
 
 ## Running Nethermind
 
-:::caution Important
+:::warning Important
 The consensus client must be running before you start Nethermind.
 :::
 

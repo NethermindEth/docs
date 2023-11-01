@@ -1711,7 +1711,7 @@ eth.pendingTransactions
 </TabItem>
 <TabItem value="objects" label="Object">
 
-{% tab title="Objects in eth_pendingTransactions" %}
+
 
 `TransactionForRpc`
 

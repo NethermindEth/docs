@@ -256,7 +256,7 @@ To build the Docker image yourself, see [Building Docker image](../developers/bu
 
 ## Running Nethermind {#running}
 
-:::caution Important
+:::warning Important
 A [consensus client](consensus-clients.md) of your choice must be running before you start Nethermind.
 :::
 

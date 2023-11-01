@@ -9,7 +9,7 @@ After launching `./Nethermind.Launcher` you have two options - `Ethereum Node` a
 If you launch the Node in one process and then launch the CLI in another process you will see available commands inside
 the CLI.
 
-:::caution
+:::warning
 You have to ensure that the `JsonRpc.Enabled` is set to `true` either by enabling it when Launcher asks about it or by
 manually editing the relevant config file or by passing `--JsonRpc.Enabled true` parameter after the Launcher command
 :::

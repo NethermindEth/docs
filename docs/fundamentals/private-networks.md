@@ -60,7 +60,7 @@ Kurtosis will use the `ethereum-package` environment definition and your custom 
 
 Here is a sample output:
 
-```console
+```
 INFO[2023-09-01T16:10:45-04:00] ====================================================
 INFO[2023-09-01T16:10:45-04:00] ||          Created enclave: timid-knoll          ||
 INFO[2023-09-01T16:10:45-04:00] ====================================================

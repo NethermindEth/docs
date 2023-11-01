@@ -104,7 +104,7 @@ how much new state there is to be downloaded.
 
 ## Main issues reported so far when using Nethermind for Eth2 (30.11.2020)
 
-:::caution
+:::warning
 
 * users who synced before version **1.9.41** and were not aware that old configs were **not** supporting Eth2 by default
   had to resync with **1.9.41** (and they are reporting successful setups now)&#x20;

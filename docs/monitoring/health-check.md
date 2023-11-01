@@ -84,8 +84,9 @@ We may also add Slack Webhook endpoint to which our node's health will be report
 the `--HealthChecks.WebhooksEnabled true` and add the `--HealthChecks.WebhooksUri` which can be found in your Slack app
 configuration.
 
-<pre class="language-bash"><code class="lang-bash"><strong>./Nethermind.Runner --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
-</strong></code></pre>
+```bash
+nethermind --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChecks.WebhooksEnabled true --HealthChecks.WebhooksUri https://hooks.slack.com/
+```
 
 If your node will be **Unhealthy** you should receive a message similar to this:
 
@@ -100,14 +101,14 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 #### Consensus Client health
 
 This check verifies if the client receives messages from the CL. If you see this warning in your logs, it means that
-there is something wrong with CL<->Nethermind communication. Check more about setting up Nethermind and
+there is something wrong with CL/Nethermind communication. Check more about setting up Nethermind and
 CL [here](../get-started/consensus-clients.md).
 
 ```
 No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.
 ```
 
-:::caution
+:::warning
 Note that Consensus Client is required for normal node operations.
 :::
 
@@ -162,8 +163,9 @@ configure database location. There are two new configuration options available:
 * `--HealthChecks.LowStorageSpaceShutdownThreshold` - Percentage of available disk space below which node will shutdown
   to avoid database corruption. Default value is 1 - meaning 1% of free disk space.
 
-<pre><code><strong>./Nethermind.Runner --HealthChecks.LowStorageSpaceWarningThreshold 5 --HealthChecks.LowStorageSpaceShutdownThreshold 1
-</strong></code></pre>
+```bash
+nethermind --HealthChecks.LowStorageSpaceWarningThreshold 5 --HealthChecks.LowStorageSpaceShutdownThreshold 1
+```
 
 #### HealthChecks for producing and processing blocks
 

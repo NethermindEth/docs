@@ -1,30 +1,37 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Nethermind documentation',
-  url: 'https://nethermind.github.io/',
-  baseUrl: '/docs',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  tagline: 'A robust execution client for Ethereum node operators.',
   favicon: 'img/favicon.svg',
+
+  // Set the production url of your site here
+  url: 'https://nethermindeth.github.io',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/docs',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'NethermindEth',
-  projectName: 'docs',
-  trailingSlash: false,
+  organizationName: 'NethermindEth', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en']
+    locales: ['en'],
   },
 
   presets: [
@@ -32,21 +39,23 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        blog: false,
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/NethermindEth/docs/tree/main/docs/'
+          editUrl:
+            'https://github.com/NethermindEth/docs/tree/main/docs/',
         },
+        blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
-        }
-      })
-    ]
+          customCss: './src/css/custom.css',
+        },
+      }),
+    ],
   ],
+
   headTags: [
     {
       tagName: 'link',
@@ -71,53 +80,57 @@ const config = {
       }
     }
   ],
-  themeConfig:
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-        ({
-          navbar: {
-            logo: {
-              alt: 'Nethermind',
-              src: 'img/logo_dark.svg',
-              srcDark: 'img/logo_light.svg',
-              href: '/',
-              target: '_self'
-            },
-            items: [
-              {
-                type: 'docsVersionDropdown',
-                position: 'left',
-                dropdownActiveClassDisabled: true
-              },
-              {
-                'aria-label': 'GitHub',
-                className: 'header-github-link',
-                href: 'https://github.com/NethermindEth/nethermind',
-                position: 'right'
-              },
-              {
-                'aria-label': 'Discord',
-                className: 'header-discord-link',
-                href: 'https://discord.com/invite/PaCMRFdvWT',
-                position: 'right'
-              },
-              {
-                'aria-label': 'X',
-                className: 'header-x-link',
-                href: 'https://twitter.com/NethermindEth',
-                position: 'right'
-              }
-            ]
-          },
-          algolia: {
-            appId: '0',
-            apiKey: 'YOUR_SEARCH_API_KEY',
-            indexName: 'YOUR_INDEX_NAME'
-          },
-          prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme
-          }
-        })
-}
 
-module.exports = config
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
+      navbar: {
+        logo: {
+          alt: 'Nethermind',
+          src: 'img/logo_dark.svg',
+          srcDark: 'img/logo_light.svg',
+          href: '/',
+          target: '_self'
+        },
+        items: [
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: true
+          },
+          {
+            'aria-label': 'GitHub',
+            className: 'header-github-link',
+            href: 'https://github.com/NethermindEth/nethermind',
+            position: 'right'
+          },
+          {
+            'aria-label': 'Discord',
+            className: 'header-discord-link',
+            href: 'https://discord.com/invite/PaCMRFdvWT',
+            position: 'right'
+          },
+          {
+            'aria-label': 'X',
+            className: 'header-x-link',
+            href: 'https://twitter.com/NethermindEth',
+            position: 'right'
+          }
+        ]
+      },
+      algolia: {
+        appId: '0',
+        apiKey: 'YOUR_SEARCH_API_KEY',
+        indexName: 'YOUR_INDEX_NAME'
+      },
+      prism: {
+        additionalLanguages: ['bash', 'csharp', 'json', 'powershell'],
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
+    }),
+};
+
+export default config;

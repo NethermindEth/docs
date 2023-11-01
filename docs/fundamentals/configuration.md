@@ -24,7 +24,7 @@ nethermind -h
 
 Below is the list of the basic options followed by an exhaustive list of options by namespace.
 
-:::caution
+:::warning
 The command line options are case-sensitive and can be defined only once unless stated otherwise.
 :::
 
@@ -64,7 +64,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
   An absolute or relative path to the Nethermind data directory. Defaults to Nethermind's current directory.
 
-  :::caution
+  :::warning
   The absolute paths set by `Init.BaseDbPath`, `Init.LogDirectory`, or `KeyStore.KeyStoreDirectory` options in a configuration file are not overridden by `--datadir`.
   :::
 

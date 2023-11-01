@@ -85,7 +85,7 @@ trigger [#admin\_prune](../interacting/json-rpc-ns/admin.md#admin_prune) command
 Pruning should
 be started.
 
-:::caution
+:::warning
 One potential disadvantage of Manual mode is that if Full Pruning is not triggered in time (due to insufficient disk
 space), it cannot be executed. In such cases, the only option to free up disk space would be to resync the node from
 scratch.

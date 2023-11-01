@@ -17,7 +17,7 @@ sidebar_position: 3
 :loudspeaker:The private key from which the node ID is derived is stored on disk (**NOT** protected by password).
 :::
 
-:::caution
+:::warning
 Nethermind is thoroughly tested but the more popular it will get the more likely it will be the target of client-specific attacks. Generally you should always consider running backup client nodes implemented by a different team for any critical operations.
 :::
 

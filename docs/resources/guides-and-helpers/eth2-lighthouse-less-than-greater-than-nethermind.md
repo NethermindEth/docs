@@ -2,16 +2,16 @@
 sidebar_label: Eth2 <-> Nethermind 
 ---
 
-# ETH2 <-> Nethermind
+# ETH2 \<-\> Nethermind
 
 ## Nethermind client as ETH1 endpoint
 
-:::caution
+:::warning
 You should always consider being able to switch to Infura or another provider as a backup for safety \(or run two nodes
 yourself\)👈
 :::
 
-:::caution
+:::warning
 For a more comprehensive step-by-step guide, you should look into one of these awesome guides
 -&gt; [https://someresat.medium.com/](https://someresat.medium.com/). Below you will find instructions on how to run
 Nethermind node -&gt; **Step 6 — Set up an Ethereum \(Eth1\) Node**
@@ -23,7 +23,7 @@ Nethermind node -&gt; **Step 6 — Set up an Ethereum \(Eth1\) Node**
 
 You can get it either from [Github Releases or our Downloads page](../../get-started/installing-nethermind.md#downloading-releases)
 
-{% page-ref page="../ethereum-client/download-sources/" %}
+
 
 * [x] unzip the package
 * [x] run the Nethermind node \(use `Nethermind.Launcher` or change `configs/mainnet.cfg` and
