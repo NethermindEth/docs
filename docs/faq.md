@@ -61,13 +61,9 @@ You can find more details on the logging config page [here](./fundamentals/logs.
 
 You can find more details on the logging config page [here](./fundamentals/logs.md)
 
-## How can I configure validator on AuRa / Clique?
+## How can I configure a validator?
 
-You can find more details on running validators in the docs ->
-for [AuRa](./validators/aura-validator.md) and
-for [Clique](./fundamentals/private-networks.md).
-
-You can learn more about how to setup a aura validator [here](./validators/aura-validator.md)
+You can find more details on running validators [here](./validators.md).
 
 ## My network bandwidth is used up by the Nethermind node
 
