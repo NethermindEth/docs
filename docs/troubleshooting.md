@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-sidebar_position: 9
+sidebar_position: 8
 ---
 
 import Tabs from "@theme/Tabs";

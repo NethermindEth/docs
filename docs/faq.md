@@ -1,6 +1,6 @@
 ---
 sidebar_label: FAQ
-sidebar_position: 8
+sidebar_position: 7
 ---
 
 # FAQ
@@ -55,19 +55,19 @@ If you have any issues, please reach out to us on Discord: [https://discord.gg/X
 
 ## Can I disable logging to file?
 
-You can find more details on the logging config page [here](../fundamentals/logs.md)
+You can find more details on the logging config page [here](./fundamentals/logs.md)
 
 ## Can I disable logging of JSON RPC calls?
 
-You can find more details on the logging config page [here](../fundamentals/logs.md)
+You can find more details on the logging config page [here](./fundamentals/logs.md)
 
 ## How can I configure validator on AuRa / Clique?
 
 You can find more details on running validators in the docs ->
-for [AuRa](../validators/aura-validator.md) and
-for [Clique](../fundamentals/private-networks.md).
+for [AuRa](./validators/aura-validator.md) and
+for [Clique](./fundamentals/private-networks.md).
 
-You can learn more about how to setup a aura validator [here](../validators/aura-validator.md)
+You can learn more about how to setup a aura validator [here](./validators/aura-validator.md)
 
 ## My network bandwidth is used up by the Nethermind node
 
