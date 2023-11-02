@@ -1,6 +1,6 @@
 ---
-sidebar_position: 0
-sidebar_label: Frequently Asked Questions
+sidebar_label: FAQ
+sidebar_position: 8
 ---
 
 # FAQ

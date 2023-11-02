@@ -1,6 +1,6 @@
 ---
-title: Known issues
-sidebar_position: 3
+title: Troubleshooting
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
