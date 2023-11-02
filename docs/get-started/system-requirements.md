@@ -43,13 +43,13 @@ Suggested requirements can be found below.
 
 Running an Ethereum Mainnet full node requires at least a 1 TB fast disk, such as NVMe or a fast SSD. However, **2
 TB is recommended** to minimize maintenance requirements. To choose a specific disk model, we recommend
-checking out [this guide](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038#the-good). <br />
+checking out [this guide](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038#the-good).\
 Choosing a 2 TB disk is a comfortable option for most common Mainnet node usage patterns, including staking.
 Nonetheless, for a comprehensive understanding of disk growth and usage, we recommend delving further into the topic.
 
 #### Database growth
 
-Nethermind requires approximately 504 GB of disk space (as of May 2023) after a fresh Ethereum Mainnet sync using default parameters. This size increases over time as the Ethereum chain grows. The node's database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at a rate of approximately 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/sync.md#resync-a-node-from-scratch).<br />
+Nethermind requires approximately 504 GB of disk space (as of May 2023) after a fresh Ethereum Mainnet sync using default parameters. This size increases over time as the Ethereum chain grows. The node's database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at a rate of approximately 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/sync.md#resync-a-node-from-scratch).\
 Having a larger disk space allocation reduces the need for frequent maintenance and alleviates concerns about the chain outgrowing the available space. It's worth noting that the only drawback of running a smaller disk is the requirement for more regular resyncing or pruning. We believe that a 2 TB disk will suffice for most users. However, the choice between 1 TB and 2 TB depends on factors such as hardware costs, cloud provider expenses, and individual requirements.
 
 For more details, see [Database size](../fundamentals/database.md#database-size).

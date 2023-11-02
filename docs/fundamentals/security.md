@@ -6,11 +6,11 @@ sidebar_position: 3
 ## General security considerations
 
 :::tip
-Although Nethermind is thoroughly tested, the more popular it becomes, the more likely it will be the target of client-specific attacks. Generally, you should always consider running backup client nodes implemented by a different team for any critical operations.
+Although Nethermind is thoroughly tested, the more popular it becomes, the more likely it will be a target of client-specific attacks. Generally, we recommend you always consider running backup client nodes from another developer for any critical operations.
 :::
 
 :::warning
-Enable only the JSON-RPC namespaces you absolutely need. This is particularly important for namespaces like `admin` and `debug`, as they can be exploited to get elevated access to your node or for DOS attacks.
+Enable only the [JSON-RPC namespaces](../interacting/json-rpc-server.md) you absolutely need. This is particularly important for namespaces like `admin` and `debug`, as they can be exploited to get elevated access to your node or for DOS attacks.
 :::
 
 :::danger

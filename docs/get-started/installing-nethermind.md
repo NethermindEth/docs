@@ -257,7 +257,8 @@ To build the Docker image yourself, see [Building Docker image](../developers/bu
 ## Running Nethermind {#running}
 
 :::warning Important
-A [consensus client](consensus-clients.md) of your choice must be running before you start Nethermind.
+- A [consensus client](consensus-clients.md) of your choice must be running before you start Nethermind.
+- Please check out the [security considerations](../fundamentals/security.md) before using Nethermind for critical operations.
 :::
 
 Nethermind is mainly controlled by command line options (aka arguments or flags).
