@@ -3,24 +3,25 @@ title: Security
 sidebar_position: 3
 ---
 
-# Security
+## General security considerations
 
-:::danger
-:loudspeaker: **DO NOT** use Nethermind wallet / signers for mainnet ETH handling!
-:::
-
-:::danger
-:loudspeaker: JSON RPC endpoint (port `8545`) should **NOT** be exposed publicly (should be behind the firewall).
-:::
-
-:::danger
-:loudspeaker:The private key from which the node ID is derived is stored on disk (**NOT** protected by password).
+:::tip
+Although Nethermind is thoroughly tested, the more popular it becomes, the more likely it will be the target of client-specific attacks. Generally, you should always consider running backup client nodes implemented by a different team for any critical operations.
 :::
 
 :::warning
-Nethermind is thoroughly tested but the more popular it will get the more likely it will be the target of client-specific attacks. Generally you should always consider running backup client nodes implemented by a different team for any critical operations.
+Enable only the JSON-RPC namespaces you absolutely need. This is particularly important for namespaces like `admin` and `debug`, as they can be exploited to get elevated access to your node or for DOS attacks.
 :::
 
-:::info
-For non-mainnet signing you can use dev wallet configurations.
+:::danger
+The private key the node id is derived from is stored on the disk as plaintext.
 :::
+
+## Networking security
+
+These rules are **highly recommended** to be applied to your firewall:
+
+- Block all traffic to the port `8545`, or whatever port is defined for JSON-RPC interface, except for traffic from explicitly defined trusted sources.
+- Allow traffic to the TCP port `30303` or whatever port is defined for P2P communication. This allows the node to connect to peers.
+- Allow traffic to the UDP port `30303` or whatever port ia defined for P2P communication. This allows node discovery.
+
