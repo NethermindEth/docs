@@ -120,11 +120,11 @@ const config = {
           }
         ]
       },
-      algolia: {
-        appId: '0',
-        apiKey: 'YOUR_SEARCH_API_KEY',
-        indexName: 'YOUR_INDEX_NAME'
-      },
+      // algolia: {
+      //   appId: '0',
+      //   apiKey: 'YOUR_SEARCH_API_KEY',
+      //   indexName: 'YOUR_INDEX_NAME'
+      // },
       prism: {
         additionalLanguages: ['bash', 'csharp', 'json', 'powershell'],
         theme: prismThemes.github,

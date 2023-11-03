@@ -4,8 +4,6 @@ sidebar_position: 0
 toc_max_heading_level: 4
 ---
 
-### TBD
-
 Nethermind provides a few ways of gathering information, monitoring and collecting metrics about itself. The
 following options are available at the moment:
 
@@ -1017,7 +1015,3 @@ following options are available at the moment:
 </details>
 
 <!--[end autogen]-->
-
-### TBD
-
-Some text goes here
