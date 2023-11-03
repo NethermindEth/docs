@@ -37,10 +37,9 @@ Before running the client or tests, ensure the
 platform-specific [prerequisites](../get-started/installing-nethermind#prerequisites) are met.
 :::
 
-#### Running the client
+#### Running
 
-To launch the client, run the following command from the project's root directory (the previous step of the build is not
-required):
+Nethermind can be launched immediately without compiling explicitly (thus, the previous step can be skipped). The following command builds Nethermind if needed and runs it:
 
 ```bash
 cd src/Nethermind/Nethermind.Runner
@@ -53,7 +52,7 @@ configuration only.
 The build artifacts can be found in the `bin/release/net7.0` directory. By default, the logs and database directories
 are located here as well.
 
-For more info about launching Nethermind, see the [Launching](../get-started/installing-nethermind.md#launching) section.
+For more info, see [Running Nethermind](../get-started/installing-nethermind.md#running).
 
 #### Testing
 
