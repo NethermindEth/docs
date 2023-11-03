@@ -39,13 +39,20 @@ trace.block(latest)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -85,9 +92,12 @@ trace.call(call, traceTypes, blockParameter)
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -108,6 +118,13 @@ trace.call(call, traceTypes, blockParameter)
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -119,7 +136,7 @@ trace.call(call, traceTypes, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -132,7 +149,7 @@ trace.call(call, traceTypes, blockParameter)
 | Field name | Type |
 | :--- | :--- |
 | Output | `Data` |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
 | StateChanges | `Array` |
@@ -213,7 +230,7 @@ trace.filter(traceFilterForRpc)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `Address[]`
@@ -267,10 +284,17 @@ trace.rawTransaction(data, traceTypes)
 | Field name | Type |
 | :--- | :--- |
 | Output | `Data` |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
 | StateChanges | `Array` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `ParityVmTrace`
 
@@ -343,13 +367,20 @@ trace.replayBlockTransactions(blockParameter, traceTypes)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -367,7 +398,7 @@ Replays a transaction, returning the traces.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| txHash | `Hash256 object` |  |
 | traceTypes | `Array` | Possible values : ["VmTrace", "StateDiff", "Trace", "Rewards", "All"] |
 
 | Returned type | Description |
@@ -388,12 +419,24 @@ trace.replayTransaction(txHash, traceTypes)
 
 {% tab title="Objects in trace_replayTransaction" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `ParityTxTraceFromReplay`
 
 | Field name | Type |
 | :--- | :--- |
 | Output | `Data` |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
 | StateChanges | `Array` |
@@ -442,7 +485,7 @@ Returns all traces of given transaction
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| txHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -458,6 +501,21 @@ trace.transaction("0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da8214640
 ```yaml
 [{"action":{"callType":"call","from":"0x3c436c8ec40e0679fe64168545812ac13220f150","gas":"0xc118","input":"0xd46eb119","to":"0x9e00de186f33e9fac9e28d69127f7f637b96c177","value":"0xde0b6b3a7640000"},"blockHash":"0xf40b4c9faaeaf116a50380ce3795297bc02068b062f1797cd507875347c3372e","blockNumber":8970132,"result":{"gasUsed":"0xc118","output":"0x"},"subtraces":4,"traceAddress":[],"transactionHash":"0x203abf19610ce15bc509d4b341e907ff8c5a8287ae61186fd4da82146408c28c","transactionPosition":9,"type":"call"},(...)]
 ```
+{% endtab %}
+
+{% tab title="Objects in trace_transaction" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

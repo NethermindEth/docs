@@ -13,7 +13,7 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| txHash | `Hash256 object` |  |
 | includeHeader | `Boolean` |  |
 
 | Returned type | Description |
@@ -34,6 +34,18 @@ proof.getTransactionByHash(txHash, includeHeader)
 
 {% tab title="Objects in proof_getTransactionByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `TransactionWithProof`
 
 | Field name | Type |
@@ -47,9 +59,12 @@ proof.getTransactionByHash(txHash, includeHeader)
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -86,7 +101,7 @@ This function should return the same result as `eth_call` and also proofs of all
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| txHash | `Hash256 object` |  |
 | includeHeader | `Boolean` |  |
 
 | Returned type | Description |
@@ -107,6 +122,18 @@ proof.getTransactionReceipt(txHash, includeHeader)
 
 {% tab title="Objects in proof_getTransactionReceipt" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `ReceiptWithProof`
 
 | Field name | Type |
@@ -120,9 +147,9 @@ proof.getTransactionReceipt(txHash, includeHeader)
 
 | Field name | Type |
 | :--- | :--- |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
@@ -134,7 +161,7 @@ proof.getTransactionReceipt(txHash, includeHeader)
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
 | LogsBloom | `Bloom Object` |
-| Root | `Hash` |
+| Root | `Hash256 object` |
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |

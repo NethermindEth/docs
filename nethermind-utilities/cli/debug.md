@@ -66,7 +66,7 @@ Retrieves a block in the RLP-serialized form.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -77,6 +77,21 @@ Retrieves a block in the RLP-serialized form.
 ```yaml
 debug.getBlockRlpByHash(hash)
 ```
+{% endtab %}
+
+{% tab title="Objects in debug_getBlockRlpByHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -120,7 +135,7 @@ debug.getChainLevel(number)
 
 | Field name | Type |
 | :--- | :--- |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | TotalDifficulty | `Quantity` |
 | WasProcessed | `Boolean` |
 | IsFinalized | `Boolean` |
@@ -200,8 +215,15 @@ debug.traceBlock(blockRlp, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethLikeTxTrace`
 
@@ -229,7 +251,7 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -245,6 +267,18 @@ debug.traceBlockByHash(blockHash, options)
 
 {% tab title="Objects in debug_traceBlockByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -255,7 +289,7 @@ debug.traceBlockByHash(blockHash, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -306,13 +340,20 @@ debug.traceBlockByNumber(blockParameter, options)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethTraceOptions`
 
@@ -324,7 +365,7 @@ debug.traceBlockByNumber(blockParameter, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -354,7 +395,7 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
+| transactionHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -370,6 +411,18 @@ debug.traceTransaction(transactionHash, options)
 
 {% tab title="Objects in debug_traceTransaction" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -380,7 +433,7 @@ debug.traceTransaction(transactionHash, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -429,13 +482,20 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethTraceOptions`
 
@@ -447,7 +507,7 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -473,7 +533,7 @@ debug.traceTransactionByBlockAndIndex(blockParameter, txIndex, options)
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
@@ -490,6 +550,18 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 
 {% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -500,7 +572,7 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -527,7 +599,7 @@ debug.traceTransactionByBlockhashAndIndex(blockHash, txIndex, options)
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
-| transactionHash | `Hash` |  |
+| transactionHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -543,6 +615,18 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 
 {% tab title="Objects in debug_traceTransactionInBlockByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -553,7 +637,7 @@ debug.traceTransactionInBlockByHash(blockRlp, transactionHash, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -606,8 +690,15 @@ debug.traceTransactionInBlockByIndex(blockRlp, txIndex, options)
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethLikeTxTrace`
 

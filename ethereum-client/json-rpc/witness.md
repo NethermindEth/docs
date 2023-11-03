@@ -14,7 +14,7 @@ Return witness of Block provided
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` | Table of hashes of state nodes that were read during block processing |
+| `Hash256 object` | Table of hashes of state nodes that were read during block processing |
 
 {% tabs %}
 {% tab title="Example request of witness_witnesses" %}
@@ -40,13 +40,25 @@ curl --data '{"method":"witness_witnesses","params":[{"jsonrpc":"2.0","result":[
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

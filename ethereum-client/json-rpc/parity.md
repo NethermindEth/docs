@@ -97,7 +97,7 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -105,13 +105,20 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `ReceiptForRpc`
 
 | Field name | Type |
 | :--- | :--- |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
@@ -123,7 +130,7 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
 | LogsBloom | `Bloom Object` |
-| Root | `Hash` |
+| Root | `Hash256 object` |
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |
@@ -135,12 +142,12 @@ curl --data '{"method":"parity_getBlockReceipts","params":[latest],"id":1,"jsonr
 | Removed | `Boolean` |
 | LogIndex | `Quantity` |
 | TransactionIndex | `Quantity` |
-| TransactionHash | `Hash` |
-| BlockHash | `Hash` |
+| TransactionHash | `Hash256 object` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | Address | `Address` |
 | Data | `Data` |
-| Topics | `Keccak[] object` |
+| Topics | `Hash256[] object` |
 
 `TxType`
 
@@ -234,9 +241,9 @@ curl --data '{"method":"parity_pendingTransactions","params":[["0x78467cada5f188
 
 | Field name | Type |
 | :--- | :--- |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -254,6 +261,13 @@ curl --data '{"method":"parity_pendingTransactions","params":[["0x78467cada5f188
 | S | `Data` |
 | V | `Quantity` |
 | StandardV | `Quantity` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `PublicKey`
 

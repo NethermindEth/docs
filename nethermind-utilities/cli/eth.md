@@ -71,9 +71,12 @@ eth.call(transactionCall, blockParameter)
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -94,6 +97,13 @@ eth.call(transactionCall, blockParameter)
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -105,7 +115,7 @@ eth.call(transactionCall, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -191,9 +201,12 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -214,6 +227,13 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -225,7 +245,7 @@ eth.createAccessList(transactionCall, blockParameter, optimize)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -282,9 +302,12 @@ eth.estimateGas(transactionCall, blockParameter)
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -305,6 +328,13 @@ eth.estimateGas(transactionCall, blockParameter)
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -316,7 +346,7 @@ eth.estimateGas(transactionCall, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -368,13 +398,20 @@ eth.feeHistory(blockCount, newestBlock, rewardPercentiles)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `Double[]`
 
@@ -440,7 +477,7 @@ eth.getAccount(accountAddress, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -448,12 +485,19 @@ eth.getAccount(accountAddress, blockParameter)
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `AccountForRpc`
 
 | Field name | Type |
 | :--- | :--- |
-| CodeHash | `Hash` |
-| StorageRoot | `Hash` |
+| CodeHash | `Hash256 object` |
+| StorageRoot | `Hash256 object` |
 | Balance | `Quantity` |
 | Nonce | `Quantity` |
 {% endtab %}
@@ -500,13 +544,20 @@ eth.getBalance(address, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -524,7 +575,7 @@ Retrieves a block by hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | returnFullTransactionObjects | `Boolean` |  |
 
 | Returned type | Description |
@@ -545,6 +596,18 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 
 {% tab title="Objects in eth_getBlockByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `BlockForRpc`
 
 | Field name | Type |
@@ -554,30 +617,30 @@ eth.getBlockByHash(blockHash, returnFullTransactionObjects)
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -622,13 +685,20 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `BlockForRpc`
 
@@ -639,30 +709,30 @@ eth.getBlockByNumber(blockParameter, returnFullTransactionObjects)
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -680,7 +750,7 @@ Returns number of transactions in the block block hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -696,6 +766,21 @@ eth.getBlockTransactionCountByHash(["0x199c2ef63392fb67f929fe0580e11f62fa6c54b99
 ```yaml
 0x20
 ```
+{% endtab %}
+
+{% tab title="Objects in eth_getBlockTransactionCountByHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -739,13 +824,20 @@ eth.getBlockTransactionCountByNumber(["8934677"])
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -785,13 +877,20 @@ eth.getCode(address, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -873,7 +972,7 @@ eth.getLogs(filter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 {% endtab %}
 {% endtabs %}
@@ -920,13 +1019,20 @@ eth.getProof(accountAddress, hashRate, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `AccountProof`
 
@@ -935,9 +1041,9 @@ eth.getProof(accountAddress, hashRate, blockParameter)
 | Address | `Address` |
 | Proof | `Data` |
 | Balance | `Quantity` |
-| CodeHash | `Hash` |
+| CodeHash | `Hash256 object` |
 | Nonce | `Quantity` |
-| StorageRoot | `Hash` |
+| StorageRoot | `Hash256 object` |
 | StorageProofs | `StorageProof[] object` |
 
 `StorageProof[]`
@@ -992,13 +1098,20 @@ eth.getStorageAt(address, positionIndex, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1044,7 +1157,7 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -1052,14 +1165,24 @@ eth.getTransactionByBlockNumberAndIndex(blockParameter, positionIndex)
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TransactionForRpc`
 
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1101,7 +1224,7 @@ Retrieves a transaction by hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
+| transactionHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -1121,14 +1244,29 @@ eth.getTransactionByHash("0xabca23910646013d608ec671de099447ab60b2b7159ad8319c3c
 
 {% tab title="Objects in eth_getTransactionByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `TransactionForRpc`
 
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1197,13 +1335,20 @@ eth.getTransactionCount(address, blockParameter)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1221,7 +1366,7 @@ Retrieves a transaction receipt by tx hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHashData | `Hash` |  |
+| txHashData | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -1241,13 +1386,25 @@ eth.getTransactionReceipt(["0x80757153e93d1b475e203406727b62a501187f63e23b8fa999
 
 {% tab title="Objects in eth_getTransactionReceipt" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `ReceiptForRpc`
 
 | Field name | Type |
 | :--- | :--- |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
@@ -1259,7 +1416,7 @@ eth.getTransactionReceipt(["0x80757153e93d1b475e203406727b62a501187f63e23b8fa999
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
 | LogsBloom | `Bloom Object` |
-| Root | `Hash` |
+| Root | `Hash256 object` |
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |
@@ -1271,12 +1428,12 @@ eth.getTransactionReceipt(["0x80757153e93d1b475e203406727b62a501187f63e23b8fa999
 | Removed | `Boolean` |
 | LogIndex | `Quantity` |
 | TransactionIndex | `Quantity` |
-| TransactionHash | `Hash` |
-| BlockHash | `Hash` |
+| TransactionHash | `Hash256 object` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | Address | `Address` |
 | Data | `Data` |
-| Topics | `Keccak[] object` |
+| Topics | `Hash256[] object` |
 
 `TxType`
 
@@ -1299,7 +1456,7 @@ Retrieves an uncle block header by block hash and uncle index
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHashData | `Hash` |  |
+| blockHashData | `Hash256 object` |  |
 | positionIndex | `Quantity` |  |
 
 | Returned type | Description |
@@ -1315,6 +1472,18 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 
 {% tab title="Objects in eth_getUncleByBlockHashAndIndex" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `BlockForRpc`
 
 | Field name | Type |
@@ -1324,30 +1493,30 @@ eth.getUncleByBlockHashAndIndex(blockHashData, positionIndex)
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -1387,13 +1556,20 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `BlockForRpc`
 
@@ -1404,30 +1580,30 @@ eth.getUncleByBlockNumberAndIndex(blockParameter, positionIndex)
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -1472,13 +1648,20 @@ eth.getUncleCountByBlockNumber(["5127400"])
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1554,9 +1737,12 @@ eth.pendingTransactions
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1576,6 +1762,13 @@ eth.pendingTransactions
 | S | `Quantity` |
 | R | `Quantity` |
 | YParity | `Quantity` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `TxType`
 
@@ -1659,7 +1852,7 @@ Send a raw transaction to the tx pool and broadcasting
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` |  |
+| `Hash256 object` |  |
 
 {% tabs %}
 {% tab title="Example request of eth.sendRawTransaction" %}
@@ -1671,6 +1864,21 @@ eth.sendRawTransaction(["0xf86380843b9aca0082520894b943b13292086848d8180d75c7336
 ```yaml
 0x7a5a94d5b5e3ce017ce2c2022f02ec5db10611c43695c3256861bdb19317ab0e
 ```
+{% endtab %}
+
+{% tab title="Objects in eth_sendRawTransaction" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -1692,7 +1900,7 @@ Send a transaction to the tx pool and broadcasting
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` |  |
+| `Hash256 object` |  |
 
 {% tabs %}
 {% tab title="Example request of eth.sendTransaction" %}
@@ -1713,9 +1921,12 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1736,10 +1947,22 @@ eth.sendTransaction([{"From": "0xc2208fe87805279b03c1a8a78d7ee4bfdb0e48ee", "Gas
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

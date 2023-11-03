@@ -72,7 +72,7 @@ Returns Keccak of the given data.
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` |  |
+| `Hash256 object` |  |
 
 {% tabs %}
 {% tab title="Example request of web3.sha3" %}
@@ -84,6 +84,21 @@ web3.sha3(["0x47767638636211111a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254
 ```yaml
 0xed3a98886604dcd55a159d55d35f7c14fa2f2aab7fbccbfa5511d8dadeea9442
 ```
+{% endtab %}
+
+{% tab title="Objects in web3_sha3" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

@@ -47,7 +47,7 @@ Returns Keccak of the given data.
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` |  |
+| `Hash256 object` |  |
 
 {% tabs %}
 {% tab title="Example request of web3_sha3" %}
@@ -63,6 +63,21 @@ curl --data '{"method":"web3_sha3","params":[["0x47767638636211111a8d7341e5e972f
   "id": 1
 }
 ```
+{% endtab %}
+
+{% tab title="Objects in web3_sha3" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

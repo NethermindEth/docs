@@ -40,13 +40,20 @@ curl --data '{"method":"trace_block","params":[latest],"id":1,"jsonrpc":"2.0"}' 
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -83,9 +90,12 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -106,6 +116,13 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -117,7 +134,7 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -130,7 +147,7 @@ curl --data '{"method":"trace_call","params":[call, traceTypes, blockParameter],
 | Field name | Type |
 | :--- | :--- |
 | Output | `Data` |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
 | StateChanges | `Array` |
@@ -208,7 +225,7 @@ curl --data '{"method":"trace_filter","params":[traceFilterForRpc],"id":1,"jsonr
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `Address[]`
@@ -263,10 +280,17 @@ curl --data '{"method":"trace_rawTransaction","params":[data, traceTypes],"id":1
 | Field name | Type |
 | :--- | :--- |
 | Output | `Data` |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
 | StateChanges | `Array` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `ParityVmTrace`
 
@@ -340,13 +364,20 @@ curl --data '{"method":"trace_replayBlockTransactions","params":[blockParameter,
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -361,7 +392,7 @@ Replays a transaction, returning the traces.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| txHash | `Hash256 object` |  |
 | traceTypes | `Array` | Possible values : ["VmTrace", "StateDiff", "Trace", "Rewards", "All"] |
 
 | Returned type | Description |
@@ -386,12 +417,24 @@ curl --data '{"method":"trace_replayTransaction","params":[txHash, traceTypes],"
 
 {% tab title="Objects in trace_replayTransaction" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `ParityTxTraceFromReplay`
 
 | Field name | Type |
 | :--- | :--- |
 | Output | `Data` |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | VmTrace | `ParityVmTrace object` |
 | Action | `ParityTraceAction object` |
 | StateChanges | `Array` |
@@ -437,7 +480,7 @@ Returns all traces of given transaction
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHash | `Hash` |  |
+| txHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -457,6 +500,21 @@ curl --data '{"method":"trace_transaction","params":["0x203abf19610ce15bc509d4b3
   "id": 1
 }
 ```
+{% endtab %}
+
+{% tab title="Objects in trace_transaction" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

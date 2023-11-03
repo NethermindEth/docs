@@ -73,9 +73,12 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -96,6 +99,13 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -107,7 +117,7 @@ curl --data '{"method":"eth_call","params":[transactionCall, blockParameter],"id
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -195,9 +205,12 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -218,6 +231,13 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -229,7 +249,7 @@ curl --data '{"method":"eth_createAccessList","params":[transactionCall, blockPa
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -287,9 +307,12 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -310,6 +333,13 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -321,7 +351,7 @@ curl --data '{"method":"eth_estimateGas","params":[transactionCall, blockParamet
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -374,13 +404,20 @@ curl --data '{"method":"eth_feeHistory","params":[blockCount, newestBlock, rewar
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `Double[]`
 
@@ -443,7 +480,7 @@ curl --data '{"method":"eth_getAccount","params":[accountAddress, blockParameter
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -451,12 +488,19 @@ curl --data '{"method":"eth_getAccount","params":[accountAddress, blockParameter
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `AccountForRpc`
 
 | Field name | Type |
 | :--- | :--- |
-| CodeHash | `Hash` |
-| StorageRoot | `Hash` |
+| CodeHash | `Hash256 object` |
+| StorageRoot | `Hash256 object` |
 | Balance | `Quantity` |
 | Nonce | `Quantity` |
 {% endtab %}
@@ -504,13 +548,20 @@ curl --data '{"method":"eth_getBalance","params":[address, blockParameter],"id":
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -525,7 +576,7 @@ Retrieves a block by hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | returnFullTransactionObjects | `Boolean` |  |
 
 | Returned type | Description |
@@ -550,6 +601,18 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 
 {% tab title="Objects in eth_getBlockByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `BlockForRpc`
 
 | Field name | Type |
@@ -559,30 +622,30 @@ curl --data '{"method":"eth_getBlockByHash","params":[blockHash, returnFullTrans
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -628,13 +691,20 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `BlockForRpc`
 
@@ -645,30 +715,30 @@ curl --data '{"method":"eth_getBlockByNumber","params":[blockParameter, returnFu
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -683,7 +753,7 @@ Returns number of transactions in the block block hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -703,6 +773,21 @@ curl --data '{"method":"eth_getBlockTransactionCountByHash","params":[["0x199c2e
   "id": 1
 }
 ```
+{% endtab %}
+
+{% tab title="Objects in eth_getBlockTransactionCountByHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -747,13 +832,20 @@ curl --data '{"method":"eth_getBlockTransactionCountByNumber","params":[["893467
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -790,13 +882,20 @@ curl --data '{"method":"eth_getCode","params":[address, blockParameter],"id":1,"
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -908,7 +1007,7 @@ curl --data '{"method":"eth_getLogs","params":[filter],"id":1,"jsonrpc":"2.0"}' 
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 {% endtab %}
 {% endtabs %}
@@ -956,13 +1055,20 @@ curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockP
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `AccountProof`
 
@@ -971,9 +1077,9 @@ curl --data '{"method":"eth_getProof","params":[accountAddress, hashRate, blockP
 | Address | `Address` |
 | Proof | `Data` |
 | Balance | `Quantity` |
-| CodeHash | `Hash` |
+| CodeHash | `Hash256 object` |
 | Nonce | `Quantity` |
-| StorageRoot | `Hash` |
+| StorageRoot | `Hash256 object` |
 | StorageProofs | `StorageProof[] object` |
 
 `StorageProof[]`
@@ -1029,13 +1135,20 @@ curl --data '{"method":"eth_getStorageAt","params":[address, positionIndex, bloc
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1050,7 +1163,7 @@ Retrieves a transaction by block hash and index
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | positionIndex | `Quantity` |  |
 
 | Returned type | Description |
@@ -1075,14 +1188,29 @@ curl --data '{"method":"eth_getTransactionByBlockHashAndIndex","params":[blockHa
 
 {% tab title="Objects in eth_getTransactionByBlockHashAndIndex" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `TransactionForRpc`
 
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1151,7 +1279,7 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -1159,14 +1287,24 @@ curl --data '{"method":"eth_getTransactionByBlockNumberAndIndex","params":[block
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TransactionForRpc`
 
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1205,7 +1343,7 @@ Retrieves a transaction by hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
+| transactionHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -1229,14 +1367,29 @@ curl --data '{"method":"eth_getTransactionByHash","params":["0xabca23910646013d6
 
 {% tab title="Objects in eth_getTransactionByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `TransactionForRpc`
 
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1306,13 +1459,20 @@ curl --data '{"method":"eth_getTransactionCount","params":[address, blockParamet
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1327,7 +1487,7 @@ Retrieves a transaction receipt by tx hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| txHashData | `Hash` |  |
+| txHashData | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -1351,13 +1511,25 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[["0x80757153e93d1b4
 
 {% tab title="Objects in eth_getTransactionReceipt" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `ReceiptForRpc`
 
 | Field name | Type |
 | :--- | :--- |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
@@ -1369,7 +1541,7 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[["0x80757153e93d1b4
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
 | LogsBloom | `Bloom Object` |
-| Root | `Hash` |
+| Root | `Hash256 object` |
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |
@@ -1381,12 +1553,12 @@ curl --data '{"method":"eth_getTransactionReceipt","params":[["0x80757153e93d1b4
 | Removed | `Boolean` |
 | LogIndex | `Quantity` |
 | TransactionIndex | `Quantity` |
-| TransactionHash | `Hash` |
-| BlockHash | `Hash` |
+| TransactionHash | `Hash256 object` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | Address | `Address` |
 | Data | `Data` |
-| Topics | `Keccak[] object` |
+| Topics | `Hash256[] object` |
 
 `TxType`
 
@@ -1406,7 +1578,7 @@ Retrieves an uncle block header by block hash and uncle index
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHashData | `Hash` |  |
+| blockHashData | `Hash256 object` |  |
 | positionIndex | `Quantity` |  |
 
 | Returned type | Description |
@@ -1422,6 +1594,18 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 
 {% tab title="Objects in eth_getUncleByBlockHashAndIndex" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `BlockForRpc`
 
 | Field name | Type |
@@ -1431,30 +1615,30 @@ curl --data '{"method":"eth_getUncleByBlockHashAndIndex","params":[blockHashData
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -1491,13 +1675,20 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `BlockForRpc`
 
@@ -1508,30 +1699,30 @@ curl --data '{"method":"eth_getUncleByBlockNumberAndIndex","params":[blockParame
 | ExtraData | `Data` |
 | GasLimit | `Quantity` |
 | GasUsed | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | LogsBloom | `Bloom Object` |
 | Miner | `Address` |
-| MixHash | `Hash` |
+| MixHash | `Hash256 object` |
 | Nonce | `Data` |
 | Number | `Quantity` |
-| ParentHash | `Hash` |
-| ReceiptsRoot | `Hash` |
-| Sha3Uncles | `Hash` |
+| ParentHash | `Hash256 object` |
+| ReceiptsRoot | `Hash256 object` |
+| Sha3Uncles | `Hash256 object` |
 | Signature | `Data` |
 | Size | `Quantity` |
-| StateRoot | `Hash` |
+| StateRoot | `Hash256 object` |
 | Step | `Quantity` |
 | TotalDifficulty | `Quantity` |
 | Timestamp | `Quantity` |
 | BaseFeePerGas | `Quantity` |
 | Transactions | `Array` |
-| TransactionsRoot | `Hash` |
+| TransactionsRoot | `Hash256 object` |
 | Uncles | `Array` |
 | Withdrawals | `Array` |
-| WithdrawalsRoot | `Hash` |
+| WithdrawalsRoot | `Hash256 object` |
 | BlobGasUsed | `Quantity` |
 | ExcessBlobGas | `Quantity` |
-| ParentBeaconBlockRoot | `Hash` |
+| ParentBeaconBlockRoot | `Hash256 object` |
 {% endtab %}
 {% endtabs %}
 
@@ -1546,7 +1737,7 @@ Returns number of uncles in the block by block hash
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -1566,6 +1757,21 @@ curl --data '{"method":"eth_getUncleCountByBlockHash","params":[["0xe495c3385bb9
   "id": 1
 }
 ```
+{% endtab %}
+
+{% tab title="Objects in eth_getUncleCountByBlockHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -1609,13 +1815,20 @@ curl --data '{"method":"eth_getUncleCountByBlockNumber","params":[["5127400"]],"
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -1701,7 +1914,7 @@ curl --data '{"method":"eth_newFilter","params":[[{"toBlock":"latest"}]],"id":1,
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 {% endtab %}
 {% endtabs %}
@@ -1777,9 +1990,12 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1799,6 +2015,13 @@ curl --data '{"method":"eth_pendingTransactions","params":[],"id":1,"jsonrpc":"2
 | S | `Quantity` |
 | R | `Quantity` |
 | YParity | `Quantity` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `TxType`
 
@@ -1855,7 +2078,7 @@ Send a raw transaction to the tx pool and broadcasting
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` |  |
+| `Hash256 object` |  |
 
 {% tabs %}
 {% tab title="Example request of eth_sendRawTransaction" %}
@@ -1871,6 +2094,21 @@ curl --data '{"method":"eth_sendRawTransaction","params":[["0xf86380843b9aca0082
   "id": 1
 }
 ```
+{% endtab %}
+
+{% tab title="Objects in eth_sendRawTransaction" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -1889,7 +2127,7 @@ Send a transaction to the tx pool and broadcasting
 
 | Returned type | Description |
 | :--- | :--- |
-| `Hash` |  |
+| `Hash256 object` |  |
 
 {% tabs %}
 {% tab title="Example request of eth_sendTransaction" %}
@@ -1914,9 +2152,12 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -1937,10 +2178,22 @@ curl --data '{"method":"eth_sendTransaction","params":[[{"From": "0xc2208fe87805
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
 
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

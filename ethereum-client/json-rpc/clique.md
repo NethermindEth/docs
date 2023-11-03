@@ -35,7 +35,7 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -46,6 +46,21 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 ```
 curl --data '{"method":"clique_getBlockSigner","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_getBlockSigner" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -108,7 +123,7 @@ Retrieves the list of authorized signers at the specified block by hash.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -119,6 +134,21 @@ Retrieves the list of authorized signers at the specified block by hash.
 ```
 curl --data '{"method":"clique_getSignersAtHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_getSignersAtHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -133,7 +163,7 @@ Retrieves the list of authorized signers at the specified block by hash but with
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -144,6 +174,21 @@ Retrieves the list of authorized signers at the specified block by hash but with
 ```
 curl --data '{"method":"clique_getSignersAtHashAnnotated","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_getSignersAtHashAnnotated" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -202,9 +247,16 @@ curl --data '{"method":"clique_getSnapshot","params":[],"id":1,"jsonrpc":"2.0"}'
 | Field name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -219,7 +271,7 @@ Retrieves the state snapshot at a given block.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -234,12 +286,24 @@ curl --data '{"method":"clique_getSnapshotAtHash","params":[hash],"id":1,"jsonrp
 
 {% tab title="Objects in clique_getSnapshotAtHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `Snapshot`
 
 | Field name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
 {% endtab %}
@@ -256,7 +320,7 @@ Forces Clique block producer to produce a new block
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| parentHash | `Hash` |  |
+| parentHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -267,6 +331,21 @@ Forces Clique block producer to produce a new block
 ```
 curl --data '{"method":"clique_produceBlock","params":[parentHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_produceBlock" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

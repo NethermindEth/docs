@@ -59,7 +59,7 @@ Retrieves a block in the RLP-serialized form.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -70,6 +70,21 @@ Retrieves a block in the RLP-serialized form.
 ```
 curl --data '{"method":"debug_getBlockRlpByHash","params":[hash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
+{% endtab %}
+
+{% tab title="Objects in debug_getBlockRlpByHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -110,7 +125,7 @@ curl --data '{"method":"debug_getChainLevel","params":[number],"id":1,"jsonrpc":
 
 | Field name | Type |
 | :--- | :--- |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | TotalDifficulty | `Quantity` |
 | WasProcessed | `Boolean` |
 | IsFinalized | `Boolean` |
@@ -207,7 +222,7 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -215,13 +230,20 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `ReceiptForRpc[]`
 
 | Field name | Type |
 | :--- | :--- |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
@@ -233,7 +255,7 @@ curl --data '{"method":"debug_insertReceipts","params":[blockParameter, receiptF
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
 | LogsBloom | `Bloom Object` |
-| Root | `Hash` |
+| Root | `Hash256 object` |
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |
@@ -275,7 +297,7 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -286,6 +308,21 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 ```
 curl --data '{"method":"debug_resetHead","params":[blockHash],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:8545
 ```
+{% endtab %}
+
+{% tab title="Objects in debug_resetHead" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -299,7 +336,7 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -315,6 +352,18 @@ curl --data '{"method":"debug_standardTraceBlockToFile","params":[blockHash, opt
 
 {% tab title="Objects in debug_standardTraceBlockToFile" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -325,7 +374,7 @@ curl --data '{"method":"debug_standardTraceBlockToFile","params":[blockHash, opt
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 {% endtab %}
 {% endtabs %}
@@ -366,8 +415,15 @@ curl --data '{"method":"debug_traceBlock","params":[blockRlp, options],"id":1,"j
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethLikeTxTrace`
 
@@ -392,7 +448,7 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -408,6 +464,18 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 
 {% tab title="Objects in debug_traceBlockByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -418,7 +486,7 @@ curl --data '{"method":"debug_traceBlockByHash","params":[blockHash, options],"i
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -466,13 +534,20 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[blockParameter, opti
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethTraceOptions`
 
@@ -484,7 +559,7 @@ curl --data '{"method":"debug_traceBlockByNumber","params":[blockParameter, opti
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -532,9 +607,12 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | Field name | Type |
 | :--- | :--- |
 | DefaultChainId | `Quantity` |
-| Hash | `Hash` |
+| SourceHash | `Hash256 object` |
+| Mint | `Quantity` |
+| IsSystemTx | `Boolean` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -555,6 +633,13 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | R | `Quantity` |
 | YParity | `Quantity` |
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `TxType`
 
 - [EIP2718](https://eips.ethereum.org/EIPS/eip-2718) transaction type
@@ -566,7 +651,7 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -584,7 +669,7 @@ curl --data '{"method":"debug_traceCall","params":[call, blockParameter, options
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -609,7 +694,7 @@ This method will attempt to run the transaction in the exact same manner as it w
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| transactionHash | `Hash` |  |
+| transactionHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -625,6 +710,18 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 
 {% tab title="Objects in debug_traceTransaction" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -635,7 +732,7 @@ curl --data '{"method":"debug_traceTransaction","params":[transactionHash, optio
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -681,13 +778,20 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
 
 - `Quantity` or `String` (latest, earliest, pending)
 
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethTraceOptions`
 
@@ -699,7 +803,7 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -722,7 +826,7 @@ curl --data '{"method":"debug_traceTransactionByBlockAndIndex","params":[blockPa
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| blockHash | `Hash` |  |
+| blockHash | `Hash256 object` |  |
 | txIndex | `Quantity` |  |
 | options | `GethTraceOptions object` |  |
 
@@ -739,6 +843,18 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 
 {% tab title="Objects in debug_traceTransactionByBlockhashAndIndex" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -749,7 +865,7 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -773,7 +889,7 @@ curl --data '{"method":"debug_traceTransactionByBlockhashAndIndex","params":[blo
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | blockRlp | `Data` |  |
-| transactionHash | `Hash` |  |
+| transactionHash | `Hash256 object` |  |
 | options | `GethTraceOptions object` |  |
 
 | Returned type | Description |
@@ -789,6 +905,18 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 
 {% tab title="Objects in debug_traceTransactionInBlockByHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `GethTraceOptions`
 
 | Field name | Type |
@@ -799,7 +927,7 @@ curl --data '{"method":"debug_traceTransactionInBlockByHash","params":[blockRlp,
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
 
 `GethLikeTxTrace`
@@ -849,8 +977,15 @@ curl --data '{"method":"debug_traceTransactionInBlockByIndex","params":[blockRlp
 | EnableMemory | `Boolean` |
 | Timeout | `String` |
 | Tracer | `String` |
-| TxHash | `Hash` |
+| TxHash | `Hash256 object` |
 | Default | `GethTraceOptions object` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `GethLikeTxTrace`
 

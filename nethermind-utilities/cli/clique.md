@@ -41,7 +41,7 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -52,6 +52,21 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 ```yaml
 clique.getBlockSigner(hash)
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_getBlockSigner" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -123,7 +138,7 @@ Retrieves the list of authorized signers at the specified block by hash.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -134,6 +149,21 @@ Retrieves the list of authorized signers at the specified block by hash.
 ```yaml
 clique.getSignersAtHash(hash)
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_getSignersAtHash" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -151,7 +181,7 @@ Retrieves the list of authorized signers at the specified block by hash but with
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -162,6 +192,21 @@ Retrieves the list of authorized signers at the specified block by hash but with
 ```yaml
 clique.getSignersAtHashAnnotated(hash)
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_getSignersAtHashAnnotated" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 
@@ -226,9 +271,16 @@ clique.getSnapshot()
 | Field name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 {% endtab %}
 {% endtabs %}
 
@@ -246,7 +298,7 @@ Retrieves the state snapshot at a given block.
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| hash | `Hash` |  |
+| hash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -261,12 +313,24 @@ clique.getSnapshotAtHash(hash)
 
 {% tab title="Objects in clique_getSnapshotAtHash" %}
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
+
 `Snapshot`
 
 | Field name | Type |
 | :--- | :--- |
 | Number | `Quantity` |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | Signers | `Array` |
 | SignerLimit | `Quantity` |
 {% endtab %}
@@ -286,7 +350,7 @@ Forces Clique block producer to produce a new block
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| parentHash | `Hash` |  |
+| parentHash | `Hash256 object` |  |
 
 | Returned type | Description |
 | :--- | :--- |
@@ -297,6 +361,21 @@ Forces Clique block producer to produce a new block
 ```yaml
 clique.produceBlock(parentHash)
 ```
+{% endtab %}
+
+{% tab title="Objects in clique_produceBlock" %}
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
+`ValueHash256&`
+
+| Field name | Type |
+| :--- | :--- |
 {% endtab %}
 {% endtabs %}
 

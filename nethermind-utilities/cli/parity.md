@@ -98,7 +98,7 @@ parity.getBlockReceipts(latest)
 | :--- | :--- |
 | Type | `BlockParameterType object` |
 | BlockNumber | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | RequireCanonical | `Boolean` |
 
 `BlockParameterType`
@@ -106,13 +106,20 @@ parity.getBlockReceipts(latest)
 - `Quantity` or `String` (latest, earliest, pending)
 
 
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
+
 `ReceiptForRpc`
 
 | Field name | Type |
 | :--- | :--- |
-| TransactionHash | `Hash` |
+| TransactionHash | `Hash256 object` |
 | TransactionIndex | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | CumulativeGasUsed | `Quantity` |
 | GasUsed | `Quantity` |
@@ -124,7 +131,7 @@ parity.getBlockReceipts(latest)
 | ContractAddress | `Address` |
 | Logs | `LogEntryForRpc[] object` |
 | LogsBloom | `Bloom Object` |
-| Root | `Hash` |
+| Root | `Hash256 object` |
 | Status | `Quantity` |
 | Error | `String` |
 | Type | `TxType object` |
@@ -136,12 +143,12 @@ parity.getBlockReceipts(latest)
 | Removed | `Boolean` |
 | LogIndex | `Quantity` |
 | TransactionIndex | `Quantity` |
-| TransactionHash | `Hash` |
-| BlockHash | `Hash` |
+| TransactionHash | `Hash256 object` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | Address | `Address` |
 | Data | `Data` |
-| Topics | `Keccak[] object` |
+| Topics | `Hash256[] object` |
 
 `TxType`
 
@@ -237,9 +244,9 @@ parity.pendingTransactions(["0x78467cada5f1883e79fcf0f3ebfa50abeec8c820"])
 
 | Field name | Type |
 | :--- | :--- |
-| Hash | `Hash` |
+| Hash | `Hash256 object` |
 | Nonce | `Quantity` |
-| BlockHash | `Hash` |
+| BlockHash | `Hash256 object` |
 | BlockNumber | `Quantity` |
 | TransactionIndex | `Quantity` |
 | From | `Address` |
@@ -257,6 +264,13 @@ parity.pendingTransactions(["0x78467cada5f1883e79fcf0f3ebfa50abeec8c820"])
 | S | `Data` |
 | V | `Quantity` |
 | StandardV | `Quantity` |
+
+`Hash256`
+
+| Field name | Type |
+| :--- | :--- |
+| ValueHash256 | `ValueHash256& object` |
+| Bytes | `Array` |
 
 `PublicKey`
 
