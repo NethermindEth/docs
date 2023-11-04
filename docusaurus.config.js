@@ -84,8 +84,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'https://repository-images.githubusercontent.com/101194285/a1da1e24-03c7-4596-b34a-96a57366a606',
       navbar: {
         logo: {
           alt: 'Nethermind',
