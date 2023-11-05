@@ -3,6 +3,10 @@ title: Pruning
 sidebar_position: 6
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 ## Overview
 
 Full Pruning pertains to the elimination or cleanup of obsolete historical data to optimize disk space. Clients are

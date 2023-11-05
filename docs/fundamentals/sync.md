@@ -3,6 +3,10 @@ title: Sync
 sidebar_position: 2
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 ## There are three main synchronization modes
 
 * snap sync

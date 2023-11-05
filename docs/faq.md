@@ -3,6 +3,10 @@ sidebar_label: FAQ
 sidebar_position: 7
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 # FAQ
 
 ## How do I upgrade my node?

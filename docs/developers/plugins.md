@@ -3,6 +3,10 @@ title: Plugins
 sidebar_position: 1
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 Nethermind plugins is a powerful way of extending your local node capabilities.
 
 \(see also an article

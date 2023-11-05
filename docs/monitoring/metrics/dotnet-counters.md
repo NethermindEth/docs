@@ -4,6 +4,10 @@ description: >-
   observe a Nethermind node
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 # Using dotnet-counters
 
 ## Introduction

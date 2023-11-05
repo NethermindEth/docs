@@ -1,6 +1,10 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+:::warning
+This article requires a revision.
+:::
+
 # Setting up local Metrics infrastructure
 
 ## Metrics Configuration

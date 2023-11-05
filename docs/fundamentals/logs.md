@@ -3,6 +3,10 @@ title: Logs
 sidebar_position: 4
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 ## Log config file location
 
 Logging in Nethermind is done via NLog library that can be configured by editing the NLog.config file.

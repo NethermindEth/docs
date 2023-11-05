@@ -3,6 +3,10 @@ title: Custom analytic tools
 sidebar_position: 2
 ---
 
+:::warning
+This article requires a revision.
+:::
+
 Check plugins for some easy addition of analytical tools
 
 :::info
