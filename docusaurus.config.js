@@ -130,6 +130,20 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+    plugins: [
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              from: '/nethermind/first-steps-with-nethermind/system-requirements',
+              to: '/get-started/system-requirements'
+            }
+          ],
+        }
+      ]
+    ]
 };
 
 export default config;
