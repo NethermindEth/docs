@@ -119,11 +119,11 @@ const config = {
           }
         ]
       },
-      // algolia: {
-      //   appId: '0',
-      //   apiKey: 'YOUR_SEARCH_API_KEY',
-      //   indexName: 'YOUR_INDEX_NAME'
-      // },
+      algolia: {
+        appId: '4I20VAM8JS',
+        apiKey: 'ae70232fa166f798373187e8163fbbab',
+        indexName: 'nethermind'
+      },
       prism: {
         additionalLanguages: ['bash', 'csharp', 'json', 'powershell'],
         theme: prismThemes.github,
