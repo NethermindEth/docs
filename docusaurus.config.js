@@ -121,7 +121,7 @@ const config = {
       },
       algolia: {
         appId: '4I20VAM8JS',
-        apiKey: 'ae70232fa166f798373187e8163fbbab',
+        apiKey: 'db0d2f0b1fc0c714f386cd90fd39cbe7',
         indexName: 'nethermind'
       },
       prism: {
