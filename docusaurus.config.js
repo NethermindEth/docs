@@ -137,10 +137,51 @@ const config = {
         {
           redirects: [
             {
+              from: '/nethermind/ethereum-client/database',
+              to: '/fundamentals/database'
+            },
+            {
+              from: '/nethermind/ethereum-client/networks',
+              to: '/get-started/installing-nethermind#supported-networks'
+            },
+            {
+              from: '/nethermind/first-steps-with-nethermind/running-nethermind-post-merge',
+              to: '/get-started/consensus-clients'
+            },
+            {
               from: '/nethermind/first-steps-with-nethermind/system-requirements',
               to: '/get-started/system-requirements'
+            },
+            {
+              from: '/nethermind/guides-and-helpers/faq',
+              to: '/faq'
+            },
+            {
+              from: '/nethermind/guides-and-helpers/validator-setup/eth2-validator',
+              to: '/validators'
+            },
+            {
+              from: '/nethermind/guides-and-helpers/how-to-reduce-database-size',
+              to: '/fundamentals/database#reducing-database-size'
+            },
+            {
+              from: '/nethermind/guides-and-helpers/how-to-reduce-database-size/full-pruning',
+              to: '/fundamentals/pruning'
+            },
+            {
+              from: '/nethermind/guides-and-helpers/known-issues',
+              to: '/troubleshooting'
             }
           ],
+          createRedirects: existingPath => {
+            if (existingPath.includes('/fundamentals/configuration')) {
+              return [
+                existingPath.replace('/fundamentals/configuration', '/nethermind/ethereum-client/configuration'),
+              ];
+            }
+
+            return null;
+          }
         }
       ]
     ]
