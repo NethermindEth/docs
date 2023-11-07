@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import redirects from './redirects.json';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -12,23 +13,15 @@ const config = {
   tagline: 'A robust execution client for Ethereum node operators.',
   favicon: 'img/favicon.svg',
 
-  // Set the production url of your site here
   url: 'https://docs.nethermind.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'NethermindEth', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  organizationName: 'NethermindEth',
+  projectName: 'docs',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -43,8 +36,6 @@ const config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/NethermindEth/docs/tree/main',
         },
@@ -135,53 +126,7 @@ const config = {
       [
         '@docusaurus/plugin-client-redirects',
         {
-          redirects: [
-            {
-              from: '/nethermind/ethereum-client/database',
-              to: '/fundamentals/database'
-            },
-            {
-              from: '/nethermind/ethereum-client/networks',
-              to: '/get-started/installing-nethermind#supported-networks'
-            },
-            {
-              from: '/nethermind/first-steps-with-nethermind/running-nethermind-post-merge',
-              to: '/get-started/consensus-clients'
-            },
-            {
-              from: '/nethermind/first-steps-with-nethermind/system-requirements',
-              to: '/get-started/system-requirements'
-            },
-            {
-              from: '/nethermind/guides-and-helpers/faq',
-              to: '/faq'
-            },
-            {
-              from: '/nethermind/guides-and-helpers/validator-setup/eth2-validator',
-              to: '/validators'
-            },
-            {
-              from: '/nethermind/guides-and-helpers/how-to-reduce-database-size',
-              to: '/fundamentals/database#reducing-database-size'
-            },
-            {
-              from: '/nethermind/guides-and-helpers/how-to-reduce-database-size/full-pruning',
-              to: '/fundamentals/pruning'
-            },
-            {
-              from: '/nethermind/guides-and-helpers/known-issues',
-              to: '/troubleshooting'
-            }
-          ],
-          createRedirects: existingPath => {
-            if (existingPath.includes('/fundamentals/configuration')) {
-              return [
-                existingPath.replace('/fundamentals/configuration', '/nethermind/ethereum-client/configuration'),
-              ];
-            }
-
-            return null;
-          }
+          redirects
         }
       ]
     ]
