@@ -32,11 +32,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`-d, --baseDbPath <path>`**
 
-  The path to the Nethermind database directory. Defaults to `db`.
+  An absolute or relative path to the Nethermind database directory. Defaults to `db`.
 
 - **`-c, --config <value>`**
 
-  The path to the [configuration file](#configuration-file) or the name (without extension) of any of the configuration files in the configuration directory. Defaults to `mainnet`.
+  An absolute or relative path to the [configuration file](#configuration-file) or the name (without extension) of any of the  configuration files in the configuration directory. Defaults to `mainnet`.
 
   <details>
   <summary>Available configurations</summary>
@@ -58,11 +58,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`-cd, --configsDirectory <path>`**
 
-  The path to the configuration files directory. Defaults to `configs`.
+  An absolute or relative path to the configuration files directory. Defaults to `configs`.
 
 - **`-dd, --datadir <path>`**
 
-  The path to the Nethermind data directory. Defaults to Nethermind's current directory.
+  An absolute or relative path to the Nethermind data directory. Defaults to Nethermind's current directory.
 
   :::warning
   The absolute paths set by `Init.BaseDbPath`, `Init.LogDirectory`, or `KeyStore.KeyStoreDirectory` options in a configuration file are not overridden by `--datadir`.
@@ -78,11 +78,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`-lcs, --loggerConfigSource <path>`**
 
-  The path to the NLog configuration file. Defaults to `NLog.config`.
+  An absolute or relative path to the NLog configuration file. Defaults to `NLog.config`.
 
 - **`-pd, --pluginsDirectory <path>`**
 
-  The path to the Nethermind plugins directory. Defaults to `plugins`.
+  An absolute or relative path to the Nethermind plugins directory. Defaults to `plugins`.
 
 - **`-v, --version`**
 
@@ -285,7 +285,7 @@ The command line options are case-sensitive and can be defined only once unless 
           },
           {
             "title": "description",
-            "value": "The HealthCheck [[LIVENESS]] is recovered. All is up and running",
+            "value": "The HealthCheck `[[LIVENESS]]` is recovered. Everything is up and running.",
             "short": false
           }
         ]
@@ -312,11 +312,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Hive.BlocksDir <value>`** `NETHERMIND_HIVECONFIG_BLOCKSDIR`
 
-  The path to the directory with additional blocks. Defaults to `blocks`.
+  The path to the directory with additional blocks. Defaults to `/blocks`.
 
 - **`--Hive.ChainFile <value>`** `NETHERMIND_HIVECONFIG_CHAINFILE`
 
-  The path to the test chain spec file. Defaults to `chain.rlp`.
+  The path to the test chain spec file. Defaults to `/chain.rlp`.
 
 - **`--Hive.Enabled <value>`** `NETHERMIND_HIVECONFIG_ENABLED`
 
@@ -475,7 +475,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--JsonRpc.EnabledModules <value>`** `NETHERMIND_JSONRPCCONFIG_ENABLEDMODULES`
 
-  An array of JSON-RPC namespaces to enable. For instance, `[engine,eth]`.
+  An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
   
   Built-in modules:
   
@@ -483,22 +483,24 @@ The command line options are case-sensitive and can be defined only once unless 
   - `client`
   - `debug`
   - `engine`
-  - `eth` default
+  - `eth`
   - `evm`
-  - `health` default
-  - `net` default
-  - `parity` default
-  - `personal` default
-  - `proof` default
-  - `rpc` default
-  - `subscribe` default
-  - `trace` default
-  - `txpool` default
-  - `web3` default
+  - `health`
+  - `net`
+  - `parity`
+  - `personal`
+  - `proof`
+  - `rpc`
+  - `subscribe`
+  - `trace`
+  - `txpool`
+  - `web3`
+  
+  Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - **`--JsonRpc.EngineEnabledModules <value>`** `NETHERMIND_JSONRPCCONFIG_ENGINEENABLEDMODULES`
 
-  An array of additional JSON-RPC URLs to listen at with protocol and JSON-RPC namespace list for Engine API. Defaults to `[engine]`.
+  An array of additional JSON-RPC URLs to listen at with protocol and JSON-RPC namespace list for Engine API. Defaults to `[Net,Eth,Subscribe,Web3]`.
 
 - **`--JsonRpc.EngineHost <value>`** `NETHERMIND_JSONRPCCONFIG_ENGINEHOST`
 
@@ -556,15 +558,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--JsonRpc.MethodsLoggingFiltering <value>`** `NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING`
 
-  An array of the method names not to log.
-  Defaults to:
-
-  - `engine_newPayloadV1`
-  - `engine_newPayloadV2`
-  - `engine_newPayloadV3`
-  - `engine_forkchoiceUpdatedV1`
-  - `engine_forkchoiceUpdatedV2`
-
+  An array of the method names not to log. Defaults to `[engine_newPayloadV1,engine_newPayloadV2,engine_newPayloadV3,engine_forkchoiceUpdatedV1,engine_forkchoiceUpdatedV2]`.
 
 - **`--JsonRpc.Port <value>`** `NETHERMIND_JSONRPCCONFIG_PORT`
 
@@ -590,7 +584,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--JsonRpc.RpcRecorderBaseFilePath <value>`** `NETHERMIND_JSONRPCCONFIG_RPCRECORDERBASEFILEPATH`
 
-  The path to the base file for diagnostic recording. Defaults to `logs/rpc.<counter>.txt`.
+  The path to the base file for diagnostic recording. Defaults to `logs/rpc.{counter}.txt`.
 
 - **`--JsonRpc.RpcRecorderState <value>`** `NETHERMIND_JSONRPCCONFIG_RPCRECORDERSTATE`
 
@@ -1080,7 +1074,7 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Sync.FixTotalDifficultyLastBlock <value>`** `NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTYLASTBLOCK`
 
   The last block to recalculate the total difficulty for. If not specified, the best known block is used.
-   Defaults to `null`.
+  Defaults to `null`.
 
 - **`--Sync.FixTotalDifficultyStartingBlock <value>`** `NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTYSTARTINGBLOCK`
 
