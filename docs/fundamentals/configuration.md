@@ -1010,11 +1010,21 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.AncientBodiesBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTBODIESBARRIER`
 
-  _Experimental._ The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined from `max(1, min(PivotNumber, AncientBodiesBarrier))`. Defaults to `0`.
+  _Experimental._ The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
+  
+  ```
+  max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
+  ```
+  Defaults to `0`.
 
 - **`--Sync.AncientReceiptsBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTRECEIPTSBARRIER`
 
-  _Experimental._ The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined from `max(1, min(PivotNumber, max(AncientBodiesBarrier, AncientReceiptsBarrier)))`. Defaults to `0`.
+  _Experimental._ The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as folows:
+  
+  ```
+  max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
+  ```
+  Defaults to `0`.
 
 - **`--Sync.BlocksDbTuneDbMode <value>`** `NETHERMIND_SYNCCONFIG_BLOCKSDBTUNEDBMODE`
 
