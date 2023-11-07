@@ -1055,11 +1055,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.ExitOnSynced <value>`** `NETHERMIND_SYNCCONFIG_EXITONSYNCED`
 
-  Whether to shut down Nethermind once the sync is finished. Allowed values: `true` `false`. Defaults to `false`.
+  Whether to shut down Nethermind once sync is finished. Allowed values: `true` `false`. Defaults to `false`.
 
 - **`--Sync.ExitOnSyncedWaitTimeSec <value>`** `NETHERMIND_SYNCCONFIG_EXITONSYNCEDWAITTIMESEC`
 
-  The time to wait before shutting Nethermind down once sthe ync is finished. Defaults to `60`.
+  The time, in seconds, to wait before shutting down Nethermind once sync is finished. Defaults to `60`.
 
 - **`--Sync.FastBlocks <value>`** `NETHERMIND_SYNCCONFIG_FASTBLOCKS`
 
