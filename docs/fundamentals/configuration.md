@@ -49,6 +49,7 @@ The command line options are case-sensitive and can be defined only once unless 
   - `exosama` `exosama_archive`
   - `goerli` `goerli_archive`
   - `gnosis` `gnosis_archive`
+  - `holesky` `holesky_archive`
   - `mainnet` `mainnet_archive`
   - `sepolia` `sepolia_archive`
   - `volta` `volta_archive`
