@@ -5,7 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
-import redirects from './redirects.json';
+import redirects from './redirects.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -125,9 +125,7 @@ const config = {
     plugins: [
       [
         '@docusaurus/plugin-client-redirects',
-        {
-          redirects
-        }
+        { ...redirects }
       ]
     ]
 };
