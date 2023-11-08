@@ -1,8 +1,80 @@
-const r = {
+const redirects = {
   redirects: [
     {
       from: '/nethermind/ethereum-client/configuration',
       to: '/fundamentals/configuration'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/aura',
+      to: '/fundamentals/configuration#aura'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/bloom',
+      to: '/fundamentals/configuration#bloom'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/ethstats',
+      to: '/fundamentals/configuration#ethstats'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/healthchecks',
+      to: '/fundamentals/configuration#healthchecks'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/hive',
+      to: '/fundamentals/configuration#hive'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/init',
+      to: '/fundamentals/configuration#init'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/jsonrpc',
+      to: '/fundamentals/configuration#jsonrpc'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/keystore',
+      to: '/fundamentals/configuration#keystore'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/merge',
+      to: '/fundamentals/configuration#merge'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/metrics',
+      to: '/fundamentals/configuration#metrics'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/mining',
+      to: '/fundamentals/configuration#mining'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/network',
+      to: '/fundamentals/configuration#network'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/pruning',
+      to: '/fundamentals/configuration#pruning'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/receipt',
+      to: '/fundamentals/configuration#receipt'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/seq',
+      to: '/fundamentals/configuration#seq'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/sync',
+      to: '/fundamentals/configuration#sync'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/txpool',
+      to: '/fundamentals/configuration#txpool'
+    },
+    {
+      from: '/nethermind/ethereum-client/configuration/wallet',
+      to: '/fundamentals/configuration#wallet'
     },
     {
       from: '/nethermind/ethereum-client/database',
@@ -19,6 +91,54 @@ const r = {
     {
       from: '/nethermind/ethereum-client/metrics',
       to: '/monitoring/metrics'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/blockchain',
+      to: '/monitoring/metrics#blockchain'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/consensus.aura',
+      to: '/monitoring/metrics#aura'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/evm',
+      to: '/monitoring/metrics#evm'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/jsonrpc',
+      to: '/monitoring/metrics#jsonrpc'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/merge.plugin',
+      to: '/monitoring/metrics#merge'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/network',
+      to: '/monitoring/metrics#network'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/trie.pruning',
+      to: '/monitoring/metrics#pruning'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/runner',
+      to: '/monitoring/metrics#runner'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/store',
+      to: '/monitoring/metrics#db'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/trie',
+      to: '/monitoring/metrics#trie'
+    },
+    {
+      from: '/nethermind/ethereum-client/metrics/txpool',
+      to: '/monitoring/metrics#txpool'
+    },
+    {
+      from: '/nethermind/ethereum-client/monitoring-node-health',
+      to: '/monitoring/health-check'
     },
     {
       from: '/nethermind/ethereum-client/networks',
@@ -68,4 +188,4 @@ const r = {
   }
 };
 
-export default r;
+export default redirects;
