@@ -9,6 +9,10 @@ const redirects = {
       to: '/fundamentals/configuration#aura'
     },
     {
+      from: '/nethermind/ethereum-client/configuration/blocks',
+      to: '/fundamentals/configuration#blocks'
+    },
+    {
       from: '/nethermind/ethereum-client/configuration/bloom',
       to: '/fundamentals/configuration#bloom'
     },

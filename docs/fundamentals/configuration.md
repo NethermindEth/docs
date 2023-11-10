@@ -127,6 +127,37 @@ The command line options are case-sensitive and can be defined only once unless 
 <details>
 <summary className="nd-details-heading">
 
+#### Blocks
+
+</summary>
+<p>
+
+- **`--Blocks.ExtraData <value>`** `NETHERMIND_BLOCKSCONFIG_EXTRADATA`
+
+  The block header extra data up to 32 bytes in length. Defaults to `Nethermind`.
+
+- **`--Blocks.MinGasPrice <value>`** `NETHERMIND_BLOCKSCONFIG_MINGASPRICE`
+
+  The minimum gas premium (or the gas price before the London hard fork) for transactions accepted by the block producer. Defaults to `1`.
+
+- **`--Blocks.RandomizedBlocks <value>`** `NETHERMIND_BLOCKSCONFIG_RANDOMIZEDBLOCKS`
+
+  Whether to change the difficulty of the block randomly within the constraints. Used in NethDev only. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Blocks.SecondsPerSlot <value>`** `NETHERMIND_BLOCKSCONFIG_SECONDSPERSLOT`
+
+  The block time slot, in seconds. Defaults to `12`.
+
+- **`--Blocks.TargetBlockGasLimit <value>`** `NETHERMIND_BLOCKSCONFIG_TARGETBLOCKGASLIMIT`
+
+  The block gas limit that the block producer should try to reach in the fastest possible way based on the protocol rules. If not specified, then the block producer should follow others. Defaults to `null`.
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
 #### Bloom
 
 </summary>
@@ -694,6 +725,82 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--KeyStore.UnlockAccounts <value>`** `NETHERMIND_KEYSTORECONFIG_UNLOCKACCOUNTS`
 
   An array of accounts to unlock on startup using passwords either in `PasswordFiles` and `Passwords`. Defaults to `[]`.
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
+#### Merge
+
+</summary>
+<p>
+
+- **`--Merge.BuilderRelayUrl <value>`** `NETHERMIND_MERGECONFIG_BUILDERRELAYURL`
+
+  The URL of a builder relay. If specified, blocks are sent to the relay. Defaults to `null`.
+
+- **`--Merge.CollectionsPerDecommit <value>`** `NETHERMIND_MERGECONFIG_COLLECTIONSPERDECOMMIT`
+
+  Request the garbage collector (GC) to release the process memory.
+  
+  Allowed values:
+  
+  - `-1` to disable
+  - `0` to release every time
+  - A positive number to release memory after that many Engine API calls
+  
+  Defaults to `75`.
+
+- **`--Merge.CompactMemory <value>`** `NETHERMIND_MERGECONFIG_COMPACTMEMORY`
+
+  The memory compaction mode. When set to `Full`, compacts the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
+
+  Allowed values:
+
+    - `No`
+    - `Yes`
+    - `Full`
+
+  Defaults to `Yes`.
+
+- **`--Merge.Enabled <value>`** `NETHERMIND_MERGECONFIG_ENABLED`
+
+  Whether to enable the Merge hard fork. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Merge.FinalTotalDifficulty <value>`** `NETHERMIND_MERGECONFIG_FINALTOTALDIFFICULTY`
+
+  The total difficulty of the last PoW block. Must be greater than or equal to the terminal total difficulty (TTD). Defaults to `null`.
+
+- **`--Merge.PrioritizeBlockLatency <value>`** `NETHERMIND_MERGECONFIG_PRIORITIZEBLOCKLATENCY`
+
+  Whether to reduce block latency by disabling garbage collection during Engine API calls. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Merge.SweepMemory <value>`** `NETHERMIND_MERGECONFIG_SWEEPMEMORY`
+
+  The garbage collection (GC) mode between Engine API calls.
+
+  Allowed values:
+
+    - `NoGC`
+    - `Gen0`
+    - `Gen1`
+    - `Gen2`
+
+  Defaults to `Gen1`.
+
+- **`--Merge.TerminalBlockHash <value>`** `NETHERMIND_MERGECONFIG_TERMINALBLOCKHASH`
+
+  The terminal PoW block hash used for the transition. Defaults to `null`.
+
+- **`--Merge.TerminalBlockNumber <value>`** `NETHERMIND_MERGECONFIG_TERMINALBLOCKNUMBER`
+
+  The terminal PoW block number used for the transition.
+
+- **`--Merge.TerminalTotalDifficulty <value>`** `NETHERMIND_MERGECONFIG_TERMINALTOTALDIFFICULTY`
+
+  The terminal total difficulty (TTD) used for the transition. Defaults to `null`.
 
 </p>
 </details>
