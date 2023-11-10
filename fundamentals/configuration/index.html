@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&amp;family=Exo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"><link rel="stylesheet" href="/assets/css/styles.6e63d779.css">
-<script src="/assets/js/runtime~main.4e781938.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6dd02db2.js" defer="defer"></script>
 <script src="/assets/js/main.5df294db.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -96,6 +96,28 @@
 <li>
 <p><strong><code>--Aura.TxPriorityContractAddress &lt;value&gt;</code></strong> <code>NETHERMIND_AURACONFIG_TXPRIORITYCONTRACTADDRESS</code></p>
 <p>The address of the transaction priority contract to use when selecting transactions from the transaction pool. Defaults to <code>null</code>.</p>
+</li>
+</ul><p></p></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary class="nd-details-heading"><h4 class="anchor anchorWithStickyNavbar_LWe7" id="blocks">Blocks<a href="#blocks" class="hash-link" aria-label="Direct link to Blocks" title="Direct link to Blocks">​</a></h4></summary><div><div class="collapsibleContent_i85q"><p></p><ul>
+<li>
+<p><strong><code>--Blocks.ExtraData &lt;value&gt;</code></strong> <code>NETHERMIND_BLOCKSCONFIG_EXTRADATA</code></p>
+<p>The block header extra data up to 32 bytes in length. Defaults to <code>Nethermind</code>.</p>
+</li>
+<li>
+<p><strong><code>--Blocks.MinGasPrice &lt;value&gt;</code></strong> <code>NETHERMIND_BLOCKSCONFIG_MINGASPRICE</code></p>
+<p>The minimum gas premium (or the gas price before the London hard fork) for transactions accepted by the block producer. Defaults to <code>1</code>.</p>
+</li>
+<li>
+<p><strong><code>--Blocks.RandomizedBlocks &lt;value&gt;</code></strong> <code>NETHERMIND_BLOCKSCONFIG_RANDOMIZEDBLOCKS</code></p>
+<p>Whether to change the difficulty of the block randomly within the constraints. Used in NethDev only. Allowed values: <code>true</code> <code>false</code>. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><strong><code>--Blocks.SecondsPerSlot &lt;value&gt;</code></strong> <code>NETHERMIND_BLOCKSCONFIG_SECONDSPERSLOT</code></p>
+<p>The block time slot, in seconds. Defaults to <code>12</code>.</p>
+</li>
+<li>
+<p><strong><code>--Blocks.TargetBlockGasLimit &lt;value&gt;</code></strong> <code>NETHERMIND_BLOCKSCONFIG_TARGETBLOCKGASLIMIT</code></p>
+<p>The block gas limit that the block producer should try to reach in the fastest possible way based on the protocol rules. If not specified, then the block producer should follow others. Defaults to <code>null</code>.</p>
 </li>
 </ul><p></p></div></div></details>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary class="nd-details-heading"><h4 class="anchor anchorWithStickyNavbar_LWe7" id="bloom">Bloom<a href="#bloom" class="hash-link" aria-label="Direct link to Bloom" title="Direct link to Bloom">​</a></h4></summary><div><div class="collapsibleContent_i85q"><p></p><ul>
@@ -557,6 +579,70 @@ Defaults to:</p>
 <li>
 <p><strong><code>--KeyStore.UnlockAccounts &lt;value&gt;</code></strong> <code>NETHERMIND_KEYSTORECONFIG_UNLOCKACCOUNTS</code></p>
 <p>An array of accounts to unlock on startup using passwords either in <code>PasswordFiles</code> and <code>Passwords</code>. Defaults to <code>[]</code>.</p>
+</li>
+</ul><p></p></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary class="nd-details-heading"><h4 class="anchor anchorWithStickyNavbar_LWe7" id="merge">Merge<a href="#merge" class="hash-link" aria-label="Direct link to Merge" title="Direct link to Merge">​</a></h4></summary><div><div class="collapsibleContent_i85q"><p></p><ul>
+<li>
+<p><strong><code>--Merge.BuilderRelayUrl &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_BUILDERRELAYURL</code></p>
+<p>The URL of a builder relay. If specified, blocks are sent to the relay. Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.CollectionsPerDecommit &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_COLLECTIONSPERDECOMMIT</code></p>
+<p>Request the garbage collector (GC) to release the process memory.</p>
+<p>Allowed values:</p>
+<ul>
+<li><code>-1</code> to disable</li>
+<li><code>0</code> to release every time</li>
+<li>A positive number to release memory after that many Engine API calls</li>
+</ul>
+<p>Defaults to <code>75</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.CompactMemory &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_COMPACTMEMORY</code></p>
+<p>The memory compaction mode. When set to <code>Full</code>, compacts the large object heap (LOH) if <code>SweepMemory</code> is set to <code>Gen2</code>.</p>
+<p>Allowed values:</p>
+<ul>
+<li><code>No</code></li>
+<li><code>Yes</code></li>
+<li><code>Full</code></li>
+</ul>
+<p>Defaults to <code>Yes</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.Enabled &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_ENABLED</code></p>
+<p>Whether to enable the Merge hard fork. Allowed values: <code>true</code> <code>false</code>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.FinalTotalDifficulty &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_FINALTOTALDIFFICULTY</code></p>
+<p>The total difficulty of the last PoW block. Must be greater than or equal to the terminal total difficulty (TTD). Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.PrioritizeBlockLatency &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_PRIORITIZEBLOCKLATENCY</code></p>
+<p>Whether to reduce block latency by disabling garbage collection during Engine API calls. Allowed values: <code>true</code> <code>false</code>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.SweepMemory &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_SWEEPMEMORY</code></p>
+<p>The garbage collection (GC) mode between Engine API calls.</p>
+<p>Allowed values:</p>
+<ul>
+<li><code>NoGC</code></li>
+<li><code>Gen0</code></li>
+<li><code>Gen1</code></li>
+<li><code>Gen2</code></li>
+</ul>
+<p>Defaults to <code>Gen1</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.TerminalBlockHash &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_TERMINALBLOCKHASH</code></p>
+<p>The terminal PoW block hash used for the transition. Defaults to <code>null</code>.</p>
+</li>
+<li>
+<p><strong><code>--Merge.TerminalBlockNumber &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_TERMINALBLOCKNUMBER</code></p>
+<p>The terminal PoW block number used for the transition.</p>
+</li>
+<li>
+<p><strong><code>--Merge.TerminalTotalDifficulty &lt;value&gt;</code></strong> <code>NETHERMIND_MERGECONFIG_TERMINALTOTALDIFFICULTY</code></p>
+<p>The terminal total difficulty (TTD) used for the transition. Defaults to <code>null</code>.</p>
 </li>
 </ul><p></p></div></div></details>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary class="nd-details-heading"><h4 class="anchor anchorWithStickyNavbar_LWe7" id="metrics">Metrics<a href="#metrics" class="hash-link" aria-label="Direct link to Metrics" title="Direct link to Metrics">​</a></h4></summary><div><div class="collapsibleContent_i85q"><p></p><ul>
@@ -1031,6 +1117,6 @@ Defaults to <code>null</code>.</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">NETHERMIND_{NAMESPACE}CONFIG_{PROPERTY_NAME}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>For instance, the environment variable equivalent of the command line <code>--JsonRpc.JwtSecretFile</code> option is <code>NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE</code>. For the list of configuration namespaces and their options, see <a href="#options-by-namespaces">Options by namespaces</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="configuration-file">Configuration file<a href="#configuration-file" class="hash-link" aria-label="Direct link to Configuration file" title="Direct link to Configuration file">​</a></h2>
-<p>The configuration file is a JSON file with <code>.cfg</code> extension. The bundled configuration files are located in the <code>configs</code> directory and named after the network they are used for. For instance, see the Mainnet configuration file <a href="https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.cfg" target="_blank" rel="noopener noreferrer"><code>mainnet.cfg</code></a>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/NethermindEth/docs/tree/main/docs/fundamentals/configuration.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2023-11-08T20:45:58.000Z">Nov 8, 2023</time></b></span></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/get-started/migrating-from-geth"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Migrating from Geth</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fundamentals/sync"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Sync</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#command-line-options" class="table-of-contents__link toc-highlight">Command line options</a><ul><li><a href="#basic-options" class="table-of-contents__link toc-highlight">Basic options</a></li><li><a href="#options-by-namespaces" class="table-of-contents__link toc-highlight">Options by namespaces</a><ul><li><a href="#aura" class="table-of-contents__link toc-highlight">Aura</a></li><li><a href="#bloom" class="table-of-contents__link toc-highlight">Bloom</a></li><li><a href="#ethstats" class="table-of-contents__link toc-highlight">EthStats</a></li><li><a href="#healthchecks" class="table-of-contents__link toc-highlight">HealthChecks</a></li><li><a href="#hive" class="table-of-contents__link toc-highlight">Hive</a></li><li><a href="#init" class="table-of-contents__link toc-highlight">Init</a></li><li><a href="#jsonrpc" class="table-of-contents__link toc-highlight">JsonRpc</a></li><li><a href="#keystore" class="table-of-contents__link toc-highlight">KeyStore</a></li><li><a href="#metrics" class="table-of-contents__link toc-highlight">Metrics</a></li><li><a href="#mining" class="table-of-contents__link toc-highlight">Mining</a></li><li><a href="#network" class="table-of-contents__link toc-highlight">Network</a></li><li><a href="#pruning" class="table-of-contents__link toc-highlight">Pruning</a></li><li><a href="#receipt" class="table-of-contents__link toc-highlight">Receipt</a></li><li><a href="#seq" class="table-of-contents__link toc-highlight">Seq</a></li><li><a href="#snapshot" class="table-of-contents__link toc-highlight">Snapshot</a></li><li><a href="#sync" class="table-of-contents__link toc-highlight">Sync</a></li><li><a href="#tracestore" class="table-of-contents__link toc-highlight">TraceStore</a></li><li><a href="#txpool" class="table-of-contents__link toc-highlight">TxPool</a></li><li><a href="#wallet" class="table-of-contents__link toc-highlight">Wallet</a></li></ul></li></ul></li><li><a href="#environment-variables" class="table-of-contents__link toc-highlight">Environment variables</a></li><li><a href="#configuration-file" class="table-of-contents__link toc-highlight">Configuration file</a></li></ul></div></div></div></div></main></div></div></div></div>
+<p>The configuration file is a JSON file with <code>.cfg</code> extension. The bundled configuration files are located in the <code>configs</code> directory and named after the network they are used for. For instance, see the Mainnet configuration file <a href="https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.cfg" target="_blank" rel="noopener noreferrer"><code>mainnet.cfg</code></a>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/NethermindEth/docs/tree/main/docs/fundamentals/configuration.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2023-11-10T00:26:21.000Z">Nov 10, 2023</time></b></span></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/get-started/migrating-from-geth"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Migrating from Geth</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/fundamentals/sync"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Sync</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#command-line-options" class="table-of-contents__link toc-highlight">Command line options</a><ul><li><a href="#basic-options" class="table-of-contents__link toc-highlight">Basic options</a></li><li><a href="#options-by-namespaces" class="table-of-contents__link toc-highlight">Options by namespaces</a><ul><li><a href="#aura" class="table-of-contents__link toc-highlight">Aura</a></li><li><a href="#blocks" class="table-of-contents__link toc-highlight">Blocks</a></li><li><a href="#bloom" class="table-of-contents__link toc-highlight">Bloom</a></li><li><a href="#ethstats" class="table-of-contents__link toc-highlight">EthStats</a></li><li><a href="#healthchecks" class="table-of-contents__link toc-highlight">HealthChecks</a></li><li><a href="#hive" class="table-of-contents__link toc-highlight">Hive</a></li><li><a href="#init" class="table-of-contents__link toc-highlight">Init</a></li><li><a href="#jsonrpc" class="table-of-contents__link toc-highlight">JsonRpc</a></li><li><a href="#keystore" class="table-of-contents__link toc-highlight">KeyStore</a></li><li><a href="#merge" class="table-of-contents__link toc-highlight">Merge</a></li><li><a href="#metrics" class="table-of-contents__link toc-highlight">Metrics</a></li><li><a href="#mining" class="table-of-contents__link toc-highlight">Mining</a></li><li><a href="#network" class="table-of-contents__link toc-highlight">Network</a></li><li><a href="#pruning" class="table-of-contents__link toc-highlight">Pruning</a></li><li><a href="#receipt" class="table-of-contents__link toc-highlight">Receipt</a></li><li><a href="#seq" class="table-of-contents__link toc-highlight">Seq</a></li><li><a href="#snapshot" class="table-of-contents__link toc-highlight">Snapshot</a></li><li><a href="#sync" class="table-of-contents__link toc-highlight">Sync</a></li><li><a href="#tracestore" class="table-of-contents__link toc-highlight">TraceStore</a></li><li><a href="#txpool" class="table-of-contents__link toc-highlight">TxPool</a></li><li><a href="#wallet" class="table-of-contents__link toc-highlight">Wallet</a></li></ul></li></ul></li><li><a href="#environment-variables" class="table-of-contents__link toc-highlight">Environment variables</a></li><li><a href="#configuration-file" class="table-of-contents__link toc-highlight">Configuration file</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
