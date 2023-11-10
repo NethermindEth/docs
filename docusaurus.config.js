@@ -38,6 +38,7 @@ const config = {
           showLastUpdateTime: true,
           editUrl:
             'https://github.com/NethermindEth/docs/tree/main',
+          exclude: ['interacting/json-rpc-ns/eth_*.md']
         },
         blog: false,
         theme: {

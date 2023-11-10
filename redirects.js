@@ -89,6 +89,10 @@ const redirects = {
       to: '/interacting/json-rpc-server'
     },
     {
+      from: '/nethermind/ethereum-client/json-rpc/subscribe',
+      to: '/interacting/json-rpc-ns/eth'
+    },
+    {
       from: '/nethermind/ethereum-client/logging-configuration',
       to: '/fundamentals/logs'
     },
@@ -184,7 +188,7 @@ const redirects = {
   createRedirects: existingPath => {
     if (existingPath.includes('/interacting/json-rpc-ns')) {
       return [
-        existingPath.replace('/interacting/json-rpc-ns/', '/nethermind/ethereum-client/json-rpc/')
+        existingPath.replace('/interacting/json-rpc-ns/', '/nethermind/ethereum-client/json-rpc/'),
       ];
     }
 
