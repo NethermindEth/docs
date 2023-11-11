@@ -1829,9 +1829,14 @@ curl localhost:8545 \
 
 </TabItem>
 </Tabs>
+
 ### eth_subscribe
 
 Starts a subscription to a particular event over WebSockets. A JSON-RPC notification with event payload and subscription id is sent to a client for every event matching the subscription topic.
+
+:::info
+This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
+:::
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -2019,7 +2024,6 @@ Notification `payload`:
 
 </p>
 </details>
-
 ### eth_syncing
 
 Returns syncing status
@@ -2100,9 +2104,14 @@ curl localhost:8545 \
 
 </TabItem>
 </Tabs>
+
 ### eth_unsubscribe
 
 Unsubscribes from a subscription.
+
+:::info
+This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
+:::
 
 <Tabs>
 <TabItem value="params" label="Parameters">

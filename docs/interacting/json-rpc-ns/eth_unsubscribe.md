@@ -2,6 +2,10 @@
 
 Unsubscribes from a subscription.
 
+:::info
+This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
+:::
+
 <Tabs>
 <TabItem value="params" label="Parameters">
 

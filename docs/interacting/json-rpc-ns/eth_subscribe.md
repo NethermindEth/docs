@@ -2,6 +2,10 @@
 
 Starts a subscription to a particular event over WebSockets. A JSON-RPC notification with event payload and subscription id is sent to a client for every event matching the subscription topic.
 
+:::info
+This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
+:::
+
 <Tabs>
 <TabItem value="params" label="Parameters">
 
