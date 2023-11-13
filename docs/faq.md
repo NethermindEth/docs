@@ -67,7 +67,7 @@ You can find more details on the logging config page [here](./fundamentals/logs.
 
 ## How can I configure a validator?
 
-You can find more details on running validators [here](./validators.md).
+You can find more details on running validators [here](./validators/validators.md).
 
 ## My network bandwidth is used up by the Nethermind node
 
