@@ -1,12 +1,12 @@
 ---
 title: Validators
-sidebar_position: 5
+sidebar_position: 0
 ---
 
 ## General considerations
 
 :::warning Important
-Please check out the [security considerations](./fundamentals/security.md) before using Nethermind as a validator.
+Please check out the [security considerations](../fundamentals/security.md) before using Nethermind as a validator.
 :::
 
 For Ethereum validators, we highly recommend checking out [Staking with Ethereum](https://ethereum.org/en/staking/) and [Validator checklist](https://launchpad.ethereum.org/en/checklist).
@@ -24,7 +24,7 @@ A single validator on Intel NUC 11:
 - Storage: Samsung 980 PRO PCIe NVMe SSD 2TB
 - Internet speed: 620 Mbps download, 160 Mbps upload
 
-See also Nethermind [hardware requirements](./get-started/system-requirements.md#hardware-requirements).
+See also Nethermind [hardware requirements](../get-started/system-requirements.md#hardware-requirements).
 
 ### AWS
 

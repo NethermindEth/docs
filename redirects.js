@@ -169,6 +169,10 @@ const redirects = {
       to: '/faq'
     },
     {
+      from: '/nethermind/guides-and-helpers/validator-setup/aura-validator',
+      to: '/validators/aura'
+    },
+    {
       from: '/nethermind/guides-and-helpers/validator-setup/eth2-validator',
       to: '/validators'
     },
