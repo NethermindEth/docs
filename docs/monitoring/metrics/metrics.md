@@ -122,6 +122,13 @@ following options are available at the moment:
   
   Total number of transactions processed
 
+- **`nethermind_bad_blocks`**
+  
+  Number of invalid blocks.
+
+- **`nethermind_bad_blocks_by_nethermind_nodes`**
+  
+  Number of invalid blocks with extra data set to 'Nethermind'.
 
 </p>
 </details>
