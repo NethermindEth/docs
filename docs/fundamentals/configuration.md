@@ -32,11 +32,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`-d, --baseDbPath <path>`**
 
-  An absolute or relative path to the Nethermind database directory. Defaults to `db`.
+  The path to the Nethermind database directory. Defaults to `db`.
 
 - **`-c, --config <value>`**
 
-  An absolute or relative path to the [configuration file](#configuration-file) or the name (without extension) of any of the  configuration files in the configuration directory. Defaults to `mainnet`.
+  The path to the [configuration file](#configuration-file) or the name (without extension) of any of the configuration files in the configuration directory. Defaults to `mainnet`.
 
   <details>
   <summary>Available configurations</summary>
@@ -59,11 +59,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`-cd, --configsDirectory <path>`**
 
-  An absolute or relative path to the configuration files directory. Defaults to `configs`.
+  The path to the configuration files directory. Defaults to `configs`.
 
 - **`-dd, --datadir <path>`**
 
-  An absolute or relative path to the Nethermind data directory. Defaults to Nethermind's current directory.
+  The path to the Nethermind data directory. Defaults to Nethermind's current directory.
 
   :::warning
   The absolute paths set by `Init.BaseDbPath`, `Init.LogDirectory`, or `KeyStore.KeyStoreDirectory` options in a configuration file are not overridden by `--datadir`.
@@ -79,11 +79,11 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`-lcs, --loggerConfigSource <path>`**
 
-  An absolute or relative path to the NLog configuration file. Defaults to `NLog.config`.
+  The path to the NLog configuration file. Defaults to `NLog.config`.
 
 - **`-pd, --pluginsDirectory <path>`**
 
-  An absolute or relative path to the Nethermind plugins directory. Defaults to `plugins`.
+  The path to the Nethermind plugins directory. Defaults to `plugins`.
 
 - **`-v, --version`**
 
