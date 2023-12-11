@@ -45,7 +45,7 @@ This step assumes that you have already [installed](../get-started/installing-ne
 As syncing from the scratch can take a very long time on some networks (up to several days), the commands below optionally use [checkpoint sync](https://ethereum.org/en/developers/docs/nodes-and-clients/#checkpoint-sync) to speed up the process.
 :::
 
-### Running Lighthouse
+### Lighthouse
 
 ```bash
 lighthouse bn \
@@ -58,7 +58,7 @@ lighthouse bn \
 
 The command above runs Lighthouse on Mainnet. For other networks, set the `--network` and `--checkpoint-sync-url` options accordingly. See the [Lighthouse documentation][lighthouse] and [public checkpoint sync endpoints][checkpoint-sync-endpoints].
 
-### Running Lodestar
+### Lodestar
 
 ```bash
 lodestar beacon \
@@ -69,7 +69,7 @@ lodestar beacon \
 
 The command above runs Lodestar on Mainnet. For other networks, set the `--network` and `--checkpointSyncUrl` options accordingly. See the [Lodestar documentation][lodestar] and [public checkpoint sync endpoints][checkpoint-sync-endpoints].
 
-### Running Nimbus
+### Nimbus
 
 ```bash
 ./run-mainnet-beacon-node.sh \
@@ -79,7 +79,7 @@ The command above runs Lodestar on Mainnet. For other networks, set the `--netwo
 
 The command above runs Numbus on Mainnet without checkpoint sync. For checkpoint sync, see [Sync from a trusted node](https://nimbus.guide/trusted-node-sync.html). For other networks, see the [Nimbus documentation][nimbus].
 
-### Running Prysm
+### Prysm
 
 ```bash
 ./prysm.sh beacon-chain \
@@ -92,7 +92,7 @@ The command above runs Numbus on Mainnet without checkpoint sync. For checkpoint
 
 The command above runs Prysm on Mainnet. For other networks, replace the `--mainnet` and set `--checkpoint-sync-url` and `--genesis-beacon-api-url` options accordingly. See the [Prysm documentation][prysm] and [public checkpoint sync endpoints][checkpoint-sync-endpoints].
 
-### Running Teku
+### Teku
 
 ```bash
 teku \

@@ -1,7 +1,7 @@
 ---
 title: Private networks
 description: Use Kurtosis to deploy a private Ethereum devnet with Nethermind and any consensus client at any scale you need, wherever you need it.
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 This guide will walk you through using [Kurtosis `ethereum-package`](https://github.com/kurtosis-tech/ethereum-package) to spin up a private, proof-of-stake (PoS) Ethereum devnet with three full Ethereum nodes locally over Docker. At the end of the guide, you will learn how to scale up your testnet on Kubernetes as well as enable optional services for your local testnet, such as network observability tools (e.g., Grafana, Prometheus) and Flashbot's `mev-boost` infrastructure to simulate MEV workflows.
