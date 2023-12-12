@@ -281,12 +281,21 @@ For detailed info about the available configuration options, see [Configuration]
 
 To run Nethermind on a specific network, use the [`-c, --config`](../fundamentals/configuration.md#basic-options) command line option. Currently, the following networks are supported out of the box:
 
-- **Chiado** (testnet)
-- **Energy Web**
+- **Ethereum**
+    - [Mainnet](https://ethereum.org/en/developers/docs/networks/#ethereum-mainnet)
+    - [Goerli](https://ethereum.org/en/developers/docs/networks/#goerli) (testnet)
+    - [Holesky](https://github.com/eth-clients/holesky) (testnet)
+    - [Sepolia](https://ethereum.org/en/developers/docs/networks/#sepolia) (testnet)
+- **Base**
+    - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet)
+    - [Base Goerli](https://docs.base.org/network-information/#base-testnet-goerli) (testnet)
+- **Energy Web Chain**
+    - [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain)
+    - [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet)
 - **Exosama**
-- **Goerli** (testnet)
-- **Gnosis** 
-- **Holesky** (testnet)
-- **Mainnet**
-- **Sepolia** (testnet)
-- **Volta** (testnet)
+- **Gnosis Chain**
+    - [Gnosis](https://docs.gnosischain.com/about/networks/mainnet)
+    - [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet)
+- **Optimism**
+    - [OP Mainnet](https://community.optimism.io/docs/useful-tools/networks/#op-mainnet)
+    - [OP Goerli](https://community.optimism.io/docs/useful-tools/networks/#op-goerli) (testnet)
