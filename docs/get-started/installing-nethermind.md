@@ -296,6 +296,9 @@ To run Nethermind on a specific network, use the [`-c, --config`](../fundamental
 - **Gnosis Chain**
     - [Gnosis](https://docs.gnosischain.com/about/networks/mainnet)
     - [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet)
+- **Japan Open Chain**
+    - [JOC Mainnet](https://www.japanopenchain.org/en/docs/developer/dev-on-ethereum#mainnet)
+    - [JOC Testnet](https://www.japanopenchain.org/en/docs/developer/dev-on-ethereum#testnet) (testnet)
 - **Optimism**
     - [OP Mainnet](https://community.optimism.io/docs/useful-tools/networks/#op-mainnet)
     - [OP Goerli](https://community.optimism.io/docs/useful-tools/networks/#op-goerli) (testnet)

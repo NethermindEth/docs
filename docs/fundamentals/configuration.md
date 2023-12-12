@@ -52,6 +52,8 @@ The command line options are case-sensitive and can be defined only once unless 
   - `goerli` `goerli_archive`
   - `gnosis` `gnosis_archive`
   - `holesky` `holesky_archive`
+  - `joc-mainnet` `joc-mainnet_archive`
+  - `joc-testnet` `joc-testnet_archive`
   - `mainnet` `mainnet_archive`
   - `op-goerli`
   - `op-mainnet`
