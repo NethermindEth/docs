@@ -96,7 +96,12 @@ Retrieves a block in the RLP-serialized form.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -168,7 +173,12 @@ curl localhost:8545 \
 
 `result`: *object*
   - `blockInfos`: array of *object*
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `isFinalized`: *boolean*
     - `totalDifficulty`: *string* (hex integer)
     - `wasProcessed`: *boolean*
@@ -268,7 +278,12 @@ Insert receipts for the block after verifying receipts root correctness.
 2. `receiptForRpc`: array of *object*
   - `blobGasPrice`: *string* (hex integer)
   - `blobGasUsed`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `contractAddress`: *string* (address)
   - `cumulativeGasUsed`: *string* (hex integer)
@@ -278,19 +293,44 @@ Insert receipts for the block after verifying receipts root correctness.
   - `gasUsed`: *string* (hex integer)
   - `logs`: array of *object*
     - `address`: *string* (address)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `data`: *string* (hex data)
     - `logIndex`: *string* (hex integer)
     - `removed`: *boolean*
-    - `topics`: array of *string* (hash)
-    - `transactionHash`: *string* (hash)
+    - `topics`: array of *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
+    - `transactionHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `transactionIndex`: *string* (hex integer)
   - `logsBloom`: *string* (hex data)
-  - `root`: *string* (hash)
+  - `root`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `status`: *string* (hex integer)
   - `to`: *string* (address)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
 
@@ -374,7 +414,12 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -415,7 +460,12 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `options`: *object*
     - `disableMemory`: *boolean*
@@ -424,7 +474,12 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -474,7 +529,12 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -529,7 +589,12 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `options`: *object*
     - `disableMemory`: *boolean*
@@ -538,7 +603,12 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -602,7 +672,12 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -662,20 +737,38 @@ This method lets you run an eth_call within the context of the given block execu
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
+    - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
+    - `mint`: *string* (hex integer)
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -692,7 +785,12 @@ This method lets you run an eth_call within the context of the given block execu
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -747,7 +845,12 @@ This method will attempt to run the transaction in the exact same manner as it w
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `transactionHash`: *string* (hash)
+1. `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `options`: *object*
     - `disableMemory`: *boolean*
@@ -756,7 +859,12 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -820,7 +928,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -873,7 +986,12 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `txIndex`: *string* (hex integer)
 
@@ -884,7 +1002,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -939,7 +1062,12 @@ curl localhost:8545 \
 
 1. `blockRlp`: *string* (hex data)
 
-2. `transactionHash`: *string* (hash)
+2. `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 3. `options`: *object*
     - `disableMemory`: *boolean*
@@ -948,7 +1076,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>
@@ -1012,7 +1145,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
-    - `txHash`: *string* (hash)
+    - `txHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 
 </TabItem>

@@ -14,7 +14,12 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHash`: *string* (hash)
+1. `txHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `includeHeader`: *boolean*
 
@@ -52,20 +57,38 @@ curl localhost:8545 \
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
+    - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
+    - `mint`: *string* (hex integer)
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -84,7 +107,12 @@ This function should return the same result as `eth_call` and also proofs of all
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHash`: *string* (hash)
+1. `txHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `includeHeader`: *boolean*
 
@@ -120,7 +148,12 @@ curl localhost:8545 \
   - `receipt`: *object*
     - `blobGasPrice`: *string* (hex integer)
     - `blobGasUsed`: *string* (hex integer)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `contractAddress`: *string* (address)
     - `cumulativeGasUsed`: *string* (hex integer)
@@ -130,19 +163,44 @@ curl localhost:8545 \
     - `gasUsed`: *string* (hex integer)
     - `logs`: array of *object*
       - `address`: *string* (address)
-      - `blockHash`: *string* (hash)
+      - `blockHash`: *object*
+        - `bytes`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+        - `valueHash256`: *object*
       - `blockNumber`: *string* (hex integer)
       - `data`: *string* (hex data)
       - `logIndex`: *string* (hex integer)
       - `removed`: *boolean*
-      - `topics`: array of *string* (hash)
-      - `transactionHash`: *string* (hash)
+      - `topics`: array of *object*
+        - `bytes`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+        - `valueHash256`: *object*
+      - `transactionHash`: *object*
+        - `bytes`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+        - `valueHash256`: *object*
       - `transactionIndex`: *string* (hex integer)
     - `logsBloom`: *string* (hex data)
-    - `root`: *string* (hash)
+    - `root`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `status`: *string* (hex integer)
     - `to`: *string* (address)
-    - `transactionHash`: *string* (hash)
+    - `transactionHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
   - `receiptProof`: array of *string* (hex data)

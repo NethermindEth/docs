@@ -44,20 +44,38 @@ map of *object*
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
   - `blobVersionedHashes`: array of *string* (hex data)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
+  - `isSystemTx`: *boolean*
   - `maxFeePerBlobGas`: *string* (hex integer)
   - `maxFeePerGas`: *string* (hex integer)
   - `maxPriorityFeePerGas`: *string* (hex integer)
+  - `mint`: *string* (hex integer)
   - `nonce`: *string* (hex integer)
   - `r`: *string* (hex integer)
   - `s`: *string* (hex integer)
+  - `sourceHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -70,20 +88,38 @@ map of *object*
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
   - `blobVersionedHashes`: array of *string* (hex data)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
+  - `isSystemTx`: *boolean*
   - `maxFeePerBlobGas`: *string* (hex integer)
   - `maxFeePerGas`: *string* (hex integer)
   - `maxPriorityFeePerGas`: *string* (hex integer)
+  - `mint`: *string* (hex integer)
   - `nonce`: *string* (hex integer)
   - `r`: *string* (hex integer)
   - `s`: *string* (hex integer)
+  - `sourceHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*

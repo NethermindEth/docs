@@ -114,7 +114,12 @@ curl localhost:8545 \
 `result`: array of *object*
   - `blobGasPrice`: *string* (hex integer)
   - `blobGasUsed`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `contractAddress`: *string* (address)
   - `cumulativeGasUsed`: *string* (hex integer)
@@ -124,19 +129,44 @@ curl localhost:8545 \
   - `gasUsed`: *string* (hex integer)
   - `logs`: array of *object*
     - `address`: *string* (address)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `data`: *string* (hex data)
     - `logIndex`: *string* (hex integer)
     - `removed`: *boolean*
-    - `topics`: array of *string* (hash)
-    - `transactionHash`: *string* (hash)
+    - `topics`: array of *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
+    - `transactionHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `transactionIndex`: *string* (hex integer)
   - `logsBloom`: *string* (hex data)
-  - `root`: *string* (hash)
+  - `root`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `status`: *string* (hex integer)
   - `to`: *string* (address)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
 
@@ -186,7 +216,12 @@ curl localhost:8545 \
       - `remoteAddress`: *string*
     - `protocols`: map of *object*
       - `difficulty`: *string* (hex integer)
-      - `head`: *string* (hash)
+      - `head`: *object*
+        - `bytes`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+        - `valueHash256`: *object*
       - `version`: *string* (hex data)
 
 </TabItem>
@@ -229,7 +264,12 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `condition`: *object*
@@ -237,7 +277,12 @@ curl localhost:8545 \
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
   - `nonce`: *string* (hex integer)
   - `publicKey`: *object*

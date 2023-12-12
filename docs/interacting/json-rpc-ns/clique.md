@@ -55,7 +55,12 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -166,7 +171,12 @@ Retrieves the list of authorized signers at the specified block by hash.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -207,7 +217,12 @@ Retrieves the list of authorized signers at the specified block by hash but with
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -313,7 +328,12 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `number`: *string* (hex integer)
   - `signerLimit`: *string* (hex integer)
   - `signers`: map of *string* (hex integer)
@@ -328,7 +348,12 @@ Retrieves the state snapshot at a given block.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -358,7 +383,12 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `number`: *string* (hex integer)
   - `signerLimit`: *string* (hex integer)
   - `signers`: map of *string* (hex integer)
@@ -373,7 +403,12 @@ Forces Clique block producer to produce a new block
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `parentHash`: *string* (hash)
+1. `parentHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>

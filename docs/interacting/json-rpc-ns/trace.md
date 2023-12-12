@@ -59,12 +59,17 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
     - `value`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `error`: *string*
   - `result`: *object*
@@ -74,7 +79,12 @@ curl localhost:8545 \
     - `output`: *string* (hex data)
   - `subtraces`: *string* (hex integer)
   - `traceAddress`: array of *string* (hex integer)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionPosition`: *string* (hex integer)
   - `type`: *string*
 
@@ -91,20 +101,38 @@ curl localhost:8545 \
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
+    - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
     - `maxFeePerGas`: *string* (hex integer)
     - `maxPriorityFeePerGas`: *string* (hex integer)
+    - `mint`: *string* (hex integer)
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -161,7 +189,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -180,7 +208,12 @@ curl localhost:8545 \
     - `storage`: map of *object*
       - `after`: *string* (hex data)
       - `before`: *string* (hex data)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `vmTrace`: *object*
     - `code`: *string* (hex data)
     - `operations`: array of *object*
@@ -194,7 +227,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -258,12 +291,17 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
     - `value`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `error`: *string*
   - `result`: *object*
@@ -273,7 +311,12 @@ curl localhost:8545 \
     - `output`: *string* (hex data)
   - `subtraces`: *string* (hex integer)
   - `traceAddress`: array of *string* (hex integer)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionPosition`: *string* (hex integer)
   - `type`: *string*
 
@@ -336,7 +379,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -355,7 +398,12 @@ curl localhost:8545 \
     - `storage`: map of *object*
       - `after`: *string* (hex data)
       - `before`: *string* (hex data)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `vmTrace`: *object*
     - `code`: *string* (hex data)
     - `operations`: array of *object*
@@ -369,7 +417,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -429,7 +477,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -448,7 +496,12 @@ curl localhost:8545 \
     - `storage`: map of *object*
       - `after`: *string* (hex data)
       - `before`: *string* (hex data)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `vmTrace`: *object*
     - `code`: *string* (hex data)
     - `operations`: array of *object*
@@ -462,7 +515,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -473,7 +526,12 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHash`: *string* (hash)
+1. `txHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `traceTypes`: array of *string*
 
@@ -522,7 +580,7 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
@@ -541,7 +599,12 @@ curl localhost:8545 \
     - `storage`: map of *object*
       - `after`: *string* (hex data)
       - `before`: *string* (hex data)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `vmTrace`: *object*
     - `code`: *string* (hex data)
     - `operations`: array of *object*
@@ -555,7 +618,7 @@ curl localhost:8545 \
         - `key`: *string* (hex data)
         - `value`: *string* (hex data)
       - `sub`: *object*
-        <!-- circular ref -->
+        <!--[circular ref]-->
       - `used`: *string* (hex integer)
 
 </TabItem>
@@ -566,7 +629,12 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHash`: *string* (hash)
+1. `txHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -613,12 +681,17 @@ curl localhost:8545 \
       - `output`: *string* (hex data)
     - `rewardType`: *string*
     - `subtraces`: array of *object*
-      <!-- circular ref -->
+      <!--[circular ref]-->
     - `to`: *string* (address)
     - `traceAddress`: array of *string* (hex integer)
     - `type`: *string*
     - `value`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `error`: *string*
   - `result`: *object*
@@ -628,7 +701,12 @@ curl localhost:8545 \
     - `output`: *string* (hex data)
   - `subtraces`: *string* (hex integer)
   - `traceAddress`: array of *string* (hex integer)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionPosition`: *string* (hex integer)
   - `type`: *string*
 

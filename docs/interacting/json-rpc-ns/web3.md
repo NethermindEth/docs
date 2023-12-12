@@ -78,7 +78,12 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hash)
+`result`: *object*
+  - `bytes`: *object*
+    - `isEmpty`: *boolean*
+    - `item`: *object*
+    - `length`: *string* (hex integer)
+  - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>

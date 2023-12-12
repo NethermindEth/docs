@@ -54,13 +54,23 @@ Executes a tx call (does not create a transaction)
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
     - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
@@ -70,7 +80,12 @@ Executes a tx call (does not create a transaction)
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -159,13 +174,23 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
     - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
@@ -175,7 +200,12 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -235,13 +265,23 @@ Executes a tx call and returns gas used (does not create a transaction)
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
     - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
@@ -251,7 +291,12 @@ Executes a tx call and returns gas used (does not create a transaction)
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -382,9 +427,19 @@ curl localhost:8545 \
 
 `result`: *object*
   - `balance`: *string* (hex integer)
-  - `codeHash`: *string* (hash)
+  - `codeHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `nonce`: *string* (hex integer)
-  - `storageRoot`: *string* (hash)
+  - `storageRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -439,7 +494,12 @@ Retrieves a block by hash
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `returnFullTransactionObjects`: *boolean*
 
@@ -479,31 +539,81 @@ curl localhost:8545 \
   - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
-  - `mixHash`: *string* (hash)
+  - `mixHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
-  - `parentBeaconBlockRoot`: *string* (hash)
-  - `parentHash`: *string* (hash)
-  - `receiptsRoot`: *string* (hash)
-  - `sha3Uncles`: *string* (hash)
+  - `parentBeaconBlockRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `parentHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `receiptsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `sha3Uncles`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
-  - `stateRoot`: *string* (hash)
+  - `stateRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `step`: *string* (hex integer)
   - `timestamp`: *string* (hex integer)
   - `totalDifficulty`: *string* (hex integer)
   - `transactions`: array of *object*
-  - `transactionsRoot`: *string* (hash)
-  - `uncles`: array of *string* (hash)
+  - `transactionsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `uncles`: array of *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
     - `amount`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
-  - `withdrawalsRoot`: *string* (hash)
+  - `withdrawalsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -555,31 +665,81 @@ curl localhost:8545 \
   - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
-  - `mixHash`: *string* (hash)
+  - `mixHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
-  - `parentBeaconBlockRoot`: *string* (hash)
-  - `parentHash`: *string* (hash)
-  - `receiptsRoot`: *string* (hash)
-  - `sha3Uncles`: *string* (hash)
+  - `parentBeaconBlockRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `parentHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `receiptsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `sha3Uncles`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
-  - `stateRoot`: *string* (hash)
+  - `stateRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `step`: *string* (hex integer)
   - `timestamp`: *string* (hex integer)
   - `totalDifficulty`: *string* (hex integer)
   - `transactions`: array of *object*
-  - `transactionsRoot`: *string* (hash)
-  - `uncles`: array of *string* (hash)
+  - `transactionsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `uncles`: array of *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
     - `amount`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
-  - `withdrawalsRoot`: *string* (hash)
+  - `withdrawalsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -591,7 +751,12 @@ Returns number of transactions in the block block hash
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -788,13 +953,28 @@ curl localhost:8545 \
 
 `result`: array of *object*
   - `address`: *string* (address)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `data`: *string* (hex data)
   - `logIndex`: *string* (hex integer)
   - `removed`: *boolean*
-  - `topics`: array of *string* (hash)
-  - `transactionHash`: *string* (hash)
+  - `topics`: array of *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionIndex`: *string* (hex integer)
   - `transactionLogIndex`: *string* (hex integer)
 
@@ -843,13 +1023,28 @@ curl localhost:8545 \
 
 `result`: array of *object*
   - `address`: *string* (address)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `data`: *string* (hex data)
   - `logIndex`: *string* (hex integer)
   - `removed`: *boolean*
-  - `topics`: array of *string* (hash)
-  - `transactionHash`: *string* (hash)
+  - `topics`: array of *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionIndex`: *string* (hex integer)
   - `transactionLogIndex`: *string* (hex integer)
 
@@ -899,14 +1094,24 @@ curl localhost:8545 \
 `result`: *object*
   - `address`: *string* (address)
   - `balance`: *string* (hex integer)
-  - `codeHash`: *string* (hash)
+  - `codeHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `nonce`: *string* (hex integer)
   - `proof`: array of *string* (hex data)
   - `storageProofs`: array of *object*
     - `key`: *string* (hex data)
     - `proof`: array of *string* (hex data)
     - `value`: *string* (hex data)
-  - `storageRoot`: *string* (hash)
+  - `storageRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -963,7 +1168,12 @@ Retrieves a transaction by block hash and index
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `positionIndex`: *string* (hex integer)
 
@@ -999,13 +1209,23 @@ curl localhost:8545 \
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
   - `blobVersionedHashes`: array of *string* (hex data)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
   - `isSystemTx`: *boolean*
   - `maxFeePerBlobGas`: *string* (hex integer)
@@ -1015,7 +1235,12 @@ curl localhost:8545 \
   - `nonce`: *string* (hex integer)
   - `r`: *string* (hex integer)
   - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
+  - `sourceHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1069,13 +1294,23 @@ curl localhost:8545 \
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
   - `blobVersionedHashes`: array of *string* (hex data)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
   - `isSystemTx`: *boolean*
   - `maxFeePerBlobGas`: *string* (hex integer)
@@ -1085,7 +1320,12 @@ curl localhost:8545 \
   - `nonce`: *string* (hex integer)
   - `r`: *string* (hex integer)
   - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
+  - `sourceHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1103,7 +1343,12 @@ Retrieves a transaction by hash
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `transactionHash`: *string* (hash)
+1. `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -1137,13 +1382,23 @@ curl localhost:8545 \
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
   - `blobVersionedHashes`: array of *string* (hex data)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
   - `isSystemTx`: *boolean*
   - `maxFeePerBlobGas`: *string* (hex integer)
@@ -1153,7 +1408,12 @@ curl localhost:8545 \
   - `nonce`: *string* (hex integer)
   - `r`: *string* (hex integer)
   - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
+  - `sourceHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1214,7 +1474,12 @@ Retrieves a transaction receipt by tx hash
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHashData`: *string* (hash)
+1. `txHashData`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -1246,7 +1511,12 @@ curl localhost:8545 \
 `result`: *object*
   - `blobGasPrice`: *string* (hex integer)
   - `blobGasUsed`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `contractAddress`: *string* (address)
   - `cumulativeGasUsed`: *string* (hex integer)
@@ -1256,19 +1526,44 @@ curl localhost:8545 \
   - `gasUsed`: *string* (hex integer)
   - `logs`: array of *object*
     - `address`: *string* (address)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `data`: *string* (hex data)
     - `logIndex`: *string* (hex integer)
     - `removed`: *boolean*
-    - `topics`: array of *string* (hash)
-    - `transactionHash`: *string* (hash)
+    - `topics`: array of *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
+    - `transactionHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `transactionIndex`: *string* (hex integer)
   - `logsBloom`: *string* (hex data)
-  - `root`: *string* (hash)
+  - `root`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `status`: *string* (hex integer)
   - `to`: *string* (address)
-  - `transactionHash`: *string* (hash)
+  - `transactionHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
 
@@ -1282,7 +1577,12 @@ Retrieves an uncle block header by block hash and uncle index
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHashData`: *string* (hash)
+1. `blockHashData`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 2. `positionIndex`: *string* (hex integer)
 
@@ -1322,31 +1622,81 @@ curl localhost:8545 \
   - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
-  - `mixHash`: *string* (hash)
+  - `mixHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
-  - `parentBeaconBlockRoot`: *string* (hash)
-  - `parentHash`: *string* (hash)
-  - `receiptsRoot`: *string* (hash)
-  - `sha3Uncles`: *string* (hash)
+  - `parentBeaconBlockRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `parentHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `receiptsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `sha3Uncles`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
-  - `stateRoot`: *string* (hash)
+  - `stateRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `step`: *string* (hex integer)
   - `timestamp`: *string* (hex integer)
   - `totalDifficulty`: *string* (hex integer)
   - `transactions`: array of *object*
-  - `transactionsRoot`: *string* (hash)
-  - `uncles`: array of *string* (hash)
+  - `transactionsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `uncles`: array of *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
     - `amount`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
-  - `withdrawalsRoot`: *string* (hash)
+  - `withdrawalsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -1398,31 +1748,81 @@ curl localhost:8545 \
   - `extraData`: *string* (hex data)
   - `gasLimit`: *string* (hex integer)
   - `gasUsed`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `logsBloom`: *string* (hex data)
   - `miner`: *string* (address)
-  - `mixHash`: *string* (hash)
+  - `mixHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `nonce`: *string* (hex data)
   - `number`: *string* (hex integer)
-  - `parentBeaconBlockRoot`: *string* (hash)
-  - `parentHash`: *string* (hash)
-  - `receiptsRoot`: *string* (hash)
-  - `sha3Uncles`: *string* (hash)
+  - `parentBeaconBlockRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `parentHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `receiptsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `sha3Uncles`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
-  - `stateRoot`: *string* (hash)
+  - `stateRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `step`: *string* (hex integer)
   - `timestamp`: *string* (hex integer)
   - `totalDifficulty`: *string* (hex integer)
   - `transactions`: array of *object*
-  - `transactionsRoot`: *string* (hash)
-  - `uncles`: array of *string* (hash)
+  - `transactionsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
+  - `uncles`: array of *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
     - `amount`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
-  - `withdrawalsRoot`: *string* (hash)
+  - `withdrawalsRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -1434,7 +1834,12 @@ Returns number of uncles in the block by block hash
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
 
 
 </TabItem>
@@ -1659,13 +2064,23 @@ curl localhost:8545 \
     - `address`: *string* (address)
     - `storageKeys`: array of *string* (hex integer)
   - `blobVersionedHashes`: array of *string* (hex data)
-  - `blockHash`: *string* (hash)
+  - `blockHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
+  - `hash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `input`: *string* (hex data)
   - `isSystemTx`: *boolean*
   - `maxFeePerBlobGas`: *string* (hex integer)
@@ -1675,7 +2090,12 @@ curl localhost:8545 \
   - `nonce`: *string* (hex integer)
   - `r`: *string* (hex integer)
   - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
+  - `sourceHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `valueHash256`: *object*
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1757,7 +2177,12 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hash)
+`result`: *object*
+  - `bytes`: *object*
+    - `isEmpty`: *boolean*
+    - `item`: *object*
+    - `length`: *string* (hex integer)
+  - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
@@ -1774,13 +2199,23 @@ Send a transaction to the tx pool and broadcasting
       - `address`: *string* (address)
       - `storageKeys`: array of *string* (hex integer)
     - `blobVersionedHashes`: array of *string* (hex data)
-    - `blockHash`: *string* (hash)
+    - `blockHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
-    - `hash`: *string* (hash)
+    - `hash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `input`: *string* (hex data)
     - `isSystemTx`: *boolean*
     - `maxFeePerBlobGas`: *string* (hex integer)
@@ -1790,7 +2225,12 @@ Send a transaction to the tx pool and broadcasting
     - `nonce`: *string* (hex integer)
     - `r`: *string* (hex integer)
     - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
+    - `sourceHash`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
     - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -1825,205 +2265,16 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hash)
+`result`: *object*
+  - `bytes`: *object*
+    - `isEmpty`: *boolean*
+    - `item`: *object*
+    - `length`: *string* (hex integer)
+  - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
 
-### eth_subscribe
-
-Starts a subscription to a particular event over WebSockets. A JSON-RPC notification with event payload and subscription id is sent to a client for every event matching the subscription topic.
-
-:::info
-This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
-:::
-
-<Tabs>
-<TabItem value="params" label="Parameters">
-
-1. `subscriptionName`: *string*
-
-2. `filter`: *object*
-    - `address`: *string* (address)
-    - `fromBlock`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-    - `toBlock`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-    - `topics`: array of *string* (hex data)
-
-</TabItem>
-<TabItem value="request" label="Request" default>
-
-```bash
-wscat -c ws://localhost:8545
-```
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "method": "eth_subscribe",
-  "params": [subscriptionName, args]
-}
-```
-
-</TabItem>
-<TabItem value="response" label="Response">
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": "0x..." // subscription id
-}
-```
-
-`result`: *string*
-
-</TabItem>
-<TabItem value="notif" label="Notification">
-
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "eth_subscription",
-  "params": {
-    "subscription": "0x...", // subscription id
-    "result": payload
-  }
-}
-```
-
-See specific subcription topic below for `payload` details.
-
-</TabItem>
-</Tabs>
-
-#### Subscription topics
-
-<details>
-<summary className="nd-details-heading">
-
-##### newHeads
-
-</summary>
-<p>
-
-Subscribes to incoming block headers. Fires a notification each time a new header is appended to the chain, including chain reorganizations.
-
-Notification `payload`: *object*
-  - `author`: *string* (address)
-  - `baseFeePerGas`: *string* (hex integer)
-  - `blobGasUsed`: *string* (hex integer)
-  - `difficulty`: *string* (hex integer)
-  - `excessBlobGas`: *string* (hex integer)
-  - `extraData`: *string* (hex data)
-  - `gasLimit`: *string* (hex integer)
-  - `gasUsed`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `logsBloom`: *string* (hex data)
-  - `miner`: *string* (address)
-  - `mixHash`: *string* (hash)
-  - `nonce`: *string* (hex data)
-  - `number`: *string* (hex integer)
-  - `parentBeaconBlockRoot`: *string* (hash)
-  - `parentHash`: *string* (hash)
-  - `receiptsRoot`: *string* (hash)
-  - `sha3Uncles`: *string* (hash)
-  - `signature`: *string* (hex data)
-  - `size`: *string* (hex integer)
-  - `stateRoot`: *string* (hash)
-  - `step`: *string* (hex integer)
-  - `timestamp`: *string* (hex integer)
-  - `totalDifficulty`: *string* (hex integer)
-  - `transactions`: array of *object*
-  - `transactionsRoot`: *string* (hash)
-  - `uncles`: array of *string* (hash)
-  - `withdrawals`: array of *object*
-    - `address`: *string* (address)
-    - `amount`: *string* (hex integer)
-    - `index`: *string* (hex integer)
-    - `validatorIndex`: *string* (hex integer)
-  - `withdrawalsRoot`: *string* (hash)
-
-</p>
-</details>
-
-<details>
-<summary className="nd-details-heading">
-
-##### logs
-
-</summary>
-<p>
-
-Subscribes to incoming logs filtered by the given options. In case of a chain reorganization, previously sent logs on the old chain will be re-sent with the `removed` field set to `true`.
-
-Notification `payload`: *object*
-  - `address`: *string* (address)
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `logIndex`: *string* (hex integer)
-  - `removed`: *boolean*
-  - `topics`: array of *string* (hash)
-  - `transactionHash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `transactionLogIndex`: *string* (hex integer)
-
-</p>
-</details>
-
-<details>
-<summary className="nd-details-heading">
-
-##### newPendingTransactions
-
-</summary>
-<p>
-
-Subscribes to incoming pending transactions. Returns the transaction hash.
-
-Notification `payload`: *string* (hash)
-
-</p>
-</details>
-
-<details>
-<summary className="nd-details-heading">
-
-##### droppedPendingTransactions
-
-</summary>
-<p>
-
-Subscribes to transactions evicted from the transaction pool. Returns the transaction hash.
-
-Notification `payload`: *string* (hash)
-
-</p>
-</details>
-
-<details>
-<summary className="nd-details-heading">
-
-##### syncing
-
-</summary>
-<p>
-
-Subscribes to syncing events. Returns `false` (once) if the node is synced or an object with statistics (once) when the node starts syncing.
-
-Notification `payload`:
-
-  - if synced: *boolean*
-  - if syncing: *object*
-      - `currentBlock`: *string* (hex integer)
-      - `highestBlock`: *string* (hex integer)
-      - `isSyncing`: *boolean*
-      - `startingBlock`: *string* (hex integer)
-
-</p>
-</details>
 ### eth_syncing
 
 Returns syncing status
@@ -2105,48 +2356,3 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
-### eth_unsubscribe
-
-Unsubscribes from a subscription.
-
-:::info
-This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
-:::
-
-<Tabs>
-<TabItem value="params" label="Parameters">
-
-1. `subscriptionId`: *string*
-
-
-</TabItem>
-<TabItem value="request" label="Request" default>
-
-```bash
-wscat -c ws://localhost:8545
-```
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "method": "eth_unsubscribe",
-  "params": [subscriptionId]
-}
-```
-
-</TabItem>
-<TabItem value="response" label="Response">
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": result
-}
-```
-
-`result`: *boolean* (`true` if unsubscribed successfully; otherwise, `false`)
-
-</TabItem>
-</Tabs>

@@ -96,8 +96,18 @@ Information about this node
   - `protocols`: map of *object*
     - `network`: *string* (hex integer)
     - `difficulty`: *string* (hex integer)
-    - `genesis`: *string* (hash)
-    - `head`: *string* (hash)
+    - `genesis`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
+    - `head`: *object*
+      - `bytes`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `valueHash256`: *object*
 
 </TabItem>
 </Tabs>
