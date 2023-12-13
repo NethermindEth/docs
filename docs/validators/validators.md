@@ -15,7 +15,11 @@ For Ethereum validators, we highly recommend checking out [Staking with Ethereum
 
 The following hardware configurations for Ethereum Mainnet validators have been battle-tested by us and our users. We have observed excellent validator performance and stability with these configurations.
 
-### Local machine
+:::note
+Before setting up your infrastructure, check out [Nethermind hardware requirements](../get-started/system-requirements.md#hardware-requirements).
+:::
+
+### On-premises
 
 A single validator on Intel NUC 11:
 
@@ -23,8 +27,6 @@ A single validator on Intel NUC 11:
 - Memory: Crucial 32GB DDR4-3200 SODIMM
 - Storage: Samsung 980 PRO PCIe NVMe SSD 2TB
 - Internet speed: 620 Mbps download, 160 Mbps upload
-
-See also Nethermind [hardware requirements](../get-started/system-requirements.md#hardware-requirements).
 
 ### AWS
 
