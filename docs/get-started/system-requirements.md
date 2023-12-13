@@ -8,22 +8,18 @@ sidebar_position: 1
 Nethermind supports a broad range of modern _64-bit_ operating systems including but not limited to:
 
 - **Linux**
-	- Alpine (3.15 and later)
-	- CentOS (Stream 8 and later)
-	- Debian (10 and later)
-	- Fedora (37 and later)
-	- openSUSE (15.4 and later)
-	- RHEL (8 and later)
-	- SLES (15 and later)
-	- Ubuntu (18.04 and later)
+	- Alpine 3.17+
+	- CentOS Stream 8+
+	- Debian 11+
+	- Fedora 37+
+	- openSUSE 15+
+	- RHEL 8+
+	- SLES 12 SP5+
+	- Ubuntu 20.04+
 - **Windows**
-	- Windows 10 and later
-	- Windows Server 2012 and later
-- **macOS** (10.15 Catalina and later)
-
-:::info
-Nethermind for Windows doesn't support AArch64 (ARM64) architecture.
-:::
+	- Windows 10+ (x64 only)
+	- Windows Server 2012+ (x64 only)
+- **macOS** 10.15+
 
 ## Hardware requirements
 
