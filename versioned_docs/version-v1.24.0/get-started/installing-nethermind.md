@@ -289,13 +289,14 @@ To run Nethermind on a specific network, use the [`-c, --config`](../fundamental
 - **Base**
     - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet)
     - [Base Goerli](https://docs.base.org/network-information/#base-testnet-goerli) (testnet)
+    - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet)
 - **Energy Web Chain**
     - [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain)
     - [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet)
-- **Exosama**
 - **Gnosis Chain**
     - [Gnosis](https://docs.gnosischain.com/about/networks/mainnet)
     - [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet)
 - **Optimism**
     - [OP Mainnet](https://community.optimism.io/docs/useful-tools/networks/#op-mainnet)
     - [OP Goerli](https://community.optimism.io/docs/useful-tools/networks/#op-goerli) (testnet)
+    - [OP Sepolia](https://community.optimism.io/docs/useful-tools/networks/#op-sepolia) (testnet)
