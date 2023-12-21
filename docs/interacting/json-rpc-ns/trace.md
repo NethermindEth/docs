@@ -94,6 +94,7 @@ curl localhost:8545 \
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
+    - `data`: *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)

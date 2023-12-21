@@ -16,6 +16,8 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 
 1. `startNumber`: *string* (hex integer)
 
+2. `force`: *boolean*
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -28,7 +30,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "debug_deleteChainSlice",
-      "params": [startNumber]
+      "params": [startNumber, force]
     }'
 ```
 
@@ -424,6 +426,12 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -474,6 +482,12 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -504,7 +518,9 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -538,6 +554,12 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -568,7 +590,9 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -602,6 +626,12 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -632,7 +662,9 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -665,6 +697,7 @@ This method lets you run an eth_call within the context of the given block execu
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
+    - `data`: *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
@@ -695,6 +728,12 @@ This method lets you run an eth_call within the context of the given block execu
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -725,7 +764,9 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -759,6 +800,12 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -789,7 +836,9 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -823,6 +872,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -853,7 +908,9 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -887,6 +944,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -917,7 +980,9 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -951,6 +1016,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -981,7 +1052,9 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)
@@ -1015,6 +1088,12 @@ curl localhost:8545 \
     - `enableMemory`: *boolean*
     - `timeout`: *string*
     - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
     - `txHash`: *string* (hash)
 
 
@@ -1045,7 +1124,9 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `structLogs`: array of *object*
+  - `customTracerResult`: *object*
+    - `value`: *object*
+  - `entries`: array of *object*
     - `depth`: *string* (hex integer)
     - `error`: *string*
     - `gas`: *string* (hex integer)

@@ -186,7 +186,7 @@ curl localhost:8545 \
       - `remoteAddress`: *string*
     - `protocols`: map of *object*
       - `difficulty`: *string* (hex integer)
-      - `head`: *string* (hash)
+      - `headHash`: *string* (hash)
       - `version`: *string* (hex data)
 
 </TabItem>

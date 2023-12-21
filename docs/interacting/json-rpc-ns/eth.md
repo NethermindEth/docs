@@ -57,6 +57,7 @@ Executes a tx call (does not create a transaction)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
+    - `data`: *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
@@ -162,6 +163,7 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
+    - `data`: *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
@@ -238,6 +240,7 @@ Executes a tx call and returns gas used (does not create a transaction)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
+    - `data`: *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)
@@ -500,7 +503,8 @@ curl localhost:8545 \
   - `uncles`: array of *string* (hash)
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
-    - `amount`: *string* (hex integer)
+    - `amountInGwei`: *string* (hex integer)
+    - `amountInWei`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
@@ -576,10 +580,79 @@ curl localhost:8545 \
   - `uncles`: array of *string* (hash)
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
-    - `amount`: *string* (hex integer)
+    - `amountInGwei`: *string* (hex integer)
+    - `amountInWei`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
+
+</TabItem>
+</Tabs>
+
+### eth_getBlockReceipts
+
+Get receipts from all transactions from particular block, more efficient than fetching the receipts one-by-one.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_getBlockReceipts",
+      "params": [blockParameter]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `blobGasPrice`: *string* (hex integer)
+  - `blobGasUsed`: *string* (hex integer)
+  - `blockHash`: *string* (hash)
+  - `blockNumber`: *string* (hex integer)
+  - `contractAddress`: *string* (address)
+  - `cumulativeGasUsed`: *string* (hex integer)
+  - `effectiveGasPrice`: *string* (hex integer)
+  - `error`: *string*
+  - `from`: *string* (address)
+  - `gasUsed`: *string* (hex integer)
+  - `logs`: array of *object*
+    - `address`: *string* (address)
+    - `blockHash`: *string* (hash)
+    - `blockNumber`: *string* (hex integer)
+    - `data`: *string* (hex data)
+    - `logIndex`: *string* (hex integer)
+    - `removed`: *boolean*
+    - `topics`: array of *string* (hash)
+    - `transactionHash`: *string* (hash)
+    - `transactionIndex`: *string* (hex integer)
+  - `logsBloom`: *string* (hex data)
+  - `root`: *string* (hash)
+  - `status`: *string* (hex integer)
+  - `to`: *string* (address)
+  - `transactionHash`: *string* (hash)
+  - `transactionIndex`: *string* (hex integer)
+  - `type`: *integer*
 
 </TabItem>
 </Tabs>
@@ -1002,6 +1075,7 @@ curl localhost:8545 \
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
+  - `data`: *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
@@ -1072,6 +1146,7 @@ curl localhost:8545 \
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
+  - `data`: *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
@@ -1140,6 +1215,7 @@ curl localhost:8545 \
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
+  - `data`: *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
@@ -1343,7 +1419,8 @@ curl localhost:8545 \
   - `uncles`: array of *string* (hash)
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
-    - `amount`: *string* (hex integer)
+    - `amountInGwei`: *string* (hex integer)
+    - `amountInWei`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
@@ -1419,7 +1496,8 @@ curl localhost:8545 \
   - `uncles`: array of *string* (hash)
   - `withdrawals`: array of *object*
     - `address`: *string* (address)
-    - `amount`: *string* (hex integer)
+    - `amountInGwei`: *string* (hex integer)
+    - `amountInWei`: *string* (hex integer)
     - `index`: *string* (hex integer)
     - `validatorIndex`: *string* (hex integer)
   - `withdrawalsRoot`: *string* (hash)
@@ -1662,6 +1740,7 @@ curl localhost:8545 \
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
   - `chainId`: *string* (hex integer)
+  - `data`: *string* (hex data)
   - `from`: *string* (address)
   - `gas`: *string* (hex integer)
   - `gasPrice`: *string* (hex integer)
@@ -1777,6 +1856,7 @@ Send a transaction to the tx pool and broadcasting
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
     - `chainId`: *string* (hex integer)
+    - `data`: *string* (hex data)
     - `from`: *string* (address)
     - `gas`: *string* (hex integer)
     - `gasPrice`: *string* (hex integer)

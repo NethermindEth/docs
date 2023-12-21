@@ -88,16 +88,16 @@ Information about this node
   - `enode`: *string*
   - `id`: *string*
   - `ip`: *string*
-  - `listenAddr`: *string*
+  - `listenAddress`: *string*
   - `name`: *string*
   - `ports`: *object*
     - `discovery`: *string* (hex integer)
     - `listener`: *string* (hex integer)
   - `protocols`: map of *object*
-    - `network`: *string* (hex integer)
     - `difficulty`: *string* (hex integer)
-    - `genesis`: *string* (hash)
-    - `head`: *string* (hash)
+    - `genesisHash`: *string* (hash)
+    - `headHash`: *string* (hash)
+    - `newtorkId`: *string* (hex integer)
 
 </TabItem>
 </Tabs>

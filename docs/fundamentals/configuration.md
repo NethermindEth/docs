@@ -1355,6 +1355,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The max number of pending transactions per single sender. `0` to lift the limit. Defaults to `0`.
 
+- **`--TxPool.MinBaseFeeThreshold <value>`** `NETHERMIND_TXPOOLCONFIG_MINBASEFEETHRESHOLD`
+
+  The minimal percentage of the current base fee that must be surpassed by the max fee (`max_fee_per_gas`) for the transaction to be broadcasted. Defaults to `70`.
+
 - **`--TxPool.PeerNotificationThreshold <value>`** `NETHERMIND_TXPOOLCONFIG_PEERNOTIFICATIONTHRESHOLD`
 
   The average percentage of transaction hashes from persistent broadcast sent to a peer together with hashes of the last added transactions. Defaults to `5`.
