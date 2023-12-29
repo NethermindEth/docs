@@ -9,14 +9,13 @@ This article requires a revision.
 
 ## Overview
 
-Full Pruning pertains to the elimination or cleanup of obsolete historical data to optimize disk space. Clients are
+Pruning pertains to the elimination or cleanup of obsolete historical data to optimize disk space. Clients are
 responsible for maintaining the world state, which comprises a database that portrays the current Ethereum network
 status. The world state encompasses accounts, contracts, and other information.
 
-The goal of Full Pruning is to reduce disk requirements by storing only the current world state and removing historical
-data. This differs from archive nodes that retain complete transaction and state history. Full Pruning is useful for
-users who don't require historical data and prefer to interact solely with the current state of the network. However,
-Full Pruning may limit the client's ability to fulfill requests that depend on historical information.
+The goal of Pruning is to reduce disk requirements by storing only the current world state and removing historical
+data. This differs from archive nodes that retain complete transaction and state history. Pruning is useful for
+users who don't require historical data and prefer to interact solely with the current state of the network. However, Pruning may limit the client's ability to fulfill requests that depend on historical information. Nethermind provide two kind of pruning, Full Pruning and InMemory Pruning, both are enabled by default, which is also called Hybrid Pruning. 
 
 ## How it works
 
@@ -31,6 +30,8 @@ the current state, and duplicates it alongside the existing version. During veri
 new pruned state replaces the previous one. Once the verifier confirms that everything is functioning correctly, the old
 state database is eliminated, resulting in significant disk space savings. As a result, the size of the database will be
 close to its initial size again.
+
+InMemory Pruning is a continuos process that occur under normal operation. Instead of saving new state on each block, Nethermind will keep it in memory until a certain threshold is reached. At which point, Nethermind will only store data which are required by newer state and discard unnecessary data. This significantly reduce total amount of data written while improving block processing performance. InMemory Pruning is independant from Full Pruning.
 
 ## Preparation for Full Pruning
 
@@ -56,7 +57,7 @@ node.
 
 :::info
 Setting `Pruning.Mode=Hybrid` enables both `InMemory` and `Full` modes. `InMemory` mode helps the node grow at a slower
-rate compared to `Pruning.Mode=Full`. With this configuration, Full Pruning is executed less frequently, promoting
+rate compared to `Pruning.Mode=Full`. Because of this, Full Pruning is executed less frequently, promoting
 healthier disk operation. Since Full Pruning is hardware-intensive, this configuration is also beneficial for
 attestation results.
 :::
@@ -169,8 +170,8 @@ completed.
 ### FullPruningMemoryBudgetMb
 
 The `FullPruningMemoryBudgetMb` configuration parameter controls the memory budget allocated for the trie visit during
-the full pruning process. By increasing this value, the number of required read IOPS (Input/Output Operations Per
-Second) can be significantly reduced, which results in a faster full pruning operation. However, this improvement comes
+the full pruning process. During full pruning, pending nodes are queue to a pool of nodes whose size is determined by this value.
+This allow the possibility for multiple node to share a single IOS (Input/Output Operation). By increasing this value, the number of required read IOP per second can be significantly reduced, which results in a faster full pruning operation. However, this improvement comes
 at the expense of increased RAM usage.\
 \
 Assuming your system has a total of 64GB of RAM, with the application, CL client, and system expenses consuming 20GB,
@@ -185,7 +186,7 @@ calculate the maximum value in megabytes, multiply the available RAM by 1024 (si
 ```
 
 :::info
-Setting the `FullPruningMemoryBudgetMb` value higher than 16GB may not provide any additional performance benefits.
+Because of the nature of the workload, on mainnet, setting the `FullPruningMemoryBudgetMb` value higher than 16GB may not provide any additional performance benefits.
 :::
 
 However, there is a recommendation that the value of `FullPruningMemoryBudgetMb` should not be higher than 16GB. So,
@@ -229,6 +230,10 @@ node), it's recommended to use a value below the number of logical processors. I
 responsibilities but needs to reliably follow the chain without delays and produce live logs, the default value is
 recommended. If the node doesn't need to be responsive, has very fast I/O (such as NVME), and the shortest pruning time
 is desired, this can be set to 2-3 times the number of logical processors.
+
+### CacheMb
+
+This value determine the size of in memory pool of nodes used for InMemory pruning. Default value is 1024. Increasing this value can help reduce rate at which state db grow.
 
 ## Side notes
 
