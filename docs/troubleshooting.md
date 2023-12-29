@@ -68,6 +68,25 @@ When (2) happens you can run
 
 in the database folder.
 
+## Database corruption issues
+### Database corruptions are one of the issues that happen every now and then, it has many possible causes we try to fix as much as possible, among them : 
+* Hardware Failures
+
+    1- Hard drive crashes.
+
+    2- Memory errors.
+  
+    3- Disk controller failures.
+  
+    4- Overheating of hardware components.
+  
+* Power Outages and Sudden Shutdowns
+  
+    1- Power failures or fluctuations.
+  
+    2- System crashes or abrupt shutdowns without proper database shutdown procedures.
+Dealing with database corruption in an Nethermind node can be solved with a resync of the database (see [how to resync Nethermind db](https://old.docs.nethermind.io/nethermind/~/changes/cAXTEwLysqj3q5dGPekm/guides-and-helpers/how-to-reduce-database-size/resync-database-from-scratch))
+
 ## Leaking Socket Descriptors
 
 On Linux our networking library is not closing socket descriptors properly. This results in the number of open files for
