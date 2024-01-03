@@ -1331,9 +1331,23 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The max number of full blob transactions cached in memory. The default value uses max 200MB for 6 blobs where one blob is 33MB (256 * 128KB) Defaults to `256`.
 
-- **`--TxPool.BlobSupportEnabled <value>`** `NETHERMIND_TXPOOLCONFIG_BLOBSUPPORTENABLED`
+- **`--TxPool.BlobsSupport <value>`** `NETHERMIND_TXPOOLCONFIG_BLOBSSUPPORT`
 
-  Whether to enable blob transactions. Allowed values: `true` `false`. Defaults to `false`.
+  Blobs support mode:
+  
+  - `Disabled`: No support for blob transactions
+  - `InMemory`: Blob transactions stored only in memory
+  - `Storage`: Blob transactions stored in db
+  - `StorageWithReorgs`: Blob transactions stored in db with support for restoring reorganized blob transactions to blob pool
+
+  Allowed values:
+
+    - `Disabled`
+    - `InMemory`
+    - `Storage`
+    - `StorageWithReorgs`
+
+  Defaults to `Disabled`.
 
 - **`--TxPool.GasLimit <value>`** `NETHERMIND_TXPOOLCONFIG_GASLIMIT`
 
@@ -1355,13 +1369,13 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The max number of pending transactions per single sender. `0` to lift the limit. Defaults to `0`.
 
+- **`--TxPool.MinBaseFeeThreshold <value>`** `NETHERMIND_TXPOOLCONFIG_MINBASEFEETHRESHOLD`
+
+  The minimal percentage of the current base fee that must be surpassed by the max fee (`max_fee_per_gas`) for the transaction to be broadcasted. Defaults to `70`.
+
 - **`--TxPool.PeerNotificationThreshold <value>`** `NETHERMIND_TXPOOLCONFIG_PEERNOTIFICATIONTHRESHOLD`
 
   The average percentage of transaction hashes from persistent broadcast sent to a peer together with hashes of the last added transactions. Defaults to `5`.
-
-- **`--TxPool.PersistentBlobStorageEnabled <value>`** `NETHERMIND_TXPOOLCONFIG_PERSISTENTBLOBSTORAGEENABLED`
-
-  Whether to store blob transactions in the database. Allowed values: `true` `false`. Defaults to `false`.
 
 - **`--TxPool.PersistentBlobStorageSize <value>`** `NETHERMIND_TXPOOLCONFIG_PERSISTENTBLOBSTORAGESIZE`
 
