@@ -622,6 +622,10 @@ following options are available at the moment:
   
   Number of eth.68 NewPooledTransactionHashes messages sent
 
+- **`nethermind_get_node_data_received`**
+  
+  Number of GetNodeData messages received via NodeData protocol
+
 - **`nethermind_handshakes`**
   
   Number of devp2p handshakes
@@ -709,6 +713,10 @@ following options are available at the moment:
 - **`nethermind_local_useless_peer_disconnects`**
   
   Number of sent disconnects due to useless peer
+
+- **`nethermind_node_data_received`**
+  
+  Number of NodeData messages received via NodeData protocol
 
 - **`nethermind_null_node_identity_disconnects`**
   
