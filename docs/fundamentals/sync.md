@@ -3,6 +3,9 @@ title: Sync
 sidebar_position: 2
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 :::warning
 This article requires a revision.
 :::
@@ -186,6 +189,304 @@ Explanation of some data in the logs:
   hand when blocks are filled with very heavy transactions then `bps` might be very low while `mgasps` will be very
   high. It is even possible that you will see a lot of very light transactions where `tps` will be high while `bps`
   and `mgasps` will be average.
+
+## Sync time
+
+Sync time heavily depends on the hardware used for the node, network speed, and peering. We are constantly pursuing to make it as fast as possible. Below is a brief on how the sync time looks on different machines and various chains (tested with Nethermind v1.21.0).
+
+<Tabs>
+<TabItem value="highend-vm" label="High-end VM">
+
+Hardware configuration:
+
+- Cloud provider: Akamai (formerly Linode)
+- CPU: AMD EPYC 7601, 16 vCPU
+- Memory: 64 GB
+- Storage: 1.2 TB, ~40k IOPS
+
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 2h 3m
+- **Full sync time:** 7h 3m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 1h 58m
+- **State sync:** 4m
+- **Old headers:** 1h 27m
+- **Old bodies:** 1h 55m
+- **Old receipts:** 3h 2m
+
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 2h 49m
+- **Full sync time:** 4h 58m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 2h 49m
+- **State sync:** 0.5m
+- **Old headers:** 11m
+- **Old bodies:** 1h 2m
+- **Old receipts:** 1h 5m
+
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 8m
+- **Full sync time:** 1h 9m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 8m
+- **State sync:** 0.3m
+- **Old headers:** 12m
+- **Old bodies:** 21m
+- **Old receipts:** 22m
+
+</TabItem>
+<TabItem value="gnosis" label="Gnosis">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 13h 40m
+- **Full sync time:** 17h 17m
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 13h 40m
+- **Old headers:** 1h 46m
+- **Old bodies:** 1h 31m
+- **Old receipts:** 2h 3m
+
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 20m
+- **Full sync time:** 40m
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 20m
+- **Old headers:** 11m
+- **Old bodies:** 8m
+- **Old receipts:** 10m
+
+</TabItem>
+</Tabs>
+</TabItem>
+<TabItem value="midend-vm" label="Mid-end VM">
+
+Hardware configuration:
+
+- Cloud provider: AWS
+- [c7g.2xlarge](https://aws.amazon.com/ec2/instance-types/c7g/): 8 vCPU, 16 GiB memory
+- Storage: 1 TB, ~10k IOPS
+
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 5h 55m
+- **Full sync time:** 12h 37m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 4h 35m
+- **State sync:** 1h 20m
+- **Old headers:** 1h 43m
+- **Old bodies:** 2h 13m
+- **Old receipts:** 4h 28m
+
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 1h 32m
+- **Full sync time:** 4h 10m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 1h 19m
+- **State sync:** 12m
+- **Old headers:** 23m
+- **Old bodies:** 49m
+- **Old receipts:** 1h 35m
+
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 17m
+- **Full sync time:** 1h 3m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 13m
+- **State sync:** 4m
+- **Old headers:** 15m
+- **Old bodies:** 19m
+- **Old receipts:** 29m
+
+</TabItem>
+<TabItem value="gnosis" label="Gnosis">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 15h 54m
+- **Full sync time:** 18h 28m
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 15h 54m
+- **Old headers:** 1h 4m
+- **Old bodies:** 40m
+- **Old receipts:** 1h 52m
+
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 13m
+- **Full sync time:** 25m
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 13m
+- **Old headers:** 12m
+- **Old bodies:** 5m
+- **Old receipts:** 5m
+
+</TabItem>
+</Tabs>
+</TabItem>
+<TabItem value="oldspec-vm" label="Old-spec VM">
+
+Hardware configuration:
+
+- Cloud provider: Scaleway
+- CPU: Intel Xeon Processor E5-2620 v2, 2 vCPU
+- Memory: 192 GB
+- Storage: 1 TB, ~44k IOPS
+
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 5h 55m
+- **Full sync time:** 17h 1m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 4h 29m
+- **State sync:** 25m
+- **Old headers:** 1h 27m
+- **Old bodies:** 3h 39m
+- **Old receipts:** 8h 3m
+
+</TabItem>
+<TabItem value="goerli" label="Goerli">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 1h 51m
+- **Full sync time:** 5h 55m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 1h 40m
+- **State sync:** 11m
+- **Old headers:** 50m
+- **Old bodies:** 1h 34m
+- **Old receipts:** 2h 14m
+
+</TabItem>
+<TabItem value="sepolia" label="Sepolia">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 16m
+- **Full sync time:** 2h 9m
+
+The detailed breakdown of sync stages:
+
+- **Snap sync phase 1:** 15m
+- **State sync:** 1m
+- **Old headers:** 26m
+- **Old bodies:** 45m
+- **Old receipts:** 56m
+
+</TabItem>
+<TabItem value="gnosis" label="Gnosis">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 15h 13m
+- **Full sync time:** 17h 30m
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 15h 13m
+- **Old headers:** 3h 8m
+- **Old bodies:** 50m
+- **Old receipts:** 1h 25m
+
+</TabItem>
+<TabItem value="chiado" label="Chiado">
+
+The high-level data on major sync milestones:
+
+- **Attestation time:** 20m
+- **Full sync time:** 40m
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 4m
+- **Old headers:** 1h 27m
+- **Old bodies:** 1h 55m
+- **Old receipts:** 3h 2m
+
+</TabItem>
+<TabItem value="energyweb" label="Energy Web">
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 13h 7m
+- **Old headers:** 2h 32m
+- **Old bodies:** 51m
+- **Old receipts:** 1h 11m
+- **Full sync time:** 15h 20m
+
+</TabItem>
+<TabItem value="volta" label="Volta">
+
+The detailed breakdown of sync stages:
+
+- **State sync:** 14h 27m
+- **Old headers:** 2h 42m
+- **Old bodies:** 40m
+- **Old receipts:** 58m
+- **Full sync time:** 16h 10m
+
+</TabItem>
+</Tabs>
+</TabItem>
+</Tabs>
 
 ## Resync a node from scratch
 
