@@ -57,8 +57,8 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 | Blocks    | 497 GB     | 385 GB                        |
 | Bloom     | 5.9 GB     | 5.9 GB                        |
 | Headers   | 8.1 GB     | 8.1 GB                        |
-| Code      | 3.9 GB     | 3.9 GB                          |
-| Other     | ...        | ..                            |
+| Code      | 3.9 GB     | 3.9 GB                        |
+| Other     | ...        | ...                           |
 | **Total** | **898 GB** | **738 GB**                    |
 
 </TabItem>
