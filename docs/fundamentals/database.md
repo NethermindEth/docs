@@ -36,8 +36,8 @@ May 2023).
 
 | Network/configuration                   | Database size after fresh sync |
 |-----------------------------------------|--------------------------------|
-| Mainnet (default)                       | 504 GB                         |
-| Mainnet without ancient barriers        | 664 GB                         |
+| Mainnet (default)                       | 898 GB                         |
+| Mainnet with ancient barriers           | 738 GB                         |
 | Mainnet archive                         | 14 TB                          |
 | Mainnet without old bodies and receipts | 178 GB                         |
 | Gnosis                                  | 112 GB                         |
@@ -52,14 +52,14 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 
 | Database  | Mainnet    | Mainnet with ancient barriers |
 |-----------|------------|-------------------------------|
-| State     | 161 GB     | 161 GB                        |
-| Receipts  | 152 GB     | 104 GB                        |
-| Blocks    | 334 GB     | 222 GB                        |
-| Bloom     | 5.3 GB     | 5.3 GB                        |
+| State     | 181 GB     | 181 GB                        |
+| Receipts  | 203 GB     | 155 GB                        |
+| Blocks    | 497 GB     | 385 GB                        |
+| Bloom     | 5.9 GB     | 5.9 GB                        |
 | Headers   | 8.1 GB     | 8.1 GB                        |
-| Code      | 3 GB       | 3 GB                          |
+| Code      | 3.9 GB     | 3.9 GB                          |
 | Other     | ...        | ..                            |
-| **Total** | **664 GB** | **504 GB**                    |
+| **Total** | **898 GB** | **738 GB**                    |
 
 </TabItem>
 <TabItem value="goerli" label="Goerli">
