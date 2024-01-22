@@ -395,6 +395,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Defaults to `Default`.
 
+- **`--Init.BadBlocksStored <value>`** `NETHERMIND_INITCONFIG_BADBLOCKSSTORED`
+
+  The maximum number of bad blocks observed on the network that will be stored to disk. Defaults to `100`.
+
 - **`--Init.BaseDbPath <value>`** `NETHERMIND_INITCONFIG_BASEDBPATH`
 
   The base path for all Nethermind databases. Defaults to `db`.
@@ -481,7 +485,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Init.WebSocketsEnabled <value>`** `NETHERMIND_INITCONFIG_WEBSOCKETSENABLED`
 
-  Whether to enable WebSocket service for the defaut JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
+  Whether to enable WebSocket service for the default JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
 
 </p>
 </details>
@@ -1032,6 +1036,10 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Pruning.PersistenceInterval <value>`** `NETHERMIND_PRUNINGCONFIG_PERSISTENCEINTERVAL`
 
   The block persistence frequency. If set to `N`, it caches after each `Nth` block even if not required by cache memory usage. Defaults to `8192`.
+
+- **`--Pruning.TrackedPastKeyCount <value>`** `NETHERMIND_PRUNINGCONFIG_TRACKEDPASTKEYCOUNT`
+
+  [TECHNICAL] Number of past persisted keys to keep track off for possible pruning. Defaults to `1000000`.
 
 </p>
 </details>

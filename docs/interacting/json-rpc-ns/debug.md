@@ -50,6 +50,425 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### debug_getBadBlocks
+
+Return list of invalid blocks.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getBadBlocks",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `author`: *string* (address)
+  - `baseFeePerGas`: *string* (hex integer)
+  - `beneficiary`: *string* (address)
+  - `blobGasUsed`: *string* (hex integer)
+  - `bloom`: *string* (hex data)
+  - `body`: *object*
+    - `isEmpty`: *boolean*
+    - `transactions`: array of *object*
+      - `accessList`: *object*
+      - `blobVersionedHashes`: array of *string* (hex data)
+      - `chainId`: *string* (hex integer)
+      - `data`: *object*
+        - `hasValue`: *boolean*
+        - `value`: *object*
+          - `isEmpty`: *boolean*
+          - `length`: *string* (hex integer)
+          - `span`: *object*
+            - `isEmpty`: *boolean*
+            - `item`: *object*
+            - `length`: *string* (hex integer)
+      - `dataLength`: *string* (hex integer)
+      - `decodedMaxFeePerGas`: *string* (hex integer)
+      - `gasBottleneck`: *string* (hex integer)
+      - `gasLimit`: *string* (hex integer)
+      - `gasPrice`: *string* (hex integer)
+      - `hash`: *string* (hash)
+      - `isContractCreation`: *boolean*
+      - `isMessageCall`: *boolean*
+      - `isOPSystemTransaction`: *boolean*
+      - `isServiceTransaction`: *boolean*
+      - `isSigned`: *boolean*
+      - `maxFeePerBlobGas`: *string* (hex integer)
+      - `maxFeePerGas`: *string* (hex integer)
+      - `maxPriorityFeePerGas`: *string* (hex integer)
+      - `mayHaveNetworkForm`: *boolean*
+      - `mint`: *string* (hex integer)
+      - `networkWrapper`: *object*
+      - `nonce`: *string* (hex integer)
+      - `poolIndex`: *string* (hex integer)
+      - `senderAddress`: *string* (address)
+      - `signature`: *object*
+        - `bytes`: *string* (hex data)
+        - `bytesWithRecovery`: *string* (hex data)
+        - `chainId`: *string* (hex integer)
+        - `r`: *string* (hex data)
+        - `rAsSpan`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+        - `recoveryId`: *string* (hex data)
+        - `s`: *string* (hex data)
+        - `sAsSpan`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+        - `v`: *string* (hex integer)
+      - `sourceHash`: *string* (hash)
+      - `supports1559`: *boolean*
+      - `supportsAccessList`: *boolean*
+      - `supportsBlobs`: *boolean*
+      - `timestamp`: *string* (hex integer)
+      - `to`: *string* (address)
+      - `type`: *integer*
+      - `value`: *string* (hex integer)
+    - `uncles`: array of *object*
+      - `auRaSignature`: *string* (hex data)
+      - `auRaStep`: *string* (hex integer)
+      - `author`: *string* (address)
+      - `baseFeePerGas`: *string* (hex integer)
+      - `beneficiary`: *string* (address)
+      - `blobGasUsed`: *string* (hex integer)
+      - `bloom`: *string* (hex data)
+      - `difficulty`: *string* (hex integer)
+      - `excessBlobGas`: *string* (hex integer)
+      - `extraData`: *string* (hex data)
+      - `gasBeneficiary`: *string* (address)
+      - `gasLimit`: *string* (hex integer)
+      - `gasUsed`: *string* (hex integer)
+      - `hasBody`: *boolean*
+      - `hash`: *string* (hash)
+      - `hasTransactions`: *boolean*
+      - `isGenesis`: *boolean*
+      - `isPostMerge`: *boolean*
+      - `maybeParent`: *object*
+      - `mixHash`: *string* (hash)
+      - `nonce`: *string* (hex integer)
+      - `number`: *string* (hex integer)
+      - `parentBeaconBlockRoot`: *string* (hash)
+      - `parentHash`: *string* (hash)
+      - `random`: *string* (hash)
+      - `receiptsRoot`: *string* (hash)
+      - `sealEngineType`: *string*
+      - `stateRoot`: *string* (hash)
+      - `timestamp`: *string* (hex integer)
+      - `timestampDate`: *object*
+        - `date`: *object*
+          <!--[circular ref]-->
+        - `day`: *string* (hex integer)
+        - `dayOfWeek`: *integer*
+        - `dayOfYear`: *string* (hex integer)
+        - `hour`: *string* (hex integer)
+        - `kind`: *integer*
+        - `microsecond`: *string* (hex integer)
+        - `millisecond`: *string* (hex integer)
+        - `minute`: *string* (hex integer)
+        - `month`: *string* (hex integer)
+        - `nanosecond`: *string* (hex integer)
+        - `second`: *string* (hex integer)
+        - `ticks`: *string* (hex integer)
+        - `timeOfDay`: *object*
+          - `days`: *string* (hex integer)
+          - `hours`: *string* (hex integer)
+          - `microseconds`: *string* (hex integer)
+          - `milliseconds`: *string* (hex integer)
+          - `minutes`: *string* (hex integer)
+          - `nanoseconds`: *string* (hex integer)
+          - `seconds`: *string* (hex integer)
+          - `ticks`: *string* (hex integer)
+          - `totalDays`: *object*
+          - `totalHours`: *object*
+          - `totalMicroseconds`: *object*
+          - `totalMilliseconds`: *object*
+          - `totalMinutes`: *object*
+          - `totalNanoseconds`: *object*
+          - `totalSeconds`: *object*
+        - `year`: *string* (hex integer)
+      - `totalDifficulty`: *string* (hex integer)
+      - `txRoot`: *string* (hash)
+      - `unclesHash`: *string* (hash)
+      - `withdrawalsRoot`: *string* (hash)
+    - `withdrawals`: array of *object*
+      - `address`: *string* (address)
+      - `amountInGwei`: *string* (hex integer)
+      - `amountInWei`: *string* (hex integer)
+      - `index`: *string* (hex integer)
+      - `validatorIndex`: *string* (hex integer)
+  - `difficulty`: *string* (hex integer)
+  - `excessBlobGas`: *string* (hex integer)
+  - `extraData`: *string* (hex data)
+  - `gasLimit`: *string* (hex integer)
+  - `gasUsed`: *string* (hex integer)
+  - `hash`: *string* (hash)
+  - `header`: *object*
+    - `auRaSignature`: *string* (hex data)
+    - `auRaStep`: *string* (hex integer)
+    - `author`: *string* (address)
+    - `baseFeePerGas`: *string* (hex integer)
+    - `beneficiary`: *string* (address)
+    - `blobGasUsed`: *string* (hex integer)
+    - `bloom`: *string* (hex data)
+    - `difficulty`: *string* (hex integer)
+    - `excessBlobGas`: *string* (hex integer)
+    - `extraData`: *string* (hex data)
+    - `gasBeneficiary`: *string* (address)
+    - `gasLimit`: *string* (hex integer)
+    - `gasUsed`: *string* (hex integer)
+    - `hasBody`: *boolean*
+    - `hash`: *string* (hash)
+    - `hasTransactions`: *boolean*
+    - `isGenesis`: *boolean*
+    - `isPostMerge`: *boolean*
+    - `maybeParent`: *object*
+    - `mixHash`: *string* (hash)
+    - `nonce`: *string* (hex integer)
+    - `number`: *string* (hex integer)
+    - `parentBeaconBlockRoot`: *string* (hash)
+    - `parentHash`: *string* (hash)
+    - `random`: *string* (hash)
+    - `receiptsRoot`: *string* (hash)
+    - `sealEngineType`: *string*
+    - `stateRoot`: *string* (hash)
+    - `timestamp`: *string* (hex integer)
+    - `timestampDate`: *object*
+      - `date`: *object*
+        <!--[circular ref]-->
+      - `day`: *string* (hex integer)
+      - `dayOfWeek`: *integer*
+      - `dayOfYear`: *string* (hex integer)
+      - `hour`: *string* (hex integer)
+      - `kind`: *integer*
+      - `microsecond`: *string* (hex integer)
+      - `millisecond`: *string* (hex integer)
+      - `minute`: *string* (hex integer)
+      - `month`: *string* (hex integer)
+      - `nanosecond`: *string* (hex integer)
+      - `second`: *string* (hex integer)
+      - `ticks`: *string* (hex integer)
+      - `timeOfDay`: *object*
+        - `days`: *string* (hex integer)
+        - `hours`: *string* (hex integer)
+        - `microseconds`: *string* (hex integer)
+        - `milliseconds`: *string* (hex integer)
+        - `minutes`: *string* (hex integer)
+        - `nanoseconds`: *string* (hex integer)
+        - `seconds`: *string* (hex integer)
+        - `ticks`: *string* (hex integer)
+        - `totalDays`: *object*
+        - `totalHours`: *object*
+        - `totalMicroseconds`: *object*
+        - `totalMilliseconds`: *object*
+        - `totalMinutes`: *object*
+        - `totalNanoseconds`: *object*
+        - `totalSeconds`: *object*
+      - `year`: *string* (hex integer)
+    - `totalDifficulty`: *string* (hex integer)
+    - `txRoot`: *string* (hash)
+    - `unclesHash`: *string* (hash)
+    - `withdrawalsRoot`: *string* (hash)
+  - `isBodyMissing`: *boolean*
+  - `isGenesis`: *boolean*
+  - `isPostMerge`: *boolean*
+  - `mixHash`: *string* (hash)
+  - `nonce`: *string* (hex integer)
+  - `number`: *string* (hex integer)
+  - `parentBeaconBlockRoot`: *string* (hash)
+  - `parentHash`: *string* (hash)
+  - `receiptsRoot`: *string* (hash)
+  - `stateRoot`: *string* (hash)
+  - `timestamp`: *string* (hex integer)
+  - `timestampDate`: *object*
+    - `date`: *object*
+      <!--[circular ref]-->
+    - `day`: *string* (hex integer)
+    - `dayOfWeek`: *integer*
+    - `dayOfYear`: *string* (hex integer)
+    - `hour`: *string* (hex integer)
+    - `kind`: *integer*
+    - `microsecond`: *string* (hex integer)
+    - `millisecond`: *string* (hex integer)
+    - `minute`: *string* (hex integer)
+    - `month`: *string* (hex integer)
+    - `nanosecond`: *string* (hex integer)
+    - `second`: *string* (hex integer)
+    - `ticks`: *string* (hex integer)
+    - `timeOfDay`: *object*
+      - `days`: *string* (hex integer)
+      - `hours`: *string* (hex integer)
+      - `microseconds`: *string* (hex integer)
+      - `milliseconds`: *string* (hex integer)
+      - `minutes`: *string* (hex integer)
+      - `nanoseconds`: *string* (hex integer)
+      - `seconds`: *string* (hex integer)
+      - `ticks`: *string* (hex integer)
+      - `totalDays`: *object*
+      - `totalHours`: *object*
+      - `totalMicroseconds`: *object*
+      - `totalMilliseconds`: *object*
+      - `totalMinutes`: *object*
+      - `totalNanoseconds`: *object*
+      - `totalSeconds`: *object*
+    - `year`: *string* (hex integer)
+  - `totalDifficulty`: *string* (hex integer)
+  - `transactions`: array of *object*
+    - `accessList`: *object*
+    - `blobVersionedHashes`: array of *string* (hex data)
+    - `chainId`: *string* (hex integer)
+    - `data`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `isEmpty`: *boolean*
+        - `length`: *string* (hex integer)
+        - `span`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
+    - `dataLength`: *string* (hex integer)
+    - `decodedMaxFeePerGas`: *string* (hex integer)
+    - `gasBottleneck`: *string* (hex integer)
+    - `gasLimit`: *string* (hex integer)
+    - `gasPrice`: *string* (hex integer)
+    - `hash`: *string* (hash)
+    - `isContractCreation`: *boolean*
+    - `isMessageCall`: *boolean*
+    - `isOPSystemTransaction`: *boolean*
+    - `isServiceTransaction`: *boolean*
+    - `isSigned`: *boolean*
+    - `maxFeePerBlobGas`: *string* (hex integer)
+    - `maxFeePerGas`: *string* (hex integer)
+    - `maxPriorityFeePerGas`: *string* (hex integer)
+    - `mayHaveNetworkForm`: *boolean*
+    - `mint`: *string* (hex integer)
+    - `networkWrapper`: *object*
+    - `nonce`: *string* (hex integer)
+    - `poolIndex`: *string* (hex integer)
+    - `senderAddress`: *string* (address)
+    - `signature`: *object*
+      - `bytes`: *string* (hex data)
+      - `bytesWithRecovery`: *string* (hex data)
+      - `chainId`: *string* (hex integer)
+      - `r`: *string* (hex data)
+      - `rAsSpan`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `recoveryId`: *string* (hex data)
+      - `s`: *string* (hex data)
+      - `sAsSpan`: *object*
+        - `isEmpty`: *boolean*
+        - `item`: *object*
+        - `length`: *string* (hex integer)
+      - `v`: *string* (hex integer)
+    - `sourceHash`: *string* (hash)
+    - `supports1559`: *boolean*
+    - `supportsAccessList`: *boolean*
+    - `supportsBlobs`: *boolean*
+    - `timestamp`: *string* (hex integer)
+    - `to`: *string* (address)
+    - `type`: *integer*
+    - `value`: *string* (hex integer)
+  - `txRoot`: *string* (hash)
+  - `uncles`: array of *object*
+    - `auRaSignature`: *string* (hex data)
+    - `auRaStep`: *string* (hex integer)
+    - `author`: *string* (address)
+    - `baseFeePerGas`: *string* (hex integer)
+    - `beneficiary`: *string* (address)
+    - `blobGasUsed`: *string* (hex integer)
+    - `bloom`: *string* (hex data)
+    - `difficulty`: *string* (hex integer)
+    - `excessBlobGas`: *string* (hex integer)
+    - `extraData`: *string* (hex data)
+    - `gasBeneficiary`: *string* (address)
+    - `gasLimit`: *string* (hex integer)
+    - `gasUsed`: *string* (hex integer)
+    - `hasBody`: *boolean*
+    - `hash`: *string* (hash)
+    - `hasTransactions`: *boolean*
+    - `isGenesis`: *boolean*
+    - `isPostMerge`: *boolean*
+    - `maybeParent`: *object*
+    - `mixHash`: *string* (hash)
+    - `nonce`: *string* (hex integer)
+    - `number`: *string* (hex integer)
+    - `parentBeaconBlockRoot`: *string* (hash)
+    - `parentHash`: *string* (hash)
+    - `random`: *string* (hash)
+    - `receiptsRoot`: *string* (hash)
+    - `sealEngineType`: *string*
+    - `stateRoot`: *string* (hash)
+    - `timestamp`: *string* (hex integer)
+    - `timestampDate`: *object*
+      - `date`: *object*
+        <!--[circular ref]-->
+      - `day`: *string* (hex integer)
+      - `dayOfWeek`: *integer*
+      - `dayOfYear`: *string* (hex integer)
+      - `hour`: *string* (hex integer)
+      - `kind`: *integer*
+      - `microsecond`: *string* (hex integer)
+      - `millisecond`: *string* (hex integer)
+      - `minute`: *string* (hex integer)
+      - `month`: *string* (hex integer)
+      - `nanosecond`: *string* (hex integer)
+      - `second`: *string* (hex integer)
+      - `ticks`: *string* (hex integer)
+      - `timeOfDay`: *object*
+        - `days`: *string* (hex integer)
+        - `hours`: *string* (hex integer)
+        - `microseconds`: *string* (hex integer)
+        - `milliseconds`: *string* (hex integer)
+        - `minutes`: *string* (hex integer)
+        - `nanoseconds`: *string* (hex integer)
+        - `seconds`: *string* (hex integer)
+        - `ticks`: *string* (hex integer)
+        - `totalDays`: *object*
+        - `totalHours`: *object*
+        - `totalMicroseconds`: *object*
+        - `totalMilliseconds`: *object*
+        - `totalMinutes`: *object*
+        - `totalNanoseconds`: *object*
+        - `totalSeconds`: *object*
+      - `year`: *string* (hex integer)
+    - `totalDifficulty`: *string* (hex integer)
+    - `txRoot`: *string* (hash)
+    - `unclesHash`: *string* (hash)
+    - `withdrawalsRoot`: *string* (hash)
+  - `unclesHash`: *string* (hash)
+  - `withdrawals`: array of *object*
+    - `address`: *string* (address)
+    - `amountInGwei`: *string* (hex integer)
+    - `amountInWei`: *string* (hex integer)
+    - `index`: *string* (hex integer)
+    - `validatorIndex`: *string* (hex integer)
+  - `withdrawalsRoot`: *string* (hash)
+
+</TabItem>
+</Tabs>
+
 ### debug_getBlockRlp
 
 Retrieves a block in the RLP-serialized form.
