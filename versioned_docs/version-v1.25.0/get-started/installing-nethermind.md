@@ -61,6 +61,10 @@ winget install Microsoft.VCRedist.2015+.x64
 
 Package managers are the easiest and fastest way of installing Nethermind.
 
+:::tip
+If you're using a package manager, it's highly recommended to set the `-dd, --datadir` flag to specify the data directory. Otherwise, Nethermind will use the default data directory where the package is installed, which may not be preserved on further updates or uninstall.
+:::
+
 <Tabs groupId="os">
 <TabItem value="linux" label="Linux">
 
