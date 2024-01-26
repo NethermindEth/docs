@@ -134,6 +134,14 @@ following options are available at the moment:
 </summary>
 <p>
 
+- **`nethermind_bad_blocks_db_reads`**
+  
+  Number of BadBlocks DB reads.
+
+- **`nethermind_bad_blocks_db_writes`**
+  
+  Number of BadBlocks DB writes.
+
 - **`nethermind_blob_transactions_db_reads`**
   
   Number of BlobTransactions DB reads.
@@ -197,6 +205,10 @@ following options are available at the moment:
 - **`nethermind_c_h_t_db_writes`**
   
   Number of CHT DB writes.
+
+- **`nethermind_code_db_cache`**
+  
+  Number of Code DB cache reads.
 
 - **`nethermind_code_db_reads`**
   
@@ -300,7 +312,7 @@ following options are available at the moment:
 
 - **`nethermind_storage_tree_reads`**
   
-  Number of storge trie reads.
+  Number of storage trie reads.
 
 - **`nethermind_storage_tree_writes`**
   
@@ -632,7 +644,7 @@ following options are available at the moment:
 
 - **`nethermind_handshake_timeouts`**
   
-  Number of devp2p handshke timeouts
+  Number of devp2p handshake timeouts
 
 - **`nethermind_hellos_received`**
   
