@@ -395,6 +395,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Defaults to `Default`.
 
+- **`--Init.BadBlocksStored <value>`** `NETHERMIND_INITCONFIG_BADBLOCKSSTORED`
+
+  The maximum number of bad blocks observed on the network that will be stored on disk. Defaults to `100`.
+
 - **`--Init.BaseDbPath <value>`** `NETHERMIND_INITCONFIG_BASEDBPATH`
 
   The base path for all Nethermind databases. Defaults to `db`.
@@ -481,7 +485,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Init.WebSocketsEnabled <value>`** `NETHERMIND_INITCONFIG_WEBSOCKETSENABLED`
 
-  Whether to enable WebSocket service for the defaut JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
+  Whether to enable WebSocket service for the default JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
 
 </p>
 </details>
@@ -829,6 +833,10 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Metrics.EnableDbSizeMetrics <value>`** `NETHERMIND_METRICSCONFIG_ENABLEDBSIZEMETRICS`
 
   Whether to publish database size metrics. Allowed values: `true` `false`. Defaults to `true`.
+
+- **`--Metrics.ExposeHost <value>`** `NETHERMIND_METRICSCONFIG_EXPOSEHOST`
+
+  The IP address to expose Prometheus metrics at. Defaults to `127.0.0.1`.
 
 - **`--Metrics.ExposePort <value>`** `NETHERMIND_METRICSCONFIG_EXPOSEPORT`
 
