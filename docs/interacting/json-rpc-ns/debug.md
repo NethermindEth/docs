@@ -50,6 +50,78 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### debug_getBadBlocks
+
+Return list of invalid blocks.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_getBadBlocks",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `block`: *object*
+    - `author`: *string* (address)
+    - `baseFeePerGas`: *string* (hex integer)
+    - `blobGasUsed`: *string* (hex integer)
+    - `difficulty`: *string* (hex integer)
+    - `excessBlobGas`: *string* (hex integer)
+    - `extraData`: *string* (hex data)
+    - `gasLimit`: *string* (hex integer)
+    - `gasUsed`: *string* (hex integer)
+    - `hash`: *string* (hash)
+    - `logsBloom`: *string* (hex data)
+    - `miner`: *string* (address)
+    - `mixHash`: *string* (hash)
+    - `nonce`: *string* (hex data)
+    - `number`: *string* (hex integer)
+    - `parentBeaconBlockRoot`: *string* (hash)
+    - `parentHash`: *string* (hash)
+    - `receiptsRoot`: *string* (hash)
+    - `sha3Uncles`: *string* (hash)
+    - `signature`: *string* (hex data)
+    - `size`: *string* (hex integer)
+    - `stateRoot`: *string* (hash)
+    - `step`: *string* (hex integer)
+    - `timestamp`: *string* (hex integer)
+    - `totalDifficulty`: *string* (hex integer)
+    - `transactions`: array of *object*
+    - `transactionsRoot`: *string* (hash)
+    - `uncles`: array of *string* (hash)
+    - `withdrawals`: array of *object*
+      - `address`: *string* (address)
+      - `amountInGwei`: *string* (hex integer)
+      - `amountInWei`: *string* (hex integer)
+      - `index`: *string* (hex integer)
+      - `validatorIndex`: *string* (hex integer)
+    - `withdrawalsRoot`: *string* (hash)
+  - `hash`: *string* (hash)
+  - `rlp`: *string* (hex data)
+
+</TabItem>
+</Tabs>
+
 ### debug_getBlockRlp
 
 Retrieves a block in the RLP-serialized form.
