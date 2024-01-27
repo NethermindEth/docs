@@ -9,12 +9,12 @@ Nethermind supports a broad range of modern _64-bit_ operating systems including
 
 - **Linux**
 	- Alpine 3.17+
-	- CentOS Stream 8+
+	- CentOS Stream 9+
 	- Debian 11+
 	- Fedora 37+
 	- openSUSE 15+
 	- RHEL 8+
-	- SLES 12 SP5+
+	- SLES 15+
 	- Ubuntu 20.04+
 - **Windows**
 	- Windows 10+ (x64 only)
