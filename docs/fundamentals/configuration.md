@@ -397,7 +397,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Init.BadBlocksStored <value>`** `NETHERMIND_INITCONFIG_BADBLOCKSSTORED`
 
-  The maximum number of bad blocks observed on the network that will be stored on disk. Defaults to `100`.
+  The maximum number of bad blocks observed on the network that will be stored to disk. Defaults to `100`.
 
 - **`--Init.BaseDbPath <value>`** `NETHERMIND_INITCONFIG_BASEDBPATH`
 
@@ -836,7 +836,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Metrics.ExposeHost <value>`** `NETHERMIND_METRICSCONFIG_EXPOSEHOST`
 
-  The IP address to expose Prometheus metrics at. Defaults to `127.0.0.1`.
+  The ip at which to expose Prometheus metrics. Defaults to `127.0.0.1`.
 
 - **`--Metrics.ExposePort <value>`** `NETHERMIND_METRICSCONFIG_EXPOSEPORT`
 

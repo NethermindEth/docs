@@ -385,9 +385,25 @@ curl localhost:8545 \
 
 `result`: *object*
   - `balance`: *string* (hex integer)
-  - `codeHash`: *string* (hash)
+  - `codeHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `bytesAsSpan`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
   - `nonce`: *string* (hex integer)
-  - `storageRoot`: *string* (hash)
+  - `storageRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `bytesAsSpan`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -978,7 +994,15 @@ curl localhost:8545 \
   - `storageProofs`: array of *object*
     - `key`: *string* (hex data)
     - `proof`: array of *string* (hex data)
-    - `value`: *string* (hex data)
+    - `value`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `isEmpty`: *boolean*
+        - `length`: *string* (hex integer)
+        - `span`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
   - `storageRoot`: *string* (hash)
 
 </TabItem>
