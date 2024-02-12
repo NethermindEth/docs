@@ -9,7 +9,7 @@ sidebar_position: 0
 Please check out the [security considerations](../fundamentals/security.md) before using Nethermind as a validator.
 :::
 
-For Ethereum validators, we highly recommend checking out [Staking with Ethereum](https://ethereum.org/en/staking/) and [Validator checklist](https://launchpad.ethereum.org/en/checklist).
+For Ethereum validators, we highly recommend checking out [Staking with Ethereum](https://ethereum.org/staking) and [Validator checklist](https://launchpad.ethereum.org/en/checklist).
 
 ## Hardware configurations
 
