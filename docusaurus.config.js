@@ -76,7 +76,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'https://repository-images.githubusercontent.com/101194285/a1da1e24-03c7-4596-b34a-96a57366a606',
+      image: 'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',
       navbar: {
         logo: {
           alt: 'Nethermind',
