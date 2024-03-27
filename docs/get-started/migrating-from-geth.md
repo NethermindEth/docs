@@ -23,6 +23,7 @@ First, [install Nethermind](./installing-nethermind.md) and a [consensus client]
   - `--JsonRpc.EnginePort <port>`
   - `--Network.DiscoveryPort <port>`
   - `--Network.P2PPort <port>`
+- **DiscoveryPort and P2PPort should use same value**
 :::
 
 Once you fulfill the above requirements, you can start syncing Nethermind. To check the sync status, use the [`eth_syncing`](../interacting/json-rpc-ns/eth.md#eth_syncing) JSON-RPC method. When it returns `false`, Nethermind is considered fully synced with all block bodies and receipts needed to work properly as a validator. Another option to monitor the sync is a [health check](../monitoring/health-check.md).
