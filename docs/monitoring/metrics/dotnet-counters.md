@@ -18,7 +18,7 @@ Nethermind can be configured to publish its metrics using [System.Diagnostics.Me
 
 Reporting metrics as _System.Diagnostics.Metrics_ is enabled by passing and additional argument `--Metrics.CountersEnabled true` to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher` e.g. `./Nethermind.Runner --Metrics.CountersEnabled true`.&#x20;
 
-This flag can be configured separately from [setting-up-local-metrics-infrastracture.md](setting-up-local-metrics-infrastracture.md "mention")as this two reporting modes are treated separately.
+This flag can be configured separately from [setting-up-local-metrics-infrastracture.md](local-infrastructure.md)as this two reporting modes are treated separately.
 
 ## Metrics names
 

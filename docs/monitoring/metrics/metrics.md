@@ -8,7 +8,7 @@ Nethermind provides a few ways of gathering information, monitoring and collecti
 following options are available at the moment:
 
 1. [dotnet-counters.md](dotnet-counters.md)
-2. [setting-up-local-metrics-infrastracture.md](setting-up-local-metrics-infrastracture.md)
+2. [setting-up-local-metrics-infrastracture.md](local-infrastructure.md)
 
 ### Parameters by namespace
 
