@@ -44,16 +44,13 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`.
 
-  - `base-goerli` `base-goerli_archive`
   - `base-mainnet` `base-mainnet_archive`
   - `base-sepolia` `base-sepolia_archive`
   - `chiado` `chiado_archive`
   - `energyweb` `energyweb_archive`
-  - `goerli` `goerli_archive`
   - `gnosis` `gnosis_archive`
   - `holesky` `holesky_archive`
   - `mainnet` `mainnet_archive`
-  - `op-goerli` `op-goerli_archive`
   - `op-mainnet` `op-mainnet_archive`
   - `op-sepolia` `op-sepolia_archive`
   - `sepolia` `sepolia_archive`

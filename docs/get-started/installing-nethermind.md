@@ -287,12 +287,10 @@ To run Nethermind on a specific network, use the [`-c, --config`](../fundamental
 
 - **Ethereum**
     - [Mainnet](https://ethereum.org/en/developers/docs/networks/#ethereum-mainnet)
-    - [Goerli](https://ethereum.org/en/developers/docs/networks/#goerli) (testnet)
     - [Holesky](https://github.com/eth-clients/holesky) (testnet)
     - [Sepolia](https://ethereum.org/en/developers/docs/networks/#sepolia) (testnet)
 - **Base**
     - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet)
-    - [Base Goerli](https://docs.base.org/network-information/#base-testnet-goerli) (testnet)
     - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet)
 - **Energy Web Chain**
     - [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain)
@@ -302,5 +300,4 @@ To run Nethermind on a specific network, use the [`-c, --config`](../fundamental
     - [Chiado](https://docs.gnosischain.com/concepts/networks/chiado) (testnet)
 - **Optimism**
     - [OP Mainnet](https://community.optimism.io/docs/useful-tools/networks/#op-mainnet)
-    - [OP Goerli](https://community.optimism.io/docs/useful-tools/networks/#op-goerli) (testnet)
     - [OP Sepolia](https://community.optimism.io/docs/useful-tools/networks/#op-sepolia) (testnet)

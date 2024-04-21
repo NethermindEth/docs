@@ -41,7 +41,6 @@ May 2023).
 | Mainnet archive                         | 14 TB                          |
 | Mainnet without old bodies and receipts | 178 GB                         |
 | Gnosis                                  | 112 GB                         |
-| Goerli                                  | 240 GB                         |
 
 ### Database size in details
 
@@ -60,25 +59,6 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 | Code      | 3.9 GB     | 3.9 GB                        |
 | Other     | ...        | ...                           |
 | **Total** | **898 GB** | **738 GB**                    |
-
-</TabItem>
-<TabItem value="goerli" label="Goerli">
-
-| Directory         | Size       |
-| ----------------- | ---------- |
-| state             | 51 GB      |
-| receipts          | 35 GB      |
-| blocks            | 185 GB     |
-| code              | 7.4 GB     |
-| peers             | 8 KB       |
-| witness           | 4.1 MB     |
-| blockInfos        | 417 MB     |
-| bloom             | 2.5 GB     |
-| headers           | 3.5 GB     |
-| canonicalHashTrie | 4.1 MB     |
-| metadata          | 4.4 MB     |
-| discoveryNodes    | 1.5 MB     |
-| **TOTAL**         | **283 GB** |
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">

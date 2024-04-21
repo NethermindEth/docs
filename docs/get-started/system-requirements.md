@@ -29,8 +29,6 @@ Suggested requirements can be found below.
 |---------------------|:------:|:---------:|
 | **Mainnet**         | 16 GB  | 4         |
 | **Mainnet archive** | 128 GB | 8         |
-| **Goerli**          | 8 GB   | 2         |
-| **Goerli archive**  | 8 GB   | 4         |
 | **Gnosis**          | 16 GB  | 2         |
 | **Energy Web**      | 8 GB   | 2         |
 | **Volta**           | 8 GB   | 2         |
