@@ -29,9 +29,9 @@ services:
     environment:
       - NETHERMIND_CONFIG=energyweb
     volumes:
-      - ${PWD}/keystore:/nethermind/keystore
-      - ${PWD}/logs:/nethermind/logs
-      - ${PWD}/nethermind_db:/nethermind/nethermind_db
+      - ./keystore:/nethermind/keystore
+      - ./logs:/nethermind/logs
+      - ./nethermind_db:/nethermind/nethermind_db
 ```
 
 ## Configuring keyfile
