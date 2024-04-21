@@ -32,7 +32,7 @@ Once the stack is running, you can access the following services:
 To enable metrics in Nethermind, use the command line option `--Metrics.Enabled true`. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
 
 :::warning Important
-- A [consensus client](../../get-started/consensus-clients.md) of your choice must be running before you start Nethermind.
+A [consensus client](../../get-started/consensus-clients.md) of your choice must be running before you start Nethermind.
 :::
 
 Run Nethermind as follows:
