@@ -117,7 +117,7 @@ const config = {
         indexName: 'nethermind'
       },
       prism: {
-        additionalLanguages: ['bash', 'csharp', 'json', 'powershell'],
+        additionalLanguages: ['bash', 'csharp', 'docker', 'json', 'powershell'],
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },

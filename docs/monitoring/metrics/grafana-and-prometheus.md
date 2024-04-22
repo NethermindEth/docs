@@ -1,5 +1,6 @@
 ---
-title: Local infrastructure
+title: Grafana and Prometheus
+sidebar_position: 0
 ---
 
 This guide will walk you through setting up a local metrics infrastructure using [Grafana](https://grafana.com) and [Prometheus](https://prometheus.io).
@@ -25,11 +26,12 @@ Once the stack is running, you can access the following services:
 - **Grafana**: [localhost:3000](http://localhost:3000)\
   Use `admin` for both the username and password. When asked for a password change, you may skip it. Then, navigate to Dashboards > Nethermind Dashboard.
 - **Prometheus**: [localhost:9090](http://localhost:9090)
-- **Pushgateway**: [localhost:9091](http://localhost:9091)
+- **Pushgateway**: [localhost:9091](http://localhost:9091)\
+  To specify another endpoint for the Pushgateway, use the `--Metrics.PushGatewayUrl` command line option.
 
 ## Step 3: Run Nethermind
 
-To enable metrics in Nethermind, use the command line option `--Metrics.Enabled true`. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
+To enable metrics in Nethermind, use the `--Metrics.Enabled true` command line option. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
 
 :::warning Important
 A [consensus client](../../get-started/consensus-clients.md) of your choice must be running before you start Nethermind.
