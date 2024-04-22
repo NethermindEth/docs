@@ -4,11 +4,10 @@ sidebar_position: 0
 toc_max_heading_level: 4
 ---
 
-Nethermind provides a few ways of gathering information, monitoring and collecting metrics about itself. The
-following options are available at the moment:
+Currently, Nethermind provides the following options to monitor and collect metrics about itself:
 
-1. [dotnet-counters.md](dotnet-counters.md)
-2. [setting-up-local-metrics-infrastracture.md](setting-up-local-metrics-infrastracture.md)
+- [Grafana and Prometheus](grafana-and-prometheus.md)
+- [dotnet-counters](dotnet-counters.md)
 
 ### Parameters by namespace
 

@@ -1,98 +1,119 @@
 ---
-description: >-
-  How to use System.Diagnostics.Metrics and dotnet-counters to measure and
-  observe a Nethermind node
+title: dotnet-counters
+sidebar_position: 1
 ---
 
-:::warning
-This article requires a revision.
-:::
+This guide will walk you through setting up performance counters using the [dotnet-counters](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-counters) performance monitoring tool that observes counters published via the [EventCounters API](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.tracing.eventcounter).
 
-# Using dotnet-counters
+## Step 1: Install dotnet-counters
 
-## Introduction
+dotnet-counters can be either installed locally or in a Docker container.
 
-Nethermind can be configured to publish its metrics using [System.Diagnostics.Metrics](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics). This mechanism is a native tool embedded in .NET Platform. It allows for a low overhead monitoring and reporting. Once .NET Platform metrics are enabled, they can be monitored and collected using `dotnet-counters` and other tools.
+### Installing locally
 
-## Configuration
+Use the dotnet tool install command as follows:
 
-Reporting metrics as _System.Diagnostics.Metrics_ is enabled by passing and additional argument `--Metrics.CountersEnabled true` to the Docker containers,`Nethermind.Runner` or `Nethermind.Launcher` e.g. `./Nethermind.Runner --Metrics.CountersEnabled true`.&#x20;
-
-This flag can be configured separately from [setting-up-local-metrics-infrastracture.md](setting-up-local-metrics-infrastracture.md "mention")as this two reporting modes are treated separately.
-
-## Metrics names
-
-Metrics reported by a Nethermind node follow the module convention. Whenever there's a module `X`, its metrics will be reported under meter `Nethermind.X` For example, `Evm` module will be repoted under `Nethermind.Evm` and so on.
-
-## dotnet-counters
-
-`dotnet-counters` is a tool provided by the .NET team to monitor and collect metrics for further analysis. The usage of it is different when used on the same machine or in the Dockerized environment. To learn more about the tool, please visit the official documentation page of [metrics collection with dotnet-counters](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection).
-
-### Same machine
-
-When a node is running on the same machine, `dotnet-counters` , given that the .NET runtime is already installed, can be installed with the following&#x20;
-
-```
+```bash
 dotnet tool install -g dotnet-counters
 ```
 
-This will install the tool globally and will allow the user to monitor and to collect metrics from any .NET process that is run on the same machine. For further information how to monitor and collect, please refer to [the original documentation of this command](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-counters).
+Once installed, you can run the tool from the command line by typing `dotnet-counters`.
 
-### Docker image and docker compose
 
-When running in a Dockerized environment, the most common way is to create a separate docker image for .NET diagnostics. This can be done with the following `Dockerfile`
+### Installing in a Docker container
 
-```
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS base
+To install dotnet-counters in a Docker container, create a Dockerfile with the following content:
 
-RUN dotnet tool install -g dotnet-counters; \
-    dotnet tool install -g dotnet-trace; \
+```docker title="Dockerfile"
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+RUN dotnet tool install -g dotnet-counters && \
     echo 'export PATH="$PATH:/root/.dotnet/tools"' >> /root/.bashrc
 
 ENTRYPOINT ["/bin/bash"]
 ```
 
-Once it's built, as `dotdiag` image, it will enable running `dotnet-counters` from within.
+Then, build the Docker image:
 
-The second part is connecting the dockerized node with the `dotdiag`. Whether using `docker copose` or images run manually, it's important to remember that `dotnet-counters` communicate over a named pipe (Windows) or an IPC socked (Linux, macOS). To make it work, volume mapping should be provided so that the two images share the directory used for the communication. Similarly `pid namespace` needs to be shared between them.&#x20;
-
-Let's visit an extract of a `docker-compose.yaml` that would provide such configuration.
-
+```bash
+docker build -t dotnet-counters .
 ```
-version: "3.9"
 
+## Step 2: Run Nethermind
+
+To enable performance counters in Nethermind, use the command line option `--Metrics.CountersEnabled true`. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
+
+:::warning Important
+A [consensus client](../../get-started/consensus-clients.md) of your choice must be running before you start Nethermind.
+:::
+
+### Running locally
+
+To enable performance counters, run Nethermind as follows:
+
+```bash
+nethermind -c mainnet --Metrics.CountersEnabled true
+```
+
+### Running in a Docker container
+
+The easiest way of collecting metrics in a Docker container is to use Docker Compose. Below, we use the Nethermind official Docker image and the `dotnet-counters` image we created earlier:
+
+```yaml title="docker-compose.yml"
 services:
 
-  execution:
-    stop_grace_period: 30s
-    container_name: execution-client
-    restart: unless-stopped
-    image: IMAGE_VERSION_GOES_HERE
-    networks:
-      - sedge
+  dotnet-counters:
+    image: dotnet-counters
+    container_name: dotnet-counters
+    stdin_open: true
+    tty: true
+    pid: service:nethermind
     volumes:
-      - ./dotnet-tmp:/tmp # /tmp is used to create the IPC socket, expose it as ./dotnet-tmp
-    ports:
-      # ports omitted as they are not changed
-    command:
-      # make counters enabled so that reporting happens by setting the flag
-      - --Metrics.CountersEnabled=true 
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "10"
-
-  # the created dotdiag 
-  dotdiag:
-    container_name: dotdiag
-    image: dotdiag
-    stdin_open: true # docker run -i, so that it runs
-    tty: true        # docker run -t, so that it runs
-    volumes:
-      - ./dotnet-tmp:/tmp # map to the same directory, to make IPC socket connection
-    pid: "service:execution" # make pid namespaces are shared - processes are visible
+      - metrics:/tmp
     depends_on:
-      - execution # make the dependency explicit
+      - nethermind
+  
+  nethermind:
+    image: nethermind/nethermind:latest
+    container_name: nethermind
+    restart: unless-stopped
+    ports:
+      - 8545:8545
+      - 8551:8551
+      - 30303:30303
+    command: -c mainnet --Metrics.CountersEnabled true
+    volumes:
+      - ./keystore:/nethermind/keystore
+      - ./logs:/nethermind/logs
+      - ./nethermind_db:/nethermind/nethermind_db
+      - metrics:/tmp
 
+volumes:
+  metrics:
 ```
+
+:::info
+dotnet-counters uses IPC socket communication to monitor the target process. For this, we use the `metrics` volume to share the IPC socket directory with the `nethermind` and `dotnet-counter` services. The `pid` option in the `dotnet-counters` service is used to share the PID namespace with the `nethermind` service. This is necessary for `dotnet-counters` to be able to see the Nethermind process.
+:::
+
+We can run the above file as follows:
+
+```bash
+docker-compose up
+```
+
+## Step 3: Collect metrics
+
+Once dotnet-counters is installed and Nethermind is running, we can start collecting the metrics. If you chose to collect metrics in the containers, run the following command in the `dotnet-counters` container:
+
+```bash
+dotnet-counters collect -n nethermind
+```
+
+By default, dotnet-counters stores the collected metrics in the current directory in CSV format. However, you may also store them in JSON format and another directory. For instance:
+
+```bash
+dotnet-counters collect -n nethermind -f json -o /tmp/counters.json
+```
+
+For more info about dotnet-counters, see its [official docs](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-counters).
