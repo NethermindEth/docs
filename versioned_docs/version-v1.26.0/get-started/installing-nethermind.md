@@ -181,10 +181,12 @@ For further instructions, see [Running Nethermind](#running).
 
 The Docker images of Nethermind are available on [Docker Hub](https://hub.docker.com/r/nethermind/nethermind).
 
-This registry provides production versions of Nethermind with two types of tags:
+This registry provides production versions of Nethermind with 3 types of tags:
 
 - `nethermind/nethermind:latest` is the latest version of Nethermind (the default tag)
 - `nethermind/nethermind:<version>` is the specific version of Nethermind where `<version>` is the actual version of Nethermind.
+- `nethermind/nethermind:<version>-chiseled` is a *rootless* and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) image with the specific version of Nethermind where `<version>` is either `latest` or the actual version of Nethermind.\
+For security reasons, this image contains only the absolutely necessary components and is intended to run as a non-root `app` user with UID/GID of `64198`.
 
 To download the image from the registry, run:
 
