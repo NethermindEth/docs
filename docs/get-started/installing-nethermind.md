@@ -22,29 +22,7 @@ Does not apply to Docker distributions.
 Before installing Nethermind, your specific platform might need the following prerequisites.
 
 <Tabs groupId="os">
-<TabItem value="linux" label="Linux">
-
-On Linux systems, Snappy is a required dependency. Below are the installation instructions for the supported distros.
-
-#### Ubuntu and Debian-based distros
-
-```bash
-sudo apt-get install libsnappy-dev
-```
-
-#### CentOS, Fedora, and RHEL-like distros
-
-```bash
-sudo dnf install snappy
-```
-
-On RHEL-like systems, Nethermind also requires the following symlink to bzip2:
-
-```bash
-sudo ln -s `find /usr/lib64/ -type f -name "libbz2.so.1*"` /usr/lib64/libbz2.so.1.0
-```
-
-</TabItem>
+<TabItem value="linux" label="Linux">None</TabItem>
 <TabItem value="windows" label="Windows">
 
 Although the modern versions of Windows are bundled with a recent version of [Microsoft Visual C++ Redistributable](https://aka.ms/vcredist), in some cases, it may need an update:
