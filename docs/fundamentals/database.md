@@ -31,20 +31,9 @@ the database between Linux, Windows, and macOS.
 
 ## Database size
 
-The table below presents the Nethermind database size after fresh sync with different configurations and networks (as of
-May 2023).
-
-| Network/configuration                   | Database size after fresh sync |
-|-----------------------------------------|--------------------------------|
-| Mainnet (default)                       | 898 GB                         |
-| Mainnet with ancient barriers           | 738 GB                         |
-| Mainnet archive                         | 14 TB                          |
-| Mainnet without old bodies and receipts | 178 GB                         |
-| Gnosis                                  | 112 GB                         |
-
-### Database size in details
-
 Below is a comprehensive list of the supported chains, along with a detailed breakdown of their respective database directories. For reference, the database sizes listed are based on the data from July 2023 and have been determined using the standard configurations provided.
+
+<!--[start autogen]-->
 
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
@@ -157,6 +146,8 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 
 </TabItem>
 </Tabs>
+
+<!--[end autogen]-->
 
 ## Reducing database size
 
