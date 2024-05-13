@@ -36,113 +36,30 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <!--[start autogen]-->
 
 <Tabs>
-<TabItem value="mainnet" label="Mainnet">
+<TabItem value="holesky" label="Holesky">
 
-| Database  | Mainnet    | Mainnet with ancient barriers |
-|-----------|------------|-------------------------------|
-| State     | 181 GB     | 181 GB                        |
-| Receipts  | 203 GB     | 155 GB                        |
-| Blocks    | 497 GB     | 385 GB                        |
-| Bloom     | 5.9 GB     | 5.9 GB                        |
-| Headers   | 8.1 GB     | 8.1 GB                        |
-| Code      | 3.9 GB     | 3.9 GB                        |
-| Other     | ...        | ...                           |
-| **Total** | **898 GB** | **738 GB**                    |
-
-</TabItem>
-<TabItem value="sepolia" label="Sepolia">
-
-| Directory         | Size      |
-| ----------------- | --------- |
-| state             | 8.5 GB    |
-| receipts          | 8.2 GB    |
-| blocks            | 36 GB     |
-| code              | 1.5 GB    |
-| peers             | 8 KB      |
-| witness           | 4.1 MB    |
-| blockInfos        | 177 MB    |
-| bloom             | 1.3 GB    |
-| headers           | 1.2 GB    |
-| canonicalHashTrie | 4.1 MB    |
-| metadata          | 4.1 MB    |
-| discoveryNodes    | 1.7 MB    |
-| **TOTAL**         | **56 GB** |
-
-</TabItem>
-<TabItem value="gnosis" label="Gnosis">
-
-| Directory         | Size   |
-| ----------------- | ------ |
-| state             | 40 GB  |
-| receipts          | 21 GB  |
-| blocks            | 43 GB  |
-| code              | 350 MB |
-| peers             | 8 KB   |
-| witness           | 4.1 MB |
-| blockInfos        | 1.5 GB |
-| bloom             | 7.5 GB |
-| headers           | 9.4 GB |
-| canonicalHashTrie | 4.1 MB |
-| metadata          | 4.2 MB |
-| discoveryNodes    | 1.8 MB |
-| **TOTAL**         | **121 GB** |
+- `state`: 14 GB
+- `receipts`: 7.1 GB
+- `blocks`: 38 GB
+- `bloom`: 487 MB
+- `headers`: 579 MB
+- `code`: 284 MB
+- `blobTransactions`: 1.1 GB
+- ...
+- **Total: 61 GB**
 
 </TabItem>
 <TabItem value="chiado" label="Chiado">
 
-| Directory         | Size       |
-| ----------------- | ---------- |
-| state             | 1.6 GB     |
-| receipts          | 646 MB     |
-| blocks            | 2.3 GB     |
-| code              | 22 MB      |
-| peers             | 8 KB       |
-| witness           | 4.1 MB     |
-| blockInfos        | 224 MB     |
-| bloom             | 1.4 GB     |
-| headers           | 1.1 GB     |
-| canonicalHashTrie | 4.1 MB     |
-| metadata          | 4.1 MB     |
-| discoveryNodes    | 1.7 MB     |
-| **TOTAL**         | **7.1 GB** |
-
-</TabItem>
-<TabItem value="energyweb" label="Energy Web">
-
-| Directory         | Size         |
-| ----------------- | ------------ |
-| state             | 31.13 GB     |
-| receipts          | 5.13 GB      |
-| blocks            | 15.55 GB     |
-| code              | 7.20 MB      |
-| peers             | 311 B        |
-| witness           | 103.11 KB    |
-| blockInfos        | 1.22 GB      |
-| bloom             | 7.78 GB      |
-| headers           | 6.70 GB      |
-| canonicalHashTrie | 103.35 KB    |
-| metadata          | 103.31 KB    |
-| discoveryNodes    | 1.68 MB      |
-| **TOTAL**         | **67.52 GB** |
-
-</TabItem>
-<TabItem value="volta" label="Volta">
-
-| Directory         | Size         |
-| ----------------- | ------------ |
-| state             | 35.71 GB     |
-| receipts          | 7.67 GB      |
-| blocks            | 25.11 GB     |
-| code              | 75.14 MB     |
-| peers             | 616 B        |
-| witness           | 119.95 KB    |
-| blockInfos        | 1.15 GB      |
-| bloom             | 7.40 GB      |
-| headers           | 6.94 GB      |
-| canonicalHashTrie | 120.00 KB    |
-| metadata          | 119.97 KB    |
-| discoveryNodes    | 1.55 MB      |
-| **TOTAL**         | **84.06 GB** |
+- `state`: 2.4 GB
+- `receipts`: 1.3 GB
+- `blocks`: 7.4 GB
+- `bloom`: 2.5 GB
+- `headers`: 1.8 GB
+- `code`: 45 MB
+- `blobTransactions`: 2.4 GB
+- ...
+- **Total: 19 GB**
 
 </TabItem>
 </Tabs>
