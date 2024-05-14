@@ -14,6 +14,7 @@ An easy way to run both consensus and execution clients is with [Sedge](https://
 
 On the consensus layer, there are 5 client implementations to choose from. Though all consensus clients are great, check them out yourself to find the one best suited to your needs.
 
+- [Grandine][grandine]
 - [Lighthouse][lighthouse]
 - [Lodestar][lodestar]
 - [Nimbus][nimbus]
@@ -44,6 +45,18 @@ This step assumes that you have already [installed](../get-started/installing-ne
 :::info
 As syncing from the scratch can take a very long time on some networks (up to several days), the commands below optionally use [checkpoint sync](https://ethereum.org/en/developers/docs/nodes-and-clients/#checkpoint-sync) to speed up the process.
 :::
+
+### Grandine
+
+```bash
+grandine \
+  --network mainnet \
+  --eth1-rpc-urls http://localhost:8551 \
+  --jwt-secret path/to/jwt.hex \
+  --checkpoint-sync-url https://beaconstate.ethstaker.cc
+```
+
+The command above runs Grandine on Mainnet. For other networks, set the `--network` and `--checkpoint-sync-url` options accordingly. See the [Grandine documentation][grandine] and [public checkpoint sync endpoints][checkpoint-sync-endpoints].
 
 ### Lighthouse
 
@@ -121,6 +134,7 @@ nethermind \
 The command above runs Nethermind on Mainnet. For other networks, set the `-c` option accordingly. For more info, see [Running Nethermind](../get-started/installing-nethermind.md#running).
 
 [checkpoint-sync-endpoints]: https://eth-clients.github.io/checkpoint-sync-endpoints
+[grandine]: https://docs.grandine.io
 [lighthouse]: https://lighthouse-book.sigmaprime.io
 [lodestar]: https://chainsafe.github.io/lodestar
 [nimbus]: https://nimbus.guide
