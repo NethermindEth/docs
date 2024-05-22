@@ -108,11 +108,11 @@ Here's an example of above settings in the Energy Web configuration file:
 The above Docker Compose file can be run from the directory the `docker-compose.yml` is located in as follows:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 To check the logs and verify the sealing of blocks, run:
 
 ```bash
-docker-compose logs -f nethermind-validator
+docker compose logs -f nethermind-validator
 ```

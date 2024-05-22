@@ -27,8 +27,9 @@ To install dotnet-counters in a Docker container, create a Dockerfile with the f
 ```docker title="Dockerfile"
 FROM mcr.microsoft.com/dotnet/sdk:8.0
 
-RUN dotnet tool install -g dotnet-counters && \
-    echo 'export PATH="$PATH:/root/.dotnet/tools"' >> /root/.bashrc
+RUN dotnet tool install -g dotnet-counters
+
+ENV PATH="$PATH:/root/.dotnet/tools"
 
 ENTRYPOINT ["/bin/bash"]
 ```
@@ -99,7 +100,7 @@ dotnet-counters uses IPC socket communication to monitor the target process. For
 We can run the above file as follows:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ## Step 3: Collect metrics

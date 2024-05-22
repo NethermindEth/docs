@@ -18,7 +18,7 @@ git clone https://github.com/NethermindEth/metrics-infrastructure.git
 After cloning the repository, navigate to its root directory and run the containers using Docker Compose as follows:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 Once the stack is running, you can access the following services:
