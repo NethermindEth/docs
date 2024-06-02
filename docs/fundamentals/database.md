@@ -38,111 +38,93 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
 
-| Database  | Mainnet    | Mainnet with ancient barriers |
-|-----------|------------|-------------------------------|
-| State     | 181 GB     | 181 GB                        |
-| Receipts  | 203 GB     | 155 GB                        |
-| Blocks    | 497 GB     | 385 GB                        |
-| Bloom     | 5.9 GB     | 5.9 GB                        |
-| Headers   | 8.1 GB     | 8.1 GB                        |
-| Code      | 3.9 GB     | 3.9 GB                        |
-| Other     | ...        | ...                           |
-| **Total** | **898 GB** | **738 GB**                    |
+- `state`: 153 GB
+- `receipts`: 206 GB
+- `blocks`: 569 GB
+- `bloom`: 6.2 GB
+- `headers`: 8.5 GB
+- `code`: 4.3 GB
+- `blobTransactions`: 2.1 GB
+- ...
+- **Total: 949 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
-| Directory         | Size      |
-| ----------------- | --------- |
-| state             | 8.5 GB    |
-| receipts          | 8.2 GB    |
-| blocks            | 36 GB     |
-| code              | 1.5 GB    |
-| peers             | 8 KB      |
-| witness           | 4.1 MB    |
-| blockInfos        | 177 MB    |
-| bloom             | 1.3 GB    |
-| headers           | 1.2 GB    |
-| canonicalHashTrie | 4.1 MB    |
-| metadata          | 4.1 MB    |
-| discoveryNodes    | 1.7 MB    |
-| **TOTAL**         | **56 GB** |
+- `state`: 34 GB
+- `receipts`: 32 GB
+- `blocks`: 211 GB
+- `bloom`: 1.9 GB
+- `headers`: 2.0 GB
+- `code`: 5.1 GB
+- `blobTransactions`: 1.5 GB
+- ...
+- **Total: 287 GB**
+
+</TabItem>
+<TabItem value="holesky" label="Holesky">
+
+- `state`: 16 GB
+- `receipts`: 8.2 GB
+- `blocks`: 42 GB
+- `bloom`: 521 MB
+- `headers`: 635 MB
+- `code`: 368 MB
+- `blobTransactions`: 1.1 GB
+- ...
+- **Total: 68 GB**
 
 </TabItem>
 <TabItem value="gnosis" label="Gnosis">
 
-| Directory         | Size   |
-| ----------------- | ------ |
-| state             | 40 GB  |
-| receipts          | 21 GB  |
-| blocks            | 43 GB  |
-| code              | 350 MB |
-| peers             | 8 KB   |
-| witness           | 4.1 MB |
-| blockInfos        | 1.5 GB |
-| bloom             | 7.5 GB |
-| headers           | 9.4 GB |
-| canonicalHashTrie | 4.1 MB |
-| metadata          | 4.2 MB |
-| discoveryNodes    | 1.8 MB |
-| **TOTAL**         | **121 GB** |
+- `state`: 60 GB
+- `receipts`: 218 GB
+- `blocks`: 186 GB
+- `bloom`: 8.8 GB
+- `headers`: 9.6 GB
+- `code`: 666 MB
+- `blobTransactions`: 75 MB
+- ...
+- **Total: 484 GB**
 
 </TabItem>
 <TabItem value="chiado" label="Chiado">
 
-| Directory         | Size       |
-| ----------------- | ---------- |
-| state             | 1.6 GB     |
-| receipts          | 646 MB     |
-| blocks            | 2.3 GB     |
-| code              | 22 MB      |
-| peers             | 8 KB       |
-| witness           | 4.1 MB     |
-| blockInfos        | 224 MB     |
-| bloom             | 1.4 GB     |
-| headers           | 1.1 GB     |
-| canonicalHashTrie | 4.1 MB     |
-| metadata          | 4.1 MB     |
-| discoveryNodes    | 1.7 MB     |
-| **TOTAL**         | **7.1 GB** |
+- `state`: 2.4 GB
+- `receipts`: 1.3 GB
+- `blocks`: 7.6 GB
+- `bloom`: 2.6 GB
+- `headers`: 1.9 GB
+- `code`: 50 MB
+- `blobTransactions`: 794 MB
+- ...
+- **Total: 18 GB**
 
 </TabItem>
-<TabItem value="energyweb" label="Energy Web">
+<TabItem value="energyweb" label="Energyweb">
 
-| Directory         | Size         |
-| ----------------- | ------------ |
-| state             | 31.13 GB     |
-| receipts          | 5.13 GB      |
-| blocks            | 15.55 GB     |
-| code              | 7.20 MB      |
-| peers             | 311 B        |
-| witness           | 103.11 KB    |
-| blockInfos        | 1.22 GB      |
-| bloom             | 7.78 GB      |
-| headers           | 6.70 GB      |
-| canonicalHashTrie | 103.35 KB    |
-| metadata          | 103.31 KB    |
-| discoveryNodes    | 1.68 MB      |
-| **TOTAL**         | **67.52 GB** |
+- `state`: 26 GB
+- `receipts`: 4.3 GB
+- `blocks`: 23 GB
+- `bloom`: 9.3 GB
+- `headers`: 6.6 GB
+- `code`: 13 MB
+- `blobTransactions`: 
+- ...
+- **Total: 72 GB**
 
 </TabItem>
 <TabItem value="volta" label="Volta">
 
-| Directory         | Size         |
-| ----------------- | ------------ |
-| state             | 35.71 GB     |
-| receipts          | 7.67 GB      |
-| blocks            | 25.11 GB     |
-| code              | 75.14 MB     |
-| peers             | 616 B        |
-| witness           | 119.95 KB    |
-| blockInfos        | 1.15 GB      |
-| bloom             | 7.40 GB      |
-| headers           | 6.94 GB      |
-| canonicalHashTrie | 120.00 KB    |
-| metadata          | 119.97 KB    |
-| discoveryNodes    | 1.55 MB      |
-| **TOTAL**         | **84.06 GB** |
+- `state`: 34 GB
+- `receipts`: 8.2 GB
+- `blocks`: 32 GB
+- `bloom`: 8.6 GB
+- `headers`: 6.6 GB
+- `code`: 92 MB
+- `blobTransactions`: 
+- ...
+- **Total: 91 GB**
 
 </TabItem>
 </Tabs>
