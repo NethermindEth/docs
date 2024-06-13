@@ -4,11 +4,11 @@ description: Use Kurtosis to deploy a private Ethereum devnet with Nethermind an
 sidebar_position: 8
 ---
 
-This guide will walk you through using [Kurtosis `ethereum-package`](https://github.com/kurtosis-tech/ethereum-package) to spin up a private, proof-of-stake (PoS) Ethereum devnet with three full Ethereum nodes locally over Docker. At the end of the guide, you will learn how to scale up your testnet on Kubernetes as well as enable optional services for your local testnet, such as network observability tools (e.g., Grafana, Prometheus) and Flashbot's `mev-boost` infrastructure to simulate MEV workflows.
+This guide will walk you through using [Kurtosis `ethereum-package`](https://github.com/ethpandaops/ethereum-package) to spin up a private, proof-of-stake (PoS) Ethereum devnet with three full Ethereum nodes locally over Docker. At the end of the guide, you will learn how to scale up your testnet on Kubernetes as well as enable optional services for your local testnet, such as network observability tools (e.g., Grafana, Prometheus) and Flashbot's `mev-boost` infrastructure to simulate MEV workflows.
 
 ## Step 1: Prerequisites
 
-Before you begin, ensure you have [Kurtosis CLI](https://docs.kurtosis.com/install) and [Docker](https://docs.docker.com/get-docker) installed. The [`ethereum-package`](https://github.com/kurtosis-tech/ethereum-package) is a Kurtosis environment definition known as a [package](https://docs.kurtosis.com/concepts-reference/packages). For more info about Kurtosis, see the [Kurtosis docs](https://docs.kurtosis.com).
+Before you begin, ensure you have [Kurtosis CLI](https://docs.kurtosis.com/install) and [Docker](https://docs.docker.com/get-docker) installed. The [`ethereum-package`](https://github.com/ethpandaops/ethereum-package) is a Kurtosis environment definition known as a [package](https://docs.kurtosis.com/concepts-reference/packages). For more info about Kurtosis, see the [Kurtosis docs](https://docs.kurtosis.com).
 
 ## Step 2: Configure your network
 
@@ -46,14 +46,14 @@ Next, in your home directory, create a file with the name `network_params.json` 
 
 As you can see above, you have effectively created a network configuration file that Kurtosis will use to pass in the necessary parameters at runtime for your network. Notice that the `participant` key describes the execution and consensus client pairing desired for each full node and how many nodes of that type to instantiate.
 
-There are many other configurations and flags you can use, including metrics and observability tools (e.g., Grafana, Prometheus, etc). For all supported options, see the `ethereum-package` [configuration](https://github.com/kurtosis-tech/ethereum-package#configuration).
+There are many other configurations and flags you can use, including metrics and observability tools (e.g., Grafana, Prometheus, etc). For all supported options, see the `ethereum-package` [configuration](https://github.com/ethpandaops/ethereum-package#configuration).
 
 ## Step 3: Deploy
 
 Finally, once you have saved the `network_params.json` file, it is time to deploy the private net:
 
 ```bash
-kurtosis run github.com/kurtosis-tech/ethereum-package "$(cat ~/network_params.json)"
+kurtosis run github.com/ethpandaops/ethereum-package "$(cat ~/network_params.json)"
 ```
 
 Kurtosis will use the `ethereum-package` environment definition and your custom network configuration (defined in `network_params.json`) to spin up your network. Kurtosis will first spin up an [enclave][enclaves] (i.e., an ephemeral, isolated environment) and begin to configure and instantiate the nodes in your network. In the end, Kurtosis will print the services running in your enclave that form your private testnet alongside all the container ports and files that were generated and used to start up the private testnet.
@@ -145,7 +145,7 @@ The `ethereum-package` comes out of the box with a few observability tools, incl
 - A [beacon metrics gazer service](https://github.com/dapplion/beacon-metrics-gazer) to collect network-wide participation metrics
 - A [JSON-RPC Snooper](https://github.com/ethDreamer/json_rpc_snoop) to log responses & requests between the execution engine API and the consensus client
 
-To add your own custom Grafana dashboard template, fork the `ethereum-package` repository and add your configuration [here](https://github.com/kurtosis-tech/ethereum-package/tree/main/static_files/grafana-config/dashboards).
+To add your own custom Grafana dashboard template, fork the `ethereum-package` repository and add your configuration [here](https://github.com/ethpandaops/ethereum-package/tree/main/static_files/grafana-config/dashboards).
 
 ### Deploying on Kubernetes
 
@@ -153,6 +153,6 @@ As mentioned earlier, Kurtosis packages (i.e. environment definitions) are porta
 
 ## Questions and feedback
 
-If you need help with your Nethermind full node in the private devnet, please don't hesitate to contact the Kurtosis team on [GitHub](https://github.com/kurtosis-tech/ethereum-package) or [Discord](https://discord.gg/jJFG7XBqcY).
+If you need help with your Nethermind full node in the private devnet, please don't hesitate to contact the Kurtosis team on [GitHub](https://github.com/ethpandaops/ethereum-package) or [Discord](https://discord.gg/jJFG7XBqcY).
 
 [enclaves]: https://docs.kurtosis.com/concepts-reference/enclaves
