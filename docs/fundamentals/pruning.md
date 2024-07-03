@@ -7,11 +7,11 @@ sidebar_position: 6
 
 Pruning pertains to eliminating or cleaning obsolete historical data to optimize disk space. Clients are responsible for maintaining the world state, which comprises a database that portrays the current Ethereum network status. The world state encompasses accounts, contracts, and other information.
 
-Pruning aims to reduce disk requirements by storing only the current world state and removing historical data. This differs from archive nodes that retain complete transaction and state history. Pruning is helpful for users who don't require historical data and prefer to interact solely with the current state of the network. However, pruning may limit the client's ability to fulfill requests that depend on historical information. Nethermind provides two kinds of pruning – *full pruning* and *in-memory pruning*; both are enabled by default, also called *hybrid pruning*.
+Pruning aims to reduce disk requirements by storing only the current world state and removing historical data. This differs from archive nodes that retain complete transaction and state history. Pruning is helpful for users who don't require historical data and prefer to interact solely with the current state of the network. However, pruning may limit the client's ability to fulfill requests that depend on historical information. Nethermind provides two kinds of pruning – _full pruning_ and _in-memory pruning_; both are enabled by default, also called _hybrid pruning_.
 
 ## How it works
 
-During synchronization using the snap sync method, Nethermind produces a local copy of the Ethereum network state. Although this size increases by around 30 GB each week, specific historical data is retained that is not necessary for node operation or to maintain the current Ethereum state. For a detailed description of the disk usage usage, checkout out the [database size](./database.md#database-size).
+During synchronization using the snap sync method, Nethermind produces a local copy of the Ethereum network state. Although this size increases by around 30 GB each week, specific historical data is retained that is not necessary for node operation or to maintain the current Ethereum state. For a detailed description of the disk usage usage, check out the [database size](./database.md#database-size).
 
 When full pruning is activated and initiated, a thorough examination of the entire state tree is conducted to determine which data is no longer required and can be treated as historical. It then determines which information corresponds to the current state and duplicates it alongside the existing version. During verification of each node in the state, the new pruned state replaces the previous one. Once the verifier confirms everything is functioning correctly, the old state database is eliminated, resulting in significant savings in disk space. As a result, the size of the database will be close to its initial size again.
 
@@ -109,7 +109,7 @@ Full Pruning In Progress: 00:01:40.3677103 2.00 mln nodes mirrored.
 Full Pruning In Progress: 00:02:25.6437030 3.00 mln nodes mirrored.
 ```
 
-Pruning may take even *more than 30 hours*, depending on hardware configuration.
+Pruning may take even _more than 30 hours_, depending on hardware configuration.
 
 When pruning is completed, there is a log message similar the following:
 
