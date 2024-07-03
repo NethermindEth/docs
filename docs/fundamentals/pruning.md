@@ -11,7 +11,7 @@ Pruning aims to reduce disk requirements by storing only the current world state
 
 ## How it works
 
-During synchronization using the snap sync method, Nethermind produces a local copy of the Ethereum network state, which typically amounts to approximately 160 GB (state database). The entire database may rise to 600–650GB. Although this size increases by around 30 GB each week, specific historical data is retained that is not necessary for node operation or to maintain the current Ethereum state.
+During synchronization using the snap sync method, Nethermind produces a local copy of the Ethereum network state. Although this size increases by around 30 GB each week, specific historical data is retained that is not necessary for node operation or to maintain the current Ethereum state. For a detailed description of the disk usage usage, checkout out the [database size](./database.md#database-size).
 
 When full pruning is activated and initiated, a thorough examination of the entire state tree is conducted to determine which data is no longer required and can be treated as historical. It then determines which information corresponds to the current state and duplicates it alongside the existing version. During verification of each node in the state, the new pruned state replaces the previous one. Once the verifier confirms everything is functioning correctly, the old state database is eliminated, resulting in significant savings in disk space. As a result, the size of the database will be close to its initial size again.
 
