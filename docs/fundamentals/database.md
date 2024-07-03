@@ -31,7 +31,7 @@ the database between Linux, Windows, and macOS.
 
 ## Database size
 
-Below is a comprehensive list of the supported chains, along with a detailed breakdown of their respective database directories. For reference, the database sizes listed are based on the data from July 2023 and have been determined using the standard configurations provided.
+Below is a comprehensive list of the supported chains, along with a detailed breakdown of their respective database directories. For reference, the database sizes listed have been determined using the standard configurations provided.
 
 <!--[start autogen]-->
 
