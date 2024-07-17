@@ -106,7 +106,7 @@ Standalone downloads give users more flexibility by allowing them to install a s
 
 Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) and at [downloads.nethermind.io](https://downloads.nethermind.io) as ZIP archives for x64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
 
-### Confuguring as a Linux service
+### Configuring as a Linux service
 
 To install Nethermind as a Linux service, see the [nethermind.service](https://github.com/NethermindEth/nethermind/blob/master/scripts/nethermind.service) unit file as an example.
 As it's configured to run Nethermind as the specific user and group and looks for the executable in a predefined location, the following steps need to be fulfilled:
