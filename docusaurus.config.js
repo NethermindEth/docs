@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 import redirects from './redirects.js';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -24,7 +24,7 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en']
   },
 
   presets: [
@@ -36,16 +36,15 @@ const config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
-          editUrl:
-            'https://github.com/NethermindEth/docs/tree/main',
+          editUrl: 'https://github.com/NethermindEth/docs/tree/main',
           exclude: ['interacting/json-rpc-ns/eth_*.md']
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
-        },
-      }),
-    ],
+          customCss: './src/css/custom.css'
+        }
+      })
+    ]
   ],
 
   headTags: [
@@ -76,7 +75,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',
+      image:
+        'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',
       navbar: {
         logo: {
           alt: 'Nethermind',
@@ -93,19 +93,19 @@ const config = {
           },
           {
             'aria-label': 'GitHub',
-            className: 'header-github-link',
+            className: 'header-social-link header-github-icon',
             href: 'https://github.com/NethermindEth/nethermind',
             position: 'right'
           },
           {
             'aria-label': 'Discord',
-            className: 'header-discord-link',
+            className: 'header-social-link header-discord-icon',
             href: 'https://discord.com/invite/PaCMRFdvWT',
             position: 'right'
           },
           {
             'aria-label': 'X',
-            className: 'header-x-link',
+            className: 'header-social-link header-x-icon',
             href: 'https://twitter.com/NethermindEth',
             position: 'right'
           }
@@ -119,16 +119,11 @@ const config = {
       prism: {
         additionalLanguages: ['bash', 'csharp', 'docker', 'json', 'powershell'],
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
+        darkTheme: prismThemes.dracula
+      }
     }),
 
-    plugins: [
-      [
-        '@docusaurus/plugin-client-redirects',
-        { ...redirects }
-      ]
-    ]
+  plugins: [['@docusaurus/plugin-client-redirects', { ...redirects }]]
 };
 
 export default config;
