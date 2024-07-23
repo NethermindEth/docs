@@ -106,7 +106,7 @@ const config = {
           {
             'aria-label': 'X',
             className: 'header-social-link header-x-icon',
-            href: 'https://twitter.com/NethermindEth',
+            href: 'https://x.com/NethermindEth',
             position: 'right'
           }
         ]
