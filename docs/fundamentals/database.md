@@ -39,50 +39,50 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <TabItem value="mainnet" label="Mainnet">
 
 - `state`: 156 GB
-- `receipts`: 203 GB
-- `blocks`: 583 GB
+- `receipts`: 204 GB
+- `blocks`: 584 GB
 - `bloom`: 6.3 GB
 - `headers`: 8.8 GB
-- `code`: 4.5 GB
-- `blobTransactions`: 946 MB
+- `code`: 4.6 GB
+- `blobTransactions`: 1.4 GB
 - ...
-- **Total: 963 GB**
+- **Total: 965 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
 - `state`: 39 GB
-- `receipts`: 36 GB
-- `blocks`: 248 GB
+- `receipts`: 37 GB
+- `blocks`: 251 GB
 - `bloom`: 2.0 GB
 - `headers`: 2.2 GB
 - `code`: 6.0 GB
-- `blobTransactions`: 1.5 GB
+- `blobTransactions`: 496 MB
 - ...
-- **Total: 334 GB**
+- **Total: 337 GB**
 
 </TabItem>
 <TabItem value="holesky" label="Holesky">
 
 - `state`: 17 GB
 - `receipts`: 12 GB
-- `blocks`: 49 GB
-- `bloom`: 641 MB
-- `headers`: 819 MB
-- `code`: 426 MB
-- `blobTransactions`: 639 MB
+- `blocks`: 50 GB
+- `bloom`: 648 MB
+- `headers`: 828 MB
+- `code`: 434 MB
+- `blobTransactions`: 760 MB
 - ...
-- **Total: 80 GB**
+- **Total: 81 GB**
 
 </TabItem>
 <TabItem value="gnosis" label="Gnosis">
 
-- `state`: 65 GB
+- `state`: 64 GB
 - `receipts`: 215 GB
 - `blocks`: 196 GB
 - `bloom`: 9.0 GB
 - `headers`: 10 GB
-- `code`: 680 MB
+- `code`: 658 MB
 - `blobTransactions`: 75 MB
 - ...
 - **Total: 497 GB**
@@ -92,13 +92,13 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 
 - `state`: 2.6 GB
 - `receipts`: 1.4 GB
-- `blocks`: 8.4 GB
+- `blocks`: 8.5 GB
 - `bloom`: 2.9 GB
-- `headers`: 2.1 GB
+- `headers`: 2.2 GB
 - `code`: 60 MB
-- `blobTransactions`: 381 MB
+- `blobTransactions`: 825 MB
 - ...
-- **Total: 19 GB**
+- **Total: 20 GB**
 
 </TabItem>
 <TabItem value="energyweb" label="Energyweb">
