@@ -2006,6 +2006,115 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### eth_simulateV1
+
+Executes a simulation across multiple blocks (does not create a transaction or block)
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `payload`: *object*
+    - `blockStateCalls`: array of *object*
+      - `blockOverrides`: *object*
+        - `baseFeePerGas`: *string* (hex integer)
+        - `feeRecipient`: *string* (address)
+        - `gasLimit`: *string* (hex integer)
+        - `number`: *string* (hex integer)
+        - `prevRandao`: *string* (hash)
+        - `time`: *string* (hex integer)
+      - `calls`: array of *object*
+        - `accessList`: array of *object*
+          - `address`: *string* (address)
+          - `storageKeys`: array of *string* (hex integer)
+        - `blobVersionedHashes`: array of *string* (hex data)
+        - `blockHash`: *string* (hash)
+        - `blockNumber`: *string* (hex integer)
+        - `chainId`: *string* (hex integer)
+        - `data`: *string* (hex data)
+        - `from`: *string* (address)
+        - `gas`: *string* (hex integer)
+        - `gasPrice`: *string* (hex integer)
+        - `hash`: *string* (hash)
+        - `input`: *string* (hex data)
+        - `isSystemTx`: *boolean*
+        - `maxFeePerBlobGas`: *string* (hex integer)
+        - `maxFeePerGas`: *string* (hex integer)
+        - `maxPriorityFeePerGas`: *string* (hex integer)
+        - `mint`: *string* (hex integer)
+        - `nonce`: *string* (hex integer)
+        - `r`: *string* (hex integer)
+        - `s`: *string* (hex integer)
+        - `sourceHash`: *string* (hash)
+        - `to`: *string* (address)
+        - `transactionIndex`: *string* (hex integer)
+        - `type`: *integer*
+        - `v`: *string* (hex integer)
+        - `value`: *string* (hex integer)
+        - `yParity`: *string* (hex integer)
+      - `stateOverrides`: map of *object*
+        - `balance`: *string* (hex integer)
+        - `code`: *string* (hex data)
+        - `movePrecompileToAddress`: *string* (address)
+        - `nonce`: *string* (hex integer)
+        - `state`: map of *string* (hash)
+        - `stateDiff`: map of *string* (hash)
+    - `returnFullTransactionObjects`: *boolean*
+    - `traceTransfers`: *boolean*
+    - `validation`: *boolean*
+
+2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_simulateV1",
+      "params": [payload, blockParameter]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `blobBaseFee`: *string* (hex integer)
+  - `calls`: array of *object*
+    - `error`: *object*
+      - `code`: *string* (hex integer)
+      - `data`: *string*
+      - `message`: *string*
+    - `gasUsed`: *string* (hex integer)
+    - `logs`: array of *object*
+      - `address`: *string* (address)
+      - `blockHash`: *string* (hash)
+      - `blockNumber`: *string* (hex integer)
+      - `data`: *string* (hex data)
+      - `logIndex`: *string* (hex integer)
+      - `removed`: *boolean*
+      - `topics`: array of *string* (hash)
+      - `transactionHash`: *string* (hash)
+      - `transactionIndex`: *string* (hex integer)
+    - `returnData`: *string* (hex data)
+    - `status`: *string* (hex integer)
+
+</TabItem>
+</Tabs>
+
 ### eth_subscribe
 
 Starts a subscription to a particular event over WebSockets. A JSON-RPC notification with event payload and subscription id is sent to a client for every event matching the subscription topic.

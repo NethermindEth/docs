@@ -606,6 +606,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The max length of HTTP request body, in bytes. Defaults to `30000000`.
 
+- **`--JsonRpc.MaxSimulateBlocksCap <value>`** `NETHERMIND_JSONRPCCONFIG_MAXSIMULATEBLOCKSCAP`
+
+  The max blocks count limit for eth_simulate JSON-RPC calls. Defaults to `256`.
+
 - **`--JsonRpc.MethodsLoggingFiltering <value>`** `NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING`
 
   An array of the method names not to log. Defaults to `[engine_newPayloadV1,engine_newPayloadV2,engine_newPayloadV3,engine_forkchoiceUpdatedV1,engine_forkchoiceUpdatedV2]`.
@@ -1184,7 +1188,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.AncientReceiptsBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTRECEIPTSBARRIER`
 
-  The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as folows:
+  The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
   
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }

@@ -293,6 +293,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of RIPEMD160 precompile calls.
 
+- **`nethermind_secp256r1_precompile`**
+  
+  Number of Secp256r1 precompile calls.
+
 - **`nethermind_self_destructs`**
   
   Number of SELFDESTRUCT calls.

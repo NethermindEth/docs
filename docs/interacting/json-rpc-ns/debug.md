@@ -646,6 +646,62 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### debug_standardTraceBadBlockToFile
+
+This method is similar to the `debug_standardTraceBlockToFile` method, but can be used to obtain information about a block that has been rejected as invalid.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockHash`: *string* (hash)
+
+2. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_standardTraceBadBlockToFile",
+      "params": [blockHash, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *string*
+
+</TabItem>
+</Tabs>
+
 ### debug_standardTraceBlockToFile
 
 Writes to a file the full stack trace of all invoked opcodes of the transaction specified (or all transactions if not specified) that was included in the block specified. The parent of the block must be present or it will fail.
