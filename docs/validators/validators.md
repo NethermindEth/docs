@@ -54,4 +54,4 @@ These configurations have proven to work well for 1000-1500 validators and haven
 
 ## Gnosis validators
 
-To set up a Gnosis Chain validator, you can either do that [manually](https://docs.gnosischain.com/node/manual/) or use one of the available [one-click tools](https://docs.gnosischain.com/node/tools).
+To set up a Gnosis Chain validator, see the [Gnosis Chain documentation](https://docs.gnosischain.com/node).
