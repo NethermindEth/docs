@@ -38,65 +38,65 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
 
-- `state`: 156 GB
-- `receipts`: 204 GB
-- `blocks`: 585 GB
-- `bloom`: 6.3 GB
+- `state`: 157 GB
+- `receipts`: 206 GB
+- `blocks`: 589 GB
+- `bloom`: 6.4 GB
 - `headers`: 8.8 GB
 - `code`: 4.6 GB
-- `blobTransactions`: 766 MB
+- `blobTransactions`: 1.5 GB
 - ...
-- **Total: 965 GB**
+- **Total: 974 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
-- `state`: 39 GB
-- `receipts`: 37 GB
-- `blocks`: 252 GB
-- `bloom`: 2.0 GB
-- `headers`: 2.2 GB
-- `code`: 6.0 GB
-- `blobTransactions`: 1.5 GB
+- `state`: 41 GB
+- `receipts`: 38 GB
+- `blocks`: 267 GB
+- `bloom`: 2.1 GB
+- `headers`: 2.3 GB
+- `code`: 6.2 GB
+- `blobTransactions`: 639 MB
 - ...
-- **Total: 340 GB**
+- **Total: 356 GB**
 
 </TabItem>
 <TabItem value="holesky" label="Holesky">
 
-- `state`: 17 GB
-- `receipts`: 12 GB
-- `blocks`: 50 GB
-- `bloom`: 653 MB
-- `headers`: 836 MB
-- `code`: 435 MB
-- `blobTransactions`: 771 MB
+- `state`: 18 GB
+- `receipts`: 13 GB
+- `blocks`: 52 GB
+- `bloom`: 689 MB
+- `headers`: 892 MB
+- `code`: 459 MB
+- `blobTransactions`: 311 MB
 - ...
-- **Total: 81 GB**
+- **Total: 84 GB**
 
 </TabItem>
 <TabItem value="gnosis" label="Gnosis">
 
-- `state`: 64 GB
-- `receipts`: 215 GB
-- `blocks`: 196 GB
-- `bloom`: 9.0 GB
-- `headers`: 10 GB
-- `code`: 659 MB
+- `state`: 65 GB
+- `receipts`: 216 GB
+- `blocks`: 197 GB
+- `bloom`: 9.1 GB
+- `headers`: 11 GB
+- `code`: 663 MB
 - `blobTransactions`: 75 MB
 - ...
-- **Total: 497 GB**
+- **Total: 500 GB**
 
 </TabItem>
 <TabItem value="chiado" label="Chiado">
 
-- `state`: 2.6 GB
+- `state`: 2.5 GB
 - `receipts`: 1.4 GB
-- `blocks`: 8.5 GB
-- `bloom`: 2.9 GB
+- `blocks`: 8.7 GB
+- `bloom`: 3.0 GB
 - `headers`: 2.2 GB
-- `code`: 60 MB
-- `blobTransactions`: 712 MB
+- `code`: 63 MB
+- `blobTransactions`: 246 MB
 - ...
 - **Total: 19 GB**
 
@@ -106,8 +106,8 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 27 GB
 - `receipts`: 4.4 GB
 - `blocks`: 24 GB
-- `bloom`: 9.6 GB
-- `headers`: 6.8 GB
+- `bloom`: 9.7 GB
+- `headers`: 6.9 GB
 - `code`: 14 MB
 - `blobTransactions`: 
 - ...
@@ -119,12 +119,12 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 34 GB
 - `receipts`: 8.3 GB
 - `blocks`: 33 GB
-- `bloom`: 8.9 GB
+- `bloom`: 9.0 GB
 - `headers`: 6.8 GB
 - `code`: 94 MB
 - `blobTransactions`: 
 - ...
-- **Total: 92 GB**
+- **Total: 93 GB**
 
 </TabItem>
 </Tabs>
