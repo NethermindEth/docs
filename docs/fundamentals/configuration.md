@@ -1475,7 +1475,7 @@ This blueprint has two configuration options for running Ethereum nodes and supp
 
 ### Single RPC node setup
 ![Architecture-PoC](../docs/fundamentals/89571298-F580-487E-BAEF-1CAC3B44545B.png)
-docs/fundamentals/4F4D60BC-25D0-4BB1-AF24-DCC4BE139F15.png
+
 This setup is for small scale PoC or development environments. It deploys a single EC2 instance with both consensus and execution clients. The RPC port is exposed only to internal IP range of the VPC, while P2P ports allow external access to keep the clients synced.
 
 ### Highly available setup
