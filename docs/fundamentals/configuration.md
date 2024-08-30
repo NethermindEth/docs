@@ -1474,12 +1474,12 @@ The configuration file is a JSON file with `.cfg` extension. The bundled configu
 This blueprint has two configuration options for running Ethereum nodes and supports several Ethereum client combinations. You can set up a single JSON RPC node or multiple nodes in highly-available setup using the instructions below.
 
 ### Single RPC node setup
-![Architecture-PoC](../docs/developers/geth-developer/doc/assets)
-
+![Architecture-PoC](../docs/fundamentals/89571298-F580-487E-BAEF-1CAC3B44545B.png)
+docs/fundamentals/4F4D60BC-25D0-4BB1-AF24-DCC4BE139F15.png
 This setup is for small scale PoC or development environments. It deploys a single EC2 instance with both consensus and execution clients. The RPC port is exposed only to internal IP range of the VPC, while P2P ports allow external access to keep the clients synced.
 
 ### Highly available setup
-![Architecture](../docs/fundamentals/89571298-F580-487E-BAEF-1CAC3B44545B.pngdocs/fundamentals/89571298-F580-487E-BAEF-1CAC3B44545B.png)
+![Architecture](../docs/fundamentals/4F4D60BC-25D0-4BB1-AF24-DCC4BE139F15.png)
 
 1.	An ongoing data synchronization process is configured with nodes in the Ethereum network with a sync node and RPC nodes.
 2.	The sync node is used to create a copy of node's state data in Amazon S3 bucket.
