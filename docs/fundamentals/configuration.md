@@ -1479,7 +1479,7 @@ This blueprint has two configuration options for running Ethereum nodes and supp
 This setup is for small scale PoC or development environments. It deploys a single EC2 instance with both consensus and execution clients. The RPC port is exposed only to internal IP range of the VPC, while P2P ports allow external access to keep the clients synced.
 
 ### Highly available setup
-![Architecture](../docs/developers/geth-developer/doc/assets/Architecture.png)
+![Architecture](../docs/fundamentals/89571298-F580-487E-BAEF-1CAC3B44545B.pngdocs/fundamentals/89571298-F580-487E-BAEF-1CAC3B44545B.png)
 
 1.	An ongoing data synchronization process is configured with nodes in the Ethereum network with a sync node and RPC nodes.
 2.	The sync node is used to create a copy of node's state data in Amazon S3 bucket.
