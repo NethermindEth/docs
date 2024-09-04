@@ -8,7 +8,7 @@ By default, Nethermind is configured for general use cases that fit well for mos
 ## Peer discovery
 
 To connect to the Ethereum network, Nethermind needs to maintain connections to other clients. The number of connections can be configured with `--Network.MaxActivePeers <value>`. The default value depends on the network. Increasing this number may reduce syncing time, while reducing this number may help with attestation performance.
-Also, you can increase the rate at which a new connection is established with `--Network.MaxOutgoingConnectsPerSec <value>`. The default value is 20 while 50 would be a reasonable higher value. This tends to reduce the snap sync time; however, some ISPs may throttle your Internet connection if you set this value too high. Also, some WiFi routers may hang if the value is set too high.
+Also, you can increase the rate at which a new connection is established with `--Network.MaxOutgoingConnectPerSec <value>`. The default value is 20 while 50 would be a reasonable higher value. This tends to reduce the snap sync time; however, some ISPs may throttle your Internet connection if you set this value too high. Also, some WiFi routers may hang if the value is set too high.
 
 ## Port forwarding
 
@@ -29,7 +29,7 @@ At the moment, the best test case sync time is 1 hour 50 minutes for all phases 
 
     ```
     --Network.EnableUPnP true
-    --Network.MaxOutgoingConnectsPerSec 50
+    --Network.MaxOutgoingConnectPerSec 50
     --Network.ProcessingThreadCount 32
     --Sync.TuneDbMode HeavyWrite
     ```
