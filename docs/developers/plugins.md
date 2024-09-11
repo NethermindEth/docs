@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 
 :::warning
-This article requires a revision.
+This article is outdated and requires a revision.
 :::
 
 Nethermind plugins is a powerful way of extending your local node capabilities.

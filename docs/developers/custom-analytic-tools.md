@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 :::warning
-This article requires a revision.
+This article is outdated and requires a revision.
 :::
 
 Check plugins for some easy addition of analytical tools

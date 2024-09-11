@@ -5,7 +5,7 @@ description: >-
 ---
 
 :::warning
-This article requires a revision.
+This article is outdated and requires a revision.
 :::
 
 # Using dotnet-counters

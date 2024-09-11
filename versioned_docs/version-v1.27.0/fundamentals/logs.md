@@ -4,7 +4,7 @@ sidebar_position: 4
 ---
 
 :::warning
-This article requires a revision.
+This article is outdated and requires a revision.
 :::
 
 ## Log config file location

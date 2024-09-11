@@ -7,7 +7,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 :::warning
-This article requires a revision.
+This article is outdated and requires a revision.
 :::
 
 ## There are three main synchronization modes
