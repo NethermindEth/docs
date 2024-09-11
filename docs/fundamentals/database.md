@@ -39,12 +39,12 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <TabItem value="mainnet" label="Mainnet">
 
 - `state`: 158 GB
-- `receipts`: 208 GB
+- `receipts`: 209 GB
 - `blocks`: 593 GB
 - `bloom`: 6.4 GB
 - `headers`: 8.9 GB
 - `code`: 4.7 GB
-- `blobTransactions`: 1.9 GB
+- `blobTransactions`: 935 MB
 - ...
 - **Total: 981 GB**
 
@@ -53,13 +53,13 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 
 - `state`: 42 GB
 - `receipts`: 39 GB
-- `blocks`: 285 GB
+- `blocks`: 287 GB
 - `bloom`: 2.1 GB
 - `headers`: 2.3 GB
 - `code`: 6.4 GB
-- `blobTransactions`: 945 MB
+- `blobTransactions`: 1.8 GB
 - ...
-- **Total: 377 GB**
+- **Total: 380 GB**
 
 </TabItem>
 <TabItem value="holesky" label="Holesky">
@@ -67,10 +67,10 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 18 GB
 - `receipts`: 14 GB
 - `blocks`: 54 GB
-- `bloom`: 720 MB
-- `headers`: 941 MB
-- `code`: 492 MB
-- `blobTransactions`: 1.3 GB
+- `bloom`: 724 MB
+- `headers`: 947 MB
+- `code`: 494 MB
+- `blobTransactions`: 933 MB
 - ...
 - **Total: 88 GB**
 
@@ -96,7 +96,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 3.0 GB
 - `headers`: 2.3 GB
 - `code`: 66 MB
-- `blobTransactions`: 496 MB
+- `blobTransactions`: 546 MB
 - ...
 - **Total: 20 GB**
 
@@ -121,7 +121,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `blocks`: 33 GB
 - `bloom`: 9.0 GB
 - `headers`: 6.9 GB
-- `code`: 94 MB
+- `code`: 95 MB
 - `blobTransactions`: 
 - ...
 - **Total: 93 GB**
