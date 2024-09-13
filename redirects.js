@@ -164,10 +164,10 @@ const redirects = {
       from: '/nethermind/first-steps-with-nethermind/system-requirements',
       to: '/get-started/system-requirements'
     },
-    {
-      from: '/nethermind/guides-and-helpers/faq',
-      to: '/faq'
-    },
+    // {
+    //   from: '/nethermind/guides-and-helpers/faq',
+    //   to: '/faq'
+    // },
     {
       from: '/nethermind/guides-and-helpers/validator-setup/aura-validator',
       to: '/validators/aura'
