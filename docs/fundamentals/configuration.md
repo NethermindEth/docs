@@ -134,6 +134,10 @@ The command line options are case-sensitive and can be defined only once unless 
 </summary>
 <p>
 
+- **`--Blocks.BlockProductionTimeoutMs <value>`** `NETHERMIND_BLOCKSCONFIG_BLOCKPRODUCTIONTIMEOUTMS`
+
+  Block Production timeout, in milliseconds. Defaults to `4000`.
+
 - **`--Blocks.ExtraData <value>`** `NETHERMIND_BLOCKSCONFIG_EXTRADATA`
 
   The block header extra data up to 32 bytes in length. Defaults to `Nethermind`.
@@ -184,6 +188,29 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Bloom.MigrationStatistics <value>`** `NETHERMIND_BLOOMCONFIG_MIGRATIONSTATISTICS`
 
   Whether the migration statistics should be calculated and output. Allowed values: `true` `false`. Defaults to `false`.
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
+#### CensorshipDetector
+
+</summary>
+<p>
+
+- **`--CensorshipDetector.AddressesForCensorshipDetection <value>`** `NETHERMIND_CENSORSHIPDETECTORCONFIG_ADDRESSESFORCENSORSHIPDETECTION`
+
+  The addresses for which censorship is being detected. Defaults to `null`.
+
+- **`--CensorshipDetector.BlockCensorshipThreshold <value>`** `NETHERMIND_CENSORSHIPDETECTORCONFIG_BLOCKCENSORSHIPTHRESHOLD`
+
+  Number of consecutive blocks with detected potential censorship to report censorship attempt Defaults to `2`.
+
+- **`--CensorshipDetector.Enabled <value>`** `NETHERMIND_CENSORSHIPDETECTORCONFIG_ENABLED`
+
+  Enabling censorship detection feature Allowed values: `true` `false`. Defaults to `true`.
 
 </p>
 </details>
