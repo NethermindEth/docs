@@ -103,7 +103,7 @@ The command line options are case-sensitive and can be defined only once unless 
 </summary>
 <p>
 
-- **`--Aura.AllowAuRaPrivateChains <value>`** `NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS`
+- ###### **`--Aura.AllowAuRaPrivateChains <value>`** `NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS`
 
   Whether to allow private Aura-based chains only. Do not use with existing Aura-based chains. Allowed values: `true` `false`. Defaults to `false`.
 
