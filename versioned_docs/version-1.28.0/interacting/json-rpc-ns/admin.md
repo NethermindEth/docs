@@ -104,7 +104,7 @@ Information about this node
 
 ### admin_peers
 
-Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`).
+Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`, `inbound`).
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -152,6 +152,7 @@ List of connected peers including information
   - `isTrusted`: *boolean*
   - `lastSignal`: *string*
   - `port`: *string* (hex integer)
+  - `inbound`: *boolean*
 
 </TabItem>
 </Tabs>
