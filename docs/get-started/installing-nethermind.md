@@ -272,7 +272,7 @@ To run Nethermind on a specific network, use the [`-c, --config`](../fundamental
 - **Ethereum**
   - [Mainnet](https://ethereum.org/en/developers/docs/networks/#ethereum-mainnet)
   - [Holesky](https://github.com/eth-clients/holesky) (testnet)
-  - [Sepolia](https://ethereum.org/en/developers/docs/networks/#sepolia) (testnet)
+  - [Sepolia](https://github.com/eth-clients/sepolia) (testnet)
 - **Base**
   - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet)
   - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet)
