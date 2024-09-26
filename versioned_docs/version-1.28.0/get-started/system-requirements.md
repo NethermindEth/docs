@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ## Supported operating systems
 
-Nethermind supports a broad range of modern _64-bit_ operating systems including but not limited to:
+Nethermind supports a broad range of modern operating systems (64-bit-only) including but not limited to:
 
 - **Linux**
 	- Alpine 3.17+
@@ -17,8 +17,8 @@ Nethermind supports a broad range of modern _64-bit_ operating systems including
 	- SLES 15+
 	- Ubuntu 20.04+
 - **Windows**
-	- Windows 10+ (x64 only)
-	- Windows Server 2012+ (x64 only)
+	- Windows 10+
+	- Windows Server 2012+
 - **macOS** 10.15+
 
 ## Hardware requirements
@@ -56,7 +56,7 @@ The speed of the disk often acts as a bottleneck for the node's performance. It 
 
 A node can be run using different syncing options, and each option has different characteristics of disk space usage.
 
-- **Archive node.** This mode stores the full historical state for all blocks. As of July 2023, an archive node requires at least 14 TB of disk space, and it grows by approximately 60 GB per week. 
+- **Archive node.** This mode stores the full historical state for all blocks. As of July 2023, an archive node requires at least 14 TB of disk space, and it grows by approximately 60 GB per week.
 - **Ancient barriers.** Nethermind allows you to specify how many old block bodies and receipts you want to store. By default, Nethermind sets the ancient barrier at block 11052984. This block is significant because it marks the deployment of the deposit contract required for consensus client deposit scanning for validators. Peers and JSON-RPC requests will not have access to block bodies and receipts older than the ancient barrier.
 - **Non-validator mode.** This mode drops all historical receipts and bodies, but it cannot be used for validation.
 
