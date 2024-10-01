@@ -20,7 +20,7 @@ There are two options buiding Nethermind from source code:
 
 ### Prerequisites
 
-To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 8 or later.
+To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 9 or later.
 
 ### Building
 
