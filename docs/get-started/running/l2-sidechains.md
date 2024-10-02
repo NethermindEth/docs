@@ -8,7 +8,7 @@ Running Nethermind on a supported Layer 2 or sidechain network is as simple as s
 
 ## Optimism
 
-An Optimism node [consists of two clients](https://docs.optimism.io/builders/node-operators/architecture)—`op-node`, a rollup node, analogous to a consensus client in Ethereum, and an execution client.
+An Optimism node [consists of two clients](https://docs.optimism.io/builders/node-operators/architecture)—`op-node`, a rollup node, analogous to a consensus client in Ethereum, and an execution client paired with a consensus client.
 
 :::warning Important
 Before running OP stack, [choose a consensus client](consensus-clients.md#choosing-a-consensus-client) and ensure the JSON-RPC interface is [properly configured](consensus-clients.md#configuring-json-rpc-interface).
