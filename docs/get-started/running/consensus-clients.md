@@ -1,9 +1,9 @@
 ---
 title: Consensus clients
-sidebar_position: 3
+sidebar_position: 1
 ---
 
-Ethereum's long-awaited shift from proof-of-work (PoW) to proof-of-stake (PoS) known as The Merge happened on September 15, 2022, and came with fundamental changes to the network. The most notable change is the addition of the consensus layer (aka Beacon Chain) which replaced the PoW mining. It is coordinating and pseudorandomly selecting block producers from the pool of stakers/validators in a way that makes it extremely difficult for validators to coordinate attacks on the network.
+Ethereum's long-awaited shift from proof-of-work (PoW) to proof-of-stake (PoS) known as [The Merge](https://ethereum.org/en/roadmap/merge/) happened on September 15, 2022, and came with fundamental changes to the network. The most notable change is the addition of the consensus layer (aka Beacon Chain) which replaced the PoW mining. It is coordinating and pseudorandomly selecting block producers from the pool of stakers/validators in a way that makes it extremely difficult for validators to coordinate attacks on the network.
 The Merge changed how operators run nodes on the Ethereum blockchain. A node now needs two clients that work together as a pair. In addition to the [execution client](https://ethereum.org/en/glossary/#execution-client) (e.g., Nethermind), you need a [consensus client](https://ethereum.org/en/glossary/#consensus-client) that connects to the consensus layer and runs the PoS algorithm. This guide shows how to run an Ethereum node with Nethermind and a consensus client of your choice.
 
 :::tip
@@ -36,11 +36,11 @@ openssl rand -hex 32 > path/to/jwt.hex
 Since the JWT secret is simply a 64-character hex value, there are many other ways of generating it, including online resources. However, for security reasons, we recommend using OpenSSL.
 :::
 
-The generated JWT secret can be specified with the `--JsonRpc.JwtSecretFile path/to/jwt.hex` command line option. For more configuration options, see [Engine API](../interacting/json-rpc-server.md#engine-api).
+The generated JWT secret can be specified with the `--JsonRpc.JwtSecretFile path/to/jwt.hex` command line option. For more configuration options, see [Engine API](../../interacting/json-rpc-server.md#engine-api).
 
 ## Running the consensus client
 
-This step assumes that you have already [installed](../get-started/installing-nethermind.md) Nethermind, the [consensus client](#choosing-a-consensus-client) of your choice, and, optionally, created the [JWT secret](#configuring-json-rpc-interface).
+This step assumes that you have already [installed](../../get-started/installing-nethermind.md) Nethermind, the [consensus client](#choosing-a-consensus-client) of your choice, and, optionally, created the [JWT secret](#configuring-json-rpc-interface).
 
 :::info
 As syncing from the scratch can take a very long time on some networks (up to several days), the commands below optionally use [checkpoint sync](https://ethereum.org/en/developers/docs/nodes-and-clients/#checkpoint-sync) to speed up the process.
@@ -131,7 +131,7 @@ nethermind \
   --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
 
-The command above runs Nethermind on Mainnet. For other networks, set the `-c` option accordingly. For more info, see [Running Nethermind](../get-started/installing-nethermind.md#running).
+The command above runs Nethermind on Mainnet. For other networks, set the [`-c, --config`](../../fundamentals/configuration.md#basic-options) option accordingly. For more info, see [Running Nethermind](running.md#running).
 
 [checkpoint-sync-endpoints]: https://eth-clients.github.io/checkpoint-sync-endpoints
 [grandine]: https://docs.grandine.io
