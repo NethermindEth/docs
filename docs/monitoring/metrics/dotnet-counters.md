@@ -45,7 +45,7 @@ docker build -t dotnet-counters .
 To enable performance counters in Nethermind, use the command line option `--Metrics.CountersEnabled true`. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
 
 :::warning Important
-A [consensus client](../../get-started/consensus-clients.md) of your choice must be running before you start Nethermind.
+A [consensus client](../../get-started/running/consensus-clients.md) of your choice must be running before you start Nethermind.
 :::
 
 ### Running locally
@@ -73,7 +73,7 @@ services:
       - metrics:/tmp
     depends_on:
       - nethermind
-  
+
   nethermind:
     image: nethermind/nethermind:latest
     container_name: nethermind

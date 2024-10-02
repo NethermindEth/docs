@@ -24,7 +24,7 @@ The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermi
 The health checks need to be additionally enabled which can be done either through `--HealthChecks.*` flags or by adding
 a `"HealthChecks"` section to the config file.&#x20;
 
-``` json title="HealthChecks config section example" 
+``` json title="HealthChecks config section example"
   "HealthChecks": {
     "Enabled": true,
     "WebhooksEnabled": true,
@@ -106,7 +106,7 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 This check verifies if the client receives messages from the CL. If you see this warning in your logs, it means that
 there is something wrong with CL/Nethermind communication. Check more about setting up Nethermind and
-CL [here](../get-started/consensus-clients.md).
+CL [here](../get-started/running/consensus-clients.md).
 
 ```
 No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.
@@ -178,7 +178,7 @@ node will return unhealthy status if the interval elapsed without processing or 
 config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically,
 we will be waiting 45 seconds for a newly produced block.
 
-``` json title="HealthChecks config section example" 
+``` json title="HealthChecks config section example"
 
   "HealthChecks": {
     "Enabled": true,
