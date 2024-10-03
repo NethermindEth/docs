@@ -106,7 +106,7 @@ When it becomes **Healthy** (**synced** and with **peers**) you should receive:
 
 This check verifies if the client receives messages from the CL. If you see this warning in your logs, it means that
 there is something wrong with CL/Nethermind communication. Check more about setting up Nethermind and
-CL [here](../get-started/running/consensus-clients.md).
+CL [here](../get-started/running-node/consensus-clients.md).
 
 ```
 No incoming messages from Consensus Client. Consensus Client is required to sync the node. Please make sure that it's working properly.

@@ -51,7 +51,7 @@ configuration only.
 
 The build artifacts can be found in the `src/Nethermind/artifacts/bin/Nethermind.Runner/release` directory. By default, the logs and database directories are located here as well.
 
-For more info, see [Running Nethermind](../get-started/running/running.md).
+For more info, see [Running Nethermind](../get-started/running-node/running-node.md).
 
 #### Testing
 
