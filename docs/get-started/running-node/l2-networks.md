@@ -24,7 +24,7 @@ To run Nethermind on the OP Mainnet, use the following command:
 nethermind -c op_mainnet --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
 
-Below is a sample command to run `op-node` paired with Nethermind:
+Below is a sample command to run op-node paired with Nethermind:
 
 ```bash
 export L1_RPC_URL=... # The URL of the L1 node RPC interface
