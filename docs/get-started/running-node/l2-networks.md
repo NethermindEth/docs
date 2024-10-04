@@ -7,13 +7,11 @@ sidebar_position: 2
 
 An Optimism node [consists of two nodes](https://docs.optimism.io/builders/node-operators/architecture)—op-node, a rollup node, analogous to a consensus client in Ethereum, paired with a Layer 2 (L2) execution client, and a Layer 1 (L1) node of a pair of execution and consensus clients.
 
-### Before you begin
-
-Running the OP stack requires running two instances of Nethermind—one for the L1 node and another for the L2 node, replacing op-geth.
-
-Depending on which L2 network you want to run on, the L1 node must be configured respectively. For OP Mainnet, the L1 node must run on Ethereum Mainnet. For OP Sepolia, on Sepolia. Thus, ensure your [L1 node](running-node.md#ethereum) is up and running on the respective network before running the OP Stack.
-
-### Running OP Stack
+:::info Before you begin
+- Running the OP stack requires running two instances of Nethermind—one for the L1 node and another for the L2 node, replacing op-geth.
+- Depending on which OP Stack network you want to run on, the L1 node must be configured respectively. For instance, for OP Mainnet, the L1 node must run on Ethereum Mainnet. For OP Sepolia, on Sepolia.
+- Ensure your L1 node is up and running on the respective network before running the OP Stack. See [Running a node on Ethereum](running-node.md#ethereum).
+:::
 
 :::warning Important
 - Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to op-node.
@@ -29,8 +27,8 @@ nethermind -c op_mainnet --JsonRpc.JwtSecretFile path/to/jwt.hex
 Below is a sample command to run `op-node` paired with Nethermind:
 
 ```bash
-export L1_RPC_URL= # The URL of L1 RPC interface
-export L1_BEACON_URL= # The URL of L1 Beacon interface
+export L1_RPC_URL=... # The URL of the L1 node RPC interface
+export L1_BEACON_URL=... # The URL of the L1 node Beacon interface
 
 op-node \
   --l1=$L1_RPC_URL \

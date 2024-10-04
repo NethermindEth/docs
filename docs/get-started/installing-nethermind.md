@@ -99,7 +99,7 @@ brew install nethermind
 </TabItem>
 </Tabs>
 
-For further instructions, see [Running Nethermind](running-node/running-node.md).
+For further instructions, see [Running a node](running-node/running-node.md).
 
 ## Standalone downloads
 
@@ -178,7 +178,7 @@ To monitor the Nethermind output, run:
 journalctl -u nethermind -f
 ```
 
-For further instructions, see [Running Nethermind](running-node/running-node.md).
+For further instructions, see [Running a node](running-node/running-node.md).
 
 ## Docker container
 
@@ -237,6 +237,6 @@ docker run -it \
   nethermind/nethermind -dd /nethermind/data_dir
 ```
 
-Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `-dd` option in this case. For further instructions, see [Running Nethermind](running-node/running-node.md).
+Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `-dd` option in this case. For further instructions, see [Running a node](running-node/running-node.md).
 
 To build the Docker image yourself, see [Building Docker image](../developers/building-from-source.md#bulding-docker-image).
