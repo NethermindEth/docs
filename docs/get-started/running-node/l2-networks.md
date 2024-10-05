@@ -21,7 +21,10 @@ An Optimism node [consists of two nodes](https://docs.optimism.io/builders/node-
 To run Nethermind on the OP Mainnet, use the following command:
 
 ```bash
-nethermind -c op_mainnet --JsonRpc.JwtSecretFile path/to/jwt.hex
+nethermind \
+  -c op-mainnet \
+  -dd path/to/data/dir \
+  --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
 
 Below is a sample command to run op-node paired with Nethermind:
