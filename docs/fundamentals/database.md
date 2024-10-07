@@ -7,7 +7,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 Nethermind uses the [RocksDB](https://rocksdb.org) database to store the state. By default, the database is located in the
-same directory where the Nethermind executable is. You can change the database location using the [`-d, --baseDbPath`](configuration.md#basic-options) command line option.
+same directory where the Nethermind executable is. You can change the database location using the [`-d, --baseDbPath`](configuration.md#basedbpath) command line option.
 
 ## Database directory structure
 
@@ -109,7 +109,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 9.8 GB
 - `headers`: 7.0 GB
 - `code`: 14 MB
-- `blobTransactions`: 
+- `blobTransactions`:
 - ...
 - **Total: 75 GB**
 
@@ -122,7 +122,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 9.0 GB
 - `headers`: 6.9 GB
 - `code`: 95 MB
-- `blobTransactions`: 
+- `blobTransactions`:
 - ...
 - **Total: 93 GB**
 

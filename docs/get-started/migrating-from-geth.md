@@ -13,7 +13,7 @@ First, ensure _the disk has enough space_. The most secure way is having a Nethe
 
 ## Option 1: Sync Nethermind next to Geth {#option-1}
 
-First, [install Nethermind](./installing-nethermind.md) and a [consensus client](./consensus-clients.md) of your choice. 
+First, [install Nethermind](./installing-nethermind.md) and a [consensus client](running-node/consensus-clients.md) of your choice.
 
 :::warning
 - If you choose the same consensus client for Nethermind that is already being used with Geth, ensure their settings, such as data directories, do not interfere.
