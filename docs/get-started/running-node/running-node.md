@@ -10,7 +10,7 @@ sidebar_position: 0
 
 :::
 
-Besides the foundational Layer 1 networks, Nethermind supports various Layer 2 networks and sidechains out of the box. Running Nethermind on a supported network is as simple as specifying the respective [configuration file](../../fundamentals/configuration.md#configuration-file) with the [`-c, --config`](../../fundamentals/configuration.md#basic-options) option.
+Besides the foundational Layer 1 networks, Nethermind supports various Layer 2 networks and sidechains out of the box. Running Nethermind on a supported network is as simple as specifying the respective [configuration file](../../fundamentals/configuration.md#configuration-file) with the [`-c, --config`](../../fundamentals/configuration.md#config) option.
 
 ## Ethereum
 
@@ -63,7 +63,7 @@ If you intend to run Nethermind as a validator, see [Validators](../../validator
   - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet)
   - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet)
 
-To run Nethermind on an L2 OP Stack network, see [Layer 2 networks](l2-networks.md#op-stack).
+To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#op-stack).
 
 ## Gnosis Chain
 

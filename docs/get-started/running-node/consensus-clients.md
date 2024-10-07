@@ -121,17 +121,16 @@ The command above runs Teku on Mainnet. For other networks, set the `--network` 
 
 ## Running Nethermind
 
-:::warning Important
-The consensus client must be running before you start Nethermind.
-:::
+Once your consensus client is up and running, you can start Nethermind with the _same_ JWT secret provided to the consensus client:
 
 ```bash
 nethermind \
   -c mainnet \
+  -dd path/to/data/dir \
   --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
 
-The command above runs Nethermind on Mainnet. For more info, see [Running a node](running-node.md).
+For more info about running a node with Nethermind, see [Running a node](running-node.md).
 
 [checkpoint-sync-endpoints]: https://eth-clients.github.io/checkpoint-sync-endpoints
 [grandine]: https://docs.grandine.io
