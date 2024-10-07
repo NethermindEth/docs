@@ -44,16 +44,13 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`.
 
-  - `base-goerli` `base-goerli_archive`
   - `base-mainnet` `base-mainnet_archive`
   - `base-sepolia` `base-sepolia_archive`
   - `chiado` `chiado_archive`
   - `energyweb` `energyweb_archive`
-  - `goerli` `goerli_archive`
   - `gnosis` `gnosis_archive`
   - `holesky` `holesky_archive`
   - `mainnet` `mainnet_archive`
-  - `op-goerli` `op-goerli_archive`
   - `op-mainnet` `op-mainnet_archive`
   - `op-sepolia` `op-sepolia_archive`
   - `sepolia` `sepolia_archive`
@@ -137,13 +134,25 @@ The command line options are case-sensitive and can be defined only once unless 
 </summary>
 <p>
 
+- **`--Blocks.BlockProductionTimeoutMs <value>`** `NETHERMIND_BLOCKSCONFIG_BLOCKPRODUCTIONTIMEOUTMS`
+
+  Block Production timeout, in milliseconds. Defaults to `4000`.
+
 - **`--Blocks.ExtraData <value>`** `NETHERMIND_BLOCKSCONFIG_EXTRADATA`
 
   The block header extra data up to 32 bytes in length. Defaults to `Nethermind`.
 
+- **`--Blocks.GenesisTimeoutMs <value>`** `NETHERMIND_BLOCKSCONFIG_GENESISTIMEOUTMS`
+
+  Genesis block load timeout, in milliseconds. Defaults to `40000`.
+
 - **`--Blocks.MinGasPrice <value>`** `NETHERMIND_BLOCKSCONFIG_MINGASPRICE`
 
   The minimum gas premium (or the gas price before the London hard fork) for transactions accepted by the block producer. Defaults to `1`.
+
+- **`--Blocks.PreWarmStateOnBlockProcessing <value>`** `NETHERMIND_BLOCKSCONFIG_PREWARMSTATEONBLOCKPROCESSING`
+
+  Whether to pre-warm the state when processing blocks. This can lead to an up to 2x speed-up in the main loop block processing. Allowed values: `true` `false`. Defaults to `True`.
 
 - **`--Blocks.RandomizedBlocks <value>`** `NETHERMIND_BLOCKSCONFIG_RANDOMIZEDBLOCKS`
 
@@ -183,6 +192,29 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Bloom.MigrationStatistics <value>`** `NETHERMIND_BLOOMCONFIG_MIGRATIONSTATISTICS`
 
   Whether the migration statistics should be calculated and output. Allowed values: `true` `false`. Defaults to `false`.
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
+#### CensorshipDetector
+
+</summary>
+<p>
+
+- **`--CensorshipDetector.AddressesForCensorshipDetection <value>`** `NETHERMIND_CENSORSHIPDETECTORCONFIG_ADDRESSESFORCENSORSHIPDETECTION`
+
+  The addresses for which censorship is being detected. Defaults to `null`.
+
+- **`--CensorshipDetector.BlockCensorshipThreshold <value>`** `NETHERMIND_CENSORSHIPDETECTORCONFIG_BLOCKCENSORSHIPTHRESHOLD`
+
+  Number of consecutive blocks with detected potential censorship to report censorship attempt Defaults to `2`.
+
+- **`--CensorshipDetector.Enabled <value>`** `NETHERMIND_CENSORSHIPDETECTORCONFIG_ENABLED`
+
+  Enabling censorship detection feature Allowed values: `true` `false`. Defaults to `true`.
 
 </p>
 </details>
@@ -395,6 +427,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Defaults to `Default`.
 
+- **`--Init.BadBlocksStored <value>`** `NETHERMIND_INITCONFIG_BADBLOCKSSTORED`
+
+  The maximum number of bad blocks observed on the network that will be stored on disk. Defaults to `100`.
+
 - **`--Init.BaseDbPath <value>`** `NETHERMIND_INITCONFIG_BASEDBPATH`
 
   The base path for all Nethermind databases. Defaults to `db`.
@@ -481,7 +517,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Init.WebSocketsEnabled <value>`** `NETHERMIND_INITCONFIG_WEBSOCKETSENABLED`
 
-  Whether to enable WebSocket service for the defaut JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
+  Whether to enable WebSocket service for the default JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
 
 </p>
 </details>
@@ -547,6 +583,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The Engine API port. Defaults to `null`.
 
+- **`--JsonRpc.EstimateErrorMargin <value>`** `NETHERMIND_JSONRPCCONFIG_ESTIMATEERRORMARGIN`
+
+  The error margin used in the `eth_estimateGas` JSON-RPC method, in basis points. Defaults to `150`.
+
 - **`--JsonRpc.EthModuleConcurrentInstances <value>`** `NETHERMIND_JSONRPCCONFIG_ETHMODULECONCURRENTINSTANCES`
 
   The number of concurrent instances for non-sharable calls:
@@ -579,7 +619,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--JsonRpc.MaxBatchResponseBodySize <value>`** `NETHERMIND_JSONRPCCONFIG_MAXBATCHRESPONSEBODYSIZE`
 
-  The max batch size limit for batched JSON-RPC calls. Defaults to `30000000`.
+  The max batch size limit for batched JSON-RPC calls. Defaults to `33554432`.
 
 - **`--JsonRpc.MaxBatchSize <value>`** `NETHERMIND_JSONRPCCONFIG_MAXBATCHSIZE`
 
@@ -589,9 +629,17 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The max number of characters of a JSON-RPC request parameter printing to the log. Defaults to `null`.
 
+- **`--JsonRpc.MaxLogsPerResponse <value>`** `NETHERMIND_JSONRPCCONFIG_MAXLOGSPERRESPONSE`
+
+  The max number of logs per response for the `eth_getLogs` JSON-RPC method. `0` to lift the limit. Defaults to `20000`.
+
 - **`--JsonRpc.MaxRequestBodySize <value>`** `NETHERMIND_JSONRPCCONFIG_MAXREQUESTBODYSIZE`
 
   The max length of HTTP request body, in bytes. Defaults to `30000000`.
+
+- **`--JsonRpc.MaxSimulateBlocksCap <value>`** `NETHERMIND_JSONRPCCONFIG_MAXSIMULATEBLOCKSCAP`
+
+  The max block count limit for the `eth_simulate` JSON-RPC method. Defaults to `256`.
 
 - **`--JsonRpc.MethodsLoggingFiltering <value>`** `NETHERMIND_JSONRPCCONFIG_METHODSLOGGINGFILTERING`
 
@@ -756,7 +804,7 @@ The command line options are case-sensitive and can be defined only once unless 
   - `0` to release every time
   - A positive number to release memory after that many Engine API calls
   
-  Defaults to `75`.
+  Defaults to `25`.
 
 - **`--Merge.CompactMemory <value>`** `NETHERMIND_MERGECONFIG_COMPACTMEMORY`
 
@@ -830,6 +878,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Whether to publish database size metrics. Allowed values: `true` `false`. Defaults to `true`.
 
+- **`--Metrics.ExposeHost <value>`** `NETHERMIND_METRICSCONFIG_EXPOSEHOST`
+
+  The IP address to expose Prometheus metrics at. The value of `+` means listening on all available hostnames. Setting this to `localhost` prevents remote access. Defaults to `+`.
+
 - **`--Metrics.ExposePort <value>`** `NETHERMIND_METRICSCONFIG_EXPOSEPORT`
 
   The port to expose Prometheus metrics at. Defaults to `null`.
@@ -860,6 +912,10 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Mining.Enabled <value>`** `NETHERMIND_MININGCONFIG_ENABLED`
 
   Whether to produce blocks. Allowed values: `true` `false`. Defaults to `false`.
+
+- **`--Mining.Signer <value>`** `NETHERMIND_MININGCONFIG_SIGNER`
+
+  The URL of an external signer like [Clef](https://github.com/ethereum/go-ethereum/blob/master/cmd/clef/tutorial.md). Defaults to `null`.
 
 </p>
 </details>
@@ -927,6 +983,21 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Network.StaticPeers <value>`** `NETHERMIND_NETWORKCONFIG_STATICPEERS`
 
   A list of peers to keep connection for. Static peers are affected by `MaxActivePeers`. Defaults to `null`.
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
+#### Optimism
+
+</summary>
+<p>
+
+- **`--Optimism.SequencerUrl <value>`** `NETHERMIND_OPTIMISMCONFIG_SEQUENCERURL`
+
+  The sequencer address. Defaults to `null`.
 
 </p>
 </details>
@@ -1033,6 +1104,14 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The block persistence frequency. If set to `N`, it caches after each `Nth` block even if not required by cache memory usage. Defaults to `8192`.
 
+- **`--Pruning.PruningBoundary <value>`** `NETHERMIND_PRUNINGCONFIG_PRUNINGBOUNDARY`
+
+  The number of past states before the state gets pruned. Used to determine how old of a state to keep from the head. Defaults to `64`.
+
+- **`--Pruning.TrackedPastKeyCountMemoryRatio <value>`** `NETHERMIND_PRUNINGCONFIG_TRACKEDPASTKEYCOUNTMEMORYRATIO`
+
+  The ratio of memory out of `Pruning.CacheMb` to allocate for the LRU cache, used to track past keys for live pruning. Defaults to `0.1`.
+
 </p>
 </details>
 
@@ -1131,7 +1210,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.AncientBodiesBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTBODIESBARRIER`
 
-  _Experimental._ The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
+  The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
   
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
@@ -1140,7 +1219,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.AncientReceiptsBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTRECEIPTSBARRIER`
 
-  _Experimental._ The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as folows:
+  The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
   
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
@@ -1149,7 +1228,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.BlocksDbTuneDbMode <value>`** `NETHERMIND_SYNCCONFIG_BLOCKSDBTUNEDBMODE`
 
-  _Experimental._ Configure the blocks database for write optimizations during sync.
+  Configure the blocks database for write optimizations during sync.
 
   Allowed values:
 
@@ -1159,6 +1238,7 @@ The command line options are case-sensitive and can be defined only once unless 
     - `AggressiveHeavyWrite`
     - `DisableCompaction`
     - `EnableBlobFiles`
+    - `HashDb`
 
   Defaults to `EnableBlobFiles`.
 
@@ -1181,10 +1261,6 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Sync.ExitOnSyncedWaitTimeSec <value>`** `NETHERMIND_SYNCCONFIG_EXITONSYNCEDWAITTIMESEC`
 
   The time, in seconds, to wait before shutting down Nethermind once sync is finished. Defaults to `60`.
-
-- **`--Sync.FastBlocks <value>`** `NETHERMIND_SYNCCONFIG_FASTBLOCKS`
-
-  Whether to first download blocks from the provided pivot number downwards in the Fast sync mode. This allows for parallelization of requests with many sync peers and with no need to worry about syncing a valid branch (syncing downwards to 0). You need to provide the pivot block number, hash, and total difficulty from a trusted source (e.g., Etherscan) and confirm with other sources if you want to change it. Allowed values: `true` `false`. Defaults to `false`.
 
 - **`--Sync.FastSync <value>`** `NETHERMIND_SYNCCONFIG_FASTSYNC`
 
@@ -1225,7 +1301,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.NonValidatorNode <value>`** `NETHERMIND_SYNCCONFIG_NONVALIDATORNODE`
 
-  _Experimental._ Whether to operate as a non-validator. If `true`, the `DownloadReceiptsInFastSync` and `DownloadBodiesInFastSync` can be set to `false`. Allowed values: `true` `false`. Defaults to `false`.
+  Whether to operate as a non-validator. If `true`, the `DownloadReceiptsInFastSync` and `DownloadBodiesInFastSync` can be set to `false`. Allowed values: `true` `false`. Defaults to `false`.
 
 - **`--Sync.PivotHash <value>`** `NETHERMIND_SYNCCONFIG_PIVOTHASH`
 
@@ -1257,7 +1333,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--Sync.TuneDbMode <value>`** `NETHERMIND_SYNCCONFIG_TUNEDBMODE`
 
-  _Experimental._ Configure the database for write optimizations during sync. Significantly reduces the total number of writes and sync time if you are not network limited.
+  Configure the database for write optimizations during sync. Significantly reduces the total number of writes and sync time if you are not network limited.
 
   Allowed values:
 
@@ -1267,16 +1343,13 @@ The command line options are case-sensitive and can be defined only once unless 
     - `AggressiveHeavyWrite`
     - `DisableCompaction`
     - `EnableBlobFiles`
+    - `HashDb`
 
   Defaults to `HeavyWrite`.
 
 - **`--Sync.UseGethLimitsInFastBlocks <value>`** `NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS`
 
-  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's  a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Goerli, Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
-
-- **`--Sync.WitnessProtocolEnabled <value>`** `NETHERMIND_SYNCCONFIG_WITNESSPROTOCOLENABLED`
-
-  Whether to enable the Witness protocol. Allowed values: `true` `false`. Defaults to `false`.
+  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's  a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
 
 </p>
 </details>
@@ -1347,7 +1420,7 @@ The command line options are case-sensitive and can be defined only once unless 
     - `Storage`
     - `StorageWithReorgs`
 
-  Defaults to `Disabled`.
+  Defaults to `StorageWithReorgs`.
 
 - **`--TxPool.GasLimit <value>`** `NETHERMIND_TXPOOLCONFIG_GASLIMIT`
 

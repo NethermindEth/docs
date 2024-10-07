@@ -4,11 +4,10 @@ sidebar_position: 0
 toc_max_heading_level: 4
 ---
 
-Nethermind provides a few ways of gathering information, monitoring and collecting metrics about itself. The
-following options are available at the moment:
+Currently, Nethermind provides the following options to monitor and collect metrics about itself:
 
-1. [dotnet-counters.md](dotnet-counters.md)
-2. [setting-up-local-metrics-infrastracture.md](setting-up-local-metrics-infrastracture.md)
+- [Grafana and Prometheus](grafana-and-prometheus.md)
+- [dotnet-counters](dotnet-counters.md)
 
 ### Parameters by namespace
 
@@ -102,6 +101,10 @@ following options are available at the moment:
   
   Total MGas processed
 
+- **`nethermind_mgas_per_sec`**
+  
+  MGas processed per second
+
 - **`nethermind_processing_queue_size`**
   
   Number of blocks awaiting for processing.
@@ -134,161 +137,53 @@ following options are available at the moment:
 </summary>
 <p>
 
-- **`nethermind_blob_transactions_db_reads`**
+- **`nethermind_code_db_cache`**
   
-  Number of BlobTransactions DB reads.
+  Number of Code DB cache reads.
 
-- **`nethermind_blob_transactions_db_writes`**
+- **`nethermind_db_block_cache_size`**
   
-  Number of BlobTransactions DB writes.
+  Database block cache size per database
 
-- **`nethermind_block_infos_db_reads`**
+- **`nethermind_db_compaction_stats`**
   
-  Number of Block Infos DB reads.
+  Metrics extracted from RocksDB Compaction Stats
 
-- **`nethermind_block_infos_db_size`**
+- **`nethermind_db_index_filter_size`**
   
-  Size of blockInfos DB in bytes
+  Database index and filter size per database
 
-- **`nethermind_block_infos_db_writes`**
+- **`nethermind_db_memtable_size`**
   
-  Number of Block Infos DB writes.
+  Database memtable per database
 
-- **`nethermind_block_number_db_reads`**
+- **`nethermind_db_reads`**
   
-  Number of BlockNumbers DB reads.
+  Database reads per database
 
-- **`nethermind_block_number_db_writes`**
+- **`nethermind_db_size`**
   
-  Number of BlockNumbers DB writes.
-
-- **`nethermind_blocks_db_reads`**
-  
-  Number of Blocks DB reads.
-
-- **`nethermind_blocks_db_size`**
-  
-  Size of blocks DB in bytes
-
-- **`nethermind_blocks_db_writes`**
-  
-  Number of Blocks DB writes.
-
-- **`nethermind_bloom_db_reads`**
-  
-  Number of Bloom DB reads.
-
-- **`nethermind_bloom_db_size`**
-  
-  Size of bloom DB in bytes
-
-- **`nethermind_bloom_db_writes`**
-  
-  Number of Bloom DB writes.
-
-- **`nethermind_c_h_t_db_reads`**
-  
-  Number of CHT DB reads.
-
-- **`nethermind_cht_db_size`**
-  
-  Size of cht DB in bytes
-
-- **`nethermind_c_h_t_db_writes`**
-  
-  Number of CHT DB writes.
-
-- **`nethermind_code_db_reads`**
-  
-  Number of Code DB reads.
-
-- **`nethermind_code_db_size`**
-  
-  Size of code DB in bytes
-
-- **`nethermind_code_db_writes`**
-  
-  Number of Code DB writes.
-
-- **`nethermind_db_block_cache_memory_size`**
-  
-  Size of unmanaged memory for DB block caches in bytes
-
-- **`nethermind_db_index_filter_memory_size`**
-  
-  Size of unmanaged memory for DB indexes and filters in bytes
-
-- **`nethermind_db_memtable_memory_size`**
-  
-  Size of unmanaged memory for DB memtables in bytes
+  Database size per database
 
 - **`nethermind_db_stats`**
   
   Metrics extracted from RocksDB Compaction Stats and DB Statistics
 
-- **`nethermind_db_total_memory_size`**
+- **`nethermind_db_writes`**
   
-  Size of total unmanaged memory for DB in bytes
-
-- **`nethermind_header_db_reads`**
-  
-  Number of Headers DB reads.
-
-- **`nethermind_header_db_writes`**
-  
-  Number of Headers DB writes.
-
-- **`nethermind_headers_db_size`**
-  
-  Size of headers DB in bytes
-
-- **`nethermind_metadata_db_reads`**
-  
-  Number of Metadata DB reads.
-
-- **`nethermind_metadata_db_size`**
-  
-  Size of metadata DB in bytes
-
-- **`nethermind_metadata_db_writes`**
-  
-  Number of Metadata DB writes.
-
-- **`nethermind_other_db_reads`**
-  
-  Number of other DB reads.
-
-- **`nethermind_other_db_writes`**
-  
-  Number of other DB writes.
-
-- **`nethermind_receipts_db_reads`**
-  
-  Number of Receipts DB reads.
-
-- **`nethermind_receipts_db_size`**
-  
-  Size of receipts DB in bytes
-
-- **`nethermind_receipts_db_writes`**
-  
-  Number of Receipts DB writes.
+  Database writes per database
 
 - **`nethermind_state_db_pruning`**
   
   Indicator if StadeDb is being pruned.
 
-- **`nethermind_state_db_reads`**
+- **`nethermind_state_reader_reads`**
   
-  Number of State DB reads.
+  Number of State Reader reads.
 
-- **`nethermind_state_db_size`**
+- **`nethermind_state_tree_cache`**
   
-  Size of state DB in bytes
-
-- **`nethermind_state_db_writes`**
-  
-  Number of State DB writes.
+  Number of State Trie cache hits.
 
 - **`nethermind_state_tree_reads`**
   
@@ -298,25 +193,33 @@ following options are available at the moment:
   
   Number of Blocks Trie writes.
 
+- **`nethermind_storage_reader_reads`**
+  
+  Number of storage reader reads.
+
+- **`nethermind_storage_tree_cache`**
+  
+  Number of storage trie cache hits.
+
 - **`nethermind_storage_tree_reads`**
   
-  Number of storge trie reads.
+  Number of storage trie reads.
 
 - **`nethermind_storage_tree_writes`**
   
   Number of storage trie writes.
 
-- **`nethermind_witness_db_reads`**
+- **`nethermind_thread_local_code_db_cache`**
   
-  Number of Witness DB reads.
+  Number of Code DB cache reads on thread.
 
-- **`nethermind_witness_db_size`**
+- **`nethermind_thread_local_state_tree_reads`**
   
-  Size of witness DB in bytes
+  Number of State Trie reads on thread.
 
-- **`nethermind_witness_db_writes`**
+- **`nethermind_thread_local_storage_tree_reads`**
   
-  Number of Witness DB writes.
+  Number of storage trie reads on thread.
 
 
 </p>
@@ -350,6 +253,10 @@ following options are available at the moment:
   
   Number of calls to other contracts.
 
+- **`nethermind_contracts_analysed`**
+  
+  Number of contracts' code analysed for jump destinations.
+
 - **`nethermind_creates`**
   
   Number of contract create calls.
@@ -366,13 +273,13 @@ following options are available at the moment:
   
   Number of EVM exceptions thrown by contracts.
 
+- **`nethermind_exp_opcode`**
+  
+  Number of EXP opcodes executed.
+
 - **`nethermind_m_copy_opcode`**
   
   Number of MCOPY opcodes executed.
-
-- **`nethermind_mod_exp_opcode`**
-  
-  Number of MODEXP precompiles executed.
 
 - **`nethermind_mod_exp_precompile`**
   
@@ -385,6 +292,10 @@ following options are available at the moment:
 - **`nethermind_ripemd160_precompile`**
   
   Number of RIPEMD160 precompile calls.
+
+- **`nethermind_secp256r1_precompile`**
+  
+  Number of Secp256r1 precompile calls.
 
 - **`nethermind_self_destructs`**
   
@@ -401,6 +312,30 @@ following options are available at the moment:
 - **`nethermind_sstore_opcode`**
   
   Number of SSTORE opcodes executed.
+
+- **`nethermind_thread_local_calls`**
+  
+  Number of calls to other contracts on thread.
+
+- **`nethermind_thread_local_contracts_analysed`**
+  
+  Number of contracts' code analysed for jump destinations on thread.
+
+- **`nethermind_thread_local_creates`**
+  
+  Number of contract create calls on thread.
+
+- **`nethermind_thread_local_empty_calls`**
+  
+  Number of calls made to addresses without code on thread.
+
+- **`nethermind_thread_local_s_load_opcode`**
+  
+  Number of SLOAD opcodes executed on thread.
+
+- **`nethermind_thread_local_s_store_opcode`**
+  
+  Number of SSTORE opcodes executed on thread.
 
 - **`nethermind_tload_opcode`**
   
@@ -490,333 +425,49 @@ following options are available at the moment:
 </summary>
 <p>
 
-- **`nethermind_already_connected_disconnects`**
-  
-  Number of received disconnects due to already connected
-
-- **`nethermind_breach_of_protocol_disconnects`**
-  
-  Number of received disconnects due to breach of protocol
-
-- **`nethermind_client_quitting_disconnects`**
-  
-  Number of received disconnects due to client quitting
-
-- **`nethermind_disconnect_requested_disconnects`**
-  
-  Number of received disconnects due to disconnect requested
-
-- **`nethermind_eth62_block_bodies_received`**
-  
-  Number of eth.62 BlockBodies messages received
-
-- **`nethermind_eth62_block_headers_received`**
-  
-  Number of eth.62 BlockHeaders messages received
-
-- **`nethermind_eth62_get_block_bodies_received`**
-  
-  Number of eth.62 GetBlockBodies messages received
-
-- **`nethermind_eth62_get_block_headers_received`**
-  
-  Number of eth.62 GetBlockHeaders messages received
-
-- **`nethermind_eth62_new_block_hashes_received`**
-  
-  Number of eth.62 NewBlockHashes messages received
-
-- **`nethermind_eth62_new_block_received`**
-  
-  Number of eth.62 NewBlock messages received
-
-- **`nethermind_eth62_transactions_received`**
-  
-  Number of eth.62 Transactions messages received
-
-- **`nethermind_eth63_get_node_data_received`**
-  
-  Number of eth.63 GetNodeData messages received
-
-- **`nethermind_eth63_get_receipts_received`**
-  
-  Number of eth.63 GetReceipts messages received
-
-- **`nethermind_eth63_node_data_received`**
-  
-  Number of eth.63 NodeData messages received
-
-- **`nethermind_eth63_receipts_received`**
-  
-  Number of eth.63 Receipts messages received
-
-- **`nethermind_eth65_get_pooled_transactions_received`**
-  
-  Number of eth.65 GetPooledTransactions messages received
-
-- **`nethermind_eth65_get_pooled_transactions_requested`**
-  
-  Number of eth.65 GetPooledTransactions messages sent
-
-- **`nethermind_eth65_new_pooled_transaction_hashes_received`**
-  
-  Number of eth.65 NewPooledTransactionHashes messages received
-
-- **`nethermind_eth65_new_pooled_transaction_hashes_sent`**
-  
-  Number of eth.65 NewPooledTransactionHashes messages sent
-
-- **`nethermind_eth65_pooled_transactions_received`**
-  
-  Number of eth.65 PooledTransactions messages received
-
-- **`nethermind_eth66_block_bodies_received`**
-  
-  Number of eth.66 BlockBodies messages received
-
-- **`nethermind_eth66_block_headers_received`**
-  
-  Number of eth.66 BlockHeaders messages received
-
-- **`nethermind_eth66_get_block_bodies_received`**
-  
-  Number of eth.66 GetBlockBodies messages received
-
-- **`nethermind_eth66_get_block_headers_received`**
-  
-  Number of eth.66 GetBlockHeaders messages received
-
-- **`nethermind_eth66_get_node_data_received`**
-  
-  Number of eth.66 GetNodeData messages received
-
-- **`nethermind_eth66_get_pooled_transactions_received`**
-  
-  Number of eth.66 GetPooledTransactions messages received
-
-- **`nethermind_eth66_get_pooled_transactions_requested`**
-  
-  Number of eth.66 GetPooledTransactions messages sent
-
-- **`nethermind_eth66_get_receipts_received`**
-  
-  Number of eth.66 GetReceipts messages received
-
-- **`nethermind_eth66_node_data_received`**
-  
-  Number of eth.66 NodeData messages received
-
-- **`nethermind_eth66_pooled_transactions_received`**
-  
-  Number of eth.66 PooledTransactions messages received
-
-- **`nethermind_eth66_receipts_received`**
-  
-  Number of eth.66 Receipts messages received
-
-- **`nethermind_eth68_new_pooled_transaction_hashes_received`**
-  
-  Number of eth.68 NewPooledTransactionHashes messages received
-
-- **`nethermind_eth68_new_pooled_transaction_hashes_sent`**
-  
-  Number of eth.68 NewPooledTransactionHashes messages sent
-
-- **`nethermind_get_node_data_received`**
-  
-  Number of GetNodeData messages received via NodeData protocol
-
 - **`nethermind_handshakes`**
   
   Number of devp2p handshakes
 
 - **`nethermind_handshake_timeouts`**
   
-  Number of devp2p handshke timeouts
-
-- **`nethermind_hellos_received`**
-  
-  Number of devp2p hello messages received
-
-- **`nethermind_hellos_sent`**
-  
-  Number of devp2p hello messages sent
+  Number of devp2p handshake timeouts
 
 - **`nethermind_incoming_connections`**
   
   Number of incoming connection.
 
-- **`nethermind_incompatible_p2_p_disconnects`**
+- **`nethermind_incoming_p2_p_message_bytes`**
   
-  Number of received disconnects due to incompatible devp2p version
+  Bytes of incoming p2p packets.
 
-- **`nethermind_les_statuses_received`**
+- **`nethermind_incoming_p2_p_messages`**
   
-  Number of les status messages received
-
-- **`nethermind_les_statuses_sent`**
-  
-  Number of les status messages sent
-
-- **`nethermind_local_already_connected_disconnects`**
-  
-  Number of initiated disconnects due to already connected
-
-- **`nethermind_local_breach_of_protocol_disconnects`**
-  
-  Number of sent disconnects due to breach of protocol
-
-- **`nethermind_local_client_quitting_disconnects`**
-  
-  Number of initiated disconnects due to client quitting
-
-- **`nethermind_local_disconnect_requested_disconnects`**
-  
-  Number of initiated disconnects due to disconnect requested
+  Number of incoming p2p packets.
 
 - **`nethermind_local_disconnects_total`**
   
   Number of local disconnects
 
-- **`nethermind_local_incompatible_p2_p_disconnects`**
-  
-  Number of initiated disconnects due to incompatible devp2p
-
-- **`nethermind_local_null_node_identity_disconnects`**
-  
-  Number of initiated disconnects due to missing node identity
-
-- **`nethermind_local_other_disconnects`**
-  
-  Number of initiated disconnects due to other reason
-
-- **`nethermind_local_receive_message_timeout_disconnects`**
-  
-  Number of initiated disconnects due to request timeout
-
-- **`nethermind_local_same_as_self_disconnects`**
-  
-  Number of initiated disconnects due to connection to self
-
-- **`nethermind_local_tcp_subsystem_error_disconnects`**
-  
-  Number of initiated disconnects due to TCP error
-
-- **`nethermind_local_too_many_peers_disconnects`**
-  
-  Number of initiated disconnects due to breach of protocol
-
-- **`nethermind_local_unexpected_identity_disconnects`**
-  
-  Number of initiated disconnects due to node identity info mismatch
-
-- **`nethermind_local_useless_peer_disconnects`**
-  
-  Number of sent disconnects due to useless peer
-
-- **`nethermind_node_data_received`**
-  
-  Number of NodeData messages received via NodeData protocol
-
-- **`nethermind_null_node_identity_disconnects`**
-  
-  Number of received disconnects due to missing peer identity
-
-- **`nethermind_other_disconnects`**
-  
-  Number of received disconnects due to other reasons
-
 - **`nethermind_outgoing_connections`**
   
   Number of outgoing connection.
+
+- **`nethermind_outgoing_p2_p_message_bytes`**
+  
+  Bytes of outgoing p2p packets.
+
+- **`nethermind_outgoing_p2_p_messages`**
+  
+  Number of outgoing p2p packets.
 
 - **`nethermind_peer_limit`**
   
   The maximum number of peers this node allows to connect.
 
-- **`nethermind_receive_message_timeout_disconnects`**
-  
-  Number of received disconnects due to request timeouts
-
 - **`nethermind_remote_disconnects_total`**
   
   Number of remote disconnects
-
-- **`nethermind_same_as_self_disconnects`**
-  
-  Number of received disconnects due to connecting to self
-
-- **`nethermind_snap_account_range_received`**
-  
-  Number of SNAP AccountRange messages received
-
-- **`nethermind_snap_byte_codes_received`**
-  
-  Number of SNAP ByteCodes messages received
-
-- **`nethermind_snap_get_account_range_received`**
-  
-  Number of SNAP GetAccountRange messages received
-
-- **`nethermind_snap_get_account_range_sent`**
-  
-  Number of SNAP GetAccountRange messages sent
-
-- **`nethermind_snap_get_byte_codes_received`**
-  
-  Number of SNAP GetByteCodes messages received
-
-- **`nethermind_snap_get_byte_codes_sent`**
-  
-  Number of SNAP GetByteCodes messages sent
-
-- **`nethermind_snap_get_storage_ranges_received`**
-  
-  Number of SNAP GetStorageRanges messages received
-
-- **`nethermind_snap_get_storage_ranges_sent`**
-  
-  Number of SNAP GetStorageRanges messages sent
-
-- **`nethermind_snap_get_trie_nodes_received`**
-  
-  Number of SNAP GetTrieNodes messages received
-
-- **`nethermind_snap_get_trie_nodes_sent`**
-  
-  Number of SNAP GetTrieNodes messages sent
-
-- **`nethermind_snap_storage_ranges_received`**
-  
-  Number of SNAP StorageRanges messages received
-
-- **`nethermind_snap_trie_nodes_received`**
-  
-  Number of SNAP TrieNodes messages received
-
-- **`nethermind_statuses_received`**
-  
-  Number of eth status messages received
-
-- **`nethermind_statuses_sent`**
-  
-  Number of eth status messages sent
-
-- **`nethermind_tcp_subsystem_error_disconnects`**
-  
-  Number of disconnects due to TCP error
-
-- **`nethermind_too_many_peers_disconnects`**
-  
-  Number of received disconnects due to too many peers
-
-- **`nethermind_unexpected_identity_disconnects`**
-  
-  Number of received disconnects due to peer identity information mismatch
-
-- **`nethermind_useless_peer_disconnects`**
-  
-  Number of received disconnects due to useless peer
 
 
 </p>
@@ -882,6 +533,10 @@ following options are available at the moment:
   
   Time taken by the last pruning.
 
+- **`nethermind_removed_node_count`**
+  
+  Nodes that was removed via live pruning.
+
 - **`nethermind_replaced_nodes_count`**
   
   Number of nodes that have been exactly the same as other nodes in the cache when committing.
@@ -905,6 +560,22 @@ following options are available at the moment:
 - **`nethermind_version`**
   
   Version number
+
+
+</p>
+</details>
+
+<details>
+<summary className="nd-details-heading">
+
+#### Synchronization
+
+</summary>
+<p>
+
+- **`nethermind_sync_peers`**
+  
+  Number of sync peers.
 
 
 </p>

@@ -7,6 +7,41 @@ sidebar_position: 3
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+### eth_blobBaseFee
+
+Returns the base fee per blob gas in wei
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_blobBaseFee",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string* (hex integer)
+
+</TabItem>
+</Tabs>
+
 ### eth_blockNumber
 
 Returns current block number
@@ -337,10 +372,47 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
+  - `baseFeePerBlobGas`: array of *string* (hex integer)
   - `baseFeePerGas`: array of *string* (hex integer)
+  - `blobGasUsedRatio`: array of *object*
   - `gasUsedRatio`: array of *object*
   - `oldestBlock`: *string* (hex integer)
   - `reward`: array of array of *string* (hex integer)
+
+</TabItem>
+</Tabs>
+
+### eth_gasPrice
+
+Returns miner's gas price
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_gasPrice",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -385,9 +457,25 @@ curl localhost:8545 \
 
 `result`: *object*
   - `balance`: *string* (hex integer)
-  - `codeHash`: *string* (hash)
+  - `codeHash`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `bytesAsSpan`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
   - `nonce`: *string* (hex integer)
-  - `storageRoot`: *string* (hash)
+  - `storageRoot`: *object*
+    - `bytes`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
+    - `bytesAsSpan`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -978,8 +1066,57 @@ curl localhost:8545 \
   - `storageProofs`: array of *object*
     - `key`: *string* (hex data)
     - `proof`: array of *string* (hex data)
-    - `value`: *string* (hex data)
+    - `value`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `isEmpty`: *boolean*
+        - `length`: *string* (hex integer)
+        - `span`: *object*
+          - `isEmpty`: *boolean*
+          - `item`: *object*
+          - `length`: *string* (hex integer)
   - `storageRoot`: *string* (hash)
+
+</TabItem>
+</Tabs>
+
+### eth_getRawTransactionByHash
+
+Retrieves a transaction RLP by hash
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `transactionHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_getRawTransactionByHash",
+      "params": [transactionHash]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
 
 </TabItem>
 </Tabs>
@@ -1906,6 +2043,115 @@ curl localhost:8545 \
 ```
 
 `result`: *string* (hash)
+
+</TabItem>
+</Tabs>
+
+### eth_simulateV1
+
+Executes a simulation across multiple blocks (does not create a transaction or block)
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `payload`: *object*
+    - `blockStateCalls`: array of *object*
+      - `blockOverrides`: *object*
+        - `baseFeePerGas`: *string* (hex integer)
+        - `blobBaseFee`: *string* (hex integer)
+        - `feeRecipient`: *string* (address)
+        - `gasLimit`: *string* (hex integer)
+        - `number`: *string* (hex integer)
+        - `prevRandao`: *string* (hash)
+        - `time`: *string* (hex integer)
+      - `calls`: array of *object*
+        - `accessList`: array of *object*
+          - `address`: *string* (address)
+          - `storageKeys`: array of *string* (hex integer)
+        - `blobVersionedHashes`: array of *string* (hex data)
+        - `blockHash`: *string* (hash)
+        - `blockNumber`: *string* (hex integer)
+        - `chainId`: *string* (hex integer)
+        - `data`: *string* (hex data)
+        - `from`: *string* (address)
+        - `gas`: *string* (hex integer)
+        - `gasPrice`: *string* (hex integer)
+        - `hash`: *string* (hash)
+        - `input`: *string* (hex data)
+        - `isSystemTx`: *boolean*
+        - `maxFeePerBlobGas`: *string* (hex integer)
+        - `maxFeePerGas`: *string* (hex integer)
+        - `maxPriorityFeePerGas`: *string* (hex integer)
+        - `mint`: *string* (hex integer)
+        - `nonce`: *string* (hex integer)
+        - `r`: *string* (hex integer)
+        - `s`: *string* (hex integer)
+        - `sourceHash`: *string* (hash)
+        - `to`: *string* (address)
+        - `transactionIndex`: *string* (hex integer)
+        - `type`: *integer*
+        - `v`: *string* (hex integer)
+        - `value`: *string* (hex integer)
+        - `yParity`: *string* (hex integer)
+      - `stateOverrides`: map of *object*
+        - `balance`: *string* (hex integer)
+        - `code`: *string* (hex data)
+        - `movePrecompileToAddress`: *string* (address)
+        - `nonce`: *string* (hex integer)
+        - `state`: map of *string* (hash)
+        - `stateDiff`: map of *string* (hash)
+    - `returnFullTransactionObjects`: *boolean*
+    - `traceTransfers`: *boolean*
+    - `validation`: *boolean*
+
+2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_simulateV1",
+      "params": [payload, blockParameter]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `calls`: array of *object*
+    - `error`: *object*
+      - `code`: *string* (hex integer)
+      - `data`: *string*
+      - `message`: *string*
+    - `gasUsed`: *string* (hex integer)
+    - `logs`: array of *object*
+      - `address`: *string* (address)
+      - `blockHash`: *string* (hash)
+      - `blockNumber`: *string* (hex integer)
+      - `data`: *string* (hex data)
+      - `logIndex`: *string* (hex integer)
+      - `removed`: *boolean*
+      - `topics`: array of *string* (hash)
+      - `transactionHash`: *string* (hash)
+      - `transactionIndex`: *string* (hex integer)
+    - `returnData`: *string* (hex data)
+    - `status`: *string* (hex integer)
 
 </TabItem>
 </Tabs>

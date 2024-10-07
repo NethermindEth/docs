@@ -1080,6 +1080,47 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### eth_getRawTransactionByHash
+
+Retrieves a transaction RLP by hash
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `transactionHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_getRawTransactionByHash",
+      "params": [transactionHash]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
+
+</TabItem>
+</Tabs>
+
 ### eth_getStorageAt
 
 Returns storage data at address. storage_index
