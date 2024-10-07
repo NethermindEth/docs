@@ -10,7 +10,7 @@ sidebar_position: 0
 
 :::
 
-Besides the foundational Layer 1 networks, Nethermind supports various Layer 2 networks and sidechains out of the box. Running Nethermind on a supported network is as simple as specifying the respective [configuration file](../../fundamentals/configuration.md#configuration-file) with the [`-c, --config`](../../fundamentals/configuration.md#config) option.
+In addition to the foundational Layer 1 networks, Nethermind supports various Layer 2 networks and sidechains out of the box. Running Nethermind on a supported network is as simple as specifying the respective [configuration file](../../fundamentals/configuration.md#configuration-file) with the [`-c, --config`](../../fundamentals/configuration.md#config) option.
 
 ## Ethereum
 
@@ -21,7 +21,7 @@ Besides the foundational Layer 1 networks, Nethermind supports various Layer 2 n
 - [Sepolia](https://github.com/eth-clients/sepolia) (testnet)
 
 :::tip
-We highly recommend checking out the [Spin up your own Ethereum node](https://ethereum.org/en/developers/docs/nodes-and-clients/run-a-node/) guide by Ethereum Foundation.
+We highly recommend checking out the [Spin up your own Ethereum node](https://ethereum.org/en/developers/docs/nodes-and-clients/run-a-node/) guide by the Ethereum Foundation.
 :::
 
 :::warning Important
@@ -48,9 +48,7 @@ nethermind \
   --JsonRpc.JwtSecretFile path/to/jwt.hex
 ```
 
-Generally, archive nodes are more resource-demanding. We recommend checking out the [hardware requirements](../system-requirements.md#hardware-requirements) if you intend to run an archive node.
-
-If you intend to run Nethermind as a validator, see [Validators](../../validators/validators.md).
+Archive nodes are generally more resource-demanding. If you intend to run one, we recommend checking out the [hardware requirements](../system-requirements.md#hardware-requirements).
 
 ## OP Stack
 

@@ -5,7 +5,7 @@ sidebar_position: 2
 
 ## OP Stack
 
-An Optimism node [consists of two nodes](https://docs.optimism.io/builders/node-operators/architecture)—op-node, a rollup node, analogous to a consensus client in Ethereum, paired with a Layer 2 (L2) execution client, and a Layer 1 (L1) node of a pair of execution and consensus clients.
+An Optimism node [consists of two nodes](https://docs.optimism.io/builders/node-operators/architecture): op-node, a rollup node, analogous to a consensus client in Ethereum, paired with a Layer 2 (L2) execution client, and a Layer 1 (L1) node of a pair of execution and consensus clients.
 
 :::info Before you begin
 - Running the OP stack requires running two instances of Nethermind—one for the L1 node and another for the L2 node, replacing op-geth.
