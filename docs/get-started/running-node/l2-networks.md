@@ -8,7 +8,7 @@ sidebar_position: 2
 An Optimism node [consists of two nodes](https://docs.optimism.io/builders/node-operators/architecture): op-node, a rollup node, analogous to a consensus client in Ethereum, paired with a Layer 2 (L2) execution client, and a Layer 1 (L1) node of a pair of execution and consensus clients.
 
 :::info Before you begin
-- Running the OP stack requires running two instances of Nethermind—one for the L1 node and another for the L2 node, replacing op-geth.
+- Running the OP stack requires access to an L1 node—either on-premises or an external RPC provider. If you also plan to run an L1 node with Nethermind, note that you will need two Nethermind instances—one for the L1 node and another for the L2 node, replacing op-geth.
 - Depending on which OP Stack network you want to run on, the L1 node must be configured respectively. For instance, for OP Mainnet, the L1 node must run on Ethereum Mainnet. For OP Sepolia, on Sepolia.
 - Ensure your L1 node is up and running on the respective network before running the OP Stack. See [Running a node on Ethereum](running-node.md#ethereum).
 :::
