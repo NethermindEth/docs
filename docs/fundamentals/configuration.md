@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem";
 
 Nethermind is highly configurable. There are 3 ways of configuring it, listed by priority:
 
-- [Command line options](#command-line-options) (aka arguments or flags)
+- [Command line options](#basic-command-line-options) (aka arguments or flags)
 - [Environment variables](#environment-variables)
 - [Configuration file](#configuration-file)
 
