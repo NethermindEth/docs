@@ -158,7 +158,7 @@ const redirects = {
     },
     {
       from: '/nethermind/first-steps-with-nethermind/running-nethermind-post-merge',
-      to: '/get-started/consensus-clients'
+      to: '/get-started/running-node/consensus-clients'
     },
     {
       from: '/nethermind/first-steps-with-nethermind/system-requirements',
