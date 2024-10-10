@@ -93,7 +93,7 @@ nethermind \
 
 ## Monitoring storage space {#storage-space}
 
-Monitoring the available storage space is a crucial aspect of running a node. Nethermind provides a feature to track the free storage space and take actions when the available space falls below a certain threshold. The following options are available:
+Monitoring the available storage space is a crucial aspect of running a node. Nethermind provides a feature to track the free storage space and take action when the available space falls below a certain threshold. The following options are available:
 
 - [`HealthChecks.LowStorageCheckAwaitOnStartup`](../fundamentals/configuration.md#healthchecks-lowstoragecheckawaitonstartup) to check for low disk space on startup and suspend Nethermind until enough space is available
 - [`HealthChecks.LowStorageSpaceShutdownThreshold`](../fundamentals/configuration.md#healthchecks-lowstoragespaceshutdownthreshold) to shut down Nethermind when the percentage of available disk space falls below the specified threshold
