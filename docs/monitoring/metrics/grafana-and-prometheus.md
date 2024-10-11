@@ -27,20 +27,24 @@ Once the stack is running, you can access the following services:
   Use `admin` for both the username and password. When asked for a password change, you may skip it. Then, navigate to Dashboards > Nethermind Dashboard.
 - **Prometheus**: [localhost:9090](http://localhost:9090)
 - **Pushgateway**: [localhost:9091](http://localhost:9091)\
-  To specify another endpoint for the Pushgateway, use the `--Metrics.PushGatewayUrl` command line option.
+  To specify another endpoint for the Pushgateway, use the [`Metrics.PushGatewayUrl`](../../fundamentals/configuration.md#metrics-pushgatewayurl) configuration option.
 
 ## Step 3: Run Nethermind
 
-To enable metrics in Nethermind, use the `--Metrics.Enabled true` command line option. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
+To enable metrics in Nethermind, set the [`Metrics.Enabled`](../../fundamentals/configuration.md#metrics-enabled) configuration option to `true`. For more options, see the [Metrics](../../fundamentals/configuration.md#metrics) configuration section.
 
-:::warning Important
-A [consensus client](../../get-started/running-node/consensus-clients.md) of your choice must be running before you start Nethermind.
+:::tip
+See [Running a node](../../get-started/running-node/running-node.md) for more information on how to run Nethermind.
 :::
 
 Run Nethermind as follows:
 
 ```bash
-nethermind -c mainnet --Metrics.Enabled true
+nethermind \
+  -c mainnet \
+  -dd path/to/data/dir \
+  --Metrics.Enabled true \
+  --Metrics.PushGatewayUrl http://localhost:9091
 ```
 
 Alternatively, you may add the `nethermind` service to the `docker-compose.yml` file in the repository root to run everything altogether:
@@ -50,6 +54,10 @@ nethermind:
   image: nethermind/nethermind:latest
   container_name: nethermind
   restart: unless-stopped
+  links:
+    - pushgateway
+  depends_on:
+    - pushgateway
   ports:
     - 8545:8545
     - 8551:8551
@@ -58,11 +66,13 @@ nethermind:
     nofile:
       soft: 1000000
       hard: 1000000
-  command: -c mainnet --Metrics.Enabled true
+  command: -c mainnet --Metrics.Enabled true --Metrics.PushGatewayUrl http://pushgateway:9091
   volumes:
     - ./keystore:/nethermind/keystore
     - ./logs:/nethermind/logs
     - ./nethermind_db:/nethermind/nethermind_db
+  networks:
+    - metrics
 ```
 
 In this case, you may want to configure your consensus client similarly.
