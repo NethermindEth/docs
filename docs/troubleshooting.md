@@ -38,7 +38,7 @@ Note that the changes above are temporary and will be reset after the system reb
 
 ## Database corruption issues
 
-Database corruption is one of the issues that happen now and then; it has many possible causes among them: 
+Database corruption is one of the issues that happen now and then; it has many possible causes among them:
 
 - Hardware failures: disk failures, memory errors, hardware overheating, etc.
 - Power cuts and abrupt shutdowns
@@ -72,7 +72,7 @@ If Nethermind complains about the lock files, it perhaps because of one of the f
 Sometimes Nethermind may fail with an error similar the following:
 
 ```
-Corruption: block checksum mismatch: expected 2087346143, got 2983326672 in... 
+Corruption: block checksum mismatch: expected 2087346143, got 2983326672 in...
 ```
 
 This tends to happen on XFS file systems under very high memory pressure. The issue can be mitigated by using the `--Db.UseDirectIoForFlushAndCompactions true` option although at the cost of performance.
@@ -85,4 +85,6 @@ If Nethermind fails to start with a message like `Failed to load plugin...`, thi
 
 :::tip
 If you install Nethermind over an existing installation, remove the old installation first, particularly the `plugins` directory. Package managers do this automatically.
+
+Watch out not to accidentally delete the database directory with the sync data, if any.
 :::
