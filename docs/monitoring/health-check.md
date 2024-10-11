@@ -17,7 +17,10 @@ The health check service requires the [JSON-RPC API](../interacting/json-rpc-ser
 The health check service is disabled by default. To enable it, set the [`HealthChecks.Enabled`](../fundamentals/configuration.md#healthchecks-enabled) configuration option as follows:
 
 ```bash
-nethermind -c mainnet --HealthChecks.Enabled true
+nethermind \
+  -c mainnet \
+  -dd path/to/data/dir \
+  --HealthChecks.Enabled true
 ```
 
 Once Nethermind is up and running, the health check service can be accessed at the `/health` endpoint:
@@ -83,6 +86,7 @@ The following example demonstrates how to configure a basic Slack webhook:
 ```bash
 nethermind \
   -c mainnet \
+  -dd path/to/data/dir \
   --HealthChecks.Enabled true \
   --HealthChecks.UIEnabled true \
   --HealthChecks.WebhooksEnabled true \

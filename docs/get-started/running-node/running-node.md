@@ -12,6 +12,10 @@ sidebar_position: 0
 
 In addition to the foundational Layer 1 networks, Nethermind supports various Layer 2 networks and sidechains out of the box. Running Nethermind on a supported network is as simple as specifying the respective [configuration file](../../fundamentals/configuration.md#configuration-file) with the [`-c, --config`](../../fundamentals/configuration.md#config) option.
 
+:::tip
+We urge you to always [explicitly specify](../../fundamentals/configuration.md#datadir) Nethermind's data directory outside of the Nethermind installation directory to avoid data loss during upgrades or reinstallation. The data directory must be on a disk with sufficient space and read/write permissions.
+:::
+
 ## Ethereum
 
 **Supported networks**
