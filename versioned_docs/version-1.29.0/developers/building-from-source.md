@@ -20,7 +20,7 @@ There are two options buiding Nethermind from source code:
 
 ### Prerequisites
 
-To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 9 or later.
+To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 8 or later.
 
 ### Building
 
@@ -51,7 +51,7 @@ configuration only.
 
 The build artifacts can be found in the `src/Nethermind/artifacts/bin/Nethermind.Runner/release` directory. By default, the logs and database directories are located here as well.
 
-For more info, see [Running a node](../get-started/running-node/running-node.md).
+For more info, see [Running Nethermind](../get-started/running-node/running-node.md).
 
 #### Testing
 
