@@ -1379,7 +1379,7 @@ curl localhost:8545 \
 
 ### eth_getTransactionCount
 
-Returns account nonce (number of trnsactions from the account since genesis) at the given block number
+Returns account nonce (number of transactions from the account since genesis) at the given block number
 
 <Tabs>
 <TabItem value="params" label="Parameters">
