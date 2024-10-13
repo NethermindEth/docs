@@ -46,7 +46,7 @@ The keyfile must be stored in the `keystore` directory located in the Nethermind
 Here is an example of recommended settings for a validator. The most convenient way to configure these settings is either defining them in the configuration file or passing them as environment variables.
 
 - `Init.IsMining`: `true`
-- `Init.MemoryHint`: Can be left unspecified. It's recommended to configure it accordingly to the machine specification(for Eneergy Web, 768000000 is enough).
+- `Init.MemoryHint`: Can be left unspecified. It's recommended to configure it accordingly to the machine specification (for Energy Web, 768000000 is enough).
 - `EthStats` namespace parameters if you want to report node status to Ethstats for your network.
 - `Metrics` namespace parameters to enable node monitoring.
 - `KeyStore.PasswordFiles`: The  path to the file containing the password for the mining private key.
