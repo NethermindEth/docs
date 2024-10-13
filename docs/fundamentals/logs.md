@@ -83,7 +83,7 @@ You will see some information about the sync progress, like below:
 ![Fast blocks sync logs](/img/getting\_started\_log\_0.png)
 
 When the fast blocks stage finishes, there will be some period of downloading blocks between the `pivot` and
-the`latest blocks` which will have some additional info:
+the `latest blocks` which will have some additional info:
 
 1. Shows the last entry from the fast blocks stage.
 2. Shows the mode transition moment.
