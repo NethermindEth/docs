@@ -25,7 +25,7 @@ Plugins that you can write:
 | Tracers             | Custom, powerful EVM tracers capable of extracting elements of EVM execution in real time.                                                                                                     |
 | CLI                 | Additional modules for Nethermind CLI that can allow you build some quick scratchpad style JavaScript based behaviors.                                                                         |
 
-**Note:** When writing a plugin be carefull about exceptions you throw. Especially if you are hooking up event handlers
+**Note:** When writing a plugin be careful about exceptions you throw. Especially if you are hooking up event handlers
 on some core objects like BlockProcessor or BlockTree. Those exceptions can bring the node down. This is by design. Its
 responsibility of plugin writer to correctly handle those exceptions.
 
