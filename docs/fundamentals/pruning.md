@@ -168,6 +168,6 @@ The `Pruning.CacheMb` configuration option determines the size, in MB, of the me
 For pruning, keep in mind the following:
 
 - Full pruning is a cumbersome task, but it's performed in the background, so the node continues progressing and following the chain.
-- The process' heaviness may affect the effectiveness of the validator rewards. Still, since it's executed only once every few months, it shouldn't have a significant impact on overall results (we've xperienced approximately 5–10% loss of rewards during full pruning).
+- The process' heaviness may affect the effectiveness of the validator rewards. Still, since it's executed only once every few months, it shouldn't have a significant impact on overall results (we've experienced approximately 5–10% loss of rewards during full pruning).
 - Ensure that your storage has at least 250 GB of free space after syncing the node. Otherwise, full pruning will never complete successfully.
 - Several things can be done to reduce the size of the database after syncing: setting `Sync.AncientBodiesBarrier` and `Sync.AncientReceiptsBarrier` to a proper value higher than 0, using a consensus client that requires less storage, and setting logs to the lowest level to avoid log spamming.
