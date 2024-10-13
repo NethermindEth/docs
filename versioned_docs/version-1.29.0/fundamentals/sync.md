@@ -168,7 +168,7 @@ Explanation of some data in the logs:
 * at the beginning you may see a _'Waiting for peers...'_ message while the node is trying to discover nodes that it can
   sync with.
 * _'Downloaded 1234/8000000'_ shows the number of unprocessed blocks (with transactions) downloaded from the network.
-  For `mainnet`this value may be slower than processing at first but very quickly you will see blocks being downloaded
+  For `mainnet` this value may be slower than processing at first but very quickly you will see blocks being downloaded
   much faster than processed. Empty blocks can be as small as 512 bytes (just headers without transactions) and full
   blocks with heavy transactions can reach a few hundred kilobytes. We display both current download speed (calculated
   in the last second) and average (total) speed since starting the node.
