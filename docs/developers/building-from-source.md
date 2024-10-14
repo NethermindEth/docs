@@ -76,7 +76,7 @@ Currently, there are three Docker images available in the project's root directo
 - `Dockerfile.chiseled`: the rootless and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) version of the Nethermind Docker image.
 - `Dockerfile.diag`: the diagnostics image with pre-installed .NET diagnostic and tracing tools. This image is intended for internal use and is not distributed via public channels.
 
-All Docker images support the x64 and AArch64 (ARM64) CPU architectures and have the following optional arguments:
+All Docker images have the following optional arguments:
 
 - `BUILD_CONFIG`: the build configuration that is either `release` or `debug`. Defaults to `release`.
 - `BUILD_TIMESTAMP`: the build timestamp as a Unix timestamp.
