@@ -184,23 +184,24 @@ For further instructions, see [Running a node](running-node/running-node.md).
 
 The Docker images of Nethermind are available on [Docker Hub](https://hub.docker.com/r/nethermind/nethermind).
 
-This registry provides production versions of Nethermind with 3 types of tags:
+The Docker images are based on Ubuntu 24.04 and support x64 and AArch64 (ARM64) CPU architectures. They are tagged as follows:
 
-- `nethermind/nethermind:latest` is the latest version of Nethermind (the default tag)
-- `nethermind/nethermind:<version>` is the specific version of Nethermind where `<version>` is the actual version of Nethermind.
-- `nethermind/nethermind:<version>-chiseled` is a _rootless_ and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) image with the specific version of Nethermind where `<version>` is either `latest` or the actual version of Nethermind.\
+- `latest`: the latest version of Nethermind (the default tag).
+- `latest-chiseled`: a _rootless_ and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) image of the latest version of Nethermind.\
   For security reasons, this image contains only the absolutely necessary components and is intended to run as a non-root `app` user with UID/GID of `64198`.
+- `x.x.x`: a specific version of Nethermind. For instance, `1.27.0`.
+- `x.x.x-chiseled`: a rootless and chiseled image of the specific version of Nethermind. For instance, `1.27.0-chiseled`.
 
-To download the image from the registry, run:
+For example, to download the latest chiseled image from the registry, run:
 
 ```bash
-docker pull nethermind/nethermind
+docker pull nethermind/nethermind:latest-chiseled
 ```
 
-Starting a node is achieved by:
+Starting the container is achieved by:
 
 ```bash
-docker run -it nethermind/nethermind
+docker run -it nethermind/nethermind:latest-chiseled
 ```
 
 The following ports are exposed by default:

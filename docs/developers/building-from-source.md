@@ -70,10 +70,37 @@ dotnet test EthereumTests.sln -c release
 
 ## Bulding Docker image
 
-To build Nethermind Docker image, run the following command from the project's root directory:
+Currently, there are three Docker images available in the project's root directory:
+
+- `Dockerfile`: the default Nethermind Docker image.
+- `Dockerfile.chiseled`: the rootless and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) version of the Nethermind Docker image.
+- `Dockerfile.diag`: the diagnostics image with pre-installed .NET diagnostic and tracing tools. This image is intended for internal use and is not distributed via public channels.
+
+All Docker images have the following optional arguments:
+
+- `BUILD_CONFIG`: the build configuration that is either `release` or `debug`. Defaults to `release`.
+- `BUILD_TIMESTAMP`: the build timestamp as a Unix timestamp.
+- `CI`: this is mostly used for CI builds determining whether the build is deterministic. Must be either `true` or `false`. Defaults to `false`.
+- `COMMIT_HASH`: the Git commit hash to use for the build as a part of the version string.
+
+Given the above, the following command builds the Nethermind chiseled Docker image from the project's root directory:
 
 ```bash
-docker build -t nethermind .
+build_timestamp=$(date '+%s')
+commit_hash=$(git rev-parse HEAD)
+
+docker build . \
+  -f Dockerfile.chiseled \
+  -t nethermind-chiseled \
+  --build-arg BUILD_TIMESTAMP=$build_timestamp \
+  --build-arg CI=true \
+  --build-arg COMMIT_HASH=$commit_hash
+```
+
+For quick testing images, the above arguments can be omitted if not needed:
+
+```bash
+docker build . -t nethermind
 ```
 
 For more info about running Docker containers,
