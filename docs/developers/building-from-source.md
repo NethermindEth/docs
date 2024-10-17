@@ -22,6 +22,10 @@ There are two options buiding Nethermind from source code:
 
 To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 8 or later.
 
+:::tip
+For a seamless experience, ensure your .NET SDK is up to date.
+:::
+
 ### Building
 
 To build both the client and tests, run the following command from the project's root directory:
@@ -79,9 +83,9 @@ Currently, there are three Docker images available in the project's root directo
 All Docker images have the following optional arguments:
 
 - `BUILD_CONFIG`: the build configuration that is either `release` or `debug`. Defaults to `release`.
-- `BUILD_TIMESTAMP`: the build timestamp as a Unix timestamp.
+- `BUILD_TIMESTAMP`: the build time as a Unix timestamp. Defaults to the current time.
 - `CI`: this is mostly used for CI builds determining whether the build is deterministic. Must be either `true` or `false`. Defaults to `false`.
-- `COMMIT_HASH`: the Git commit hash to use for the build as a part of the version string.
+- `COMMIT_HASH`: the Git commit hash to use as a part of the version string. Defaults to the latest commit hash.
 
 Given the above, the following command builds the Nethermind chiseled Docker image from the project's root directory:
 

@@ -22,6 +22,10 @@ There are two options buiding Nethermind from source code:
 
 To build Nethermind from source, install [.NET SDK](https://dotnet.microsoft.com/en-us/download) 8 or later.
 
+:::tip
+For a seamless experience, ensure your .NET SDK is up to date.
+:::
+
 ### Building
 
 To build both the client and tests, run the following command from the project's root directory:
@@ -51,7 +55,7 @@ configuration only.
 
 The build artifacts can be found in the `src/Nethermind/artifacts/bin/Nethermind.Runner/release` directory. By default, the logs and database directories are located here as well.
 
-For more info, see [Running Nethermind](../get-started/running-node/running-node.md).
+For more info, see [Running a node](../get-started/running-node/running-node.md).
 
 #### Testing
 
@@ -70,10 +74,37 @@ dotnet test EthereumTests.sln -c release
 
 ## Bulding Docker image
 
-To build Nethermind Docker image, run the following command from the project's root directory:
+Currently, there are three Docker images available in the project's root directory:
+
+- `Dockerfile`: the default Nethermind Docker image.
+- `Dockerfile.chiseled`: the rootless and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) version of the Nethermind Docker image.
+- `Dockerfile.diag`: the diagnostics image with pre-installed .NET diagnostic and tracing tools. This image is intended for internal use and is not distributed via public channels.
+
+All Docker images have the following optional arguments:
+
+- `BUILD_CONFIG`: the build configuration that is either `release` or `debug`. Defaults to `release`.
+- `BUILD_TIMESTAMP`: the build time as a Unix timestamp. Defaults to the current time.
+- `CI`: this is mostly used for CI builds determining whether the build is deterministic. Must be either `true` or `false`. Defaults to `false`.
+- `COMMIT_HASH`: the Git commit hash to use as a part of the version string. Defaults to the latest commit hash.
+
+Given the above, the following command builds the Nethermind chiseled Docker image from the project's root directory:
 
 ```bash
-docker build -t nethermind .
+build_timestamp=$(date '+%s')
+commit_hash=$(git rev-parse HEAD)
+
+docker build . \
+  -f Dockerfile.chiseled \
+  -t nethermind-chiseled \
+  --build-arg BUILD_TIMESTAMP=$build_timestamp \
+  --build-arg CI=true \
+  --build-arg COMMIT_HASH=$commit_hash
+```
+
+For quick testing images, the above arguments can be omitted if not needed:
+
+```bash
+docker build . -t nethermind
 ```
 
 For more info about running Docker containers,
