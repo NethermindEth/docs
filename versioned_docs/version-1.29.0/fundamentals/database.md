@@ -38,28 +38,28 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
 
-- `state`: 159 GB
+- `state`: 160 GB
 - `receipts`: 214 GB
-- `blocks`: 602 GB
+- `blocks`: 603 GB
 - `bloom`: 6.5 GB
 - `headers`: 9.1 GB
 - `code`: 4.8 GB
-- `blobTransactions`: 687 MB
+- `blobTransactions`: 726 MB
 - ...
-- **Total: 997 GB**
+- **Total: 999 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
 - `state`: 44 GB
 - `receipts`: 41 GB
-- `blocks`: 305 GB
+- `blocks`: 306 GB
 - `bloom`: 2.2 GB
 - `headers`: 2.5 GB
 - `code`: 6.8 GB
-- `blobTransactions`: 199 MB
+- `blobTransactions`: 179 MB
 - ...
-- **Total: 401 GB**
+- **Total: 403 GB**
 
 </TabItem>
 <TabItem value="holesky" label="Holesky">
@@ -67,25 +67,25 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 20 GB
 - `receipts`: 16 GB
 - `blocks`: 58 GB
-- `bloom`: 805 MB
+- `bloom`: 812 MB
 - `headers`: 1.1 GB
-- `code`: 687 MB
-- `blobTransactions`: 41 MB
+- `code`: 693 MB
+- `blobTransactions`: 36 MB
 - ...
 - **Total: 96 GB**
 
 </TabItem>
 <TabItem value="gnosis" label="Gnosis">
 
-- `state`: 66 GB
+- `state`: 68 GB
 - `receipts`: 217 GB
-- `blocks`: 200 GB
+- `blocks`: 201 GB
 - `bloom`: 9.4 GB
 - `headers`: 11 GB
 - `code`: 677 MB
 - `blobTransactions`: 75 MB
 - ...
-- **Total: 506 GB**
+- **Total: 508 GB**
 
 </TabItem>
 <TabItem value="chiado" label="Chiado">
@@ -94,9 +94,9 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `receipts`: 1.5 GB
 - `blocks`: 9.4 GB
 - `bloom`: 3.2 GB
-- `headers`: 2.4 GB
+- `headers`: 2.5 GB
 - `code`: 71 MB
-- `blobTransactions`: 600 MB
+- `blobTransactions`: 517 MB
 - ...
 - **Total: 21 GB**
 
@@ -119,9 +119,9 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 34 GB
 - `receipts`: 8.4 GB
 - `blocks`: 33 GB
-- `bloom`: 9.1 GB
+- `bloom`: 9.2 GB
 - `headers`: 7.0 GB
-- `code`: 95 MB
+- `code`: 96 MB
 - `blobTransactions`: 
 - ...
 - **Total: 94 GB**
