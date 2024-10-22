@@ -35,22 +35,22 @@ Suggested requirements can be found below.
 
 ### Disk requirements
 
-Running an Ethereum Mainnet full node requires at least a 1 TB fast disk, such as NVMe or a fast SSD. However, **2
-TB is recommended** to minimize maintenance requirements. To choose a specific disk model, we recommend
-checking out [this guide](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038#the-good).\
-Choosing a 2 TB disk is a comfortable option for most common Mainnet node usage patterns, including staking.
-Nonetheless, for a comprehensive understanding of disk growth and usage, we recommend delving further into the topic.
+As of October 2024, running an Ethereum Mainnet node with Nethermind's default configuration requires at least 2 TB of storage space. Nethermind itself takes around 1 TB, leaving the rest for the needs of the consensus client. Choosing a 2 TB disk is a comfortable option for most common Mainnet node usage patterns, including staking. Nonetheless, we recommend delving further into the topic to gain a comprehensive understanding of disk growth and usage.
 
 #### Database growth
 
-Nethermind requires approximately 898 GB of disk space (as of Jan 2024) after a fresh Ethereum Mainnet sync using default parameters. This size increases over time as the Ethereum chain grows. The node's database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at a rate of approximately 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/database.md#reducing-database-size).\
-Having a larger disk space allocation reduces the need for frequent maintenance and alleviates concerns about the chain outgrowing the available space. It's worth noting that the only drawback of running a smaller disk is the requirement for more regular resyncing or pruning. We believe that a 2 TB disk will suffice for most users. However, the choice between 1 TB and 2 TB depends on factors such as hardware costs, cloud provider expenses, and individual requirements.
+The database size increases over time as the Ethereum chain grows. The database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at around 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/database.md#reducing-database-size).\
+A larger disk space allocation reduces the need for frequent maintenance and alleviates concerns about the chain outgrowing the available space. It's worth noting that the only drawback of running a smaller disk is the requirement for more regular resyncing or pruning.
 
-For more details, see [Database size](../fundamentals/database.md#database-size).
+For more up-to-date details about storage requirements for a specific network, see [Database size](../fundamentals/database.md#database-size).
 
 #### Disk speed
 
 The speed of the disk often acts as a bottleneck for the node's performance. It is crucial for optimizing your validator's performance rewards and the syncing process. We highly recommend a disk with a minimum of 10,000 IOPS for both write and read operations. Slower disks may hinder your ability to synchronize the blockchain successfully.
+
+:::tip
+Choosing SSD over spinning disks is essential for running a node. To choose a specific disk model, check out [Great and less great SSDs for Ethereum nodes](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038#the-good).
+:::
 
 #### Sync modes and disk usage
 
