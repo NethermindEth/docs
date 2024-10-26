@@ -67,6 +67,15 @@ Archive nodes are generally more resource-demanding. If you intend to run one, w
 
 To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#op-stack).
 
+## Taiko
+
+**Supported networks**
+
+- [Taiko Mainnet](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-mainnet)
+- [Taiko Hekla](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hekla) (testnet)
+
+To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
+
 ## Gnosis Chain
 
 **Supported networks**
