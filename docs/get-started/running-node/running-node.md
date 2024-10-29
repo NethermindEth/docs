@@ -20,9 +20,9 @@ We urge you to always [explicitly specify](../../fundamentals/configuration.md#d
 
 **Supported networks**
 
-- [Mainnet](https://ethereum.org/en/developers/docs/networks/#ethereum-mainnet)
-- [Holesky](https://github.com/eth-clients/holesky) (testnet)
-- [Sepolia](https://github.com/eth-clients/sepolia) (testnet)
+- [Mainnet](https://ethereum.org/en/developers/docs/networks/#ethereum-mainnet) - configurations: `mainnet` `mainnet_archive`
+- [Holesky](https://github.com/eth-clients/holesky) (testnet) - configurations: `holesky` `holesky_archive`
+- [Sepolia](https://github.com/eth-clients/sepolia) (testnet) - configurations: `sepolia` `sepolia_archive`
 
 :::tip
 We highly recommend checking out the [Spin up your own Ethereum node](https://ethereum.org/en/developers/docs/nodes-and-clients/run-a-node/) guide by the Ethereum Foundation.
@@ -59,11 +59,11 @@ Archive nodes are generally more resource-demanding. If you intend to run one, w
 **Supported networks**
 
 - Optimism
-  - [OP Mainnet](https://docs.optimism.io/chain/networks#op-mainnet)
-  - [OP Sepolia](https://docs.optimism.io/chain/networks#op-sepolia) (testnet)
+  - [OP Mainnet](https://docs.optimism.io/chain/networks#op-mainnet) - configurations: `op-mainnet` `op-mainnet_archive`
+  - [OP Sepolia](https://docs.optimism.io/chain/networks#op-sepolia) (testnet) - configurations: `op-sepolia` `op-sepolia_archive`
 - Base
-  - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet)
-  - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet)
+  - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet) - configurations: `base-mainnet` `base-mainnet_archive`
+  - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet) - configurations: `base-sepolia` `base-sepolia_archive`
 
 To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#op-stack).
 
@@ -71,8 +71,8 @@ To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#
 
 **Supported networks**
 
-- [Taiko Mainnet](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-mainnet)
-- [Taiko Hekla](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hekla) (testnet)
+- [Taiko Mainnet](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-mainnet) - configurations: `taiko-mainnet` `taiko-mainnet_archive`
+- [Taiko Hekla](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hekla) (testnet) - configurations: `taiko-hekla` `taiko-hekla_archive`
 
 To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
 
@@ -80,8 +80,8 @@ To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
 
 **Supported networks**
 
-- [Gnosis](https://docs.gnosischain.com/about/networks/mainnet)
-- [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet)
+- [Gnosis](https://docs.gnosischain.com/about/networks/mainnet) - configurations: `gnosis` `gnosis_archive`
+- [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet) - configurations: `chiado` `chiado_archive`
 
 To run Nethermind on the Gnosis Chain, see the [Gnosis Chain documentation](https://docs.gnosischain.com/node).
 
@@ -89,8 +89,8 @@ To run Nethermind on the Gnosis Chain, see the [Gnosis Chain documentation](http
 
 **Supported networks**
 
-- [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain)
-- [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet)
+- [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain) - configurations: `energyweb` `energyweb_archive`
+- [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet) - configurations: `volta` `volta_archive`
 
 :::info
 As the Energy Web Chain is an Aura-based network, running a node does not require a consensus client.
