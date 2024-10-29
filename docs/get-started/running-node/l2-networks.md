@@ -7,7 +7,8 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 :::info Before you begin
-Running a Layer 2 (L2) node requires access to a Layer (L1) node—either on-premises or an external RPC provider. If you also plan to [run an L1 node with Nethermind](running-node.md#ethereum), note that you will need two Nethermind instances—one for the L1 node and another for the L2 node.
+- Running a Layer 2 (L2) node requires access to a Layer (L1) node—either on-premises or an external RPC provider. If you also plan to [run an L1 node with Nethermind](running-node.md#ethereum), note that you will need two Nethermind instances—one for the L1 node and another for the L2 node.
+- If both the L1 and L2 nodes run on the same machine, ensure they use different ports and data directories.
 :::
 
 ## OP Stack
@@ -15,8 +16,8 @@ Running a Layer 2 (L2) node requires access to a Layer (L1) node—either on-pre
 An [Optimism node](https://docs.optimism.io/builders/node-operators/architecture) consists of two parts: op-node, a rollup node, analogous to a consensus client in Ethereum paired with an L2 execution client.
 
 :::warning Important
-- Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to op-node.
-- If both the L1 and L2 nodes run on the same machine, ensure they use different ports and data directories.
+Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to op-node.
+
 :::
 
 <Tabs groupId="network">
@@ -97,8 +98,7 @@ For available settings, see [op-node configuration options](https://docs.optimis
 A [Taiko node](https://docs.taiko.xyz/core-concepts/taiko-nodes/) consists of two parts: taiko-client, analogous to a consensus client in Ethereum paired with an L2 execution client.
 
 :::warning Important
-- Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to taiko-client.
-- If both the L1 and L2 nodes run on the same machine, ensure they use different ports and data directories.
+Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to taiko-client.
 :::
 
 <Tabs groupId="network">
