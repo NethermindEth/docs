@@ -40,13 +40,13 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 
 - `state`: 160 GB
 - `receipts`: 215 GB
-- `blocks`: 604 GB
+- `blocks`: 605 GB
 - `bloom`: 6.5 GB
 - `headers`: 9.1 GB
 - `code`: 4.8 GB
-- `blobTransactions`: 815 MB
+- `blobTransactions`: 721 MB
 - ...
-- **Total: 1001 GB**
+- **Total: 1002 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
@@ -57,7 +57,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 2.2 GB
 - `headers`: 2.5 GB
 - `code`: 6.9 GB
-- `blobTransactions`: 308 MB
+- `blobTransactions`: 224 MB
 - ...
 - **Total: 405 GB**
 
@@ -67,10 +67,10 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 21 GB
 - `receipts`: 16 GB
 - `blocks`: 59 GB
-- `bloom`: 823 MB
+- `bloom`: 827 MB
 - `headers`: 1.1 GB
-- `code`: 704 MB
-- `blobTransactions`: 47 MB
+- `code`: 708 MB
+- `blobTransactions`: 35 MB
 - ...
 - **Total: 98 GB**
 
@@ -92,11 +92,11 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 
 - `state`: 2.6 GB
 - `receipts`: 1.5 GB
-- `blocks`: 9.5 GB
+- `blocks`: 9.6 GB
 - `bloom`: 3.2 GB
 - `headers`: 2.5 GB
-- `code`: 71 MB
-- `blobTransactions`: 463 MB
+- `code`: 72 MB
+- `blobTransactions`: 458 MB
 - ...
 - **Total: 21 GB**
 
@@ -124,7 +124,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `code`: 96 MB
 - `blobTransactions`: 
 - ...
-- **Total: 94 GB**
+- **Total: 95 GB**
 
 </TabItem>
 </Tabs>
