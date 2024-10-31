@@ -42,9 +42,9 @@ Run Nethermind as follows:
 ```bash
 nethermind \
   -c mainnet \
-  -dd path/to/data/dir \
-  --Metrics.Enabled true \
-  --Metrics.PushGatewayUrl http://localhost:9091
+  --data-dir path/to/data/dir \
+  --metrics-enabled true \
+  --metrics-pushgatewayurl http://localhost:9091
 ```
 
 Alternatively, you may add the `nethermind` service to the `docker-compose.yml` file in the repository root to run everything altogether:
@@ -66,7 +66,7 @@ nethermind:
     nofile:
       soft: 1000000
       hard: 1000000
-  command: -c mainnet --Metrics.Enabled true --Metrics.PushGatewayUrl http://pushgateway:9091
+  command: -c mainnet --metrics-enabled true --metrics-pushgatewayurl http://pushgateway:9091
   volumes:
     - ./keystore:/nethermind/keystore
     - ./logs:/nethermind/logs

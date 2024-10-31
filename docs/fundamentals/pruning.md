@@ -27,16 +27,17 @@ Currently, full pruning takes between 20 to 30 hours to complete, although the d
 
 :::warning Important
 Do not turn on full pruning on an archive node, as these are two opposing features. Archive nodes are designed to store
-complete historical data, whereas full pruning eliminates it. Use the option `--Pruning.Mode None` to ensure that pruning is turned off completely.
+complete historical data, whereas full pruning eliminates it. Set the [`Pruning.Mode`](../fundamentals/configuration.md#pruning-mode) configuration options to `None` to ensure that pruning is turned off completely.
 :::
 
 ## Configuring full pruning
 
-As a very first point, check out the [pruning configuration options](./configuration.md#pruning).\
-To activate full pruning, use either the `--Pruning.Mode Hybrid` or `--Pruning.Mode Full` command line options.
+As a very first point, check out the [pruning configuration options](./configuration.md#pruning).
+
+To activate full pruning, set either the [`Pruning.Mode`](../fundamentals/configuration.md#pruning-mode) configuration option to `Hybrid` or `Full`.
 
 :::info
-Setting `--Pruning.Mode Hybrid` enables both `InMemory` and `Full` modes. The `InMemory` mode helps the node storage grow slower than the `Full` mode. Because of this, full pruning is executed less frequently, promoting
+Setting the `Pruning.Mode` to `Hybrid` enables both `InMemory` and `Full` modes. The `InMemory` mode helps the node storage grow slower than the `Full` mode. Because of this, full pruning is executed less frequently, promoting
 healthier disk operation. Since full pruning is hardware-intensive, this configuration also benefits attestation results.
 :::
 
@@ -48,14 +49,14 @@ The next step is to determine the trigger conditions for full pruning. Currently
 
 ### Manual
 
-Manual mode triggers full pruning only upon request, providing complete control. To configure this mode, use the following options: `--Pruning.Mode Hybrid --Pruning.FullPruningTrigger Manual`.
+Manual mode triggers full pruning only upon request, providing complete control. To configure this mode, set the the `Pruning.Mode` to `Hybrid` and the [`Pruning.FullPruningTrigger`](../fundamentals/configuration.md#pruning.fullpruningtrigger) to `Manual`.
 
 Pruning can also be triggered using the [`admin_prune`](../interacting/json-rpc-ns/admin.md#admin_prune) JSON-RPC method. Here's how to configure it:
 
-- Add the `admin` namespace to `--JsonRpc.EnabledModules`. For instance,\
-  `--JsonRpc.EnabledModules [eth,net,...,admin]`
+- Add the `admin` namespace to [`JsonRpc.EnabledModules`](./configuration.md#jsonrpc-enabledmodules). For instance,\
+  `--jsonrpc-enabledmodules [eth,net,...,admin]`
 - Create a separate port for `admin` namespace only:\
-  `--JsonRpc.AdditionalRpcUrls http://localhost:8555|http|admin`
+  `--jsonrpc-additionalrpcurls http://localhost:8555|http|admin`
 
 Restart the client, and if everything is configured correctly, you should be able to call the `admin_prune` method, and full pruning should start.
 
@@ -66,7 +67,7 @@ One potential disadvantage of the manual mode is that if full pruning is not tri
 ### State database size threshold {#state-db-threshold}
 
 This mode triggers full pruning automatically when the state database reaches the specified size.
-To enable this mode, use the following options: `--Pruning.Mode Hybrid --Pruning.FullPruningTrigger StateDbSize --Pruning.FullPruningThresholdMb 256000`, where the value of `Pruning.FullPruningThresholdMb` should be set based on your requirements.
+To enable this mode, set the `Pruning.Mode` to `Hybrid`, `Pruning.FullPruningTrigger` to `StateDbSize`, and [`Pruning.FullPruningThresholdMb`](../fundamentals/configuration.md#pruning-fullpruningthresholdmb) to `256000` or to something that better suits your needs.
 
 The above configuration triggers full pruning automatically whenever the state database size exceeds 256,000
 MB (250 GB). Assuming the state database has initially around 160 GB, pruning will be triggered when the database size grows by more than 90 GB.
@@ -81,7 +82,7 @@ To avoid unexpected behavior and ensure that full pruning can be completed in fu
 This is the recommended approach as it ensures that pruning is executed on time.
 :::
 
-This mode triggers full pruning when the storage space reaches the specified minimum. To enable this mode, use the following options: `--Pruning.Mode Hybrid --Pruning.FullPruningTrigger VolumeFreeSpace --Pruning.FullPruningThresholdMb 256000`, where the value of `Pruning.FullPruningThresholdMb` should be set based on your requirements. However, it should not be set below the default value of `256000`.
+This mode triggers full pruning when the storage space reaches the specified minimum. To enable this mode, set the `Pruning.Mode` to `Hybrid`, `Pruning.FullPruningTrigger` to `VolumeFreeSpace`, and `Pruning.FullPruningThresholdMb` to `256000` or a higher value if needed.
 
 The above configuration triggers full pruning whenever free disk space drops to 256,000 MB (250 GB) or below. This ensures that pruning is invoked as infrequently as possible while also ensuring that sufficient free storage is always available to trigger it.
 
@@ -127,7 +128,7 @@ Since the amount of mirrored nodes is not a static value, providing a simple pro
 
 ### Memory budget
 
-The `Pruning.FullPruningMemoryBudgetMb` configuration option controls the memory budget allocated for the trie visit during
+The [`Pruning.FullPruningMemoryBudgetMb`](./configuration.md#pruning-fullpruningmemorybudgetmb) configuration option controls the memory budget allocated for the trie visit during
 the full pruning process. During pruning, pending nodes are queued to a pool of nodes whose size is determined by this value. This allows multiple nodes to share a single I/O. By increasing this value, the required read IOP per second can be significantly reduced, resulting in a faster full pruning operation. However, this improvement comes at the expense of increased memory usage.
 
 Assuming your system has 64GB of RAM, with Nethermind, the consensus client, and system expenses consuming 20GB,
@@ -142,7 +143,7 @@ Depending on the specific use case and system requirements, it may be necessary 
 
 ### Pruning completion behavior
 
-The `Pruning.FullPruningCompletionBehavior` configuration option determines Nethermind's behavior after full pruning is completed. By default, Nethermind will continue to progress as usual. However, if a user wishes to shut down the node after pruning, there are three options available:
+The [`Pruning.FullPruningCompletionBehavior`](./configuration.md#pruning-fullpruningcompletionbehavior) configuration option determines Nethermind's behavior after full pruning is completed. By default, Nethermind will continue to progress as usual. However, if a user wishes to shut down the node after pruning, there are three options available:
 
 - `None`: No action taken
 - `ShutdownOnSuccess`: Nethermind shuts down if pruning succeeds
@@ -150,7 +151,7 @@ The `Pruning.FullPruningCompletionBehavior` configuration option determines Neth
 
 ### Number of pruning concurrent tasks
 
-The `Pruning.FullPruningMaxDegreeOfParallelism` configuration option determines the number of parallel tasks/threads that can be used by pruning:
+The [`Pruning.FullPruningMaxDegreeOfParallelism`](./configuration.md#pruning-fullpruningmaxdegreeofparallelism) configuration option determines the number of parallel tasks/threads that can be used by pruning:
 
 - `-1`: uses the number of logical processors
 - `0`: uses 25% of logical processors
@@ -161,7 +162,7 @@ is desired, this can be set to 2–3 times the number of logical processors.
 
 ### In-memory cache size
 
-The `Pruning.CacheMb` configuration option determines the size, in MB, of the memory pool of nodes used for in-memory pruning. The default value is 1024. Increasing this value can help reduce the rate at which the state database grows.
+The [`Pruning.CacheMb`](./configuration.md#pruning-cachemb) configuration option determines the size, in MB, of the memory pool of nodes used for in-memory pruning. The default value is 1024. Increasing this value can help reduce the rate at which the state database grows.
 
 ## Side notes
 
@@ -170,4 +171,4 @@ For pruning, keep in mind the following:
 - Full pruning is a cumbersome task, but it's performed in the background, so the node continues progressing and following the chain.
 - The process' heaviness may affect the effectiveness of the validator rewards. Still, since it's executed only once every few months, it shouldn't have a significant impact on overall results (we've xperienced approximately 5–10% loss of rewards during full pruning).
 - Ensure that your storage has at least 250 GB of free space after syncing the node. Otherwise, full pruning will never complete successfully.
-- Several things can be done to reduce the size of the database after syncing: setting `Sync.AncientBodiesBarrier` and `Sync.AncientReceiptsBarrier` to a proper value higher than 0, using a consensus client that requires less storage, and setting logs to the lowest level to avoid log spamming.
+- Several things can be done to reduce the size of the database after syncing: setting [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) and [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) to a proper value higher than 0, using a consensus client that requires less storage, and setting logs to the lowest level to avoid log spamming.

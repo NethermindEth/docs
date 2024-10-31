@@ -19,8 +19,8 @@ The health check service is disabled by default. To enable it, set the [`HealthC
 ```bash
 nethermind \
   -c mainnet \
-  -dd path/to/data/dir \
-  --HealthChecks.Enabled true
+  --data-dir path/to/data/dir \
+  --healthchecks-enabled true
 ```
 
 Once Nethermind is up and running, the health check service can be accessed at the `/health` endpoint:
@@ -86,13 +86,13 @@ The following example demonstrates how to configure a basic Slack webhook:
 ```bash
 nethermind \
   -c mainnet \
-  -dd path/to/data/dir \
-  --HealthChecks.Enabled true \
-  --HealthChecks.UIEnabled true \
-  --HealthChecks.WebhooksEnabled true \
-  --HealthChecks.WebhooksUri https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX \
-  --HealthChecks.WebhooksPayload '{"text": "Node is unhealthy"}' \
-  --HealthChecks.WebhooksRestorePayload '{"text": "Node is healthy"}'
+  --data-dir path/to/data/dir \
+  --healthchecks-enabled true \
+  --healthchecks-uienabled true \
+  --healthchecks-webhooksenabled true \
+  --healthchecks-webhooksuri https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX \
+  --healthchecks-webhookspayload '{"text": "Node is unhealthy"}' \
+  --healthchecks-webhooksrestorepayload '{"text": "Node is healthy"}'
 ```
 
 ## Monitoring storage space {#storage-space}

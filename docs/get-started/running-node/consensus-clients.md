@@ -36,7 +36,7 @@ openssl rand -hex 32 > path/to/jwt.hex
 Since the JWT secret is simply a 64-character hex value, there are many other ways of generating it, including online resources. However, for security reasons, we recommend using OpenSSL.
 :::
 
-The generated JWT secret can be specified with the `--JsonRpc.JwtSecretFile path/to/jwt.hex` command line option. For more configuration options, see [Engine API](../../interacting/json-rpc-server.md#engine-api).
+The generated JWT secret can be specified with the [`JsonRpc.JwtSecretFile`](../../fundamentals/configuration.md#jsonrpc-jwtsecretfile) configuration option. For more configuration options, see [Engine API](../../interacting/json-rpc-server.md#engine-api).
 
 ## Running the consensus client
 
@@ -126,8 +126,8 @@ Once your consensus client is up and running, you can start Nethermind with the 
 ```bash
 nethermind \
   -c mainnet \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 For more info about running a node with Nethermind, see [Running a node](running-node.md).

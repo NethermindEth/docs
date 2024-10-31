@@ -30,13 +30,9 @@ The configuration options are case-sensitive and can be defined only once unless
 
 ## Basic command line options
 
-- #### `-d, --baseDbPath <path>` \{#basedbpath\}
-
-  The path to the Nethermind database directory. Defaults to `db`.
-
 - #### `-c, --config <value>` \{#config\}
 
-  The path to the [configuration file](#configuration-file) or the name (without extension) of any of the configuration files in the configuration directory. Defaults to `mainnet`.
+  The path to the [configuration file](#configuration-file) or the file name (also without extension) of any of the configuration files in the configuration files directory. Defaults to `mainnet`.
 
   <details>
   <summary>Available configurations</summary>
@@ -61,11 +57,27 @@ The configuration options are case-sensitive and can be defined only once unless
   </p>
   </details>
 
-- #### `-cd, --configsDirectory <path>` \{#configs-directory\}
+  Alternatively, the configuration file can also be set by the `NETHERMIND_CONFIG` environment variable.
+
+- #### `--configs-dir <path>` \{#configs-dir\}
 
   The path to the configuration files directory. Defaults to `configs`.
 
-- #### `-dd, --datadir <path>` \{#datadir\}
+  :::note
+  This option is ignored if the [`-c, --config`](#config) option is set to a path:
+
+  ```bash
+  # Ignored for
+  -c ./mainnet.json
+  -c path/to/mainnet.json
+  # Respected for
+  -c mainnet
+  -c mainnet.json
+  ```
+
+  :::
+
+- #### `--data-dir <path>` \{#data-dir\}
 
   The path to the Nethermind data directory. Defaults to Nethermind's current directory.
 
@@ -73,25 +85,29 @@ The configuration options are case-sensitive and can be defined only once unless
   The absolute paths set by [`Init.BaseDbPath`](#init-basedbpath), [`Init.LogDirectory`](#init-logdirectory), or [`KeyStore.KeyStoreDirectory`](#keystore-keystoredirectory) options in a configuration file are not overridden by `--datadir`.
   :::
 
+- #### `--db-dir <path>` \{#db-dir\}
+
+  The path to the Nethermind database directory. Defaults to `db`.
+
 - #### `-?, -h, --help` \{#help\}
 
-  Displays the full list of available command line options.
+  Shows the full list of available command line options.
 
 - #### `-l, --log <level>` \{#log\}
 
-  Log level (severity). Allowed values: `TRACE` `DEBUG` `INFO` `WARN` `ERROR` `OFF`. Defaults to `INFO`.
+  Log level (severity). Allowed values: `off` `trace` `debug` `info` `warn` `error`. Defaults to `info`.
 
-- #### `-lcs, --loggerConfigSource <path>` \{#loggerconfigsource\}
+- #### `--logger-config <path>` \{#logger-config\}
 
-  The path to the NLog configuration file. Defaults to `NLog.config`.
+  The path to the logging configuration file. Defaults to `NLog.config`.
 
-- #### `-pd, --pluginsDirectory <path>` \{#pluginsdirectory\}
+- #### `--plugins-dir <path>` \{#plugins-dir\}
 
   The path to the Nethermind plugins directory. Defaults to `plugins`.
 
-- #### `-v, --version` \{#version\}
+- #### `--version` \{#version\}
 
-  Displays the Nethermind version info.
+  Shows the Nethermind version information.
 
 ## Options by namespaces
 
@@ -104,6 +120,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --aura-allowauraprivatechains <value>
   --Aura.AllowAuRaPrivateChains <value>
   ```
   </TabItem>
@@ -130,6 +147,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --aura-forcesealing <value>
   --Aura.ForceSealing <value>
   ```
   </TabItem>
@@ -156,6 +174,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --aura-minimum2mlngasperblockwhenusingblockgaslimitcontract <value>
   --Aura.Minimum2MlnGasPerBlockWhenUsingBlockGasLimitContract <value>
   ```
   </TabItem>
@@ -182,6 +201,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --aura-txpriorityconfigfilepath <value>
   --Aura.TxPriorityConfigFilePath <value>
   ```
   </TabItem>
@@ -208,6 +228,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --aura-txprioritycontractaddress <value>
   --Aura.TxPriorityContractAddress <value>
   ```
   </TabItem>
@@ -237,6 +258,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-blockproductiontimeoutms <value>
   --Blocks.BlockProductionTimeoutMs <value>
   ```
   </TabItem>
@@ -256,13 +278,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Block Production timeout, in milliseconds. Defaults to `4000`.
+  The block production timeout, in milliseconds. Defaults to `4000`.
 
 - #### `Blocks.ExtraData` \{#blocks-extradata\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-extradata <value>
   --Blocks.ExtraData <value>
   ```
   </TabItem>
@@ -289,6 +312,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-genesistimeoutms <value>
   --Blocks.GenesisTimeoutMs <value>
   ```
   </TabItem>
@@ -308,13 +332,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Genesis block load timeout, in milliseconds. Defaults to `40000`.
+  The genesis block load timeout, in milliseconds. Defaults to `40000`.
 
 - #### `Blocks.MinGasPrice` \{#blocks-mingasprice\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-mingasprice <value>
   --Blocks.MinGasPrice <value>
   ```
   </TabItem>
@@ -341,6 +366,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-prewarmstateonblockprocessing <value>
   --Blocks.PreWarmStateOnBlockProcessing <value>
   ```
   </TabItem>
@@ -367,6 +393,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-randomizedblocks <value>
   --Blocks.RandomizedBlocks <value>
   ```
   </TabItem>
@@ -393,6 +420,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-secondsperslot <value>
   --Blocks.SecondsPerSlot <value>
   ```
   </TabItem>
@@ -419,6 +447,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --blocks-targetblockgaslimit <value>
   --Blocks.TargetBlockGasLimit <value>
   ```
   </TabItem>
@@ -448,6 +477,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --bloom-index <value>
   --Bloom.Index <value>
   ```
   </TabItem>
@@ -474,6 +504,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --bloom-indexlevelbucketsizes <value>
   --Bloom.IndexLevelBucketSizes <value>
   ```
   </TabItem>
@@ -500,6 +531,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --bloom-migration <value>
   --Bloom.Migration <value>
   ```
   </TabItem>
@@ -526,6 +558,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --bloom-migrationstatistics <value>
   --Bloom.MigrationStatistics <value>
   ```
   </TabItem>
@@ -555,6 +588,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --censorshipdetector-addressesforcensorshipdetection <value>
   --CensorshipDetector.AddressesForCensorshipDetection <value>
   ```
   </TabItem>
@@ -574,13 +608,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The addresses for which censorship is being detected. Defaults to `null`.
+  The addresses to detect censorship for. Defaults to `null`.
 
 - #### `CensorshipDetector.BlockCensorshipThreshold` \{#censorshipdetector-blockcensorshipthreshold\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --censorshipdetector-blockcensorshipthreshold <value>
   --CensorshipDetector.BlockCensorshipThreshold <value>
   ```
   </TabItem>
@@ -600,13 +635,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Number of consecutive blocks with detected potential censorship to report censorship attempt Defaults to `2`.
+  The number of the consecutive blocks with detected potential censorship to report. Defaults to `2`.
 
 - #### `CensorshipDetector.Enabled` \{#censorshipdetector-enabled\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --censorshipdetector-enabled <value>
   --CensorshipDetector.Enabled <value>
   ```
   </TabItem>
@@ -626,7 +662,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Enabling censorship detection feature Allowed values: `true` `false`. Defaults to `true`.
+  Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
 
 
 ### EthStats
@@ -636,6 +672,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --ethstats-contact <value>
   --EthStats.Contact <value>
   ```
   </TabItem>
@@ -662,6 +699,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --ethstats-enabled <value>
   --EthStats.Enabled <value>
   ```
   </TabItem>
@@ -688,6 +726,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --ethstats-name <value>
   --EthStats.Name <value>
   ```
   </TabItem>
@@ -714,6 +753,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --ethstats-secret <value>
   --EthStats.Secret <value>
   ```
   </TabItem>
@@ -740,6 +780,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --ethstats-sendinterval <value>
   --EthStats.SendInterval <value>
   ```
   </TabItem>
@@ -766,6 +807,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --ethstats-server <value>
   --EthStats.Server <value>
   ```
   </TabItem>
@@ -795,6 +837,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-enabled <value>
   --HealthChecks.Enabled <value>
   ```
   </TabItem>
@@ -821,6 +864,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-lowstoragecheckawaitonstartup <value>
   --HealthChecks.LowStorageCheckAwaitOnStartup <value>
   ```
   </TabItem>
@@ -847,6 +891,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-lowstoragespaceshutdownthreshold <value>
   --HealthChecks.LowStorageSpaceShutdownThreshold <value>
   ```
   </TabItem>
@@ -873,6 +918,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-lowstoragespacewarningthreshold <value>
   --HealthChecks.LowStorageSpaceWarningThreshold <value>
   ```
   </TabItem>
@@ -899,6 +945,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-maxintervalclrequesttime <value>
   --HealthChecks.MaxIntervalClRequestTime <value>
   ```
   </TabItem>
@@ -925,6 +972,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-maxintervalwithoutprocessedblock <value>
   --HealthChecks.MaxIntervalWithoutProcessedBlock <value>
   ```
   </TabItem>
@@ -951,6 +999,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-maxintervalwithoutproducedblock <value>
   --HealthChecks.MaxIntervalWithoutProducedBlock <value>
   ```
   </TabItem>
@@ -977,6 +1026,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-pollinginterval <value>
   --HealthChecks.PollingInterval <value>
   ```
   </TabItem>
@@ -1003,6 +1053,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-slug <value>
   --HealthChecks.Slug <value>
   ```
   </TabItem>
@@ -1029,6 +1080,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-uienabled <value>
   --HealthChecks.UIEnabled <value>
   ```
   </TabItem>
@@ -1055,6 +1107,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-webhooksenabled <value>
   --HealthChecks.WebhooksEnabled <value>
   ```
   </TabItem>
@@ -1081,6 +1134,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-webhookspayload <value>
   --HealthChecks.WebhooksPayload <value>
   ```
   </TabItem>
@@ -1132,6 +1186,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-webhooksrestorepayload <value>
   --HealthChecks.WebhooksRestorePayload <value>
   ```
   </TabItem>
@@ -1183,6 +1238,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --healthchecks-webhooksuri <value>
   --HealthChecks.WebhooksUri <value>
   ```
   </TabItem>
@@ -1212,6 +1268,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --hive-blocksdir <value>
   --Hive.BlocksDir <value>
   ```
   </TabItem>
@@ -1238,6 +1295,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --hive-chainfile <value>
   --Hive.ChainFile <value>
   ```
   </TabItem>
@@ -1264,6 +1322,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --hive-enabled <value>
   --Hive.Enabled <value>
   ```
   </TabItem>
@@ -1290,6 +1349,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --hive-genesisfilepath <value>
   --Hive.GenesisFilePath <value>
   ```
   </TabItem>
@@ -1316,6 +1376,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --hive-keysdir <value>
   --Hive.KeysDir <value>
   ```
   </TabItem>
@@ -1345,6 +1406,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-autodump <value>
   --Init.AutoDump <value>
   ```
   </TabItem>
@@ -1364,18 +1426,18 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Auto-dump on bad blocks for diagnostics. `Default` combines `Receipts` and `Rlp`.
+  Auto-dump on bad blocks for diagnostics.
 
   Allowed values:
 
-    - `None`
-    - `Receipts`
-    - `Parity`
-    - `Geth`
-    - `Rlp`
-    - `RlpLog`
-    - `Default`
-    - `All`
+    - `None`: None.
+    - `Receipts`: Dumps block receipts traces.
+    - `Parity`: Dumps Parity-like traces.
+    - `Geth`: Dumps Geth-like traces.
+    - `Rlp`: Dumps RLP data to a `.rlp` file with the block hash in the file name.
+    - `RlpLog`: Dumps RLP data to the log output.
+    - `Default`: Combines the `Receipts` `Rlp` options.
+    - `All`: Combines the `Geth` `Parity` `Receipts` `Rlp` options.
 
   Defaults to `Default`.
 
@@ -1384,6 +1446,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-badblocksstored <value>
   --Init.BadBlocksStored <value>
   ```
   </TabItem>
@@ -1410,6 +1473,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-basedbpath <value>
   --Init.BaseDbPath <value>
   ```
   </TabItem>
@@ -1436,6 +1500,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-chainspecpath <value>
   --Init.ChainSpecPath <value>
   ```
   </TabItem>
@@ -1462,6 +1527,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-diagnosticmode <value>
   --Init.DiagnosticMode <value>
   ```
   </TabItem>
@@ -1485,13 +1551,13 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`
-    - `MemDb`
-    - `RpcDb`
-    - `ReadOnlyDb`
-    - `VerifyRewards`
-    - `VerifySupply`
-    - `VerifyTrie`
+    - `None`: None.
+    - `MemDb`: Uses an in-memory DB.
+    - `RpcDb`: Uses a remote DB.
+    - `ReadOnlyDb`: Uses a read-only DB.
+    - `VerifyRewards`: Scans rewards for blocks and genesis.
+    - `VerifySupply`: Scans and sums supply on all accounts.
+    - `VerifyTrie`: Verifies if full state trie is stored.
 
   Defaults to `None`.
 
@@ -1500,6 +1566,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-discoveryenabled <value>
   --Init.DiscoveryEnabled <value>
   ```
   </TabItem>
@@ -1526,6 +1593,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-enableunsecureddevwallet <value>
   --Init.EnableUnsecuredDevWallet <value>
   ```
   </TabItem>
@@ -1552,6 +1620,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-genesishash <value>
   --Init.GenesisHash <value>
   ```
   </TabItem>
@@ -1578,6 +1647,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-hivechainspecpath <value>
   --Init.HiveChainSpecPath <value>
   ```
   </TabItem>
@@ -1604,6 +1674,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-ismining <value>
   --Init.IsMining <value>
   ```
   </TabItem>
@@ -1630,6 +1701,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-keepdevwalletinmemory <value>
   --Init.KeepDevWalletInMemory <value>
   ```
   </TabItem>
@@ -1656,6 +1728,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-kzgsetuppath <value>
   --Init.KzgSetupPath <value>
   ```
   </TabItem>
@@ -1682,6 +1755,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-logdirectory <value>
   --Init.LogDirectory <value>
   ```
   </TabItem>
@@ -1708,6 +1782,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-logfilename <value>
   --Init.LogFileName <value>
   ```
   </TabItem>
@@ -1734,6 +1809,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-logrules <value>
   --Init.LogRules <value>
   ```
   </TabItem>
@@ -1760,6 +1836,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-memoryhint <value>
   --Init.MemoryHint <value>
   ```
   </TabItem>
@@ -1786,6 +1863,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-peermanagerenabled <value>
   --Init.PeerManagerEnabled <value>
   ```
   </TabItem>
@@ -1812,6 +1890,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-processingenabled <value>
   --Init.ProcessingEnabled <value>
   ```
   </TabItem>
@@ -1838,6 +1917,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-rpcdburl <value>
   --Init.RpcDbUrl <value>
   ```
   </TabItem>
@@ -1864,6 +1944,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-staticnodespath <value>
   --Init.StaticNodesPath <value>
   ```
   </TabItem>
@@ -1890,6 +1971,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --init-websocketsenabled <value>
   --Init.WebSocketsEnabled <value>
   ```
   </TabItem>
@@ -1919,6 +2001,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-additionalrpcurls <value>
   --JsonRpc.AdditionalRpcUrls <value>
   ```
   </TabItem>
@@ -1945,6 +2028,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-bufferresponses <value>
   --JsonRpc.BufferResponses <value>
   ```
   </TabItem>
@@ -1971,6 +2055,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-callsfilterfilepath <value>
   --JsonRpc.CallsFilterFilePath <value>
   ```
   </TabItem>
@@ -1997,6 +2082,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-enabled <value>
   --JsonRpc.Enabled <value>
   ```
   </TabItem>
@@ -2023,6 +2109,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-enabledmodules <value>
   --JsonRpc.EnabledModules <value>
   ```
   </TabItem>
@@ -2043,9 +2130,9 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
-
+  
   Built-in namespaces:
-
+  
   - `admin`
   - `client`
   - `debug`
@@ -2062,7 +2149,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `trace`
   - `txpool`
   - `web3`
-
+  
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - #### `JsonRpc.EngineEnabledModules` \{#jsonrpc-engineenabledmodules\}
@@ -2070,6 +2157,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-engineenabledmodules <value>
   --JsonRpc.EngineEnabledModules <value>
   ```
   </TabItem>
@@ -2096,6 +2184,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-enginehost <value>
   --JsonRpc.EngineHost <value>
   ```
   </TabItem>
@@ -2122,6 +2211,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-engineport <value>
   --JsonRpc.EnginePort <value>
   ```
   </TabItem>
@@ -2148,6 +2238,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-estimateerrormargin <value>
   --JsonRpc.EstimateErrorMargin <value>
   ```
   </TabItem>
@@ -2174,6 +2265,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-ethmoduleconcurrentinstances <value>
   --JsonRpc.EthModuleConcurrentInstances <value>
   ```
   </TabItem>
@@ -2194,7 +2286,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of concurrent instances for non-sharable calls:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2202,7 +2294,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
 
 - #### `JsonRpc.GasCap` \{#jsonrpc-gascap\}
@@ -2210,6 +2302,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-gascap <value>
   --JsonRpc.GasCap <value>
   ```
   </TabItem>
@@ -2236,6 +2329,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-host <value>
   --JsonRpc.Host <value>
   ```
   </TabItem>
@@ -2262,6 +2356,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-ipcunixdomainsocketpath <value>
   --JsonRpc.IpcUnixDomainSocketPath <value>
   ```
   </TabItem>
@@ -2288,6 +2383,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-jwtsecretfile <value>
   --JsonRpc.JwtSecretFile <value>
   ```
   </TabItem>
@@ -2314,6 +2410,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-maxbatchresponsebodysize <value>
   --JsonRpc.MaxBatchResponseBodySize <value>
   ```
   </TabItem>
@@ -2340,6 +2437,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-maxbatchsize <value>
   --JsonRpc.MaxBatchSize <value>
   ```
   </TabItem>
@@ -2366,6 +2464,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-maxloggedrequestparameterscharacters <value>
   --JsonRpc.MaxLoggedRequestParametersCharacters <value>
   ```
   </TabItem>
@@ -2392,6 +2491,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-maxlogsperresponse <value>
   --JsonRpc.MaxLogsPerResponse <value>
   ```
   </TabItem>
@@ -2418,6 +2518,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-maxrequestbodysize <value>
   --JsonRpc.MaxRequestBodySize <value>
   ```
   </TabItem>
@@ -2444,6 +2545,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-maxsimulateblockscap <value>
   --JsonRpc.MaxSimulateBlocksCap <value>
   ```
   </TabItem>
@@ -2470,6 +2572,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-methodsloggingfiltering <value>
   --JsonRpc.MethodsLoggingFiltering <value>
   ```
   </TabItem>
@@ -2496,6 +2599,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-port <value>
   --JsonRpc.Port <value>
   ```
   </TabItem>
@@ -2522,6 +2626,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-reportintervalseconds <value>
   --JsonRpc.ReportIntervalSeconds <value>
   ```
   </TabItem>
@@ -2548,6 +2653,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-requestqueuelimit <value>
   --JsonRpc.RequestQueueLimit <value>
   ```
   </TabItem>
@@ -2568,7 +2674,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of concurrent requests in the queue for:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2576,7 +2682,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newBlockFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   `0` to lift the limit. Defaults to `500`.
 
 - #### `JsonRpc.RpcRecorderBaseFilePath` \{#jsonrpc-rpcrecorderbasefilepath\}
@@ -2584,6 +2690,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-rpcrecorderbasefilepath <value>
   --JsonRpc.RpcRecorderBaseFilePath <value>
   ```
   </TabItem>
@@ -2610,6 +2717,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-rpcrecorderstate <value>
   --JsonRpc.RpcRecorderState <value>
   ```
   </TabItem>
@@ -2633,10 +2741,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`
-    - `Request`
-    - `Response`
-    - `All`
+    - `None`: None.
+    - `Request`: Records requests.
+    - `Response`: Records responses.
+    - `All`: Records both requests and responses.
 
   Defaults to `None`.
 
@@ -2645,6 +2753,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-timeout <value>
   --JsonRpc.Timeout <value>
   ```
   </TabItem>
@@ -2671,6 +2780,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --jsonrpc-websocketsport <value>
   --JsonRpc.WebSocketsPort <value>
   ```
   </TabItem>
@@ -2700,6 +2810,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-blockauthoraccount <value>
   --KeyStore.BlockAuthorAccount <value>
   ```
   </TabItem>
@@ -2726,6 +2837,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-cipher <value>
   --KeyStore.Cipher <value>
   ```
   </TabItem>
@@ -2752,6 +2864,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-enodeaccount <value>
   --KeyStore.EnodeAccount <value>
   ```
   </TabItem>
@@ -2778,6 +2891,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-enodekeyfile <value>
   --KeyStore.EnodeKeyFile <value>
   ```
   </TabItem>
@@ -2804,6 +2918,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-ivsize <value>
   --KeyStore.IVSize <value>
   ```
   </TabItem>
@@ -2830,6 +2945,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-kdf <value>
   --KeyStore.Kdf <value>
   ```
   </TabItem>
@@ -2856,6 +2972,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-kdfparamsdklen <value>
   --KeyStore.KdfparamsDklen <value>
   ```
   </TabItem>
@@ -2882,6 +2999,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-kdfparamsn <value>
   --KeyStore.KdfparamsN <value>
   ```
   </TabItem>
@@ -2908,6 +3026,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-kdfparamsp <value>
   --KeyStore.KdfparamsP <value>
   ```
   </TabItem>
@@ -2934,6 +3053,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-kdfparamsr <value>
   --KeyStore.KdfparamsR <value>
   ```
   </TabItem>
@@ -2960,6 +3080,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-kdfparamssaltlen <value>
   --KeyStore.KdfparamsSaltLen <value>
   ```
   </TabItem>
@@ -2986,6 +3107,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-keystoredirectory <value>
   --KeyStore.KeyStoreDirectory <value>
   ```
   </TabItem>
@@ -3012,6 +3134,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-keystoreencoding <value>
   --KeyStore.KeyStoreEncoding <value>
   ```
   </TabItem>
@@ -3038,6 +3161,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-passwordfiles <value>
   --KeyStore.PasswordFiles <value>
   ```
   </TabItem>
@@ -3064,6 +3188,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-passwords <value>
   --KeyStore.Passwords <value>
   ```
   </TabItem>
@@ -3090,6 +3215,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-symmetricencrypterblocksize <value>
   --KeyStore.SymmetricEncrypterBlockSize <value>
   ```
   </TabItem>
@@ -3116,6 +3242,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-symmetricencrypterkeysize <value>
   --KeyStore.SymmetricEncrypterKeySize <value>
   ```
   </TabItem>
@@ -3142,6 +3269,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-testnodekey <value>
   --KeyStore.TestNodeKey <value>
   ```
   </TabItem>
@@ -3168,6 +3296,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --keystore-unlockaccounts <value>
   --KeyStore.UnlockAccounts <value>
   ```
   </TabItem>
@@ -3197,6 +3326,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-builderrelayurl <value>
   --Merge.BuilderRelayUrl <value>
   ```
   </TabItem>
@@ -3223,6 +3353,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-collectionsperdecommit <value>
   --Merge.CollectionsPerDecommit <value>
   ```
   </TabItem>
@@ -3242,14 +3373,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Request the garbage collector (GC) to release the process memory.
-
+  The number of requests to the garbage collector (GC) to release the process memory.
+  
   Allowed values:
-
-  - `-1` to disable
-  - `0` to release every time
-  - A positive number to release memory after that many Engine API calls
-
+  
+  - `-1`: No requests.
+  - `0`: Requests every time.
+  - A positive number: Requests after that many Engine API calls.
+  
   Defaults to `25`.
 
 - #### `Merge.CompactMemory` \{#merge-compactmemory\}
@@ -3257,6 +3388,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-compactmemory <value>
   --Merge.CompactMemory <value>
   ```
   </TabItem>
@@ -3280,9 +3412,9 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `No`
-    - `Yes`
-    - `Full`
+    - `No`: Disables memory compaction.
+    - `Yes`: Enables memory compaction.
+    - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
   Defaults to `Yes`.
 
@@ -3291,6 +3423,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-enabled <value>
   --Merge.Enabled <value>
   ```
   </TabItem>
@@ -3317,6 +3450,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-finaltotaldifficulty <value>
   --Merge.FinalTotalDifficulty <value>
   ```
   </TabItem>
@@ -3343,6 +3477,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-prioritizeblocklatency <value>
   --Merge.PrioritizeBlockLatency <value>
   ```
   </TabItem>
@@ -3369,6 +3504,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-sweepmemory <value>
   --Merge.SweepMemory <value>
   ```
   </TabItem>
@@ -3392,10 +3528,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `NoGC`
-    - `Gen0`
-    - `Gen1`
-    - `Gen2`
+    - `NoGC`: Disables garbage collection.
+    - `Gen0`: Enables garbage collection of generation 0.
+    - `Gen1`: Enables garbage collection of generation 1.
+    - `Gen2`: Enables garbage collection of generation 2.
 
   Defaults to `Gen1`.
 
@@ -3404,6 +3540,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-terminalblockhash <value>
   --Merge.TerminalBlockHash <value>
   ```
   </TabItem>
@@ -3430,6 +3567,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-terminalblocknumber <value>
   --Merge.TerminalBlockNumber <value>
   ```
   </TabItem>
@@ -3456,6 +3594,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --merge-terminaltotaldifficulty <value>
   --Merge.TerminalTotalDifficulty <value>
   ```
   </TabItem>
@@ -3485,6 +3624,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-countersenabled <value>
   --Metrics.CountersEnabled <value>
   ```
   </TabItem>
@@ -3511,6 +3651,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-enabled <value>
   --Metrics.Enabled <value>
   ```
   </TabItem>
@@ -3537,6 +3678,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-enabledbsizemetrics <value>
   --Metrics.EnableDbSizeMetrics <value>
   ```
   </TabItem>
@@ -3563,6 +3705,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-exposehost <value>
   --Metrics.ExposeHost <value>
   ```
   </TabItem>
@@ -3589,6 +3732,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-exposeport <value>
   --Metrics.ExposePort <value>
   ```
   </TabItem>
@@ -3615,6 +3759,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-intervalseconds <value>
   --Metrics.IntervalSeconds <value>
   ```
   </TabItem>
@@ -3641,6 +3786,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-nodename <value>
   --Metrics.NodeName <value>
   ```
   </TabItem>
@@ -3667,6 +3813,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --metrics-pushgatewayurl <value>
   --Metrics.PushGatewayUrl <value>
   ```
   </TabItem>
@@ -3696,6 +3843,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --mining-enabled <value>
   --Mining.Enabled <value>
   ```
   </TabItem>
@@ -3722,6 +3870,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --mining-signer <value>
   --Mining.Signer <value>
   ```
   </TabItem>
@@ -3751,6 +3900,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-bootnodes <value>
   --Network.Bootnodes <value>
   ```
   </TabItem>
@@ -3777,6 +3927,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-diagtracerenabled <value>
   --Network.DiagTracerEnabled <value>
   ```
   </TabItem>
@@ -3803,6 +3954,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-discoverydns <value>
   --Network.DiscoveryDns <value>
   ```
   </TabItem>
@@ -3829,6 +3981,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-discoveryport <value>
   --Network.DiscoveryPort <value>
   ```
   </TabItem>
@@ -3855,6 +4008,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-enableupnp <value>
   --Network.EnableUPnP <value>
   ```
   </TabItem>
@@ -3881,6 +4035,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-externalip <value>
   --Network.ExternalIp <value>
   ```
   </TabItem>
@@ -3907,6 +4062,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-localip <value>
   --Network.LocalIp <value>
   ```
   </TabItem>
@@ -3933,6 +4089,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-maxactivepeers <value>
   --Network.MaxActivePeers <value>
   ```
   </TabItem>
@@ -3959,6 +4116,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-maxnettyarenacount <value>
   --Network.MaxNettyArenaCount <value>
   ```
   </TabItem>
@@ -3985,6 +4143,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-nettyarenaorder <value>
   --Network.NettyArenaOrder <value>
   ```
   </TabItem>
@@ -4011,6 +4170,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-onlystaticpeers <value>
   --Network.OnlyStaticPeers <value>
   ```
   </TabItem>
@@ -4037,6 +4197,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-p2pport <value>
   --Network.P2PPort <value>
   ```
   </TabItem>
@@ -4063,6 +4224,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-prioritypeersmaxcount <value>
   --Network.PriorityPeersMaxCount <value>
   ```
   </TabItem>
@@ -4089,6 +4251,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --network-staticpeers <value>
   --Network.StaticPeers <value>
   ```
   </TabItem>
@@ -4118,6 +4281,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --optimism-sequencerurl <value>
   --Optimism.SequencerUrl <value>
   ```
   </TabItem>
@@ -4147,6 +4311,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-availablespacecheckenabled <value>
   --Pruning.AvailableSpaceCheckEnabled <value>
   ```
   </TabItem>
@@ -4173,6 +4338,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-cachemb <value>
   --Pruning.CacheMb <value>
   ```
   </TabItem>
@@ -4199,6 +4365,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningcompletionbehavior <value>
   --Pruning.FullPruningCompletionBehavior <value>
   ```
   </TabItem>
@@ -4218,17 +4385,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The behavior after pruning completion:
-
-  - `None`: Do nothing.
-  - `ShutdownOnSuccess`: Shut Nethermind down if pruning has succeeded but leave it running if failed.
-  - `AlwaysShutdown`: Shut Nethermind down when pruning completes, regardless of its status.
+  The action to take on pruning completion.
 
   Allowed values:
 
-    - `None`
-    - `ShutdownOnSuccess`
-    - `AlwaysShutdown`
+    - `None`: No action.
+    - `ShutdownOnSuccess`: Shuts Nethermind down when pruning succeeds but leaves it running when fails.
+    - `AlwaysShutdown`: Shuts Nethermind down when pruning completes, regardless of its status.
 
   Defaults to `None`.
 
@@ -4237,6 +4400,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningdisablelowprioritywrites <value>
   --Pruning.FullPruningDisableLowPriorityWrites <value>
   ```
   </TabItem>
@@ -4263,6 +4427,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningmaxdegreeofparallelism <value>
   --Pruning.FullPruningMaxDegreeOfParallelism <value>
   ```
   </TabItem>
@@ -4282,16 +4447,16 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max number of parallel tasks that can be used by full pruning:
-
+  The max number of parallel tasks that can be used by full pruning.
+  
   Allowed values:
-
-  - `-1` to use the number of logical processors
-  - `0` to use 25% of logical processors
-  - `1` to run on single thread
-
+  
+  - `-1`: Uses the number of logical processors.
+  - `0`: Uses 25% of logical processors.
+  - `1`: Runs on a single thread.
+  
   The recommended value depends on the type of the node:
-
+  
   - If the node needs to be responsive (serves for RPC or validator), then the recommended value is `0` or `-1`.
   - If the node doesn't have many other responsibilities but needs to be able to follow the chain reliably without any delays and produce live logs, the `0` or `1` is recommended.
   - If the node doesn't have to be responsive, has very fast I/O (like NVMe) and the shortest pruning time is to be achieved, then `-1` is recommended. Defaults to `0`.
@@ -4301,6 +4466,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningmemorybudgetmb <value>
   --Pruning.FullPruningMemoryBudgetMb <value>
   ```
   </TabItem>
@@ -4327,6 +4493,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningminimumdelayhours <value>
   --Pruning.FullPruningMinimumDelayHours <value>
   ```
   </TabItem>
@@ -4353,6 +4520,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningthresholdmb <value>
   --Pruning.FullPruningThresholdMb <value>
   ```
   </TabItem>
@@ -4379,6 +4547,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-fullpruningtrigger <value>
   --Pruning.FullPruningTrigger <value>
   ```
   </TabItem>
@@ -4398,17 +4567,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The full pruning trigger:
-
-  - `Manual`: Triggered manually.
-  - `StateDbSize`: Trigger when the state DB size is above the threshold.
-  - `VolumeFreeSpace`: Trigger when the free disk space where the state DB is stored is below the threshold.
+  The full pruning trigger.
 
   Allowed values:
 
-    - `Manual`
-    - `StateDbSize`
-    - `VolumeFreeSpace`
+    - `Manual`: Does not trigger. Pruning can be triggered manually.
+    - `StateDbSize`: Triggers when the state DB size is above the specified threshold.
+    - `VolumeFreeSpace`: Triggers when the free disk space where the state DB is stored is below the specified threshold.
 
   Defaults to `Manual`.
 
@@ -4417,6 +4582,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-mode <value>
   --Pruning.Mode <value>
   ```
   </TabItem>
@@ -4436,19 +4602,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The pruning mode:
-
-  - `None`: No pruning (full archive)
-  - `Memory`: In-memory pruning
-  - `Full`: Full pruning
-  - `Hybrid`: Combined in-memory and full pruning
+  The pruning mode.
 
   Allowed values:
 
-    - `None`
-    - `Memory`
-    - `Full`
-    - `Hybrid`
+    - `None`: No pruning (archive).
+    - `Memory`: In-memory pruning.
+    - `Full`: Full pruning.
+    - `Hybrid`: Combined in-memory and full pruning.
 
   Defaults to `Hybrid`.
 
@@ -4457,6 +4618,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-persistenceinterval <value>
   --Pruning.PersistenceInterval <value>
   ```
   </TabItem>
@@ -4483,6 +4645,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-pruningboundary <value>
   --Pruning.PruningBoundary <value>
   ```
   </TabItem>
@@ -4509,6 +4672,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --pruning-trackedpastkeycountmemoryratio <value>
   --Pruning.TrackedPastKeyCountMemoryRatio <value>
   ```
   </TabItem>
@@ -4538,6 +4702,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --receipt-compactreceiptstore <value>
   --Receipt.CompactReceiptStore <value>
   ```
   </TabItem>
@@ -4564,6 +4729,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --receipt-compacttxindex <value>
   --Receipt.CompactTxIndex <value>
   ```
   </TabItem>
@@ -4590,6 +4756,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --receipt-receiptsmigration <value>
   --Receipt.ReceiptsMigration <value>
   ```
   </TabItem>
@@ -4616,6 +4783,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --receipt-storereceipts <value>
   --Receipt.StoreReceipts <value>
   ```
   </TabItem>
@@ -4642,6 +4810,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --receipt-txlookuplimit <value>
   --Receipt.TxLookupLimit <value>
   ```
   </TabItem>
@@ -4671,6 +4840,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --seq-apikey <value>
   --Seq.ApiKey <value>
   ```
   </TabItem>
@@ -4697,6 +4867,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --seq-minlevel <value>
   --Seq.MinLevel <value>
   ```
   </TabItem>
@@ -4723,6 +4894,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --seq-serverurl <value>
   --Seq.ServerUrl <value>
   ```
   </TabItem>
@@ -4752,6 +4924,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-bootnodep2paddresses <value>
   --Shutter.BootnodeP2PAddresses <value>
   ```
   </TabItem>
@@ -4772,21 +4945,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The p2p addresses of the Shutter Keyper network bootnodes.
-  Defaults to:
-
-  /ip4/139.59.130.109/tcp/23003/p2p/12D3KooWRZoofMsnpsjkgvfPQUyGXZQnn7EVnb4tw4ghNfwMnnsj,
-  /ip4/167.71.169.248/tcp/23003/p2p/12D3KooWGH3VxoSQXZ6wUuCmsv5caGQnhwfGejbkXH6uS2r7sehA,
-  /ip4/139.59.130.109/tcp/23003/p2p/12D3KooWNxTiw7CvD1fuyye5P8qPhKTTrRBW6wwZwMdqdTxjYF2H,
-  /ip4/178.128.192.239/tcp/23003/p2p/12D3KooWCdpkipTiuzVMfkV7yLLgqbFeAL8WmEP78hCoBGBYLugN,
-  /ip4/45.55.192.248/tcp/23003/p2p/12D3KooWMPuubKqksfMxvLwEBDScaopTdvPLr5J5SMmBEo2zkcMz,
-  /ip4/178.128.126.237/tcp/23003/p2p/12D3KooWAg1pGUDAfFWSZftpN3JjBfLUCGLQcZApJHv2VntdMS9U
-
 
 - #### `Shutter.Enabled` \{#shutter-enabled\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-enabled <value>
   --Shutter.Enabled <value>
   ```
   </TabItem>
@@ -4813,6 +4978,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-instanceid <value>
   --Shutter.InstanceID <value>
   ```
   </TabItem>
@@ -4832,13 +4998,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Instance ID of Shutter keyper set. Defaults to `1000`.
+  Instance ID of Shutter keyper set. Defaults to `0`.
 
 - #### `Shutter.KeyBroadcastContractAddress` \{#shutter-keybroadcastcontractaddress\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-keybroadcastcontractaddress <value>
   --Shutter.KeyBroadcastContractAddress <value>
   ```
   </TabItem>
@@ -4858,13 +5025,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The address of the Shutter key broadcast contract. Defaults to `0x626dB87f9a9aC47070016A50e802dd5974341301`.
+  The address of the Shutter key broadcast contract. Defaults to `null`.
 
 - #### `Shutter.KeyperSetManagerContractAddress` \{#shutter-keypersetmanagercontractaddress\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-keypersetmanagercontractaddress <value>
   --Shutter.KeyperSetManagerContractAddress <value>
   ```
   </TabItem>
@@ -4884,13 +5052,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The address of the Shutter keyper set manager contract. Defaults to `0x7C2337f9bFce19d8970661DA50dE8DD7d3D34abb`.
+  The address of the Shutter keyper set manager contract. Defaults to `null`.
 
 - #### `Shutter.P2PPort` \{#shutter-p2pport\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-p2pport <value>
   --Shutter.P2PPort <value>
   ```
   </TabItem>
@@ -4917,6 +5086,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-sequencercontractaddress <value>
   --Shutter.SequencerContractAddress <value>
   ```
   </TabItem>
@@ -4936,13 +5106,41 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The address of the Shutter sequencer contract. Defaults to `0xc5C4b277277A1A8401E0F039dfC49151bA64DC2E`.
+  The address of the Shutter sequencer contract. Defaults to `null`.
+
+- #### `Shutter.ShutterKeyFile` \{#shutter-shutterkeyfile\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --shutter-shutterkeyfile <value>
+  --Shutter.ShutterKeyFile <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SHUTTERCONFIG_SHUTTERKEYFILE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Shutter": {
+      "ShutterKeyFile": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The filename to use for the Shutter P2P key. If this not specified, the key is autogenerated in `shutter.key.plain` file.
 
 - #### `Shutter.ValidatorInfoFile` \{#shutter-validatorinfofile\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-validatorinfofile <value>
   --Shutter.ValidatorInfoFile <value>
   ```
   </TabItem>
@@ -4969,6 +5167,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --shutter-validatorregistrycontractaddress <value>
   --Shutter.ValidatorRegistryContractAddress <value>
   ```
   </TabItem>
@@ -4988,7 +5187,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The address of the Shutter validator registry contract. Defaults to `0xefCC23E71f6bA9B22C4D28F7588141d44496A6D6`.
+  The address of the Shutter validator registry contract. Defaults to `null`.
 
 
 ### Snapshot
@@ -4998,6 +5197,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --snapshot-checksum <value>
   --Snapshot.Checksum <value>
   ```
   </TabItem>
@@ -5024,6 +5224,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --snapshot-downloadurl <value>
   --Snapshot.DownloadUrl <value>
   ```
   </TabItem>
@@ -5050,6 +5251,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --snapshot-enabled <value>
   --Snapshot.Enabled <value>
   ```
   </TabItem>
@@ -5076,6 +5278,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --snapshot-snapshotdirectory <value>
   --Snapshot.SnapshotDirectory <value>
   ```
   </TabItem>
@@ -5102,6 +5305,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --snapshot-snapshotfilename <value>
   --Snapshot.SnapshotFileName <value>
   ```
   </TabItem>
@@ -5131,6 +5335,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-ancientbodiesbarrier <value>
   --Sync.AncientBodiesBarrier <value>
   ```
   </TabItem>
@@ -5151,7 +5356,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
   ```
@@ -5162,6 +5367,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-ancientreceiptsbarrier <value>
   --Sync.AncientReceiptsBarrier <value>
   ```
   </TabItem>
@@ -5182,55 +5388,18 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
   ```
   Defaults to `0`.
-
-- #### `Sync.BlocksDbTuneDbMode` \{#sync-blocksdbtunedbmode\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --Sync.BlocksDbTuneDbMode <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_SYNCCONFIG_BLOCKSDBTUNEDBMODE=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "Sync": {
-      "BlocksDbTuneDbMode": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Configure the blocks database for write optimizations during sync.
-
-  Allowed values:
-
-    - `Default`
-    - `WriteBias`
-    - `HeavyWrite`
-    - `AggressiveHeavyWrite`
-    - `DisableCompaction`
-    - `EnableBlobFiles`
-    - `HashDb`
-
-  Defaults to `EnableBlobFiles`.
 
 - #### `Sync.DownloadBodiesInFastSync` \{#sync-downloadbodiesinfastsync\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-downloadbodiesinfastsync <value>
   --Sync.DownloadBodiesInFastSync <value>
   ```
   </TabItem>
@@ -5257,6 +5426,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-downloadheadersinfastsync <value>
   --Sync.DownloadHeadersInFastSync <value>
   ```
   </TabItem>
@@ -5283,6 +5453,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-downloadreceiptsinfastsync <value>
   --Sync.DownloadReceiptsInFastSync <value>
   ```
   </TabItem>
@@ -5309,6 +5480,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-exitonsynced <value>
   --Sync.ExitOnSynced <value>
   ```
   </TabItem>
@@ -5335,6 +5507,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-exitonsyncedwaittimesec <value>
   --Sync.ExitOnSyncedWaitTimeSec <value>
   ```
   </TabItem>
@@ -5361,6 +5534,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-fastsync <value>
   --Sync.FastSync <value>
   ```
   </TabItem>
@@ -5387,6 +5561,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-fastsynccatchupheightdelta <value>
   --Sync.FastSyncCatchUpHeightDelta <value>
   ```
   </TabItem>
@@ -5413,6 +5588,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-fixreceipts <value>
   --Sync.FixReceipts <value>
   ```
   </TabItem>
@@ -5439,6 +5615,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-fixtotaldifficulty <value>
   --Sync.FixTotalDifficulty <value>
   ```
   </TabItem>
@@ -5465,6 +5642,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-fixtotaldifficultylastblock <value>
   --Sync.FixTotalDifficultyLastBlock <value>
   ```
   </TabItem>
@@ -5492,6 +5670,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-fixtotaldifficultystartingblock <value>
   --Sync.FixTotalDifficultyStartingBlock <value>
   ```
   </TabItem>
@@ -5518,6 +5697,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-maxattemptstoupdatepivot <value>
   --Sync.MaxAttemptsToUpdatePivot <value>
   ```
   </TabItem>
@@ -5544,6 +5724,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-maxprocessingthreads <value>
   --Sync.MaxProcessingThreads <value>
   ```
   </TabItem>
@@ -5570,6 +5751,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-networkingenabled <value>
   --Sync.NetworkingEnabled <value>
   ```
   </TabItem>
@@ -5596,6 +5778,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-nonvalidatornode <value>
   --Sync.NonValidatorNode <value>
   ```
   </TabItem>
@@ -5622,6 +5805,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-pivothash <value>
   --Sync.PivotHash <value>
   ```
   </TabItem>
@@ -5648,6 +5832,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-pivotnumber <value>
   --Sync.PivotNumber <value>
   ```
   </TabItem>
@@ -5674,6 +5859,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-pivottotaldifficulty <value>
   --Sync.PivotTotalDifficulty <value>
   ```
   </TabItem>
@@ -5700,6 +5886,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-snapsync <value>
   --Sync.SnapSync <value>
   ```
   </TabItem>
@@ -5726,6 +5913,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-snapsyncaccountrangepartitioncount <value>
   --Sync.SnapSyncAccountRangePartitionCount <value>
   ```
   </TabItem>
@@ -5752,6 +5940,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-strictmode <value>
   --Sync.StrictMode <value>
   ```
   </TabItem>
@@ -5778,6 +5967,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-synchronizationenabled <value>
   --Sync.SynchronizationEnabled <value>
   ```
   </TabItem>
@@ -5799,49 +5989,12 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to download and process new blocks. Allowed values: `true` `false`. Defaults to `true`.
 
-- #### `Sync.TuneDbMode` \{#sync-tunedbmode\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --Sync.TuneDbMode <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_SYNCCONFIG_TUNEDBMODE=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "Sync": {
-      "TuneDbMode": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Configure the database for write optimizations during sync. Significantly reduces the total number of writes and sync time if you are not network limited.
-
-  Allowed values:
-
-    - `Default`
-    - `WriteBias`
-    - `HeavyWrite`
-    - `AggressiveHeavyWrite`
-    - `DisableCompaction`
-    - `EnableBlobFiles`
-    - `HashDb`
-
-  Defaults to `HeavyWrite`.
-
 - #### `Sync.UseGethLimitsInFastBlocks` \{#sync-usegethlimitsinfastblocks\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --sync-usegethlimitsinfastblocks <value>
   --Sync.UseGethLimitsInFastBlocks <value>
   ```
   </TabItem>
@@ -5871,6 +6024,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --tracestore-blockstokeep <value>
   --TraceStore.BlocksToKeep <value>
   ```
   </TabItem>
@@ -5897,6 +6051,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --tracestore-deserializationparallelization <value>
   --TraceStore.DeserializationParallelization <value>
   ```
   </TabItem>
@@ -5923,6 +6078,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --tracestore-enabled <value>
   --TraceStore.Enabled <value>
   ```
   </TabItem>
@@ -5949,6 +6105,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --tracestore-tracetypes <value>
   --TraceStore.TraceTypes <value>
   ```
   </TabItem>
@@ -5972,12 +6129,12 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`
-    - `VmTrace`
-    - `StateDiff`
-    - `Trace`
-    - `Rewards`
-    - `All`
+    - `None`: None.
+    - `VmTrace`: Provides a full trace of the EVM state throughout the execution of transactions at each op-code, including subcalls.
+    - `StateDiff`: Provides Ethereum state difference detailing all altered portions of the state made due to the execution of transactions.
+    - `Trace`: Provides transaction trace, including subcalls.
+    - `Rewards`: Includes block rewards in the trace when tracing full blocks.
+    - `All`: Combines the `Rewards` `StateDiff` `Trace` `VmTrace` options.
 
   Defaults to `Trace, Rewards`.
 
@@ -5989,6 +6146,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-blobcachesize <value>
   --TxPool.BlobCacheSize <value>
   ```
   </TabItem>
@@ -6015,6 +6173,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-blobssupport <value>
   --TxPool.BlobsSupport <value>
   ```
   </TabItem>
@@ -6034,19 +6193,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Blobs support mode:
-
-  - `Disabled`: No support for blob transactions
-  - `InMemory`: Blob transactions stored only in memory
-  - `Storage`: Blob transactions stored in db
-  - `StorageWithReorgs`: Blob transactions stored in db with support for restoring reorganized blob transactions to blob pool
+  The blobs support mode.
 
   Allowed values:
 
-    - `Disabled`
-    - `InMemory`
-    - `Storage`
-    - `StorageWithReorgs`
+    - `Disabled`: Disables support for blob transactions.
+    - `InMemory`: Stores the blob transactions in memory only.
+    - `Storage`: Stores the blob transactions in the permanent storage.
+    - `StorageWithReorgs`: Stores the blob transactions in the permanent storage with support for restoring reorganized transactions to the blob pool.
 
   Defaults to `StorageWithReorgs`.
 
@@ -6055,6 +6209,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-gaslimit <value>
   --TxPool.GasLimit <value>
   ```
   </TabItem>
@@ -6081,6 +6236,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-hashcachesize <value>
   --TxPool.HashCacheSize <value>
   ```
   </TabItem>
@@ -6107,6 +6263,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-inmemoryblobpoolsize <value>
   --TxPool.InMemoryBlobPoolSize <value>
   ```
   </TabItem>
@@ -6133,6 +6290,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-maxpendingblobtxspersender <value>
   --TxPool.MaxPendingBlobTxsPerSender <value>
   ```
   </TabItem>
@@ -6159,6 +6317,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-maxpendingtxspersender <value>
   --TxPool.MaxPendingTxsPerSender <value>
   ```
   </TabItem>
@@ -6185,6 +6344,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-minbasefeethreshold <value>
   --TxPool.MinBaseFeeThreshold <value>
   ```
   </TabItem>
@@ -6211,6 +6371,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-peernotificationthreshold <value>
   --TxPool.PeerNotificationThreshold <value>
   ```
   </TabItem>
@@ -6237,6 +6398,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-persistentblobstoragesize <value>
   --TxPool.PersistentBlobStorageSize <value>
   ```
   </TabItem>
@@ -6263,6 +6425,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-reportminutes <value>
   --TxPool.ReportMinutes <value>
   ```
   </TabItem>
@@ -6289,6 +6452,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --txpool-size <value>
   --TxPool.Size <value>
   ```
   </TabItem>
@@ -6318,6 +6482,7 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
+  --wallet-devaccounts <value>
   --Wallet.DevAccounts <value>
   ```
   </TabItem>
@@ -6344,15 +6509,16 @@ The configuration options are case-sensitive and can be defined only once unless
 
 ## Environment variables
 
-To configure Nethermind using environment variables, the following naming convention is used in all uppercase:
+All configuration options have their environment variable counterparts, so Nethermind can be configured with environment variables the same way as with command line options. The environment variables follow this naming convention:
 
 ```text
-NETHERMIND_{NAMESPACE}CONFIG_{PROPERTY_NAME}
+NETHERMIND_{NAMESPACE}CONFIG_{OPTION}
 ```
-For instance, the environment variable equivalent of the command line `--JsonRpc.JwtSecretFile` option is `NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE`. For the list of configuration namespaces and their options, see [Options by namespaces](#options-by-namespaces).
+
+For instance, the environment variable equivalent of the `JsonRpc.JwtSecretFile` option is `NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE`. For the full list of the available environment variables, see [Options by namespaces](#options-by-namespaces).
 
 ## Configuration file
 
-The configuration file is a JSON file with `.cfg` extension. The bundled configuration files are located in the `configs` directory and named after the network they are used for. For instance, see the Mainnet configuration file [`mainnet.cfg`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.cfg).
+The configuration files use JSON format. The bundled configuration files are located in the `configs` directory and named after the network they are used for. For instance, see the Mainnet configuration file [`mainnet.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.json).
 
 [web3-secret-storage]: https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage

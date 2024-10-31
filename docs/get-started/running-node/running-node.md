@@ -37,8 +37,8 @@ For instance, to launch the client with the default configuration for the Mainne
 ```bash
 nethermind \
   -c mainnet \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 For more info about configuring the JWT secret, see [Configuring JSON-RPC interface](./consensus-clients.md#configuring-json-rpc-interface).
@@ -48,8 +48,8 @@ For archive (aka full) nodes, Nethermind provides separate configuration files p
 ```bash
 nethermind \
   -c mainnet_archive \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 Archive nodes are generally more resource-demanding. If you intend to run one, we recommend checking out the [hardware requirements](../system-requirements.md#hardware-requirements).

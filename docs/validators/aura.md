@@ -36,7 +36,7 @@ services:
 
 ## Configuring keyfile
 
-Make sure that the keyfile name contains the public key (address). Otherwise, Nethermind doesn't recognize it as such. 
+Make sure that the keyfile name contains the public key (address). Otherwise, Nethermind doesn't recognize it as such.
 For instance, a keyfile can be named `key-0x1234567890123456789012345678901234567890`.
 
 The keyfile must be stored in the `keystore` directory located in the Nethermind base data directory.
@@ -57,7 +57,7 @@ Here is an example of recommended settings for a validator. The most convenient 
 
 Here's an example of above settings in the Energy Web configuration file:
 
-```json title="energyweb.cfg"
+```json title="energyweb.json"
 {
   "Init": {
     "ChainSpecPath": "chainspec/energyweb.json",
@@ -98,7 +98,7 @@ Here's an example of above settings in the Energy Web configuration file:
   "KeyStore": {
     "PasswordFiles": ["keystore/password"],
     "UnlockAccounts": ["0x..."],
-    "BlockAuthorAccount": "0x..." 
+    "BlockAuthorAccount": "0x..."
   },
 }
 ```

@@ -32,8 +32,8 @@ To run Nethermind on the OP Mainnet, use the following command:
 ```bash
 nethermind \
   -c op-mainnet \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 Below is a sample command to run op-node paired with Nethermind, assuming they both are running on the same machine:
@@ -64,8 +64,8 @@ To run Nethermind on the OP Sepolia, use the following command:
 ```bash
 nethermind \
   -c op-sepolia \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 Below is a sample command to run op-node paired with Nethermind, assuming they both are running on the same machine:
@@ -113,8 +113,8 @@ To run Nethermind on Taiko Mainnet, use the following command:
 ```bash
 nethermind \
   -c taiko-mainnet \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 Below is a sample command to run taiko-client paired with Nethermind, assuming they both are running on the same machine:
@@ -148,8 +148,8 @@ To run Nethermind on Taiko Hekla, use the following command:
 ```bash
 nethermind \
   -c taiko-hekla \
-  -dd path/to/data/dir \
-  --JsonRpc.JwtSecretFile path/to/jwt.hex
+  --data-dir path/to/data/dir \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
 Below is a sample command to run taiko-client paired with Nethermind, assuming they both are running on the same machine:

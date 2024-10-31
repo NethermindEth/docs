@@ -19,10 +19,10 @@ First, [install Nethermind](./installing-nethermind.md) and a [consensus client]
 - If you choose the same consensus client for Nethermind that is already being used with Geth, ensure their settings, such as data directories, do not interfere.
 - Ensure the network ports of the consensus client paired with Nethermind and the one paired with Geth do not interfere with each other.
 - Ensure the JSON-RPC port, Engine API port, and the P2P networking ports of Nethermind are different from the ones used by Geth. These ports are set using the following command line options:
-  - `--JsonRpc.Port <port>`
-  - `--JsonRpc.EnginePort <port>`
-  - `--Network.DiscoveryPort <port>`
-  - `--Network.P2PPort <port>`
+  - [`--jsonrpc-port <port>`](../fundamentals/configuration.md#jsonrpc-port)
+  - [`--jsonrpc-engineport <port>`](../fundamentals/configuration.md#jsonrpc-engineport)
+  - [`--network-discoveryport <port>`](../fundamentals/configuration.md#network-discoveryport)
+  - [`--network-p2pport <port>`](../fundamentals/configuration.md#network-p2pport)
 :::
 
 Once you fulfill the above requirements, you can start syncing Nethermind. To check the sync status, use the [`eth_syncing`](../interacting/json-rpc-ns/eth.md#eth_syncing) JSON-RPC method. When it returns `false`, Nethermind is considered fully synced with all block bodies and receipts needed to work properly as a validator. Another option to monitor the sync is a [health check](../monitoring/health-check.md).
@@ -38,7 +38,7 @@ This option is similar to the [option 1](#option-1), but Sedge automatically tak
 :::tip
 You can add a flag to Sedge as follows. For instance:
 
-- For the execution client, `--el-extra-flag JsonRpc.Port=8546`
+- For the execution client, `--el-extra-flag jsonrpc-port=8546`
 - For the consensus client, `--cl-extra-flag rpc-port=4001`
 :::
 
