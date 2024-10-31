@@ -40,7 +40,7 @@ winget install Microsoft.VCRedist.2015+.x64
 Package managers are the easiest and fastest way of installing Nethermind.
 
 :::tip
-If you're using a package manager, it's highly recommended to set the [`-dd, --datadir`](../fundamentals/configuration.md#datadir) flag to specify the data directory. Otherwise, Nethermind will use the default data directory where the package is installed, which may not be preserved on further updates or uninstall.
+If you're using a package manager, it's highly recommended to set the [`--data-dir`](../fundamentals/configuration.md#data-dir) flag to specify the data directory. Otherwise, Nethermind will use the default data directory where the package is installed, which may not be preserved on further updates or uninstall.
 :::
 
 <Tabs groupId="os">
@@ -235,9 +235,9 @@ Alternatively, a single volume can be specified as the Nethermind data directory
 ```bash
 docker run -it \
   --mount type=bind,source=path/to/data_dir,target=/nethermind/data_dir \
-  nethermind/nethermind -dd /nethermind/data_dir
+  nethermind/nethermind --data-dir /nethermind/data_dir
 ```
 
-Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `-dd` option in this case. For further instructions, see [Running a node](running-node/running-node.md).
+Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `--data-dir` option in this case. For further instructions, see [Running a node](running-node/running-node.md).
 
 To build the Docker image yourself, see [Building Docker image](../developers/building-from-source.md#bulding-docker-image).
