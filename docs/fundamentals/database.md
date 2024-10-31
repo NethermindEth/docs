@@ -39,27 +39,27 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <TabItem value="mainnet" label="Mainnet">
 
 - `state`: 160 GB
-- `receipts`: 215 GB
+- `receipts`: 216 GB
 - `blocks`: 605 GB
 - `bloom`: 6.5 GB
 - `headers`: 9.1 GB
-- `code`: 4.8 GB
-- `blobTransactions`: 721 MB
+- `code`: 4.9 GB
+- `blobTransactions`: 876 MB
 - ...
-- **Total: 1002 GB**
+- **Total: 1003 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
-- `state`: 44 GB
-- `receipts`: 41 GB
-- `blocks`: 308 GB
+- `state`: 45 GB
+- `receipts`: 42 GB
+- `blocks`: 309 GB
 - `bloom`: 2.2 GB
 - `headers`: 2.5 GB
 - `code`: 6.9 GB
-- `blobTransactions`: 224 MB
+- `blobTransactions`: 245 MB
 - ...
-- **Total: 405 GB**
+- **Total: 406 GB**
 
 </TabItem>
 <TabItem value="holesky" label="Holesky">
@@ -67,10 +67,10 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 21 GB
 - `receipts`: 16 GB
 - `blocks`: 59 GB
-- `bloom`: 827 MB
+- `bloom`: 830 MB
 - `headers`: 1.1 GB
-- `code`: 708 MB
-- `blobTransactions`: 35 MB
+- `code`: 713 MB
+- `blobTransactions`: 36 MB
 - ...
 - **Total: 98 GB**
 
@@ -85,7 +85,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `code`: 679 MB
 - `blobTransactions`: 75 MB
 - ...
-- **Total: 507 GB**
+- **Total: 508 GB**
 
 </TabItem>
 <TabItem value="chiado" label="Chiado">
@@ -96,7 +96,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 3.2 GB
 - `headers`: 2.5 GB
 - `code`: 72 MB
-- `blobTransactions`: 458 MB
+- `blobTransactions`: 627 MB
 - ...
 - **Total: 21 GB**
 
@@ -124,7 +124,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `code`: 96 MB
 - `blobTransactions`: 
 - ...
-- **Total: 95 GB**
+- **Total: 94 GB**
 
 </TabItem>
 </Tabs>
