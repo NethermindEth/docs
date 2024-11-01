@@ -74,7 +74,7 @@ or similar to the following if unhealthy:
 It is also possible to replace the default `/health` endpoint with a custom one using the [`HealthChecks.Slug`](../fundamentals/configuration.md#healthchecks-slug) configuration option. For example:
 
 ```bash
---HealthChecks.Slug /my/custom/endpoint
+--healthchecks-slug /my/custom/endpoint
 ```
 
 ## Configuring a webhook {#webhook}
