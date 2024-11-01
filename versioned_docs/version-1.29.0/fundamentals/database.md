@@ -39,40 +39,40 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <TabItem value="mainnet" label="Mainnet">
 
 - `state`: 160 GB
-- `receipts`: 215 GB
-- `blocks`: 605 GB
+- `receipts`: 216 GB
+- `blocks`: 606 GB
 - `bloom`: 6.5 GB
 - `headers`: 9.1 GB
-- `code`: 4.8 GB
-- `blobTransactions`: 721 MB
+- `code`: 4.9 GB
+- `blobTransactions`: 757 MB
 - ...
-- **Total: 1002 GB**
+- **Total: 1003 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
-- `state`: 44 GB
-- `receipts`: 41 GB
-- `blocks`: 308 GB
+- `state`: 45 GB
+- `receipts`: 42 GB
+- `blocks`: 309 GB
 - `bloom`: 2.2 GB
 - `headers`: 2.5 GB
 - `code`: 6.9 GB
-- `blobTransactions`: 224 MB
+- `blobTransactions`: 185 MB
 - ...
-- **Total: 405 GB**
+- **Total: 407 GB**
 
 </TabItem>
 <TabItem value="holesky" label="Holesky">
 
-- `state`: 21 GB
+- `state`: 22 GB
 - `receipts`: 16 GB
 - `blocks`: 59 GB
-- `bloom`: 827 MB
+- `bloom`: 833 MB
 - `headers`: 1.1 GB
-- `code`: 708 MB
-- `blobTransactions`: 35 MB
+- `code`: 719 MB
+- `blobTransactions`: 42 MB
 - ...
-- **Total: 98 GB**
+- **Total: 99 GB**
 
 </TabItem>
 <TabItem value="gnosis" label="Gnosis">
@@ -82,10 +82,10 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `blocks`: 201 GB
 - `bloom`: 9.4 GB
 - `headers`: 11 GB
-- `code`: 679 MB
+- `code`: 680 MB
 - `blobTransactions`: 75 MB
 - ...
-- **Total: 507 GB**
+- **Total: 508 GB**
 
 </TabItem>
 <TabItem value="chiado" label="Chiado">
@@ -93,12 +93,12 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `state`: 2.6 GB
 - `receipts`: 1.5 GB
 - `blocks`: 9.6 GB
-- `bloom`: 3.2 GB
+- `bloom`: 3.3 GB
 - `headers`: 2.5 GB
 - `code`: 72 MB
-- `blobTransactions`: 458 MB
+- `blobTransactions`: 604 MB
 - ...
-- **Total: 21 GB**
+- **Total: 22 GB**
 
 </TabItem>
 <TabItem value="energyweb" label="Energyweb">
@@ -124,7 +124,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `code`: 96 MB
 - `blobTransactions`: 
 - ...
-- **Total: 95 GB**
+- **Total: 94 GB**
 
 </TabItem>
 </Tabs>
