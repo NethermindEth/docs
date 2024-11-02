@@ -74,11 +74,15 @@ dotnet test EthereumTests.sln -c release
 
 ## Bulding Docker image
 
+:::tip
+Building a Nethermind Docker image does not require cloning the Nethermind source code since Docker can build it directly from the repository. For more information, see the [Docker Docs](https://docs.docker.com/build/concepts/context/#remote-context).
+:::
+
 Currently, there are three Docker images available in the project's root directory:
 
 - `Dockerfile`: the default Nethermind Docker image.
 - `Dockerfile.chiseled`: the rootless and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) version of the Nethermind Docker image.
-- `Dockerfile.diag`: the diagnostics image with pre-installed .NET diagnostic and tracing tools. This image is intended for internal use and is not distributed via public channels.
+- `Dockerfile.diag`: an image with pre-installed .NET diagnostics and tracing tools. This image is intended for internal use and is not distributed via public channels.
 
 All Docker images have the following optional arguments:
 
@@ -106,6 +110,14 @@ For quick testing images, the above arguments can be omitted if not needed:
 ```bash
 docker build . -t nethermind
 ```
+
+An even faster approach is to build the image directly from the repository. The following command builds the version 1.27.0:
+
+```bash
+docker build https://github.com/nethermindeth/nethermind.git#1.27.0 -t nethermind
+```
+
+The above optional arguments can be specified as well if needed.
 
 For more info about running Docker containers,
 see [Installing Nethermind](../get-started/installing-nethermind#docker-container).
