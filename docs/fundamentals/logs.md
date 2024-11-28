@@ -7,6 +7,48 @@ sidebar_position: 4
 This article is outdated and requires a revision.
 :::
 
+## Processing Logs
+
+The Nethermind processing logs are a comprehensive resource for understanding Ethereum block processing. They provide real-time insights into block data, performance metrics, and the state of the blockchain. 
+
+![Nethermind Processing Logs](/img/log-processing.png)
+
+
+### Block Metadata
+- **Block Number**: Current block being processed e.g., `21288004`
+- **Block Hash**: Unique block identifier e.g. `0xf42e2a...8c5d7b`
+- **Extra Data**: Metadata given by the block builders; either interpreted utf8 string, hex data or address if none provided.
+
+
+### Block Execution Details
+- **Block Reward**: and whether it is a PBS `mev` reward e.g. `mev 0.0339 ETH`
+- **Total Gas**: consumed by block e.g. `16.08 MGas`
+- **Total Transactions**: in block e.g. `162 txs`
+- **Calls**: Total number of calls (including to EOAs) e.g. `585 (13)`
+- **Sload**: Number of storage reads e.g., `1,865`
+- **Sstore**: Number of storage writes e.g., `618`
+- **Create**: Number of contract deployments (and self-destructs) e.g. `10 (-2)`
+- **Gas Prices**: minimum, median, (mean) and maximum gas prices in gwei for block.
+  - Example: `14.65 gwei .. 14.65 (17.04) .. 55.00 gwei`
+- **Smart contracts**:
+  - Run from code cache e.g. `exec code from cache 1,480`
+  - Non-cached smart contracts loaded e.g. `new 2`
+
+### Processing Metrics
+- **Processing Time**: Time taken to validate a block e.g. `17.1 ms`
+- **Slot time**: Time between blocks e.g. `12,318 ms`
+- **MGas/s**: Processing speed in Millions of Gas per second e.g. `696.39 MGas/s`
+- **Transactions per second (TPS)**: Speed of transaction processing e.g. `9,457.6 tps`
+- **Blocks per second** Number of these blocks that could be processed per second e.g. `28.53 Blk/s`
+
+### Fork and Sync Events
+- **Received New Block**: block received with number, hash and extra data  `21288296 (0xb61f74...cbfbe7), Extra Data: Titan (titanbuilder.xyz)`
+- **Proceesed**: block or block range processed e.g. or `x4 21288291 .. 21288295` or  `21288296`
+- **Received ForkChoice**: Updates on the blockchain's canonical chain; with safe and finalized block. e.g. `21288296 (0xb61f74...cbfbe7), Safe: 21288252 (0x46906d...7777b8), Finalized: 21288221 (0x22a7d2...ebeae9)`
+- **Synced Chain Head**: Latest synced block number and hash on the chain e.g., `21288296 (0xb61f74...cbfbe7)`
+
+---
+
 ## Log config file location
 
 Logging in Nethermind is done via NLog library that can be configured by editing the NLog.config file.
@@ -55,10 +97,6 @@ This can be done by including these lines in the logging configuration file:
 <logger name="JsonRpc.*" minlevel="Error" writeTo="auto-colored-console-async" final="true"/>
 <logger name="JsonRpc.*" final="true"/>
 ```
-
-## Enterprise Logging
-
-See how to configure Seq [here](https://docs.nethermind.io/nethermind/enterprise/seq)
 
 ## Explaining Nethermind logs
 
@@ -144,3 +182,7 @@ Also, every now and then, a peer report will appear like below:
     * Node Data Transfer
     * Snap Ranges Transfer
 5. Fifth bracket is for Client Info like Client Name, Client Version, Operating System and Language Version.
+
+## Enterprise Logging
+
+See how to configure Seq [here](https://docs.nethermind.io/nethermind/enterprise/seq)
