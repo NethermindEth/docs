@@ -39,7 +39,7 @@ As of October 2024, running an Ethereum Mainnet node with Nethermind's default c
 
 #### Database growth
 
-The database size increases over time as the Ethereum chain grows. The database is in its most optimal state immediately after a sync or full pruning. Following the initial sync, the database grows at around 27 GB per week. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/database.md#reducing-database-size).\
+The database size increases over time as the Ethereum chain grows. The database is in its most optimal state immediately after a sync or full pruning. To maintain this process, occasional resyncing or pruning of the node is necessary to bring it back to its optimal database size. For more info on managing node disk usage growth, see [how to reduce database size](../fundamentals/database.md#reducing-database-size).\
 A larger disk space allocation reduces the need for frequent maintenance and alleviates concerns about the chain outgrowing the available space. It's worth noting that the only drawback of running a smaller disk is the requirement for more regular resyncing or pruning.
 
 For more up-to-date details about storage requirements for a specific network, see [Database size](../fundamentals/database.md#database-size).
