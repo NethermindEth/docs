@@ -393,6 +393,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   NewPayload request execution time
 
+- #### `nethermind_number_of_requested_blobs` \{#number_of_requested_blobs\}
+  
+  Number of Blobs requested by engine_getBlobsV1
+
+- #### `nethermind_number_of_sent_blobs` \{#number_of_sent_blobs\}
+  
+  Number of Blobs sent by engine_getBlobsV1
+
 - #### `nethermind_number_of_transactions_in_get_payload` \{#number_of_transactions_in_get_payload\}
   
   Number of Transactions included in the Last GetPayload Request
@@ -605,6 +613,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_eip1559_transactions_ratio` \{#eip1559_transactions_ratio\}
   
   Ratio of 1559-type transactions in the block.
+
+- #### `nethermind_eip7702_transactions_in_block` \{#eip7702_transactions_in_block\}
+  
+  Ratio of 7702-type transactions in the block.
 
 - #### `nethermind_pending1559_transactions_added` \{#pending1559_transactions_added\}
   

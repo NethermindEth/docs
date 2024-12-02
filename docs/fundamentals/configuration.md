@@ -665,6 +665,9 @@ The configuration options are case-sensitive and can be defined only once unless
   Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
 
 
+### Clique
+
+
 ### EthStats
 
 - #### `EthStats.Contact` \{#ethstats-contact\}
@@ -1315,7 +1318,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The path to the test chain spec file. Defaults to `/chain.rlp`.
+  The path to the chain definition should be specified as an RLP-encoded block sequence. Defaults to `/chain.rlp`.
 
 - #### `Hive.Enabled` \{#hive-enabled\}
 
@@ -2077,6 +2080,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The path to a file with the list of new-line-separated JSON-RPC calls. If specified, only the calls from that file are allowed. Defaults to `Data/jsonrpc.filter`.
 
+- #### `JsonRpc.CorsOrigins` \{#jsonrpc-corsorigins\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-corsorigins <value>
+  --JsonRpc.CorsOrigins <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_CORSORIGINS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "CorsOrigins": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The JSON-RPC server CORS origins. Defaults to `*`.
+
 - #### `JsonRpc.Enabled` \{#jsonrpc-enabled\}
 
   <Tabs groupId="usage">
@@ -2130,9 +2160,9 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
-
+  
   Built-in namespaces:
-
+  
   - `admin`
   - `client`
   - `debug`
@@ -2149,7 +2179,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `trace`
   - `txpool`
   - `web3`
-
+  
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - #### `JsonRpc.EngineEnabledModules` \{#jsonrpc-engineenabledmodules\}
@@ -2286,7 +2316,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of concurrent instances for non-sharable calls:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2294,7 +2324,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
 
 - #### `JsonRpc.GasCap` \{#jsonrpc-gascap\}
@@ -2674,7 +2704,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of concurrent requests in the queue for:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2682,7 +2712,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newBlockFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   `0` to lift the limit. Defaults to `500`.
 
 - #### `JsonRpc.RpcRecorderBaseFilePath` \{#jsonrpc-rpcrecorderbasefilepath\}
@@ -3374,13 +3404,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of requests to the garbage collector (GC) to release the process memory.
-
+  
   Allowed values:
-
+  
   - `-1`: No requests.
   - `0`: Requests every time.
   - A positive number: Requests after that many Engine API calls.
-
+  
   Defaults to `25`.
 
 - #### `Merge.CompactMemory` \{#merge-compactmemory\}
@@ -3752,7 +3782,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The port to expose Prometheus metrics at. Defaults to `null`.
+  The port to expose Prometheus metrics at.
 
 - #### `Metrics.IntervalSeconds` \{#metrics-intervalseconds\}
 
@@ -3781,6 +3811,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The frequency of pushing metrics to Prometheus, in seconds. Defaults to `5`.
 
+- #### `Metrics.MonitoringGroup` \{#metrics-monitoringgroup\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-monitoringgroup <value>
+  --Metrics.MonitoringGroup <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_MONITORINGGROUP=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "MonitoringGroup": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The Prometheus metrics group name. Defaults to `nethermind`.
+
+- #### `Metrics.MonitoringJob` \{#metrics-monitoringjob\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-monitoringjob <value>
+  --Metrics.MonitoringJob <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_MONITORINGJOB=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "MonitoringJob": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The Prometheus metrics job name. Defaults to `nethermind`.
+
 - #### `Metrics.NodeName` \{#metrics-nodename\}
 
   <Tabs groupId="usage">
@@ -3806,7 +3890,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The name to display on the Grafana dashboard. Defaults to `"Nethermind"`.
+  The name to display on the Grafana dashboard. Defaults to `Nethermind`.
 
 - #### `Metrics.PushGatewayUrl` \{#metrics-pushgatewayurl\}
 
@@ -4448,15 +4532,15 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of parallel tasks that can be used by full pruning.
-
+  
   Allowed values:
-
+  
   - `-1`: Uses the number of logical processors.
   - `0`: Uses 25% of logical processors.
   - `1`: Runs on a single thread.
-
+  
   The recommended value depends on the type of the node:
-
+  
   - If the node needs to be responsive (serves for RPC or validator), then the recommended value is `0` or `-1`.
   - If the node doesn't have many other responsibilities but needs to be able to follow the chain reliably without any delays and produce live logs, the `0` or `1` is recommended.
   - If the node doesn't have to be responsive, has very fast I/O (like NVMe) and the shortest pruning time is to be achieved, then `-1` is recommended. Defaults to `0`.
@@ -5356,7 +5440,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
   ```
@@ -5388,7 +5472,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
   ```

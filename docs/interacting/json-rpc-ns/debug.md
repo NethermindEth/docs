@@ -99,6 +99,7 @@ curl localhost:8545 \
     - `parentBeaconBlockRoot`: *string* (hash)
     - `parentHash`: *string* (hash)
     - `receiptsRoot`: *string* (hash)
+    - `requestsHash`: *string* (hash)
     - `sha3Uncles`: *string* (hash)
     - `signature`: *string* (hex data)
     - `size`: *string* (hex integer)
@@ -660,6 +661,13 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -716,6 +724,13 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -772,6 +787,13 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -844,6 +866,13 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -916,6 +945,13 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -982,34 +1018,11 @@ This method lets you run an eth_call within the context of the given block execu
 <TabItem value="params" label="Parameters">
 
 1. `call`: *object*
-    - `accessList`: array of *object*
-      - `address`: *string* (address)
-      - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `chainId`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `from`: *string* (address)
-    - `gas`: *string* (hex integer)
-    - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: *string* (hex data)
-    - `isSystemTx`: *boolean*
-    - `maxFeePerBlobGas`: *string* (hex integer)
-    - `maxFeePerGas`: *string* (hex integer)
-    - `maxPriorityFeePerGas`: *string* (hex integer)
-    - `mint`: *string* (hex integer)
-    - `nonce`: *string* (hex integer)
-    - `r`: *string* (hex integer)
-    - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
-    - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
-    - `v`: *string* (hex integer)
-    - `value`: *string* (hex integer)
-    - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -1018,6 +1031,13 @@ This method lets you run an eth_call within the context of the given block execu
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -1090,6 +1110,13 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -1162,6 +1189,13 @@ curl localhost:8545 \
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -1234,6 +1268,13 @@ curl localhost:8545 \
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -1306,6 +1347,13 @@ curl localhost:8545 \
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*
@@ -1378,6 +1426,13 @@ curl localhost:8545 \
     - `disableStack`: *boolean*
     - `disableStorage`: *boolean*
     - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
     - `timeout`: *string*
     - `tracer`: *string*
     - `tracerConfig`: *object*

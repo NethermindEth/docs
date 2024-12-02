@@ -243,6 +243,7 @@ curl localhost:8545 \
   - `publicKey`: *object*
     - `address`: *string* (address)
     - `bytes`: *string* (hex data)
+    - `hash`: *string* (hash)
     - `prefixedBytes`: *string* (hex data)
   - `r`: *string* (hex data)
   - `raw`: *string* (hex data)

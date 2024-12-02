@@ -287,6 +287,12 @@ curl localhost:8545 \
 Retrieves a snapshot of all clique state at a given block.
 
 <Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `number`: *string* (hex integer)
+
+
+</TabItem>
 <TabItem value="request" label="Request" default>
 
 ```bash
@@ -297,7 +303,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "clique_getSnapshot",
-      "params": []
+      "params": [number]
     }'
 ```
 
@@ -317,6 +323,14 @@ curl localhost:8545 \
   - `number`: *string* (hex integer)
   - `signerLimit`: *string* (hex integer)
   - `signers`: map of *string* (hex integer)
+  - `tally`: map of *object*
+    - `authorize`: *boolean*
+    - `votes`: *string* (hex integer)
+  - `votes`: array of *object*
+    - `address`: *string* (address)
+    - `authorize`: *boolean*
+    - `block`: *string* (hex integer)
+    - `signer`: *string* (address)
 
 </TabItem>
 </Tabs>
@@ -362,6 +376,14 @@ curl localhost:8545 \
   - `number`: *string* (hex integer)
   - `signerLimit`: *string* (hex integer)
   - `signers`: map of *string* (hex integer)
+  - `tally`: map of *object*
+    - `authorize`: *boolean*
+    - `votes`: *string* (hex integer)
+  - `votes`: array of *object*
+    - `address`: *string* (address)
+    - `authorize`: *boolean*
+    - `block`: *string* (hex integer)
+    - `signer`: *string* (address)
 
 </TabItem>
 </Tabs>
@@ -403,6 +425,41 @@ curl localhost:8545 \
 ```
 
 `result`: *boolean*
+
+</TabItem>
+</Tabs>
+
+### clique_proposals
+
+Retrieves the current proposals the node is voting on.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "clique_proposals",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *boolean*
 
 </TabItem>
 </Tabs>
