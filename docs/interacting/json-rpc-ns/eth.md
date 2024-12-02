@@ -85,36 +85,21 @@ Executes a tx call (does not create a transaction)
 <TabItem value="params" label="Parameters">
 
 1. `transactionCall`: *object*
-    - `accessList`: array of *object*
-      - `address`: *string* (address)
-      - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `chainId`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `from`: *string* (address)
-    - `gas`: *string* (hex integer)
-    - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: *string* (hex data)
-    - `isSystemTx`: *boolean*
-    - `maxFeePerBlobGas`: *string* (hex integer)
-    - `maxFeePerGas`: *string* (hex integer)
-    - `maxPriorityFeePerGas`: *string* (hex integer)
-    - `mint`: *string* (hex integer)
-    - `nonce`: *string* (hex integer)
-    - `r`: *string* (hex integer)
-    - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
-    - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
-    - `v`: *string* (hex integer)
-    - `value`: *string* (hex integer)
-    - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+3. `stateOverride`: map of *object*
+  - `balance`: *string* (hex integer)
+  - `code`: *string* (hex data)
+  - `movePrecompileToAddress`: *string* (address)
+  - `nonce`: *string* (hex integer)
+  - `state`: map of *string* (hash)
+  - `stateDiff`: map of *string* (hash)
 
 
 </TabItem>
@@ -128,7 +113,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "eth_call",
-      "params": [transactionCall, blockParameter]
+      "params": [transactionCall, blockParameter, stateOverride]
     }'
 ```
 
@@ -191,34 +176,11 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
 <TabItem value="params" label="Parameters">
 
 1. `transactionCall`: *object*
-    - `accessList`: array of *object*
-      - `address`: *string* (address)
-      - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `chainId`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `from`: *string* (address)
-    - `gas`: *string* (hex integer)
-    - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: *string* (hex data)
-    - `isSystemTx`: *boolean*
-    - `maxFeePerBlobGas`: *string* (hex integer)
-    - `maxFeePerGas`: *string* (hex integer)
-    - `maxPriorityFeePerGas`: *string* (hex integer)
-    - `mint`: *string* (hex integer)
-    - `nonce`: *string* (hex integer)
-    - `r`: *string* (hex integer)
-    - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
-    - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
-    - `v`: *string* (hex integer)
-    - `value`: *string* (hex integer)
-    - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -252,9 +214,7 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
+  - `accessList`: *object*
   - `gasUsed`: *string* (hex integer)
 
 </TabItem>
@@ -268,36 +228,21 @@ Executes a tx call and returns gas used (does not create a transaction)
 <TabItem value="params" label="Parameters">
 
 1. `transactionCall`: *object*
-    - `accessList`: array of *object*
-      - `address`: *string* (address)
-      - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `chainId`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `from`: *string* (address)
-    - `gas`: *string* (hex integer)
-    - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: *string* (hex data)
-    - `isSystemTx`: *boolean*
-    - `maxFeePerBlobGas`: *string* (hex integer)
-    - `maxFeePerGas`: *string* (hex integer)
-    - `maxPriorityFeePerGas`: *string* (hex integer)
-    - `mint`: *string* (hex integer)
-    - `nonce`: *string* (hex integer)
-    - `r`: *string* (hex integer)
-    - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
-    - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
-    - `v`: *string* (hex integer)
-    - `value`: *string* (hex integer)
-    - `yParity`: *string* (hex integer)
 
 2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+3. `stateOverride`: map of *object*
+  - `balance`: *string* (hex integer)
+  - `code`: *string* (hex data)
+  - `movePrecompileToAddress`: *string* (address)
+  - `nonce`: *string* (hex integer)
+  - `state`: map of *string* (hash)
+  - `stateDiff`: map of *string* (hash)
 
 
 </TabItem>
@@ -311,7 +256,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "eth_estimateGas",
-      "params": [transactionCall, blockParameter]
+      "params": [transactionCall, blockParameter, stateOverride]
     }'
 ```
 
@@ -579,6 +524,7 @@ curl localhost:8545 \
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
+  - `requestsHash`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
@@ -656,6 +602,7 @@ curl localhost:8545 \
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
+  - `requestsHash`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
@@ -1205,34 +1152,11 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `isSystemTx`: *boolean*
-  - `maxFeePerBlobGas`: *string* (hex integer)
-  - `maxFeePerGas`: *string* (hex integer)
-  - `maxPriorityFeePerGas`: *string* (hex integer)
-  - `mint`: *string* (hex integer)
-  - `nonce`: *string* (hex integer)
-  - `r`: *string* (hex integer)
-  - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
-  - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
-  - `yParity`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -1276,34 +1200,11 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `isSystemTx`: *boolean*
-  - `maxFeePerBlobGas`: *string* (hex integer)
-  - `maxFeePerGas`: *string* (hex integer)
-  - `maxPriorityFeePerGas`: *string* (hex integer)
-  - `mint`: *string* (hex integer)
-  - `nonce`: *string* (hex integer)
-  - `r`: *string* (hex integer)
-  - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
-  - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
-  - `yParity`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -1345,34 +1246,11 @@ curl localhost:8545 \
 ```
 
 `result`: *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `isSystemTx`: *boolean*
-  - `maxFeePerBlobGas`: *string* (hex integer)
-  - `maxFeePerGas`: *string* (hex integer)
-  - `maxPriorityFeePerGas`: *string* (hex integer)
-  - `mint`: *string* (hex integer)
-  - `nonce`: *string* (hex integer)
-  - `r`: *string* (hex integer)
-  - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
-  - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
-  - `yParity`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -1544,6 +1422,7 @@ curl localhost:8545 \
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
+  - `requestsHash`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
@@ -1621,6 +1500,7 @@ curl localhost:8545 \
   - `parentBeaconBlockRoot`: *string* (hash)
   - `parentHash`: *string* (hash)
   - `receiptsRoot`: *string* (hash)
+  - `requestsHash`: *string* (hash)
   - `sha3Uncles`: *string* (hash)
   - `signature`: *string* (hex data)
   - `size`: *string* (hex integer)
@@ -1870,34 +1750,11 @@ curl localhost:8545 \
 ```
 
 `result`: array of *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `isSystemTx`: *boolean*
-  - `maxFeePerBlobGas`: *string* (hex integer)
-  - `maxFeePerGas`: *string* (hex integer)
-  - `maxPriorityFeePerGas`: *string* (hex integer)
-  - `mint`: *string* (hex integer)
-  - `nonce`: *string* (hex integer)
-  - `r`: *string* (hex integer)
-  - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
-  - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
-  - `yParity`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -1986,34 +1843,11 @@ Send a transaction to the tx pool and broadcasting
 <TabItem value="params" label="Parameters">
 
 1. `rpcTx`: *object*
-    - `accessList`: array of *object*
-      - `address`: *string* (address)
-      - `storageKeys`: array of *string* (hex integer)
-    - `blobVersionedHashes`: array of *string* (hex data)
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
-    - `chainId`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `from`: *string* (address)
-    - `gas`: *string* (hex integer)
-    - `gasPrice`: *string* (hex integer)
     - `hash`: *string* (hash)
-    - `input`: *string* (hex data)
-    - `isSystemTx`: *boolean*
-    - `maxFeePerBlobGas`: *string* (hex integer)
-    - `maxFeePerGas`: *string* (hex integer)
-    - `maxPriorityFeePerGas`: *string* (hex integer)
-    - `mint`: *string* (hex integer)
-    - `nonce`: *string* (hex integer)
-    - `r`: *string* (hex integer)
-    - `s`: *string* (hex integer)
-    - `sourceHash`: *string* (hash)
-    - `to`: *string* (address)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
-    - `v`: *string* (hex integer)
-    - `value`: *string* (hex integer)
-    - `yParity`: *string* (hex integer)
 
 
 </TabItem>
@@ -2065,34 +1899,11 @@ Executes a simulation across multiple blocks (does not create a transaction or b
         - `prevRandao`: *string* (hash)
         - `time`: *string* (hex integer)
       - `calls`: array of *object*
-        - `accessList`: array of *object*
-          - `address`: *string* (address)
-          - `storageKeys`: array of *string* (hex integer)
-        - `blobVersionedHashes`: array of *string* (hex data)
         - `blockHash`: *string* (hash)
         - `blockNumber`: *string* (hex integer)
-        - `chainId`: *string* (hex integer)
-        - `data`: *string* (hex data)
-        - `from`: *string* (address)
-        - `gas`: *string* (hex integer)
-        - `gasPrice`: *string* (hex integer)
         - `hash`: *string* (hash)
-        - `input`: *string* (hex data)
-        - `isSystemTx`: *boolean*
-        - `maxFeePerBlobGas`: *string* (hex integer)
-        - `maxFeePerGas`: *string* (hex integer)
-        - `maxPriorityFeePerGas`: *string* (hex integer)
-        - `mint`: *string* (hex integer)
-        - `nonce`: *string* (hex integer)
-        - `r`: *string* (hex integer)
-        - `s`: *string* (hex integer)
-        - `sourceHash`: *string* (hash)
-        - `to`: *string* (address)
         - `transactionIndex`: *string* (hex integer)
         - `type`: *integer*
-        - `v`: *string* (hex integer)
-        - `value`: *string* (hex integer)
-        - `yParity`: *string* (hex integer)
       - `stateOverrides`: map of *object*
         - `balance`: *string* (hex integer)
         - `code`: *string* (hex data)

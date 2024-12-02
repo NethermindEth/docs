@@ -97,6 +97,14 @@ curl localhost:8545 \
 
 3. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
+4. `stateOverride`: map of *object*
+  - `balance`: *string* (hex integer)
+  - `code`: *string* (hex data)
+  - `movePrecompileToAddress`: *string* (address)
+  - `nonce`: *string* (hex integer)
+  - `state`: map of *string* (hash)
+  - `stateDiff`: map of *string* (hash)
+
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -109,7 +117,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "trace_call",
-      "params": [call, traceTypes, blockParameter]
+      "params": [call, traceTypes, blockParameter, stateOverride]
     }'
 ```
 

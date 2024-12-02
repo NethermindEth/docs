@@ -40,64 +40,18 @@ curl localhost:8545 \
 `result`: *object*
   - `pending`: map of map of *object*
 map of *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `isSystemTx`: *boolean*
-  - `maxFeePerBlobGas`: *string* (hex integer)
-  - `maxFeePerGas`: *string* (hex integer)
-  - `maxPriorityFeePerGas`: *string* (hex integer)
-  - `mint`: *string* (hex integer)
-  - `nonce`: *string* (hex integer)
-  - `r`: *string* (hex integer)
-  - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
-  - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
-  - `yParity`: *string* (hex integer)
   - `queued`: map of map of *object*
 map of *object*
-  - `accessList`: array of *object*
-    - `address`: *string* (address)
-    - `storageKeys`: array of *string* (hex integer)
-  - `blobVersionedHashes`: array of *string* (hex data)
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
   - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `isSystemTx`: *boolean*
-  - `maxFeePerBlobGas`: *string* (hex integer)
-  - `maxFeePerGas`: *string* (hex integer)
-  - `maxPriorityFeePerGas`: *string* (hex integer)
-  - `mint`: *string* (hex integer)
-  - `nonce`: *string* (hex integer)
-  - `r`: *string* (hex integer)
-  - `s`: *string* (hex integer)
-  - `sourceHash`: *string* (hash)
-  - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
-  - `yParity`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
