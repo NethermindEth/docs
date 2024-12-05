@@ -97,3 +97,20 @@ As the Energy Web Chain is an Aura-based network, running a node does not requir
 :::
 
 To run Nethermind on the Energy Web Chain, see the [Energy Web Chain documentation](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/running-a-local-node).
+
+## Linea
+
+**Supported networks**
+
+- [Linea Mainnet](https://docs.linea.build/get-started/build/network-info) - configurations: `linea-mainnet` `linea-mainnet_archive`
+- [Linea Sepolia](https://docs.linea.build/get-started/build/network-info) (testnet) - configurations: `linea-sepolia` `linea-sepolia_archive`
+
+To run Nethermind on Linea, use the respective network configuration. For instance:
+
+```bash
+nethermind \
+  -c linea-mainnet \
+  --data-dir path/to/data/dir
+```
+
+For more info about running a Linea node, see the [Linea documentation](https://docs.linea.build/get-started/how-to/run-a-node).
