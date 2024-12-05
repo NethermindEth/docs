@@ -54,6 +54,15 @@ nethermind \
 
 Archive nodes are generally more resource-demanding. If you intend to run one, we recommend checking out the [hardware requirements](../system-requirements.md#hardware-requirements).
 
+## Gnosis Chain
+
+**Supported networks**
+
+- [Gnosis](https://docs.gnosischain.com/about/networks/mainnet) - configurations: `gnosis` `gnosis_archive`
+- [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet) - configurations: `chiado` `chiado_archive`
+
+To run Nethermind on the Gnosis Chain, see the [Gnosis Chain documentation](https://docs.gnosischain.com/node).
+
 ## OP Stack
 
 **Supported networks**
@@ -76,28 +85,6 @@ To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#
 
 To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
 
-## Gnosis Chain
-
-**Supported networks**
-
-- [Gnosis](https://docs.gnosischain.com/about/networks/mainnet) - configurations: `gnosis` `gnosis_archive`
-- [Chiado](https://docs.gnosischain.com/about/networks/chiado) (testnet) - configurations: `chiado` `chiado_archive`
-
-To run Nethermind on the Gnosis Chain, see the [Gnosis Chain documentation](https://docs.gnosischain.com/node).
-
-## Energy Web Chain
-
-**Supported networks**
-
-- [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain) - configurations: `energyweb` `energyweb_archive`
-- [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet) - configurations: `volta` `volta_archive`
-
-:::info
-As the Energy Web Chain is an Aura-based network, running a node does not require a consensus client.
-:::
-
-To run Nethermind on the Energy Web Chain, see the [Energy Web Chain documentation](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/running-a-local-node).
-
 ## Linea
 
 **Supported networks**
@@ -114,3 +101,17 @@ nethermind \
 ```
 
 For more info about running a Linea node, see the [Linea documentation](https://docs.linea.build/get-started/how-to/run-a-node).
+
+## Energy Web Chain
+
+**Supported networks**
+
+- [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain) - configurations: `energyweb` `energyweb_archive`
+- [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet) - configurations: `volta` `volta_archive`
+
+:::info
+As the Energy Web Chain is an Aura-based network, running a node does not require a consensus client.
+:::
+
+To run Nethermind on the Energy Web Chain, see the [Energy Web Chain documentation](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/running-a-local-node).
+
