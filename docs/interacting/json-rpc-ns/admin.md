@@ -236,3 +236,40 @@ Removed node
 </TabItem>
 </Tabs>
 
+### admin_datadir
+
+Returns the absolute path to the node's data directory.
+
+<Tabs>
+
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_dataDir",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+The data directory path as a string.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": "/path/to/datadir"
+}
+```
+
+`result`: string
+
+</TabItem>
+</Tabs>
