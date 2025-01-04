@@ -23,5 +23,5 @@ These rules are **highly recommended** to be applied to your firewall:
 
 - Block all traffic to the port `8545`, or whatever port is defined for JSON-RPC interface, except for traffic from explicitly defined trusted sources.
 - Allow traffic to the TCP port `30303` or whatever port is defined for P2P communication. This allows the node to connect to peers.
-- Allow traffic to the UDP port `30303` or whatever port ia defined for P2P communication. This allows node discovery.
+- Allow traffic to the UDP port `30303` or whatever port is defined for P2P communication. This allows node discovery.
 
