@@ -43,11 +43,9 @@ At the moment, the best test case sync time is 1 hour 50 minutes for all phases 
 Snap sync is the process of downloading the Ethereum state tree. After it is complete, and after the state sync phase, Nethermind can process and follow the chain. The fastest tested snap sync and state sync time is 25 minutes.
 This phase is the most I/O-intensive sync phase, and therefore, assuming a fast internet, the sync time highly depends on your SSD's write speed. Remember that most SSDs only advertise peak write speed, usually above 5GB/s. However, they tend to slow down significantly to around 0.5GB/s (or even less for a QLC SSD) after a few seconds. Therefore, look for SSDs with high sustained write speed.
 
-Also, ensuring your SSD is sufficiently cooled to prevent thermal throttling is essential. This is often overlooked as most workloads rarely stress SSD as much; however, to reduce sync time, Nethermind will utilize your SSD to its limit. If, for whatever reason, you need to minimize the I/O load, you can specify a rate limit by setting the `Db.MaxBytesPerSec` to `1000000000`.
+Also, ensuring your SSD is sufficiently cooled to prevent thermal throttling is essential. This is often overlooked as most workloads rarely stress SSD as much; however, to reduce sync time, Nethermind will utilize your SSD to its limit.
 
 Nethermind temporarily changes the database configuration during sync to optimize it for writing, notably the option `Sync.TuneDbMode` is set to `HeavyWrite` by default. On some systems with slow SSDs, the setting the `Sync.TuneDbMode` to `AggressiveHeavyWrite` may give some boost. Also, the compaction can be disabled altogether by setting the `Sync.TuneDbMode` to `DisableCompaction`. This is likely faster for systems using entry-level NVMe SSDs and is also useful to extend the lifespan of your SSD as it provides the lowest total writes possible. However, it uses about 3GB of extra memory during snap sync. The state sync phase may appear to hang for about 10 minutes as the whole database compacts for the first time after snap sync.
-
-If you are running on a VPS with artificially capped IOPS, or you are using SATA SSD (which is highly not recommended), increasing the state DB block size by setting `Db.StateDbBlockSize` to `16384` may help to reduce snap sync time. However, this negatively affects block processing time. An alternative is to turn on compaction readahead by setting `Db.CompactionReadAhead` to `128000`; however, this may take up a few extra GB of memory depending on the readahead value.
 
 ## Old bodies and receipts
 
@@ -59,5 +57,3 @@ Old bodies and receipts are mainly limited by your Internet connection. With a 1
 
 Block processing time is limited mainly by SSD performance. Strictly speaking, it's not the IOPS that matters, but the response time. Nevertheless, the IOPS is a good approximation as most SSDs don't advertise the response time.
 To help further reduce reads from SSD, Nethermind has multiple levels of caching, which is tuned by setting the [`Init.MemoryHint`](./configuration.md#init-memoryhint) memory hint configuration option to `2000000000`. If you are running a system with more than 16GB of memory, it is highly recommended to increase this value. In-memory pruning (turned on by default) also improves block processing time.
-
-It is also possible to disable compression of the state DB by setting the `Db.StateDbDisableCompression` to `true` that improves block processing time by 3% to 5% but increases disk space usage correspondingly. Block processing is susceptible to the number of peers connected. Therefore, after the node is synced, it makes sense to reduce the number of peers by setting the [`Network.MaxActivePeers`](./configuration.md#network-maxactivepeers) to `20`.
