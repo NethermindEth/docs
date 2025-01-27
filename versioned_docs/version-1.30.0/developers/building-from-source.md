@@ -1,6 +1,5 @@
 ---
 title: Building from source
-sidebar_label: Building from source
 sidebar_position: 0
 ---
 

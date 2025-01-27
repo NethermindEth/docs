@@ -3,232 +3,233 @@ title: Plugins
 sidebar_position: 1
 ---
 
-:::warning
-This article is outdated and requires a revision.
+Nethermind plugins are a powerful way of extending its capabilities by adding new features and functionalities. If you need a functionality missing in Nethermind, you can add it yourself as a plugin! Actually, many Nethermind features are implemented as plugins, like L2 network support such as Optimism and Taiko, health checks, and Shutter, to name a few. The sky is the limit. Almost.
+
+:::info
+Nethermind plugins are .NET assemblies (.dll) that Nethermind's process loads on startup. By default, they are located in the `plugins` directory. To set a different location for plugins, use the [`--plugins-dir`](../fundamentals/configuration.md#plugins-dir) command line option. In that case, move the bundled plugins to the new location to ensure the correct functionality of Nethermind.
 :::
 
-Nethermind plugins is a powerful way of extending your local node capabilities.
+This guide will walk you through writing a simple plugin to better understand the Nethermind plugin API and its capabilities.
 
-\(see also an article
-here: [https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59](https://medium.com/nethermind-eth/writing-your-first-nethermind-plugin-a9e04d81cf59)\)
+## Writing a basic plugin
 
-Plugins that you can write:
+:::info Before you begin
+Ensure you have installed the required version of the .NET SDK. See [Building from source](./building-from-source.md#prerequisites) for the details.
+:::
 
-| Plugin Type         | What can it be used for?                                                                                                                                                                       |
-|:--------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RPC                 | Adding additional RPC modules to the client that have full access to the internal Nethermind APIs and can extend capabilities of the node when integrating with your infrastructure / systems. |
-| Block Tree Visitors | Code allowing you to analyze entire block tree from genesis to the head block and execute aggregated calculations and checks.                                                                  |
-| Devp2p              | Allows you to create additional devp2p network protocol for your nodes to communicate over TCP/IP. You can also build custom products that will run attached to Nethermind nodes.              |
-| State Visitors      | Allow you to run aggregated analysis on the entire raw format state \(or just some accounts storages\).                                                                                        |
-| Config              | You can add additional configuration categories to our config files and then use them in env variables, json files or command line to configure behaviour of your plugins.                     |
-| TxPool              | TxPool behaviours and listeners.                                                                                                                                                               |
-| Tracers             | Custom, powerful EVM tracers capable of extracting elements of EVM execution in real time.                                                                                                     |
-| CLI                 | Additional modules for Nethermind CLI that can allow you build some quick scratchpad style JavaScript based behaviors.                                                                         |
+To write a Nethermind plugin, you need the Nethermind API to be available to your code. There are two ways of achieving that:
 
-**Note:** When writing a plugin be carefull about exceptions you throw. Especially if you are hooking up event handlers
-on some core objects like BlockProcessor or BlockTree. Those exceptions can bring the node down. This is by design. Its
-responsibility of plugin writer to correctly handle those exceptions.
+- Using the [Nethermind.ReferenceAssemblies](https://www.nuget.org/packages/Nethermind.ReferenceAssemblies) NuGet package. This package is updated with each Nethermind release and is versioned the same. Thus, when choosing this approach, ensure the package version is lower than or equal to your target Nethermind version.
+- Checking out the Nethermind source code and reference the required projects from the plugin. While this approach seems better for debugging your code, some setups had assembly version mismatch issues after upgrading Nethermind.
 
-How to build a plugin? We included an example inside the Nethermind.Analytics plugin:
+In this guide, we will use the first approach. So, let's pick a working directory for the plugin and create a library project as follows:
 
-![](/img/image(133).png)
-
-## RPC Plugin example:
-
-```csharp
-    [RpcModule(ModuleType.Clique)]
-    public interface IAnalyticsModule : IModule
-    {
-        [JsonRpcMethod(Description = "Retrieves ETH supply counted from state.", IsImplemented = true)]
-        ResultWrapper<UInt256> analytics_verifySupply();
-
-        [JsonRpcMethod(Description = "Retrieves ETH supply counted from rewards.", IsImplemented = true)]
-        ResultWrapper<UInt256> analytics_verifyRewards();
-    }
+```bash
+dotnet new classlib -n DemoPlugin -o .
 ```
 
-## CLI Plugin example:
+Now, we need to add the NuGet package to get access to the Nethermind API:
 
-```csharp
-[CliModule("analytics")]
-public class AnalyticsCliModule : CliModuleBase
+```bash
+dotnet add package Nethermind.ReferenceAssemblies
+```
+
+As the package name implies, it provides [reference assemblies](https://learn.microsoft.com/en-us/dotnet/standard/assembly/reference-assemblies) that are only enough to compile the project. To see the plugin in action, put the library assembly (.dll) in the Nethermind's plugins directory and then run Nethermind. We will get to that soon.
+
+Now, we have everything we need to begin with the actual implementation. For the sake of simplicity, we will create a basic plugin, a classic example, that simply prints the famous "Hello, world!" message.
+
+All Nethermind plugins must implement the [`INethermindPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/INethermindPlugin.cs) interface. That's how Nethermind recognizes its plugins. So, let's create a `DemoPlugin` class implementing that interface:
+
+```csharp title="DemoPlugin.cs" showLineNumbers
+using Nethermind.Api;
+using Nethermind.Api.Extensions;
+
+namespace DemoPlugin;
+
+public class DemoPlugin : INethermindPlugin
 {
-    [CliFunction("analytics", "verifySupply")]
-    public string VerifySupply()
+    public string Name => "Demo plugin";
+    public string Description => "A sample plugin for demo";
+    public string Author => "Anonymous";
+
+    // The entry point of the plugin
+    public Task Init(INethermindApi nethermindApi)
     {
-        return NodeManager.Post<string>("analytics_verifySupply").Result;
+        var logger = nethermindApi.LogManager.GetClassLogger();
+        logger.Info("Hello, world!");
+
+        return Task.CompletedTask;
     }
 
-    [CliFunction("analytics", "verifyRewards")]
-    public string VerifyRewards()
-    {
-        return NodeManager.Post<string>("analytics_verifyRewards").Result;
-    }
-
-    public AnalyticsCliModule(ICliEngine cliEngine, INodeManager nodeManager)
-        : base(cliEngine, nodeManager) { }
+    // Initializes the network stack
+    public Task InitNetworkProtocol() => Task.CompletedTask;
+    // Initializes the JSON-RPC stuff
+    public Task InitRpcModules() => Task.CompletedTask;
+    // Initializes the transaction-related stuff
+    public void InitTxTypesAndRlpDecoders(INethermindApi api) { }
+    // Cleans up resources
+    public ValueTask DisposeAsync() => ValueTask.CompletedTask;
 }
 ```
 
-## Block Tree Visitor Plugin example:
+Let's examine the code above. The properties at lines 8-10 are required and self-explanatory. They are displayed on Nethermind startup for each loaded plugin. Next is the `Init()` method at line 13, which is the main entry point of any plugin where initialization begins. Its only argument of type [`INethermindApi`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/INethermindApi.cs) → [`IApiWithNetwork`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IApiWithNetwork.cs) → [`IApiWithBlockchain`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IApiWithBlockchain.cs) → [`IApiWithStores`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IApiWithStores.cs) → [`IBasicApi`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IBasicApi.cs) is the main gateway to the Nethermind API, as its name implies. The `INethermindApi` interface provides a rich functionality set essential for plugin development and is widely used in the Nethermind codebase.
 
-```csharp
-    public class RewardsVerifier : IBlockTreeVisitor
-    {
-        private ILogger _logger;
-        public bool PreventsAcceptingNewBlocks => true;
-        public long StartLevelInclusive => 0;
-        public long EndLevelExclusive { get; }
+In line 15, we get the logger instance we need to print our message. Usually, that instance is stored in a private field to be available to other class members, but in our example, we don't need that. Once we have the instance, we log the message at the regular `info` level.
 
-        private UInt256 _genesisAllocations = UInt256.Parse("72009990499480000000000000");
-        private UInt256 _uncles;
+The methods in lines 22-28 are irrelevant for this example, so they are left empty. We will get to them in later examples.
 
-        public UInt256 BlockRewards { get; private set; }
+To see our plugin in action, let's build it first:
 
-        public RewardsVerifier(ILogManager logManager, long endLevelExclusive)
-        {
-            _logger = logManager.GetClassLogger();
-            EndLevelExclusive = endLevelExclusive;
-            BlockRewards = _genesisAllocations;
-        }
-
-        private RewardCalculator _rewardCalculator = new RewardCalculator(MainnetSpecProvider.Instance);
-
-        public Task<BlockVisitOutcome> VisitBlock(Block block, CancellationToken cancellationToken)
-        {
-            BlockReward[] rewards = _rewardCalculator.CalculateRewards(block);
-            for (int i = 0; i < rewards.Length; i++)
-            {
-                if (rewards[i].RewardType == BlockRewardType.Uncle)
-                {
-                    _uncles += rewards[i].Value;
-                }
-                else
-                {
-                    BlockRewards += rewards[i].Value;
-                }
-            }
-
-            _logger.Info($"Visiting block {block.Number}, total supply is (genesis + miner rewards + uncle rewards) | {_genesisAllocations} + {BlockRewards} + {_uncles}");
-            return Task.FromResult(BlockVisitOutcome.None);
-        }
-
-        public Task<LevelVisitOutcome> VisitLevelStart(ChainLevelInfo chainLevelInfo, CancellationToken cancellationToken)
-            => Task.FromResult(LevelVisitOutcome.None);
-
-        public Task<bool> VisitMissing(Keccak hash, CancellationToken cancellationToken)
-            => Task.FromResult(true);
-
-        public Task<HeaderVisitOutcome> VisitHeader(BlockHeader header, CancellationToken cancellationToken)
-            => Task.FromResult(HeaderVisitOutcome.None);
-
-        public Task<LevelVisitOutcome> VisitLevelEnd(CancellationToken cancellationToken)
-            => Task.FromResult(LevelVisitOutcome.None);
-    }
+```bash
+dotnet build
 ```
 
-## Config plugin example:
+Once built, we need to copy the `DemoPlugin.dll` to Nethermind's `plugins` directory and run Nethermind. The output should be similar to the one below:
 
-```csharp
-public class AnalyticsConfig : IAnalyticsConfig
+```text
+24 Jan 18:01:37 | Nethermind is starting up
+...
+24 Jan 18:01:37 | Loading 14 assemblies from ...
+# highlight-start
+24 Jan 18:01:37 | Loading assembly DemoPlugin
+24 Jan 18:01:37 |   Found plugin type DemoPlugin
+# highlight-end
+24 Jan 18:01:37 | Loading assembly Nethermind.Api
+...
+24 Jan 18:01:39 | Initializing 17 plugins
+...
+24 Jan 18:01:39 |   EthStats by Nethermind
+24 Jan 18:01:39 |   EthStats by Nethermind initialized in 0ms
+# highlight-start
+24 Jan 18:01:39 |   Demo plugin by Anonymous
+24 Jan 18:01:39 | Hello, world!
+24 Jan 18:01:39 |   Demo plugin by Anonymous initialized in 0ms
+# highlight-end
+...
+```
+
+That's it! We wrote our very first Nethermind plugin.
+
+## Configuration
+
+As Nethermind is highly configurable, so may its plugins. The same flexible configuration features that Nethermind uses internally are also available to its plugins. That means a plugin can be configured with command line options, environment variables, and configuration files by simply implementing a single interface.
+
+Nethermind loads and runs all the plugins it finds on startup. This behavior may be undesirable for resource-hungry plugins or incompatible with those requiring a specific network (chain) to run on. Thus, a typical scenario for almost any plugin is to be turned on or off by a configuration setting. Let's implement that feature for our Demo plugin.
+
+All Nethermind configurations must implement the [`IConfig`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Config/IConfig.cs) interface. It's a 2 step process.
+
+First, we derive a new interface from the `IConfig` and add all the required configuration options as properties. In our case, it's a single boolean property `Enabled`:
+
+```csharp title="IDemoConfig.cs" showLineNumbers
+using Nethermind.Config;
+
+namespace DemoPlugin;
+
+public interface IDemoConfig : IConfig
 {
-    public bool PluginsEnabled { get; set; }
-    public bool StreamTransactions { get; set; }
-    public bool StreamBlocks { get; set; }
-    public bool LogPublishedData { get; set; }
+    // The attribute below is optional and serves as documentation
+    [ConfigItem(Description = "Whether to enable the Demo plugin.", DefaultValue = "false")]
+    bool Enabled { get; set; }
 }
 ```
 
-## State Tree Visitor example:
+Second, we implement the interface above as follows:
 
-```csharp
-public class SupplyVerifier : ITreeVisitor
+```csharp title="DemoConfig.cs" showLineNumbers
+namespace DemoPlugin;
+
+public class DemoConfig : IDemoConfig
 {
-    private readonly ILogger _logger;
-    private HashSet<Keccak> _ignoreThisOne = new HashSet<Keccak>();
-    private int _accountsVisited;
-    private int _nodesVisited;
-
-    public SupplyVerifier(ILogger logger)
-    {
-        _logger = logger;
-    }
-
-    public UInt256 Balance { get; set; } = UInt256.Zero;
-
-    public bool ShouldVisit(Keccak nextNode)
-    {
-        if (_ignoreThisOne.Count > 16)
-        {
-            _logger.Warn($"Ignore count leak -> {_ignoreThisOne.Count}");
-        }
-
-        if (_ignoreThisOne.Contains(nextNode))
-        {
-            _ignoreThisOne.Remove(nextNode);
-            return false;
-        }
-
-        return true;
-    }
-
-    public void VisitTree(Keccak rootHash, TrieVisitContext trieVisitContext)
-    {
-    }
-
-    public void VisitMissingNode(Keccak nodeHash, TrieVisitContext trieVisitContext)
-    {
-        _logger.Warn($"Missing node {nodeHash}");
-    }
-
-    public void VisitBranch(TrieNode node, TrieVisitContext trieVisitContext)
-    {
-        _logger.Info($"Balance after visiting {_accountsVisited} accounts and {_nodesVisited} nodes: {Balance}");
-        _nodesVisited++;
-
-        if (trieVisitContext.IsStorage)
-        {
-            for (int i = 0; i < 16; i++)
-            {
-                Keccak childHash = node.GetChildHash(i);
-                if (childHash != null)
-                {
-                    _ignoreThisOne.Add(childHash);
-                }
-            }
-        }
-    }
-
-    public void VisitExtension(TrieNode node, TrieVisitContext trieVisitContext)
-    {
-        _nodesVisited++;
-        if (trieVisitContext.IsStorage)
-        {
-            _ignoreThisOne.Add(node.GetChildHash(0));
-        }
-    }
-
-    public void VisitLeaf(TrieNode node, TrieVisitContext trieVisitContext, byte[] value = null)
-    {
-        _nodesVisited++;
-
-        if (trieVisitContext.IsStorage)
-        {
-            return;
-        }
-
-        AccountDecoder accountDecoder = new AccountDecoder();
-        Account account = accountDecoder.Decode(node.Value.AsRlpStream());
-        Balance += account.Balance;
-        _accountsVisited++;
-
-        _logger.Info($"Balance after visiting {_accountsVisited} accounts and {_nodesVisited} nodes: {Balance}");
-    }
-
-    public void VisitCode(Keccak codeHash, TrieVisitContext trieVisitContext)
-    {
-        _nodesVisited++;
-    }
+    public bool Enabled { get; set; }
 }
 ```
 
+That's it for the configuration. Now, let's check for the value of `Enabled` in the `Init()` method and only log the message if it's `true`:
+
+```csharp
+public Task Init(INethermindApi nethermindApi)
+{
+    var logger = nethermindApi.LogManager.GetClassLogger();
+    // highlight-start
+    var config = nethermindApi.Config<IDemoConfig>();
+    // highlight-end
+
+    if (config.Enabled)
+        logger.Info("Hello, world!");
+
+    return Task.CompletedTask;
+}
+```
+
+The highlighted line shows how to get the configuration instance. Note that we get it by its interface type, not the implementing class. That's an important detail.
+
+:::warning Important
+The configuration interface name must be in the `I{PluginName}Config` format. In our case, it's `IDemoConfig`. While the `Config` suffix must remain as it is, the `I` prefix can be any allowed symbol. However, following the .NET naming conventions is highly recommended, and so do we.
+:::
+
+The naming convention is crucial for mapping the configuration options. For instance, `IDemoConfig.Enabled` turns into the following configuration options:
+
+- `--demo-enabled` or `--Demo.Enabled` as a command line option
+- `NETHERMIND_DEMOCONFIG_ENABLED` as an environment variable
+- `{ "Demo": { "Enabled": true|false } }` as a JSON in a configuration file
+
+Since now we know what our configuration options are, let's build the project, copy the library to Nethermind's plugins directory, and run Nethermind as we did previously:
+
+```text
+24 Jan 18:01:37 | Nethermind is starting up
+...
+24 Jan 18:01:37 | Loading 14 assemblies from ...
+# highlight-start
+24 Jan 18:01:37 | Loading assembly DemoPlugin
+24 Jan 18:01:37 |   Found plugin type DemoPlugin
+# highlight-end
+24 Jan 18:01:37 | Loading assembly Nethermind.Api
+...
+24 Jan 18:01:39 | Initializing 17 plugins
+...
+24 Jan 18:01:39 |   EthStats by Nethermind
+24 Jan 18:01:39 |   EthStats by Nethermind initialized in 0ms
+# highlight-start
+24 Jan 18:01:39 |   Demo plugin by Anonymous
+24 Jan 18:01:39 |   Demo plugin by Anonymous initialized in 0ms
+# highlight-end
+...
+```
+
+There's a slight difference compared to the previous run -- the "Hello, world!" message is gone. The reason is that we put it under an `if` condition which has not been entered because of the `IDemoConfig.Enabled` is `false` by default. Let's set it to `true` using the command line option as follows:
+
+```bash
+nethermind --demo-enabled true
+```
+
+Now we see that our message is back, and the configuration option works as intended! That is how to turn plugins on or off in Nethermind and provide other configuration options.
+
+Last, let's test our plugin configuration documentation defined at line 8 in `IDemoConfig.cs`:
+
+```bash
+nethermind -h
+```
+
+The output should be similar to the following:
+
+```text
+Description:
+
+Usage:
+  nethermind [options]
+
+Options:
+  -?, -h, --help                                              Show help and usage information
+  --version                                                   Show version information
+...
+# highlight-start
+  --demo-enabled, --Demo.Enabled <value>                      Whether to enable the Demo plugin.
+# highlight-end
+  --era-exportdirectory, --Era.ExportDirectory <value>        Directory of archive export.
+  --era-from, --Era.From <value>                              Block number to import/export from.
+...
+```
+
+## Debugging
+
+**TBD**
