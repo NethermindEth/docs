@@ -3,6 +3,9 @@ title: Plugins
 sidebar_position: 1
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Nethermind plugins are a powerful way of extending its capabilities by adding new features and functionalities. If you need a functionality missing in Nethermind, you can add it yourself as a plugin! Actually, many Nethermind features are implemented as plugins, like L2 network support such as Optimism and Taiko, health checks, and Shutter, to name a few. The sky is the limit. Almost.
 
 :::info
@@ -56,7 +59,7 @@ public class DemoPlugin : INethermindPlugin
     public Task Init(INethermindApi nethermindApi)
     {
         var logger = nethermindApi.LogManager.GetClassLogger();
-        logger.Info("Hello, world!");
+        logger.Warn("Hello, world!");
 
         return Task.CompletedTask;
     }
@@ -74,7 +77,7 @@ public class DemoPlugin : INethermindPlugin
 
 Let's examine the code above. The properties at lines 8-10 are required and self-explanatory. They are displayed on Nethermind startup for each loaded plugin. Next is the `Init()` method at line 13, which is the main entry point of any plugin where initialization begins. Its only argument of type [`INethermindApi`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/INethermindApi.cs) → [`IApiWithNetwork`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IApiWithNetwork.cs) → [`IApiWithBlockchain`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IApiWithBlockchain.cs) → [`IApiWithStores`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IApiWithStores.cs) → [`IBasicApi`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/IBasicApi.cs) is the main gateway to the Nethermind API, as its name implies. The `INethermindApi` interface provides a rich functionality set essential for plugin development and is widely used in the Nethermind codebase.
 
-In line 15, we get the logger instance we need to print our message. Usually, that instance is stored in a private field to be available to other class members, but in our example, we don't need that. Once we have the instance, we log the message at the regular `info` level.
+In line 15, we get the logger instance we need to print our message. Usually, that instance is stored in a private field to be available to other class members, but in our example, we don't need that. Once we have the instance, we log the message as a warning so you can spot it easily in the logs.
 
 The methods in lines 22-28 are irrelevant for this example, so they are left empty. We will get to them in later examples.
 
@@ -155,7 +158,7 @@ public Task Init(INethermindApi nethermindApi)
     // highlight-end
 
     if (config.Enabled)
-        logger.Info("Hello, world!");
+        logger.Warn("Hello, world!");
 
     return Task.CompletedTask;
 }
@@ -231,5 +234,89 @@ Options:
 ```
 
 ## Debugging
+
+As your code grows more complex and sophisticated, you may want to debug it at some point. These are the two ways to do that:
+
+- [Attaching the debugger to the Nethermind process](#debug-attach)
+- [Debugging the plugin together with the Nethermind codebase](#debug-codebase)
+
+### Attaching to process \{#debug-attach\}
+
+This approach is preferable if you focus on your plugin only and don't need to debug the Nethermind codebase.
+
+:::info
+This guide assumes you already have installed Nethermind. If you haven't, [install](../get-started/installing-nethermind.md) it before moving on.
+:::
+
+We recommend using Visual Studio or JetBrains Rider as a debugger on Windows. On Linux and macOS, we recommend JetBrains Rider. While Visual Studio Code can also attach to and debug processes, it [does not support](https://github.com/dotnet/vscode-csharp/wiki/Troubleshoot-loading-the-.NET-Debug-Services#error-cause-1-net-debugging-services-library-file-is-missing) debugging the "SingleFile" .NET distributions that Nethermind distributives are.
+
+:::tip
+You may want to check out the following before moving on:
+
+- [Attach to process with Visual Studio](https://learn.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger)
+- [Attach to process with JetBrains Rider](https://www.jetbrains.com/help/rider/attach-to-process.html)
+:::
+
+Before attaching the debugger to the Nethermind process, we need to ensure Nethermind will pick up our plugin. There are two ways:
+
+- Run Nethermind with the [`--plugins-dir`](../fundamentals/configuration.md#plugins-dir) command line option set to the output directory of the plugin project. We recommend copying the other bundled plugins from the original `plugins` directory to the new destination as you may be required depending on your use case.
+- Set the plugin project output to the Nethermind's `plugins` directory.
+
+Either of the above approaches will ensure Nethermind loads our plugin with the latest changes automatically.
+
+### Debugging with Nethermind codebase \{#debug-codebase\}
+
+Another way to debug plugins is to debug them along with the Nethermind codebase. That requires [checking out](./building-from-source.md) the Nethermind source code and debugging it with the IDE of your choice. Visual Studio, JetBrains Rider, and Visual Studio Code are the most popular choices.
+
+Once you have the Nethermind repo checked out and ready, open the `src/Nethermind/Nethermind.sln` and set the `Nethermind.Runner` as a startup project. Optionally, you may want to add the `DemoPlugin` project to the solution to have everything in one place. Then, to automate things, let's set the `DemoPlugin` project output to the Nethermind's `plugins` directory, so the latest changes are always available for Nethermind to pick up. Add the following to the `DemoPlugin.csproj`:
+
+```xml
+<PropertyGroup>
+  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  <OutputPath>$(SolutionDir)/artifacts/bin/Nethermind.Runner/debug/plugins</OutputPath>
+</PropertyGroup>
+```
+
+Now, if you build the `DemoPlugin` project in your IDE, it will output the binaries to the `plugins` directory. Then, you can launch the debugger and check the Nethermind logs for our plugin. You may notice that the "Hello, world!" message is missing, although Nethermind loads the plugin. That's because we made it configurable with the `Demo.Enabled` option, which is `false` by default. Let's set it `true`.
+
+The launch configurations of `Nethermind.Runner` are defined in [`launchSettings.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/Properties/launchSettings.json). For instance, if you launch it with Holesky, we set our `Demo.Enabled` configuration option as follows:
+
+<Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```json title="launchSettings.json"
+  ...
+  "Holesky": {
+    "commandName": "Project",
+  // highlight-start
+    "commandLineArgs": "-c holesky --data-dir .data --demo-enabled true",
+  // highlight-end
+    "environmentVariables": {
+      "ASPNETCORE_ENVIRONMENT": "Development"
+    }
+  },
+  ...
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```json title="launchSettings.json"
+  ...
+  "Holesky": {
+    "commandName": "Project",
+    "commandLineArgs": "-c holesky --data-dir .data",
+    "environmentVariables": {
+      "ASPNETCORE_ENVIRONMENT": "Development",
+  // highlight-start
+      "NETHERMIND_DEMOCONFIG_ENABLED": "true"
+  // highlight-end
+    }
+  },
+  ...
+  ```
+  </TabItem>
+  </Tabs>
+
+Now, if we launch the debugger with Holesky, we will see our "Hello, world!" message again!
+
+## Plugin types
 
 **TBD**
