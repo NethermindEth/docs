@@ -3,6 +3,7 @@ title: Plugins
 sidebar_position: 1
 ---
 
+import ReactPlayer from "react-player";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -167,7 +168,7 @@ public Task Init(INethermindApi nethermindApi)
 The highlighted line shows how to get the configuration instance. Note that we get it by its interface type, not the implementing class. That's an important detail.
 
 :::warning Important
-The configuration interface name must be in the `I{PluginName}Config` format. In our case, it's `IDemoConfig`. While the `Config` suffix must remain as it is, the `I` prefix can be any allowed symbol. However, following the .NET naming conventions is highly recommended, and so do we.
+The configuration interface name must be in the `I{PluginName}Config` format. In our case, it's `IDemoConfig`.
 :::
 
 The naming convention is crucial for mapping the configuration options. For instance, `IDemoConfig.Enabled` turns into the following configuration options:
@@ -262,13 +263,31 @@ Before attaching the debugger to the Nethermind process, we need to ensure Nethe
 - Run Nethermind with the [`--plugins-dir`](../fundamentals/configuration.md#plugins-dir) command line option set to the output directory of the plugin project. We recommend copying the other bundled plugins from the original `plugins` directory to the new destination as you may be required depending on your use case.
 - Set the plugin project output to the Nethermind's `plugins` directory.
 
-Either of the above approaches will ensure Nethermind loads our plugin with the latest changes automatically.
+Either of the above approaches will ensure Nethermind loads our plugin with the latest changes automatically. The following video demonstrates what the debugging process looks like:
+
+<p align="center">
+  <ReactPlayer controls url='https://github.com/user-attachments/assets/267904d4-444e-4eac-91c2-bd76c796c6f3' />
+</p>
 
 ### Debugging with Nethermind codebase \{#debug-codebase\}
 
-Another way to debug plugins is to debug them along with the Nethermind codebase. That requires [checking out](./building-from-source.md) the Nethermind source code and debugging it with the IDE of your choice. Visual Studio, JetBrains Rider, and Visual Studio Code are the most popular choices.
+Another way to debug plugins is to debug them along with the Nethermind codebase. That requires obtaining the Nethermind source code and debugging it with the IDE of your choice. Visual Studio and JetBrains Rider are the most popular choices. Let's try that with our `DemoPlugin` example.
 
-Once you have the Nethermind repo checked out and ready, open the `src/Nethermind/Nethermind.sln` and set the `Nethermind.Runner` as a startup project. Optionally, you may want to add the `DemoPlugin` project to the solution to have everything in one place. Then, to automate things, let's set the `DemoPlugin` project output to the Nethermind's `plugins` directory, so the latest changes are always available for Nethermind to pick up. Add the following to the `DemoPlugin.csproj`:
+#### Step 1: Clone the Nethermind repo \{#debug-codebase-step-1\}
+
+We highly recommend cloning a stable version of the codebase to avoid any unwanted behavior on debugging. Usually, it's the [latest](https://github.com/NethermindEth/nethermind/releases/latest) released version of Nethermind. For example, the command below clones Nethermind v1.30.0:
+
+```bash
+git clone -b "1.30.0" --depth 1 https://github.com/nethermindeth/nethermind.git
+```
+
+#### Step 2: Configure the startup project \{#debug-codebase-step-2\}
+
+In the repo's root directory, open the `src/Nethermind/Nethermind.sln` and set the `Nethermind.Runner` as a startup project. That is the Nethermind's executable that handles everything, including plugins.
+
+#### Step 3: Add the plugin project to the solution \{#debug-codebase-step-3\}
+
+Add the `DemoPlugin` project to the solution to have everything in one place. Then, let's set the `DemoPlugin` project output to Nethermind's `plugins` directory so the latest changes are always available for `Nethermind.Runner` to pick up. Add the following to the `DemoPlugin.csproj`:
 
 ```xml
 <PropertyGroup>
@@ -277,7 +296,43 @@ Once you have the Nethermind repo checked out and ready, open the `src/Nethermin
 </PropertyGroup>
 ```
 
-Now, if you build the `DemoPlugin` project in your IDE, it will output the binaries to the `plugins` directory. Then, you can launch the debugger and check the Nethermind logs for our plugin. You may notice that the "Hello, world!" message is missing, although Nethermind loads the plugin. That's because we made it configurable with the `Demo.Enabled` option, which is `false` by default. Let's set it `true`.
+#### Step 4: Configure build dependencies \{#debug-codebase-step-4\}
+
+Last, let's configure build dependencies so that launching `Nethermind.Runner` automatically builds our `DemoPlugin` with its latest changes, so you don't need to build the plugin separately each time before launching the debugger. With this said, we need to make the `Nethermind.Runner` project depend on the `DemoPlugin` project. See how to configure project dependencies below:
+
+- [Project dependencies in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies#to-assign-dependencies-to-projects)
+- [Project dependencies in JetBrains Rider](https://www.jetbrains.com/help/rider/Architecture__Project_Dependencies_Exploration.html)
+
+<details>
+<summary>IDE-agnostic workaround</summary>
+<p>
+
+If your IDE doesn't provide project dependency configuration, you can achieve that functionality by referencing the `DemoPlugin` project from the `Nethermind.Runner` project. Run the following from `src/Nethermind`:
+
+```bash
+dotnet add ./Nethermind.Runner reference path/to/DemoPlugin.csproj
+```
+
+Then, in the `Nethermind.Runner.csproj`, find the reference to `DemoPlugin` and disable the reference output as follows:
+
+```xml title="Nethermind.Runner.csproj"
+...
+<ProjectReference Include="path/to/DemoPlugin.csproj">
+<!--highlight-start-->
+  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+<!--highlight-end-->
+</ProjectReference>
+...
+```
+
+Thus, the `DemoPlugin` won't be included in the output of `Nethermind.Runner`. This is important to avoid dependency conflicts.
+
+</p>
+</details>
+
+#### Launching the debugger \{#debug-codebase-launch\}
+
+Now, we're ready to launch the debugger and check the Nethermind logs for our plugin. You may notice that the "Hello, world!" message is missing, although Nethermind logs show the plugin is loaded. That's because we made it configurable with the `Demo.Enabled` option, which is `false` by default. Let's set it to `true`.
 
 The launch configurations of `Nethermind.Runner` are defined in [`launchSettings.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/Properties/launchSettings.json). For instance, if you launch it with Holesky, we set our `Demo.Enabled` configuration option as follows:
 
