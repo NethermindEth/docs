@@ -78,7 +78,7 @@ For systems with at least 32GB of RAM, it is recommended to use the following fl
 \`\`\`bash
 --Pruning.CacheMb 2000
 --Db.StateDbWriteBufferSize 100000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory.index_type=kBinarySearch;block_based_table_factory.partition_filters=0;"
+--Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"
 \`\`\`
 
 - **Pruning Cache:** Increased from 1GB to 2GB, reducing total SSD writes by roughly a factor of 3 (note that around 500MB of cache is retained for SNAP serving).
@@ -94,7 +94,7 @@ For systems with at least 128GB of RAM, use the following flags:
 \`\`\`bash
 --Pruning.CacheMb 4000
 --Db.StateDbWriteBufferSize 200000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory.index_type=kBinarySearch;block_based_table_factory.partition_filters=0;"
+--Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"
 --Db.StateDbEnableFileWarmer true
 \`\`\`
 
@@ -110,7 +110,7 @@ For systems where the entire state can be loaded into memory (at least 350GB of 
 \`\`\`bash
 --Pruning.CacheMb 4000
 --Db.StateDbWriteBufferSize 200000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory.index_type=kBinarySearch;block_based_table_factory.block_size=4092;block_based_table_factory.block_restart_interval=2;block_based_table_factory.partition_filters=0;compression=kNoCompression;allow_mmap_reads=1;"
+--Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;block_size=4092;block_restart_interval=2;partition_filters=0;};compression=kNoCompression;allow_mmap_reads=1;"
 --Db.StateDbVerifyChecksum false
 \`\`\`
 
