@@ -55,11 +55,11 @@ Old bodies and receipts are mainly limited by your Internet connection. With a 1
 
 ## Block processing time and attestation
 
-Block processing time is primarily limited by SSD performance. In practice, it is the SSD's **response time**, not just its IOPS, that matters. However, since most SSDs don't advertise response times, IOPS often serves as a useful approximation.
+Block processing time is primarily limited by SSD performance. In practice, it is the SSD's _response time_, not just its IOPS, that matters. However, since most SSDs don't advertise response times, IOPS often serves as a useful approximation.
 
 Nethermind includes a _prewarming_ feature that parallelizes state reads by executing transactions concurrently, warming up state reads for the main block processing. This effectively hides SSD latency, although it increases CPU usage. For non-validator nodes, where RPC throughput is more important, you can turn off this optimization by setting the [`Blocks.PreWarmStateOnBlockProcessing`](../fundamentals/configuration.md#blocks-prewarmstateonblockprocessing) option to `false`. While disabling prewarming may conserve CPU resources, the benefits are typically minor.
 
-## Adjusting to memory
+## Memory
 
 Ethereum aims to be maximally decentralized, so the default Nethermind configuration minimizes system resource usage. However, several tunable parameters are available if your system has large enough memory.
 
@@ -85,7 +85,7 @@ For systems with at least 128 GB of memory, the following configuration is recom
 
 - `Pruning.CacheMb: 4000`
 
-  The pruning cache is increased to 4 GB, and the write buffer size to 200 MB.
+  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) is increased to 4 GB, and the write buffer size to 200 MB.
 
 - `Db.StateDbWriteBufferSize: 200000000`
 - `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"`
@@ -99,7 +99,7 @@ For systems with at least 350 GB of memory, where the entire state can be loaded
 
 - `Pruning.CacheMb: 4000`
 
-  The pruning cache is increased to 4 GB, and the write buffer size to 200 MB.
+  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) is increased to 4 GB, and the write buffer size to 200 MB.
 
 - `Db.StateDbWriteBufferSize: 200000000`
 
