@@ -83,7 +83,7 @@ For systems with at least 32GB of RAM, it is recommended to use the following fl
 
 - **Pruning Cache:** Increased from 1GB to 2GB, reducing total SSD writes by roughly a factor of 3 (note that around 500MB of cache is retained for SNAP serving).
 - **Write Buffer Size:** Should be increased proportionally with the pruning cache to avoid extended pruning times that might block attestation.
-- **RocksDB Options:** Changes the index to use not use partitioned index, improving latency at the cost of approximately 500MB of additional memory.
+- **RocksDB Options:** Changes the index to not use partitioned index, improving latency at the cost of approximately 500MB of additional memory.
 
 ---
 
@@ -110,10 +110,10 @@ For systems where the entire state can be loaded into memory (at least 350GB of 
 \`\`\`bash
 --Pruning.CacheMb 4000
 --Db.StateDbWriteBufferSize 200000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;block_size=4092;block_restart_interval=2;partition_filters=0;};compression=kNoCompression;allow_mmap_reads=1;"
+--Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;block_size=4092;block_restart_interval=2;partition_filters=0};compression=kNoCompression;allow_mmap_reads=1;"
 --Db.StateDbVerifyChecksum false
 \`\`\`
 
 - **Database Compression:** Disabling compression and using a less compact encoding increases the database size (approximately 280GB compared to the standard 160GB) but offers a more CPU-efficient encoding for block processing. It also enable memory mapped (MMAP) reads which skips rocksdb's internal block cache along with memory allocator. Note however, to enable MMAP verify checksum need to be disabled.
-- **State Access Efficiency:** In this configuration, in addition to prewarming, state access typically accounts for less than 10% of block processing time. This is notable especially with server CPU where the low frequency tend to result in higher block processing time.
+- **State Access Efficiency:** In this configuration, in addition to prewarming, state access typically accounts for less than 10% of block processing time. This is notable especially with server CPU where the low frequency tend to result in higher block processing latency.
 ---
