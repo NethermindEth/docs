@@ -55,5 +55,58 @@ Old bodies and receipts are mainly limited by your Internet connection. With a 1
 
 ## Block processing time and attestation
 
-Block processing time is limited mainly by SSD performance. Strictly speaking, it's not the IOPS that matters, but the response time. Nevertheless, the IOPS is a good approximation as most SSDs don't advertise the response time.
-To help further reduce reads from SSD, Nethermind has multiple levels of caching, which is tuned by setting the [`Init.MemoryHint`](./configuration.md#init-memoryhint) memory hint configuration option to `2000000000`. If you are running a system with more than 16GB of memory, it is highly recommended to increase this value. In-memory pruning (turned on by default) also improves block processing time.
+Block processing time is primarily limited by SSD performance. In practice, it is the SSD's **response time**, not just its IOPS, that matters. However, since most SSDs don't advertise response times, IOPS often serves as a useful approximation.
+
+Nethermind includes a _prewarming_ feature that parallelizes state reads by executing transactions concurrently, warming up state reads for the main block processing. This effectively hides SSD latency, although it increases CPU usage. For non-validator nodes, where RPC throughput is more important, you can turn off this optimization by setting the [`Blocks.PreWarmStateOnBlockProcessing`](../fundamentals/configuration.md#blocks-prewarmstateonblockprocessing) option to `false`. While disabling prewarming may conserve CPU resources, the benefits are typically minor.
+
+## Adjusting to memory
+
+Ethereum aims to be maximally decentralized, so the default Nethermind configuration minimizes system resource usage. However, several tunable parameters are available if your system has large enough memory.
+
+### At least 32 GB
+
+For systems with at least 32 GB of memory, the following configuration is recommended:
+
+- `Pruning.CacheMb: 2000`
+
+  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) increased from 1 GB to 2 GB, reducing total SSD writes by roughly a factor of 3 (note that ~500 MB of cache is retained for snap serving).
+
+- `Db.StateDbWriteBufferSize: 100000000`
+
+  The write buffer size should be increased proportionally with the pruning cache to avoid extended pruning times that might block attestation.
+
+- `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"`
+
+  Changes the database index not to use the partitioned index, improving latency at the cost of ~500 MB of additional memory.
+
+### At least 128 GB
+
+For systems with at least 128 GB of memory, the following configuration is recommended:
+
+- `Pruning.CacheMb: 4000`
+
+  The pruning cache is increased to 4 GB, and the write buffer size to 200 MB.
+
+- `Db.StateDbWriteBufferSize: 200000000`
+- `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"`
+- `Db.StateDbEnableFileWarmer: true`
+
+  Enabling the file warmer primes the OS cache by reading the database files at startup. Without this option, the OS cache can take several weeks to warm up naturally.
+
+### At least 350 GB
+
+For systems with at least 350 GB of memory, where the entire state can be loaded into memory, beneficial for RPC providers, the following configuration is recommended:
+
+- `Pruning.CacheMb: 4000`
+
+  The pruning cache is increased to 4 GB, and the write buffer size to 200 MB.
+
+- `Db.StateDbWriteBufferSize: 200000000`
+
+- `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;block_size=4092;block_restart_interval=2;partition_filters=0};compression=kNoCompression;allow_mmap_reads=1;"`
+
+  Turning off the database compression and using a less compact encoding increases the database size (approximately 280 GB compared to the standard 160 GB) but offers a more CPU-efficient encoding for block processing. It also enables memory-mapped (MMAP) reads, which skip RocksDB's internal block cache and the memory allocator. Note, however, that to enable MMAP verification, checksum needs to be disabled.
+
+- `Db.StateDbVerifyChecksum: false`
+
+  In addition to prewarming, state access typically accounts for less than 10% of block processing time. This is notable, especially with server CPU, where the low frequency tends to result in higher block processing latency.
