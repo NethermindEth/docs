@@ -55,65 +55,58 @@ Old bodies and receipts are mainly limited by your Internet connection. With a 1
 
 ## Block processing time and attestation
 
-Block processing time is primarily limited by SSD performance. In practice, it is the SSD’s **response time**—not just its IOPS—that matters. However, since most SSDs do not advertise response times, IOPS often serves as a useful approximation.
+Block processing time is primarily limited by SSD performance. In practice, it is the SSD's **response time**, not just its IOPS, that matters. However, since most SSDs don't advertise response times, IOPS often serves as a useful approximation.
 
-Nethermind includes a feature called **prewarming** that parallelizes state reads by executing transactions concurrently, warming up state reads for the main block processing. This is very effective at hiding SSD latency, although it increases CPU usage. For non-validator nodes, where RPC throughput is more important, you can disable this optimization:
+Nethermind includes a _prewarming_ feature that parallelizes state reads by executing transactions concurrently, warming up state reads for the main block processing. This effectively hides SSD latency, although it increases CPU usage. For non-validator nodes, where RPC throughput is more important, you can turn off this optimization by setting the [`Blocks.PreWarmStateOnBlockProcessing`](../fundamentals/configuration.md#blocks-prewarmstateonblockprocessing) option to `false`. While disabling prewarming may conserve CPU resources, the benefits are typically minor.
 
-```
---Blocks.PreWarmStateOnBlockProcessing false
-```
+## Adjusting to memory
 
-While disabling prewarming may conserve CPU resources, the benefits are typically minor.
+Ethereum aims to be maximally decentralized, so the default Nethermind configuration minimizes system resource usage. However, several tunable parameters are available if your system has large enough memory.
 
----
+### At least 32 GB
 
-## Default Configuration and Tuning for More Capable Hardware
+For systems with at least 32 GB of memory, the following configuration is recommended:
 
-Ethereum aims to be maximally decentralized, so the default Nethermind configuration minimizes system resource usage. However, if you have more capable hardware, several tunable parameters are available.
+- `Pruning.CacheMb: 2000`
 
-### Systems with ≥32GB of RAM
+  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) increased from 1 GB to 2 GB, reducing total SSD writes by roughly a factor of 3 (note that ~500 MB of cache is retained for snap serving).
 
-For systems with at least 32GB of RAM, it is recommended to use the following flags:
+- `Db.StateDbWriteBufferSize: 100000000`
 
-```
---Pruning.CacheMb 2000
---Db.StateDbWriteBufferSize 100000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"
-```
+  The write buffer size should be increased proportionally with the pruning cache to avoid extended pruning times that might block attestation.
 
-- **Pruning Cache:** Increased from 1GB to 2GB, reducing total SSD writes by roughly a factor of 3 (note that around 500MB of cache is retained for SNAP serving).
-- **Write Buffer Size:** Should be increased proportionally with the pruning cache to avoid extended pruning times that might block attestation.
-- **RocksDB Options:** Changes the index to not use partitioned index, improving latency at the cost of approximately 500MB of additional memory.
+- `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"`
 
----
+  Changes the database index not to use the partitioned index, improving latency at the cost of ~500 MB of additional memory.
 
-### Systems with ≥128GB of RAM
+### At least 128 GB
 
-For systems with at least 128GB of RAM, use the following flags:
+For systems with at least 128 GB of memory, the following configuration is recommended:
 
-```
---Pruning.CacheMb 4000
---Db.StateDbWriteBufferSize 200000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"
---Db.StateDbEnableFileWarmer true
-```
+- `Pruning.CacheMb: 4000`
 
-- **Increased Memory Budget:** The pruning cache is increased to 4GB, and the write buffer size to 200MB.
-- **File Warmer:** Enabling the file warmer primes the OS cache by reading the database files at startup. Without this option, it can take several weeks for the OS cache to warm up naturally.
+  The pruning cache is increased to 4 GB, and the write buffer size to 200 MB.
 
----
+- `Db.StateDbWriteBufferSize: 200000000`
+- `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"`
+- `Db.StateDbEnableFileWarmer: true`
 
-### Systems with ≥350GB of RAM (State Can Fit in Memory)
+  Enabling the file warmer primes the OS cache by reading the database files at startup. Without this option, the OS cache can take several weeks to warm up naturally.
 
-For systems where the entire state can be loaded into memory (at least 350GB of RAM), especially useful for RPC providers, use the following flags:
+### At least 350 GB
 
-```
---Pruning.CacheMb 4000
---Db.StateDbWriteBufferSize 200000000
---Db.StateDbAdditionalRocksDbOptions "block_based_table_factory={index_type=kBinarySearch;block_size=4092;block_restart_interval=2;partition_filters=0};compression=kNoCompression;allow_mmap_reads=1;"
---Db.StateDbVerifyChecksum false
-```
+For systems with at least 350 GB of memory, where the entire state can be loaded into memory, beneficial for RPC providers, the following configuration is recommended:
 
-- **Database Compression:** Disabling compression and using a less compact encoding increases the database size (approximately 280GB compared to the standard 160GB) but offers a more CPU-efficient encoding for block processing. It also enable memory mapped (MMAP) reads which skips rocksdb's internal block cache along with memory allocator. Note however, to enable MMAP verify checksum need to be disabled.
-- **State Access Efficiency:** In this configuration, in addition to prewarming, state access typically accounts for less than 10% of block processing time. This is notable especially with server CPU where the low frequency tend to result in higher block processing latency.
----
+- `Pruning.CacheMb: 4000`
+
+  The pruning cache is increased to 4 GB, and the write buffer size to 200 MB.
+
+- `Db.StateDbWriteBufferSize: 200000000`
+
+- `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;block_size=4092;block_restart_interval=2;partition_filters=0};compression=kNoCompression;allow_mmap_reads=1;"`
+
+  Turning off the database compression and using a less compact encoding increases the database size (approximately 280 GB compared to the standard 160 GB) but offers a more CPU-efficient encoding for block processing. It also enables memory-mapped (MMAP) reads, which skip RocksDB's internal block cache and the memory allocator. Note, however, that to enable MMAP verification, checksum needs to be disabled.
+
+- `Db.StateDbVerifyChecksum: false`
+
+  In addition to prewarming, state access typically accounts for less than 10% of block processing time. This is notable, especially with server CPU, where the low frequency tends to result in higher block processing latency.
