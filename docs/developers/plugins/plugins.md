@@ -10,15 +10,19 @@ import TabItem from "@theme/TabItem";
 Nethermind plugins are a powerful way of extending its capabilities by adding new features and functionalities. If you need a functionality missing in Nethermind, you can add it yourself as a plugin! Actually, many Nethermind features are implemented as plugins, like L2 network support such as Optimism and Taiko, health checks, and Shutter, to name a few. The sky is the limit. Almost.
 
 :::info
-Nethermind plugins are .NET assemblies (.dll) that Nethermind's process loads on startup. By default, they are located in the `plugins` directory. To set a different location for plugins, use the [`--plugins-dir`](../fundamentals/configuration.md#plugins-dir) command line option. In that case, move the bundled plugins to the new location to ensure the correct functionality of Nethermind.
+Nethermind plugins are .NET assemblies (.dll) that Nethermind's process loads on startup. By default, they are located in the `plugins` directory. To set a different location for plugins, use the [`--plugins-dir`](../../fundamentals/configuration.md#plugins-dir) command line option. In that case, move the bundled plugins to the new location to ensure the correct functionality of Nethermind.
+:::
+
+:::tip
+We have a dedicated [Discord channel](https://discord.gg/K8MdZT3keK) for plugin development. Please get in touch with us if you have any issues or need functionality that is not provided by the current plugin API.
 :::
 
 This guide will walk you through writing a simple plugin to better understand the Nethermind plugin API and its capabilities.
 
-## Writing a basic plugin
+## Creating a basic plugin
 
 :::info Before you begin
-Ensure you have installed the required version of the .NET SDK. See [Building from source](./building-from-source.md#prerequisites) for the details.
+Ensure you have installed the required version of the .NET SDK. See [Building from source](../building-from-source.md#prerequisites) for the details.
 :::
 
 To write a Nethermind plugin, you need the Nethermind API to be available to your code. There are two ways of achieving that:
@@ -42,7 +46,7 @@ As the package name implies, it provides [reference assemblies](https://learn.mi
 
 Now, we have everything we need to begin with the actual implementation. For the sake of simplicity, we will create a basic plugin, a classic example, that simply prints the famous "Hello, world!" message.
 
-All Nethermind plugins must implement the [`INethermindPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/INethermindPlugin.cs) interface. That's how Nethermind recognizes its plugins. So, let's create a `DemoPlugin` class implementing that interface:
+All Nethermind plugins must implement the [`INethermindPlugin`][inethermindplugin] interface. That's how Nethermind recognizes its plugins. So, let's create a `DemoPlugin` class implementing that interface:
 
 ```csharp title="DemoPlugin.cs" showLineNumbers
 using Nethermind.Api;
@@ -72,7 +76,7 @@ public class DemoPlugin : INethermindPlugin
     // Initializes the transaction-related stuff
     public void InitTxTypesAndRlpDecoders(INethermindApi api) { }
     // Cleans up resources
-    public ValueTask DisposeAsync() => ValueTask.CompletedTask;
+    public ValueTask DisposeAsync() => default;
 }
 ```
 
@@ -112,7 +116,7 @@ Once built, we need to copy the `DemoPlugin.dll` to Nethermind's `plugins` direc
 ...
 ```
 
-That's it! We wrote our very first Nethermind plugin.
+That's it! We created our very first Nethermind plugin.
 
 ## Configuration
 
@@ -246,7 +250,7 @@ As your code grows more complex and sophisticated, you may want to debug it at s
 This approach is preferable if you focus on your plugin only and don't need to debug the Nethermind codebase.
 
 :::info
-This guide assumes you already have installed Nethermind. If you haven't, [install](../get-started/installing-nethermind.md) it before moving on.
+This guide assumes you already have installed Nethermind. If you haven't, [install](../../get-started/installing-nethermind.md) it before moving on.
 :::
 
 We recommend using Visual Studio or JetBrains Rider as a debugger on Windows. On Linux and macOS, we recommend JetBrains Rider. While Visual Studio Code can also attach to and debug processes, it [does not support](https://github.com/dotnet/vscode-csharp/wiki/Troubleshoot-loading-the-.NET-Debug-Services#error-cause-1-net-debugging-services-library-file-is-missing) debugging the "SingleFile" .NET distributions that Nethermind distributives are.
@@ -260,7 +264,7 @@ You may want to check out the following before moving on:
 
 Before attaching the debugger to the Nethermind process, we need to ensure Nethermind will pick up our plugin. There are two ways:
 
-- Run Nethermind with the [`--plugins-dir`](../fundamentals/configuration.md#plugins-dir) command line option set to the output directory of the plugin project. We recommend copying the other bundled plugins from the original `plugins` directory to the new destination as you may be required depending on your use case.
+- Run Nethermind with the [`--plugins-dir`](../../fundamentals/configuration.md#plugins-dir) command line option set to the output directory of the plugin project. We recommend copying the other bundled plugins from the original `plugins` directory to the new destination as you may be required depending on your use case.
 - Set the plugin project output to the Nethermind's `plugins` directory.
 
 Either of the above approaches will ensure Nethermind loads our plugin with the latest changes automatically. The following video demonstrates what the debugging process looks like:
@@ -334,7 +338,7 @@ Thus, the `DemoPlugin` won't be included in the output of `Nethermind.Runner`. T
 
 Now, we're ready to launch the debugger and check the Nethermind logs for our plugin. You may notice that the "Hello, world!" message is missing, although Nethermind logs show the plugin is loaded. That's because we made it configurable with the `Demo.Enabled` option, which is `false` by default. Let's set it to `true`.
 
-The launch configurations of `Nethermind.Runner` are defined in [`launchSettings.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/Properties/launchSettings.json). For instance, if you launch it with Holesky, we set our `Demo.Enabled` configuration option as follows:
+The launch configurations of `Nethermind.Runner` are defined in [`launchSettings.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/Properties/launchSettings.json). For instance, if we launch it with Holesky, we set our `Demo.Enabled` configuration option as follows:
 
 <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
@@ -374,4 +378,26 @@ Now, if we launch the debugger with Holesky, we will see our "Hello, world!" mes
 
 ## Plugin types
 
-**TBD**
+Nethermind defines the following plugin types derived from [`INethermindPlugin`][inethermindplugin] intended for specific functionality:
+
+- #### [`IConsensusPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/IConsensusPlugin.cs)
+
+  Plugins of this type provide support for consensus algorithms. For example, see the [`OptimismPlugin`][optimismplugin] or [`EthashPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Consensus.Ethash/EthashPlugin.cs).
+- #### [`IConsensusWrapperPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/IConsensusWrapperPlugin.cs)
+
+  Plugins of this type extend or change the handling of the Ethereum PoS consensus algorithm. For example, see the [`MergePlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Merge.Plugin/MergePlugin.cs) or [`ShutterPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Shutter/ShutterPlugin.cs).
+- #### [`IInitializationPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/IInitializationPlugin.cs)
+
+  Plugins of this type define _steps_ required to complete during Nethermind initialization. For example, see the [`SnapshotPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Init.Snapshot/SnapshotPlugin.cs).
+- #### [`ISynchronizationPlugin`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/ISynchronizationPlugin.cs)
+
+  Plugins of this type implement a custom sync logic. For example, see the [`OptimismPlugin`][optimismplugin] or [`TaikoPlugin`][taikoplugin].
+
+## Samples
+
+- [JSON-RPC handler](./samples/json-rpc-handler.md)
+- _More to be added later_
+
+[inethermindplugin]: https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Extensions/INethermindPlugin.cs
+[optimismplugin]: https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Optimism/OptimismPlugin.cs
+[taikoplugin]: https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Taiko/TaikoPlugin.cs
