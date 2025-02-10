@@ -572,7 +572,9 @@ Sets the block number up to which receipts will be migrated to (Nethermind speci
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockNumber`: *string* (hex integer)
+1. `from`: *string* (hex integer)
+
+2. `to`: *string* (hex integer)
 
 
 </TabItem>
@@ -586,7 +588,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "debug_migrateReceipts",
-      "params": [blockNumber]
+      "params": [from, to]
     }'
 ```
 

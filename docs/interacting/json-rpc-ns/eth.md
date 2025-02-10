@@ -904,7 +904,6 @@ curl localhost:8545 \
   - `topics`: array of *string* (hash)
   - `transactionHash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
-  - `transactionLogIndex`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
@@ -959,7 +958,6 @@ curl localhost:8545 \
   - `topics`: array of *string* (hash)
   - `transactionHash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
-  - `transactionLogIndex`: *string* (hex integer)
 
 </TabItem>
 </Tabs>

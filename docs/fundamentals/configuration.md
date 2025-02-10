@@ -672,7 +672,283 @@ The configuration options are case-sensitive and can be defined only once unless
   Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
 
 
+### CL
+
+- #### `CL.Enabled` \{#cl-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --cl-enabled <value>
+  --CL.Enabled <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CLCONFIG_ENABLED=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CL": {
+      "Enabled": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Use enshrined op cl. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `CL.L1BeaconApiEndpoint` \{#cl-l1beaconapiendpoint\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --cl-l1beaconapiendpoint <value>
+  --CL.L1BeaconApiEndpoint <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CLCONFIG_L1BEACONAPIENDPOINT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CL": {
+      "L1BeaconApiEndpoint": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  URL to L1 beacon node Defaults to `null`.
+
+- #### `CL.L1EthApiEndpoint` \{#cl-l1ethapiendpoint\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --cl-l1ethapiendpoint <value>
+  --CL.L1EthApiEndpoint <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CLCONFIG_L1ETHAPIENDPOINT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CL": {
+      "L1EthApiEndpoint": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  URL to L1 execution node. Defaults to `null`.
+
+- #### `CL.P2PHost` \{#cl-p2phost\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --cl-p2phost <value>
+  --CL.P2PHost <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CLCONFIG_P2PHOST=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CL": {
+      "P2PHost": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  CL p2p communication host Defaults to `127.0.0.1`.
+
+- #### `CL.P2PPort` \{#cl-p2pport\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --cl-p2pport <value>
+  --CL.P2PPort <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CLCONFIG_P2PPORT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CL": {
+      "P2PPort": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  CL p2p communication host Defaults to `3030`.
+
+
 ### Clique
+
+
+### Era
+
+- #### `Era.ExportDirectory` \{#era-exportdirectory\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --era-exportdirectory <value>
+  --Era.ExportDirectory <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ERACONFIG_EXPORTDIRECTORY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Era": {
+      "ExportDirectory": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Directory of archive export.
+
+- #### `Era.From` \{#era-from\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --era-from <value>
+  --Era.From <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ERACONFIG_FROM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Era": {
+      "From": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Block number to import/export from. Defaults to `0`.
+
+- #### `Era.ImportDirectory` \{#era-importdirectory\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --era-importdirectory <value>
+  --Era.ImportDirectory <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ERACONFIG_IMPORTDIRECTORY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Era": {
+      "ImportDirectory": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Directory of era1 archives to be imported.
+
+- #### `Era.To` \{#era-to\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --era-to <value>
+  --Era.To <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ERACONFIG_TO=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Era": {
+      "To": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Block number to import/export to. Defaults to `0`.
+
+- #### `Era.TrustedAccumulatorFile` \{#era-trustedaccumulatorfile\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --era-trustedaccumulatorfile <value>
+  --Era.TrustedAccumulatorFile <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ERACONFIG_TRUSTEDACCUMULATORFILE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Era": {
+      "TrustedAccumulatorFile": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Accumulator file to be used for trusting era files. Defaults to `null`.
 
 
 ### EthStats
@@ -1652,33 +1928,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The hash of the genesis block. If not specified, the genesis block validity is not checked which is useful in the case of ad hoc test/private networks. Defaults to `null`.
 
-- #### `Init.HiveChainSpecPath` \{#init-hivechainspecpath\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --init-hivechainspecpath <value>
-  --Init.HiveChainSpecPath <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_INITCONFIG_HIVECHAINSPECPATH=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "Init": {
-      "HiveChainSpecPath": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  The path to the chain spec file for Hive tests. Defaults to `chainspec/test.json`.
-
 - #### `Init.IsMining` \{#init-ismining\}
 
   <Tabs groupId="usage">
@@ -2167,9 +2416,9 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
-
+  
   Built-in namespaces:
-
+  
   - `admin`
   - `client`
   - `debug`
@@ -2186,7 +2435,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `trace`
   - `txpool`
   - `web3`
-
+  
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - #### `JsonRpc.EngineEnabledModules` \{#jsonrpc-engineenabledmodules\}
@@ -2323,7 +2572,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of concurrent instances for non-sharable calls:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2331,7 +2580,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
 
 - #### `JsonRpc.GasCap` \{#jsonrpc-gascap\}
@@ -2440,7 +2689,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The path to the JWT secret file required for the Engine API authentication. Defaults to `keystore/jwt-secret`.
+  The path to the JWT secret file required for the Engine API authentication. Defaults to `null`.
 
 - #### `JsonRpc.MaxBatchResponseBodySize` \{#jsonrpc-maxbatchresponsebodysize\}
 
@@ -2711,7 +2960,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of concurrent requests in the queue for:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2719,7 +2968,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newBlockFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   `0` to lift the limit. Defaults to `500`.
 
 - #### `JsonRpc.RpcRecorderBaseFilePath` \{#jsonrpc-rpcrecorderbasefilepath\}
@@ -3411,13 +3660,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of requests to the garbage collector (GC) to release the process memory.
-
+  
   Allowed values:
-
+  
   - `-1`: No requests.
   - `0`: Requests every time.
   - A positive number: Requests after that many Engine API calls.
-
+  
   Defaults to `25`.
 
 - #### `Merge.CompactMemory` \{#merge-compactmemory\}
@@ -4539,15 +4788,15 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of parallel tasks that can be used by full pruning.
-
+  
   Allowed values:
-
+  
   - `-1`: Uses the number of logical processors.
   - `0`: Uses 25% of logical processors.
   - `1`: Runs on a single thread.
-
+  
   The recommended value depends on the type of the node:
-
+  
   - If the node needs to be responsive (serves for RPC or validator), then the recommended value is `0` or `-1`.
   - If the node doesn't have many other responsibilities but needs to be able to follow the chain reliably without any delays and produce live logs, the `0` or `1` is recommended.
   - If the node doesn't have to be responsive, has very fast I/O (like NVMe) and the shortest pruning time is to be achieved, then `-1` is recommended. Defaults to `0`.
@@ -5447,7 +5696,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
   ```
@@ -5479,7 +5728,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
   ```
@@ -6376,6 +6625,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The max number of full blob transactions stored in memory. Used only if persistent storage is disabled. Defaults to `512`.
 
+- #### `TxPool.MaxBlobTxSize` \{#txpool-maxblobtxsize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-maxblobtxsize <value>
+  --TxPool.MaxBlobTxSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_MAXBLOBTXSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "MaxBlobTxSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max blob transaction size allowed, excluding blobs, in bytes. Defaults to `1048576`.
+
 - #### `TxPool.MaxPendingBlobTxsPerSender` \{#txpool-maxpendingblobtxspersender\}
 
   <Tabs groupId="usage">
@@ -6429,6 +6705,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of pending transactions per single sender. `0` to lift the limit. Defaults to `0`.
+
+- #### `TxPool.MaxTxSize` \{#txpool-maxtxsize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-maxtxsize <value>
+  --TxPool.MaxTxSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_MAXTXSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "MaxTxSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max transaction size allowed, in bytes. Defaults to `131072`.
 
 - #### `TxPool.MinBaseFeeThreshold` \{#txpool-minbasefeethreshold\}
 

@@ -245,9 +245,21 @@ curl localhost:8545 \
     - `bytes`: *string* (hex data)
     - `hash`: *string* (hash)
     - `prefixedBytes`: *string* (hex data)
-  - `r`: *string* (hex data)
+  - `r`: *object*
+    - `isEmpty`: *boolean*
+    - `length`: *string* (hex integer)
+    - `span`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
   - `raw`: *string* (hex data)
-  - `s`: *string* (hex data)
+  - `s`: *object*
+    - `isEmpty`: *boolean*
+    - `length`: *string* (hex integer)
+    - `span`: *object*
+      - `isEmpty`: *boolean*
+      - `item`: *object*
+      - `length`: *string* (hex integer)
   - `standardV`: *string* (hex integer)
   - `to`: *string* (address)
   - `transactionIndex`: *string* (hex integer)

@@ -101,6 +101,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Total number of chain reorganizations
 
+- #### `nethermind_state_merkleization_time` \{#state_merkleization_time\}
+  
+  State root calculation time
+
 - #### `nethermind_total_difficulty` \{#total_difficulty\}
   
   Total difficulty on the chain
@@ -279,6 +283,22 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of EXP opcodes executed.
 
+- #### `nethermind_gas_price_ave` \{#gas_price_ave\}
+  
+  Mean tx gas price in block
+
+- #### `nethermind_gas_price_max` \{#gas_price_max\}
+  
+  Maximum tx gas price in block
+
+- #### `nethermind_gas_price_median` \{#gas_price_median\}
+  
+  Median tx gas price in block
+
+- #### `nethermind_gas_price_min` \{#gas_price_min\}
+  
+  Minimum tx gas price in block
+
 - #### `nethermind_m_copy_opcode` \{#m_copy_opcode\}
   
   Number of MCOPY opcodes executed.
@@ -286,6 +306,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_mod_exp_precompile` \{#mod_exp_precompile\}
   
   Number of MODEXP precompile calls.
+
+- #### `nethermind_number_of_background_tasks_scheduled` \{#number_of_background_tasks_scheduled\}
+  
+  The number of tasks scheduled in the background.
 
 - #### `nethermind_point_evaluation_precompile` \{#point_evaluation_precompile\}
   
@@ -330,6 +354,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_thread_local_empty_calls` \{#thread_local_empty_calls\}
   
   Number of calls made to addresses without code on thread.
+
+- #### `nethermind_thread_local_self_destructs` \{#thread_local_self_destructs\}
+  
+  Number of calls to other contracts on thread.
 
 - #### `nethermind_thread_local_s_load_opcode` \{#thread_local_s_load_opcode\}
   

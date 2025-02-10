@@ -52,6 +52,176 @@ Added node
 </TabItem>
 </Tabs>
 
+### admin_dataDir
+
+Returns the absolute path to the node's data directory.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_dataDir",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+The data directory path as a string.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
+
+</TabItem>
+</Tabs>
+
+### admin_exportHistory
+
+Exports a range of historic block in era1 format.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `destinationPath`: *string*
+
+2. `from`: *string* (hex integer)
+
+3. `to`: *string* (hex integer)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_exportHistory",
+      "params": [destinationPath, from, to]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
+
+</TabItem>
+</Tabs>
+
+### admin_importHistory
+
+Import a range of historic block from era1 directory.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `sourcePath`: *string*
+
+2. `from`: *string* (hex integer)
+
+3. `to`: *string* (hex integer)
+
+4. `accumulatorFile`: *string*
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_importHistory",
+      "params": [sourcePath, from, to, accumulatorFile]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
+
+</TabItem>
+</Tabs>
+
+### admin_isStateRootAvailable
+
+True if state root for the block is available
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `block`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_isStateRootAvailable",
+      "params": [block]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *boolean*
+
+</TabItem>
+</Tabs>
+
 ### admin_nodeInfo
 
 Displays relevant information about this node.
@@ -97,6 +267,10 @@ Information about this node
     - `chainId`: *string* (hex integer)
     - `config`: *object*
       - `beaconChainGenesisTimestamp`: *string* (hex integer)
+      - `blobSchedule`: map of *object*
+        - `baseFeeUpdateFraction`: *string* (hex integer)
+        - `max`: *string* (hex integer)
+        - `target`: *string* (hex integer)
       - `depositContractAddress`: *string* (address)
       - `eip1014Transition`: *string* (hex integer)
       - `eip1052Transition`: *string* (hex integer)
@@ -146,9 +320,7 @@ Information about this node
       - `eip4788TransitionTimestamp`: *string* (hex integer)
       - `eip4844BlobGasPriceUpdateFraction`: *string* (hex integer)
       - `eip4844FeeCollectorTransitionTimestamp`: *string* (hex integer)
-      - `eip4844MaxBlobGasPerBlock`: *string* (hex integer)
       - `eip4844MinBlobGasPrice`: *string* (hex integer)
-      - `eip4844TargetBlobGasPerBlock`: *string* (hex integer)
       - `eip4844TransitionTimestamp`: *string* (hex integer)
       - `eip4895TransitionTimestamp`: *string* (hex integer)
       - `eip5656TransitionTimestamp`: *string* (hex integer)
@@ -159,6 +331,7 @@ Information about this node
       - `eip7002TransitionTimestamp`: *string* (hex integer)
       - `eip7251ContractAddress`: *string* (address)
       - `eip7251TransitionTimestamp`: *string* (hex integer)
+      - `eip7623TransitionTimestamp`: *string* (hex integer)
       - `eip7702TransitionTimestamp`: *string* (hex integer)
       - `eip7Transition`: *string* (hex integer)
       - `feeCollector`: *string* (address)
@@ -235,6 +408,7 @@ List of connected peers including information
   - `ethDetails`: *string*
   - `host`: *string*
   - `id`: *string*
+  - `inbound`: *boolean*
   - `isBootnode`: *boolean*
   - `isStatic`: *boolean*
   - `isTrusted`: *boolean*
@@ -311,6 +485,47 @@ curl localhost:8545 \
 <TabItem value="response" label="Response">
 
 Removed node
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
+
+</TabItem>
+</Tabs>
+
+### admin_verifyTrie
+
+Runs VerifyTrie.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `block`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_verifyTrie",
+      "params": [block]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
 
 ```json
 {
