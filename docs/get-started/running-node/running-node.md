@@ -73,6 +73,9 @@ To run Nethermind on the Gnosis Chain, see the [Gnosis Chain documentation](http
 - Base
   - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet) - configurations: `base-mainnet` `base-mainnet_archive`
   - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet) - configurations: `base-sepolia` `base-sepolia_archive`
+- World Chain
+  - [World Chain Mainnet](https://docs.world.org/world-chain/quick-start/info#world-chain-mainnet) - configurations: `worldchain-mainnet` `worldchain-mainnet_archive`
+  - [World Chain Sepolia](https://docs.world.org/world-chain/quick-start/info#world-chain-sepolia-testnet) (testnet) - configurations: `worldchain-sepolia` `worldchain-sepolia_archive`
 
 To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#op-stack).
 
