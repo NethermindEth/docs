@@ -83,8 +83,8 @@ To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#
 
 **Supported networks**
 
-- [Taiko Mainnet](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-mainnet) - configurations: `taiko-mainnet` `taiko-mainnet_archive`
-- [Taiko Hekla](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hekla) (testnet) - configurations: `taiko-hekla` `taiko-hekla_archive`
+- [Taiko Alethia](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-alethia) - configurations: `taiko-alethia`
+- [Taiko Hekla](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hekla) (testnet) - configurations: `taiko-hekla`
 
 To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
 

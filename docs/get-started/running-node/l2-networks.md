@@ -95,24 +95,24 @@ For available settings, see [op-node configuration options](https://docs.optimis
 
 ## Taiko
 
-A [Taiko node](https://docs.taiko.xyz/core-concepts/taiko-nodes/) consists of two parts: taiko-client, analogous to a consensus client in Ethereum paired with an L2 execution client.
+A [Taiko node](https://docs.taiko.xyz/taiko-alethia-protocol/taiko-alethia-nodes) consists of two parts: taiko-client, analogous to a consensus client in Ethereum paired with an L2 execution client.
 
 :::warning Important
 Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to taiko-client.
 :::
 
 <Tabs groupId="network">
-<TabItem value="taiko-mainnet" label="Taiko Mainnet">
+<TabItem value="taiko-alethia" label="Taiko Alethia">
 
 :::info Note
-For Taiko Mainnet, the L1 node must be running on Ethereum Mainnet.
+For Taiko Alethia, the L1 node must be running on Ethereum Mainnet.
 :::
 
-To run Nethermind on Taiko Mainnet, use the following command:
+To run Nethermind on Taiko Alethia, use the following command:
 
 ```bash
 nethermind \
-  -c taiko-mainnet \
+  -c taiko-alethia \
   --data-dir path/to/data/dir \
   --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```

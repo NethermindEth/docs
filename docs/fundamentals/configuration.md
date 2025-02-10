@@ -52,8 +52,8 @@ The configuration options are case-sensitive and can be defined only once unless
   - `op-mainnet` `op-mainnet_archive`
   - `op-sepolia` `op-sepolia_archive`
   - `sepolia` `sepolia_archive`
-  - `taiko-hekla` `taiko-helka_archive`
-  - `taiko-mainnet` `taiko-mainnet_archive`
+  - `taiko-alethia`
+  - `taiko-hekla`
   - `volta` `volta_archive`
   - `worldchain-mainnet` `worldchain-mainnet_archive`
   - `worldchain-sepolia` `worldchain-sepolia_archive`
