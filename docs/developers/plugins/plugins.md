@@ -287,7 +287,7 @@ git clone -b "1.30.0" --depth 1 https://github.com/nethermindeth/nethermind.git
 
 #### Step 2: Configure the startup project \{#debug-codebase-step-2\}
 
-In the repo's root directory, open the `src/Nethermind/Nethermind.sln` and set the `Nethermind.Runner` as a startup project. That is the Nethermind's executable that handles everything, including plugins.
+In the repo's root directory, open the `src/Nethermind/Nethermind.slnx` and set the `Nethermind.Runner` as a startup project. That is the Nethermind's executable that handles everything, including plugins.
 
 #### Step 3: Add the plugin project to the solution \{#debug-codebase-step-3\}
 

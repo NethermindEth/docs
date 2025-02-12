@@ -19,7 +19,7 @@ There are two options buiding Nethermind from source code:
 
 ### Prerequisites
 
-To build Nethermind from source, install [.NET SDK](https://aka.ms/dotnet/download) 9 or later.
+To build Nethermind from source, install [.NET SDK](https://aka.ms/dotnet/download) 9.0.2 or later.
 
 :::tip
 For a seamless experience, ensure your .NET SDK is up to date.
@@ -30,7 +30,7 @@ For a seamless experience, ensure your .NET SDK is up to date.
 To build both the client and tests, run the following command from the project's root directory:
 
 ```bash
-dotnet build src/Nethermind/Nethermind.sln -c release
+dotnet build src/Nethermind/Nethermind.slnx -c release
 ```
 
 To simply run the client with a specific configuration without building tests, see below.
@@ -65,10 +65,10 @@ initial step of the build is not required):
 cd src/Nethermind
 
 # Run Nethermind tests
-dotnet test Nethermind.sln -c release
+dotnet test Nethermind.slnx -c release
 
 # Run Ethereum Foundation tests
-dotnet test EthereumTests.sln -c release
+dotnet test EthereumTests.slnx -c release
 ```
 
 ## Bulding Docker image
