@@ -39,10 +39,6 @@ winget install Microsoft.VCRedist.2015+.x64
 
 Package managers are the easiest and fastest way of installing Nethermind.
 
-:::tip
-If you're using a package manager, it's highly recommended to set the [`--data-dir`](../fundamentals/configuration.md#data-dir) flag to specify the data directory. Otherwise, Nethermind will use the default data directory where the package is installed, which may not be preserved on further updates or uninstall.
-:::
-
 <Tabs groupId="os">
 <TabItem value="linux" label="Linux">
 
@@ -52,16 +48,10 @@ First, add the Nethermind repository:
 
 ```bash
 sudo add-apt-repository ppa:nethermindeth/nethermind
+
+# If the command is not found, run
+# sudo apt-get install software-properties-common
 ```
-
-:::note
-If the command is not found, run:
-
-```bash
-sudo apt-get install software-properties-common
-```
-
-:::
 
 Then, install Nethermind as follows:
 
