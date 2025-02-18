@@ -207,7 +207,7 @@ Since now we know what our configuration options are, let's build the project, c
 There's a slight difference compared to the previous run -- the "Hello, world!" message is gone. The reason is that we put it under an `if` condition which has not been entered because of the `IDemoConfig.Enabled` is `false` by default. Let's set it to `true` using the command line option as follows:
 
 ```bash
-nethermind --demo-enabled true
+nethermind --demo-enabled
 ```
 
 Now we see that our message is back, and the configuration option works as intended! That is how to turn plugins on or off in Nethermind and provide other configuration options.
@@ -347,7 +347,7 @@ The launch configurations of `Nethermind.Runner` are defined in [`launchSettings
   "Holesky": {
     "commandName": "Project",
   // highlight-start
-    "commandLineArgs": "-c holesky --data-dir .data --demo-enabled true",
+    "commandLineArgs": "-c holesky --data-dir .data --demo-enabled",
   // highlight-end
     "environmentVariables": {
       "ASPNETCORE_ENVIRONMENT": "Development"

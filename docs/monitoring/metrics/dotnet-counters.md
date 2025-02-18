@@ -56,7 +56,7 @@ Run Nethermind as follows:
 nethermind \
   -c mainnet \
   --data-dir path/to/data/dir \
-  --metrics-countersenabled true
+  --metrics-countersenabled
 ```
 
 ### Running in a Docker container
@@ -85,7 +85,7 @@ services:
       - 8545:8545
       - 8551:8551
       - 30303:30303
-    command: -c mainnet --metrics-countersenabled true
+    command: -c mainnet --metrics-countersenabled
     volumes:
       - ./keystore:/nethermind/keystore
       - ./logs:/nethermind/logs
