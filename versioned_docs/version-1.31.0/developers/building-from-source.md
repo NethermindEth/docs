@@ -71,7 +71,7 @@ dotnet test Nethermind.sln -c release
 dotnet test EthereumTests.sln -c release
 ```
 
-## Bulding Docker image
+## Building Docker image
 
 :::tip
 Building a Nethermind Docker image does not require cloning the Nethermind source code since Docker can build it directly from the repository. For more information, see the [Docker Docs](https://docs.docker.com/build/concepts/context/#remote-context).
