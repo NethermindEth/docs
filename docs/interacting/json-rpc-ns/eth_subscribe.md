@@ -3,7 +3,7 @@
 Starts a subscription to a particular event over WebSockets. A JSON-RPC notification with event payload and subscription id is sent to a client for every event matching the subscription topic.
 
 :::info
-This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
+This method is enabled by adding `subscribe` to [`JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc-enabledmodules).
 :::
 
 <Tabs>
@@ -21,7 +21,7 @@ This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../
 <TabItem value="request" label="Request" default>
 
 ```bash
-wscat -c ws://localhost:8545
+wscat -c localhost:8545
 ```
 
 ```json

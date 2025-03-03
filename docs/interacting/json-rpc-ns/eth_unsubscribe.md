@@ -3,7 +3,7 @@
 Unsubscribes from a subscription.
 
 :::info
-This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc).
+This method is enabled by adding `subscribe` to [`JsonRpc.EnabledModules`](../../fundamentals/configuration.md#jsonrpc-enabledmodules).
 :::
 
 <Tabs>
@@ -16,7 +16,7 @@ This method is enabled by adding `subscribe` to [`--JsonRpc.EnabledModules`](../
 <TabItem value="request" label="Request" default>
 
 ```bash
-wscat -c ws://localhost:8545
+wscat -c localhost:8545
 ```
 
 ```json
