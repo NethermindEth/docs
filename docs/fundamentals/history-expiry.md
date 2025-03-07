@@ -6,10 +6,10 @@ sidebar_position: 9
 
 History expiry is a feature set that aims to reduce disk requirement for the node, by removing old historical data. It is covered in [EIP-4444](https://eips.ethereum.org/EIPS/eip-4444).
 
-The goal is to remove the requirement from nodes to store _all_ the historical data, but make sure that the old data is peserved and accessible for anyone that needs it.
+The goal is to remove the requirement from nodes to store _all_ the historical data, but make sure that the old data is preserved and accessible for anyone that needs it.
 
 :::info
-The EIP-4444 is currently in development phase, with the goal to ship initial implementation across all of the clients by the May 1 2025. The agreement is to stop serving pre-Merge history (blocks and receipts).
+The EIP-4444 is currently in development phase, with the goal to ship initial implementation across all of the clients by May 1, 2025. The agreement is to stop serving pre-Merge history (blocks and receipts).
 :::
 
 ## Era1 archive import/export
@@ -27,7 +27,7 @@ An Era1 archive can be expressed like so:
 ```
 
 Headers, bodies and receipts are compressed using the [snappy framing format](https://github.com/google/snappy/blob/main/framing_format.txt).
-Additionally each file contains a block index for fast lookup, and an [Epoch accumulator](https://github.com/ethereum/portal-network-specs/blob/master/history-network.md#execution-chain-history-network) for verification.
+Additionally, each file contains a block index for fast lookup, and an [Epoch accumulator](https://github.com/ethereum/portal-network-specs/blob/master/history-network.md#execution-chain-history-network) for verification.
 
 The Epoch accumulator can be used to verify the entire archive with accumulators from a trusted source. Additionally it allows a node to download a header with a merkle-proof, that proves it belongs to a certain epoch.
 
@@ -44,12 +44,12 @@ During import, block range before head will be inserted in parallel like old bod
 
 - It will not complete until the blocks are processed, and will pause adding if the processing queue reaches 2000 block.
 - An exception to this is if fastsync is enabled and the head is 0, in which case, it will only insert blocks like old bodies.
-- Accumulator and content is always verified/checksumed.
+- Accumulator and content is always verified/checksummed.
 
 There are also 2 ways to execute both actions:
 
 - via CLI flags.
-- via admin RPC endoints.
+- via Admin RPC endpoints.
 
 ### CLI flags
 
@@ -82,10 +82,8 @@ Notes:
 Notes:
 
 - `From`, `To` and `TrustedAccumulatorFile` are optional.
-- If range is set to 0;0, it will import everything.
+- If range is set to 0;0, it will export everything.
 - `accumulators.txt` and `checksums.txt` are always created.
-
-
 
 ### RPC endpoints
 
@@ -100,7 +98,6 @@ curl localhost:8545 \
 -H "Content-Type: application/json" \
 --data '{"jsonrpc": "2.0", "id": 0, "method": "admin_importHistory","params": ["/path/to/dir", 0,25349536, "/path/to/dir/accumulators.txt"]}'
 ```
-
 
 ### admin_exportHistory
 
