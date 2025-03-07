@@ -78,14 +78,6 @@ With Fast Sync, a node downloads the headers of each block and retrieves all the
 leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time
 and packets downloaded.
 
-#### Current limitations and future development
-
-For now Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients - snap
-serving development is in progress, expected late 2023/early 2024.
-
-The only Ethereum client that supports serving Snap Sync requests is Geth, so only networks supported by Geth can be
-synced using that method: Mainnet, Goerli, Sepolia.
-
 ## Fast Sync
 
 After completing the fast sync your node will have the ability to answer questions like _'what is my account
@@ -512,9 +504,9 @@ This guide explains how to resync a Nethermind node using the existing Pivot blo
 	   a block explorer such as [Etherscan](https://etherscan.io/).\
 	   \
 	   Using block number 17165278 from [Etherscan](https://etherscan.io/block/17165278):
-	   
+
 	   ```
-		 { 
+		 {
 			 "PivotNumber": 17165278,
 			 "PivotHash": "0xa665315efd923f3b11215feee09a9d3e13c5e6ee602fa19b642824682ec0a752"
 		 }
