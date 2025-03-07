@@ -1,6 +1,5 @@
 ---
 title: History expiry
-description:
 sidebar_position: 9
 ---
 
