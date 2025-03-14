@@ -80,7 +80,6 @@ You will see some information about the sync progress, like below:
 3. Shows the current download speed (blocks per second - bps).
 4. Shows the average download speed (blocks per second - bps).
 
-![Fast blocks sync logs](/img/getting\_started\_log\_0.png)
 
 When the fast blocks stage finishes, there will be some period of downloading blocks between the `pivot` and
 the`latest blocks` which will have some additional info:
@@ -90,7 +89,6 @@ the`latest blocks` which will have some additional info:
 3. Displays the speed (in blocks per second) of all `headers`, `bodies` and `receipts` at the same time.
 4. Additional info will appear every 30000 blocks with information about the Görli epoch being stored.
 
-![Görli fast sync logs](/img/getting\_started\_7.png)
 
 After the `fast sync` part finished, the node will transition to the `state sync stage` when the `state trie` is being
 downloaded. Much information is displayed about the progress, as this process may take a long time on mainnet (a few
@@ -107,13 +105,11 @@ hours).
    worse if you restart the node during the sync process, as we need to recreate some caches then by reading data from
    the DB.
 
-![Görli state sync logs](/img/getting\_started\_8.png)
 
 When the state sync is nearing completion, you may see a series of `branch sync` information reloading many times from
 0% to nearly 100%. This is the node trying to retrieve the few remaining state nodes and progressing with the head block
 rapidly:
 
-![Görli branch sync logs](/img/getting\_started\_26.png)
 
 At some point, the entire state is downloaded and the node enters the `full sync` mode and will allow you to issue CLI /
 Web3 queries and send / receive transactions🥳
@@ -125,11 +121,9 @@ Web3 queries and send / receive transactions🥳
 4. Every two minutes you will see a summary of connected peers with their client version, IP address, highest synced
    block, and data download speeds.
 
-![Görli full sync logs](/img/getting\_started\_9.png)
 
 Also, every now and then, a peer report will appear like below:
 
-![](</img/Screenshot2022-08-10205144.png>)
 
 1. First bracket is for Allocated contexts. It has possible values of `H` for Headers, `B` for Bodies, `R` for
    Receipts, `N` for State, `S` for Snap, and `W` for Witness.

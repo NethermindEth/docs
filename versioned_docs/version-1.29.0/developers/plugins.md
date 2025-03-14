@@ -31,7 +31,6 @@ responsibility of plugin writer to correctly handle those exceptions.
 
 How to build a plugin? We included an example inside the Nethermind.Analytics plugin:
 
-![](/img/image(133).png)
 
 ## RPC Plugin example:
 

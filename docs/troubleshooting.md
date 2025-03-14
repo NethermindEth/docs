@@ -43,7 +43,7 @@ Database corruption is one of the issues that happen now and then; it has many p
 - Hardware failures: disk failures, memory errors, hardware overheating, etc.
 - Power cuts and abrupt shutdowns
 
-There's no shortcut in such situations, and [resyncing Nethermind from scratch](./fundamentals/sync.md#resync-a-node-from-scratch) is the recommended remedy.
+There's no shortcut in such situations, and [resyncing Nethermind from scratch](./fundamentals/sync.md#resync) is the recommended remedy.
 
 ## TrieNodeException errors
 
@@ -52,7 +52,7 @@ If Nethermind reports `Nethermind.Trie.TrieNodeException` or `Nethermind.Trie.Mi
 - If the node is still syncing, wait until it has been fully synced and observe for errors
 - Restart the node and observe for errors
 - Update to the latest version of Nethermind
-- If the above steps fail, a [resync](./fundamentals/sync.md#resync-a-node-from-scratch) may be required
+- If the above steps fail, a [resync](./fundamentals/sync.md#resync) may be required
 
 ## Issues with lock files
 
@@ -65,7 +65,6 @@ If Nethermind complains about the lock files, it perhaps because of one of the f
   ```bash
   find . -type f -name 'LOCK' -delete
   ```
-
 
 ## Block checksum mismatch
 
