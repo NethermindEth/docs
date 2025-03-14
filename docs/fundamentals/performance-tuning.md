@@ -32,7 +32,7 @@ At the moment, the best test case sync time is 1 hour 50 minutes for all phases 
 - Command line options:
 
     ```
-    --network-enableupnp true
+    --network-enableupnp
     --network-maxoutgoingconnectpersec 50
     --network-processingthreadcount 32
     --sync-tunedbmode HeavyWrite

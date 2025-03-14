@@ -43,7 +43,7 @@ Run Nethermind as follows:
 nethermind \
   -c mainnet \
   --data-dir path/to/data/dir \
-  --metrics-enabled true \
+  --metrics-enabled \
   --metrics-pushgatewayurl http://localhost:9091
 ```
 
@@ -66,7 +66,7 @@ nethermind:
     nofile:
       soft: 1000000
       hard: 1000000
-  command: -c mainnet --metrics-enabled true --metrics-pushgatewayurl http://pushgateway:9091
+  command: -c mainnet --metrics-enabled --metrics-pushgatewayurl http://pushgateway:9091
   volumes:
     - ./keystore:/nethermind/keystore
     - ./logs:/nethermind/logs
