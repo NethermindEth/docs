@@ -374,4 +374,4 @@ network connection, and the size of the chain.
     - `nethermind_db` in the Nethermind's directory (by default)
     - `nethermind_db` in the Nethermind data directory specified by [`--data-dir`](./configuration.md#data-dir) command line option (recommended approach)
     - The directory specified by [`--db-dir`](./configuration.md#db-dir) command line option
-3. Start Nethermind again and monitor its logs to ensure it sync is progressing.
+3. Start Nethermind again and monitor its logs to ensure sync is progressing.
