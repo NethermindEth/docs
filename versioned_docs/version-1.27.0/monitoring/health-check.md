@@ -24,7 +24,7 @@ The `Nethermind.HealthChecks.dll`plugin will be automatically loaded on Nethermi
 The health checks need to be additionally enabled which can be done either through `--HealthChecks.*` flags or by adding
 a `"HealthChecks"` section to the config file.&#x20;
 
-``` json title="HealthChecks config section example" 
+``` json title="HealthChecks config section example"
   "HealthChecks": {
     "Enabled": true,
     "WebhooksEnabled": true,
@@ -80,8 +80,6 @@ curl localhost:8545/health
 Enabling UI will expose an additional endpoint `/healthchecks-ui`and will allow seeing node's health on a nice UI. To
 view the UI simply go to `http://localhost:8545/healthchecks-ui`.
 
-![Unhealthy status reported on UI page](</img/image(76).png>)
-
 #### Enabling Slack reports
 
 We may also add Slack Webhook endpoint to which our node's health will be reported. We need to pass
@@ -94,13 +92,9 @@ nethermind --HealthChecks.Enabled true --HealthChecks.UIEnabled true --HealthChe
 
 If your node will be **Unhealthy** you should receive a message similar to this:
 
-![Unhealthy](/img/unhealthy.png)
-
 with description of why the node is unhealthy, node's name and information about the machine on which the node is
 running.\
 When it becomes **Healthy** (**synced** and with **peers**) you should receive:
-
-![Healthy](</img/image(46).png>)
 
 #### Consensus Client health
 
@@ -178,7 +172,7 @@ node will return unhealthy status if the interval elapsed without processing or 
 config as an example. If the node doesn't process a block for 15 seconds, we will return unhealthy status. Analogically,
 we will be waiting 45 seconds for a newly produced block.
 
-``` json title="HealthChecks config section example" 
+``` json title="HealthChecks config section example"
 
   "HealthChecks": {
     "Enabled": true,

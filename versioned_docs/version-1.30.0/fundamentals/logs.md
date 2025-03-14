@@ -7,7 +7,7 @@ sidebar_position: 4
 
 The Nethermind processing logs are a comprehensive resource for understanding Ethereum block processing. They provide real-time insights into block data, performance metrics, and the state of the blockchain.
 
-![Nethermind Processing Logs](/img/log-processing.png)
+![Nethermind Processing Logs](/images/log_processing.png)
 
 #### Block metadata
 

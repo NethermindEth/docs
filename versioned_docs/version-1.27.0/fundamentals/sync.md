@@ -72,7 +72,6 @@ about 30GB.
 This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a
 node: Merkle trees.
 
-![](</img/Untitled(1).png>)
 
 With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the
 leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time
@@ -116,7 +115,6 @@ Mainnet sync, at the time of writing (December 2020), takes around 8 hours on an
 syncs receipts and bodies in the background if you enabled them in the configuration). Goerli sync should take around 40
 minutes.
 
-![Fast sync logs example for mainnet.](</img/image(59).png>)
 
 State sync log messages have multiple values displayed. First `dd.HH:mm:ss` total state sync time is displayed, followed
 by an estimated sync progress (percentage of total database data synced), then the current download speed is displayed (
@@ -141,9 +139,6 @@ then it is possible that you will not be able to catch up with the network progr
 One of the best indicators that you are close to be synced is combined \~100% state size progress and nearly 100% branch
 sync progress.
 
-![](</img/image(64).png>)
-
-![](</img/image(62).png>)
 
 ## Archive Sync
 
@@ -159,9 +154,6 @@ While for some smaller networks archive sync can complete very quickly (in minut
 6 weeks depending on the speed of your IO (whether you use SSD or NVMe or depending on the cloud provider IOPS).
 Database size in archive sync is the biggest from all modes as you will store all the historical data.
 
-![Example of the archive sync logs](</img/image(58).png>)
-
-![](</img/image(57).png>)
 
 Explanation of some data in the logs:
 
@@ -512,9 +504,9 @@ This guide explains how to resync a Nethermind node using the existing Pivot blo
 	   a block explorer such as [Etherscan](https://etherscan.io/).\
 	   \
 	   Using block number 17165278 from [Etherscan](https://etherscan.io/block/17165278):
-	   
+
 	   ```
-		 { 
+		 {
 			 "PivotNumber": 17165278,
 			 "PivotHash": "0xa665315efd923f3b11215feee09a9d3e13c5e6ee602fa19b642824682ec0a752"
 		 }

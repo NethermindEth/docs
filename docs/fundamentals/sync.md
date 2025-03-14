@@ -6,189 +6,63 @@ sidebar_position: 2
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+Syncing is the process by which Nethermind updates itself to the latest block and current network state. There are several ways (sync modes) to sync a Nethermind node, each differing in speed, storage requirements, and trust assumptions.
+
+## Snap sync
+
+Snap sync allows a node to perform the initial synchronization and download of network state up to 10 times faster
+than using fast sync. This mode is enabled by default for most of networks that support it, and can be configured with the [`Sync.SnapSync`](./configuration.md#sync-snapsync) configuration option.
+
 :::warning
-This article is outdated and requires a revision.
+Do not enable snap sync on a previously synced node. Only do so when syncing to the network for the first time.
 :::
 
-## There are three main synchronization modes
+The sync speed and download size has to do with the specific way in which network's state is stored in a node—[Merkle trees](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/).
 
-* snap sync
-	* the fastest way to sync to the network (syncs to mainnet in \~3 hours)
-	* downloads only the latest state, headers, and optionally bodies and receipts
-* fast sync
-	* slower than snap sync
-	* useful on nethermind-only chains (like Gnosis), where snap sync is not available for now
-	* downloads only the latest state, headers, and optionally bodies and receipts
-* archive sync
-	* heavy historical sync verifying all the transactions and keeping all the historical state
-	* you can run it like this `./Nethermind.Runner --config mainnet_archive`
+![](</images/snap_sync.png>)
 
-| Sync Mode                                                  | Disk Space needed | Full current state | Full current and all historical states | Can sync a full archive node from this | Time to sync | Time to RPC |
-|------------------------------------------------------------|-------------------|--------------------|----------------------------------------|----------------------------------------|--------------|-------------|
-| archive                                                    | \~12TB            | YES                | YES                                    | YES                                    | \~3 weeks    | \~3 weeks   |
-| snap/fast sync with all bodies and receipts                | \~800GB           | YES                | NO                                     | YES                                    | \~20 hours   | \~20 hours  |
-| default snap/fast sync (with barriers set to support Eth2) | \~500GB           | YES                | NO                                     | NO                                     | \~11 hours   | \~11 hours  |
-| snap/fast sync without receipts                            | \~450GB           | YES                | NO                                     | YES                                    | \~12 hours   | \~12 hours  |
-| snap/fast sync without bodies and receipts                 | \~200GB           | YES                | NO                                     | NO                                     | \~9 hours    | \~9 hours   |
-
-## Snap Sync
-
-Snap sync allows a node to perform the initial synchronization and download of Ethereum’s state up to 10 times faster
-than using fast sync.
-
-#### How to Enable
-
-Snap sync is enabled by default for majority of networks. To make sure, check if`SnapSync` is set to `true` in the Sync
-module of your `.cfg` file
-
-```
-"Sync": {
-	"SnapSync": true
-}
-```
-
-> **IMPORTANT**: Do not enable snap sync on a previously synced node. Only use when syncing to the network for the first
-> time.
->
-> **IMPORTANT**: Do not remove other configurations from Sync module. Just add `"SnapSync": true`, e.g.
->
-> ```
-> "Sync": {
-> 	"SnapSync": true,
-> 	"PivotNumber": 15011000,
->         "PivotHash": "0x46c838d02d5fa5bc070080ed7965da1d888f6eb1797045365407c7011280af56",
->     	"PivotTotalDifficulty": "52367203434576253689712",
->     	"FastBlocks": true
-> }
-> ```
-
-#### Snap Sync vs Other Sync Modes
-
-More than 12TB of storage is needed today to run a full archive node — one that stores all the state since genesis.
-Because of that, setting up an archive node can take days or even weeks. Fast Sync can still take more than 24 hours on
-the fast machine and download about 90GB state data. With Snap Sync, sync time is reduced to 2-3h with a download of
-about 30GB.
-
-This reduction in sync time and download size has to do with the specific way in which Ethereum’s state is stored in a
-node: Merkle trees.
-
-![](</img/Untitled(1).png>)
-
-With Fast Sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the
-leaves. By contrast, Snap Sync only downloads the leaf nodes, generating the remaining nodes locally which saves time
+With fast sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the
+leaves. By contrast, snap sync only downloads the leaf nodes, generating the remaining nodes locally which saves time
 and packets downloaded.
 
-#### Current limitations and future development
+## Fast sync
 
-For now Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients - snap
-serving development is in progress, expected late 2023/early 2024.
+After completing the fast sync, Nethermind can answer questions like "What is my account balance now?" or "How many XYZ tokens does a particular exchange hold at the moment?". This mode can be configured with the following configuration options:
 
-The only Ethereum client that supports serving Snap Sync requests is Geth, so only networks supported by Geth can be
-synced using that method: Mainnet, Goerli, Sepolia.
+- [`Sync.FastSync`](./configuration.md#sync-fastsync)
+- [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier)
+- [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier)
+- [`Sync.DownloadBodiesInFastSync`](./configuration.md#sync-downloadbodiesinfastsync)
+- [`Sync.DownloadHeadersInFastSync`](./configuration.md#sync-downloadheadersinfastsync)
+- [`Sync.FastSyncCatchUpHeightDelta`](./configuration.md#sync-fastsynccatchupheightdelta)
+- [`Sync.PivotHash`](./configuration.md#sync-pivothash)
+- [`Sync.PivotNumber`](./configuration.md#sync-pivotnumber)
+- [`Sync.PivotTotalDifficulty`](./configuration.md#sync-pivottotaldifficulty)
 
-## Fast Sync
+Fast sync has multiple stages. Nethermind uses a _pivot block_ number to improve fast sync performance. The pivot block data is automatically updated after initialization of the client and consists of the block number, block hash, and block total difficulty if any. Before synchronizing state data, Nethermind synchronizes in two directions—backward from the pivot block to 0 for headers and forward to the head of the chain for headers, blocks, and receipts. Forward sync might be very slow (5 to 50 blocks per second), so having a fresh pivot block is crucial.
 
-After completing the fast sync your node will have the ability to answer questions like _'what is my account
-balance **now**'_, _'how many XYZ tokens SomeExchange holds **at the moment**'_.
+After downloading the block data, Nethermind will start state sync (downloading the latest state tree nodes). It provides an estimate for the download size and progress, but the real value may be different from the estimation. Because of this, sometimes sync may continue even when it shows ~100% finished. The other important component is sync speed—if the network or file system causes the state sync to go much slower than ~1.5 Mbps on average, Nethermind will start downloading some parts of the tree repeatedly. You may be surprised to see something like `58000MB / 53000MB (100%)` in such cases. This means it has downloaded around 5GB of data no longer needed. If sync is very slow (extended beyond 2 days), your setup will likely not catch up with the chain progress. After the state sync finishes, you will see the `Processed...` messages like in archive sync, which means that Nethermind is in sync and is processing the latest blocks.
 
-Fast sync has multiple stages. Nethermind uses a `pivot block` number to improve fast sync performance.
-The `pivot block` data is automatically updated after initialization of the client and consists of
-the `block number`, `block hash` and `block total difficulty` (please note that `total difficulty` is different
-than `difficulty`). Before synchronizing state data Nethermind synchronizes in two directions - backwards
-from `pivot block` to 0 for headers and forward to the head of the chain for headers, blocks and receipts. Forward sync
-might be very slow (5 - 50 bps) so having fresh pivot block is very important - it is guaranteed by recently implemented
-auto-update.
+At the last stages of the sync, the node will repeatedly display the branch sync progress and change the block number to which it tries to catch up. This stage should take from 30 minutes up to 2 hours. If it lasts much longer, you may be unable to catch up with the network progress. One of the best indicators that you are close to being synced is combined ~100% state size progress and nearly 100% branch sync progress.
 
-After downloading the block data Nethermind will start state sync (downloading the latest state trie nodes). We are
-providing an estimate for the download size and progress but the real value may be different than the estimate (
-especially if you are using an old version of Nethermind as we sometimes manually adjust the estimator based on our
-observations of the chain growth rate). Because of this sometimes your sync may continue even when it shows \~100%
-finished. The other important component is the speed of your sync - if your IO / network / file system causes the state
-sync to go much slower than around 1.5MB per second on average then you will start downloading some parts of the trie
-over and over again. In such cases you may be surprised to see something like 58000MB / 53000MB (100%). It means that
-you downloaded around 5GB of data that is no longer needed. If your sync is very slow (extended beyond two days) then
-very likely your setup cannot catch up with the chain progress.
+:::warning
+A single restart of Nethermind during the fast sync may extend the sync time by up to 2 hours because Nethermind has to rebuild the caches by reading millions of values from the database.
+:::
 
-After the state sync finishes you will see the _'Processed...'_ messages like in archive sync - it means that your node
-is in sync and is processing the latest blocks.
+## Archive sync
 
-Mainnet sync, at the time of writing (December 2020), takes around 8 hours on an UpCloud 16GB RAM 8 CPU $40 VM (and then
-syncs receipts and bodies in the background if you enabled them in the configuration). Goerli sync should take around 40
-minutes.
+Archive sync is the heaviest and slowest sync mode but can answer questions like "What was my account balance 2 years ago?" or 'How many XYZ tokens were held in the custody of a particular exchange in 2022?". Archive sync can be enabled by choosing the respective [archive configuration](./configuration.md#config) for the network you want to sync. By convention, such configurations suffixed `_archive`.
 
-![Fast sync logs example for mainnet.](</img/image(59).png>)
+While archive sync can be completed very quickly (in minutes or hours) for some small networks, the Ethereum Mainnet sync would take several days, depending on the speed of your disk and network connection. The database size in archive sync is the biggest of all sync modes, as it stores all the historical data.
 
-State sync log messages have multiple values displayed. First `dd.HH:mm:ss` total state sync time is displayed, followed
-by an estimated sync progress (percentage of total database data synced), then the current download speed is displayed (
-there will be times when it will slow down to 0 or single digit numbers, especially towards the end of the sync). In
-general 6 hours sync times shown on screenshots are with around 2000 kB/s (kilobytes per second) average sync rate. You
-can calculate it in the example as \~45GB / (2MB/s) \~ 22500 seconds \~6.25 hours. We also display the number of state
-accounts synced, number of trie nodes synced and a diagnostic message in the format of _\[number\_of\_pending\_requests]
-.\[average time spent in response handler displayed as milliseconds]_. So `5.6.20ms` means that we are awaiting for
-responses to 5 requests that have been sent to peers and the average time it takes us to process a single response is
-6.20ms. The response handling times will differ depending on how many trie nodes are already cached (so they will be
-significantly slower for a while after the node restart when cache has to be rebuilt) and based on how fast the database
-IO is (SSD vs NVMe vs cloud drives). For a reasonable sync time you probably should expect these values to be below
-15ms (but they may be as high as 700ms for a while after restarting the node).
+Explanation of some logs during archive sync:
 
-A single restart of the node during the fast sync may extend the sync time by up to two hours because the node has to
-rebuild the caches by reading millions of values from the database.
+- At the beginning, you may see the `Waiting for peers...` messages while Nethermind tries to discover nodes it can sync with.
+- `Downloaded 1234/8000000` shows the number of unprocessed blocks (with transactions) downloaded from the network. For the Ethereum Mainnet, this value may be slower than processing at first, but very quickly, you will see blocks being downloaded much faster than processed. Empty blocks can be as small as 512 bytes (just headers without transactions), and full blocks with heavy transactions can reach a few hundred KB. Nethermind shows the current download speed (calculated in the last second) and average (total) speed since start.
+- `Processed ...` shows the blocks that the EVM has processed. The first number shows the current head block number; then you can see `MGas/s` (megagas per second)—current and total, then `tps` (transactions per second)-current and total, and `blk/s` (blocks per second). Then `recv` queue (transactions signature public key recovery queue), `proc` queue (processor queue). Both the recovery and processor queues are designed so that when too many blocks are waiting for processing, only their hashes are kept in memory, and the remaining data are stored in the database. Thus, the queues numbers that you can see will be capped by some number.
+- `Cache for epoch...` shows Ethash cache needed for block seal verification (Ethereum Mainnet only). Caches will be calculated every 30k blocks (length of an epoch) and can also be calculated for the latest blocks broadcast on the network. After the archive sync finishes, you will see the `Processed...` message appearing on average every 15 seconds when the new block is processed.
 
-At the last stages of the sync the node will be repeatedly displaying the branch sync progress and changing the block
-number to which it tries to catch up. This stage should take between 30 minutes and two hours. If it lasts much more
-then it is possible that you will not be able to catch up with the network progress.
-
-One of the best indicators that you are close to be synced is combined \~100% state size progress and nearly 100% branch
-sync progress.
-
-![](</img/image(64).png>)
-
-![](</img/image(62).png>)
-
-## Archive Sync
-
-Archive sync is the 'heaviest' and slowest sync mode but allows to ask questions like _'what was the balance of my
-account 2 years ago?'_, _'how many XYZ token were held in SomeExchange custody in 2017?'_.
-
-We have prepared default archive sync configurations and they can be launched from Nethermind Launcher (just choose the
-archive options) or by simply loading appropriate config when launching `./Nethermind.Runner --config mainnet_archive`
-
-`./Nethermind.Runner --config goerli_archive`
-
-While for some smaller networks archive sync can complete very quickly (in minutes or hours) mainnet sync would take 2 -
-6 weeks depending on the speed of your IO (whether you use SSD or NVMe or depending on the cloud provider IOPS).
-Database size in archive sync is the biggest from all modes as you will store all the historical data.
-
-![Example of the archive sync logs](</img/image(58).png>)
-
-![](</img/image(57).png>)
-
-Explanation of some data in the logs:
-
-* at the beginning you may see a _'Waiting for peers...'_ message while the node is trying to discover nodes that it can
-  sync with.
-* _'Downloaded 1234/8000000'_ shows the number of unprocessed blocks (with transactions) downloaded from the network.
-  For `mainnet`this value may be slower than processing at first but very quickly you will see blocks being downloaded
-  much faster than processed. Empty blocks can be as small as 512 bytes (just headers without transactions) and full
-  blocks with heavy transactions can reach a few hundred kilobytes. We display both current download speed (calculated
-  in the last second) and average (total) speed since starting the node.
-* _'Processed ...'_ displays the blocks that have been processed by the EVM. The first number shows the current head
-  block number, then you can see `mgasps` (million gas per second) - current and total, then `tps` (transactions per
-  second) - current and total, `bps` (blocks per second). Then `recv queue` (transactions signature public key recovery
-  queue), `proc queue` (processor queue). Both recovery queue and processor queue are designed so when too many blocks
-  are waiting for processing then only their hashes are kept in memory and remaining data are stored in the database.
-  Thus, the queues numbers that you can see will be capped by some number.
-* _'Cache for epoch...'_ informs about `ethash` cache needed for block seal verification (only on `mainnet`
-  and `ropsten`). Caches will be calculated every 30000 blocks (length of an epoch) but can also be calculated for the
-  latest blocks that are being broadcast on the network.
-* After the archive sync finishes you will see the _'Processed...'_ message appearing on average every 15 seconds when
-  the new block is processed.
-* `mgasps`, `tps`, `bps` values should not be treated as comparable as they may differ massively on different parts of
-  the chain. For example when blocks are empty you may see very high `bps` values with very low (or even zero) `tps`
-  and `mgasps` values as there are no transactions and no gas for EVM processing and blocks are very light. On the other
-  hand when blocks are filled with very heavy transactions then `bps` might be very low while `mgasps` will be very
-  high. It is even possible that you will see a lot of very light transactions where `tps` will be high while `bps`
-  and `mgasps` will be average.
+`MGas/s`, `tps`, and `bps` values should not be treated as comparable as they may differ massively on different parts of the chain. For example, when blocks are empty, you may see very high `bps` values with very low (or even zero) `tps` and `MGas/s` values as there are no transactions and no gas for EVM processing, and blocks are very light. On the other hand, when blocks are filled with heavy transactions, `bps` might be very low while `MGas/s` will be very high. It is even possible that you will see a lot of very light transactions where `tps` will be high while `bps` and `MGas/s` will be average.
 
 ## Sync time
 
@@ -488,64 +362,16 @@ The detailed breakdown of sync stages:
 </TabItem>
 </Tabs>
 
-## Resync a node from scratch
+## Resync from scratch \{#resync\}
 
-This guide explains how to resync a Nethermind node using the existing Pivot block or updating it to a more recent one.
+:::info
+Note that resyncing a Nethermind node can take a considerable amount of time. It depends on your hardware,
+network connection, and the size of the chain.
+:::
 
-### Steps to Resync a Nethermind Node
-
-1. **Stop the Nethermind node**: If your Nethermind node is currently running, stop it to ensure that no new data is
-   being written to the database during the resync process.
-2. **Delete the existing database**: Navigate to the Nethermind data directory. The location of this directory depends
-   on how Nethermind was installed and your configuration settings. Inside the data directory, find the `nethermind_db`
-   folder and delete the `mainnet` subfolder to remove the existing database for the mainnet.
-3. **Update the configuration file (optional)**: If you want to change any configuration settings before resyncing the
-   node, edit the `mainnet.cfg` file located in the Nethermind directory. For example, you might want to adjust the
-   pruning settings or specify a different network.
-4. **Update the Pivot block (optional)**\
-   :::danger
-   **Only for versions before 1.19.0 where Auto-Pivot approach was introduced**
-   :::
-	1. **Using Etherscan**: If you want to speed up the syncing process, you can update the Pivot block to a more recent
-	   one. To do this, find the `Sync` section in the `mainnet.cfg` file and update the `PivotNumber` and `PivotHash`
-	   fields to match a recent "finalized" block number and its corresponding hash. You can obtain this information from
-	   a block explorer such as [Etherscan](https://etherscan.io/).\
-	   \
-	   Using block number 17165278 from [Etherscan](https://etherscan.io/block/17165278):
-	   
-	   ```
-		 { 
-			 "PivotNumber": 17165278,
-			 "PivotHash": "0xa665315efd923f3b11215feee09a9d3e13c5e6ee602fa19b642824682ec0a752"
-		 }
-		 ```
-	2. **Using Nethermind's GitHub**: Alternatively, you can update the Pivot block by referring to
-	   the [Nethermind's mainnet.cfg file on GitHub](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/configs/mainnet.cfg).
-	   The Pivot block is periodically bumped to the HEAD-8192 block of the mainnet chain. Copy the `PivotNumber`
-	   and `PivotHash` values from the GitHub file and update your local `mainnet.cfg` file accordingly.
-5. **Restart the Nethermind node**: Start the Nethermind node again to initiate the resync process. The node will begin
-   syncing from the existing Pivot block or the specified updated Pivot block, downloading and processing all the blocks
-   in the blockchain.
-
-To ensure that your Nethermind node is resyncing, you can monitor the logs for the node's progress. The logs will
-display information about the block processing, synchronization status and `OldHeaders` being processed. By observing
-the increasing block numbers and synchronization messages in the logs, you can confirm that the resync process is active
-and working as expected.
-
-> Old Headers 0 / 17154000 | queue 0 | current 0.00bps | total 0.00bps
->
-> Old Headers 768 / 17154000 | queue 0 | current 766.07bps | total 762.49bps
->
-> Beacon Headers from block 17154001 to block 17169722 | 960 / 15722 | queue 4992 | current 0.00bps | total
-> 40622848.83bps
->
-> Old Headers 9024 / 17154000 | queue 0 | current 576.40bps | total 1286.40bps
->
-> Beacon Headers from block 17154001 to block 17169723 | 9024 / 15723 | queue 6698 | current 2694.81bps | total
-> 3882943.63bps\
-> Downloaded 17154031 / 17172359 | current 0.00bps | total 0.00bps
->
-> Downloaded 17154062 / 17169724 | current 0.00bps | total 2.88bps
-
-Keep in mind that resyncing a Nethermind node can take a considerable amount of time. It depends on your hardware,
-internet connection, and the size of the blockchain.
+1. Stop Nethermind if it's running.
+2. In the Nethermind database directory, `nethermind_db`, by default, look for a directory named after the network you want to resync and _delete that directory_. For instance, it's `mainnet` for the Ethereum Mainnet. Normally, the database directory can be found at one of the following locations:
+    - `nethermind_db` in the Nethermind's directory (by default)
+    - `nethermind_db` in the Nethermind data directory specified by [`--data-dir`](./configuration.md#data-dir) command line option (recommended approach)
+    - The directory specified by [`--db-dir`](./configuration.md#db-dir) command line option
+3. Start Nethermind again and monitor its logs to ensure it sync is progressing.
