@@ -47,6 +47,8 @@ The Nethermind processing logs are a comprehensive resource for understanding Et
 
 ## Configuring logs
 
+Alongside console logging, Nethermind also logs into a `.log` file named after the respective network configuration and located in the `logs` directory by default. The file name and location can be configured with the [`Init.LogFileName`](./configuration.md#init-logfilename) and [`Init.LogDirectory`](./configuration.md#init-logdirectory) configuration options respectively.
+
 ### Log levels
 
 Nethermind uses the following log levels in descending by severity:
