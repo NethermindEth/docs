@@ -369,9 +369,9 @@ Note that resyncing a Nethermind node can take a considerable amount of time. It
 network connection, and the size of the chain.
 :::
 
-1. Stop Nethermind if it's running.
-2. In the Nethermind database directory, `nethermind_db`, by default, look for a directory named after the network you want to resync and _delete that directory_. For instance, it's `mainnet` for the Ethereum Mainnet. Normally, the database directory can be found at one of the following locations:
+- Stop Nethermind if it's running.
+- In the Nethermind database directory, `nethermind_db`, by default, look for a directory named after the network you want to resync and _delete that directory_. For instance, it's `mainnet` for the Ethereum Mainnet. Normally, the database directory can be found at one of the following locations:
     - `nethermind_db` in the Nethermind's directory (by default)
     - `nethermind_db` in the Nethermind data directory specified by [`--data-dir`](./configuration.md#data-dir) command line option (recommended approach)
     - The directory specified by [`--db-dir`](./configuration.md#db-dir) command line option
-3. Start Nethermind again and monitor its logs to ensure sync is progressing.
+- Start Nethermind again and monitor its logs to ensure sync is progressing.
