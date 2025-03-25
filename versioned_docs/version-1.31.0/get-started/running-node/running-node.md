@@ -109,8 +109,8 @@ For more info about running a Linea node, see the [Linea documentation](https://
 
 **Supported networks**
 
-- [Energy Web](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain) - configurations: `energyweb` `energyweb_archive`
-- [Volta](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/testnet-and-mainnet#developing-on-volta-test-network) (testnet) - configurations: `volta` `volta_archive`
+- [Energy Web](https://docs-launchpad.energyweb.org/ewc-ecosystem/ewc-guides-and-tutorials/developing-on-the-volta-test-network-and-main-network-energy-web-chain#developing-on-energy-web-main-network) - configurations: `energyweb` `energyweb_archive`
+- [Volta](https://docs-launchpad.energyweb.org/ewc-ecosystem/ewc-guides-and-tutorials/developing-on-the-volta-test-network-and-main-network-energy-web-chain#developing-on-volta-test-network) (testnet) - configurations: `volta` `volta_archive`
 
 :::info
 As the Energy Web Chain is an Aura-based network, running a node does not require a consensus client.
