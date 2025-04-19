@@ -11,7 +11,7 @@ Pruning aims to reduce disk requirements by storing only the current world state
 
 ## How it works
 
-During synchronization using the snap sync method, Nethermind produces a local copy of the Ethereum network state. Although this size increases by around 30 GB each week, specific historical data is retained that is not necessary for node operation or to maintain the current Ethereum state. For a detailed description of the disk usage usage, check out the [database size](./database.md#database-size).
+During synchronization using the snap sync method, Nethermind produces a local copy of the Ethereum network state. Although this size increases by around 30 GB each week, specific historical data is retained that is not necessary for node operation or to maintain the current Ethereum state. For a detailed description of the disk usage, check out the [database size](./database.md#database-size).
 
 When full pruning is activated and initiated, a thorough examination of the entire state tree is conducted to determine which data is no longer required and can be treated as historical. It then determines which information corresponds to the current state and duplicates it alongside the existing version. During verification of each node in the state, the new pruned state replaces the previous one. Once the verifier confirms everything is functioning correctly, the old state database is eliminated, resulting in significant savings in disk space. As a result, the size of the database will be close to its initial size again.
 
@@ -49,7 +49,7 @@ The next step is to determine the trigger conditions for full pruning. Currently
 
 ### Manual
 
-Manual mode triggers full pruning only upon request, providing complete control. To configure this mode, set the the `Pruning.Mode` to `Hybrid` and the [`Pruning.FullPruningTrigger`](../fundamentals/configuration.md#pruning.fullpruningtrigger) to `Manual`.
+Manual mode triggers full pruning only upon request, providing complete control. To configure this mode, set the `Pruning.Mode` to `Hybrid` and the [`Pruning.FullPruningTrigger`](../fundamentals/configuration.md#pruning.fullpruningtrigger) to `Manual`.
 
 Pruning can also be triggered using the [`admin_prune`](../interacting/json-rpc-ns/admin.md#admin_prune) JSON-RPC method. Here's how to configure it:
 
