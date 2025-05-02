@@ -3,6 +3,9 @@ title: JSON-RPC server
 sidebar_position: 0
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Interacting with Nethermind requires using the JSON-RPC 2.0 protocol. Nethermind provides JSON-RPC over [HTTP](#http),  [WebSocket](#websocket), and [IPC socket](#ipc-socket) transports. Each transport must be enabled with the respective configuration option, as shown below. For more details, see the [JSON-RPC configuration options](../fundamentals/configuration.md#jsonrpc).
 
 The JSON-RPC API methods are grouped into several categories (namespaces) depending on their purpose. All API method names are composed of the namespace and the actual method name in that namespace. For instance, the `eth_call` method belongs to the `eth` namespace. See the sidebar for all supported namespaces and methods.
@@ -50,3 +53,129 @@ When the `JsonRpc.EngineHost` option is specified, the `JsonRpc.EnginePort` opti
 :::
 
 The Engine API uses JWT authentication and requires a JWT secret. By default, Nethermind creates one at `keystore/jwt-secret` path in its root directory. To use a different path, specify the [`JsonRpc.JwtSecretFile`](../fundamentals/configuration.md#jsonrpc-jwtsecretfile) configuration option.
+
+## Requests
+
+:::info
+As per the JSON-RPC 2.0 specification, Nethermind supports batch requests. Specifics depend on the JSON-RPC client used.
+:::
+
+Multiple options are available for JSON-RPC interaction from curl and Postman for raw requests to dedicated libraries such as Ethers.js and Viem, to name a few.
+
+The following examples demonstrate how to make JSON-RPC requests with the abovementioned libraries.
+
+<Tabs groupId="lib">
+<TabItem value="ethers" label="Ethers.js">
+
+:::note
+Examples are based on Ethers.js v6.
+:::
+
+The following example uses the [`eth_getBalance`](./json-rpc-ns/eth.md#eth_getbalance) method to check the balance of the specified account:
+
+```js
+import { JsonRpcProvider, formatEther } from 'ethers';
+
+// Assuming Nethermind is running locally using the default port of 8545
+const provider = new JsonRpcProvider('http://localhost:8545');
+
+// Use the low level API to send a request.
+let balance = await provider.send('eth_getBalance', ['0x00000000219ab540356cbb839cbe05303d7705fa', 'latest']);
+console.log('Balance:', formatEther(balance));
+
+// Use the high level API to send a request.
+// Note that the return type may differ from the one of the low level API.
+balance = await provider.getBalance('0x00000000219ab540356cbb839cbe05303d7705fa', 'latest');
+console.log('Balance:', formatEther(balance));
+```
+
+Similarly, we can use the [`eth_getBlockByNumber`](./json-rpc-ns/eth.md#eth_getblockbynumber) method to fetch the specified block data, including transactions:
+
+```js
+import { JsonRpcProvider } from 'ethers';
+
+// Assuming Nethermind is running locally using the default port of 8545
+const provider = new JsonRpcProvider('http://localhost:8545');
+
+// Use the low level API to send a request
+let block = await provider.send('eth_getBlockByNumber', ['latest', true]);
+console.log('Block:', block);
+
+// Use the high level API to send a request.
+// Note that the return type may differ from the one of the low level API.
+// Not all JSON-RPC methods have their respective high level API.
+block = await provider.getBlock('latest', true);
+console.log('Block:', block);
+```
+
+For more information, see [Ethers.js documentation](https://docs.ethers.org/v6/).
+
+</TabItem>
+<TabItem value="viem" label="Viem">
+
+:::note
+Examples are based on Viem v2.
+:::
+
+The following example uses the [`eth_getBalance`](./json-rpc-ns/eth.md#eth_getbalance) method to check the balance of the specified account:
+
+```js
+import { createPublicClient, http, formatEther, hexToNumber } from 'viem';
+import { localhost } from 'viem/chains';
+
+// Assuming Nethermind is running locally using the default port of 8545
+const client = createPublicClient({
+    chain: localhost,
+    transport: http('http://localhost:8545'),
+});
+
+// Use the low level API to send a request
+let balance = await client.request({
+    method: 'eth_getBalance',
+    params: ['0x00000000219ab540356cbb839cbe05303d7705fa', 'latest'],
+});
+console.log('Balance:', formatEther(hexToNumber(balance)));
+
+// Use the high level API to send a request.
+// Note that the return type may differ from the one of the low level API.
+// Not all JSON-RPC methods have their respective high level API.
+balance = await client.getBalance({
+    address: '0x00000000219ab540356cbb839cbe05303d7705fa',
+    blockTag: 'latest'
+});
+console.log('Balance:', formatEther(balance));
+```
+
+Similarly, we can use the [`eth_getBlockByNumber`](./json-rpc-ns/eth.md#eth_getblockbynumber) method to fetch the specified block data, including transactions:
+
+```js
+import { createPublicClient, http } from 'viem';
+import { localhost } from 'viem/chains';
+
+// Assuming Nethermind is running locally using the default port of 8545
+const client = createPublicClient({
+    chain: localhost,
+    transport: http('http://localhost:8545'),
+});
+
+// Use the low level API to send a request
+let block = await client.request({
+    method: 'eth_getBlockByNumber',
+    params: ['latest', true],
+});
+console.log('Block:', block);
+
+// Use the high level API to send a request
+block = await client.getBlock({
+    blockTag: 'latest',
+    includeTransactions: true
+});
+console.log('Block:', block);
+```
+
+For more information, see [Viem documentation](https://viem.sh/docs/getting-started).
+
+</TabItem>
+</Tabs>
+
+The exhaustive list of supported JSON-RPC methods can be found under the JSON-RPC namespaces.
