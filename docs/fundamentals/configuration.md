@@ -6276,7 +6276,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of account range partitions to create. Increases the Snap sync request concurrency. Allowed values are between between 1 and 256. Defaults to `8`.
+  The number of account range partitions to create. Increases the Snap sync request concurrency. Allowed values are between 1 and 256. Defaults to `8`.
 
 - #### `Sync.StrictMode` \{#sync-strictmode\}
 
