@@ -87,6 +87,7 @@ Executes a tx call (does not create a transaction)
 1. `transactionCall`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -178,6 +179,7 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
 1. `transactionCall`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -230,6 +232,7 @@ Executes a tx call and returns gas used (does not create a transaction)
 1. `transactionCall`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -1152,6 +1155,7 @@ curl localhost:8545 \
 `result`: *object*
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
+  - `gas`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1200,6 +1204,7 @@ curl localhost:8545 \
 `result`: *object*
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
+  - `gas`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1246,6 +1251,7 @@ curl localhost:8545 \
 `result`: *object*
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
+  - `gas`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1750,6 +1756,7 @@ curl localhost:8545 \
 `result`: array of *object*
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
+  - `gas`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -1843,6 +1850,7 @@ Send a transaction to the tx pool and broadcasting
 1. `rpcTx`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -1899,6 +1907,7 @@ Executes a simulation across multiple blocks (does not create a transaction or b
       - `calls`: array of *object*
         - `blockHash`: *string* (hash)
         - `blockNumber`: *string* (hex integer)
+        - `gas`: *string* (hex integer)
         - `hash`: *string* (hash)
         - `transactionIndex`: *string* (hex integer)
         - `type`: *integer*
@@ -1944,6 +1953,24 @@ curl localhost:8545 \
 
 `result`: array of *object*
   - `calls`: array of *object*
+    - `error`: *object*
+      - `code`: *string* (hex integer)
+      - `data`: *string*
+      - `message`: *string*
+    - `gasUsed`: *string* (hex integer)
+    - `logs`: array of *object*
+      - `address`: *string* (address)
+      - `blockHash`: *string* (hash)
+      - `blockNumber`: *string* (hex integer)
+      - `data`: *string* (hex data)
+      - `logIndex`: *string* (hex integer)
+      - `removed`: *boolean*
+      - `topics`: array of *string* (hash)
+      - `transactionHash`: *string* (hash)
+      - `transactionIndex`: *string* (hex integer)
+    - `returnData`: *string* (hex data)
+    - `status`: *string* (hex integer)
+  - `traces`: array of *object*
     - `error`: *object*
       - `code`: *string* (hex integer)
       - `data`: *string*

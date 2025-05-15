@@ -52,6 +52,49 @@ Added node
 </TabItem>
 </Tabs>
 
+### admin_addTrustedPeer
+
+Adds given node as a trusted peer, allowing the node to always connect even if slots are full.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `enode`: *string*
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_addTrustedPeer",
+      "params": [enode]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+Boolean indicating success
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *boolean*
+
+</TabItem>
+</Tabs>
+
 ### admin_dataDir
 
 Returns the absolute path to the node's data directory.
@@ -75,98 +118,6 @@ curl localhost:8545 \
 <TabItem value="response" label="Response">
 
 The data directory path as a string.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": result
-}
-```
-
-`result`: *string*
-
-</TabItem>
-</Tabs>
-
-### admin_exportHistory
-
-Exports a range of historic block in era1 format.
-
-<Tabs>
-<TabItem value="params" label="Parameters">
-
-1. `destinationPath`: *string*
-
-2. `from`: *string* (hex integer)
-
-3. `to`: *string* (hex integer)
-
-
-</TabItem>
-<TabItem value="request" label="Request" default>
-
-```bash
-curl localhost:8545 \
-  -X POST \
-  -H "Content-Type: application/json" \
-  --data '{
-      "jsonrpc": "2.0",
-      "id": 0,
-      "method": "admin_exportHistory",
-      "params": [destinationPath, from, to]
-    }'
-```
-
-</TabItem>
-<TabItem value="response" label="Response">
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": result
-}
-```
-
-`result`: *string*
-
-</TabItem>
-</Tabs>
-
-### admin_importHistory
-
-Import a range of historic block from era1 directory.
-
-<Tabs>
-<TabItem value="params" label="Parameters">
-
-1. `sourcePath`: *string*
-
-2. `from`: *string* (hex integer)
-
-3. `to`: *string* (hex integer)
-
-4. `accumulatorFile`: *string*
-
-
-</TabItem>
-<TabItem value="request" label="Request" default>
-
-```bash
-curl localhost:8545 \
-  -X POST \
-  -H "Content-Type: application/json" \
-  --data '{
-      "jsonrpc": "2.0",
-      "id": 0,
-      "method": "admin_importHistory",
-      "params": [sourcePath, from, to, accumulatorFile]
-    }'
-```
-
-</TabItem>
-<TabItem value="response" label="Response">
 
 ```json
 {
@@ -332,6 +283,7 @@ Information about this node
       - `eip7251ContractAddress`: *string* (address)
       - `eip7251TransitionTimestamp`: *string* (hex integer)
       - `eip7623TransitionTimestamp`: *string* (hex integer)
+      - `eip7692TransitionTimestamp`: *string* (hex integer)
       - `eip7702TransitionTimestamp`: *string* (hex integer)
       - `eip7Transition`: *string* (hex integer)
       - `feeCollector`: *string* (address)
@@ -344,9 +296,9 @@ Information about this node
       - `maximumExtraDataSize`: *string* (hex integer)
       - `mergeForkIdTransition`: *string* (hex integer)
       - `minGasLimit`: *string* (hex integer)
-      - `ontakeTransition`: *string* (hex integer)
       - `opGraniteTransitionTimestamp`: *string* (hex integer)
       - `opHoloceneTransitionTimestamp`: *string* (hex integer)
+      - `opIsthmusTransitionTimestamp`: *string* (hex integer)
       - `registrar`: *string* (address)
       - `rip7212TransitionTimestamp`: *string* (hex integer)
       - `terminalPoWBlockNumber`: *string* (hex integer)
@@ -419,41 +371,6 @@ List of connected peers including information
 </TabItem>
 </Tabs>
 
-### admin_prune
-
-Runs full pruning if enabled.
-
-<Tabs>
-<TabItem value="request" label="Request" default>
-
-```bash
-curl localhost:8545 \
-  -X POST \
-  -H "Content-Type: application/json" \
-  --data '{
-      "jsonrpc": "2.0",
-      "id": 0,
-      "method": "admin_prune",
-      "params": []
-    }'
-```
-
-</TabItem>
-<TabItem value="response" label="Response">
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": result
-}
-```
-
-`result`: *integer*
-
-</TabItem>
-</Tabs>
-
 ### admin_removePeer
 
 Removes given node.
@@ -499,14 +416,14 @@ Removed node
 </TabItem>
 </Tabs>
 
-### admin_verifyTrie
+### admin_removeTrustedPeer
 
-Runs VerifyTrie.
+Removes the given node from the trusted peers list.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `block`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `enode`: *string*
 
 
 </TabItem>
@@ -519,8 +436,53 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "admin_verifyTrie",
-      "params": [block]
+      "method": "admin_removeTrustedPeer",
+      "params": [enode]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+Boolean indicating success
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *boolean*
+
+</TabItem>
+</Tabs>
+
+### admin_subscribe
+
+Subscribes to a particular event over WebSocket. For every event that matches the subscription, a notification with event details and subscription id is sent to a client.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `subscriptionName`: *string*
+
+2. `args`: *string*
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_subscribe",
+      "params": [subscriptionName, args]
     }'
 ```
 
@@ -536,6 +498,47 @@ curl localhost:8545 \
 ```
 
 `result`: *string*
+
+</TabItem>
+</Tabs>
+
+### admin_unsubscribe
+
+Unsubscribes from a subscription.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `subscriptionId`: *string*
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_unsubscribe",
+      "params": [subscriptionId]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *boolean*
 
 </TabItem>
 </Tabs>

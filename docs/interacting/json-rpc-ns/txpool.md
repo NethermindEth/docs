@@ -1,7 +1,7 @@
 ---
 title: txpool namespace
 sidebar_label: txpool
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 import Tabs from "@theme/Tabs";
@@ -42,6 +42,7 @@ curl localhost:8545 \
 map of *object*
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
+  - `gas`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
@@ -49,6 +50,7 @@ map of *object*
 map of *object*
   - `blockHash`: *string* (hash)
   - `blockNumber`: *string* (hex integer)
+  - `gas`: *string* (hex integer)
   - `hash`: *string* (hash)
   - `transactionIndex`: *string* (hex integer)
   - `type`: *integer*
