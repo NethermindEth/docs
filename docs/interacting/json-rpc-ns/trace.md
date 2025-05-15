@@ -1,7 +1,7 @@
 ---
 title: trace namespace
 sidebar_label: trace
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
@@ -89,6 +89,7 @@ curl localhost:8545 \
 1. `call`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -201,6 +202,7 @@ Performs multiple traces on top of a block
   - `transaction`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -726,6 +728,189 @@ curl localhost:8545 \
       - `sub`: *object*
         <!--[circular ref]-->
       - `used`: *string* (hex integer)
+
+</TabItem>
+</Tabs>
+
+### trace_simulateV1
+
+Returns parity like traces for simulated blocks
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `payload`: *object*
+    - `blockStateCalls`: array of *object*
+      - `blockOverrides`: *object*
+        - `baseFeePerGas`: *string* (hex integer)
+        - `blobBaseFee`: *string* (hex integer)
+        - `feeRecipient`: *string* (address)
+        - `gasLimit`: *string* (hex integer)
+        - `number`: *string* (hex integer)
+        - `prevRandao`: *string* (hash)
+        - `time`: *string* (hex integer)
+      - `calls`: array of *object*
+        - `blockHash`: *string* (hash)
+        - `blockNumber`: *string* (hex integer)
+        - `gas`: *string* (hex integer)
+        - `hash`: *string* (hash)
+        - `transactionIndex`: *string* (hex integer)
+        - `type`: *integer*
+      - `stateOverrides`: map of *object*
+        - `balance`: *string* (hex integer)
+        - `code`: *string* (hex data)
+        - `movePrecompileToAddress`: *string* (address)
+        - `nonce`: *string* (hex integer)
+        - `state`: map of *string* (hash)
+        - `stateDiff`: map of *string* (hash)
+    - `returnFullTransactionObjects`: *boolean*
+    - `traceTransfers`: *boolean*
+    - `validation`: *boolean*
+
+2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+3. `traceTypes`: array of *string*
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "trace_simulateV1",
+      "params": [payload, blockParameter, traceTypes]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `calls`: array of *object*
+    - `action`: *object*
+      - `author`: *string* (address)
+      - `callType`: *string*
+      - `creationMethod`: *string*
+      - `error`: *string*
+      - `from`: *string* (address)
+      - `gas`: *string* (hex integer)
+      - `includeInTrace`: *boolean*
+      - `input`: *string* (hex data)
+      - `isPrecompiled`: *boolean*
+      - `result`: *object*
+        - `address`: *string* (address)
+        - `code`: *string* (hex data)
+        - `gasUsed`: *string* (hex integer)
+        - `output`: *string* (hex data)
+      - `rewardType`: *string*
+      - `subtraces`: array of *object*
+        <!--[circular ref]-->
+      - `to`: *string* (address)
+      - `traceAddress`: array of *string* (hex integer)
+      - `type`: *string*
+      - `value`: *string* (hex integer)
+    - `blockHash`: *string* (hash)
+    - `blockNumber`: *string* (hex integer)
+    - `output`: *string* (hex data)
+    - `stateChanges`: map of *object*
+      - `balance`: *object*
+        - `after`: *string* (hex integer)
+        - `before`: *string* (hex integer)
+      - `code`: *object*
+        - `after`: *string* (hex data)
+        - `before`: *string* (hex data)
+      - `nonce`: *object*
+        - `after`: *string* (hex integer)
+        - `before`: *string* (hex integer)
+      - `storage`: map of *object*
+        - `after`: *string* (hex data)
+        - `before`: *string* (hex data)
+    - `transactionHash`: *string* (hash)
+    - `transactionPosition`: *string* (hex integer)
+    - `vmTrace`: *object*
+      - `code`: *string* (hex data)
+      - `operations`: array of *object*
+        - `cost`: *string* (hex integer)
+        - `memory`: *object*
+          - `data`: *string* (hex data)
+          - `offset`: *string* (hex integer)
+        - `pc`: *string* (hex integer)
+        - `push`: array of *string* (hex data)
+        - `store`: *object*
+          - `key`: *string* (hex data)
+          - `value`: *string* (hex data)
+        - `sub`: *object*
+          <!--[circular ref]-->
+        - `used`: *string* (hex integer)
+  - `traces`: array of *object*
+    - `action`: *object*
+      - `author`: *string* (address)
+      - `callType`: *string*
+      - `creationMethod`: *string*
+      - `error`: *string*
+      - `from`: *string* (address)
+      - `gas`: *string* (hex integer)
+      - `includeInTrace`: *boolean*
+      - `input`: *string* (hex data)
+      - `isPrecompiled`: *boolean*
+      - `result`: *object*
+        - `address`: *string* (address)
+        - `code`: *string* (hex data)
+        - `gasUsed`: *string* (hex integer)
+        - `output`: *string* (hex data)
+      - `rewardType`: *string*
+      - `subtraces`: array of *object*
+        <!--[circular ref]-->
+      - `to`: *string* (address)
+      - `traceAddress`: array of *string* (hex integer)
+      - `type`: *string*
+      - `value`: *string* (hex integer)
+    - `blockHash`: *string* (hash)
+    - `blockNumber`: *string* (hex integer)
+    - `output`: *string* (hex data)
+    - `stateChanges`: map of *object*
+      - `balance`: *object*
+        - `after`: *string* (hex integer)
+        - `before`: *string* (hex integer)
+      - `code`: *object*
+        - `after`: *string* (hex data)
+        - `before`: *string* (hex data)
+      - `nonce`: *object*
+        - `after`: *string* (hex integer)
+        - `before`: *string* (hex integer)
+      - `storage`: map of *object*
+        - `after`: *string* (hex data)
+        - `before`: *string* (hex data)
+    - `transactionHash`: *string* (hash)
+    - `transactionPosition`: *string* (hex integer)
+    - `vmTrace`: *object*
+      - `code`: *string* (hex data)
+      - `operations`: array of *object*
+        - `cost`: *string* (hex integer)
+        - `memory`: *object*
+          - `data`: *string* (hex data)
+          - `offset`: *string* (hex integer)
+        - `pc`: *string* (hex integer)
+        - `push`: array of *string* (hex data)
+        - `store`: *object*
+          - `key`: *string* (hex data)
+          - `value`: *string* (hex data)
+        - `sub`: *object*
+          <!--[circular ref]-->
+        - `used`: *string* (hex integer)
 
 </TabItem>
 </Tabs>
