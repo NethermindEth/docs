@@ -454,7 +454,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex data)
+`result`: *string*
 
 </TabItem>
 </Tabs>
@@ -645,6 +645,133 @@ curl localhost:8545 \
 ```
 
 `result`: *boolean*
+
+</TabItem>
+</Tabs>
+
+### debug_simulateV1
+
+Retrieves geth like traces of the simulated blocks
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `payload`: *object*
+    - `blockStateCalls`: array of *object*
+      - `blockOverrides`: *object*
+        - `baseFeePerGas`: *string* (hex integer)
+        - `blobBaseFee`: *string* (hex integer)
+        - `feeRecipient`: *string* (address)
+        - `gasLimit`: *string* (hex integer)
+        - `number`: *string* (hex integer)
+        - `prevRandao`: *string* (hash)
+        - `time`: *string* (hex integer)
+      - `calls`: array of *object*
+        - `blockHash`: *string* (hash)
+        - `blockNumber`: *string* (hex integer)
+        - `gas`: *string* (hex integer)
+        - `hash`: *string* (hash)
+        - `transactionIndex`: *string* (hex integer)
+        - `type`: *integer*
+      - `stateOverrides`: map of *object*
+        - `balance`: *string* (hex integer)
+        - `code`: *string* (hex data)
+        - `movePrecompileToAddress`: *string* (address)
+        - `nonce`: *string* (hex integer)
+        - `state`: map of *string* (hash)
+        - `stateDiff`: map of *string* (hash)
+    - `returnFullTransactionObjects`: *boolean*
+    - `traceTransfers`: *boolean*
+    - `validation`: *boolean*
+
+2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+3. `options`: *object*
+    - `disableMemory`: *boolean*
+    - `disableStack`: *boolean*
+    - `disableStorage`: *boolean*
+    - `enableMemory`: *boolean*
+    - `stateOverrides`: map of *object*
+      - `balance`: *string* (hex integer)
+      - `code`: *string* (hex data)
+      - `movePrecompileToAddress`: *string* (address)
+      - `nonce`: *string* (hex integer)
+      - `state`: map of *string* (hash)
+      - `stateDiff`: map of *string* (hash)
+    - `timeout`: *string*
+    - `tracer`: *string*
+    - `tracerConfig`: *object*
+      - `hasValue`: *boolean*
+      - `value`: *object*
+        - `item`: *object*
+          <!--[circular ref]-->
+        - `valueKind`: *integer*
+    - `txHash`: *string* (hash)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_simulateV1",
+      "params": [payload, blockParameter, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of *object*
+  - `calls`: array of *object*
+    - `customTracerResult`: *object*
+      - `value`: *object*
+    - `entries`: array of *object*
+      - `depth`: *string* (hex integer)
+      - `error`: *string*
+      - `gas`: *string* (hex integer)
+      - `gasCost`: *string* (hex integer)
+      - `memory`: array of *string*
+      - `opcode`: *string*
+      - `programCounter`: *string* (hex integer)
+      - `stack`: array of *string*
+      - `storage`: map of *string*
+    - `failed`: *boolean*
+    - `gas`: *string* (hex integer)
+    - `returnValue`: *string* (hex data)
+    - `storagesByDepth`: array of map of *string*
+    - `txHash`: *string* (hash)
+  - `traces`: array of *object*
+    - `customTracerResult`: *object*
+      - `value`: *object*
+    - `entries`: array of *object*
+      - `depth`: *string* (hex integer)
+      - `error`: *string*
+      - `gas`: *string* (hex integer)
+      - `gasCost`: *string* (hex integer)
+      - `memory`: array of *string*
+      - `opcode`: *string*
+      - `programCounter`: *string* (hex integer)
+      - `stack`: array of *string*
+      - `storage`: map of *string*
+    - `failed`: *boolean*
+    - `gas`: *string* (hex integer)
+    - `returnValue`: *string* (hex data)
+    - `storagesByDepth`: array of map of *string*
+    - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -850,6 +977,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -929,6 +1057,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1008,6 +1137,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1022,6 +1152,7 @@ This method lets you run an eth_call within the context of the given block execu
 1. `call`: *object*
     - `blockHash`: *string* (hash)
     - `blockNumber`: *string* (hex integer)
+    - `gas`: *string* (hex integer)
     - `hash`: *string* (hash)
     - `transactionIndex`: *string* (hex integer)
     - `type`: *integer*
@@ -1094,6 +1225,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1173,6 +1305,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1252,6 +1385,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1331,6 +1465,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1410,6 +1545,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>
@@ -1489,6 +1625,7 @@ curl localhost:8545 \
   - `gas`: *string* (hex integer)
   - `returnValue`: *string* (hex data)
   - `storagesByDepth`: array of map of *string*
+  - `txHash`: *string* (hash)
 
 </TabItem>
 </Tabs>

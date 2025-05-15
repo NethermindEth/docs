@@ -53,6 +53,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   The estimated highest block available.
 
+- #### `nethermind_block_m_gas_per_sec` \{#block_m_gas_per_sec\}
+  
+  Histogram of block MGas per second
+
+- #### `nethermind_block_processing_time_micros` \{#block_processing_time_micros\}
+  
+  Histogram of block prorcessing time
+
 - #### `nethermind_blockchain_height` \{#blockchain_height\}
   
   The current height of the canonical chain.
@@ -160,6 +168,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of State Reader reads.
 
+- #### `nethermind_state_skipped_writes` \{#state_skipped_writes\}
+  
+  Number of state trie writes skipped in net.
+
 - #### `nethermind_state_tree_cache` \{#state_tree_cache\}
   
   Number of State Trie cache hits.
@@ -170,11 +182,15 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 - #### `nethermind_state_tree_writes` \{#state_tree_writes\}
   
-  Number of Blocks Trie writes.
+  Number of state trie writes.
 
 - #### `nethermind_storage_reader_reads` \{#storage_reader_reads\}
   
   Number of storage reader reads.
+
+- #### `nethermind_storage_skipped_writes` \{#storage_skipped_writes\}
+  
+  Number of storage trie writes skipped in net.
 
 - #### `nethermind_storage_tree_cache` \{#storage_tree_cache\}
   
@@ -188,24 +204,8 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of storage trie writes.
 
-- #### `nethermind_thread_local_code_db_cache` \{#thread_local_code_db_cache\}
-  
-  Number of Code DB cache reads on thread.
-
-- #### `nethermind_thread_local_state_tree_reads` \{#thread_local_state_tree_reads\}
-  
-  Number of State Trie reads on thread.
-
-- #### `nethermind_thread_local_storage_tree_reads` \{#thread_local_storage_tree_reads\}
-  
-  Number of storage trie reads on thread.
-
 
 ### Evm
-
-- #### `nethermind_blockhash_opcode` \{#blockhash_opcode\}
-  
-  Number of BLOCKHASH opcodes executed.
 
 - #### `nethermind_bls_g1_add_precompile` \{#bls_g1_add_precompile\}
   
@@ -355,10 +355,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of calls made to addresses without code on thread.
 
-- #### `nethermind_thread_local_self_destructs` \{#thread_local_self_destructs\}
-  
-  Number of calls to other contracts on thread.
-
 - #### `nethermind_thread_local_s_load_opcode` \{#thread_local_s_load_opcode\}
   
   Number of SLOAD opcodes executed on thread.
@@ -366,6 +362,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_thread_local_s_store_opcode` \{#thread_local_s_store_opcode\}
   
   Number of SSTORE opcodes executed on thread.
+
+- #### `nethermind_thread_local_self_destructs` \{#thread_local_self_destructs\}
+  
+  Number of calls to other contracts on thread.
 
 - #### `nethermind_tload_opcode` \{#tload_opcode\}
   
@@ -413,6 +413,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   ForkchoiceUpded request execution time
 
+- #### `nethermind_get_blobs_requests_failure_total` \{#get_blobs_requests_failure_total\}
+  
+  Number of responses to engine_getBlobsV1 without all requested blobs
+
+- #### `nethermind_get_blobs_requests_success_total` \{#get_blobs_requests_success_total\}
+  
+  Number of responses to engine_getBlobsV1 with all requested blobs
+
 - #### `nethermind_get_payload_requests` \{#get_payload_requests\}
   
   Number of GetPayload Requests
@@ -436,13 +444,21 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### Network
 
-- #### `nethermind_handshakes` \{#handshakes\}
+- #### `nethermind_discovery_messages_received` \{#discovery_messages_received\}
   
-  Number of devp2p handshakes
+  Number of sent discovery message
+
+- #### `nethermind_discovery_messages_sent` \{#discovery_messages_sent\}
+  
+  Number of sent discovery message
 
 - #### `nethermind_handshake_timeouts` \{#handshake_timeouts\}
   
   Number of devp2p handshake timeouts
+
+- #### `nethermind_handshakes` \{#handshakes\}
+  
+  Number of devp2p handshakes
 
 - #### `nethermind_incoming_connections` \{#incoming_connections\}
   
@@ -472,6 +488,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of outgoing p2p packets.
 
+- #### `nethermind_peer_candidate_count` \{#peer_candidate_count\}
+  
+  Number of candidate peers in peer manager
+
+- #### `nethermind_peer_candidate_filter` \{#peer_candidate_filter\}
+  
+  Number of filter reason per peer candidate
+
 - #### `nethermind_peer_limit` \{#peer_limit\}
   
   The maximum number of peers this node allows to connect.
@@ -491,13 +515,17 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Nodes that have been committed since the session start. These nodes may have been pruned, persisted or replaced.
 
-- #### `nethermind_deep_pruned_persisted_nodes_count` \{#deep_pruned_persisted_nodes_count\}
-  
-  Nodes that have been removed from the cache during deep pruning because they have been persisted before.
-
 - #### `nethermind_deep_pruning_time` \{#deep_pruning_time\}
   
   Time taken by the last deep pruning.
+
+- #### `nethermind_dirty_memory_used_by_cache` \{#dirty_memory_used_by_cache\}
+  
+  Estimated memory used by cache.
+
+- #### `nethermind_dirty_nodes_count` \{#dirty_nodes_count\}
+  
+  Nodes that are currently kept in cache (either persisted or not)
 
 - #### `nethermind_last_persisted_block_number` \{#last_persisted_block_number\}
   
@@ -523,9 +551,9 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Nodes that have been persisted since the session start.
 
-- #### `nethermind_pruned_persisted_nodes_count` \{#pruned_persisted_nodes_count\}
+- #### `nethermind_persisted_node_pruning_time` \{#persisted_node_pruning_time\}
   
-  Nodes that have been removed from the cache during pruning because they have been persisted before.
+  Time taken by the last persisted node pruning.
 
 - #### `nethermind_pruned_transient_nodes_count` \{#pruned_transient_nodes_count\}
   
@@ -618,10 +646,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### TxPool
 
-- #### `nethermind_blobs_in_block` \{#blobs_in_block\}
-  
-  Number of blobs in the block.
-
 - #### `nethermind_blob_transaction_count` \{#blob_transaction_count\}
   
   Number of blob transactions in pool.
@@ -629,6 +653,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_blob_transactions_in_block` \{#blob_transactions_in_block\}
   
   Number of blob transactions in the block.
+
+- #### `nethermind_blobs_in_block` \{#blobs_in_block\}
+  
+  Number of blobs in the block.
 
 - #### `nethermind_dark_pool_ratio_level1` \{#dark_pool_ratio_level1\}
   
@@ -644,7 +672,7 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 - #### `nethermind_eip7702_transactions_in_block` \{#eip7702_transactions_in_block\}
   
-  Ratio of 7702-type transactions in the block.
+  Number of 7702-type transactions in the block.
 
 - #### `nethermind_pending1559_transactions_added` \{#pending1559_transactions_added\}
   
@@ -653,10 +681,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_pending_blob_transactions_added` \{#pending_blob_transactions_added\}
   
   Number of pending blob-type transactions added to transaction pool.
-
-- #### `nethermind_pending_transactions_added` \{#pending_transactions_added\}
-  
-  Number of pending transactions added to transaction pool.
 
 - #### `nethermind_pending_transactions_balance_below_value` \{#pending_transactions_balance_below_value\}
   
