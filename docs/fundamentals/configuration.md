@@ -130,20 +130,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --aura-allowauraprivatechains <value>
-  --Aura.AllowAuRaPrivateChains <value>
+  --aura-allowauraprivatechains [true|false]
+  --Aura.AllowAuRaPrivateChains [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS=<value>
+  NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Aura": {
-      "AllowAuRaPrivateChains": <value>
+      "AllowAuRaPrivateChains": true|false
     }
   }
   ```
@@ -157,20 +157,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --aura-forcesealing <value>
-  --Aura.ForceSealing <value>
+  --aura-forcesealing [true|false]
+  --Aura.ForceSealing [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_AURACONFIG_FORCESEALING=<value>
+  NETHERMIND_AURACONFIG_FORCESEALING=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Aura": {
-      "ForceSealing": <value>
+      "ForceSealing": true|false
     }
   }
   ```
@@ -184,20 +184,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --aura-minimum2mlngasperblockwhenusingblockgaslimitcontract <value>
-  --Aura.Minimum2MlnGasPerBlockWhenUsingBlockGasLimitContract <value>
+  --aura-minimum2mlngasperblockwhenusingblockgaslimitcontract [true|false]
+  --Aura.Minimum2MlnGasPerBlockWhenUsingBlockGasLimitContract [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_AURACONFIG_MINIMUM2MLNGASPERBLOCKWHENUSINGBLOCKGASLIMITCONTRACT=<value>
+  NETHERMIND_AURACONFIG_MINIMUM2MLNGASPERBLOCKWHENUSINGBLOCKGASLIMITCONTRACT=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Aura": {
-      "Minimum2MlnGasPerBlockWhenUsingBlockGasLimitContract": <value>
+      "Minimum2MlnGasPerBlockWhenUsingBlockGasLimitContract": true|false
     }
   }
   ```
@@ -262,6 +262,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
 
 ### Blocks
+
+- #### `Blocks.BlockProductionMaxTxKilobytes` \{#blocks-blockproductionmaxtxkilobytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --blocks-blockproductionmaxtxkilobytes <value>
+  --Blocks.BlockProductionMaxTxKilobytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BLOCKSCONFIG_BLOCKPRODUCTIONMAXTXKILOBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Blocks": {
+      "BlockProductionMaxTxKilobytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max transaction bytes to add in block production, in kilobytes. Defaults to `9728`.
 
 - #### `Blocks.BlockProductionTimeoutMs` \{#blocks-blockproductiontimeoutms\}
 
@@ -376,20 +403,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --blocks-prewarmstateonblockprocessing <value>
-  --Blocks.PreWarmStateOnBlockProcessing <value>
+  --blocks-prewarmstateonblockprocessing [true|false]
+  --Blocks.PreWarmStateOnBlockProcessing [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_BLOCKSCONFIG_PREWARMSTATEONBLOCKPROCESSING=<value>
+  NETHERMIND_BLOCKSCONFIG_PREWARMSTATEONBLOCKPROCESSING=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Blocks": {
-      "PreWarmStateOnBlockProcessing": <value>
+      "PreWarmStateOnBlockProcessing": true|false
     }
   }
   ```
@@ -403,20 +430,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --blocks-randomizedblocks <value>
-  --Blocks.RandomizedBlocks <value>
+  --blocks-randomizedblocks [true|false]
+  --Blocks.RandomizedBlocks [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_BLOCKSCONFIG_RANDOMIZEDBLOCKS=<value>
+  NETHERMIND_BLOCKSCONFIG_RANDOMIZEDBLOCKS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Blocks": {
-      "RandomizedBlocks": <value>
+      "RandomizedBlocks": true|false
     }
   }
   ```
@@ -487,20 +514,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --bloom-index <value>
-  --Bloom.Index <value>
+  --bloom-index [true|false]
+  --Bloom.Index [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_BLOOMCONFIG_INDEX=<value>
+  NETHERMIND_BLOOMCONFIG_INDEX=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Bloom": {
-      "Index": <value>
+      "Index": true|false
     }
   }
   ```
@@ -541,20 +568,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --bloom-migration <value>
-  --Bloom.Migration <value>
+  --bloom-migration [true|false]
+  --Bloom.Migration [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_BLOOMCONFIG_MIGRATION=<value>
+  NETHERMIND_BLOOMCONFIG_MIGRATION=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Bloom": {
-      "Migration": <value>
+      "Migration": true|false
     }
   }
   ```
@@ -568,20 +595,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --bloom-migrationstatistics <value>
-  --Bloom.MigrationStatistics <value>
+  --bloom-migrationstatistics [true|false]
+  --Bloom.MigrationStatistics [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_BLOOMCONFIG_MIGRATIONSTATISTICS=<value>
+  NETHERMIND_BLOOMCONFIG_MIGRATIONSTATISTICS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Bloom": {
-      "MigrationStatistics": <value>
+      "MigrationStatistics": true|false
     }
   }
   ```
@@ -591,90 +618,6 @@ The configuration options are case-sensitive and can be defined only once unless
   Whether the migration statistics should be calculated and output. Allowed values: `true` `false`. Defaults to `false`.
 
 
-### CensorshipDetector
-
-- #### `CensorshipDetector.AddressesForCensorshipDetection` \{#censorshipdetector-addressesforcensorshipdetection\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --censorshipdetector-addressesforcensorshipdetection <value>
-  --CensorshipDetector.AddressesForCensorshipDetection <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_CENSORSHIPDETECTORCONFIG_ADDRESSESFORCENSORSHIPDETECTION=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "CensorshipDetector": {
-      "AddressesForCensorshipDetection": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  The addresses to detect censorship for. Defaults to `null`.
-
-- #### `CensorshipDetector.BlockCensorshipThreshold` \{#censorshipdetector-blockcensorshipthreshold\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --censorshipdetector-blockcensorshipthreshold <value>
-  --CensorshipDetector.BlockCensorshipThreshold <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_CENSORSHIPDETECTORCONFIG_BLOCKCENSORSHIPTHRESHOLD=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "CensorshipDetector": {
-      "BlockCensorshipThreshold": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  The number of the consecutive blocks with detected potential censorship to report. Defaults to `2`.
-
-- #### `CensorshipDetector.Enabled` \{#censorshipdetector-enabled\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --censorshipdetector-enabled <value>
-  --CensorshipDetector.Enabled <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_CENSORSHIPDETECTORCONFIG_ENABLED=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "CensorshipDetector": {
-      "Enabled": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
-
-
 ### CL
 
 - #### `CL.Enabled` \{#cl-enabled\}
@@ -682,20 +625,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --cl-enabled <value>
-  --CL.Enabled <value>
+  --cl-enabled [true|false]
+  --CL.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_CLCONFIG_ENABLED=<value>
+  NETHERMIND_CLCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "CL": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -811,6 +754,90 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   CL p2p communication host Defaults to `3030`.
+
+
+### CensorshipDetector
+
+- #### `CensorshipDetector.AddressesForCensorshipDetection` \{#censorshipdetector-addressesforcensorshipdetection\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --censorshipdetector-addressesforcensorshipdetection <value>
+  --CensorshipDetector.AddressesForCensorshipDetection <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CENSORSHIPDETECTORCONFIG_ADDRESSESFORCENSORSHIPDETECTION=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CensorshipDetector": {
+      "AddressesForCensorshipDetection": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The addresses to detect censorship for. Defaults to `null`.
+
+- #### `CensorshipDetector.BlockCensorshipThreshold` \{#censorshipdetector-blockcensorshipthreshold\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --censorshipdetector-blockcensorshipthreshold <value>
+  --CensorshipDetector.BlockCensorshipThreshold <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CENSORSHIPDETECTORCONFIG_BLOCKCENSORSHIPTHRESHOLD=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CensorshipDetector": {
+      "BlockCensorshipThreshold": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of the consecutive blocks with detected potential censorship to report. Defaults to `2`.
+
+- #### `CensorshipDetector.Enabled` \{#censorshipdetector-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --censorshipdetector-enabled [true|false]
+  --CensorshipDetector.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_CENSORSHIPDETECTORCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "CensorshipDetector": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
 
 
 ### Clique
@@ -988,20 +1015,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --ethstats-enabled <value>
-  --EthStats.Enabled <value>
+  --ethstats-enabled [true|false]
+  --EthStats.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_ETHSTATSCONFIG_ENABLED=<value>
+  NETHERMIND_ETHSTATSCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "EthStats": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -1119,6 +1146,172 @@ The configuration options are case-sensitive and can be defined only once unless
   The Ethstats server URL. Defaults to `ws://localhost:3000/api`.
 
 
+### Flashbots
+
+- #### `Flashbots.EnablePreWarmer` \{#flashbots-enableprewarmer\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flashbots-enableprewarmer [true|false]
+  --Flashbots.EnablePreWarmer [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLASHBOTSCONFIG_ENABLEPREWARMER=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Flashbots": {
+      "EnablePreWarmer": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to enable the pre-warmer. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Flashbots.EnableValidation` \{#flashbots-enablevalidation\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flashbots-enablevalidation [true|false]
+  --Flashbots.EnableValidation [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLASHBOTSCONFIG_ENABLEVALIDATION=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Flashbots": {
+      "EnableValidation": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to enable validation. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Flashbots.Enabled` \{#flashbots-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flashbots-enabled [true|false]
+  --Flashbots.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLASHBOTSCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Flashbots": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to enable the Flashbots endpoints. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Flashbots.ExcludeWithdrawals` \{#flashbots-excludewithdrawals\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flashbots-excludewithdrawals [true|false]
+  --Flashbots.ExcludeWithdrawals [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLASHBOTSCONFIG_EXCLUDEWITHDRAWALS=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Flashbots": {
+      "ExcludeWithdrawals": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to exclude the withdrawals to the fee recipient from the balance difference. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Flashbots.FlashbotsModuleConcurrentInstances` \{#flashbots-flashbotsmoduleconcurrentinstances\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flashbots-flashbotsmoduleconcurrentinstances <value>
+  --Flashbots.FlashbotsModuleConcurrentInstances <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLASHBOTSCONFIG_FLASHBOTSMODULECONCURRENTINSTANCES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Flashbots": {
+      "FlashbotsModuleConcurrentInstances": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of concurrent instances for non-sharable calls for `flashbots_validateBuilderSubmissionV3`
+  This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
+
+- #### `Flashbots.UseBalanceDiffProfit` \{#flashbots-usebalancediffprofit\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flashbots-usebalancediffprofit [true|false]
+  --Flashbots.UseBalanceDiffProfit [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLASHBOTSCONFIG_USEBALANCEDIFFPROFIT=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Flashbots": {
+      "UseBalanceDiffProfit": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to calculate the proposer payment as a balance difference of the fee recipient. Allowed values: `true` `false`. Defaults to `false`.
+
+
 ### HealthChecks
 
 - #### `HealthChecks.Enabled` \{#healthchecks-enabled\}
@@ -1126,20 +1319,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --healthchecks-enabled <value>
-  --HealthChecks.Enabled <value>
+  --healthchecks-enabled [true|false]
+  --HealthChecks.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_HEALTHCHECKSCONFIG_ENABLED=<value>
+  NETHERMIND_HEALTHCHECKSCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "HealthChecks": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -1153,20 +1346,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --healthchecks-lowstoragecheckawaitonstartup <value>
-  --HealthChecks.LowStorageCheckAwaitOnStartup <value>
+  --healthchecks-lowstoragecheckawaitonstartup [true|false]
+  --HealthChecks.LowStorageCheckAwaitOnStartup [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_HEALTHCHECKSCONFIG_LOWSTORAGECHECKAWAITONSTARTUP=<value>
+  NETHERMIND_HEALTHCHECKSCONFIG_LOWSTORAGECHECKAWAITONSTARTUP=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "HealthChecks": {
-      "LowStorageCheckAwaitOnStartup": <value>
+      "LowStorageCheckAwaitOnStartup": true|false
     }
   }
   ```
@@ -1369,20 +1562,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --healthchecks-uienabled <value>
-  --HealthChecks.UIEnabled <value>
+  --healthchecks-uienabled [true|false]
+  --HealthChecks.UIEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_HEALTHCHECKSCONFIG_UIENABLED=<value>
+  NETHERMIND_HEALTHCHECKSCONFIG_UIENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "HealthChecks": {
-      "UIEnabled": <value>
+      "UIEnabled": true|false
     }
   }
   ```
@@ -1396,20 +1589,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --healthchecks-webhooksenabled <value>
-  --HealthChecks.WebhooksEnabled <value>
+  --healthchecks-webhooksenabled [true|false]
+  --HealthChecks.WebhooksEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_HEALTHCHECKSCONFIG_WEBHOOKSENABLED=<value>
+  NETHERMIND_HEALTHCHECKSCONFIG_WEBHOOKSENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "HealthChecks": {
-      "WebhooksEnabled": <value>
+      "WebhooksEnabled": true|false
     }
   }
   ```
@@ -1611,20 +1804,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --hive-enabled <value>
-  --Hive.Enabled <value>
+  --hive-enabled [true|false]
+  --Hive.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_HIVECONFIG_ENABLED=<value>
+  NETHERMIND_HIVECONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Hive": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -1855,20 +2048,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-discoveryenabled <value>
-  --Init.DiscoveryEnabled <value>
+  --init-discoveryenabled [true|false]
+  --Init.DiscoveryEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_DISCOVERYENABLED=<value>
+  NETHERMIND_INITCONFIG_DISCOVERYENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "DiscoveryEnabled": <value>
+      "DiscoveryEnabled": true|false
     }
   }
   ```
@@ -1882,20 +2075,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-enableunsecureddevwallet <value>
-  --Init.EnableUnsecuredDevWallet <value>
+  --init-enableunsecureddevwallet [true|false]
+  --Init.EnableUnsecuredDevWallet [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_ENABLEUNSECUREDDEVWALLET=<value>
+  NETHERMIND_INITCONFIG_ENABLEUNSECUREDDEVWALLET=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "EnableUnsecuredDevWallet": <value>
+      "EnableUnsecuredDevWallet": true|false
     }
   }
   ```
@@ -1936,20 +2129,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-ismining <value>
-  --Init.IsMining <value>
+  --init-ismining [true|false]
+  --Init.IsMining [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_ISMINING=<value>
+  NETHERMIND_INITCONFIG_ISMINING=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "IsMining": <value>
+      "IsMining": true|false
     }
   }
   ```
@@ -1963,20 +2156,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-keepdevwalletinmemory <value>
-  --Init.KeepDevWalletInMemory <value>
+  --init-keepdevwalletinmemory [true|false]
+  --Init.KeepDevWalletInMemory [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_KEEPDEVWALLETINMEMORY=<value>
+  NETHERMIND_INITCONFIG_KEEPDEVWALLETINMEMORY=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "KeepDevWalletInMemory": <value>
+      "KeepDevWalletInMemory": true|false
     }
   }
   ```
@@ -2125,20 +2318,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-peermanagerenabled <value>
-  --Init.PeerManagerEnabled <value>
+  --init-peermanagerenabled [true|false]
+  --Init.PeerManagerEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_PEERMANAGERENABLED=<value>
+  NETHERMIND_INITCONFIG_PEERMANAGERENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "PeerManagerEnabled": <value>
+      "PeerManagerEnabled": true|false
     }
   }
   ```
@@ -2152,20 +2345,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-processingenabled <value>
-  --Init.ProcessingEnabled <value>
+  --init-processingenabled [true|false]
+  --Init.ProcessingEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_PROCESSINGENABLED=<value>
+  NETHERMIND_INITCONFIG_PROCESSINGENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "ProcessingEnabled": <value>
+      "ProcessingEnabled": true|false
     }
   }
   ```
@@ -2228,25 +2421,52 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The path to the static nodes file. Defaults to `Data/static-nodes.json`.
 
-- #### `Init.WebSocketsEnabled` \{#init-websocketsenabled\}
+- #### `Init.TrustedNodesPath` \{#init-trustednodespath\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-websocketsenabled <value>
-  --Init.WebSocketsEnabled <value>
+  --init-trustednodespath <value>
+  --Init.TrustedNodesPath <value>
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_WEBSOCKETSENABLED=<value>
+  NETHERMIND_INITCONFIG_TRUSTEDNODESPATH=<value>
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "WebSocketsEnabled": <value>
+      "TrustedNodesPath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The path to the trusted nodes file. Defaults to `Data/trusted-nodes.json`.
+
+- #### `Init.WebSocketsEnabled` \{#init-websocketsenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --init-websocketsenabled [true|false]
+  --Init.WebSocketsEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_INITCONFIG_WEBSOCKETSENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Init": {
+      "WebSocketsEnabled": true|false
     }
   }
   ```
@@ -2290,20 +2510,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --jsonrpc-bufferresponses <value>
-  --JsonRpc.BufferResponses <value>
+  --jsonrpc-bufferresponses [true|false]
+  --JsonRpc.BufferResponses [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_JSONRPCCONFIG_BUFFERRESPONSES=<value>
+  NETHERMIND_JSONRPCCONFIG_BUFFERRESPONSES=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "JsonRpc": {
-      "BufferResponses": <value>
+      "BufferResponses": true|false
     }
   }
   ```
@@ -2366,25 +2586,52 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The JSON-RPC server CORS origins. Defaults to `*`.
 
-- #### `JsonRpc.Enabled` \{#jsonrpc-enabled\}
+- #### `JsonRpc.EnablePerMethodMetrics` \{#jsonrpc-enablepermethodmetrics\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --jsonrpc-enabled <value>
-  --JsonRpc.Enabled <value>
+  --jsonrpc-enablepermethodmetrics [true|false]
+  --JsonRpc.EnablePerMethodMetrics [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_JSONRPCCONFIG_ENABLED=<value>
+  NETHERMIND_JSONRPCCONFIG_ENABLEPERMETHODMETRICS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "JsonRpc": {
-      "Enabled": <value>
+      "EnablePerMethodMetrics": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Enable per-method call metric Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `JsonRpc.Enabled` \{#jsonrpc-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-enabled [true|false]
+  --JsonRpc.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "Enabled": true|false
     }
   }
   ```
@@ -2419,9 +2666,9 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
-
+  
   Built-in namespaces:
-
+  
   - `admin`
   - `client`
   - `debug`
@@ -2438,7 +2685,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `trace`
   - `txpool`
   - `web3`
-
+  
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - #### `JsonRpc.EngineEnabledModules` \{#jsonrpc-engineenabledmodules\}
@@ -2575,7 +2822,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of concurrent instances for non-sharable calls:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2583,7 +2830,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
 
 - #### `JsonRpc.GasCap` \{#jsonrpc-gascap\}
@@ -2611,7 +2858,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The gas limit for `eth_call` and `eth_estimateGas`. Defaults to `100000000`.
+  The maximum gas limit for `eth_call` and `eth_estimateGas`. Defaults to `100000000`.
 
 - #### `JsonRpc.Host` \{#jsonrpc-host\}
 
@@ -2640,6 +2887,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The JSON-RPC service host. Defaults to `127.0.0.1`.
 
+- #### `JsonRpc.IpcProcessingConcurrency` \{#jsonrpc-ipcprocessingconcurrency\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-ipcprocessingconcurrency <value>
+  --JsonRpc.IpcProcessingConcurrency <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_IPCPROCESSINGCONCURRENCY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "IpcProcessingConcurrency": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Concurrency level of IPC connection. Defaults to `1`.
+
 - #### `JsonRpc.IpcUnixDomainSocketPath` \{#jsonrpc-ipcunixdomainsocketpath\}
 
   <Tabs groupId="usage">
@@ -2666,6 +2940,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The path to connect a UNIX domain socket over.
+
+- #### `JsonRpc.JsonSerializationMaxDepth` \{#jsonrpc-jsonserializationmaxdepth\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-jsonserializationmaxdepth <value>
+  --JsonRpc.JsonSerializationMaxDepth <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_JSONSERIALIZATIONMAXDEPTH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "JsonSerializationMaxDepth": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum depth of JSON response object tree. Defaults to `128`.
 
 - #### `JsonRpc.JwtSecretFile` \{#jsonrpc-jwtsecretfile\}
 
@@ -2881,7 +3182,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  An array of the method names not to log. Defaults to `[engine_newPayloadV1,engine_newPayloadV2,engine_newPayloadV3,engine_forkchoiceUpdatedV1,engine_forkchoiceUpdatedV2]`.
+  An array of the method names not to log. Defaults to `[engine_newPayloadV1,engine_newPayloadV2,engine_newPayloadV3,engine_forkchoiceUpdatedV1,engine_forkchoiceUpdatedV2,flashbots_validateBuilderSubmissionV3]`.
 
 - #### `JsonRpc.Port` \{#jsonrpc-port\}
 
@@ -2963,7 +3264,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of concurrent requests in the queue for:
-
+  
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2971,7 +3272,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newBlockFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-
+  
   `0` to lift the limit. Defaults to `500`.
 
 - #### `JsonRpc.RpcRecorderBaseFilePath` \{#jsonrpc-rpcrecorderbasefilepath\}
@@ -3090,6 +3391,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The JSON-RPC service WebSockets port. Defaults to `8545`.
+
+- #### `JsonRpc.WebSocketsProcessingConcurrency` \{#jsonrpc-websocketsprocessingconcurrency\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-websocketsprocessingconcurrency <value>
+  --JsonRpc.WebSocketsProcessingConcurrency <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_WEBSOCKETSPROCESSINGCONCURRENCY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "WebSocketsProcessingConcurrency": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Concurrency level of websocket connection. Defaults to `1`.
 
 
 ### KeyStore
@@ -3663,13 +3991,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of requests to the garbage collector (GC) to release the process memory.
-
+  
   Allowed values:
-
+  
   - `-1`: No requests.
   - `0`: Requests every time.
   - A positive number: Requests after that many Engine API calls.
-
+  
   Defaults to `25`.
 
 - #### `Merge.CompactMemory` \{#merge-compactmemory\}
@@ -3712,20 +4040,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --merge-enabled <value>
-  --Merge.Enabled <value>
+  --merge-enabled [true|false]
+  --Merge.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_MERGECONFIG_ENABLED=<value>
+  NETHERMIND_MERGECONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Merge": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -3766,20 +4094,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --merge-prioritizeblocklatency <value>
-  --Merge.PrioritizeBlockLatency <value>
+  --merge-prioritizeblocklatency [true|false]
+  --Merge.PrioritizeBlockLatency [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_MERGECONFIG_PRIORITIZEBLOCKLATENCY=<value>
+  NETHERMIND_MERGECONFIG_PRIORITIZEBLOCKLATENCY=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Merge": {
-      "PrioritizeBlockLatency": <value>
+      "PrioritizeBlockLatency": true|false
     }
   }
   ```
@@ -3913,20 +4241,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --metrics-countersenabled <value>
-  --Metrics.CountersEnabled <value>
+  --metrics-countersenabled [true|false]
+  --Metrics.CountersEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_METRICSCONFIG_COUNTERSENABLED=<value>
+  NETHERMIND_METRICSCONFIG_COUNTERSENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Metrics": {
-      "CountersEnabled": <value>
+      "CountersEnabled": true|false
     }
   }
   ```
@@ -3935,52 +4263,25 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to publish metrics using .NET diagnostics that can be collected with dotnet-counters. Allowed values: `true` `false`. Defaults to `false`.
 
-- #### `Metrics.Enabled` \{#metrics-enabled\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --metrics-enabled <value>
-  --Metrics.Enabled <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_METRICSCONFIG_ENABLED=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "Metrics": {
-      "Enabled": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Whether to publish various metrics to Prometheus Pushgateway at a given interval. Allowed values: `true` `false`. Defaults to `false`.
-
 - #### `Metrics.EnableDbSizeMetrics` \{#metrics-enabledbsizemetrics\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --metrics-enabledbsizemetrics <value>
-  --Metrics.EnableDbSizeMetrics <value>
+  --metrics-enabledbsizemetrics [true|false]
+  --Metrics.EnableDbSizeMetrics [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_METRICSCONFIG_ENABLEDBSIZEMETRICS=<value>
+  NETHERMIND_METRICSCONFIG_ENABLEDBSIZEMETRICS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Metrics": {
-      "EnableDbSizeMetrics": <value>
+      "EnableDbSizeMetrics": true|false
     }
   }
   ```
@@ -3988,6 +4289,60 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to publish database size metrics. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Metrics.EnableDetailedMetric` \{#metrics-enabledetailedmetric\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-enabledetailedmetric [true|false]
+  --Metrics.EnableDetailedMetric [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_ENABLEDETAILEDMETRIC=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "EnableDetailedMetric": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Enable detailed metric Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Metrics.Enabled` \{#metrics-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-enabled [true|false]
+  --Metrics.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to publish various metrics to Prometheus Pushgateway at a given interval. Allowed values: `true` `false`. Defaults to `false`.
 
 - #### `Metrics.ExposeHost` \{#metrics-exposehost\}
 
@@ -4186,20 +4541,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --mining-enabled <value>
-  --Mining.Enabled <value>
+  --mining-enabled [true|false]
+  --Mining.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_MININGCONFIG_ENABLED=<value>
+  NETHERMIND_MININGCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Mining": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -4270,20 +4625,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --network-diagtracerenabled <value>
-  --Network.DiagTracerEnabled <value>
+  --network-diagtracerenabled [true|false]
+  --Network.DiagTracerEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_NETWORKCONFIG_DIAGTRACERENABLED=<value>
+  NETHERMIND_NETWORKCONFIG_DIAGTRACERENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Network": {
-      "DiagTracerEnabled": <value>
+      "DiagTracerEnabled": true|false
     }
   }
   ```
@@ -4351,20 +4706,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --network-enableupnp <value>
-  --Network.EnableUPnP <value>
+  --network-enableupnp [true|false]
+  --Network.EnableUPnP [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_NETWORKCONFIG_ENABLEUPNP=<value>
+  NETHERMIND_NETWORKCONFIG_ENABLEUPNP=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Network": {
-      "EnableUPnP": <value>
+      "EnableUPnP": true|false
     }
   }
   ```
@@ -4513,20 +4868,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --network-onlystaticpeers <value>
-  --Network.OnlyStaticPeers <value>
+  --network-onlystaticpeers [true|false]
+  --Network.OnlyStaticPeers [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_NETWORKCONFIG_ONLYSTATICPEERS=<value>
+  NETHERMIND_NETWORKCONFIG_ONLYSTATICPEERS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Network": {
-      "OnlyStaticPeers": <value>
+      "OnlyStaticPeers": true|false
     }
   }
   ```
@@ -4588,6 +4943,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of priority peers. Can be overridden by a plugin. Defaults to `0`.
+
+- #### `Network.PublicClientIdFormat` \{#network-publicclientidformat\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --network-publicclientidformat <value>
+  --Network.PublicClientIdFormat <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_NETWORKCONFIG_PUBLICCLIENTIDFORMAT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Network": {
+      "PublicClientIdFormat": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  A template string for the public client id provided to external clients. Allowed placeholders: `{name}` `{version}` `{os}` `{runtime}`. Defaults to `{name}/{version}/{os}/{runtime}`.
 
 - #### `Network.StaticPeers` \{#network-staticpeers\}
 
@@ -4654,20 +5036,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --pruning-availablespacecheckenabled <value>
-  --Pruning.AvailableSpaceCheckEnabled <value>
+  --pruning-availablespacecheckenabled [true|false]
+  --Pruning.AvailableSpaceCheckEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_PRUNINGCONFIG_AVAILABLESPACECHECKENABLED=<value>
+  NETHERMIND_PRUNINGCONFIG_AVAILABLESPACECHECKENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Pruning": {
-      "AvailableSpaceCheckEnabled": <value>
+      "AvailableSpaceCheckEnabled": true|false
     }
   }
   ```
@@ -4701,7 +5083,61 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The in-memory cache size, in MB. The bigger the cache size, the bigger the disk space savings. Defaults to `1024`.
+  The in-memory cache size, in MB. Bigger size tend to improve performance. Defaults to `1280`.
+
+- #### `Pruning.DirtyCacheMb` \{#pruning-dirtycachemb\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --pruning-dirtycachemb <value>
+  --Pruning.DirtyCacheMb <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_PRUNINGCONFIG_DIRTYCACHEMB=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Pruning": {
+      "DirtyCacheMb": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The in-memory cache size for dirty nodes, in MB. Increasing this reduces pruning interval but cause increased pruning time. Defaults to `1024`.
+
+- #### `Pruning.DirtyNodeShardBit` \{#pruning-dirtynodeshardbit\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --pruning-dirtynodeshardbit <value>
+  --Pruning.DirtyNodeShardBit <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_PRUNINGCONFIG_DIRTYNODESHARDBIT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Pruning": {
+      "DirtyNodeShardBit": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Dirty node shard count Defaults to `8`.
 
 - #### `Pruning.FullPruningCompletionBehavior` \{#pruning-fullpruningcompletionbehavior\}
 
@@ -4743,20 +5179,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --pruning-fullpruningdisablelowprioritywrites <value>
-  --Pruning.FullPruningDisableLowPriorityWrites <value>
+  --pruning-fullpruningdisablelowprioritywrites [true|false]
+  --Pruning.FullPruningDisableLowPriorityWrites [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_PRUNINGCONFIG_FULLPRUNINGDISABLELOWPRIORITYWRITES=<value>
+  NETHERMIND_PRUNINGCONFIG_FULLPRUNINGDISABLELOWPRIORITYWRITES=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Pruning": {
-      "FullPruningDisableLowPriorityWrites": <value>
+      "FullPruningDisableLowPriorityWrites": true|false
     }
   }
   ```
@@ -4791,15 +5227,15 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of parallel tasks that can be used by full pruning.
-
+  
   Allowed values:
-
+  
   - `-1`: Uses the number of logical processors.
   - `0`: Uses 25% of logical processors.
   - `1`: Runs on a single thread.
-
+  
   The recommended value depends on the type of the node:
-
+  
   - If the node needs to be responsive (serves for RPC or validator), then the recommended value is `0` or `-1`.
   - If the node doesn't have many other responsibilities but needs to be able to follow the chain reliably without any delays and produce live logs, the `0` or `1` is recommended.
   - If the node doesn't have to be responsive, has very fast I/O (like NVMe) and the shortest pruning time is to be achieved, then `-1` is recommended. Defaults to `0`.
@@ -4983,6 +5419,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The block persistence frequency. If set to `N`, it caches after each `Nth` block even if not required by cache memory usage. Defaults to `8192`.
 
+- #### `Pruning.PrunePersistedNodeMinimumTarget` \{#pruning-prunepersistednodeminimumtarget\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --pruning-prunepersistednodeminimumtarget <value>
+  --Pruning.PrunePersistedNodeMinimumTarget <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_PRUNINGCONFIG_PRUNEPERSISTEDNODEMINIMUMTARGET=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Pruning": {
+      "PrunePersistedNodeMinimumTarget": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Minimum persisted cache prune target Defaults to `50000000`.
+
+- #### `Pruning.PrunePersistedNodePortion` \{#pruning-prunepersistednodeportion\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --pruning-prunepersistednodeportion <value>
+  --Pruning.PrunePersistedNodePortion <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_PRUNINGCONFIG_PRUNEPERSISTEDNODEPORTION=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Pruning": {
+      "PrunePersistedNodePortion": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Portion of persisted node to be prune at a time Defaults to `0.05`.
+
 - #### `Pruning.PruningBoundary` \{#pruning-pruningboundary\}
 
   <Tabs groupId="usage">
@@ -5010,32 +5500,32 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The number of past states before the state gets pruned. Used to determine how old of a state to keep from the head. Defaults to `64`.
 
-- #### `Pruning.TrackedPastKeyCountMemoryRatio` \{#pruning-trackedpastkeycountmemoryratio\}
+- #### `Pruning.TrackPastKeys` \{#pruning-trackpastkeys\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --pruning-trackedpastkeycountmemoryratio <value>
-  --Pruning.TrackedPastKeyCountMemoryRatio <value>
+  --pruning-trackpastkeys [true|false]
+  --Pruning.TrackPastKeys [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_PRUNINGCONFIG_TRACKEDPASTKEYCOUNTMEMORYRATIO=<value>
+  NETHERMIND_PRUNINGCONFIG_TRACKPASTKEYS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Pruning": {
-      "TrackedPastKeyCountMemoryRatio": <value>
+      "TrackPastKeys": true|false
     }
   }
   ```
   </TabItem>
   </Tabs>
 
-  The ratio of memory out of `Pruning.CacheMb` to allocate for the LRU cache, used to track past keys for live pruning. Defaults to `0.1`.
+  Enable tracking of past key to reduce database and pruning cache growth Allowed values: `true` `false`. Defaults to `true`.
 
 
 ### Receipt
@@ -5045,20 +5535,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --receipt-compactreceiptstore <value>
-  --Receipt.CompactReceiptStore <value>
+  --receipt-compactreceiptstore [true|false]
+  --Receipt.CompactReceiptStore [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_RECEIPTCONFIG_COMPACTRECEIPTSTORE=<value>
+  NETHERMIND_RECEIPTCONFIG_COMPACTRECEIPTSTORE=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Receipt": {
-      "CompactReceiptStore": <value>
+      "CompactReceiptStore": true|false
     }
   }
   ```
@@ -5072,20 +5562,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --receipt-compacttxindex <value>
-  --Receipt.CompactTxIndex <value>
+  --receipt-compacttxindex [true|false]
+  --Receipt.CompactTxIndex [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_RECEIPTCONFIG_COMPACTTXINDEX=<value>
+  NETHERMIND_RECEIPTCONFIG_COMPACTTXINDEX=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Receipt": {
-      "CompactTxIndex": <value>
+      "CompactTxIndex": true|false
     }
   }
   ```
@@ -5099,20 +5589,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --receipt-receiptsmigration <value>
-  --Receipt.ReceiptsMigration <value>
+  --receipt-receiptsmigration [true|false]
+  --Receipt.ReceiptsMigration [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_RECEIPTCONFIG_RECEIPTSMIGRATION=<value>
+  NETHERMIND_RECEIPTCONFIG_RECEIPTSMIGRATION=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Receipt": {
-      "ReceiptsMigration": <value>
+      "ReceiptsMigration": true|false
     }
   }
   ```
@@ -5126,20 +5616,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --receipt-storereceipts <value>
-  --Receipt.StoreReceipts <value>
+  --receipt-storereceipts [true|false]
+  --Receipt.StoreReceipts [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_RECEIPTCONFIG_STORERECEIPTS=<value>
+  NETHERMIND_RECEIPTCONFIG_STORERECEIPTS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Receipt": {
-      "StoreReceipts": <value>
+      "StoreReceipts": true|false
     }
   }
   ```
@@ -5294,20 +5784,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --shutter-enabled <value>
-  --Shutter.Enabled <value>
+  --shutter-enabled [true|false]
+  --Shutter.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SHUTTERCONFIG_ENABLED=<value>
+  NETHERMIND_SHUTTERCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Shutter": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -5594,20 +6084,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --snapshot-enabled <value>
-  --Snapshot.Enabled <value>
+  --snapshot-enabled [true|false]
+  --Snapshot.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SNAPSHOTCONFIG_ENABLED=<value>
+  NETHERMIND_SNAPSHOTCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Snapshot": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
@@ -5699,7 +6189,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
   ```
@@ -5731,7 +6221,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
-
+  
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
   ```
@@ -5742,20 +6232,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-downloadbodiesinfastsync <value>
-  --Sync.DownloadBodiesInFastSync <value>
+  --sync-downloadbodiesinfastsync [true|false]
+  --Sync.DownloadBodiesInFastSync [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC=<value>
+  NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "DownloadBodiesInFastSync": <value>
+      "DownloadBodiesInFastSync": true|false
     }
   }
   ```
@@ -5769,20 +6259,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-downloadheadersinfastsync <value>
-  --Sync.DownloadHeadersInFastSync <value>
+  --sync-downloadheadersinfastsync [true|false]
+  --Sync.DownloadHeadersInFastSync [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_DOWNLOADHEADERSINFASTSYNC=<value>
+  NETHERMIND_SYNCCONFIG_DOWNLOADHEADERSINFASTSYNC=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "DownloadHeadersInFastSync": <value>
+      "DownloadHeadersInFastSync": true|false
     }
   }
   ```
@@ -5796,20 +6286,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-downloadreceiptsinfastsync <value>
-  --Sync.DownloadReceiptsInFastSync <value>
+  --sync-downloadreceiptsinfastsync [true|false]
+  --Sync.DownloadReceiptsInFastSync [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC=<value>
+  NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "DownloadReceiptsInFastSync": <value>
+      "DownloadReceiptsInFastSync": true|false
     }
   }
   ```
@@ -5823,20 +6313,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-exitonsynced <value>
-  --Sync.ExitOnSynced <value>
+  --sync-exitonsynced [true|false]
+  --Sync.ExitOnSynced [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_EXITONSYNCED=<value>
+  NETHERMIND_SYNCCONFIG_EXITONSYNCED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "ExitOnSynced": <value>
+      "ExitOnSynced": true|false
     }
   }
   ```
@@ -5877,20 +6367,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-fastsync <value>
-  --Sync.FastSync <value>
+  --sync-fastsync [true|false]
+  --Sync.FastSync [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_FASTSYNC=<value>
+  NETHERMIND_SYNCCONFIG_FASTSYNC=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "FastSync": <value>
+      "FastSync": true|false
     }
   }
   ```
@@ -5931,20 +6421,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-fixreceipts <value>
-  --Sync.FixReceipts <value>
+  --sync-fixreceipts [true|false]
+  --Sync.FixReceipts [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_FIXRECEIPTS=<value>
+  NETHERMIND_SYNCCONFIG_FIXRECEIPTS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "FixReceipts": <value>
+      "FixReceipts": true|false
     }
   }
   ```
@@ -5958,20 +6448,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-fixtotaldifficulty <value>
-  --Sync.FixTotalDifficulty <value>
+  --sync-fixtotaldifficulty [true|false]
+  --Sync.FixTotalDifficulty [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTY=<value>
+  NETHERMIND_SYNCCONFIG_FIXTOTALDIFFICULTY=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "FixTotalDifficulty": <value>
+      "FixTotalDifficulty": true|false
     }
   }
   ```
@@ -6094,20 +6584,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-networkingenabled <value>
-  --Sync.NetworkingEnabled <value>
+  --sync-networkingenabled [true|false]
+  --Sync.NetworkingEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_NETWORKINGENABLED=<value>
+  NETHERMIND_SYNCCONFIG_NETWORKINGENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "NetworkingEnabled": <value>
+      "NetworkingEnabled": true|false
     }
   }
   ```
@@ -6121,20 +6611,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-nonvalidatornode <value>
-  --Sync.NonValidatorNode <value>
+  --sync-nonvalidatornode [true|false]
+  --Sync.NonValidatorNode [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_NONVALIDATORNODE=<value>
+  NETHERMIND_SYNCCONFIG_NONVALIDATORNODE=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "NonValidatorNode": <value>
+      "NonValidatorNode": true|false
     }
   }
   ```
@@ -6229,20 +6719,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-snapsync <value>
-  --Sync.SnapSync <value>
+  --sync-snapsync [true|false]
+  --Sync.SnapSync [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_SNAPSYNC=<value>
+  NETHERMIND_SYNCCONFIG_SNAPSYNC=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "SnapSync": <value>
+      "SnapSync": true|false
     }
   }
   ```
@@ -6283,20 +6773,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-strictmode <value>
-  --Sync.StrictMode <value>
+  --sync-strictmode [true|false]
+  --Sync.StrictMode [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_STRICTMODE=<value>
+  NETHERMIND_SYNCCONFIG_STRICTMODE=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "StrictMode": <value>
+      "StrictMode": true|false
     }
   }
   ```
@@ -6310,20 +6800,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-synchronizationenabled <value>
-  --Sync.SynchronizationEnabled <value>
+  --sync-synchronizationenabled [true|false]
+  --Sync.SynchronizationEnabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_SYNCHRONIZATIONENABLED=<value>
+  NETHERMIND_SYNCCONFIG_SYNCHRONIZATIONENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "SynchronizationEnabled": <value>
+      "SynchronizationEnabled": true|false
     }
   }
   ```
@@ -6337,20 +6827,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --sync-usegethlimitsinfastblocks <value>
-  --Sync.UseGethLimitsInFastBlocks <value>
+  --sync-usegethlimitsinfastblocks [true|false]
+  --Sync.UseGethLimitsInFastBlocks [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS=<value>
+  NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Sync": {
-      "UseGethLimitsInFastBlocks": <value>
+      "UseGethLimitsInFastBlocks": true|false
     }
   }
   ```
@@ -6421,20 +6911,20 @@ The configuration options are case-sensitive and can be defined only once unless
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --tracestore-enabled <value>
-  --TraceStore.Enabled <value>
+  --tracestore-enabled [true|false]
+  --TraceStore.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_TRACESTORECONFIG_ENABLED=<value>
+  NETHERMIND_TRACESTORECONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "TraceStore": {
-      "Enabled": <value>
+      "Enabled": true|false
     }
   }
   ```
