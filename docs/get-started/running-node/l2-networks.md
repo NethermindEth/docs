@@ -7,13 +7,17 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 :::info Before you begin
+
 - Running a Layer 2 (L2) node requires access to a Layer (L1) node—either on-premises or an external RPC provider. If you also plan to [run an L1 node with Nethermind](running-node.md#ethereum), note that you will need two Nethermind instances—one for the L1 node and another for the L2 node.
 - If both the L1 and L2 nodes run on the same machine, ensure they use different ports and data directories.
+
 :::
 
 ## OP Stack
 
-An [Optimism node](https://docs.optimism.io/builders/node-operators/architecture) consists of two parts: a Rollup node, analogous to a consensus client in Ethereum paired with an L2 execution client. The official Rollup node is `op-node`, developed and mantained by the Optimism Collective.
+An [Optimism node](https://docs.optimism.io/builders/node-operators/architecture) consists of two parts: a Rollup node, analogous to a consensus client in Ethereum, paired with an L2 execution client. The official Rollup node is `op-node`, developed and maintained by the Optimism Collective. Alternatively, Nethermind is also bundled with its own Rollup node, developed and maintained by the Nethermind team.
+
+### Running Nethermind with `op-node`
 
 :::warning Important
 Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to `op-node`.
@@ -87,13 +91,11 @@ op-node \
 </TabItem>
 </Tabs>
 
-For available settings, see [op-node configuration options](https://docs.optimism.io/builders/node-operators/configuration/consensus-config).
+For available settings, see [`op-node` configuration options](https://docs.optimism.io/builders/node-operators/configuration/consensus-config).
 
-### Using the embedded Rollup node
+### Running Nethermind with the built-in Rollup node
 
-Instead of running a separate `op-node` instance, Nethermind also supports using a built-in Rollup node, developed as a plugin and mantained by the Nethermind team, simplyfing the setup process.
-
-Just like `op-node`, Nethermind will need to know about an L1 RPC node and a L1 Beacon node.
+Instead of running a separate `op-node` instance alongside Nethermind, it's enough to run only Nethermind with Rollup node enabled. That simplifies the setup and configuration, and just like the `op-node`, Nethermind will need to know about an L1 RPC and Beacon nodes.
 
 <Tabs groupId="network">
 <TabItem value="op-mainnet" label="OP Mainnet">
@@ -111,10 +113,10 @@ export L1_BEACON_URL=... # The URL of the L1 node Beacon interface
 nethermind \
   -c op-mainnet \
   --data-dir path/to/data/dir \
-  --Optimism.ClEnabled=true \
-  --Optimism.L1EthApiEndpoint $L1_RPC_URL \
-  --Optimism.L1BeaconApiEndpoint $L1_BEACON_URL \
-  --jsonrpc-jwtsecretfile path/to/jwt.hex
+  --jsonrpc-jwtsecretfile path/to/jwt.hex \
+  --optimism-clenabled \
+  --optimism-l1ethapiendpoint $L1_RPC_URL \
+  --optimism-l1beaconapiendpoint $L1_BEACON_URL
 ```
 
 </TabItem>
@@ -130,10 +132,10 @@ To run Nethermind on the OP Sepolia using the built-in Rollup node, use the foll
 nethermind \
   -c op-sepolia \
   --data-dir path/to/data/dir \
-  --Optimism.ClEnabled=true \
-  --Optimism.L1EthApiEndpoint $L1_RPC_URL \
-  --Optimism.L1BeaconApiEndpoint $L1_BEACON_URL \
-  --jsonrpc-jwtsecretfile path/to/jwt.hex
+  --jsonrpc-jwtsecretfile path/to/jwt.hex \
+  --optimism-clenabled \
+  --optimism-l1ethapiendpoint $L1_RPC_URL \
+  --optimism-l1beaconapiendpoint $L1_BEACON_URL
 ```
 
 </TabItem>
@@ -141,7 +143,7 @@ nethermind \
 
 **See also**
 
-- [Optimism configuration](/fundamentals/configuration.md#optimism)
+- [Optimism configuration](../../fundamentals/configuration.md#optimism)
 - [Run a node in the Superchain](https://docs.optimism.io/builders/node-operators/rollup-node)
 
 ## Taiko
