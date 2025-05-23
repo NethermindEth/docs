@@ -13,10 +13,10 @@ import TabItem from "@theme/TabItem";
 
 ## OP Stack
 
-An [Optimism node](https://docs.optimism.io/builders/node-operators/architecture) consists of two parts: op-node, a rollup node, analogous to a consensus client in Ethereum paired with an L2 execution client.
+An [Optimism node](https://docs.optimism.io/builders/node-operators/architecture) consists of two parts: a Rollup node, analogous to a consensus client in Ethereum paired with an L2 execution client. The official Rollup node is `op-node`, developed and mantained by the Optimism Collective.
 
 :::warning Important
-Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to op-node.
+Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to `op-node`.
 
 :::
 
@@ -36,7 +36,7 @@ nethermind \
   --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
-Below is a sample command to run op-node paired with Nethermind, assuming they both are running on the same machine:
+Below is a sample command to run `op-node` paired with Nethermind, assuming they both are running on the same machine:
 
 ```bash
 export L1_RPC_URL=... # The URL of the L1 node RPC interface
@@ -68,7 +68,7 @@ nethermind \
   --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
 
-Below is a sample command to run op-node paired with Nethermind, assuming they both are running on the same machine:
+Below is a sample command to run `op-node` paired with Nethermind, assuming they both are running on the same machine:
 
 ```bash
 export L1_RPC_URL=... # The URL of the L1 node RPC interface
@@ -89,8 +89,59 @@ op-node \
 
 For available settings, see [op-node configuration options](https://docs.optimism.io/builders/node-operators/configuration/consensus-config).
 
+### Using the embedded Rollup node
+
+Instead of running a separate `op-node` instance, Nethermind also supports using a built-in Rollup node, developed as a plugin and mantained by the Nethermind team, simplyfing the setup process.
+
+Just like `op-node`, Nethermind will need to know about an L1 RPC node and a L1 Beacon node.
+
+<Tabs groupId="network">
+<TabItem value="op-mainnet" label="OP Mainnet">
+
+:::info Note
+For OP Mainnet, the L1 node must be running on Ethereum Mainnet.
+:::
+
+To run Nethermind on the OP Mainnet using the built-in Rollup node, use the following command:
+
+```bash
+export L1_RPC_URL=... # The URL of the L1 node RPC interface
+export L1_BEACON_URL=... # The URL of the L1 node Beacon interface
+
+nethermind \
+  -c op-mainnet \
+  --data-dir path/to/data/dir \
+  --Optimism.ClEnabled=true \
+  --Optimism.L1EthApiEndpoint $L1_RPC_URL \
+  --Optimism.L1BeaconApiEndpoint $L1_BEACON_URL \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
+```
+
+</TabItem>
+<TabItem value="op-sepolia" label="OP Sepolia">
+
+:::info Note
+For OP Sepolia, the L1 node must be running on Sepolia.
+:::
+
+To run Nethermind on the OP Sepolia using the built-in Rollup node, use the following command:
+
+```bash
+nethermind \
+  -c op-sepolia \
+  --data-dir path/to/data/dir \
+  --Optimism.ClEnabled=true \
+  --Optimism.L1EthApiEndpoint $L1_RPC_URL \
+  --Optimism.L1BeaconApiEndpoint $L1_BEACON_URL \
+  --jsonrpc-jwtsecretfile path/to/jwt.hex
+```
+
+</TabItem>
+</Tabs>
+
 **See also**
 
+- [Optimism configuration](/fundamentals/configuration.md#optimism)
 - [Run a node in the Superchain](https://docs.optimism.io/builders/node-operators/rollup-node)
 
 ## Taiko
