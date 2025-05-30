@@ -12,8 +12,8 @@ git clone --recursive https://github.com/nethermindeth/nethermind.git
 
 There are two options buiding Nethermind from source code:
 
-* [Standalone binaries](#building-standalone-binaries)
-* [Docker image](#bulding-docker-image)
+- [Standalone binaries](#building-standalone-binaries)
+- [Docker image](#building-docker-image)
 
 ## Building standalone binaries
 

@@ -244,4 +244,4 @@ docker run -it \
 
 Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `--data-dir` option in this case. For further instructions, see [Running a node](running-node/running-node.md).
 
-To build the Docker image yourself, see [Building Docker image](../developers/building-from-source.md#bulding-docker-image).
+To build the Docker image yourself, see [Building Docker image](../developers/building-from-source.md#building-docker-image).

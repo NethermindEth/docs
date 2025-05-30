@@ -7,23 +7,23 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 Nethermind uses the [RocksDB](https://rocksdb.org) database to store the state. By default, the database is located in the
-same directory where the Nethermind executable is. You can change the database location using the [`-d, --baseDbPath`](configuration.md#basedbpath) command line option.
+same directory where the Nethermind executable is. You can change the database location using the [`-d, --baseDbPath`](configuration.md#db-dir) command line option.
 
 ## Database directory structure
 
-| Directory         | Description |
-| -                 | - |
-| blockInfos        | Information about blocks at each level of the block tree (canonical chain and branches) |
-| blocks            | Block bodies (block transactions and uncles) |
-| bloom             | Bloom indices for fast log searches |
-| canonicalHashTrie | LES protocol related data |
-| code              | Contract bytecodes |
+| Directory         | Description                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| blockInfos        | Information about blocks at each level of the block tree (canonical chain and branches)                                                  |
+| blocks            | Block bodies (block transactions and uncles)                                                                                             |
+| bloom             | Bloom indices for fast log searches                                                                                                      |
+| canonicalHashTrie | LES protocol related data                                                                                                                |
+| code              | Contract bytecodes                                                                                                                       |
 | discoveryNodes    | Peers discovered via discovery protocol - used for quick peering after restarts (you can copy this DB between nodes to speed up peering) |
-| headers           | Block headers only |
-| pendingTx         | The second level cache of pending transactions/mempool (the first level is in memory). Wiped out on each restart. |
-| peers             | Additional sync peers information (like peer reputation) - you can copy this DB between nodes to speed up peering on fresh sync |
-| receipts          | Transaction receipts |
-| state             | Blockchain state including accounts and contract storage (Patricia trie nodes) |
+| headers           | Block headers only                                                                                                                       |
+| pendingTx         | The second level cache of pending transactions/mempool (the first level is in memory). Wiped out on each restart.                        |
+| peers             | Additional sync peers information (like peer reputation) - you can copy this DB between nodes to speed up peering on fresh sync          |
+| receipts          | Transaction receipts                                                                                                                     |
+| state             | Blockchain state including accounts and contract storage (Patricia trie nodes)                                                           |
 
 You can use `rsync` between your nodes to clone the database (One of our users copied the entire 4.5TB archive state this
 way while the node was running and only stopped the node for the very last stage of `rsync` ). You can also copy
@@ -109,7 +109,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 11 GB
 - `headers`: 7.2 GB
 - `code`: 14 MB
-- `blobTransactions`: 
+- `blobTransactions`:
 - ...
 - **Total: 76 GB**
 
@@ -122,7 +122,7 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - `bloom`: 9.2 GB
 - `headers`: 7.0 GB
 - `code`: 96 MB
-- `blobTransactions`: 
+- `blobTransactions`:
 - ...
 - **Total: 95 GB**
 
@@ -152,13 +152,13 @@ fetched from a node running on a machine with the below specifications:
 - **Disk size**: 1.2 TB
 - **Disk IOPS**: 70,000 to 80,000
 
-| Metric | Resync | Pruning | Pruning and memory budget (4 GB) |
-| - | - | - | - |
-| **Execution time** | ~4h | ~24h | ~12h |
-| **Minimum free disk space** | N/A. You can execute resync even if there is 0 free space (avoid such a case). | 250 GB | 250 GB |
-| **Attestation rate drop** | 100%. No attestation rewards during that time or highly reduced. | 5–10% during that time | N/A |
-| **Average block processing time of new blocks during the process** | N/A. New blocks are processed after state but are significantly slower until old bodies/receipts are downloaded. Afterward, average about 0.35s. | 0.7s | 1.0s |
-| **Is the node online during the process?** | No, unless the state is synced. | Yes. The node follows the chain, and all modules are still enabled. | Yes. The node follows chain and all modules are still enabled. |
+| Metric                                                             | Resync                                                                                                                                           | Pruning                                                             | Pruning and memory budget (4 GB)                               |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **Execution time**                                                 | ~4h                                                                                                                                              | ~24h                                                                | ~12h                                                           |
+| **Minimum free disk space**                                        | N/A. You can execute resync even if there is 0 free space (avoid such a case).                                                                   | 250 GB                                                              | 250 GB                                                         |
+| **Attestation rate drop**                                          | 100%. No attestation rewards during that time or highly reduced.                                                                                 | 5–10% during that time                                              | N/A                                                            |
+| **Average block processing time of new blocks during the process** | N/A. New blocks are processed after state but are significantly slower until old bodies/receipts are downloaded. Afterward, average about 0.35s. | 0.7s                                                                | 1.0s                                                           |
+| **Is the node online during the process?**                         | No, unless the state is synced.                                                                                                                  | Yes. The node follows the chain, and all modules are still enabled. | Yes. The node follows chain and all modules are still enabled. |
 
 The command used for testing disk IOPS was as follows:
 

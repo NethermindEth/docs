@@ -49,7 +49,7 @@ The next step is to determine the trigger conditions for full pruning. Currently
 
 ### Manual
 
-Manual mode triggers full pruning only upon request, providing complete control. To configure this mode, set the the `Pruning.Mode` to `Hybrid` and the [`Pruning.FullPruningTrigger`](../fundamentals/configuration.md#pruning.fullpruningtrigger) to `Manual`.
+Manual mode triggers full pruning only upon request, providing complete control. To configure this mode, set the the `Pruning.Mode` to `Hybrid` and the [`Pruning.FullPruningTrigger`](../fundamentals/configuration.md#pruning-fullpruningtrigger) to `Manual`.
 
 Pruning can also be triggered using the [`admin_prune`](../interacting/json-rpc-ns/admin.md#admin_prune) JSON-RPC method. Here's how to configure it:
 
