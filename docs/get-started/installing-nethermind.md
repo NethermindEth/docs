@@ -99,35 +99,29 @@ Standalone downloads are available on [GitHub Releases](https://github.com/Nethe
 
 ### Configuring as a Linux service
 
-To install Nethermind as a Linux service, see the [nethermind.service](https://github.com/NethermindEth/nethermind/blob/master/scripts/nethermind.service) unit file as an example.
-As it's configured to run Nethermind as the specific user and group and looks for the executable in a predefined location, the following steps need to be fulfilled:
+Installing Nethermind as a Linux `systemd` service takes just a few simple steps:
 
-:::note
-Any of these steps can be omitted by replacing them with corresponding changes in the unit file.
-For instance, if you want to run Nethermind as a different user, change the `User` and `Group` options in the unit file.
-:::
-
-1. Create a new user and group:
+1. Create a separate user and group for Nethermind and configure them as follows:
 
    ```bash
-     # Create a new user and group
-     sudo useradd -m -s /bin/bash nethermind
+   # Create a new user and group
+   sudo useradd -m -s /bin/bash nethermind
 
-     # Increase the maximum number of open files
-     sudo bash -c 'echo "nethermind soft nofile 100000" > /etc/security/limits.d/nethermind.conf'
-     sudo bash -c 'echo "nethermind hard nofile 100000" >> /etc/security/limits.d/nethermind.conf'
+   # Increase the maximum number of open files
+   sudo bash -c 'echo "nethermind soft nofile 100000" > /etc/security/limits.d/nethermind.conf'
+   sudo bash -c 'echo "nethermind hard nofile 100000" >> /etc/security/limits.d/nethermind.conf'
 
-     # Switch to the nethermind user
-     sudo su -l nethermind
+   # Switch to the nethermind user
+   sudo su -l nethermind
 
-     # Create required directories
-     # Note that the home directory (~) is now /home/nethermind
-     mkdir ~/build
-     mkdir ~/data
+   # Create required directories
+   # Note that the home directory (~) is now /home/nethermind
+   mkdir ~/bin
+   mkdir ~/data
    ```
 
-2. [Download Nethermind](#standalone-downloads) and extract the package contents to the `~/build` directory.
-3. Configure options in the `~/.env` file:
+2. [Download Nethermind](#standalone-downloads) and extract the package contents to the `~/bin` directory created in the previous step.
+3. Configure Nethermind options in the `~/.env` file:
 
    ```bash title="~/.env"
    # Required
@@ -137,26 +131,46 @@ For instance, if you want to run Nethermind as a different user, change the `Use
    NETHERMIND_HEALTHCHECKSCONFIG_ENABLED="true"
    ```
 
-Now, let's set up the Linux service:
+   For available options, see [Configuration](../fundamentals/configuration.md).
 
-```bash
-# Download the unit file
-curl -L https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/nethermind.service -o nethermind.service
+4. Create the `~/nethermind.service` unit file:
 
-# Move the unit file to the systemd directory
-sudo mv nethermind.service /etc/systemd/system
+   ```ini title="~/nethermind.service"
+   [Unit]
+   Description=Nethermind node
+   Documentation=https://docs.nethermind.io
+   After=network.target
 
-# Reload the systemd daemon
-sudo systemctl daemon-reload
+   [Service]
+   User=nethermind
+   Group=nethermind
+   EnvironmentFile=/home/nethermind/.env
+   WorkingDirectory=/home/nethermind
+   ExecStart=/home/nethermind/bin/nethermind --data-dir /home/nethermind/data
+   Restart=on-failure
+   LimitNOFILE=1000000
 
-# Start the service
-sudo systemctl start nethermind
+   [Install]
+   WantedBy=default.target
+   ```
 
-# Optionally, enable the service to start on boot
-sudo systemctl enable nethermind
-```
+5. Finally, set up the Linux service:
 
-To ensure the service is up and running, check its status as follows:
+   ```bash
+   # Move the unit file to the systemd directory
+   sudo mv nethermind.service /etc/systemd/system
+
+   # Reload the systemd daemon
+   sudo systemctl daemon-reload
+
+   # Start the service
+   sudo systemctl start nethermind
+
+   # Optionally, enable the service to start on boot
+   sudo systemctl enable nethermind
+   ```
+
+Done! To ensure the service is up and running, check its status as follows:
 
 ```bash
 sudo systemctl status nethermind

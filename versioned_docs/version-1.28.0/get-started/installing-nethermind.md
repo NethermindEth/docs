@@ -109,7 +109,7 @@ Standalone downloads are available on [GitHub Releases](https://github.com/Nethe
 
 ### Configuring as a Linux service
 
-To install Nethermind as a Linux service, see the [nethermind.service](https://github.com/NethermindEth/nethermind/blob/master/scripts/nethermind.service) unit file as an example.
+To install Nethermind as a Linux service, see the [nethermind.service](https://github.com/NethermindEth/nethermind/blob/release/1.28.0/scripts/nethermind.service) unit file as an example.
 As it's configured to run Nethermind as the specific user and group and looks for the executable in a predefined location, the following steps need to be fulfilled:
 
 :::note
@@ -151,7 +151,7 @@ Now, let's set up the Linux service:
 
 ```bash
 # Download the unit file
-curl -L https://raw.githubusercontent.com/NethermindEth/nethermind/master/scripts/nethermind.service -o nethermind.service
+curl -L https://raw.githubusercontent.com/NethermindEth/nethermind/refs/heads/release/1.28.0/scripts/nethermind.service -o nethermind.service
 
 # Move the unit file to the systemd directory
 sudo mv nethermind.service /etc/systemd/system
