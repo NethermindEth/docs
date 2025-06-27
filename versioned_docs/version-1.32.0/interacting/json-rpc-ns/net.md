@@ -1,15 +1,13 @@
 ---
-title: txpool namespace
-sidebar_label: txpool
-sidebar_position: 10
+title: net namespace
+sidebar_label: net
+sidebar_position: 4
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-### txpool_content
-
-Returns tx pool content.
+### net_listening
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -21,7 +19,7 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "txpool_content",
+      "method": "net_listening",
       "params": []
     }'
 ```
@@ -37,30 +35,12 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `pending`: map of map of *object*
-map of *object*
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `gas`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `type`: *integer*
-  - `queued`: map of map of *object*
-map of *object*
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `gas`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `type`: *integer*
+`result`: *boolean*
 
 </TabItem>
 </Tabs>
 
-### txpool_inspect
-
-Returns a detailed info on tx pool transactions.
+### net_localAddress
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -72,7 +52,7 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "txpool_inspect",
+      "method": "net_localAddress",
       "params": []
     }'
 ```
@@ -88,16 +68,12 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `pending`: map of map of *string*
-  - `queued`: map of map of *string*
+`result`: *string* (address)
 
 </TabItem>
 </Tabs>
 
-### txpool_status
-
-Returns a tx pool status.
+### net_localEnode
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -109,7 +85,7 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "txpool_status",
+      "method": "net_localEnode",
       "params": []
     }'
 ```
@@ -125,9 +101,73 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `pending`: *string* (hex integer)
-  - `queued`: *string* (hex integer)
+`result`: *string*
+
+</TabItem>
+</Tabs>
+
+### net_peerCount
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_peerCount",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string* (hex integer)
+
+</TabItem>
+</Tabs>
+
+### net_version
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "net_version",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: *string*
 
 </TabItem>
 </Tabs>
