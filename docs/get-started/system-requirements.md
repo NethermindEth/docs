@@ -8,17 +8,17 @@ sidebar_position: 1
 Nethermind supports a broad range of modern operating systems (64-bit-only) including but not limited to:
 
 - **Linux**
-	- Alpine 3.19+
-	- CentOS Stream 9+
-	- Debian 12+
-	- Fedora 40+
-	- openSUSE 15+
-	- RHEL 8+
-	- SLES 15+
-	- Ubuntu 20.04+
+  - Alpine 3.19+
+  - CentOS Stream 9+
+  - Debian 12+
+  - Fedora 40+
+  - openSUSE 15+
+  - RHEL 8+
+  - SLES 15+
+  - Ubuntu 22.04+
 - **Windows**
-	- Windows 10+
-	- Windows Server 2012+
+  - Windows 10+
+  - Windows Server 2012+
 - **macOS** 13+
 
 ## Hardware requirements
@@ -26,12 +26,12 @@ Nethermind supports a broad range of modern operating systems (64-bit-only) incl
 Suggested requirements can be found below.
 
 | Network             | Memory | CPU cores |
-|---------------------|:------:|:---------:|
-| **Mainnet**         | 16 GB  | 4         |
-| **Mainnet archive** | 128 GB | 8         |
-| **Gnosis**          | 16 GB  | 2         |
-| **Energy Web**      | 8 GB   | 2         |
-| **Volta**           | 8 GB   | 2         |
+| ------------------- | :----: | :-------: |
+| **Mainnet**         | 16 GB  |     4     |
+| **Mainnet archive** | 128 GB |     8     |
+| **Gnosis**          | 16 GB  |     2     |
+| **Energy Web**      |  8 GB  |     2     |
+| **Volta**           |  8 GB  |     2     |
 
 ### Disk requirements
 
