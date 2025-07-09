@@ -14,7 +14,7 @@ This method drops a currently running proposal. The signer will not cast further
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `signer`: *string* (address)
+1. `signer`: _string_ (address)
 
 
 </TabItem>
@@ -43,7 +43,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -55,7 +55,7 @@ Retrieves the signer of the block with the given hash. Returns error of a block 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: _string_ (hash)
 
 
 </TabItem>
@@ -84,7 +84,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (address)
+`result`: _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -119,7 +119,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (address)
+`result`: array of _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -154,7 +154,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string*
+`result`: array of _string_
 
 </TabItem>
 </Tabs>
@@ -166,7 +166,7 @@ Retrieves the list of authorized signers at the specified block by hash.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: _string_ (hash)
 
 
 </TabItem>
@@ -195,7 +195,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (address)
+`result`: array of _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -207,7 +207,7 @@ Retrieves the list of authorized signers at the specified block by hash but with
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: _string_ (hash)
 
 
 </TabItem>
@@ -236,7 +236,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string*
+`result`: array of _string_
 
 </TabItem>
 </Tabs>
@@ -248,7 +248,7 @@ Retrieves the list of authorized signers at the specified block by block number.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `number`: *string* (hex integer)
+1. `number`: _string_ (hex integer)
 
 
 </TabItem>
@@ -277,7 +277,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (address)
+`result`: array of _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -289,7 +289,7 @@ Retrieves a snapshot of all clique state at a given block.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `number`: *string* (hex integer)
+1. `number`: _string_ (hex integer)
 
 
 </TabItem>
@@ -318,19 +318,19 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `hash`: *string* (hash)
-  - `number`: *string* (hex integer)
-  - `signerLimit`: *string* (hex integer)
-  - `signers`: map of *string* (hex integer)
-  - `tally`: map of *object*
-    - `authorize`: *boolean*
-    - `votes`: *string* (hex integer)
-  - `votes`: array of *object*
-    - `address`: *string* (address)
-    - `authorize`: *boolean*
-    - `block`: *string* (hex integer)
-    - `signer`: *string* (address)
+`result`: _object_
+  - `hash`: _string_ (hash)
+  - `number`: _string_ (hex integer)
+  - `signerLimit`: _string_ (hex integer)
+  - `signers`: map of _string_ (hex integer)
+  - `tally`: map of _object_
+    - `authorize`: _boolean_
+    - `votes`: _string_ (hex integer)
+  - `votes`: array of _object_
+    - `address`: _string_ (address)
+    - `authorize`: _boolean_
+    - `block`: _string_ (hex integer)
+    - `signer`: _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -342,7 +342,7 @@ Retrieves the state snapshot at a given block.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: _string_ (hash)
 
 
 </TabItem>
@@ -371,19 +371,19 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `hash`: *string* (hash)
-  - `number`: *string* (hex integer)
-  - `signerLimit`: *string* (hex integer)
-  - `signers`: map of *string* (hex integer)
-  - `tally`: map of *object*
-    - `authorize`: *boolean*
-    - `votes`: *string* (hex integer)
-  - `votes`: array of *object*
-    - `address`: *string* (address)
-    - `authorize`: *boolean*
-    - `block`: *string* (hex integer)
-    - `signer`: *string* (address)
+`result`: _object_
+  - `hash`: _string_ (hash)
+  - `number`: _string_ (hex integer)
+  - `signerLimit`: _string_ (hex integer)
+  - `signers`: map of _string_ (hex integer)
+  - `tally`: map of _object_
+    - `authorize`: _boolean_
+    - `votes`: _string_ (hex integer)
+  - `votes`: array of _object_
+    - `address`: _string_ (address)
+    - `authorize`: _boolean_
+    - `block`: _string_ (hex integer)
+    - `signer`: _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -395,7 +395,7 @@ Forces Clique block producer to produce a new block
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `parentHash`: *string* (hash)
+1. `parentHash`: _string_ (hash)
 
 
 </TabItem>
@@ -424,7 +424,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -459,7 +459,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *boolean*
+`result`: array of _boolean_
 
 </TabItem>
 </Tabs>
@@ -471,9 +471,9 @@ Adds a new authorization proposal that the signer will attempt to push through. 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `signer`: *string* (address)
+1. `signer`: _string_ (address)
 
-2. `vote`: *boolean*
+2. `vote`: _boolean_
 
 
 </TabItem>
@@ -502,7 +502,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>

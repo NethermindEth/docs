@@ -1,7 +1,7 @@
 ---
 title: proof namespace
 sidebar_label: proof
-sidebar_position: 7
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
@@ -14,9 +14,9 @@ This function returns the same result as `eth_getTransactionReceipt` and also a 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHash`: *string* (hash)
+1. `txHash`: _string_ (hash)
 
-2. `includeHeader`: *boolean*
+2. `includeHeader`: _boolean_
 
 
 </TabItem>
@@ -45,16 +45,16 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `blockHeader`: *string* (hex data)
-  - `transaction`: *object*
-    - `blockHash`: *string* (hash)
-    - `blockNumber`: *string* (hex integer)
-    - `gas`: *string* (hex integer)
-    - `hash`: *string* (hash)
-    - `transactionIndex`: *string* (hex integer)
-    - `type`: *integer*
-  - `txProof`: array of *string* (hex data)
+`result`: _object_
+  - `blockHeader`: _string_ (hex data)
+  - `transaction`: _object_
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `gas`: _string_ (hex integer)
+    - `hash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+    - `type`: _integer_
+  - `txProof`: array of _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -66,9 +66,9 @@ This function should return the same result as `eth_call` and also proofs of all
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `txHash`: *string* (hash)
+1. `txHash`: _string_ (hash)
 
-2. `includeHeader`: *boolean*
+2. `includeHeader`: _boolean_
 
 
 </TabItem>
@@ -97,38 +97,38 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `blockHeader`: *string* (hex data)
-  - `receipt`: *object*
-    - `blobGasPrice`: *string* (hex integer)
-    - `blobGasUsed`: *string* (hex integer)
-    - `blockHash`: *string* (hash)
-    - `blockNumber`: *string* (hex integer)
-    - `contractAddress`: *string* (address)
-    - `cumulativeGasUsed`: *string* (hex integer)
-    - `effectiveGasPrice`: *string* (hex integer)
-    - `error`: *string*
-    - `from`: *string* (address)
-    - `gasUsed`: *string* (hex integer)
-    - `logs`: array of *object*
-      - `address`: *string* (address)
-      - `blockHash`: *string* (hash)
-      - `blockNumber`: *string* (hex integer)
-      - `data`: *string* (hex data)
-      - `logIndex`: *string* (hex integer)
-      - `removed`: *boolean*
-      - `topics`: array of *string* (hash)
-      - `transactionHash`: *string* (hash)
-      - `transactionIndex`: *string* (hex integer)
-    - `logsBloom`: *string* (hex data)
-    - `root`: *string* (hash)
-    - `status`: *string* (hex integer)
-    - `to`: *string* (address)
-    - `transactionHash`: *string* (hash)
-    - `transactionIndex`: *string* (hex integer)
-    - `type`: *integer*
-  - `receiptProof`: array of *string* (hex data)
-  - `txProof`: array of *string* (hex data)
+`result`: _object_
+  - `blockHeader`: _string_ (hex data)
+  - `receipt`: _object_
+    - `blobGasPrice`: _string_ (hex integer)
+    - `blobGasUsed`: _string_ (hex integer)
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `contractAddress`: _string_ (address)
+    - `cumulativeGasUsed`: _string_ (hex integer)
+    - `effectiveGasPrice`: _string_ (hex integer)
+    - `error`: _string_
+    - `from`: _string_ (address)
+    - `gasUsed`: _string_ (hex integer)
+    - `logs`: array of _object_
+      - `address`: _string_ (address)
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `data`: _string_ (hex data)
+      - `logIndex`: _string_ (hex integer)
+      - `removed`: _boolean_
+      - `topics`: array of _string_ (hash)
+      - `transactionHash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+    - `logsBloom`: _string_ (hex data)
+    - `root`: _string_ (hash)
+    - `status`: _string_ (hex integer)
+    - `to`: _string_ (address)
+    - `transactionHash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+    - `type`: _integer_
+  - `receiptProof`: array of _string_ (hex data)
+  - `txProof`: array of _string_ (hex data)
 
 </TabItem>
 </Tabs>

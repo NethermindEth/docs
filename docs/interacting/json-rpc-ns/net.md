@@ -1,7 +1,7 @@
 ---
 title: net namespace
 sidebar_label: net
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 import Tabs from "@theme/Tabs";
@@ -35,7 +35,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -68,7 +68,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (address)
+`result`: _string_ (address)
 
 </TabItem>
 </Tabs>
@@ -101,7 +101,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -134,7 +134,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex integer)
+`result`: _string_ (hex integer)
 
 </TabItem>
 </Tabs>
@@ -167,7 +167,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
