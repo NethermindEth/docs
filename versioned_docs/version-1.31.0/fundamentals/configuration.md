@@ -36,7 +36,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   <details>
   <summary>Available configurations</summary>
-  <p>
 
   Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`.
 
@@ -58,7 +57,6 @@ The configuration options are case-sensitive and can be defined only once unless
   - `worldchain-mainnet` `worldchain-mainnet_archive`
   - `worldchain-sepolia` `worldchain-sepolia_archive`
 
-  </p>
   </details>
 
   Alternatively, the configuration file can also be set by the `NETHERMIND_CONFIG` environment variable.
@@ -258,7 +256,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The address of the transaction priority contract to use when selecting transactions from the transaction pool. Defaults to `null`.
-
 
 ### Blocks
 
@@ -478,7 +475,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The block gas limit that the block producer should try to reach in the fastest possible way based on the protocol rules. If not specified, then the block producer should follow others. Defaults to `null`.
 
-
 ### Bloom
 
 - #### `Bloom.Index` \{#bloom-index\}
@@ -589,7 +585,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether the migration statistics should be calculated and output. Allowed values: `true` `false`. Defaults to `false`.
 
-
 ### CensorshipDetector
 
 - #### `CensorshipDetector.AddressesForCensorshipDetection` \{#censorshipdetector-addressesforcensorshipdetection\}
@@ -672,7 +667,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
-
 
 ### CL
 
@@ -811,9 +805,7 @@ The configuration options are case-sensitive and can be defined only once unless
 
   CL p2p communication host Defaults to `3030`.
 
-
 ### Clique
-
 
 ### Era
 
@@ -951,7 +943,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Accumulator file to be used for trusting era files. Defaults to `null`.
-
 
 ### EthStats
 
@@ -1116,7 +1107,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The Ethstats server URL. Defaults to `ws://localhost:3000/api`.
-
 
 ### HealthChecks
 
@@ -1468,7 +1458,6 @@ The configuration options are case-sensitive and can be defined only once unless
   }
   ```
 
-
 - #### `HealthChecks.WebhooksRestorePayload` \{#healthchecks-webhooksrestorepayload\}
 
   <Tabs groupId="usage">
@@ -1520,7 +1509,6 @@ The configuration options are case-sensitive and can be defined only once unless
   }
   ```
 
-
 - #### `HealthChecks.WebhooksUri` \{#healthchecks-webhooksuri\}
 
   <Tabs groupId="usage">
@@ -1547,7 +1535,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The web hook URL. Defaults to `null`.
-
 
 ### Hive
 
@@ -1686,7 +1673,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The path to the keystore directory. Defaults to `/keys`.
 
-
 ### Init
 
 - #### `Init.AutoDump` \{#init-autodump\}
@@ -1718,14 +1704,14 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`: None.
-    - `Receipts`: Dumps block receipts traces.
-    - `Parity`: Dumps Parity-like traces.
-    - `Geth`: Dumps Geth-like traces.
-    - `Rlp`: Dumps RLP data to a `.rlp` file with the block hash in the file name.
-    - `RlpLog`: Dumps RLP data to the log output.
-    - `Default`: Combines the `Receipts` `Rlp` options.
-    - `All`: Combines the `Geth` `Parity` `Receipts` `Rlp` options.
+  - `None`: None.
+  - `Receipts`: Dumps block receipts traces.
+  - `Parity`: Dumps Parity-like traces.
+  - `Geth`: Dumps Geth-like traces.
+  - `Rlp`: Dumps RLP data to a `.rlp` file with the block hash in the file name.
+  - `RlpLog`: Dumps RLP data to the log output.
+  - `Default`: Combines the `Receipts` `Rlp` options.
+  - `All`: Combines the `Geth` `Parity` `Receipts` `Rlp` options.
 
   Defaults to `Default`.
 
@@ -1839,13 +1825,13 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`: None.
-    - `MemDb`: Uses an in-memory DB.
-    - `RpcDb`: Uses a remote DB.
-    - `ReadOnlyDb`: Uses a read-only DB.
-    - `VerifyRewards`: Scans rewards for blocks and genesis.
-    - `VerifySupply`: Scans and sums supply on all accounts.
-    - `VerifyTrie`: Verifies if full state trie is stored.
+  - `None`: None.
+  - `MemDb`: Uses an in-memory DB.
+  - `RpcDb`: Uses a remote DB.
+  - `ReadOnlyDb`: Uses a read-only DB.
+  - `VerifyRewards`: Scans rewards for blocks and genesis.
+  - `VerifySupply`: Scans and sums supply on all accounts.
+  - `VerifyTrie`: Verifies if full state trie is stored.
 
   Defaults to `None`.
 
@@ -2254,7 +2240,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to enable WebSocket service for the default JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
 
-
 ### JsonRpc
 
 - #### `JsonRpc.AdditionalRpcUrls` \{#jsonrpc-additionalrpcurls\}
@@ -2418,9 +2403,9 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
-  
+
   Built-in namespaces:
-  
+
   - `admin`
   - `client`
   - `debug`
@@ -2437,7 +2422,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `trace`
   - `txpool`
   - `web3`
-  
+
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - #### `JsonRpc.EngineEnabledModules` \{#jsonrpc-engineenabledmodules\}
@@ -2574,7 +2559,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of concurrent instances for non-sharable calls:
-  
+
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2582,7 +2567,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-  
+
   This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
 
 - #### `JsonRpc.GasCap` \{#jsonrpc-gascap\}
@@ -2962,7 +2947,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of concurrent requests in the queue for:
-  
+
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -2970,7 +2955,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `eth_newBlockFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-  
+
   `0` to lift the limit. Defaults to `500`.
 
 - #### `JsonRpc.RpcRecorderBaseFilePath` \{#jsonrpc-rpcrecorderbasefilepath\}
@@ -3029,10 +3014,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`: None.
-    - `Request`: Records requests.
-    - `Response`: Records responses.
-    - `All`: Records both requests and responses.
+  - `None`: None.
+  - `Request`: Records requests.
+  - `Response`: Records responses.
+  - `All`: Records both requests and responses.
 
   Defaults to `None`.
 
@@ -3089,7 +3074,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The JSON-RPC service WebSockets port. Defaults to `8545`.
-
 
 ### KeyStore
 
@@ -3606,7 +3590,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   An array of accounts to unlock on startup using passwords either in `PasswordFiles` and `Passwords`. Defaults to `[]`.
 
-
 ### Merge
 
 - #### `Merge.BuilderRelayUrl` \{#merge-builderrelayurl\}
@@ -3662,13 +3645,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of requests to the garbage collector (GC) to release the process memory.
-  
+
   Allowed values:
-  
+
   - `-1`: No requests.
   - `0`: Requests every time.
   - A positive number: Requests after that many Engine API calls.
-  
+
   Defaults to `25`.
 
 - #### `Merge.CompactMemory` \{#merge-compactmemory\}
@@ -3700,9 +3683,9 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `No`: Disables memory compaction.
-    - `Yes`: Enables memory compaction.
-    - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
+  - `No`: Disables memory compaction.
+  - `Yes`: Enables memory compaction.
+  - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
   Defaults to `Yes`.
 
@@ -3816,10 +3799,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `NoGC`: Disables garbage collection.
-    - `Gen0`: Enables garbage collection of generation 0.
-    - `Gen1`: Enables garbage collection of generation 1.
-    - `Gen2`: Enables garbage collection of generation 2.
+  - `NoGC`: Disables garbage collection.
+  - `Gen0`: Enables garbage collection of generation 0.
+  - `Gen1`: Enables garbage collection of generation 1.
+  - `Gen2`: Enables garbage collection of generation 2.
 
   Defaults to `Gen1`.
 
@@ -3903,7 +3886,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The terminal total difficulty (TTD) used for the transition. Defaults to `null`.
-
 
 ### Metrics
 
@@ -4177,7 +4159,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The Prometheus Pushgateway instance URL.
 
-
 ### Mining
 
 - #### `Mining.Enabled` \{#mining-enabled\}
@@ -4233,7 +4214,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The URL of an external signer like [Clef](https://github.com/ethereum/go-ethereum/blob/master/cmd/clef/tutorial.md). Defaults to `null`.
-
 
 ### Network
 
@@ -4615,7 +4595,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   A list of peers to keep connection for. Static peers are affected by `MaxActivePeers`. Defaults to `null`.
 
-
 ### Optimism
 
 - #### `Optimism.SequencerUrl` \{#optimism-sequencerurl\}
@@ -4644,7 +4623,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The sequencer address. Defaults to `null`.
-
 
 ### Pruning
 
@@ -4731,9 +4709,9 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`: No action.
-    - `ShutdownOnSuccess`: Shuts Nethermind down when pruning succeeds but leaves it running when fails.
-    - `AlwaysShutdown`: Shuts Nethermind down when pruning completes, regardless of its status.
+  - `None`: No action.
+  - `ShutdownOnSuccess`: Shuts Nethermind down when pruning succeeds but leaves it running when fails.
+  - `AlwaysShutdown`: Shuts Nethermind down when pruning completes, regardless of its status.
 
   Defaults to `None`.
 
@@ -4790,15 +4768,15 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The max number of parallel tasks that can be used by full pruning.
-  
+
   Allowed values:
-  
+
   - `-1`: Uses the number of logical processors.
   - `0`: Uses 25% of logical processors.
   - `1`: Runs on a single thread.
-  
+
   The recommended value depends on the type of the node:
-  
+
   - If the node needs to be responsive (serves for RPC or validator), then the recommended value is `0` or `-1`.
   - If the node doesn't have many other responsibilities but needs to be able to follow the chain reliably without any delays and produce live logs, the `0` or `1` is recommended.
   - If the node doesn't have to be responsive, has very fast I/O (like NVMe) and the shortest pruning time is to be achieved, then `-1` is recommended. Defaults to `0`.
@@ -4913,9 +4891,9 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `Manual`: Does not trigger. Pruning can be triggered manually.
-    - `StateDbSize`: Triggers when the state DB size is above the specified threshold.
-    - `VolumeFreeSpace`: Triggers when the free disk space where the state DB is stored is below the specified threshold.
+  - `Manual`: Does not trigger. Pruning can be triggered manually.
+  - `StateDbSize`: Triggers when the state DB size is above the specified threshold.
+  - `VolumeFreeSpace`: Triggers when the free disk space where the state DB is stored is below the specified threshold.
 
   Defaults to `Manual`.
 
@@ -4948,10 +4926,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`: No pruning (archive).
-    - `Memory`: In-memory pruning.
-    - `Full`: Full pruning.
-    - `Hybrid`: Combined in-memory and full pruning.
+  - `None`: No pruning (archive).
+  - `Memory`: In-memory pruning.
+  - `Full`: Full pruning.
+  - `Hybrid`: Combined in-memory and full pruning.
 
   Defaults to `Hybrid`.
 
@@ -5035,7 +5013,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The ratio of memory out of `Pruning.CacheMb` to allocate for the LRU cache, used to track past keys for live pruning. Defaults to `0.1`.
-
 
 ### Receipt
 
@@ -5174,7 +5151,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The number of recent blocks to maintain transaction index for. `0` to never remove indices, `-1` to never index. Defaults to `2350000`.
 
-
 ### Seq
 
 - #### `Seq.ApiKey` \{#seq-apikey\}
@@ -5257,7 +5233,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The Seq instance URL. Defaults to `http://localhost:5341`.
-
 
 ### Shutter
 
@@ -5531,7 +5506,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The address of the Shutter validator registry contract. Defaults to `null`.
 
-
 ### Snapshot
 
 - #### `Snapshot.Checksum` \{#snapshot-checksum\}
@@ -5669,7 +5643,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The name of the snapshot file. Defaults to `snapshot.zip`.
 
-
 ### Sync
 
 - #### `Sync.AncientBodiesBarrier` \{#sync-ancientbodiesbarrier\}
@@ -5698,10 +5671,11 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
-  
+
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
   ```
+
   Defaults to `0`.
 
 - #### `Sync.AncientReceiptsBarrier` \{#sync-ancientreceiptsbarrier\}
@@ -5730,10 +5704,11 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
-  
+
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
   ```
+
   Defaults to `0`.
 
 - #### `Sync.DownloadBodiesInFastSync` \{#sync-downloadbodiesinfastsync\}
@@ -6356,8 +6331,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's  a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
-
+  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
 
 ### TraceStore
 
@@ -6471,15 +6445,14 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `None`: None.
-    - `VmTrace`: Provides a full trace of the EVM state throughout the execution of transactions at each op-code, including subcalls.
-    - `StateDiff`: Provides Ethereum state difference detailing all altered portions of the state made due to the execution of transactions.
-    - `Trace`: Provides transaction trace, including subcalls.
-    - `Rewards`: Includes block rewards in the trace when tracing full blocks.
-    - `All`: Combines the `Rewards` `StateDiff` `Trace` `VmTrace` options.
+  - `None`: None.
+  - `VmTrace`: Provides a full trace of the EVM state throughout the execution of transactions at each op-code, including subcalls.
+  - `StateDiff`: Provides Ethereum state difference detailing all altered portions of the state made due to the execution of transactions.
+  - `Trace`: Provides transaction trace, including subcalls.
+  - `Rewards`: Includes block rewards in the trace when tracing full blocks.
+  - `All`: Combines the `Rewards` `StateDiff` `Trace` `VmTrace` options.
 
   Defaults to `Trace, Rewards`.
-
 
 ### TxPool
 
@@ -6508,7 +6481,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max number of full blob transactions cached in memory. The default value uses max 200MB for 6 blobs where one blob is 33MB (256 * 128KB) Defaults to `256`.
+  The max number of full blob transactions cached in memory. The default value uses max 200MB for 6 blobs where one blob is 33MB (256 \* 128KB) Defaults to `256`.
 
 - #### `TxPool.BlobsSupport` \{#txpool-blobssupport\}
 
@@ -6539,10 +6512,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Allowed values:
 
-    - `Disabled`: Disables support for blob transactions.
-    - `InMemory`: Stores the blob transactions in memory only.
-    - `Storage`: Stores the blob transactions in the permanent storage.
-    - `StorageWithReorgs`: Stores the blob transactions in the permanent storage with support for restoring reorganized transactions to the blob pool.
+  - `Disabled`: Disables support for blob transactions.
+  - `InMemory`: Stores the blob transactions in memory only.
+  - `Storage`: Stores the blob transactions in the permanent storage.
+  - `StorageWithReorgs`: Stores the blob transactions in the permanent storage with support for restoring reorganized transactions to the blob pool.
 
   Defaults to `StorageWithReorgs`.
 
@@ -6814,7 +6787,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max number of full blob transactions stored in the database (increasing the number of transactions in the blob pool also results in higher memory usage). The default value uses max 13GB for 6 blobs where one blob is 2GB (16386 * 128KB). Defaults to `16384`.
+  The max number of full blob transactions stored in the database (increasing the number of transactions in the blob pool also results in higher memory usage). The default value uses max 13GB for 6 blobs where one blob is 2GB (16386 \* 128KB). Defaults to `16384`.
 
 - #### `TxPool.ReportMinutes` \{#txpool-reportminutes\}
 
@@ -6870,7 +6843,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The max number of transactions held in the mempool (the more transactions in the mempool, the more memory used). Defaults to `2048`.
 
-
 ### Wallet
 
 - #### `Wallet.DevAccounts` \{#wallet-devaccounts\}
@@ -6899,7 +6871,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of autogenerated developer accounts to work with. Developer accounts have private keys from `00...01` to `00...n`. Defaults to `10`.
-
 
 <!--[end autogen]-->
 

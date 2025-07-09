@@ -40,7 +40,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   <details>
   <summary>Available configurations</summary>
-  <p>
 
   Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`.
 
@@ -56,7 +55,6 @@ The command line options are case-sensitive and can be defined only once unless 
   - `sepolia` `sepolia_archive`
   - `volta` `volta_archive`
 
-  </p>
   </details>
 
 - **`-cd, --configsDirectory <path>`**
@@ -101,7 +99,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Aura
 
 </summary>
-<p>
 
 - **`--Aura.AllowAuRaPrivateChains <value>`** `NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS`
 
@@ -123,7 +120,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The address of the transaction priority contract to use when selecting transactions from the transaction pool. Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -132,7 +128,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Blocks
 
 </summary>
-<p>
 
 - **`--Blocks.ExtraData <value>`** `NETHERMIND_BLOCKSCONFIG_EXTRADATA`
 
@@ -158,7 +153,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The block gas limit that the block producer should try to reach in the fastest possible way based on the protocol rules. If not specified, then the block producer should follow others. Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -167,7 +161,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Bloom
 
 </summary>
-<p>
 
 - **`--Bloom.Index <value>`** `NETHERMIND_BLOOMCONFIG_INDEX`
 
@@ -185,7 +178,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Whether the migration statistics should be calculated and output. Allowed values: `true` `false`. Defaults to `false`.
 
-</p>
 </details>
 
 <details>
@@ -194,7 +186,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### EthStats
 
 </summary>
-<p>
 
 - **`--EthStats.Contact <value>`** `NETHERMIND_ETHSTATSCONFIG_CONTACT`
 
@@ -220,7 +211,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The Ethstats server URL. Defaults to `ws://localhost:3000/api`.
 
-</p>
 </details>
 
 <details>
@@ -229,7 +219,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### HealthChecks
 
 </summary>
-<p>
 
 - **`--HealthChecks.Enabled <value>`** `NETHERMIND_HEALTHCHECKSCONFIG_ENABLED`
 
@@ -303,7 +292,6 @@ The command line options are case-sensitive and can be defined only once unless 
   }
   ```
 
-
 - **`--HealthChecks.WebhooksRestorePayload <value>`** `NETHERMIND_HEALTHCHECKSCONFIG_WEBHOOKSRESTOREPAYLOAD`
 
   An escaped JSON paylod to be sent to the web hook on recovery.
@@ -332,12 +320,10 @@ The command line options are case-sensitive and can be defined only once unless 
   }
   ```
 
-
 - **`--HealthChecks.WebhooksUri <value>`** `NETHERMIND_HEALTHCHECKSCONFIG_WEBHOOKSURI`
 
   The web hook URL. Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -346,7 +332,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Hive
 
 </summary>
-<p>
 
 - **`--Hive.BlocksDir <value>`** `NETHERMIND_HIVECONFIG_BLOCKSDIR`
 
@@ -368,7 +353,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The path to the keystore directory. Defaults to `/keys`.
 
-</p>
 </details>
 
 <details>
@@ -377,7 +361,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Init
 
 </summary>
-<p>
 
 - **`--Init.AutoDump <value>`** `NETHERMIND_INITCONFIG_AUTODUMP`
 
@@ -385,14 +368,14 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `None`
-    - `Receipts`
-    - `Parity`
-    - `Geth`
-    - `Rlp`
-    - `RlpLog`
-    - `Default`
-    - `All`
+  - `None`
+  - `Receipts`
+  - `Parity`
+  - `Geth`
+  - `Rlp`
+  - `RlpLog`
+  - `Default`
+  - `All`
 
   Defaults to `Default`.
 
@@ -414,13 +397,13 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `None`
-    - `MemDb`
-    - `RpcDb`
-    - `ReadOnlyDb`
-    - `VerifyRewards`
-    - `VerifySupply`
-    - `VerifyTrie`
+  - `None`
+  - `MemDb`
+  - `RpcDb`
+  - `ReadOnlyDb`
+  - `VerifyRewards`
+  - `VerifySupply`
+  - `VerifyTrie`
 
   Defaults to `None`.
 
@@ -488,7 +471,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Whether to enable WebSocket service for the default JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
 
-</p>
 </details>
 
 <details>
@@ -497,7 +479,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### JsonRpc
 
 </summary>
-<p>
 
 - **`--JsonRpc.AdditionalRpcUrls <value>`** `NETHERMIND_JSONRPCCONFIG_ADDITIONALRPCURLS`
 
@@ -518,9 +499,9 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--JsonRpc.EnabledModules <value>`** `NETHERMIND_JSONRPCCONFIG_ENABLEDMODULES`
 
   An array of JSON-RPC namespaces to enable. For instance, `[debug,eth]`.
-  
+
   Built-in namespaces:
-  
+
   - `admin`
   - `client`
   - `debug`
@@ -537,7 +518,7 @@ The command line options are case-sensitive and can be defined only once unless 
   - `trace`
   - `txpool`
   - `web3`
-  
+
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc]`.
 
 - **`--JsonRpc.EngineEnabledModules <value>`** `NETHERMIND_JSONRPCCONFIG_ENGINEENABLEDMODULES`
@@ -559,7 +540,7 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--JsonRpc.EthModuleConcurrentInstances <value>`** `NETHERMIND_JSONRPCCONFIG_ETHMODULECONCURRENTINSTANCES`
 
   The number of concurrent instances for non-sharable calls:
-  
+
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -567,7 +548,7 @@ The command line options are case-sensitive and can be defined only once unless 
   - `eth_newFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-  
+
   This limits the load on the CPU and I/O to reasonable levels. If the limit is exceeded, HTTP 503 is returned along with the JSON-RPC error. Defaults to the number of logical processors.
 
 - **`--JsonRpc.GasCap <value>`** `NETHERMIND_JSONRPCCONFIG_GASCAP`
@@ -625,7 +606,7 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--JsonRpc.RequestQueueLimit <value>`** `NETHERMIND_JSONRPCCONFIG_REQUESTQUEUELIMIT`
 
   The max number of concurrent requests in the queue for:
-  
+
   - `eth_call`
   - `eth_estimateGas`
   - `eth_getLogs`
@@ -633,7 +614,7 @@ The command line options are case-sensitive and can be defined only once unless 
   - `eth_newBlockFilter`
   - `eth_newPendingTransactionFilter`
   - `eth_uninstallFilter`
-  
+
   `0` to lift the limit. Defaults to `500`.
 
 - **`--JsonRpc.RpcRecorderBaseFilePath <value>`** `NETHERMIND_JSONRPCCONFIG_RPCRECORDERBASEFILEPATH`
@@ -646,10 +627,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `None`
-    - `Request`
-    - `Response`
-    - `All`
+  - `None`
+  - `Request`
+  - `Response`
+  - `All`
 
   Defaults to `None`.
 
@@ -661,7 +642,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The JSON-RPC service WebSockets port. Defaults to `8545`.
 
-</p>
 </details>
 
 <details>
@@ -670,7 +650,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### KeyStore
 
 </summary>
-<p>
 
 - **`--KeyStore.BlockAuthorAccount <value>`** `NETHERMIND_KEYSTORECONFIG_BLOCKAUTHORACCOUNT`
 
@@ -748,7 +727,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   An array of accounts to unlock on startup using passwords either in `PasswordFiles` and `Passwords`. Defaults to `[]`.
 
-</p>
 </details>
 
 <details>
@@ -757,7 +735,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Merge
 
 </summary>
-<p>
 
 - **`--Merge.BuilderRelayUrl <value>`** `NETHERMIND_MERGECONFIG_BUILDERRELAYURL`
 
@@ -766,13 +743,13 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Merge.CollectionsPerDecommit <value>`** `NETHERMIND_MERGECONFIG_COLLECTIONSPERDECOMMIT`
 
   Request the garbage collector (GC) to release the process memory.
-  
+
   Allowed values:
-  
+
   - `-1` to disable
   - `0` to release every time
   - A positive number to release memory after that many Engine API calls
-  
+
   Defaults to `25`.
 
 - **`--Merge.CompactMemory <value>`** `NETHERMIND_MERGECONFIG_COMPACTMEMORY`
@@ -781,9 +758,9 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `No`
-    - `Yes`
-    - `Full`
+  - `No`
+  - `Yes`
+  - `Full`
 
   Defaults to `Yes`.
 
@@ -805,10 +782,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `NoGC`
-    - `Gen0`
-    - `Gen1`
-    - `Gen2`
+  - `NoGC`
+  - `Gen0`
+  - `Gen1`
+  - `Gen2`
 
   Defaults to `Gen1`.
 
@@ -824,7 +801,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The terminal total difficulty (TTD) used for the transition. Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -833,7 +809,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Metrics
 
 </summary>
-<p>
 
 - **`--Metrics.CountersEnabled <value>`** `NETHERMIND_METRICSCONFIG_COUNTERSENABLED`
 
@@ -867,7 +842,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The Prometheus Pushgateway instance URL.
 
-</p>
 </details>
 
 <details>
@@ -876,7 +850,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Mining
 
 </summary>
-<p>
 
 - **`--Mining.Enabled <value>`** `NETHERMIND_MININGCONFIG_ENABLED`
 
@@ -886,7 +859,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Url for an external signer like clef: https://github.com/ethereum/go-ethereum/blob/master/cmd/clef/tutorial.md Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -895,7 +867,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Network
 
 </summary>
-<p>
 
 - **`--Network.Bootnodes <value>`** `NETHERMIND_NETWORKCONFIG_BOOTNODES`
 
@@ -953,7 +924,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   A list of peers to keep connection for. Static peers are affected by `MaxActivePeers`. Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -962,13 +932,11 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Optimism
 
 </summary>
-<p>
 
 - **`--Optimism.SequencerUrl <value>`** `NETHERMIND_OPTIMISMCONFIG_SEQUENCERURL`
 
   Sequencer address Defaults to `null`.
 
-</p>
 </details>
 
 <details>
@@ -977,7 +945,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Pruning
 
 </summary>
-<p>
 
 - **`--Pruning.AvailableSpaceCheckEnabled <value>`** `NETHERMIND_PRUNINGCONFIG_AVAILABLESPACECHECKENABLED`
 
@@ -990,16 +957,16 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Pruning.FullPruningCompletionBehavior <value>`** `NETHERMIND_PRUNINGCONFIG_FULLPRUNINGCOMPLETIONBEHAVIOR`
 
   The behavior after pruning completion:
-  
+
   - `None`: Do nothing.
   - `ShutdownOnSuccess`: Shut Nethermind down if pruning has succeeded but leave it running if failed.
   - `AlwaysShutdown`: Shut Nethermind down when pruning completes, regardless of its status.
 
   Allowed values:
 
-    - `None`
-    - `ShutdownOnSuccess`
-    - `AlwaysShutdown`
+  - `None`
+  - `ShutdownOnSuccess`
+  - `AlwaysShutdown`
 
   Defaults to `None`.
 
@@ -1010,15 +977,15 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Pruning.FullPruningMaxDegreeOfParallelism <value>`** `NETHERMIND_PRUNINGCONFIG_FULLPRUNINGMAXDEGREEOFPARALLELISM`
 
   The max number of parallel tasks that can be used by full pruning:
-  
+
   Allowed values:
-  
+
   - `-1` to use the number of logical processors
   - `0` to use 25% of logical processors
   - `1` to run on single thread
-  
+
   The recommended value depends on the type of the node:
-  
+
   - If the node needs to be responsive (serves for RPC or validator), then the recommended value is `0` or `-1`.
   - If the node doesn't have many other responsibilities but needs to be able to follow the chain reliably without any delays and produce live logs, the `0` or `1` is recommended.
   - If the node doesn't have to be responsive, has very fast I/O (like NVMe) and the shortest pruning time is to be achieved, then `-1` is recommended. Defaults to `0`.
@@ -1038,23 +1005,23 @@ The command line options are case-sensitive and can be defined only once unless 
 - **`--Pruning.FullPruningTrigger <value>`** `NETHERMIND_PRUNINGCONFIG_FULLPRUNINGTRIGGER`
 
   The full pruning trigger:
-  
+
   - `Manual`: Triggered manually.
   - `StateDbSize`: Trigger when the state DB size is above the threshold.
   - `VolumeFreeSpace`: Trigger when the free disk space where the state DB is stored is below the threshold.
 
   Allowed values:
 
-    - `Manual`
-    - `StateDbSize`
-    - `VolumeFreeSpace`
+  - `Manual`
+  - `StateDbSize`
+  - `VolumeFreeSpace`
 
   Defaults to `Manual`.
 
 - **`--Pruning.Mode <value>`** `NETHERMIND_PRUNINGCONFIG_MODE`
 
   The pruning mode:
-  
+
   - `None`: No pruning (full archive)
   - `Memory`: In-memory pruning
   - `Full`: Full pruning
@@ -1062,10 +1029,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `None`
-    - `Memory`
-    - `Full`
-    - `Hybrid`
+  - `None`
+  - `Memory`
+  - `Full`
+  - `Hybrid`
 
   Defaults to `Hybrid`.
 
@@ -1081,7 +1048,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   [TECHNICAL] Ratio of memory out of CacheMb to allocate for LRU used to track past keys for live pruning. Defaults to `0.1`.
 
-</p>
 </details>
 
 <details>
@@ -1090,7 +1056,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Receipt
 
 </summary>
-<p>
 
 - **`--Receipt.CompactReceiptStore <value>`** `NETHERMIND_RECEIPTCONFIG_COMPACTRECEIPTSTORE`
 
@@ -1112,7 +1077,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The number of recent blocks to maintain transaction index for. `0` to never remove indices, `-1` to never index. Defaults to `2350000`.
 
-</p>
 </details>
 
 <details>
@@ -1121,7 +1085,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Seq
 
 </summary>
-<p>
 
 - **`--Seq.ApiKey <value>`** `NETHERMIND_SEQCONFIG_APIKEY`
 
@@ -1135,7 +1098,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The Seq instance URL. Defaults to `http://localhost:5341`.
 
-</p>
 </details>
 
 <details>
@@ -1144,7 +1106,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Snapshot
 
 </summary>
-<p>
 
 - **`--Snapshot.Checksum <value>`** `NETHERMIND_SNAPSHOTCONFIG_CHECKSUM`
 
@@ -1166,7 +1127,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The name of the snapshot file. Defaults to `snapshot.zip`.
 
-</p>
 </details>
 
 <details>
@@ -1175,24 +1135,25 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Sync
 
 </summary>
-<p>
 
 - **`--Sync.AncientBodiesBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTBODIESBARRIER`
 
   The earliest body downloaded with fast sync when `DownloadBodiesInFastSync` is set to `true`. The actual value is determined as follows:
-  
+
   ```
   max{ 1, min{ PivotNumber, AncientBodiesBarrier } }
   ```
+
   Defaults to `0`.
 
 - **`--Sync.AncientReceiptsBarrier <value>`** `NETHERMIND_SYNCCONFIG_ANCIENTRECEIPTSBARRIER`
 
   The earliest receipt downloaded with fast sync when `DownloadReceiptsInFastSync` is set to `true`. The actual value is determined as follows:
-  
+
   ```
   max{ 1, min{ PivotNumber, max{ AncientBodiesBarrier, AncientReceiptsBarrier } } }
   ```
+
   Defaults to `0`.
 
 - **`--Sync.BlocksDbTuneDbMode <value>`** `NETHERMIND_SYNCCONFIG_BLOCKSDBTUNEDBMODE`
@@ -1201,13 +1162,13 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `Default`
-    - `WriteBias`
-    - `HeavyWrite`
-    - `AggressiveHeavyWrite`
-    - `DisableCompaction`
-    - `EnableBlobFiles`
-    - `HashDb`
+  - `Default`
+  - `WriteBias`
+  - `HeavyWrite`
+  - `AggressiveHeavyWrite`
+  - `DisableCompaction`
+  - `EnableBlobFiles`
+  - `HashDb`
 
   Defaults to `EnableBlobFiles`.
 
@@ -1306,21 +1267,20 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `Default`
-    - `WriteBias`
-    - `HeavyWrite`
-    - `AggressiveHeavyWrite`
-    - `DisableCompaction`
-    - `EnableBlobFiles`
-    - `HashDb`
+  - `Default`
+  - `WriteBias`
+  - `HeavyWrite`
+  - `AggressiveHeavyWrite`
+  - `DisableCompaction`
+  - `EnableBlobFiles`
+  - `HashDb`
 
   Defaults to `HeavyWrite`.
 
 - **`--Sync.UseGethLimitsInFastBlocks <value>`** `NETHERMIND_SYNCCONFIG_USEGETHLIMITSINFASTBLOCKS`
 
-  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's  a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
+  Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
 
-</p>
 </details>
 
 <details>
@@ -1329,7 +1289,6 @@ The command line options are case-sensitive and can be defined only once unless 
 #### TraceStore
 
 </summary>
-<p>
 
 - **`--TraceStore.BlocksToKeep <value>`** `NETHERMIND_TRACESTORECONFIG_BLOCKSTOKEEP`
 
@@ -1349,16 +1308,15 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `None`
-    - `VmTrace`
-    - `StateDiff`
-    - `Trace`
-    - `Rewards`
-    - `All`
+  - `None`
+  - `VmTrace`
+  - `StateDiff`
+  - `Trace`
+  - `Rewards`
+  - `All`
 
   Defaults to `Trace, Rewards`.
 
-</p>
 </details>
 
 <details>
@@ -1367,16 +1325,15 @@ The command line options are case-sensitive and can be defined only once unless 
 #### TxPool
 
 </summary>
-<p>
 
 - **`--TxPool.BlobCacheSize <value>`** `NETHERMIND_TXPOOLCONFIG_BLOBCACHESIZE`
 
-  The max number of full blob transactions cached in memory. The default value uses max 200MB for 6 blobs where one blob is 33MB (256 * 128KB) Defaults to `256`.
+  The max number of full blob transactions cached in memory. The default value uses max 200MB for 6 blobs where one blob is 33MB (256 \* 128KB) Defaults to `256`.
 
 - **`--TxPool.BlobsSupport <value>`** `NETHERMIND_TXPOOLCONFIG_BLOBSSUPPORT`
 
   Blobs support mode:
-  
+
   - `Disabled`: No support for blob transactions
   - `InMemory`: Blob transactions stored only in memory
   - `Storage`: Blob transactions stored in db
@@ -1384,10 +1341,10 @@ The command line options are case-sensitive and can be defined only once unless 
 
   Allowed values:
 
-    - `Disabled`
-    - `InMemory`
-    - `Storage`
-    - `StorageWithReorgs`
+  - `Disabled`
+  - `InMemory`
+  - `Storage`
+  - `StorageWithReorgs`
 
   Defaults to `StorageWithReorgs`.
 
@@ -1421,7 +1378,7 @@ The command line options are case-sensitive and can be defined only once unless 
 
 - **`--TxPool.PersistentBlobStorageSize <value>`** `NETHERMIND_TXPOOLCONFIG_PERSISTENTBLOBSTORAGESIZE`
 
-  The max number of full blob transactions stored in the database (increasing the number of transactions in the blob pool also results in higher memory usage). The default value uses max 13GB for 6 blobs where one blob is 2GB (16386 * 128KB). Defaults to `16384`.
+  The max number of full blob transactions stored in the database (increasing the number of transactions in the blob pool also results in higher memory usage). The default value uses max 13GB for 6 blobs where one blob is 2GB (16386 \* 128KB). Defaults to `16384`.
 
 - **`--TxPool.ReportMinutes <value>`** `NETHERMIND_TXPOOLCONFIG_REPORTMINUTES`
 
@@ -1431,7 +1388,6 @@ The command line options are case-sensitive and can be defined only once unless 
 
   The max number of transactions held in the mempool (the more transactions in the mempool, the more memory used). Defaults to `2048`.
 
-</p>
 </details>
 
 <details>
@@ -1440,13 +1396,11 @@ The command line options are case-sensitive and can be defined only once unless 
 #### Wallet
 
 </summary>
-<p>
 
 - **`--Wallet.DevAccounts <value>`** `NETHERMIND_WALLETCONFIG_DEVACCOUNTS`
 
   The number of autogenerated developer accounts to work with. Developer accounts have private keys from `00...01` to `00...n`. Defaults to `10`.
 
-</p>
 </details>
 
 <!--[end autogen]-->
@@ -1458,6 +1412,7 @@ To configure Nethermind using environment variables, the following naming conven
 ```text
 NETHERMIND_{NAMESPACE}CONFIG_{PROPERTY_NAME}
 ```
+
 For instance, the environment variable equivalent of the command line `--JsonRpc.JwtSecretFile` option is `NETHERMIND_JSONRPCCONFIG_JWTSECRETFILE`. For the list of configuration namespaces and their options, see [Options by namespaces](#options-by-namespaces).
 
 ## Configuration file

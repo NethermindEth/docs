@@ -256,7 +256,7 @@ You may want to check out the following before moving on:
 
 - [Attach to process with Visual Studio](https://learn.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger)
 - [Attach to process with JetBrains Rider](https://www.jetbrains.com/help/rider/attach-to-process.html)
-:::
+  :::
 
 Before attaching the debugger to the Nethermind process, we need to ensure Nethermind will pick up our plugin. There are two ways:
 
@@ -305,7 +305,6 @@ Last, let's configure build dependencies so that launching `Nethermind.Runner` a
 
 <details>
 <summary>IDE-agnostic workaround</summary>
-<p>
 
 If your IDE doesn't provide project dependency configuration, you can achieve that functionality by referencing the `DemoPlugin` project from the `Nethermind.Runner` project. Run the following from `src/Nethermind`:
 
@@ -327,7 +326,6 @@ Then, in the `Nethermind.Runner.csproj`, find the reference to `DemoPlugin` and 
 
 Thus, the `DemoPlugin` won't be included in the output of `Nethermind.Runner`. This is important to avoid dependency conflicts.
 
-</p>
 </details>
 
 #### Launching the debugger \{#debug-codebase-launch\}

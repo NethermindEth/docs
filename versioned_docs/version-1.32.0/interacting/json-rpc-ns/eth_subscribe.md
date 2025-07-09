@@ -9,13 +9,13 @@ This method is enabled by adding `subscribe` to [`JsonRpc.EnabledModules`](../..
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `subscriptionName`: *string*
+1. `subscriptionName`: _string_
 
-2. `filter`: *object*
-    - `address`: *string* (address)
-    - `fromBlock`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-    - `toBlock`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-    - `topics`: array of *string* (hex data)
+2. `filter`: _object_
+   - `address`: _string_ (address)
+   - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+   - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+   - `topics`: array of _string_ (hex data)
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -44,11 +44,10 @@ wscat -c localhost:8545
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 <TabItem value="notif" label="Notification">
-
 
 ```json
 {
@@ -74,46 +73,45 @@ See specific subcription topic below for `payload` details.
 ##### newHeads
 
 </summary>
-<p>
 
 Subscribes to incoming block headers. Fires a notification each time a new header is appended to the chain, including chain reorganizations.
 
-Notification `payload`: *object*
-  - `author`: *string* (address)
-  - `baseFeePerGas`: *string* (hex integer)
-  - `blobGasUsed`: *string* (hex integer)
-  - `difficulty`: *string* (hex integer)
-  - `excessBlobGas`: *string* (hex integer)
-  - `extraData`: *string* (hex data)
-  - `gasLimit`: *string* (hex integer)
-  - `gasUsed`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `logsBloom`: *string* (hex data)
-  - `miner`: *string* (address)
-  - `mixHash`: *string* (hash)
-  - `nonce`: *string* (hex data)
-  - `number`: *string* (hex integer)
-  - `parentBeaconBlockRoot`: *string* (hash)
-  - `parentHash`: *string* (hash)
-  - `receiptsRoot`: *string* (hash)
-  - `sha3Uncles`: *string* (hash)
-  - `signature`: *string* (hex data)
-  - `size`: *string* (hex integer)
-  - `stateRoot`: *string* (hash)
-  - `step`: *string* (hex integer)
-  - `timestamp`: *string* (hex integer)
-  - `totalDifficulty`: *string* (hex integer)
-  - `transactions`: array of *object*
-  - `transactionsRoot`: *string* (hash)
-  - `uncles`: array of *string* (hash)
-  - `withdrawals`: array of *object*
-    - `address`: *string* (address)
-    - `amount`: *string* (hex integer)
-    - `index`: *string* (hex integer)
-    - `validatorIndex`: *string* (hex integer)
-  - `withdrawalsRoot`: *string* (hash)
+Notification `payload`: _object_
 
-</p>
+- `author`: _string_ (address)
+- `baseFeePerGas`: _string_ (hex integer)
+- `blobGasUsed`: _string_ (hex integer)
+- `difficulty`: _string_ (hex integer)
+- `excessBlobGas`: _string_ (hex integer)
+- `extraData`: _string_ (hex data)
+- `gasLimit`: _string_ (hex integer)
+- `gasUsed`: _string_ (hex integer)
+- `hash`: _string_ (hash)
+- `logsBloom`: _string_ (hex data)
+- `miner`: _string_ (address)
+- `mixHash`: _string_ (hash)
+- `nonce`: _string_ (hex data)
+- `number`: _string_ (hex integer)
+- `parentBeaconBlockRoot`: _string_ (hash)
+- `parentHash`: _string_ (hash)
+- `receiptsRoot`: _string_ (hash)
+- `sha3Uncles`: _string_ (hash)
+- `signature`: _string_ (hex data)
+- `size`: _string_ (hex integer)
+- `stateRoot`: _string_ (hash)
+- `step`: _string_ (hex integer)
+- `timestamp`: _string_ (hex integer)
+- `totalDifficulty`: _string_ (hex integer)
+- `transactions`: array of _object_
+- `transactionsRoot`: _string_ (hash)
+- `uncles`: array of _string_ (hash)
+- `withdrawals`: array of _object_
+  - `address`: _string_ (address)
+  - `amount`: _string_ (hex integer)
+  - `index`: _string_ (hex integer)
+  - `validatorIndex`: _string_ (hex integer)
+- `withdrawalsRoot`: _string_ (hash)
+
 </details>
 
 <details>
@@ -122,23 +120,22 @@ Notification `payload`: *object*
 ##### logs
 
 </summary>
-<p>
 
 Subscribes to incoming logs filtered by the given options. In case of a chain reorganization, previously sent logs on the old chain will be re-sent with the `removed` field set to `true`.
 
-Notification `payload`: *object*
-  - `address`: *string* (address)
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `data`: *string* (hex data)
-  - `logIndex`: *string* (hex integer)
-  - `removed`: *boolean*
-  - `topics`: array of *string* (hash)
-  - `transactionHash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `transactionLogIndex`: *string* (hex integer)
+Notification `payload`: _object_
 
-</p>
+- `address`: _string_ (address)
+- `blockHash`: _string_ (hash)
+- `blockNumber`: _string_ (hex integer)
+- `data`: _string_ (hex data)
+- `logIndex`: _string_ (hex integer)
+- `removed`: _boolean_
+- `topics`: array of _string_ (hash)
+- `transactionHash`: _string_ (hash)
+- `transactionIndex`: _string_ (hex integer)
+- `transactionLogIndex`: _string_ (hex integer)
+
 </details>
 
 <details>
@@ -147,13 +144,11 @@ Notification `payload`: *object*
 ##### newPendingTransactions
 
 </summary>
-<p>
 
 Subscribes to incoming pending transactions. Returns the transaction hash.
 
-Notification `payload`: *string* (hash)
+Notification `payload`: _string_ (hash)
 
-</p>
 </details>
 
 <details>
@@ -162,13 +157,11 @@ Notification `payload`: *string* (hash)
 ##### droppedPendingTransactions
 
 </summary>
-<p>
 
 Subscribes to transactions evicted from the transaction pool. Returns the transaction hash.
 
-Notification `payload`: *string* (hash)
+Notification `payload`: _string_ (hash)
 
-</p>
 </details>
 
 <details>
@@ -177,18 +170,16 @@ Notification `payload`: *string* (hash)
 ##### syncing
 
 </summary>
-<p>
 
 Subscribes to syncing events. Returns `false` (once) if the node is synced or an object with statistics (once) when the node starts syncing.
 
 Notification `payload`:
 
-  - if synced: *boolean*
-  - if syncing: *object*
-      - `currentBlock`: *string* (hex integer)
-      - `highestBlock`: *string* (hex integer)
-      - `isSyncing`: *boolean*
-      - `startingBlock`: *string* (hex integer)
+- if synced: _boolean_
+- if syncing: _object_
+  - `currentBlock`: _string_ (hex integer)
+  - `highestBlock`: _string_ (hex integer)
+  - `isSyncing`: _boolean_
+  - `startingBlock`: _string_ (hex integer)
 
-</p>
 </details>
