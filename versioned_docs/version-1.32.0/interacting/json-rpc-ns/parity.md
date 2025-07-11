@@ -1,7 +1,7 @@
 ---
 title: parity namespace
 sidebar_label: parity
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 import Tabs from "@theme/Tabs";
@@ -35,7 +35,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -70,7 +70,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -82,7 +82,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -111,34 +111,34 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `blobGasPrice`: *string* (hex integer)
-  - `blobGasUsed`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `contractAddress`: *string* (address)
-  - `cumulativeGasUsed`: *string* (hex integer)
-  - `effectiveGasPrice`: *string* (hex integer)
-  - `error`: *string*
-  - `from`: *string* (address)
-  - `gasUsed`: *string* (hex integer)
-  - `logs`: array of *object*
-    - `address`: *string* (address)
-    - `blockHash`: *string* (hash)
-    - `blockNumber`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `logIndex`: *string* (hex integer)
-    - `removed`: *boolean*
-    - `topics`: array of *string* (hash)
-    - `transactionHash`: *string* (hash)
-    - `transactionIndex`: *string* (hex integer)
-  - `logsBloom`: *string* (hex data)
-  - `root`: *string* (hash)
-  - `status`: *string* (hex integer)
-  - `to`: *string* (address)
-  - `transactionHash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `type`: *integer*
+`result`: array of _object_
+  - `blobGasPrice`: _string_ (hex integer)
+  - `blobGasUsed`: _string_ (hex integer)
+  - `blockHash`: _string_ (hash)
+  - `blockNumber`: _string_ (hex integer)
+  - `contractAddress`: _string_ (address)
+  - `cumulativeGasUsed`: _string_ (hex integer)
+  - `effectiveGasPrice`: _string_ (hex integer)
+  - `error`: _string_
+  - `from`: _string_ (address)
+  - `gasUsed`: _string_ (hex integer)
+  - `logs`: array of _object_
+    - `address`: _string_ (address)
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `data`: _string_ (hex data)
+    - `logIndex`: _string_ (hex integer)
+    - `removed`: _boolean_
+    - `topics`: array of _string_ (hash)
+    - `transactionHash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+  - `logsBloom`: _string_ (hex data)
+  - `root`: _string_ (hash)
+  - `status`: _string_ (hex integer)
+  - `to`: _string_ (address)
+  - `transactionHash`: _string_ (hash)
+  - `transactionIndex`: _string_ (hex integer)
+  - `type`: _integer_
 
 </TabItem>
 </Tabs>
@@ -173,21 +173,21 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `active`: *string* (hex integer)
-  - `connected`: *string* (hex integer)
-  - `max`: *string* (hex integer)
-  - `peers`: array of *object*
-    - `caps`: array of *string*
-    - `id`: *string*
-    - `name`: *string*
-    - `network`: *object*
-      - `localAddress`: *string*
-      - `remoteAddress`: *string*
-    - `protocols`: map of *object*
-      - `difficulty`: *string* (hex integer)
-      - `headHash`: *string* (hash)
-      - `version`: *string* (hex data)
+`result`: _object_
+  - `active`: _string_ (hex integer)
+  - `connected`: _string_ (hex integer)
+  - `max`: _string_ (hex integer)
+  - `peers`: array of _object_
+    - `caps`: array of _string_
+    - `id`: _string_
+    - `name`: _string_
+    - `network`: _object_
+      - `localAddress`: _string_
+      - `remoteAddress`: _string_
+    - `protocols`: map of _object_
+      - `difficulty`: _string_ (hex integer)
+      - `headHash`: _string_ (hash)
+      - `version`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -199,7 +199,7 @@ Returns a list of transactions currently in the queue. If address is provided, r
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `address`: *string* (address)
+1. `address`: _string_ (address)
 
 
 </TabItem>
@@ -228,43 +228,43 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `chainId`: *string* (hex integer)
-  - `condition`: *object*
-  - `creates`: *string* (address)
-  - `from`: *string* (address)
-  - `gas`: *string* (hex integer)
-  - `gasPrice`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `input`: *string* (hex data)
-  - `nonce`: *string* (hex integer)
-  - `publicKey`: *object*
-    - `address`: *string* (address)
-    - `bytes`: *string* (hex data)
-    - `hash`: *string* (hash)
-    - `prefixedBytes`: *string* (hex data)
-  - `r`: *object*
-    - `isEmpty`: *boolean*
-    - `length`: *string* (hex integer)
-    - `span`: *object*
-      - `isEmpty`: *boolean*
-      - `item`: *object*
-      - `length`: *string* (hex integer)
-  - `raw`: *string* (hex data)
-  - `s`: *object*
-    - `isEmpty`: *boolean*
-    - `length`: *string* (hex integer)
-    - `span`: *object*
-      - `isEmpty`: *boolean*
-      - `item`: *object*
-      - `length`: *string* (hex integer)
-  - `standardV`: *string* (hex integer)
-  - `to`: *string* (address)
-  - `transactionIndex`: *string* (hex integer)
-  - `v`: *string* (hex integer)
-  - `value`: *string* (hex integer)
+`result`: array of _object_
+  - `blockHash`: _string_ (hash)
+  - `blockNumber`: _string_ (hex integer)
+  - `chainId`: _string_ (hex integer)
+  - `condition`: _object_
+  - `creates`: _string_ (address)
+  - `from`: _string_ (address)
+  - `gas`: _string_ (hex integer)
+  - `gasPrice`: _string_ (hex integer)
+  - `hash`: _string_ (hash)
+  - `input`: _string_ (hex data)
+  - `nonce`: _string_ (hex integer)
+  - `publicKey`: _object_
+    - `address`: _string_ (address)
+    - `bytes`: _string_ (hex data)
+    - `hash`: _string_ (hash)
+    - `prefixedBytes`: _string_ (hex data)
+  - `r`: _object_
+    - `isEmpty`: _boolean_
+    - `length`: _string_ (hex integer)
+    - `span`: _object_
+      - `isEmpty`: _boolean_
+      - `item`: _object_
+      - `length`: _string_ (hex integer)
+  - `raw`: _string_ (hex data)
+  - `s`: _object_
+    - `isEmpty`: _boolean_
+    - `length`: _string_ (hex integer)
+    - `span`: _object_
+      - `isEmpty`: _boolean_
+      - `item`: _object_
+      - `length`: _string_ (hex integer)
+  - `standardV`: _string_ (hex integer)
+  - `to`: _string_ (address)
+  - `transactionIndex`: _string_ (hex integer)
+  - `v`: _string_ (hex integer)
+  - `value`: _string_ (hex integer)
 
 </TabItem>
 </Tabs>
@@ -274,9 +274,9 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `address`: *string* (address)
+1. `address`: _string_ (address)
 
-2. `password`: *string*
+2. `password`: _string_
 
 
 </TabItem>
@@ -305,7 +305,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -315,7 +315,7 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `privateKey`: *string*
+1. `privateKey`: _string_
 
 
 </TabItem>
@@ -344,7 +344,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>

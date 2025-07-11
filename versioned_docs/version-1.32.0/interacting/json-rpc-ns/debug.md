@@ -14,9 +14,9 @@ Deletes a slice of a chain from the tree on all branches (Nethermind specific).
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `startNumber`: *string* (hex integer)
+1. `startNumber`: _string_ (hex integer)
 
-2. `force`: *boolean*
+2. `force`: _boolean_
 
 
 </TabItem>
@@ -45,7 +45,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex integer)
+`result`: _string_ (hex integer)
 
 </TabItem>
 </Tabs>
@@ -80,45 +80,45 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `block`: *object*
-    - `author`: *string* (address)
-    - `baseFeePerGas`: *string* (hex integer)
-    - `blobGasUsed`: *string* (hex integer)
-    - `difficulty`: *string* (hex integer)
-    - `excessBlobGas`: *string* (hex integer)
-    - `extraData`: *string* (hex data)
-    - `gasLimit`: *string* (hex integer)
-    - `gasUsed`: *string* (hex integer)
-    - `hash`: *string* (hash)
-    - `logsBloom`: *string* (hex data)
-    - `miner`: *string* (address)
-    - `mixHash`: *string* (hash)
-    - `nonce`: *string* (hex data)
-    - `number`: *string* (hex integer)
-    - `parentBeaconBlockRoot`: *string* (hash)
-    - `parentHash`: *string* (hash)
-    - `receiptsRoot`: *string* (hash)
-    - `requestsHash`: *string* (hash)
-    - `sha3Uncles`: *string* (hash)
-    - `signature`: *string* (hex data)
-    - `size`: *string* (hex integer)
-    - `stateRoot`: *string* (hash)
-    - `step`: *string* (hex integer)
-    - `timestamp`: *string* (hex integer)
-    - `totalDifficulty`: *string* (hex integer)
-    - `transactions`: array of *object*
-    - `transactionsRoot`: *string* (hash)
-    - `uncles`: array of *string* (hash)
-    - `withdrawals`: array of *object*
-      - `address`: *string* (address)
-      - `amountInGwei`: *string* (hex integer)
-      - `amountInWei`: *string* (hex integer)
-      - `index`: *string* (hex integer)
-      - `validatorIndex`: *string* (hex integer)
-    - `withdrawalsRoot`: *string* (hash)
-  - `hash`: *string* (hash)
-  - `rlp`: *string* (hex data)
+`result`: array of _object_
+  - `block`: _object_
+    - `author`: _string_ (address)
+    - `baseFeePerGas`: _string_ (hex integer)
+    - `blobGasUsed`: _string_ (hex integer)
+    - `difficulty`: _string_ (hex integer)
+    - `excessBlobGas`: _string_ (hex integer)
+    - `extraData`: _string_ (hex data)
+    - `gasLimit`: _string_ (hex integer)
+    - `gasUsed`: _string_ (hex integer)
+    - `hash`: _string_ (hash)
+    - `logsBloom`: _string_ (hex data)
+    - `miner`: _string_ (address)
+    - `mixHash`: _string_ (hash)
+    - `nonce`: _string_ (hex data)
+    - `number`: _string_ (hex integer)
+    - `parentBeaconBlockRoot`: _string_ (hash)
+    - `parentHash`: _string_ (hash)
+    - `receiptsRoot`: _string_ (hash)
+    - `requestsHash`: _string_ (hash)
+    - `sha3Uncles`: _string_ (hash)
+    - `signature`: _string_ (hex data)
+    - `size`: _string_ (hex integer)
+    - `stateRoot`: _string_ (hash)
+    - `step`: _string_ (hex integer)
+    - `timestamp`: _string_ (hex integer)
+    - `totalDifficulty`: _string_ (hex integer)
+    - `transactions`: array of _object_
+    - `transactionsRoot`: _string_ (hash)
+    - `uncles`: array of _string_ (hash)
+    - `withdrawals`: array of _object_
+      - `address`: _string_ (address)
+      - `amountInGwei`: _string_ (hex integer)
+      - `amountInWei`: _string_ (hex integer)
+      - `index`: _string_ (hex integer)
+      - `validatorIndex`: _string_ (hex integer)
+    - `withdrawalsRoot`: _string_ (hash)
+  - `hash`: _string_ (hash)
+  - `rlp`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -130,7 +130,7 @@ Retrieves a block in the RLP-serialized form.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `number`: *string* (hex integer)
+1. `number`: _string_ (hex integer)
 
 
 </TabItem>
@@ -159,7 +159,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex data)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -171,7 +171,7 @@ Retrieves a block in the RLP-serialized form.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: *string* (hash)
+1. `hash`: _string_ (hash)
 
 
 </TabItem>
@@ -200,7 +200,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex data)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -212,7 +212,7 @@ Retrieves a representation of tree branches on a given chain level (Nethermind s
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `number`: *string* (hex integer)
+1. `number`: _string_ (hex integer)
 
 
 </TabItem>
@@ -241,13 +241,13 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `blockInfos`: array of *object*
-    - `blockHash`: *string* (hash)
-    - `isFinalized`: *boolean*
-    - `totalDifficulty`: *string* (hex integer)
-    - `wasProcessed`: *boolean*
-  - `hasBlockOnMainChain`: *boolean*
+`result`: _object_
+  - `blockInfos`: array of _object_
+    - `blockHash`: _string_ (hash)
+    - `isFinalized`: _boolean_
+    - `totalDifficulty`: _string_ (hex integer)
+    - `wasProcessed`: _boolean_
+  - `hasBlockOnMainChain`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -259,9 +259,9 @@ Retrieves the Nethermind configuration value, e.g. JsonRpc.Enabled
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `category`: *string*
+1. `category`: _string_
 
-2. `name`: *string*
+2. `name`: _string_
 
 
 </TabItem>
@@ -290,7 +290,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
+`result`: _object_
 
 </TabItem>
 </Tabs>
@@ -302,7 +302,7 @@ Get Raw Block format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -331,7 +331,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex data)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -343,7 +343,7 @@ Get Raw Header format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -372,7 +372,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hex data)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -384,7 +384,7 @@ Get Raw Receipt format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -413,7 +413,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string* (hex data)
+`result`: array of _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -425,7 +425,7 @@ Get Raw Transaction format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `transactionHash`: *string* (hash)
+1. `transactionHash`: _string_ (hash)
 
 
 </TabItem>
@@ -454,7 +454,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -489,8 +489,8 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `currentStage`: *string*
+`result`: _object_
+  - `currentStage`: _string_
 
 </TabItem>
 </Tabs>
@@ -502,36 +502,36 @@ Insert receipts for the block after verifying receipts root correctness.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-2. `receiptForRpc`: array of *object*
-  - `blobGasPrice`: *string* (hex integer)
-  - `blobGasUsed`: *string* (hex integer)
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `contractAddress`: *string* (address)
-  - `cumulativeGasUsed`: *string* (hex integer)
-  - `effectiveGasPrice`: *string* (hex integer)
-  - `error`: *string*
-  - `from`: *string* (address)
-  - `gasUsed`: *string* (hex integer)
-  - `logs`: array of *object*
-    - `address`: *string* (address)
-    - `blockHash`: *string* (hash)
-    - `blockNumber`: *string* (hex integer)
-    - `data`: *string* (hex data)
-    - `logIndex`: *string* (hex integer)
-    - `removed`: *boolean*
-    - `topics`: array of *string* (hash)
-    - `transactionHash`: *string* (hash)
-    - `transactionIndex`: *string* (hex integer)
-  - `logsBloom`: *string* (hex data)
-  - `root`: *string* (hash)
-  - `status`: *string* (hex integer)
-  - `to`: *string* (address)
-  - `transactionHash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `type`: *integer*
+2. `receiptForRpc`: array of _object_
+  - `blobGasPrice`: _string_ (hex integer)
+  - `blobGasUsed`: _string_ (hex integer)
+  - `blockHash`: _string_ (hash)
+  - `blockNumber`: _string_ (hex integer)
+  - `contractAddress`: _string_ (address)
+  - `cumulativeGasUsed`: _string_ (hex integer)
+  - `effectiveGasPrice`: _string_ (hex integer)
+  - `error`: _string_
+  - `from`: _string_ (address)
+  - `gasUsed`: _string_ (hex integer)
+  - `logs`: array of _object_
+    - `address`: _string_ (address)
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `data`: _string_ (hex data)
+    - `logIndex`: _string_ (hex integer)
+    - `removed`: _boolean_
+    - `topics`: array of _string_ (hash)
+    - `transactionHash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+  - `logsBloom`: _string_ (hex data)
+  - `root`: _string_ (hash)
+  - `status`: _string_ (hex integer)
+  - `to`: _string_ (address)
+  - `transactionHash`: _string_ (hash)
+  - `transactionIndex`: _string_ (hex integer)
+  - `type`: _integer_
 
 
 </TabItem>
@@ -560,7 +560,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -572,9 +572,9 @@ Sets the block number up to which receipts will be migrated to (Nethermind speci
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `from`: *string* (hex integer)
+1. `from`: _string_ (hex integer)
 
-2. `to`: *string* (hex integer)
+2. `to`: _string_ (hex integer)
 
 
 </TabItem>
@@ -603,7 +603,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -615,7 +615,7 @@ Updates / resets head block - use only when the node got stuck due to DB / memor
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: _string_ (hash)
 
 
 </TabItem>
@@ -644,7 +644,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -656,57 +656,57 @@ Retrieves geth like traces of the simulated blocks
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `payload`: *object*
-    - `blockStateCalls`: array of *object*
-      - `blockOverrides`: *object*
-        - `baseFeePerGas`: *string* (hex integer)
-        - `blobBaseFee`: *string* (hex integer)
-        - `feeRecipient`: *string* (address)
-        - `gasLimit`: *string* (hex integer)
-        - `number`: *string* (hex integer)
-        - `prevRandao`: *string* (hash)
-        - `time`: *string* (hex integer)
-      - `calls`: array of *object*
-        - `blockHash`: *string* (hash)
-        - `blockNumber`: *string* (hex integer)
-        - `gas`: *string* (hex integer)
-        - `hash`: *string* (hash)
-        - `transactionIndex`: *string* (hex integer)
-        - `type`: *integer*
-      - `stateOverrides`: map of *object*
-        - `balance`: *string* (hex integer)
-        - `code`: *string* (hex data)
-        - `movePrecompileToAddress`: *string* (address)
-        - `nonce`: *string* (hex integer)
-        - `state`: map of *string* (hash)
-        - `stateDiff`: map of *string* (hash)
-    - `returnFullTransactionObjects`: *boolean*
-    - `traceTransfers`: *boolean*
-    - `validation`: *boolean*
+1. `payload`: _object_
+    - `blockStateCalls`: array of _object_
+      - `blockOverrides`: _object_
+        - `baseFeePerGas`: _string_ (hex integer)
+        - `blobBaseFee`: _string_ (hex integer)
+        - `feeRecipient`: _string_ (address)
+        - `gasLimit`: _string_ (hex integer)
+        - `number`: _string_ (hex integer)
+        - `prevRandao`: _string_ (hash)
+        - `time`: _string_ (hex integer)
+      - `calls`: array of _object_
+        - `blockHash`: _string_ (hash)
+        - `blockNumber`: _string_ (hex integer)
+        - `gas`: _string_ (hex integer)
+        - `hash`: _string_ (hash)
+        - `transactionIndex`: _string_ (hex integer)
+        - `type`: _integer_
+      - `stateOverrides`: map of _object_
+        - `balance`: _string_ (hex integer)
+        - `code`: _string_ (hex data)
+        - `movePrecompileToAddress`: _string_ (address)
+        - `nonce`: _string_ (hex integer)
+        - `state`: map of _string_ (hash)
+        - `stateDiff`: map of _string_ (hash)
+    - `returnFullTransactionObjects`: _boolean_
+    - `traceTransfers`: _boolean_
+    - `validation`: _boolean_
 
-2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-3. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+3. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -735,43 +735,43 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `calls`: array of *object*
-    - `customTracerResult`: *object*
-      - `value`: *object*
-    - `entries`: array of *object*
-      - `depth`: *string* (hex integer)
-      - `error`: *string*
-      - `gas`: *string* (hex integer)
-      - `gasCost`: *string* (hex integer)
-      - `memory`: array of *string*
-      - `opcode`: *string*
-      - `programCounter`: *string* (hex integer)
-      - `stack`: array of *string*
-      - `storage`: map of *string*
-    - `failed`: *boolean*
-    - `gas`: *string* (hex integer)
-    - `returnValue`: *string* (hex data)
-    - `storagesByDepth`: array of map of *string*
-    - `txHash`: *string* (hash)
-  - `traces`: array of *object*
-    - `customTracerResult`: *object*
-      - `value`: *object*
-    - `entries`: array of *object*
-      - `depth`: *string* (hex integer)
-      - `error`: *string*
-      - `gas`: *string* (hex integer)
-      - `gasCost`: *string* (hex integer)
-      - `memory`: array of *string*
-      - `opcode`: *string*
-      - `programCounter`: *string* (hex integer)
-      - `stack`: array of *string*
-      - `storage`: map of *string*
-    - `failed`: *boolean*
-    - `gas`: *string* (hex integer)
-    - `returnValue`: *string* (hex data)
-    - `storagesByDepth`: array of map of *string*
-    - `txHash`: *string* (hash)
+`result`: array of _object_
+  - `calls`: array of _object_
+    - `customTracerResult`: _object_
+      - `value`: _object_
+    - `entries`: array of _object_
+      - `depth`: _string_ (hex integer)
+      - `error`: _string_
+      - `gas`: _string_ (hex integer)
+      - `gasCost`: _string_ (hex integer)
+      - `memory`: array of _string_
+      - `opcode`: _string_
+      - `programCounter`: _string_ (hex integer)
+      - `stack`: array of _string_
+      - `storage`: map of _string_
+    - `failed`: _boolean_
+    - `gas`: _string_ (hex integer)
+    - `returnValue`: _string_ (hex data)
+    - `storagesByDepth`: array of map of _string_
+    - `txHash`: _string_ (hash)
+  - `traces`: array of _object_
+    - `customTracerResult`: _object_
+      - `value`: _object_
+    - `entries`: array of _object_
+      - `depth`: _string_ (hex integer)
+      - `error`: _string_
+      - `gas`: _string_ (hex integer)
+      - `gasCost`: _string_ (hex integer)
+      - `memory`: array of _string_
+      - `opcode`: _string_
+      - `programCounter`: _string_ (hex integer)
+      - `stack`: array of _string_
+      - `storage`: map of _string_
+    - `failed`: _boolean_
+    - `gas`: _string_ (hex integer)
+    - `returnValue`: _string_ (hex data)
+    - `storagesByDepth`: array of map of _string_
+    - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -783,29 +783,29 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: _string_ (hash)
 
-2. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+2. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -834,7 +834,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string*
+`result`: array of _string_
 
 </TabItem>
 </Tabs>
@@ -846,29 +846,29 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: _string_ (hash)
 
-2. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+2. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -897,7 +897,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *string*
+`result`: array of _string_
 
 </TabItem>
 </Tabs>
@@ -909,29 +909,29 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockRlp`: *string* (hex data)
+1. `blockRlp`: _string_ (hex data)
 
-2. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+2. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -960,24 +960,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: array of _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -989,29 +989,29 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: _string_ (hash)
 
-2. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+2. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1040,24 +1040,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: array of _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1069,29 +1069,29 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-2. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+2. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1120,24 +1120,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: array of _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1149,37 +1149,37 @@ This method lets you run an eth_call within the context of the given block execu
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `call`: *object*
-    - `blockHash`: *string* (hash)
-    - `blockNumber`: *string* (hex integer)
-    - `gas`: *string* (hex integer)
-    - `hash`: *string* (hash)
-    - `transactionIndex`: *string* (hex integer)
-    - `type`: *integer*
+1. `call`: _object_
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `gas`: _string_ (hex integer)
+    - `hash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+    - `type`: _integer_
 
-2. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-3. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+3. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1208,24 +1208,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1237,29 +1237,29 @@ This method will attempt to run the transaction in the exact same manner as it w
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `transactionHash`: *string* (hash)
+1. `transactionHash`: _string_ (hash)
 
-2. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+2. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1288,24 +1288,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1315,31 +1315,31 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-2. `txIndex`: *string* (hex integer)
+2. `txIndex`: _string_ (hex integer)
 
-3. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+3. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1368,24 +1368,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1395,31 +1395,31 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: *string* (hash)
+1. `blockHash`: _string_ (hash)
 
-2. `txIndex`: *string* (hex integer)
+2. `txIndex`: _string_ (hex integer)
 
-3. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+3. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1448,24 +1448,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1475,31 +1475,31 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockRlp`: *string* (hex data)
+1. `blockRlp`: _string_ (hex data)
 
-2. `transactionHash`: *string* (hash)
+2. `transactionHash`: _string_ (hash)
 
-3. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+3. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1528,24 +1528,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1555,31 +1555,31 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockRlp`: *string* (hex data)
+1. `blockRlp`: _string_ (hex data)
 
-2. `txIndex`: *string* (hex integer)
+2. `txIndex`: _string_ (hex integer)
 
-3. `options`: *object*
-    - `disableMemory`: *boolean*
-    - `disableStack`: *boolean*
-    - `disableStorage`: *boolean*
-    - `enableMemory`: *boolean*
-    - `stateOverrides`: map of *object*
-      - `balance`: *string* (hex integer)
-      - `code`: *string* (hex data)
-      - `movePrecompileToAddress`: *string* (address)
-      - `nonce`: *string* (hex integer)
-      - `state`: map of *string* (hash)
-      - `stateDiff`: map of *string* (hash)
-    - `timeout`: *string*
-    - `tracer`: *string*
-    - `tracerConfig`: *object*
-      - `hasValue`: *boolean*
-      - `value`: *object*
-        - `item`: *object*
+3. `options`: _object_
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `timeout`: _string_
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+      - `hasValue`: _boolean_
+      - `value`: _object_
+        - `item`: _object_
           <!--[circular ref]-->
-        - `valueKind`: *integer*
-    - `txHash`: *string* (hash)
+        - `valueKind`: _integer_
+    - `txHash`: _string_ (hash)
 
 
 </TabItem>
@@ -1608,24 +1608,24 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `customTracerResult`: *object*
-    - `value`: *object*
-  - `entries`: array of *object*
-    - `depth`: *string* (hex integer)
-    - `error`: *string*
-    - `gas`: *string* (hex integer)
-    - `gasCost`: *string* (hex integer)
-    - `memory`: array of *string*
-    - `opcode`: *string*
-    - `programCounter`: *string* (hex integer)
-    - `stack`: array of *string*
-    - `storage`: map of *string*
-  - `failed`: *boolean*
-  - `gas`: *string* (hex integer)
-  - `returnValue`: *string* (hex data)
-  - `storagesByDepth`: array of map of *string*
-  - `txHash`: *string* (hash)
+`result`: _object_
+  - `customTracerResult`: _object_
+    - `value`: _object_
+  - `entries`: array of _object_
+    - `depth`: _string_ (hex integer)
+    - `error`: _string_
+    - `gas`: _string_ (hex integer)
+    - `gasCost`: _string_ (hex integer)
+    - `memory`: array of _string_
+    - `opcode`: _string_
+    - `programCounter`: _string_ (hex integer)
+    - `stack`: array of _string_
+    - `storage`: map of _string_
+  - `failed`: _boolean_
+  - `gas`: _string_ (hex integer)
+  - `returnValue`: _string_ (hex data)
+  - `storagesByDepth`: array of map of _string_
+  - `txHash`: _string_ (hash)
 
 </TabItem>
 </Tabs>

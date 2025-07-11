@@ -14,9 +14,9 @@ Adds given node.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `enode`: *string*
+1. `enode`: _string_
 
-2. `addToStaticNodes`: *boolean*
+2. `addToStaticNodes`: _boolean_
 
 
 </TabItem>
@@ -47,7 +47,7 @@ Added node
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -59,7 +59,7 @@ Adds given node as a trusted peer, allowing the node to always connect even if s
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `enode`: *string*
+1. `enode`: _string_
 
 
 </TabItem>
@@ -90,7 +90,7 @@ Boolean indicating success
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -127,7 +127,99 @@ The data directory path as a string.
 }
 ```
 
-`result`: *string*
+`result`: _string_
+
+</TabItem>
+</Tabs>
+
+### admin_exportHistory
+
+Exports a range of historic block in era1 format.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `destinationPath`: _string_
+
+2. `from`: _string_ (hex integer)
+
+3. `to`: _string_ (hex integer)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_exportHistory",
+      "params": [destinationPath, from, to]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
+
+</TabItem>
+</Tabs>
+
+### admin_importHistory
+
+Import a range of historic block from era1 directory.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `sourcePath`: _string_
+
+2. `from`: _string_ (hex integer)
+
+3. `to`: _string_ (hex integer)
+
+4. `accumulatorFile`: _string_
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_importHistory",
+      "params": [sourcePath, from, to, accumulatorFile]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -139,7 +231,7 @@ True if state root for the block is available
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `block`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -168,7 +260,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -205,112 +297,112 @@ Information about this node
 }
 ```
 
-`result`: *object*
-  - `enode`: *string*
-  - `id`: *string*
-  - `ip`: *string*
-  - `listenAddress`: *string*
-  - `name`: *string*
-  - `ports`: *object*
-    - `discovery`: *string* (hex integer)
-    - `listener`: *string* (hex integer)
-  - `protocols`: map of *object*
-    - `chainId`: *string* (hex integer)
-    - `config`: *object*
-      - `beaconChainGenesisTimestamp`: *string* (hex integer)
-      - `blobSchedule`: map of *object*
-        - `baseFeeUpdateFraction`: *string* (hex integer)
-        - `max`: *string* (hex integer)
-        - `target`: *string* (hex integer)
-      - `depositContractAddress`: *string* (address)
-      - `eip1014Transition`: *string* (hex integer)
-      - `eip1052Transition`: *string* (hex integer)
-      - `eip1108Transition`: *string* (hex integer)
-      - `eip1153TransitionTimestamp`: *string* (hex integer)
-      - `eip1283DisableTransition`: *string* (hex integer)
-      - `eip1283ReenableTransition`: *string* (hex integer)
-      - `eip1283Transition`: *string* (hex integer)
-      - `eip1344Transition`: *string* (hex integer)
-      - `eip140Transition`: *string* (hex integer)
-      - `eip145Transition`: *string* (hex integer)
-      - `eip150Transition`: *string* (hex integer)
-      - `eip152Transition`: *string* (hex integer)
-      - `eip1559BaseFeeInitialValue`: *string* (hex integer)
-      - `eip1559BaseFeeMaxChangeDenominator`: *string* (hex integer)
-      - `eip1559BaseFeeMinValue`: *string* (hex integer)
-      - `eip1559BaseFeeMinValueTransition`: *string* (hex integer)
-      - `eip1559ElasticityMultiplier`: *string* (hex integer)
-      - `eip1559FeeCollectorTransition`: *string* (hex integer)
-      - `eip1559Transition`: *string* (hex integer)
-      - `eip155Transition`: *string* (hex integer)
-      - `eip160Transition`: *string* (hex integer)
-      - `eip161abcTransition`: *string* (hex integer)
-      - `eip161dTransition`: *string* (hex integer)
-      - `eip1706Transition`: *string* (hex integer)
-      - `eip1884Transition`: *string* (hex integer)
-      - `eip2028Transition`: *string* (hex integer)
-      - `eip211Transition`: *string* (hex integer)
-      - `eip214Transition`: *string* (hex integer)
-      - `eip2200Transition`: *string* (hex integer)
-      - `eip2315Transition`: *string* (hex integer)
-      - `eip2537Transition`: *string* (hex integer)
-      - `eip2537TransitionTimestamp`: *string* (hex integer)
-      - `eip2565Transition`: *string* (hex integer)
-      - `eip2929Transition`: *string* (hex integer)
-      - `eip2930Transition`: *string* (hex integer)
-      - `eip2935ContractAddress`: *string* (address)
-      - `eip2935TransitionTimestamp`: *string* (hex integer)
-      - `eip3198Transition`: *string* (hex integer)
-      - `eip3529Transition`: *string* (hex integer)
-      - `eip3541Transition`: *string* (hex integer)
-      - `eip3607Transition`: *string* (hex integer)
-      - `eip3651TransitionTimestamp`: *string* (hex integer)
-      - `eip3855TransitionTimestamp`: *string* (hex integer)
-      - `eip3860TransitionTimestamp`: *string* (hex integer)
-      - `eip4788ContractAddress`: *string* (address)
-      - `eip4788TransitionTimestamp`: *string* (hex integer)
-      - `eip4844BlobGasPriceUpdateFraction`: *string* (hex integer)
-      - `eip4844FeeCollectorTransitionTimestamp`: *string* (hex integer)
-      - `eip4844MinBlobGasPrice`: *string* (hex integer)
-      - `eip4844TransitionTimestamp`: *string* (hex integer)
-      - `eip4895TransitionTimestamp`: *string* (hex integer)
-      - `eip5656TransitionTimestamp`: *string* (hex integer)
-      - `eip6110TransitionTimestamp`: *string* (hex integer)
-      - `eip658Transition`: *string* (hex integer)
-      - `eip6780TransitionTimestamp`: *string* (hex integer)
-      - `eip7002ContractAddress`: *string* (address)
-      - `eip7002TransitionTimestamp`: *string* (hex integer)
-      - `eip7251ContractAddress`: *string* (address)
-      - `eip7251TransitionTimestamp`: *string* (hex integer)
-      - `eip7623TransitionTimestamp`: *string* (hex integer)
-      - `eip7692TransitionTimestamp`: *string* (hex integer)
-      - `eip7702TransitionTimestamp`: *string* (hex integer)
-      - `eip7Transition`: *string* (hex integer)
-      - `feeCollector`: *string* (address)
-      - `forkBlock`: *string* (hex integer)
-      - `forkCanonHash`: *string* (hash)
-      - `gasLimitBoundDivisor`: *string* (hex integer)
-      - `maxCodeSize`: *string* (hex integer)
-      - `maxCodeSizeTransition`: *string* (hex integer)
-      - `maxCodeSizeTransitionTimestamp`: *string* (hex integer)
-      - `maximumExtraDataSize`: *string* (hex integer)
-      - `mergeForkIdTransition`: *string* (hex integer)
-      - `minGasLimit`: *string* (hex integer)
-      - `opGraniteTransitionTimestamp`: *string* (hex integer)
-      - `opHoloceneTransitionTimestamp`: *string* (hex integer)
-      - `opIsthmusTransitionTimestamp`: *string* (hex integer)
-      - `registrar`: *string* (address)
-      - `rip7212TransitionTimestamp`: *string* (hex integer)
-      - `terminalPoWBlockNumber`: *string* (hex integer)
-      - `terminalTotalDifficulty`: *string* (hex integer)
-      - `transactionPermissionContract`: *string* (address)
-      - `transactionPermissionContractTransition`: *string* (hex integer)
-      - `validateChainIdTransition`: *string* (hex integer)
-      - `validateReceiptsTransition`: *string* (hex integer)
-    - `difficulty`: *string* (hex integer)
-    - `genesisHash`: *string* (hash)
-    - `headHash`: *string* (hash)
-    - `newtorkId`: *string* (hex integer)
+`result`: _object_
+  - `enode`: _string_
+  - `id`: _string_
+  - `ip`: _string_
+  - `listenAddress`: _string_
+  - `name`: _string_
+  - `ports`: _object_
+    - `discovery`: _string_ (hex integer)
+    - `listener`: _string_ (hex integer)
+  - `protocols`: map of _object_
+    - `chainId`: _string_ (hex integer)
+    - `config`: _object_
+      - `beaconChainGenesisTimestamp`: _string_ (hex integer)
+      - `blobSchedule`: map of _object_
+        - `baseFeeUpdateFraction`: _string_ (hex integer)
+        - `max`: _string_ (hex integer)
+        - `target`: _string_ (hex integer)
+      - `depositContractAddress`: _string_ (address)
+      - `eip1014Transition`: _string_ (hex integer)
+      - `eip1052Transition`: _string_ (hex integer)
+      - `eip1108Transition`: _string_ (hex integer)
+      - `eip1153TransitionTimestamp`: _string_ (hex integer)
+      - `eip1283DisableTransition`: _string_ (hex integer)
+      - `eip1283ReenableTransition`: _string_ (hex integer)
+      - `eip1283Transition`: _string_ (hex integer)
+      - `eip1344Transition`: _string_ (hex integer)
+      - `eip140Transition`: _string_ (hex integer)
+      - `eip145Transition`: _string_ (hex integer)
+      - `eip150Transition`: _string_ (hex integer)
+      - `eip152Transition`: _string_ (hex integer)
+      - `eip1559BaseFeeInitialValue`: _string_ (hex integer)
+      - `eip1559BaseFeeMaxChangeDenominator`: _string_ (hex integer)
+      - `eip1559BaseFeeMinValue`: _string_ (hex integer)
+      - `eip1559BaseFeeMinValueTransition`: _string_ (hex integer)
+      - `eip1559ElasticityMultiplier`: _string_ (hex integer)
+      - `eip1559FeeCollectorTransition`: _string_ (hex integer)
+      - `eip1559Transition`: _string_ (hex integer)
+      - `eip155Transition`: _string_ (hex integer)
+      - `eip160Transition`: _string_ (hex integer)
+      - `eip161abcTransition`: _string_ (hex integer)
+      - `eip161dTransition`: _string_ (hex integer)
+      - `eip1706Transition`: _string_ (hex integer)
+      - `eip1884Transition`: _string_ (hex integer)
+      - `eip2028Transition`: _string_ (hex integer)
+      - `eip211Transition`: _string_ (hex integer)
+      - `eip214Transition`: _string_ (hex integer)
+      - `eip2200Transition`: _string_ (hex integer)
+      - `eip2315Transition`: _string_ (hex integer)
+      - `eip2537Transition`: _string_ (hex integer)
+      - `eip2537TransitionTimestamp`: _string_ (hex integer)
+      - `eip2565Transition`: _string_ (hex integer)
+      - `eip2929Transition`: _string_ (hex integer)
+      - `eip2930Transition`: _string_ (hex integer)
+      - `eip2935ContractAddress`: _string_ (address)
+      - `eip2935TransitionTimestamp`: _string_ (hex integer)
+      - `eip3198Transition`: _string_ (hex integer)
+      - `eip3529Transition`: _string_ (hex integer)
+      - `eip3541Transition`: _string_ (hex integer)
+      - `eip3607Transition`: _string_ (hex integer)
+      - `eip3651TransitionTimestamp`: _string_ (hex integer)
+      - `eip3855TransitionTimestamp`: _string_ (hex integer)
+      - `eip3860TransitionTimestamp`: _string_ (hex integer)
+      - `eip4788ContractAddress`: _string_ (address)
+      - `eip4788TransitionTimestamp`: _string_ (hex integer)
+      - `eip4844BlobGasPriceUpdateFraction`: _string_ (hex integer)
+      - `eip4844FeeCollectorTransitionTimestamp`: _string_ (hex integer)
+      - `eip4844MinBlobGasPrice`: _string_ (hex integer)
+      - `eip4844TransitionTimestamp`: _string_ (hex integer)
+      - `eip4895TransitionTimestamp`: _string_ (hex integer)
+      - `eip5656TransitionTimestamp`: _string_ (hex integer)
+      - `eip6110TransitionTimestamp`: _string_ (hex integer)
+      - `eip658Transition`: _string_ (hex integer)
+      - `eip6780TransitionTimestamp`: _string_ (hex integer)
+      - `eip7002ContractAddress`: _string_ (address)
+      - `eip7002TransitionTimestamp`: _string_ (hex integer)
+      - `eip7251ContractAddress`: _string_ (address)
+      - `eip7251TransitionTimestamp`: _string_ (hex integer)
+      - `eip7623TransitionTimestamp`: _string_ (hex integer)
+      - `eip7692TransitionTimestamp`: _string_ (hex integer)
+      - `eip7702TransitionTimestamp`: _string_ (hex integer)
+      - `eip7Transition`: _string_ (hex integer)
+      - `feeCollector`: _string_ (address)
+      - `forkBlock`: _string_ (hex integer)
+      - `forkCanonHash`: _string_ (hash)
+      - `gasLimitBoundDivisor`: _string_ (hex integer)
+      - `maxCodeSize`: _string_ (hex integer)
+      - `maxCodeSizeTransition`: _string_ (hex integer)
+      - `maxCodeSizeTransitionTimestamp`: _string_ (hex integer)
+      - `maximumExtraDataSize`: _string_ (hex integer)
+      - `mergeForkIdTransition`: _string_ (hex integer)
+      - `minGasLimit`: _string_ (hex integer)
+      - `opGraniteTransitionTimestamp`: _string_ (hex integer)
+      - `opHoloceneTransitionTimestamp`: _string_ (hex integer)
+      - `opIsthmusTransitionTimestamp`: _string_ (hex integer)
+      - `registrar`: _string_ (address)
+      - `rip7212TransitionTimestamp`: _string_ (hex integer)
+      - `terminalPoWBlockNumber`: _string_ (hex integer)
+      - `terminalTotalDifficulty`: _string_ (hex integer)
+      - `transactionPermissionContract`: _string_ (address)
+      - `transactionPermissionContractTransition`: _string_ (hex integer)
+      - `validateChainIdTransition`: _string_ (hex integer)
+      - `validateReceiptsTransition`: _string_ (hex integer)
+    - `difficulty`: _string_ (hex integer)
+    - `genesisHash`: _string_ (hash)
+    - `headHash`: _string_ (hash)
+    - `newtorkId`: _string_ (hex integer)
 
 </TabItem>
 </Tabs>
@@ -322,7 +414,7 @@ Displays a list of connected peers including information about them (`clientId`,
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `includeDetails`: *boolean*
+1. `includeDetails`: _boolean_
 
 
 </TabItem>
@@ -353,20 +445,55 @@ List of connected peers including information
 }
 ```
 
-`result`: array of *object*
-  - `address`: *string*
-  - `clientType`: *string*
-  - `enode`: *string*
-  - `ethDetails`: *string*
-  - `host`: *string*
-  - `id`: *string*
-  - `inbound`: *boolean*
-  - `isBootnode`: *boolean*
-  - `isStatic`: *boolean*
-  - `isTrusted`: *boolean*
-  - `lastSignal`: *string*
-  - `name`: *string*
-  - `port`: *string* (hex integer)
+`result`: array of _object_
+  - `address`: _string_
+  - `clientType`: _string_
+  - `enode`: _string_
+  - `ethDetails`: _string_
+  - `host`: _string_
+  - `id`: _string_
+  - `inbound`: _boolean_
+  - `isBootnode`: _boolean_
+  - `isStatic`: _boolean_
+  - `isTrusted`: _boolean_
+  - `lastSignal`: _string_
+  - `name`: _string_
+  - `port`: _string_ (hex integer)
+
+</TabItem>
+</Tabs>
+
+### admin_prune
+
+Runs full pruning if enabled.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_prune",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _integer_
 
 </TabItem>
 </Tabs>
@@ -378,9 +505,9 @@ Removes given node.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `enode`: *string*
+1. `enode`: _string_
 
-2. `removeFromStaticNodes`: *boolean*
+2. `removeFromStaticNodes`: _boolean_
 
 
 </TabItem>
@@ -411,7 +538,7 @@ Removed node
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -423,7 +550,7 @@ Removes the given node from the trusted peers list.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `enode`: *string*
+1. `enode`: _string_
 
 
 </TabItem>
@@ -454,7 +581,7 @@ Boolean indicating success
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -466,9 +593,9 @@ Subscribes to a particular event over WebSocket. For every event that matches th
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `subscriptionName`: *string*
+1. `subscriptionName`: _string_
 
-2. `args`: *string*
+2. `args`: _string_
 
 
 </TabItem>
@@ -497,7 +624,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -509,7 +636,7 @@ Unsubscribes from a subscription.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `subscriptionId`: *string*
+1. `subscriptionId`: _string_
 
 
 </TabItem>
@@ -538,7 +665,48 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *boolean*
+`result`: _boolean_
+
+</TabItem>
+</Tabs>
+
+### admin_verifyTrie
+
+Runs VerifyTrie.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_verifyTrie",
+      "params": [block]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
 
 </TabItem>
 </Tabs>

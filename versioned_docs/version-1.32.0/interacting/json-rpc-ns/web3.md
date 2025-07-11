@@ -1,7 +1,7 @@
 ---
 title: web3 namespace
 sidebar_label: web3
-sidebar_position: 11
+sidebar_position: 13
 ---
 
 import Tabs from "@theme/Tabs";
@@ -37,7 +37,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -49,7 +49,7 @@ Returns Keccak of the given data.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `data`: *string* (hex data)
+1. `data`: _string_ (hex data)
 
 
 </TabItem>
@@ -78,7 +78,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hash)
+`result`: _string_ (hash)
 
 </TabItem>
 </Tabs>

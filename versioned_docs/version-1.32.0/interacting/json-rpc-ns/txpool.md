@@ -1,7 +1,7 @@
 ---
 title: txpool namespace
 sidebar_label: txpool
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 import Tabs from "@theme/Tabs";
@@ -37,23 +37,23 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `pending`: map of map of *object*
-map of *object*
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `gas`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `type`: *integer*
-  - `queued`: map of map of *object*
-map of *object*
-  - `blockHash`: *string* (hash)
-  - `blockNumber`: *string* (hex integer)
-  - `gas`: *string* (hex integer)
-  - `hash`: *string* (hash)
-  - `transactionIndex`: *string* (hex integer)
-  - `type`: *integer*
+`result`: _object_
+  - `pending`: map of map of _object_
+map of _object_
+  - `blockHash`: _string_ (hash)
+  - `blockNumber`: _string_ (hex integer)
+  - `gas`: _string_ (hex integer)
+  - `hash`: _string_ (hash)
+  - `transactionIndex`: _string_ (hex integer)
+  - `type`: _integer_
+  - `queued`: map of map of _object_
+map of _object_
+  - `blockHash`: _string_ (hash)
+  - `blockNumber`: _string_ (hex integer)
+  - `gas`: _string_ (hex integer)
+  - `hash`: _string_ (hash)
+  - `transactionIndex`: _string_ (hex integer)
+  - `type`: _integer_
 
 </TabItem>
 </Tabs>
@@ -88,9 +88,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `pending`: map of map of *string*
-  - `queued`: map of map of *string*
+`result`: _object_
+  - `pending`: map of map of _string_
+  - `queued`: map of map of _string_
 
 </TabItem>
 </Tabs>
@@ -125,9 +125,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *object*
-  - `pending`: *string* (hex integer)
-  - `queued`: *string* (hex integer)
+`result`: _object_
+  - `pending`: _string_ (hex integer)
+  - `queued`: _string_ (hex integer)
 
 </TabItem>
 </Tabs>
