@@ -78,6 +78,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        respectPrefersColorScheme: true
+      },
       image:
         'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',
       navbar: {
