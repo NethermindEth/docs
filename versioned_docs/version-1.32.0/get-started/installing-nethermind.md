@@ -28,7 +28,7 @@ Before installing Nethermind, your specific platform might need the following pr
 Although the modern versions of Windows are bundled with a recent version of [Microsoft Visual C++ Redistributable](https://aka.ms/vcredist), in some cases, it may need an update:
 
 ```powershell
-winget install Microsoft.VCRedist.2015+.x64
+winget install --id Microsoft.VCRedist.2015+.x64
 ```
 
 </TabItem>
@@ -66,7 +66,7 @@ sudo apt-get install nethermind
 On Windows, Nethermind can be installed via Windows Package Manager as follows:
 
 ```powershell
-winget install nethermind
+winget install --id Nethermind.Nethermind
 ```
 
 </TabItem>
