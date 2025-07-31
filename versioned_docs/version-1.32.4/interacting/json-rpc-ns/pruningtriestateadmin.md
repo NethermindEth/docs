@@ -1,15 +1,15 @@
 ---
-title: web3 namespace
-sidebar_label: web3
-sidebar_position: 11
+title: pruningtriestateadmin namespace
+sidebar_label: pruningtriestateadmin
+sidebar_position: 8
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-### web3_clientVersion
+### admin_prune
 
-Returns the current client version.
+Runs full pruning if enabled.
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -21,7 +21,7 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "web3_clientVersion",
+      "method": "admin_prune",
       "params": []
     }'
 ```
@@ -37,19 +37,19 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string*
+`result`: *integer*
 
 </TabItem>
 </Tabs>
 
-### web3_sha3
+### admin_verifyTrie
 
-Returns Keccak of the given data.
+Runs VerifyTrie.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `data`: *string* (hex data)
+1. `block`: *string* (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -62,8 +62,8 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "web3_sha3",
-      "params": [data]
+      "method": "admin_verifyTrie",
+      "params": [block]
     }'
 ```
 
@@ -78,7 +78,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: *string* (hash)
+`result`: *string*
 
 </TabItem>
 </Tabs>

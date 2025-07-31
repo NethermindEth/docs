@@ -1,7 +1,7 @@
 ---
 title: personal namespace
 sidebar_label: personal
-sidebar_position: 8
+sidebar_position: 6
 ---
 
 import Tabs from "@theme/Tabs";
@@ -12,9 +12,9 @@ import TabItem from "@theme/TabItem";
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `keyData`: _string_ (hex data)
+1. `keyData`: *string* (hex data)
 
-2. `passphrase`: _string_
+2. `passphrase`: *string*
 
 
 </TabItem>
@@ -43,7 +43,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_ (address)
+`result`: *string* (address)
 
 </TabItem>
 </Tabs>
@@ -76,7 +76,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _string_ (address)
+`result`: array of *string* (address)
 
 </TabItem>
 </Tabs>
@@ -86,7 +86,7 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `address`: _string_ (address)
+1. `address`: *string* (address)
 
 
 </TabItem>
@@ -115,7 +115,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _boolean_
+`result`: *boolean*
 
 </TabItem>
 </Tabs>
@@ -125,7 +125,7 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `passphrase`: _string_
+1. `passphrase`: *string*
 
 
 </TabItem>
@@ -154,7 +154,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_ (address)
+`result`: *string* (address)
 
 </TabItem>
 </Tabs>
@@ -164,9 +164,9 @@ curl localhost:8545 \
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `address`: _string_ (address)
+1. `address`: *string* (address)
 
-2. `passphrase`: _string_
+2. `passphrase`: *string*
 
 
 </TabItem>
@@ -195,7 +195,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _boolean_
+`result`: *boolean*
 
 </TabItem>
 </Tabs>
