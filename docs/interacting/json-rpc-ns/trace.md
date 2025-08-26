@@ -764,6 +764,7 @@ Returns parity like traces for simulated blocks
         - `state`: map of _string_ (hash)
         - `stateDiff`: map of _string_ (hash)
     - `returnFullTransactionObjects`: _boolean_
+    - `returnFullTransactions`: _boolean_
     - `traceTransfers`: _boolean_
     - `validation`: _boolean_
 

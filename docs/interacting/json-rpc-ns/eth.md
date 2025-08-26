@@ -169,6 +169,53 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### eth_config
+
+Provides configuration data for the current and next fork
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_config",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _object_
+  - `item`: _object_
+    <!--[circular ref]-->
+  - `item`: _object_
+    <!--[circular ref]-->
+  - `options`: _object_
+    - `hasValue`: _boolean_
+    - `value`: _object_
+      - `propertyNameCaseInsensitive`: _boolean_
+  - `parent`: _object_
+    <!--[circular ref]-->
+  - `root`: _object_
+    <!--[circular ref]-->
+
+</TabItem>
+</Tabs>
+
 ### eth_createAccessList
 
 Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList for the given transaction
@@ -1919,6 +1966,7 @@ Executes a simulation across multiple blocks (does not create a transaction or b
         - `state`: map of _string_ (hash)
         - `stateDiff`: map of _string_ (hash)
     - `returnFullTransactionObjects`: _boolean_
+    - `returnFullTransactions`: _boolean_
     - `traceTransfers`: _boolean_
     - `validation`: _boolean_
 

@@ -124,10 +124,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### Db
 
-- #### `nethermind_code_db_cache` \{#code_db_cache\}
-  
-  Number of Code DB cache reads.
-
 - #### `nethermind_db_block_cache_size` \{#db_block_cache_size\}
   
   Database block cache size per database
@@ -207,6 +203,121 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### Evm
 
+- #### `nethermind_calls` \{#calls\}
+  
+  Number of calls to other contracts.
+
+- #### `nethermind_code_db_cache` \{#code_db_cache\}
+  
+  Number of Code DB cache reads.
+
+- #### `nethermind_contracts_analysed` \{#contracts_analysed\}
+  
+  Number of contracts' code analysed for jump destinations.
+
+- #### `nethermind_creates` \{#creates\}
+  
+  Number of contract create calls.
+
+- #### `nethermind_empty_calls` \{#empty_calls\}
+  
+  Number of calls made to addresses without code.
+
+- #### `nethermind_evm_exceptions` \{#evm_exceptions\}
+  
+  Number of EVM exceptions thrown by contracts.
+
+- #### `nethermind_exp_opcode` \{#exp_opcode\}
+  
+  Number of EXP opcodes executed.
+
+- #### `nethermind_gas_price_ave` \{#gas_price_ave\}
+  
+  Mean tx gas price in block
+
+- #### `nethermind_gas_price_max` \{#gas_price_max\}
+  
+  Maximum tx gas price in block
+
+- #### `nethermind_gas_price_median` \{#gas_price_median\}
+  
+  Median tx gas price in block
+
+- #### `nethermind_gas_price_min` \{#gas_price_min\}
+  
+  Minimum tx gas price in block
+
+- #### `nethermind_m_copy_opcode` \{#m_copy_opcode\}
+  
+  Number of MCOPY opcodes executed.
+
+- #### `nethermind_number_of_background_tasks_scheduled` \{#number_of_background_tasks_scheduled\}
+  
+  The number of tasks currently scheduled in the background.
+
+- #### `nethermind_op_codes` \{#op_codes\}
+  
+  Number of opcodes executed.
+
+- #### `nethermind_self_destructs` \{#self_destructs\}
+  
+  Number of SELFDESTRUCT calls.
+
+- #### `nethermind_sload_opcode` \{#sload_opcode\}
+  
+  Number of SLOAD opcodes executed.
+
+- #### `nethermind_sstore_opcode` \{#sstore_opcode\}
+  
+  Number of SSTORE opcodes executed.
+
+- #### `nethermind_thread_local_calls` \{#thread_local_calls\}
+  
+  Number of calls to other contracts on thread.
+
+- #### `nethermind_thread_local_contracts_analysed` \{#thread_local_contracts_analysed\}
+  
+  Number of contracts' code analysed for jump destinations on thread.
+
+- #### `nethermind_thread_local_creates` \{#thread_local_creates\}
+  
+  Number of contract create calls on thread.
+
+- #### `nethermind_thread_local_empty_calls` \{#thread_local_empty_calls\}
+  
+  Number of calls made to addresses without code on thread.
+
+- #### `nethermind_thread_local_op_codes` \{#thread_local_op_codes\}
+  
+  Number of opcodes executed on thread.
+
+- #### `nethermind_thread_local_s_load_opcode` \{#thread_local_s_load_opcode\}
+  
+  Number of SLOAD opcodes executed on thread.
+
+- #### `nethermind_thread_local_s_store_opcode` \{#thread_local_s_store_opcode\}
+  
+  Number of SSTORE opcodes executed on thread.
+
+- #### `nethermind_thread_local_self_destructs` \{#thread_local_self_destructs\}
+  
+  Number of calls to other contracts on thread.
+
+- #### `nethermind_tload_opcode` \{#tload_opcode\}
+  
+  Number of TLOAD opcodes executed.
+
+- #### `nethermind_total_background_tasks_queued` \{#total_background_tasks_queued\}
+  
+  Total number of tasks queued for background execution.
+
+- #### `nethermind_tstore_opcode` \{#tstore_opcode\}
+  
+  Number of TSTORE opcodes executed.
+
+
+### Evm.Precompiles
+
 - #### `nethermind_bls_g1_add_precompile` \{#bls_g1_add_precompile\}
   
   Number of BLS12_G1ADD precompile calls.
@@ -255,61 +366,17 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of BN254_PAIRING precompile calls.
 
-- #### `nethermind_calls` \{#calls\}
-  
-  Number of calls to other contracts.
-
-- #### `nethermind_contracts_analysed` \{#contracts_analysed\}
-  
-  Number of contracts' code analysed for jump destinations.
-
-- #### `nethermind_creates` \{#creates\}
-  
-  Number of contract create calls.
-
 - #### `nethermind_ec_recover_precompile` \{#ec_recover_precompile\}
   
   Number of EC_RECOVERY precompile calls.
 
-- #### `nethermind_empty_calls` \{#empty_calls\}
+- #### `nethermind_l1_sload_precompile` \{#l1_sload_precompile\}
   
-  Number of calls made to addresses without code.
-
-- #### `nethermind_evm_exceptions` \{#evm_exceptions\}
-  
-  Number of EVM exceptions thrown by contracts.
-
-- #### `nethermind_exp_opcode` \{#exp_opcode\}
-  
-  Number of EXP opcodes executed.
-
-- #### `nethermind_gas_price_ave` \{#gas_price_ave\}
-  
-  Mean tx gas price in block
-
-- #### `nethermind_gas_price_max` \{#gas_price_max\}
-  
-  Maximum tx gas price in block
-
-- #### `nethermind_gas_price_median` \{#gas_price_median\}
-  
-  Median tx gas price in block
-
-- #### `nethermind_gas_price_min` \{#gas_price_min\}
-  
-  Minimum tx gas price in block
-
-- #### `nethermind_m_copy_opcode` \{#m_copy_opcode\}
-  
-  Number of MCOPY opcodes executed.
+  Number of L1SLOAD precompile calls.
 
 - #### `nethermind_mod_exp_precompile` \{#mod_exp_precompile\}
   
   Number of MODEXP precompile calls.
-
-- #### `nethermind_number_of_background_tasks_scheduled` \{#number_of_background_tasks_scheduled\}
-  
-  The number of tasks scheduled in the background.
 
 - #### `nethermind_point_evaluation_precompile` \{#point_evaluation_precompile\}
   
@@ -323,57 +390,28 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of Secp256r1 precompile calls.
 
-- #### `nethermind_self_destructs` \{#self_destructs\}
-  
-  Number of SELFDESTRUCT calls.
-
 - #### `nethermind_sha256_precompile` \{#sha256_precompile\}
   
   Number of SHA256 precompile calls.
 
-- #### `nethermind_sload_opcode` \{#sload_opcode\}
-  
-  Number of SLOAD opcodes executed.
 
-- #### `nethermind_sstore_opcode` \{#sstore_opcode\}
-  
-  Number of SSTORE opcodes executed.
+### History
 
-- #### `nethermind_thread_local_calls` \{#thread_local_calls\}
+- #### `nethermind_blocks_pruned` \{#blocks_pruned\}
   
-  Number of calls to other contracts on thread.
+  The number of the historical blocks that have been pruned (since restart).
 
-- #### `nethermind_thread_local_contracts_analysed` \{#thread_local_contracts_analysed\}
+- #### `nethermind_oldest_stored_block_number` \{#oldest_stored_block_number\}
   
-  Number of contracts' code analysed for jump destinations on thread.
+  The number of the oldest block stored.
 
-- #### `nethermind_thread_local_creates` \{#thread_local_creates\}
+- #### `nethermind_pruning_cutoff_blocknumber` \{#pruning_cutoff_blocknumber\}
   
-  Number of contract create calls on thread.
+  The cutoff block number from which historical blocks will be pruned.
 
-- #### `nethermind_thread_local_empty_calls` \{#thread_local_empty_calls\}
+- #### `nethermind_pruning_cutoff_timestamp` \{#pruning_cutoff_timestamp\}
   
-  Number of calls made to addresses without code on thread.
-
-- #### `nethermind_thread_local_s_load_opcode` \{#thread_local_s_load_opcode\}
-  
-  Number of SLOAD opcodes executed on thread.
-
-- #### `nethermind_thread_local_s_store_opcode` \{#thread_local_s_store_opcode\}
-  
-  Number of SSTORE opcodes executed on thread.
-
-- #### `nethermind_thread_local_self_destructs` \{#thread_local_self_destructs\}
-  
-  Number of calls to other contracts on thread.
-
-- #### `nethermind_tload_opcode` \{#tload_opcode\}
-  
-  Number of TLOAD opcodes executed.
-
-- #### `nethermind_tstore_opcode` \{#tstore_opcode\}
-  
-  Number of TSTORE opcodes executed.
+  The cutoff timestamp from which historical blocks will be pruned.
 
 
 ### JsonRpc
@@ -413,13 +451,25 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   ForkchoiceUpded request execution time
 
+- #### `nethermind_get_blobs_request_duration_seconds` \{#get_blobs_request_duration_seconds\}
+  
+  Time taken to return the blobs from engine_getBlobsV2 request
+
 - #### `nethermind_get_blobs_requests_failure_total` \{#get_blobs_requests_failure_total\}
   
-  Number of responses to engine_getBlobsV1 without all requested blobs
+  Number of responses to engine_getBlobsVX without all requested blobs
+
+- #### `nethermind_get_blobs_requests_in_blobpool_total` \{#get_blobs_requests_in_blobpool_total\}
+  
+  Number of Blobs requested by engine_getBlobsV2 that are present in the blobpool
 
 - #### `nethermind_get_blobs_requests_success_total` \{#get_blobs_requests_success_total\}
   
-  Number of responses to engine_getBlobsV1 with all requested blobs
+  Number of responses to engine_getBlobsV1 and engine_getBlobsV2 with all requested blobs
+
+- #### `nethermind_get_blobs_requests_total` \{#get_blobs_requests_total\}
+  
+  Number of Blobs requested by engine_getBlobsV2
 
 - #### `nethermind_get_payload_requests` \{#get_payload_requests\}
   
@@ -583,6 +633,37 @@ Currently, Nethermind provides the following options to monitor and collect metr
   Version number
 
 
+### Serialization.Rlp
+
+- #### `nethermind_allocator_active_allocation_bytes` \{#allocator_active_allocation_bytes\}
+  
+  Active allocation bytes
+
+- #### `nethermind_allocator_active_allocations` \{#allocator_active_allocations\}
+  
+  Active allocation count
+
+- #### `nethermind_allocator_allocations` \{#allocator_allocations\}
+  
+  Allocatioons
+
+- #### `nethermind_allocator_arena_count` \{#allocator_arena_count\}
+  
+  Arena count
+
+- #### `nethermind_allocator_chunk_size` \{#allocator_chunk_size\}
+  
+  Chunk size of the allocator
+
+- #### `nethermind_allocator_used_direct_memory` \{#allocator_used_direct_memory\}
+  
+  Used direct memory
+
+- #### `nethermind_allocator_used_heap_memory` \{#allocator_used_heap_memory\}
+  
+  Used heap memory
+
+
 ### Shutter
 
 - #### `nethermind_shutter_bad_transactions` \{#shutter_bad_transactions\}
@@ -623,6 +704,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 
 ### Synchronization
+
+- #### `nethermind_snap_range_result` \{#snap_range_result\}
+  
+  Snap range result
 
 - #### `nethermind_sync_peers` \{#sync_peers\}
   
@@ -734,6 +819,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of pending transactions received that were ignored because of not supported transaction type.
 
+- #### `nethermind_pending_transactions_null_hash` \{#pending_transactions_null_hash\}
+  
+  Number of pending transactions rejected with a null hash.
+
 - #### `nethermind_pending_transactions_passed_filters_but_cannot_compete_on_fees` \{#pending_transactions_passed_filters_but_cannot_compete_on_fees\}
   
   Number of pending transactions received that were ignored after passing early rejections as balance is too low to compete with lowest effective fee in transaction pool.
@@ -749,6 +838,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_pending_transactions_sent` \{#pending_transactions_sent\}
   
   Number of pending transactions broadcasted to peers.
+
+- #### `nethermind_pending_transactions_size_too_large` \{#pending_transactions_size_too_large\}
+  
+  Number of pending transactions rejected due to excessive size.
 
 - #### `nethermind_pending_transactions_too_low_balance` \{#pending_transactions_too_low_balance\}
   
@@ -777,6 +870,18 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_transaction_count` \{#transaction_count\}
   
   Number of transactions in pool.
+
+- #### `nethermind_transactions_reorged` \{#transactions_reorged\}
+  
+  Number of transactions reorganized during chain reorg.
+
+- #### `nethermind_transactions_sourced_mem_pool` \{#transactions_sourced_mem_pool\}
+  
+  Number of transactions sourced from the mempool.
+
+- #### `nethermind_transactions_sourced_private_order_flow` \{#transactions_sourced_private_order_flow\}
+  
+  Number of transactions sourced from private order flow.
 
 
 <!--[end autogen]-->
