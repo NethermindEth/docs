@@ -36,95 +36,17 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 <!--[start autogen]-->
 
 <Tabs>
-<TabItem value="mainnet" label="Mainnet">
+<TabItem value="hoodi" label="Hoodi">
 
-- `state`: 161 GB
-- `receipts`: 217 GB
-- `blocks`: 607 GB
-- `bloom`: 6.5 GB
-- `headers`: 9.1 GB
-- `code`: 4.9 GB
-- `blobTransactions`: 917 MB
+- `state`: 11 GB
+- `receipts`: 2.0 GB
+- `blocks`: 5.8 GB
+- `bloom`: 389 MB
+- `headers`: 429 MB
+- `code`: 232 MB
+- `blobTransactions`: 91 MB
 - ...
-- **Total: 1007 GB**
-
-</TabItem>
-<TabItem value="sepolia" label="Sepolia">
-
-- `state`: 45 GB
-- `receipts`: 42 GB
-- `blocks`: 311 GB
-- `bloom`: 2.2 GB
-- `headers`: 2.5 GB
-- `code`: 7.0 GB
-- `blobTransactions`: 178 MB
-- ...
-- **Total: 409 GB**
-
-</TabItem>
-<TabItem value="holesky" label="Holesky">
-
-- `state`: 22 GB
-- `receipts`: 17 GB
-- `blocks`: 60 GB
-- `bloom`: 848 MB
-- `headers`: 1.2 GB
-- `code`: 732 MB
-- `blobTransactions`: 81 MB
-- ...
-- **Total: 101 GB**
-
-</TabItem>
-<TabItem value="gnosis" label="Gnosis">
-
-- `state`: 66 GB
-- `receipts`: 218 GB
-- `blocks`: 202 GB
-- `bloom`: 9.4 GB
-- `headers`: 11 GB
-- `code`: 683 MB
-- `blobTransactions`: 75 MB
-- ...
-- **Total: 509 GB**
-
-</TabItem>
-<TabItem value="chiado" label="Chiado">
-
-- `state`: 2.6 GB
-- `receipts`: 1.5 GB
-- `blocks`: 9.7 GB
-- `bloom`: 3.3 GB
-- `headers`: 2.5 GB
-- `code`: 72 MB
-- `blobTransactions`: 407 MB
-- ...
-- **Total: 22 GB**
-
-</TabItem>
-<TabItem value="energyweb" label="Energyweb">
-
-- `state`: 27 GB
-- `receipts`: 4.6 GB
-- `blocks`: 25 GB
-- `bloom`: 11 GB
-- `headers`: 7.2 GB
-- `code`: 14 MB
-- `blobTransactions`:
-- ...
-- **Total: 76 GB**
-
-</TabItem>
-<TabItem value="volta" label="Volta">
-
-- `state`: 34 GB
-- `receipts`: 8.5 GB
-- `blocks`: 33 GB
-- `bloom`: 9.2 GB
-- `headers`: 7.0 GB
-- `code`: 96 MB
-- `blobTransactions`:
-- ...
-- **Total: 95 GB**
+- **Total: 20 GB**
 
 </TabItem>
 </Tabs>
