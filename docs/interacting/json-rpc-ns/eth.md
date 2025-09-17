@@ -475,6 +475,52 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### eth_getAccountInfo
+
+Retrieves Account with code and no storageRoot via Address and Blocknumber
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `accountAddress`: _string_ (address)
+
+2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_getAccountInfo",
+      "params": [accountAddress, blockParameter]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _object_
+  - `balance`: _string_ (hex integer)
+  - `code`: _string_ (hex data)
+  - `nonce`: _string_ (hex integer)
+
+</TabItem>
+</Tabs>
+
 ### eth_getBalance
 
 Returns account balance

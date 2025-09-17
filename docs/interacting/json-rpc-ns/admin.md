@@ -415,7 +415,7 @@ Information about this node
     - `difficulty`: _string_ (hex integer)
     - `genesisHash`: _string_ (hash)
     - `headHash`: _string_ (hash)
-    - `newtorkId`: _string_ (hex integer)
+    - `networkId`: _string_ (hex integer)
 
 </TabItem>
 </Tabs>
@@ -459,19 +459,61 @@ List of connected peers including information
 ```
 
 `result`: array of _object_
-  - `address`: _string_
-  - `clientType`: _string_
+  - `caps`: array of _object_
+    - `protocolCode`: _string_
+    - `version`: _string_ (hex integer)
+  - `clientType`: _integer_
   - `enode`: _string_
+  - `enr`: _string_
   - `ethDetails`: _string_
-  - `host`: _string_
-  - `id`: _string_
-  - `inbound`: _boolean_
-  - `isBootnode`: _boolean_
-  - `isStatic`: _boolean_
-  - `isTrusted`: _boolean_
-  - `lastSignal`: _string_
+  - `id`: _object_
+    - `address`: _string_ (address)
+    - `bytes`: _string_ (hex data)
+    - `hash`: _string_ (hash)
+    - `prefixedBytes`: _string_ (hex data)
+  - `lastSignal`: _object_
+    - `hasValue`: _boolean_
+    - `value`: _object_
+      - `date`: _object_
+        <!--[circular ref]-->
+      - `day`: _string_ (hex integer)
+      - `dayOfWeek`: _integer_
+      - `dayOfYear`: _string_ (hex integer)
+      - `hour`: _string_ (hex integer)
+      - `kind`: _integer_
+      - `microsecond`: _string_ (hex integer)
+      - `millisecond`: _string_ (hex integer)
+      - `minute`: _string_ (hex integer)
+      - `month`: _string_ (hex integer)
+      - `nanosecond`: _string_ (hex integer)
+      - `second`: _string_ (hex integer)
+      - `ticks`: _string_ (hex integer)
+      - `timeOfDay`: _object_
+        - `days`: _string_ (hex integer)
+        - `hours`: _string_ (hex integer)
+        - `microseconds`: _string_ (hex integer)
+        - `milliseconds`: _string_ (hex integer)
+        - `minutes`: _string_ (hex integer)
+        - `nanoseconds`: _string_ (hex integer)
+        - `seconds`: _string_ (hex integer)
+        - `ticks`: _string_ (hex integer)
+        - `totalDays`: _object_
+        - `totalHours`: _object_
+        - `totalMicroseconds`: _object_
+        - `totalMilliseconds`: _object_
+        - `totalMinutes`: _object_
+        - `totalNanoseconds`: _object_
+        - `totalSeconds`: _object_
+      - `year`: _string_ (hex integer)
   - `name`: _string_
-  - `port`: _string_ (hex integer)
+  - `network`: _object_
+    - `inbound`: _boolean_
+    - `localAddress`: _string_
+    - `localHost`: _string_
+    - `remoteAddress`: _string_
+    - `static`: _boolean_
+    - `trusted`: _boolean_
+  - `protocols`: map of _object_
 
 </TabItem>
 </Tabs>
