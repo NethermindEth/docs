@@ -10,20 +10,25 @@ GitHub:
 git clone --recursive https://github.com/nethermindeth/nethermind.git
 ```
 
-There are two options buiding Nethermind from source code:
+There are two options building Nethermind from source code:
 
 - [Standalone binaries](#building-standalone-binaries)
 - [Docker image](#building-docker-image)
+
+:::tip
+For reproducible builds, the following conditions must be met:
+
+- Environment variable `CI` must be set to `true`.
+- Environment variable [`SOURCE_DATE_EPOCH`](https://reproducible-builds.org/docs/source-date-epoch/) must be set to the same Unix epoch for each build.
+- The `SourceRevisionId` MSBuild property must be set to the same Git commit hash for each build. This is handled automatically if the `.git` directory is available in the project root.
+
+:::
 
 ## Building standalone binaries
 
 ### Prerequisites
 
 To build Nethermind from source, install [.NET SDK](https://aka.ms/dotnet/download) 9.0.2 or later.
-
-:::tip
-For a seamless experience, ensure your .NET SDK is up to date.
-:::
 
 ### Building
 
@@ -86,22 +91,18 @@ Currently, there are three Docker images available in the project's root directo
 All Docker images have the following optional arguments:
 
 - `BUILD_CONFIG`: the build configuration that is either `release` or `debug`. Defaults to `release`.
-- `BUILD_TIMESTAMP`: the build time as a Unix timestamp. Defaults to the current time.
-- `CI`: this is mostly used for CI builds determining whether the build is deterministic. Must be either `true` or `false`. Defaults to `false`.
-- `COMMIT_HASH`: the Git commit hash to use as a part of the version string. Defaults to the latest commit hash.
+- `CI`: this is mostly used for CI builds determining whether the build is deterministic. Must be either `true` or `false`. Defaults to `true`.
+- `COMMIT_HASH`: the Git commit hash to use as a part of the version string.
+- `SOURCE_DATE_EPOCH`: the build time as a Unix timestamp. Defaults to the current time.
 
 Given the above, the following command builds the Nethermind chiseled Docker image from the project's root directory:
 
 ```bash
-build_timestamp=$(date '+%s')
-commit_hash=$(git rev-parse HEAD)
-
 docker build . \
   -f Dockerfile.chiseled \
   -t nethermind-chiseled \
-  --build-arg BUILD_TIMESTAMP=$build_timestamp \
-  --build-arg CI=true \
-  --build-arg COMMIT_HASH=$commit_hash
+  --build-arg COMMIT_HASH=$(git rev-parse HEAD) \
+  --build-arg SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 ```
 
 For quick testing images, the above arguments can be omitted if not needed:
