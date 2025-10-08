@@ -102,7 +102,7 @@ docker build . \
   -f Dockerfile.chiseled \
   -t nethermind-chiseled \
   --build-arg COMMIT_HASH=$(git rev-parse HEAD) \
-  --build-arg SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
+  --build-arg SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)
 ```
 
 For quick testing images, the above arguments can be omitted if not needed:
