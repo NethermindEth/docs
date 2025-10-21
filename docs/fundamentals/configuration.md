@@ -44,7 +44,6 @@ The configuration options are case-sensitive and can be defined only once unless
   - `chiado` `chiado_archive`
   - `energyweb` `energyweb_archive`
   - `gnosis` `gnosis_archive`
-  - `holesky` `holesky_archive`
   - `hoodi` `hoodi_archive`
   - `linea-mainnet` `linea-mainnet_archive`
   - `linea-sepolia` `linea-sepolia_archive`

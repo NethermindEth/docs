@@ -336,16 +336,16 @@ Thus, the `DemoPlugin` won't be included in the output of `Nethermind.Runner`. T
 
 Now, we're ready to launch the debugger and check the Nethermind logs for our plugin. You may notice that the "Hello, world!" message is missing, although Nethermind logs show the plugin is loaded. That's because we made it configurable with the `Demo.Enabled` option, which is `false` by default. Let's set it to `true`.
 
-The launch configurations of `Nethermind.Runner` are defined in [`launchSettings.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/Properties/launchSettings.json). For instance, if we launch it with Holesky, we set our `Demo.Enabled` configuration option as follows:
+The launch configurations of `Nethermind.Runner` are defined in [`launchSettings.json`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Runner/Properties/launchSettings.json). For instance, if we launch it with Hoodi, we set our `Demo.Enabled` configuration option as follows:
 
 <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```json title="launchSettings.json"
   ...
-  "Holesky": {
+  "Hoodi": {
     "commandName": "Project",
   // highlight-start
-    "commandLineArgs": "-c holesky --data-dir .data --demo-enabled",
+    "commandLineArgs": "-c hoodi --data-dir .data --demo-enabled",
   // highlight-end
     "environmentVariables": {
       "ASPNETCORE_ENVIRONMENT": "Development"
@@ -357,9 +357,9 @@ The launch configurations of `Nethermind.Runner` are defined in [`launchSettings
   <TabItem value="env" label="Environment variable">
   ```json title="launchSettings.json"
   ...
-  "Holesky": {
+  "Hoodi": {
     "commandName": "Project",
-    "commandLineArgs": "-c holesky --data-dir .data",
+    "commandLineArgs": "-c hoodi --data-dir .data",
     "environmentVariables": {
       "ASPNETCORE_ENVIRONMENT": "Development",
   // highlight-start
@@ -372,7 +372,7 @@ The launch configurations of `Nethermind.Runner` are defined in [`launchSettings
   </TabItem>
   </Tabs>
 
-Now, if we launch the debugger with Holesky, we will see our "Hello, world!" message again!
+Now, if we launch the debugger with Hoodi, we will see our "Hello, world!" message again!
 
 ## Plugin types
 

@@ -165,7 +165,7 @@ This is because not all RPC modules are enabled by default for security and perf
 
 ```bash
 nethermind \
-  -c holesky \
+  -c hoodi \
   --jsonrpc-enabledmodules eth,demo
 ```
 

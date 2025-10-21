@@ -62,19 +62,6 @@ Below is a comprehensive list of the supported chains, along with a detailed bre
 - **Total: 409 GB**
 
 </TabItem>
-<TabItem value="holesky" label="Holesky">
-
-- `state`: 22 GB
-- `receipts`: 17 GB
-- `blocks`: 60 GB
-- `bloom`: 848 MB
-- `headers`: 1.2 GB
-- `code`: 732 MB
-- `blobTransactions`: 81 MB
-- ...
-- **Total: 101 GB**
-
-</TabItem>
 <TabItem value="gnosis" label="Gnosis">
 
 - `state`: 66 GB

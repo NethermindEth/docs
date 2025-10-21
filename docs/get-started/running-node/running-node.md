@@ -21,7 +21,6 @@ We urge you to always [explicitly specify](../../fundamentals/configuration.md#d
 **Supported networks**
 
 - [Mainnet](https://ethereum.org/en/developers/docs/networks/#ethereum-mainnet) - configurations: `mainnet` `mainnet_archive`
-- [Holesky](https://holesky.ethpandaops.io) (testnet) - configurations: `holesky` `holesky_archive`
 - [Hoodi](https://hoodi.ethpandaops.io) (testnet) - configurations: `hoodi` `hoodi_archive`
 - [Sepolia](https://sepolia.ethpandaops.io) (testnet) - configurations: `sepolia` `sepolia_archive`
 
