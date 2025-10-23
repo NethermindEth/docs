@@ -28,7 +28,7 @@ For reproducible builds, the following conditions must be met:
 
 ### Prerequisites
 
-To build Nethermind from source, install [.NET SDK](https://aka.ms/dotnet/download) 9.0.2 or later.
+To build Nethermind from source, install [.NET SDK](https://aka.ms/dotnet/download) 10 or later.
 
 ### Building
 
@@ -70,10 +70,10 @@ initial step of the build is not required):
 cd src/Nethermind
 
 # Run Nethermind tests
-dotnet test Nethermind.slnx -c release
+dotnet test --solution Nethermind.slnx -c release
 
 # Run Ethereum Foundation tests
-dotnet test EthereumTests.slnx -c release
+dotnet test --solution EthereumTests.slnx -c release
 ```
 
 ## Building Docker image
