@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-1.34.0 docs-doc-page docs-doc-id-monitoring/metrics/metrics" data-has-hydrated="false">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v3.9.1">
+<meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Metrics | Nethermind documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f"><meta data-rh="true" name="twitter:image" content="https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f"><meta data-rh="true" property="og:url" content="https://docs.nethermind.io/1.34.0/monitoring/metrics/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="1.34.0"><meta data-rh="true" name="docusaurus_tag" content="docs-default-1.34.0"><meta data-rh="true" name="docsearch:version" content="1.34.0"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-1.34.0"><meta data-rh="true" property="og:title" content="Metrics | Nethermind documentation"><meta data-rh="true" name="description" content="Currently, Nethermind provides the following options to monitor and collect metrics about itself:"><meta data-rh="true" property="og:description" content="Currently, Nethermind provides the following options to monitor and collect metrics about itself:"><link data-rh="true" rel="icon" href="/images/favicon.svg"><link data-rh="true" rel="canonical" href="https://docs.nethermind.io/1.34.0/monitoring/metrics/"><link data-rh="true" rel="alternate" href="https://docs.nethermind.io/1.34.0/monitoring/metrics/" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.nethermind.io/1.34.0/monitoring/metrics/" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://4I20VAM8JS-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Metrics","item":"https://docs.nethermind.io/1.34.0/monitoring/metrics/"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JDCNMPQ22"></script>
@@ -14,9 +14,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&amp;family=Exo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"><link rel="stylesheet" href="/assets/css/styles.bd4a2ba4.css">
-<script src="/assets/js/runtime~main.e5e92d84.js" defer="defer"></script>
-<script src="/assets/js/main.7adb199d.js" defer="defer"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&amp;family=Exo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"><link rel="stylesheet" href="/assets/css/styles.be306fa9.css">
+<script src="/assets/js/runtime~main.7cce1abb.js" defer="defer"></script>
+<script src="/assets/js/main.6bacec5f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -24,881 +24,881 @@
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/images/logo_dark.svg"><link rel="preload" as="image" href="/images/logo_light.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/"><div class="navbar__logo"><img src="/images/logo_dark.svg" alt="Nethermind" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/images/logo_light.svg" alt="Nethermind" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div></a><div class="navbar__item dropdown dropdown--hoverable"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/1.34.0/monitoring/metrics/">1.34.0</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/next/monitoring/metrics/">Next</a></li><li><a class="dropdown__link" href="/monitoring/metrics/">1.35.0</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/1.34.0/monitoring/metrics/">1.34.0</a></li><li><a class="dropdown__link" href="/1.33.0/monitoring/metrics/">1.33.0</a></li><li><a class="dropdown__link" href="/1.32.0/monitoring/metrics/">1.32.0</a></li><li><a class="dropdown__link" href="/1.31.0/monitoring/metrics/">1.31.0</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/NethermindEth/nethermind" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-social-link header-github-icon" aria-label="GitHub"></a><a href="https://discord.com/invite/PaCMRFdvWT" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-social-link header-discord-icon" aria-label="Discord"></a><a href="https://x.com/NethermindEth" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-social-link header-x-icon" aria-label="X"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/1.34.0/"><span title="Get started" class="categoryLinkLabel_W154">Get started</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/1.34.0/fundamentals/configuration"><span title="Fundamentals" class="categoryLinkLabel_W154">Fundamentals</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/1.34.0/interacting/json-rpc-server"><span title="Interacting with Nethermind" class="categoryLinkLabel_W154">Interacting with Nethermind</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/1.34.0/monitoring/metrics/"><span title="Monitoring" class="categoryLinkLabel_W154">Monitoring</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible menu__list-item-collapsible--active"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" aria-current="page" tabindex="0" href="/1.34.0/monitoring/metrics/"><span title="Metrics" class="categoryLinkLabel_W154">Metrics</span></a><button aria-label="Collapse sidebar category &#x27;Metrics&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/1.34.0/monitoring/metrics/grafana-and-prometheus"><span title="Grafana and Prometheus" class="linkLabel_WmDU">Grafana and Prometheus</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/1.34.0/monitoring/metrics/dotnet-counters"><span title="dotnet-counters" class="linkLabel_WmDU">dotnet-counters</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/1.34.0/monitoring/health-check"><span title="Health check" class="linkLabel_WmDU">Health check</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/1.34.0/validators/"><span title="Validators" class="categoryLinkLabel_W154">Validators</span></a><button aria-label="Expand sidebar category &#x27;Validators&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/1.34.0/developers/building-from-source"><span title="Developers" class="categoryLinkLabel_W154">Developers</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/1.34.0/troubleshooting"><span title="Troubleshooting" class="linkLabel_WmDU">Troubleshooting</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is documentation for <!-- -->Nethermind documentation<!-- --> <b>1.34.0</b>, which is no longer actively maintained.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/monitoring/metrics/">latest version</a></b> (<!-- -->1.35.0<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Monitoring</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Metrics</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 1.34.0</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Metrics</h1></header><p>Currently, Nethermind provides the following options to monitor and collect metrics about itself:</p>
 <ul>
-<li><a href="/1.34.0/monitoring/metrics/grafana-and-prometheus">Grafana and Prometheus</a></li>
-<li><a href="/1.34.0/monitoring/metrics/dotnet-counters">dotnet-counters</a></li>
+<li class=""><a class="" href="/1.34.0/monitoring/metrics/grafana-and-prometheus">Grafana and Prometheus</a></li>
+<li class=""><a class="" href="/1.34.0/monitoring/metrics/dotnet-counters">dotnet-counters</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-by-namespace">Parameters by namespace<a href="#parameters-by-namespace" class="hash-link" aria-label="Direct link to Parameters by namespace" title="Direct link to Parameters by namespace" translate="no">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="aura">Aura<a href="#aura" class="hash-link" aria-label="Direct link to Aura" title="Direct link to Aura" translate="no">​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="parameters-by-namespace">Parameters by namespace<a href="#parameters-by-namespace" class="hash-link" aria-label="Direct link to Parameters by namespace" title="Direct link to Parameters by namespace" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="aura">Aura<a href="#aura" class="hash-link" aria-label="Direct link to Aura" title="Direct link to Aura" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="au_ra_step"><code>nethermind_au_ra_step</code><a href="#au_ra_step" class="hash-link" aria-label="Direct link to au_ra_step" title="Direct link to au_ra_step" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="au_ra_step"><code>nethermind_au_ra_step</code><a href="#au_ra_step" class="hash-link" aria-label="Direct link to au_ra_step" title="Direct link to au_ra_step" translate="no">​</a></h4>
 <p>Current AuRa step</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="commit_hash_transaction"><code>nethermind_commit_hash_transaction</code><a href="#commit_hash_transaction" class="hash-link" aria-label="Direct link to commit_hash_transaction" title="Direct link to commit_hash_transaction" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="commit_hash_transaction"><code>nethermind_commit_hash_transaction</code><a href="#commit_hash_transaction" class="hash-link" aria-label="Direct link to commit_hash_transaction" title="Direct link to commit_hash_transaction" translate="no">​</a></h4>
 <p>RANDAO number of commit hash transactions</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="emit_initiate_change"><code>nethermind_emit_initiate_change</code><a href="#emit_initiate_change" class="hash-link" aria-label="Direct link to emit_initiate_change" title="Direct link to emit_initiate_change" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="emit_initiate_change"><code>nethermind_emit_initiate_change</code><a href="#emit_initiate_change" class="hash-link" aria-label="Direct link to emit_initiate_change" title="Direct link to emit_initiate_change" translate="no">​</a></h4>
 <p>POSDAO number of emit init change transactions</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reported_benign_misbehaviour"><code>nethermind_reported_benign_misbehaviour</code><a href="#reported_benign_misbehaviour" class="hash-link" aria-label="Direct link to reported_benign_misbehaviour" title="Direct link to reported_benign_misbehaviour" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="reported_benign_misbehaviour"><code>nethermind_reported_benign_misbehaviour</code><a href="#reported_benign_misbehaviour" class="hash-link" aria-label="Direct link to reported_benign_misbehaviour" title="Direct link to reported_benign_misbehaviour" translate="no">​</a></h4>
 <p>Number of reported benign misbehaviour validators</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reported_malicious_misbehaviour"><code>nethermind_reported_malicious_misbehaviour</code><a href="#reported_malicious_misbehaviour" class="hash-link" aria-label="Direct link to reported_malicious_misbehaviour" title="Direct link to reported_malicious_misbehaviour" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="reported_malicious_misbehaviour"><code>nethermind_reported_malicious_misbehaviour</code><a href="#reported_malicious_misbehaviour" class="hash-link" aria-label="Direct link to reported_malicious_misbehaviour" title="Direct link to reported_malicious_misbehaviour" translate="no">​</a></h4>
 <p>Number of reported malicious misbehaviour validators</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reveal_number"><code>nethermind_reveal_number</code><a href="#reveal_number" class="hash-link" aria-label="Direct link to reveal_number" title="Direct link to reveal_number" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="reveal_number"><code>nethermind_reveal_number</code><a href="#reveal_number" class="hash-link" aria-label="Direct link to reveal_number" title="Direct link to reveal_number" translate="no">​</a></h4>
 <p>RANDAO number of reveal number transactions</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="sealed_transactions"><code>nethermind_sealed_transactions</code><a href="#sealed_transactions" class="hash-link" aria-label="Direct link to sealed_transactions" title="Direct link to sealed_transactions" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sealed_transactions"><code>nethermind_sealed_transactions</code><a href="#sealed_transactions" class="hash-link" aria-label="Direct link to sealed_transactions" title="Direct link to sealed_transactions" translate="no">​</a></h4>
 <p>Number of sealed transactions generated by engine</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="validators_count"><code>nethermind_validators_count</code><a href="#validators_count" class="hash-link" aria-label="Direct link to validators_count" title="Direct link to validators_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="validators_count"><code>nethermind_validators_count</code><a href="#validators_count" class="hash-link" aria-label="Direct link to validators_count" title="Direct link to validators_count" translate="no">​</a></h4>
 <p>Number of current AuRa validators</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="blockchain">Blockchain<a href="#blockchain" class="hash-link" aria-label="Direct link to Blockchain" title="Direct link to Blockchain" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="blockchain">Blockchain<a href="#blockchain" class="hash-link" aria-label="Direct link to Blockchain" title="Direct link to Blockchain" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="best_known_block_number"><code>nethermind_best_known_block_number</code><a href="#best_known_block_number" class="hash-link" aria-label="Direct link to best_known_block_number" title="Direct link to best_known_block_number" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="best_known_block_number"><code>nethermind_best_known_block_number</code><a href="#best_known_block_number" class="hash-link" aria-label="Direct link to best_known_block_number" title="Direct link to best_known_block_number" translate="no">​</a></h4>
 <p>The estimated highest block available.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="block_m_gas_per_sec"><code>nethermind_block_m_gas_per_sec</code><a href="#block_m_gas_per_sec" class="hash-link" aria-label="Direct link to block_m_gas_per_sec" title="Direct link to block_m_gas_per_sec" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="block_m_gas_per_sec"><code>nethermind_block_m_gas_per_sec</code><a href="#block_m_gas_per_sec" class="hash-link" aria-label="Direct link to block_m_gas_per_sec" title="Direct link to block_m_gas_per_sec" translate="no">​</a></h4>
 <p>Histogram of block MGas per second</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="block_processing_time_micros"><code>nethermind_block_processing_time_micros</code><a href="#block_processing_time_micros" class="hash-link" aria-label="Direct link to block_processing_time_micros" title="Direct link to block_processing_time_micros" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="block_processing_time_micros"><code>nethermind_block_processing_time_micros</code><a href="#block_processing_time_micros" class="hash-link" aria-label="Direct link to block_processing_time_micros" title="Direct link to block_processing_time_micros" translate="no">​</a></h4>
 <p>Histogram of block prorcessing time</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blockchain_height"><code>nethermind_blockchain_height</code><a href="#blockchain_height" class="hash-link" aria-label="Direct link to blockchain_height" title="Direct link to blockchain_height" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blockchain_height"><code>nethermind_blockchain_height</code><a href="#blockchain_height" class="hash-link" aria-label="Direct link to blockchain_height" title="Direct link to blockchain_height" translate="no">​</a></h4>
 <p>The current height of the canonical chain.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blocks"><code>nethermind_blocks</code><a href="#blocks" class="hash-link" aria-label="Direct link to blocks" title="Direct link to blocks" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blocks"><code>nethermind_blocks</code><a href="#blocks" class="hash-link" aria-label="Direct link to blocks" title="Direct link to blocks" translate="no">​</a></h4>
 <p>Total number of blocks processed</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blocks_sealed"><code>nethermind_blocks_sealed</code><a href="#blocks_sealed" class="hash-link" aria-label="Direct link to blocks_sealed" title="Direct link to blocks_sealed" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blocks_sealed"><code>nethermind_blocks_sealed</code><a href="#blocks_sealed" class="hash-link" aria-label="Direct link to blocks_sealed" title="Direct link to blocks_sealed" translate="no">​</a></h4>
 <p>Total number of sealed blocks</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="failed_block_seals"><code>nethermind_failed_block_seals</code><a href="#failed_block_seals" class="hash-link" aria-label="Direct link to failed_block_seals" title="Direct link to failed_block_seals" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="failed_block_seals"><code>nethermind_failed_block_seals</code><a href="#failed_block_seals" class="hash-link" aria-label="Direct link to failed_block_seals" title="Direct link to failed_block_seals" translate="no">​</a></h4>
 <p>Total number of failed block seals</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gas_limit"><code>nethermind_gas_limit</code><a href="#gas_limit" class="hash-link" aria-label="Direct link to gas_limit" title="Direct link to gas_limit" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gas_limit"><code>nethermind_gas_limit</code><a href="#gas_limit" class="hash-link" aria-label="Direct link to gas_limit" title="Direct link to gas_limit" translate="no">​</a></h4>
 <p>Gas Limit for processed blocks</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gas_used"><code>nethermind_gas_used</code><a href="#gas_used" class="hash-link" aria-label="Direct link to gas_used" title="Direct link to gas_used" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gas_used"><code>nethermind_gas_used</code><a href="#gas_used" class="hash-link" aria-label="Direct link to gas_used" title="Direct link to gas_used" translate="no">​</a></h4>
 <p>Gas Used in processed blocks</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="last_difficulty"><code>nethermind_last_difficulty</code><a href="#last_difficulty" class="hash-link" aria-label="Direct link to last_difficulty" title="Direct link to last_difficulty" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="last_difficulty"><code>nethermind_last_difficulty</code><a href="#last_difficulty" class="hash-link" aria-label="Direct link to last_difficulty" title="Direct link to last_difficulty" translate="no">​</a></h4>
 <p>Difficulty of the last block</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="mgas"><code>nethermind_mgas</code><a href="#mgas" class="hash-link" aria-label="Direct link to mgas" title="Direct link to mgas" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mgas"><code>nethermind_mgas</code><a href="#mgas" class="hash-link" aria-label="Direct link to mgas" title="Direct link to mgas" translate="no">​</a></h4>
 <p>Total MGas processed</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="mgas_per_sec"><code>nethermind_mgas_per_sec</code><a href="#mgas_per_sec" class="hash-link" aria-label="Direct link to mgas_per_sec" title="Direct link to mgas_per_sec" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mgas_per_sec"><code>nethermind_mgas_per_sec</code><a href="#mgas_per_sec" class="hash-link" aria-label="Direct link to mgas_per_sec" title="Direct link to mgas_per_sec" translate="no">​</a></h4>
 <p>MGas processed per second</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="processing_queue_size"><code>nethermind_processing_queue_size</code><a href="#processing_queue_size" class="hash-link" aria-label="Direct link to processing_queue_size" title="Direct link to processing_queue_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="processing_queue_size"><code>nethermind_processing_queue_size</code><a href="#processing_queue_size" class="hash-link" aria-label="Direct link to processing_queue_size" title="Direct link to processing_queue_size" translate="no">​</a></h4>
 <p>Number of blocks awaiting for processing.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="recovery_queue_size"><code>nethermind_recovery_queue_size</code><a href="#recovery_queue_size" class="hash-link" aria-label="Direct link to recovery_queue_size" title="Direct link to recovery_queue_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="recovery_queue_size"><code>nethermind_recovery_queue_size</code><a href="#recovery_queue_size" class="hash-link" aria-label="Direct link to recovery_queue_size" title="Direct link to recovery_queue_size" translate="no">​</a></h4>
 <p>Number of blocks awaiting for recovery of public keys from signatures.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reorganizations"><code>nethermind_reorganizations</code><a href="#reorganizations" class="hash-link" aria-label="Direct link to reorganizations" title="Direct link to reorganizations" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="reorganizations"><code>nethermind_reorganizations</code><a href="#reorganizations" class="hash-link" aria-label="Direct link to reorganizations" title="Direct link to reorganizations" translate="no">​</a></h4>
 <p>Total number of chain reorganizations</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_merkleization_time"><code>nethermind_state_merkleization_time</code><a href="#state_merkleization_time" class="hash-link" aria-label="Direct link to state_merkleization_time" title="Direct link to state_merkleization_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_merkleization_time"><code>nethermind_state_merkleization_time</code><a href="#state_merkleization_time" class="hash-link" aria-label="Direct link to state_merkleization_time" title="Direct link to state_merkleization_time" translate="no">​</a></h4>
 <p>State root calculation time</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="total_difficulty"><code>nethermind_total_difficulty</code><a href="#total_difficulty" class="hash-link" aria-label="Direct link to total_difficulty" title="Direct link to total_difficulty" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="total_difficulty"><code>nethermind_total_difficulty</code><a href="#total_difficulty" class="hash-link" aria-label="Direct link to total_difficulty" title="Direct link to total_difficulty" translate="no">​</a></h4>
 <p>Total difficulty on the chain</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="transactions"><code>nethermind_transactions</code><a href="#transactions" class="hash-link" aria-label="Direct link to transactions" title="Direct link to transactions" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="transactions"><code>nethermind_transactions</code><a href="#transactions" class="hash-link" aria-label="Direct link to transactions" title="Direct link to transactions" translate="no">​</a></h4>
 <p>Total number of transactions processed</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="db">Db<a href="#db" class="hash-link" aria-label="Direct link to Db" title="Direct link to Db" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="db">Db<a href="#db" class="hash-link" aria-label="Direct link to Db" title="Direct link to Db" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_block_cache_size"><code>nethermind_db_block_cache_size</code><a href="#db_block_cache_size" class="hash-link" aria-label="Direct link to db_block_cache_size" title="Direct link to db_block_cache_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_block_cache_size"><code>nethermind_db_block_cache_size</code><a href="#db_block_cache_size" class="hash-link" aria-label="Direct link to db_block_cache_size" title="Direct link to db_block_cache_size" translate="no">​</a></h4>
 <p>Database block cache size per database</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_compaction_stats"><code>nethermind_db_compaction_stats</code><a href="#db_compaction_stats" class="hash-link" aria-label="Direct link to db_compaction_stats" title="Direct link to db_compaction_stats" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_compaction_stats"><code>nethermind_db_compaction_stats</code><a href="#db_compaction_stats" class="hash-link" aria-label="Direct link to db_compaction_stats" title="Direct link to db_compaction_stats" translate="no">​</a></h4>
 <p>Metrics extracted from RocksDB Compaction Stats</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_index_filter_size"><code>nethermind_db_index_filter_size</code><a href="#db_index_filter_size" class="hash-link" aria-label="Direct link to db_index_filter_size" title="Direct link to db_index_filter_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_index_filter_size"><code>nethermind_db_index_filter_size</code><a href="#db_index_filter_size" class="hash-link" aria-label="Direct link to db_index_filter_size" title="Direct link to db_index_filter_size" translate="no">​</a></h4>
 <p>Database index and filter size per database</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_memtable_size"><code>nethermind_db_memtable_size</code><a href="#db_memtable_size" class="hash-link" aria-label="Direct link to db_memtable_size" title="Direct link to db_memtable_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_memtable_size"><code>nethermind_db_memtable_size</code><a href="#db_memtable_size" class="hash-link" aria-label="Direct link to db_memtable_size" title="Direct link to db_memtable_size" translate="no">​</a></h4>
 <p>Database memtable per database</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_reads"><code>nethermind_db_reads</code><a href="#db_reads" class="hash-link" aria-label="Direct link to db_reads" title="Direct link to db_reads" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_reads"><code>nethermind_db_reads</code><a href="#db_reads" class="hash-link" aria-label="Direct link to db_reads" title="Direct link to db_reads" translate="no">​</a></h4>
 <p>Database reads per database</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_size"><code>nethermind_db_size</code><a href="#db_size" class="hash-link" aria-label="Direct link to db_size" title="Direct link to db_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_size"><code>nethermind_db_size</code><a href="#db_size" class="hash-link" aria-label="Direct link to db_size" title="Direct link to db_size" translate="no">​</a></h4>
 <p>Database size per database</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_stats"><code>nethermind_db_stats</code><a href="#db_stats" class="hash-link" aria-label="Direct link to db_stats" title="Direct link to db_stats" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_stats"><code>nethermind_db_stats</code><a href="#db_stats" class="hash-link" aria-label="Direct link to db_stats" title="Direct link to db_stats" translate="no">​</a></h4>
 <p>Metrics extracted from RocksDB Compaction Stats and DB Statistics</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="db_writes"><code>nethermind_db_writes</code><a href="#db_writes" class="hash-link" aria-label="Direct link to db_writes" title="Direct link to db_writes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="db_writes"><code>nethermind_db_writes</code><a href="#db_writes" class="hash-link" aria-label="Direct link to db_writes" title="Direct link to db_writes" translate="no">​</a></h4>
 <p>Database writes per database</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_db_pruning"><code>nethermind_state_db_pruning</code><a href="#state_db_pruning" class="hash-link" aria-label="Direct link to state_db_pruning" title="Direct link to state_db_pruning" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_db_pruning"><code>nethermind_state_db_pruning</code><a href="#state_db_pruning" class="hash-link" aria-label="Direct link to state_db_pruning" title="Direct link to state_db_pruning" translate="no">​</a></h4>
 <p>Indicator if StadeDb is being pruned.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_reader_reads"><code>nethermind_state_reader_reads</code><a href="#state_reader_reads" class="hash-link" aria-label="Direct link to state_reader_reads" title="Direct link to state_reader_reads" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_reader_reads"><code>nethermind_state_reader_reads</code><a href="#state_reader_reads" class="hash-link" aria-label="Direct link to state_reader_reads" title="Direct link to state_reader_reads" translate="no">​</a></h4>
 <p>Number of State Reader reads.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_skipped_writes"><code>nethermind_state_skipped_writes</code><a href="#state_skipped_writes" class="hash-link" aria-label="Direct link to state_skipped_writes" title="Direct link to state_skipped_writes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_skipped_writes"><code>nethermind_state_skipped_writes</code><a href="#state_skipped_writes" class="hash-link" aria-label="Direct link to state_skipped_writes" title="Direct link to state_skipped_writes" translate="no">​</a></h4>
 <p>Number of state trie writes skipped in net.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_tree_cache"><code>nethermind_state_tree_cache</code><a href="#state_tree_cache" class="hash-link" aria-label="Direct link to state_tree_cache" title="Direct link to state_tree_cache" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_tree_cache"><code>nethermind_state_tree_cache</code><a href="#state_tree_cache" class="hash-link" aria-label="Direct link to state_tree_cache" title="Direct link to state_tree_cache" translate="no">​</a></h4>
 <p>Number of State Trie cache hits.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_tree_reads"><code>nethermind_state_tree_reads</code><a href="#state_tree_reads" class="hash-link" aria-label="Direct link to state_tree_reads" title="Direct link to state_tree_reads" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_tree_reads"><code>nethermind_state_tree_reads</code><a href="#state_tree_reads" class="hash-link" aria-label="Direct link to state_tree_reads" title="Direct link to state_tree_reads" translate="no">​</a></h4>
 <p>Number of State Trie reads.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="state_tree_writes"><code>nethermind_state_tree_writes</code><a href="#state_tree_writes" class="hash-link" aria-label="Direct link to state_tree_writes" title="Direct link to state_tree_writes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state_tree_writes"><code>nethermind_state_tree_writes</code><a href="#state_tree_writes" class="hash-link" aria-label="Direct link to state_tree_writes" title="Direct link to state_tree_writes" translate="no">​</a></h4>
 <p>Number of state trie writes.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="storage_reader_reads"><code>nethermind_storage_reader_reads</code><a href="#storage_reader_reads" class="hash-link" aria-label="Direct link to storage_reader_reads" title="Direct link to storage_reader_reads" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage_reader_reads"><code>nethermind_storage_reader_reads</code><a href="#storage_reader_reads" class="hash-link" aria-label="Direct link to storage_reader_reads" title="Direct link to storage_reader_reads" translate="no">​</a></h4>
 <p>Number of storage reader reads.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="storage_skipped_writes"><code>nethermind_storage_skipped_writes</code><a href="#storage_skipped_writes" class="hash-link" aria-label="Direct link to storage_skipped_writes" title="Direct link to storage_skipped_writes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage_skipped_writes"><code>nethermind_storage_skipped_writes</code><a href="#storage_skipped_writes" class="hash-link" aria-label="Direct link to storage_skipped_writes" title="Direct link to storage_skipped_writes" translate="no">​</a></h4>
 <p>Number of storage trie writes skipped in net.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="storage_tree_cache"><code>nethermind_storage_tree_cache</code><a href="#storage_tree_cache" class="hash-link" aria-label="Direct link to storage_tree_cache" title="Direct link to storage_tree_cache" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage_tree_cache"><code>nethermind_storage_tree_cache</code><a href="#storage_tree_cache" class="hash-link" aria-label="Direct link to storage_tree_cache" title="Direct link to storage_tree_cache" translate="no">​</a></h4>
 <p>Number of storage trie cache hits.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="storage_tree_reads"><code>nethermind_storage_tree_reads</code><a href="#storage_tree_reads" class="hash-link" aria-label="Direct link to storage_tree_reads" title="Direct link to storage_tree_reads" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage_tree_reads"><code>nethermind_storage_tree_reads</code><a href="#storage_tree_reads" class="hash-link" aria-label="Direct link to storage_tree_reads" title="Direct link to storage_tree_reads" translate="no">​</a></h4>
 <p>Number of storage trie reads.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="storage_tree_writes"><code>nethermind_storage_tree_writes</code><a href="#storage_tree_writes" class="hash-link" aria-label="Direct link to storage_tree_writes" title="Direct link to storage_tree_writes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage_tree_writes"><code>nethermind_storage_tree_writes</code><a href="#storage_tree_writes" class="hash-link" aria-label="Direct link to storage_tree_writes" title="Direct link to storage_tree_writes" translate="no">​</a></h4>
 <p>Number of storage trie writes.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="evm">Evm<a href="#evm" class="hash-link" aria-label="Direct link to Evm" title="Direct link to Evm" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evm">Evm<a href="#evm" class="hash-link" aria-label="Direct link to Evm" title="Direct link to Evm" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="calls"><code>nethermind_calls</code><a href="#calls" class="hash-link" aria-label="Direct link to calls" title="Direct link to calls" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="calls"><code>nethermind_calls</code><a href="#calls" class="hash-link" aria-label="Direct link to calls" title="Direct link to calls" translate="no">​</a></h4>
 <p>Number of calls to other contracts.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="code_db_cache"><code>nethermind_code_db_cache</code><a href="#code_db_cache" class="hash-link" aria-label="Direct link to code_db_cache" title="Direct link to code_db_cache" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="code_db_cache"><code>nethermind_code_db_cache</code><a href="#code_db_cache" class="hash-link" aria-label="Direct link to code_db_cache" title="Direct link to code_db_cache" translate="no">​</a></h4>
 <p>Number of Code DB cache reads.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="contracts_analysed"><code>nethermind_contracts_analysed</code><a href="#contracts_analysed" class="hash-link" aria-label="Direct link to contracts_analysed" title="Direct link to contracts_analysed" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="contracts_analysed"><code>nethermind_contracts_analysed</code><a href="#contracts_analysed" class="hash-link" aria-label="Direct link to contracts_analysed" title="Direct link to contracts_analysed" translate="no">​</a></h4>
 <p>Number of contracts&#x27; code analysed for jump destinations.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="creates"><code>nethermind_creates</code><a href="#creates" class="hash-link" aria-label="Direct link to creates" title="Direct link to creates" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="creates"><code>nethermind_creates</code><a href="#creates" class="hash-link" aria-label="Direct link to creates" title="Direct link to creates" translate="no">​</a></h4>
 <p>Number of contract create calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="empty_calls"><code>nethermind_empty_calls</code><a href="#empty_calls" class="hash-link" aria-label="Direct link to empty_calls" title="Direct link to empty_calls" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="empty_calls"><code>nethermind_empty_calls</code><a href="#empty_calls" class="hash-link" aria-label="Direct link to empty_calls" title="Direct link to empty_calls" translate="no">​</a></h4>
 <p>Number of calls made to addresses without code.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="evm_exceptions"><code>nethermind_evm_exceptions</code><a href="#evm_exceptions" class="hash-link" aria-label="Direct link to evm_exceptions" title="Direct link to evm_exceptions" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="evm_exceptions"><code>nethermind_evm_exceptions</code><a href="#evm_exceptions" class="hash-link" aria-label="Direct link to evm_exceptions" title="Direct link to evm_exceptions" translate="no">​</a></h4>
 <p>Number of EVM exceptions thrown by contracts.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="exp_opcode"><code>nethermind_exp_opcode</code><a href="#exp_opcode" class="hash-link" aria-label="Direct link to exp_opcode" title="Direct link to exp_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="exp_opcode"><code>nethermind_exp_opcode</code><a href="#exp_opcode" class="hash-link" aria-label="Direct link to exp_opcode" title="Direct link to exp_opcode" translate="no">​</a></h4>
 <p>Number of EXP opcodes executed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gas_price_ave"><code>nethermind_gas_price_ave</code><a href="#gas_price_ave" class="hash-link" aria-label="Direct link to gas_price_ave" title="Direct link to gas_price_ave" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gas_price_ave"><code>nethermind_gas_price_ave</code><a href="#gas_price_ave" class="hash-link" aria-label="Direct link to gas_price_ave" title="Direct link to gas_price_ave" translate="no">​</a></h4>
 <p>Mean tx gas price in block</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gas_price_max"><code>nethermind_gas_price_max</code><a href="#gas_price_max" class="hash-link" aria-label="Direct link to gas_price_max" title="Direct link to gas_price_max" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gas_price_max"><code>nethermind_gas_price_max</code><a href="#gas_price_max" class="hash-link" aria-label="Direct link to gas_price_max" title="Direct link to gas_price_max" translate="no">​</a></h4>
 <p>Maximum tx gas price in block</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gas_price_median"><code>nethermind_gas_price_median</code><a href="#gas_price_median" class="hash-link" aria-label="Direct link to gas_price_median" title="Direct link to gas_price_median" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gas_price_median"><code>nethermind_gas_price_median</code><a href="#gas_price_median" class="hash-link" aria-label="Direct link to gas_price_median" title="Direct link to gas_price_median" translate="no">​</a></h4>
 <p>Median tx gas price in block</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="gas_price_min"><code>nethermind_gas_price_min</code><a href="#gas_price_min" class="hash-link" aria-label="Direct link to gas_price_min" title="Direct link to gas_price_min" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gas_price_min"><code>nethermind_gas_price_min</code><a href="#gas_price_min" class="hash-link" aria-label="Direct link to gas_price_min" title="Direct link to gas_price_min" translate="no">​</a></h4>
 <p>Minimum tx gas price in block</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="m_copy_opcode"><code>nethermind_m_copy_opcode</code><a href="#m_copy_opcode" class="hash-link" aria-label="Direct link to m_copy_opcode" title="Direct link to m_copy_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="m_copy_opcode"><code>nethermind_m_copy_opcode</code><a href="#m_copy_opcode" class="hash-link" aria-label="Direct link to m_copy_opcode" title="Direct link to m_copy_opcode" translate="no">​</a></h4>
 <p>Number of MCOPY opcodes executed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="number_of_background_tasks_scheduled"><code>nethermind_number_of_background_tasks_scheduled</code><a href="#number_of_background_tasks_scheduled" class="hash-link" aria-label="Direct link to number_of_background_tasks_scheduled" title="Direct link to number_of_background_tasks_scheduled" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="number_of_background_tasks_scheduled"><code>nethermind_number_of_background_tasks_scheduled</code><a href="#number_of_background_tasks_scheduled" class="hash-link" aria-label="Direct link to number_of_background_tasks_scheduled" title="Direct link to number_of_background_tasks_scheduled" translate="no">​</a></h4>
 <p>The number of tasks currently scheduled in the background.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="op_codes"><code>nethermind_op_codes</code><a href="#op_codes" class="hash-link" aria-label="Direct link to op_codes" title="Direct link to op_codes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="op_codes"><code>nethermind_op_codes</code><a href="#op_codes" class="hash-link" aria-label="Direct link to op_codes" title="Direct link to op_codes" translate="no">​</a></h4>
 <p>Number of opcodes executed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="self_destructs"><code>nethermind_self_destructs</code><a href="#self_destructs" class="hash-link" aria-label="Direct link to self_destructs" title="Direct link to self_destructs" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="self_destructs"><code>nethermind_self_destructs</code><a href="#self_destructs" class="hash-link" aria-label="Direct link to self_destructs" title="Direct link to self_destructs" translate="no">​</a></h4>
 <p>Number of SELFDESTRUCT calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="sload_opcode"><code>nethermind_sload_opcode</code><a href="#sload_opcode" class="hash-link" aria-label="Direct link to sload_opcode" title="Direct link to sload_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sload_opcode"><code>nethermind_sload_opcode</code><a href="#sload_opcode" class="hash-link" aria-label="Direct link to sload_opcode" title="Direct link to sload_opcode" translate="no">​</a></h4>
 <p>Number of SLOAD opcodes executed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="sstore_opcode"><code>nethermind_sstore_opcode</code><a href="#sstore_opcode" class="hash-link" aria-label="Direct link to sstore_opcode" title="Direct link to sstore_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sstore_opcode"><code>nethermind_sstore_opcode</code><a href="#sstore_opcode" class="hash-link" aria-label="Direct link to sstore_opcode" title="Direct link to sstore_opcode" translate="no">​</a></h4>
 <p>Number of SSTORE opcodes executed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_calls"><code>nethermind_thread_local_calls</code><a href="#thread_local_calls" class="hash-link" aria-label="Direct link to thread_local_calls" title="Direct link to thread_local_calls" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_calls"><code>nethermind_thread_local_calls</code><a href="#thread_local_calls" class="hash-link" aria-label="Direct link to thread_local_calls" title="Direct link to thread_local_calls" translate="no">​</a></h4>
 <p>Number of calls to other contracts on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_contracts_analysed"><code>nethermind_thread_local_contracts_analysed</code><a href="#thread_local_contracts_analysed" class="hash-link" aria-label="Direct link to thread_local_contracts_analysed" title="Direct link to thread_local_contracts_analysed" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_contracts_analysed"><code>nethermind_thread_local_contracts_analysed</code><a href="#thread_local_contracts_analysed" class="hash-link" aria-label="Direct link to thread_local_contracts_analysed" title="Direct link to thread_local_contracts_analysed" translate="no">​</a></h4>
 <p>Number of contracts&#x27; code analysed for jump destinations on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_creates"><code>nethermind_thread_local_creates</code><a href="#thread_local_creates" class="hash-link" aria-label="Direct link to thread_local_creates" title="Direct link to thread_local_creates" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_creates"><code>nethermind_thread_local_creates</code><a href="#thread_local_creates" class="hash-link" aria-label="Direct link to thread_local_creates" title="Direct link to thread_local_creates" translate="no">​</a></h4>
 <p>Number of contract create calls on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_empty_calls"><code>nethermind_thread_local_empty_calls</code><a href="#thread_local_empty_calls" class="hash-link" aria-label="Direct link to thread_local_empty_calls" title="Direct link to thread_local_empty_calls" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_empty_calls"><code>nethermind_thread_local_empty_calls</code><a href="#thread_local_empty_calls" class="hash-link" aria-label="Direct link to thread_local_empty_calls" title="Direct link to thread_local_empty_calls" translate="no">​</a></h4>
 <p>Number of calls made to addresses without code on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_op_codes"><code>nethermind_thread_local_op_codes</code><a href="#thread_local_op_codes" class="hash-link" aria-label="Direct link to thread_local_op_codes" title="Direct link to thread_local_op_codes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_op_codes"><code>nethermind_thread_local_op_codes</code><a href="#thread_local_op_codes" class="hash-link" aria-label="Direct link to thread_local_op_codes" title="Direct link to thread_local_op_codes" translate="no">​</a></h4>
 <p>Number of opcodes executed on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_s_load_opcode"><code>nethermind_thread_local_s_load_opcode</code><a href="#thread_local_s_load_opcode" class="hash-link" aria-label="Direct link to thread_local_s_load_opcode" title="Direct link to thread_local_s_load_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_s_load_opcode"><code>nethermind_thread_local_s_load_opcode</code><a href="#thread_local_s_load_opcode" class="hash-link" aria-label="Direct link to thread_local_s_load_opcode" title="Direct link to thread_local_s_load_opcode" translate="no">​</a></h4>
 <p>Number of SLOAD opcodes executed on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_s_store_opcode"><code>nethermind_thread_local_s_store_opcode</code><a href="#thread_local_s_store_opcode" class="hash-link" aria-label="Direct link to thread_local_s_store_opcode" title="Direct link to thread_local_s_store_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_s_store_opcode"><code>nethermind_thread_local_s_store_opcode</code><a href="#thread_local_s_store_opcode" class="hash-link" aria-label="Direct link to thread_local_s_store_opcode" title="Direct link to thread_local_s_store_opcode" translate="no">​</a></h4>
 <p>Number of SSTORE opcodes executed on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="thread_local_self_destructs"><code>nethermind_thread_local_self_destructs</code><a href="#thread_local_self_destructs" class="hash-link" aria-label="Direct link to thread_local_self_destructs" title="Direct link to thread_local_self_destructs" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thread_local_self_destructs"><code>nethermind_thread_local_self_destructs</code><a href="#thread_local_self_destructs" class="hash-link" aria-label="Direct link to thread_local_self_destructs" title="Direct link to thread_local_self_destructs" translate="no">​</a></h4>
 <p>Number of calls to other contracts on thread.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tload_opcode"><code>nethermind_tload_opcode</code><a href="#tload_opcode" class="hash-link" aria-label="Direct link to tload_opcode" title="Direct link to tload_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tload_opcode"><code>nethermind_tload_opcode</code><a href="#tload_opcode" class="hash-link" aria-label="Direct link to tload_opcode" title="Direct link to tload_opcode" translate="no">​</a></h4>
 <p>Number of TLOAD opcodes executed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="total_background_tasks_queued"><code>nethermind_total_background_tasks_queued</code><a href="#total_background_tasks_queued" class="hash-link" aria-label="Direct link to total_background_tasks_queued" title="Direct link to total_background_tasks_queued" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="total_background_tasks_queued"><code>nethermind_total_background_tasks_queued</code><a href="#total_background_tasks_queued" class="hash-link" aria-label="Direct link to total_background_tasks_queued" title="Direct link to total_background_tasks_queued" translate="no">​</a></h4>
 <p>Total number of tasks queued for background execution.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tstore_opcode"><code>nethermind_tstore_opcode</code><a href="#tstore_opcode" class="hash-link" aria-label="Direct link to tstore_opcode" title="Direct link to tstore_opcode" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tstore_opcode"><code>nethermind_tstore_opcode</code><a href="#tstore_opcode" class="hash-link" aria-label="Direct link to tstore_opcode" title="Direct link to tstore_opcode" translate="no">​</a></h4>
 <p>Number of TSTORE opcodes executed.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="evmprecompiles">Evm.Precompiles<a href="#evmprecompiles" class="hash-link" aria-label="Direct link to Evm.Precompiles" title="Direct link to Evm.Precompiles" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evmprecompiles">Evm.Precompiles<a href="#evmprecompiles" class="hash-link" aria-label="Direct link to Evm.Precompiles" title="Direct link to Evm.Precompiles" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_g1_add_precompile"><code>nethermind_bls_g1_add_precompile</code><a href="#bls_g1_add_precompile" class="hash-link" aria-label="Direct link to bls_g1_add_precompile" title="Direct link to bls_g1_add_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_g1_add_precompile"><code>nethermind_bls_g1_add_precompile</code><a href="#bls_g1_add_precompile" class="hash-link" aria-label="Direct link to bls_g1_add_precompile" title="Direct link to bls_g1_add_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_G1ADD precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_g1_m_s_m_precompile"><code>nethermind_bls_g1_m_s_m_precompile</code><a href="#bls_g1_m_s_m_precompile" class="hash-link" aria-label="Direct link to bls_g1_m_s_m_precompile" title="Direct link to bls_g1_m_s_m_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_g1_m_s_m_precompile"><code>nethermind_bls_g1_m_s_m_precompile</code><a href="#bls_g1_m_s_m_precompile" class="hash-link" aria-label="Direct link to bls_g1_m_s_m_precompile" title="Direct link to bls_g1_m_s_m_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_G1MSM precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_g1_mul_precompile"><code>nethermind_bls_g1_mul_precompile</code><a href="#bls_g1_mul_precompile" class="hash-link" aria-label="Direct link to bls_g1_mul_precompile" title="Direct link to bls_g1_mul_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_g1_mul_precompile"><code>nethermind_bls_g1_mul_precompile</code><a href="#bls_g1_mul_precompile" class="hash-link" aria-label="Direct link to bls_g1_mul_precompile" title="Direct link to bls_g1_mul_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_G1MUL precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_g2_add_precompile"><code>nethermind_bls_g2_add_precompile</code><a href="#bls_g2_add_precompile" class="hash-link" aria-label="Direct link to bls_g2_add_precompile" title="Direct link to bls_g2_add_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_g2_add_precompile"><code>nethermind_bls_g2_add_precompile</code><a href="#bls_g2_add_precompile" class="hash-link" aria-label="Direct link to bls_g2_add_precompile" title="Direct link to bls_g2_add_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_G2ADD precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_g2_m_s_m_precompile"><code>nethermind_bls_g2_m_s_m_precompile</code><a href="#bls_g2_m_s_m_precompile" class="hash-link" aria-label="Direct link to bls_g2_m_s_m_precompile" title="Direct link to bls_g2_m_s_m_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_g2_m_s_m_precompile"><code>nethermind_bls_g2_m_s_m_precompile</code><a href="#bls_g2_m_s_m_precompile" class="hash-link" aria-label="Direct link to bls_g2_m_s_m_precompile" title="Direct link to bls_g2_m_s_m_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_G2MSM precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_g2_mul_precompile"><code>nethermind_bls_g2_mul_precompile</code><a href="#bls_g2_mul_precompile" class="hash-link" aria-label="Direct link to bls_g2_mul_precompile" title="Direct link to bls_g2_mul_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_g2_mul_precompile"><code>nethermind_bls_g2_mul_precompile</code><a href="#bls_g2_mul_precompile" class="hash-link" aria-label="Direct link to bls_g2_mul_precompile" title="Direct link to bls_g2_mul_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_G2MUL precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_map_fp2_to_g2_precompile"><code>nethermind_bls_map_fp2_to_g2_precompile</code><a href="#bls_map_fp2_to_g2_precompile" class="hash-link" aria-label="Direct link to bls_map_fp2_to_g2_precompile" title="Direct link to bls_map_fp2_to_g2_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_map_fp2_to_g2_precompile"><code>nethermind_bls_map_fp2_to_g2_precompile</code><a href="#bls_map_fp2_to_g2_precompile" class="hash-link" aria-label="Direct link to bls_map_fp2_to_g2_precompile" title="Direct link to bls_map_fp2_to_g2_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_MAP_FP2_TO_G2 precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_map_fp_to_g1_precompile"><code>nethermind_bls_map_fp_to_g1_precompile</code><a href="#bls_map_fp_to_g1_precompile" class="hash-link" aria-label="Direct link to bls_map_fp_to_g1_precompile" title="Direct link to bls_map_fp_to_g1_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_map_fp_to_g1_precompile"><code>nethermind_bls_map_fp_to_g1_precompile</code><a href="#bls_map_fp_to_g1_precompile" class="hash-link" aria-label="Direct link to bls_map_fp_to_g1_precompile" title="Direct link to bls_map_fp_to_g1_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_MAP_FP_TO_G1 precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bls_pairing_check_precompile"><code>nethermind_bls_pairing_check_precompile</code><a href="#bls_pairing_check_precompile" class="hash-link" aria-label="Direct link to bls_pairing_check_precompile" title="Direct link to bls_pairing_check_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bls_pairing_check_precompile"><code>nethermind_bls_pairing_check_precompile</code><a href="#bls_pairing_check_precompile" class="hash-link" aria-label="Direct link to bls_pairing_check_precompile" title="Direct link to bls_pairing_check_precompile" translate="no">​</a></h4>
 <p>Number of BLS12_PAIRING_CHECK precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bn254_add_precompile"><code>nethermind_bn254_add_precompile</code><a href="#bn254_add_precompile" class="hash-link" aria-label="Direct link to bn254_add_precompile" title="Direct link to bn254_add_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bn254_add_precompile"><code>nethermind_bn254_add_precompile</code><a href="#bn254_add_precompile" class="hash-link" aria-label="Direct link to bn254_add_precompile" title="Direct link to bn254_add_precompile" translate="no">​</a></h4>
 <p>Number of BN254_ADD precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bn254_mul_precompile"><code>nethermind_bn254_mul_precompile</code><a href="#bn254_mul_precompile" class="hash-link" aria-label="Direct link to bn254_mul_precompile" title="Direct link to bn254_mul_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bn254_mul_precompile"><code>nethermind_bn254_mul_precompile</code><a href="#bn254_mul_precompile" class="hash-link" aria-label="Direct link to bn254_mul_precompile" title="Direct link to bn254_mul_precompile" translate="no">​</a></h4>
 <p>Number of BN254_MUL precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="bn254_pairing_precompile"><code>nethermind_bn254_pairing_precompile</code><a href="#bn254_pairing_precompile" class="hash-link" aria-label="Direct link to bn254_pairing_precompile" title="Direct link to bn254_pairing_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="bn254_pairing_precompile"><code>nethermind_bn254_pairing_precompile</code><a href="#bn254_pairing_precompile" class="hash-link" aria-label="Direct link to bn254_pairing_precompile" title="Direct link to bn254_pairing_precompile" translate="no">​</a></h4>
 <p>Number of BN254_PAIRING precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ec_recover_precompile"><code>nethermind_ec_recover_precompile</code><a href="#ec_recover_precompile" class="hash-link" aria-label="Direct link to ec_recover_precompile" title="Direct link to ec_recover_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ec_recover_precompile"><code>nethermind_ec_recover_precompile</code><a href="#ec_recover_precompile" class="hash-link" aria-label="Direct link to ec_recover_precompile" title="Direct link to ec_recover_precompile" translate="no">​</a></h4>
 <p>Number of EC_RECOVERY precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="l1_sload_precompile"><code>nethermind_l1_sload_precompile</code><a href="#l1_sload_precompile" class="hash-link" aria-label="Direct link to l1_sload_precompile" title="Direct link to l1_sload_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="l1_sload_precompile"><code>nethermind_l1_sload_precompile</code><a href="#l1_sload_precompile" class="hash-link" aria-label="Direct link to l1_sload_precompile" title="Direct link to l1_sload_precompile" translate="no">​</a></h4>
 <p>Number of L1SLOAD precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="mod_exp_precompile"><code>nethermind_mod_exp_precompile</code><a href="#mod_exp_precompile" class="hash-link" aria-label="Direct link to mod_exp_precompile" title="Direct link to mod_exp_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mod_exp_precompile"><code>nethermind_mod_exp_precompile</code><a href="#mod_exp_precompile" class="hash-link" aria-label="Direct link to mod_exp_precompile" title="Direct link to mod_exp_precompile" translate="no">​</a></h4>
 <p>Number of MODEXP precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="point_evaluation_precompile"><code>nethermind_point_evaluation_precompile</code><a href="#point_evaluation_precompile" class="hash-link" aria-label="Direct link to point_evaluation_precompile" title="Direct link to point_evaluation_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="point_evaluation_precompile"><code>nethermind_point_evaluation_precompile</code><a href="#point_evaluation_precompile" class="hash-link" aria-label="Direct link to point_evaluation_precompile" title="Direct link to point_evaluation_precompile" translate="no">​</a></h4>
 <p>Number of Point Evaluation precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ripemd160_precompile"><code>nethermind_ripemd160_precompile</code><a href="#ripemd160_precompile" class="hash-link" aria-label="Direct link to ripemd160_precompile" title="Direct link to ripemd160_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ripemd160_precompile"><code>nethermind_ripemd160_precompile</code><a href="#ripemd160_precompile" class="hash-link" aria-label="Direct link to ripemd160_precompile" title="Direct link to ripemd160_precompile" translate="no">​</a></h4>
 <p>Number of RIPEMD160 precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="secp256r1_precompile"><code>nethermind_secp256r1_precompile</code><a href="#secp256r1_precompile" class="hash-link" aria-label="Direct link to secp256r1_precompile" title="Direct link to secp256r1_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="secp256r1_precompile"><code>nethermind_secp256r1_precompile</code><a href="#secp256r1_precompile" class="hash-link" aria-label="Direct link to secp256r1_precompile" title="Direct link to secp256r1_precompile" translate="no">​</a></h4>
 <p>Number of Secp256r1 precompile calls.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="sha256_precompile"><code>nethermind_sha256_precompile</code><a href="#sha256_precompile" class="hash-link" aria-label="Direct link to sha256_precompile" title="Direct link to sha256_precompile" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sha256_precompile"><code>nethermind_sha256_precompile</code><a href="#sha256_precompile" class="hash-link" aria-label="Direct link to sha256_precompile" title="Direct link to sha256_precompile" translate="no">​</a></h4>
 <p>Number of SHA256 precompile calls.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="history">History<a href="#history" class="hash-link" aria-label="Direct link to History" title="Direct link to History" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="history">History<a href="#history" class="hash-link" aria-label="Direct link to History" title="Direct link to History" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blocks_pruned"><code>nethermind_blocks_pruned</code><a href="#blocks_pruned" class="hash-link" aria-label="Direct link to blocks_pruned" title="Direct link to blocks_pruned" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blocks_pruned"><code>nethermind_blocks_pruned</code><a href="#blocks_pruned" class="hash-link" aria-label="Direct link to blocks_pruned" title="Direct link to blocks_pruned" translate="no">​</a></h4>
 <p>The number of the historical blocks that have been pruned (since restart).</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="oldest_stored_block_number"><code>nethermind_oldest_stored_block_number</code><a href="#oldest_stored_block_number" class="hash-link" aria-label="Direct link to oldest_stored_block_number" title="Direct link to oldest_stored_block_number" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="oldest_stored_block_number"><code>nethermind_oldest_stored_block_number</code><a href="#oldest_stored_block_number" class="hash-link" aria-label="Direct link to oldest_stored_block_number" title="Direct link to oldest_stored_block_number" translate="no">​</a></h4>
 <p>The number of the oldest block stored.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pruning_cutoff_blocknumber"><code>nethermind_pruning_cutoff_blocknumber</code><a href="#pruning_cutoff_blocknumber" class="hash-link" aria-label="Direct link to pruning_cutoff_blocknumber" title="Direct link to pruning_cutoff_blocknumber" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pruning_cutoff_blocknumber"><code>nethermind_pruning_cutoff_blocknumber</code><a href="#pruning_cutoff_blocknumber" class="hash-link" aria-label="Direct link to pruning_cutoff_blocknumber" title="Direct link to pruning_cutoff_blocknumber" translate="no">​</a></h4>
 <p>The cutoff block number from which historical blocks will be pruned.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pruning_cutoff_timestamp"><code>nethermind_pruning_cutoff_timestamp</code><a href="#pruning_cutoff_timestamp" class="hash-link" aria-label="Direct link to pruning_cutoff_timestamp" title="Direct link to pruning_cutoff_timestamp" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pruning_cutoff_timestamp"><code>nethermind_pruning_cutoff_timestamp</code><a href="#pruning_cutoff_timestamp" class="hash-link" aria-label="Direct link to pruning_cutoff_timestamp" title="Direct link to pruning_cutoff_timestamp" translate="no">​</a></h4>
 <p>The cutoff timestamp from which historical blocks will be pruned.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="jsonrpc">JsonRpc<a href="#jsonrpc" class="hash-link" aria-label="Direct link to JsonRpc" title="Direct link to JsonRpc" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jsonrpc">JsonRpc<a href="#jsonrpc" class="hash-link" aria-label="Direct link to JsonRpc" title="Direct link to JsonRpc" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_bytes_received"><code>nethermind_json_rpc_bytes_received</code><a href="#json_rpc_bytes_received" class="hash-link" aria-label="Direct link to json_rpc_bytes_received" title="Direct link to json_rpc_bytes_received" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_bytes_received"><code>nethermind_json_rpc_bytes_received</code><a href="#json_rpc_bytes_received" class="hash-link" aria-label="Direct link to json_rpc_bytes_received" title="Direct link to json_rpc_bytes_received" translate="no">​</a></h4>
 <p>Number of JSON RPC bytes received.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_bytes_sent"><code>nethermind_json_rpc_bytes_sent</code><a href="#json_rpc_bytes_sent" class="hash-link" aria-label="Direct link to json_rpc_bytes_sent" title="Direct link to json_rpc_bytes_sent" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_bytes_sent"><code>nethermind_json_rpc_bytes_sent</code><a href="#json_rpc_bytes_sent" class="hash-link" aria-label="Direct link to json_rpc_bytes_sent" title="Direct link to json_rpc_bytes_sent" translate="no">​</a></h4>
 <p>Number of JSON RPC bytes sent.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_errors"><code>nethermind_json_rpc_errors</code><a href="#json_rpc_errors" class="hash-link" aria-label="Direct link to json_rpc_errors" title="Direct link to json_rpc_errors" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_errors"><code>nethermind_json_rpc_errors</code><a href="#json_rpc_errors" class="hash-link" aria-label="Direct link to json_rpc_errors" title="Direct link to json_rpc_errors" translate="no">​</a></h4>
 <p>Number of JSON RPC requests processed with errors.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_invalid_requests"><code>nethermind_json_rpc_invalid_requests</code><a href="#json_rpc_invalid_requests" class="hash-link" aria-label="Direct link to json_rpc_invalid_requests" title="Direct link to json_rpc_invalid_requests" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_invalid_requests"><code>nethermind_json_rpc_invalid_requests</code><a href="#json_rpc_invalid_requests" class="hash-link" aria-label="Direct link to json_rpc_invalid_requests" title="Direct link to json_rpc_invalid_requests" translate="no">​</a></h4>
 <p>Number of JSON RPC requests that were invalid.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_request_deserialization_failures"><code>nethermind_json_rpc_request_deserialization_failures</code><a href="#json_rpc_request_deserialization_failures" class="hash-link" aria-label="Direct link to json_rpc_request_deserialization_failures" title="Direct link to json_rpc_request_deserialization_failures" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_request_deserialization_failures"><code>nethermind_json_rpc_request_deserialization_failures</code><a href="#json_rpc_request_deserialization_failures" class="hash-link" aria-label="Direct link to json_rpc_request_deserialization_failures" title="Direct link to json_rpc_request_deserialization_failures" translate="no">​</a></h4>
 <p>Number of JSON RPC requests that failed JSON deserialization.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_requests"><code>nethermind_json_rpc_requests</code><a href="#json_rpc_requests" class="hash-link" aria-label="Direct link to json_rpc_requests" title="Direct link to json_rpc_requests" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_requests"><code>nethermind_json_rpc_requests</code><a href="#json_rpc_requests" class="hash-link" aria-label="Direct link to json_rpc_requests" title="Direct link to json_rpc_requests" translate="no">​</a></h4>
 <p>Total number of JSON RPC requests received by the node.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="json_rpc_successes"><code>nethermind_json_rpc_successes</code><a href="#json_rpc_successes" class="hash-link" aria-label="Direct link to json_rpc_successes" title="Direct link to json_rpc_successes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="json_rpc_successes"><code>nethermind_json_rpc_successes</code><a href="#json_rpc_successes" class="hash-link" aria-label="Direct link to json_rpc_successes" title="Direct link to json_rpc_successes" translate="no">​</a></h4>
 <p>Number of JSON RPC requests processed successfully.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="merge">Merge<a href="#merge" class="hash-link" aria-label="Direct link to Merge" title="Direct link to Merge" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="merge">Merge<a href="#merge" class="hash-link" aria-label="Direct link to Merge" title="Direct link to Merge" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="forkchoice_upded_execution_time"><code>nethermind_forkchoice_upded_execution_time</code><a href="#forkchoice_upded_execution_time" class="hash-link" aria-label="Direct link to forkchoice_upded_execution_time" title="Direct link to forkchoice_upded_execution_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="forkchoice_upded_execution_time"><code>nethermind_forkchoice_upded_execution_time</code><a href="#forkchoice_upded_execution_time" class="hash-link" aria-label="Direct link to forkchoice_upded_execution_time" title="Direct link to forkchoice_upded_execution_time" translate="no">​</a></h4>
 <p>ForkchoiceUpded request execution time</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="get_blobs_request_duration_seconds"><code>nethermind_get_blobs_request_duration_seconds</code><a href="#get_blobs_request_duration_seconds" class="hash-link" aria-label="Direct link to get_blobs_request_duration_seconds" title="Direct link to get_blobs_request_duration_seconds" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_blobs_request_duration_seconds"><code>nethermind_get_blobs_request_duration_seconds</code><a href="#get_blobs_request_duration_seconds" class="hash-link" aria-label="Direct link to get_blobs_request_duration_seconds" title="Direct link to get_blobs_request_duration_seconds" translate="no">​</a></h4>
 <p>Time taken to return the blobs from engine_getBlobsV2 request</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="get_blobs_requests_failure_total"><code>nethermind_get_blobs_requests_failure_total</code><a href="#get_blobs_requests_failure_total" class="hash-link" aria-label="Direct link to get_blobs_requests_failure_total" title="Direct link to get_blobs_requests_failure_total" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_blobs_requests_failure_total"><code>nethermind_get_blobs_requests_failure_total</code><a href="#get_blobs_requests_failure_total" class="hash-link" aria-label="Direct link to get_blobs_requests_failure_total" title="Direct link to get_blobs_requests_failure_total" translate="no">​</a></h4>
 <p>Number of responses to engine_getBlobsVX without all requested blobs</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="get_blobs_requests_in_blobpool_total"><code>nethermind_get_blobs_requests_in_blobpool_total</code><a href="#get_blobs_requests_in_blobpool_total" class="hash-link" aria-label="Direct link to get_blobs_requests_in_blobpool_total" title="Direct link to get_blobs_requests_in_blobpool_total" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_blobs_requests_in_blobpool_total"><code>nethermind_get_blobs_requests_in_blobpool_total</code><a href="#get_blobs_requests_in_blobpool_total" class="hash-link" aria-label="Direct link to get_blobs_requests_in_blobpool_total" title="Direct link to get_blobs_requests_in_blobpool_total" translate="no">​</a></h4>
 <p>Number of Blobs requested by engine_getBlobsV2 that are present in the blobpool</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="get_blobs_requests_success_total"><code>nethermind_get_blobs_requests_success_total</code><a href="#get_blobs_requests_success_total" class="hash-link" aria-label="Direct link to get_blobs_requests_success_total" title="Direct link to get_blobs_requests_success_total" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_blobs_requests_success_total"><code>nethermind_get_blobs_requests_success_total</code><a href="#get_blobs_requests_success_total" class="hash-link" aria-label="Direct link to get_blobs_requests_success_total" title="Direct link to get_blobs_requests_success_total" translate="no">​</a></h4>
 <p>Number of responses to engine_getBlobsV1 and engine_getBlobsV2 with all requested blobs</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="get_blobs_requests_total"><code>nethermind_get_blobs_requests_total</code><a href="#get_blobs_requests_total" class="hash-link" aria-label="Direct link to get_blobs_requests_total" title="Direct link to get_blobs_requests_total" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_blobs_requests_total"><code>nethermind_get_blobs_requests_total</code><a href="#get_blobs_requests_total" class="hash-link" aria-label="Direct link to get_blobs_requests_total" title="Direct link to get_blobs_requests_total" translate="no">​</a></h4>
 <p>Number of Blobs requested by engine_getBlobsV2</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="get_payload_requests"><code>nethermind_get_payload_requests</code><a href="#get_payload_requests" class="hash-link" aria-label="Direct link to get_payload_requests" title="Direct link to get_payload_requests" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_payload_requests"><code>nethermind_get_payload_requests</code><a href="#get_payload_requests" class="hash-link" aria-label="Direct link to get_payload_requests" title="Direct link to get_payload_requests" translate="no">​</a></h4>
 <p>Number of GetPayload Requests</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="new_payload_execution_time"><code>nethermind_new_payload_execution_time</code><a href="#new_payload_execution_time" class="hash-link" aria-label="Direct link to new_payload_execution_time" title="Direct link to new_payload_execution_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new_payload_execution_time"><code>nethermind_new_payload_execution_time</code><a href="#new_payload_execution_time" class="hash-link" aria-label="Direct link to new_payload_execution_time" title="Direct link to new_payload_execution_time" translate="no">​</a></h4>
 <p>NewPayload request execution time</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="number_of_requested_blobs"><code>nethermind_number_of_requested_blobs</code><a href="#number_of_requested_blobs" class="hash-link" aria-label="Direct link to number_of_requested_blobs" title="Direct link to number_of_requested_blobs" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="number_of_requested_blobs"><code>nethermind_number_of_requested_blobs</code><a href="#number_of_requested_blobs" class="hash-link" aria-label="Direct link to number_of_requested_blobs" title="Direct link to number_of_requested_blobs" translate="no">​</a></h4>
 <p>Number of Blobs requested by engine_getBlobsV1</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="number_of_sent_blobs"><code>nethermind_number_of_sent_blobs</code><a href="#number_of_sent_blobs" class="hash-link" aria-label="Direct link to number_of_sent_blobs" title="Direct link to number_of_sent_blobs" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="number_of_sent_blobs"><code>nethermind_number_of_sent_blobs</code><a href="#number_of_sent_blobs" class="hash-link" aria-label="Direct link to number_of_sent_blobs" title="Direct link to number_of_sent_blobs" translate="no">​</a></h4>
 <p>Number of Blobs sent by engine_getBlobsV1</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="number_of_transactions_in_get_payload"><code>nethermind_number_of_transactions_in_get_payload</code><a href="#number_of_transactions_in_get_payload" class="hash-link" aria-label="Direct link to number_of_transactions_in_get_payload" title="Direct link to number_of_transactions_in_get_payload" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="number_of_transactions_in_get_payload"><code>nethermind_number_of_transactions_in_get_payload</code><a href="#number_of_transactions_in_get_payload" class="hash-link" aria-label="Direct link to number_of_transactions_in_get_payload" title="Direct link to number_of_transactions_in_get_payload" translate="no">​</a></h4>
 <p>Number of Transactions included in the Last GetPayload Request</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="network">Network<a href="#network" class="hash-link" aria-label="Direct link to Network" title="Direct link to Network" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="network">Network<a href="#network" class="hash-link" aria-label="Direct link to Network" title="Direct link to Network" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="discovery_messages_received"><code>nethermind_discovery_messages_received</code><a href="#discovery_messages_received" class="hash-link" aria-label="Direct link to discovery_messages_received" title="Direct link to discovery_messages_received" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="discovery_messages_received"><code>nethermind_discovery_messages_received</code><a href="#discovery_messages_received" class="hash-link" aria-label="Direct link to discovery_messages_received" title="Direct link to discovery_messages_received" translate="no">​</a></h4>
 <p>Number of sent discovery message</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="discovery_messages_sent"><code>nethermind_discovery_messages_sent</code><a href="#discovery_messages_sent" class="hash-link" aria-label="Direct link to discovery_messages_sent" title="Direct link to discovery_messages_sent" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="discovery_messages_sent"><code>nethermind_discovery_messages_sent</code><a href="#discovery_messages_sent" class="hash-link" aria-label="Direct link to discovery_messages_sent" title="Direct link to discovery_messages_sent" translate="no">​</a></h4>
 <p>Number of sent discovery message</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="handshake_timeouts"><code>nethermind_handshake_timeouts</code><a href="#handshake_timeouts" class="hash-link" aria-label="Direct link to handshake_timeouts" title="Direct link to handshake_timeouts" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="handshake_timeouts"><code>nethermind_handshake_timeouts</code><a href="#handshake_timeouts" class="hash-link" aria-label="Direct link to handshake_timeouts" title="Direct link to handshake_timeouts" translate="no">​</a></h4>
 <p>Number of devp2p handshake timeouts</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="handshakes"><code>nethermind_handshakes</code><a href="#handshakes" class="hash-link" aria-label="Direct link to handshakes" title="Direct link to handshakes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="handshakes"><code>nethermind_handshakes</code><a href="#handshakes" class="hash-link" aria-label="Direct link to handshakes" title="Direct link to handshakes" translate="no">​</a></h4>
 <p>Number of devp2p handshakes</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="incoming_connections"><code>nethermind_incoming_connections</code><a href="#incoming_connections" class="hash-link" aria-label="Direct link to incoming_connections" title="Direct link to incoming_connections" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="incoming_connections"><code>nethermind_incoming_connections</code><a href="#incoming_connections" class="hash-link" aria-label="Direct link to incoming_connections" title="Direct link to incoming_connections" translate="no">​</a></h4>
 <p>Number of incoming connection.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="incoming_p2_p_message_bytes"><code>nethermind_incoming_p2_p_message_bytes</code><a href="#incoming_p2_p_message_bytes" class="hash-link" aria-label="Direct link to incoming_p2_p_message_bytes" title="Direct link to incoming_p2_p_message_bytes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="incoming_p2_p_message_bytes"><code>nethermind_incoming_p2_p_message_bytes</code><a href="#incoming_p2_p_message_bytes" class="hash-link" aria-label="Direct link to incoming_p2_p_message_bytes" title="Direct link to incoming_p2_p_message_bytes" translate="no">​</a></h4>
 <p>Bytes of incoming p2p packets.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="incoming_p2_p_messages"><code>nethermind_incoming_p2_p_messages</code><a href="#incoming_p2_p_messages" class="hash-link" aria-label="Direct link to incoming_p2_p_messages" title="Direct link to incoming_p2_p_messages" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="incoming_p2_p_messages"><code>nethermind_incoming_p2_p_messages</code><a href="#incoming_p2_p_messages" class="hash-link" aria-label="Direct link to incoming_p2_p_messages" title="Direct link to incoming_p2_p_messages" translate="no">​</a></h4>
 <p>Number of incoming p2p packets.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="local_disconnects_total"><code>nethermind_local_disconnects_total</code><a href="#local_disconnects_total" class="hash-link" aria-label="Direct link to local_disconnects_total" title="Direct link to local_disconnects_total" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="local_disconnects_total"><code>nethermind_local_disconnects_total</code><a href="#local_disconnects_total" class="hash-link" aria-label="Direct link to local_disconnects_total" title="Direct link to local_disconnects_total" translate="no">​</a></h4>
 <p>Number of local disconnects</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="outgoing_connections"><code>nethermind_outgoing_connections</code><a href="#outgoing_connections" class="hash-link" aria-label="Direct link to outgoing_connections" title="Direct link to outgoing_connections" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="outgoing_connections"><code>nethermind_outgoing_connections</code><a href="#outgoing_connections" class="hash-link" aria-label="Direct link to outgoing_connections" title="Direct link to outgoing_connections" translate="no">​</a></h4>
 <p>Number of outgoing connection.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="outgoing_p2_p_message_bytes"><code>nethermind_outgoing_p2_p_message_bytes</code><a href="#outgoing_p2_p_message_bytes" class="hash-link" aria-label="Direct link to outgoing_p2_p_message_bytes" title="Direct link to outgoing_p2_p_message_bytes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="outgoing_p2_p_message_bytes"><code>nethermind_outgoing_p2_p_message_bytes</code><a href="#outgoing_p2_p_message_bytes" class="hash-link" aria-label="Direct link to outgoing_p2_p_message_bytes" title="Direct link to outgoing_p2_p_message_bytes" translate="no">​</a></h4>
 <p>Bytes of outgoing p2p packets.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="outgoing_p2_p_messages"><code>nethermind_outgoing_p2_p_messages</code><a href="#outgoing_p2_p_messages" class="hash-link" aria-label="Direct link to outgoing_p2_p_messages" title="Direct link to outgoing_p2_p_messages" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="outgoing_p2_p_messages"><code>nethermind_outgoing_p2_p_messages</code><a href="#outgoing_p2_p_messages" class="hash-link" aria-label="Direct link to outgoing_p2_p_messages" title="Direct link to outgoing_p2_p_messages" translate="no">​</a></h4>
 <p>Number of outgoing p2p packets.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="peer_candidate_count"><code>nethermind_peer_candidate_count</code><a href="#peer_candidate_count" class="hash-link" aria-label="Direct link to peer_candidate_count" title="Direct link to peer_candidate_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="peer_candidate_count"><code>nethermind_peer_candidate_count</code><a href="#peer_candidate_count" class="hash-link" aria-label="Direct link to peer_candidate_count" title="Direct link to peer_candidate_count" translate="no">​</a></h4>
 <p>Number of candidate peers in peer manager</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="peer_candidate_filter"><code>nethermind_peer_candidate_filter</code><a href="#peer_candidate_filter" class="hash-link" aria-label="Direct link to peer_candidate_filter" title="Direct link to peer_candidate_filter" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="peer_candidate_filter"><code>nethermind_peer_candidate_filter</code><a href="#peer_candidate_filter" class="hash-link" aria-label="Direct link to peer_candidate_filter" title="Direct link to peer_candidate_filter" translate="no">​</a></h4>
 <p>Number of filter reason per peer candidate</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="peer_limit"><code>nethermind_peer_limit</code><a href="#peer_limit" class="hash-link" aria-label="Direct link to peer_limit" title="Direct link to peer_limit" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="peer_limit"><code>nethermind_peer_limit</code><a href="#peer_limit" class="hash-link" aria-label="Direct link to peer_limit" title="Direct link to peer_limit" translate="no">​</a></h4>
 <p>The maximum number of peers this node allows to connect.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="remote_disconnects_total"><code>nethermind_remote_disconnects_total</code><a href="#remote_disconnects_total" class="hash-link" aria-label="Direct link to remote_disconnects_total" title="Direct link to remote_disconnects_total" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="remote_disconnects_total"><code>nethermind_remote_disconnects_total</code><a href="#remote_disconnects_total" class="hash-link" aria-label="Direct link to remote_disconnects_total" title="Direct link to remote_disconnects_total" translate="no">​</a></h4>
 <p>Number of remote disconnects</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pruning">Pruning<a href="#pruning" class="hash-link" aria-label="Direct link to Pruning" title="Direct link to Pruning" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pruning">Pruning<a href="#pruning" class="hash-link" aria-label="Direct link to Pruning" title="Direct link to Pruning" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="cached_nodes_count"><code>nethermind_cached_nodes_count</code><a href="#cached_nodes_count" class="hash-link" aria-label="Direct link to cached_nodes_count" title="Direct link to cached_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cached_nodes_count"><code>nethermind_cached_nodes_count</code><a href="#cached_nodes_count" class="hash-link" aria-label="Direct link to cached_nodes_count" title="Direct link to cached_nodes_count" translate="no">​</a></h4>
 <p>Nodes that are currently kept in cache (either persisted or not)</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="committed_nodes_count"><code>nethermind_committed_nodes_count</code><a href="#committed_nodes_count" class="hash-link" aria-label="Direct link to committed_nodes_count" title="Direct link to committed_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="committed_nodes_count"><code>nethermind_committed_nodes_count</code><a href="#committed_nodes_count" class="hash-link" aria-label="Direct link to committed_nodes_count" title="Direct link to committed_nodes_count" translate="no">​</a></h4>
 <p>Nodes that have been committed since the session start. These nodes may have been pruned, persisted or replaced.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="deep_pruning_time"><code>nethermind_deep_pruning_time</code><a href="#deep_pruning_time" class="hash-link" aria-label="Direct link to deep_pruning_time" title="Direct link to deep_pruning_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="deep_pruning_time"><code>nethermind_deep_pruning_time</code><a href="#deep_pruning_time" class="hash-link" aria-label="Direct link to deep_pruning_time" title="Direct link to deep_pruning_time" translate="no">​</a></h4>
 <p>Time taken by the last deep pruning.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="dirty_memory_used_by_cache"><code>nethermind_dirty_memory_used_by_cache</code><a href="#dirty_memory_used_by_cache" class="hash-link" aria-label="Direct link to dirty_memory_used_by_cache" title="Direct link to dirty_memory_used_by_cache" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dirty_memory_used_by_cache"><code>nethermind_dirty_memory_used_by_cache</code><a href="#dirty_memory_used_by_cache" class="hash-link" aria-label="Direct link to dirty_memory_used_by_cache" title="Direct link to dirty_memory_used_by_cache" translate="no">​</a></h4>
 <p>Estimated memory used by cache.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="dirty_nodes_count"><code>nethermind_dirty_nodes_count</code><a href="#dirty_nodes_count" class="hash-link" aria-label="Direct link to dirty_nodes_count" title="Direct link to dirty_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dirty_nodes_count"><code>nethermind_dirty_nodes_count</code><a href="#dirty_nodes_count" class="hash-link" aria-label="Direct link to dirty_nodes_count" title="Direct link to dirty_nodes_count" translate="no">​</a></h4>
 <p>Nodes that are currently kept in cache (either persisted or not)</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="last_persisted_block_number"><code>nethermind_last_persisted_block_number</code><a href="#last_persisted_block_number" class="hash-link" aria-label="Direct link to last_persisted_block_number" title="Direct link to last_persisted_block_number" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="last_persisted_block_number"><code>nethermind_last_persisted_block_number</code><a href="#last_persisted_block_number" class="hash-link" aria-label="Direct link to last_persisted_block_number" title="Direct link to last_persisted_block_number" translate="no">​</a></h4>
 <p>Last persisted block number (snapshot).</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="loaded_from_cache_nodes_count"><code>nethermind_loaded_from_cache_nodes_count</code><a href="#loaded_from_cache_nodes_count" class="hash-link" aria-label="Direct link to loaded_from_cache_nodes_count" title="Direct link to loaded_from_cache_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="loaded_from_cache_nodes_count"><code>nethermind_loaded_from_cache_nodes_count</code><a href="#loaded_from_cache_nodes_count" class="hash-link" aria-label="Direct link to loaded_from_cache_nodes_count" title="Direct link to loaded_from_cache_nodes_count" translate="no">​</a></h4>
 <p>Number of reads from the node cache.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="loaded_from_db_nodes_count"><code>nethermind_loaded_from_db_nodes_count</code><a href="#loaded_from_db_nodes_count" class="hash-link" aria-label="Direct link to loaded_from_db_nodes_count" title="Direct link to loaded_from_db_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="loaded_from_db_nodes_count"><code>nethermind_loaded_from_db_nodes_count</code><a href="#loaded_from_db_nodes_count" class="hash-link" aria-label="Direct link to loaded_from_db_nodes_count" title="Direct link to loaded_from_db_nodes_count" translate="no">​</a></h4>
 <p>Number of DB reads.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="loaded_from_rlp_cache_nodes_count"><code>nethermind_loaded_from_rlp_cache_nodes_count</code><a href="#loaded_from_rlp_cache_nodes_count" class="hash-link" aria-label="Direct link to loaded_from_rlp_cache_nodes_count" title="Direct link to loaded_from_rlp_cache_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="loaded_from_rlp_cache_nodes_count"><code>nethermind_loaded_from_rlp_cache_nodes_count</code><a href="#loaded_from_rlp_cache_nodes_count" class="hash-link" aria-label="Direct link to loaded_from_rlp_cache_nodes_count" title="Direct link to loaded_from_rlp_cache_nodes_count" translate="no">​</a></h4>
 <p>Number of reads from the RLP cache.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="memory_used_by_cache"><code>nethermind_memory_used_by_cache</code><a href="#memory_used_by_cache" class="hash-link" aria-label="Direct link to memory_used_by_cache" title="Direct link to memory_used_by_cache" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="memory_used_by_cache"><code>nethermind_memory_used_by_cache</code><a href="#memory_used_by_cache" class="hash-link" aria-label="Direct link to memory_used_by_cache" title="Direct link to memory_used_by_cache" translate="no">​</a></h4>
 <p>Estimated memory used by cache.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="persisted_node_count"><code>nethermind_persisted_node_count</code><a href="#persisted_node_count" class="hash-link" aria-label="Direct link to persisted_node_count" title="Direct link to persisted_node_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="persisted_node_count"><code>nethermind_persisted_node_count</code><a href="#persisted_node_count" class="hash-link" aria-label="Direct link to persisted_node_count" title="Direct link to persisted_node_count" translate="no">​</a></h4>
 <p>Nodes that have been persisted since the session start.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="persisted_node_pruning_time"><code>nethermind_persisted_node_pruning_time</code><a href="#persisted_node_pruning_time" class="hash-link" aria-label="Direct link to persisted_node_pruning_time" title="Direct link to persisted_node_pruning_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="persisted_node_pruning_time"><code>nethermind_persisted_node_pruning_time</code><a href="#persisted_node_pruning_time" class="hash-link" aria-label="Direct link to persisted_node_pruning_time" title="Direct link to persisted_node_pruning_time" translate="no">​</a></h4>
 <p>Time taken by the last persisted node pruning.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pruned_transient_nodes_count"><code>nethermind_pruned_transient_nodes_count</code><a href="#pruned_transient_nodes_count" class="hash-link" aria-label="Direct link to pruned_transient_nodes_count" title="Direct link to pruned_transient_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pruned_transient_nodes_count"><code>nethermind_pruned_transient_nodes_count</code><a href="#pruned_transient_nodes_count" class="hash-link" aria-label="Direct link to pruned_transient_nodes_count" title="Direct link to pruned_transient_nodes_count" translate="no">​</a></h4>
 <p>Nodes that have been removed from the cache during pruning because they were no longer needed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pruning_time"><code>nethermind_pruning_time</code><a href="#pruning_time" class="hash-link" aria-label="Direct link to pruning_time" title="Direct link to pruning_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pruning_time"><code>nethermind_pruning_time</code><a href="#pruning_time" class="hash-link" aria-label="Direct link to pruning_time" title="Direct link to pruning_time" translate="no">​</a></h4>
 <p>Time taken by the last pruning.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="removed_node_count"><code>nethermind_removed_node_count</code><a href="#removed_node_count" class="hash-link" aria-label="Direct link to removed_node_count" title="Direct link to removed_node_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="removed_node_count"><code>nethermind_removed_node_count</code><a href="#removed_node_count" class="hash-link" aria-label="Direct link to removed_node_count" title="Direct link to removed_node_count" translate="no">​</a></h4>
 <p>Nodes that was removed via live pruning.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="replaced_nodes_count"><code>nethermind_replaced_nodes_count</code><a href="#replaced_nodes_count" class="hash-link" aria-label="Direct link to replaced_nodes_count" title="Direct link to replaced_nodes_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="replaced_nodes_count"><code>nethermind_replaced_nodes_count</code><a href="#replaced_nodes_count" class="hash-link" aria-label="Direct link to replaced_nodes_count" title="Direct link to replaced_nodes_count" translate="no">​</a></h4>
 <p>Number of nodes that have been exactly the same as other nodes in the cache when committing.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="snapshot_persistence_time"><code>nethermind_snapshot_persistence_time</code><a href="#snapshot_persistence_time" class="hash-link" aria-label="Direct link to snapshot_persistence_time" title="Direct link to snapshot_persistence_time" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="snapshot_persistence_time"><code>nethermind_snapshot_persistence_time</code><a href="#snapshot_persistence_time" class="hash-link" aria-label="Direct link to snapshot_persistence_time" title="Direct link to snapshot_persistence_time" translate="no">​</a></h4>
 <p>Time taken by the last snapshot persistence.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="runner">Runner<a href="#runner" class="hash-link" aria-label="Direct link to Runner" title="Direct link to Runner" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="runner">Runner<a href="#runner" class="hash-link" aria-label="Direct link to Runner" title="Direct link to Runner" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="version"><code>nethermind_version</code><a href="#version" class="hash-link" aria-label="Direct link to version" title="Direct link to version" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="version"><code>nethermind_version</code><a href="#version" class="hash-link" aria-label="Direct link to version" title="Direct link to version" translate="no">​</a></h4>
 <p>Version number</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="serializationrlp">Serialization.Rlp<a href="#serializationrlp" class="hash-link" aria-label="Direct link to Serialization.Rlp" title="Direct link to Serialization.Rlp" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="serializationrlp">Serialization.Rlp<a href="#serializationrlp" class="hash-link" aria-label="Direct link to Serialization.Rlp" title="Direct link to Serialization.Rlp" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_active_allocation_bytes"><code>nethermind_allocator_active_allocation_bytes</code><a href="#allocator_active_allocation_bytes" class="hash-link" aria-label="Direct link to allocator_active_allocation_bytes" title="Direct link to allocator_active_allocation_bytes" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_active_allocation_bytes"><code>nethermind_allocator_active_allocation_bytes</code><a href="#allocator_active_allocation_bytes" class="hash-link" aria-label="Direct link to allocator_active_allocation_bytes" title="Direct link to allocator_active_allocation_bytes" translate="no">​</a></h4>
 <p>Active allocation bytes</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_active_allocations"><code>nethermind_allocator_active_allocations</code><a href="#allocator_active_allocations" class="hash-link" aria-label="Direct link to allocator_active_allocations" title="Direct link to allocator_active_allocations" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_active_allocations"><code>nethermind_allocator_active_allocations</code><a href="#allocator_active_allocations" class="hash-link" aria-label="Direct link to allocator_active_allocations" title="Direct link to allocator_active_allocations" translate="no">​</a></h4>
 <p>Active allocation count</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_allocations"><code>nethermind_allocator_allocations</code><a href="#allocator_allocations" class="hash-link" aria-label="Direct link to allocator_allocations" title="Direct link to allocator_allocations" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_allocations"><code>nethermind_allocator_allocations</code><a href="#allocator_allocations" class="hash-link" aria-label="Direct link to allocator_allocations" title="Direct link to allocator_allocations" translate="no">​</a></h4>
 <p>Allocatioons</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_arena_count"><code>nethermind_allocator_arena_count</code><a href="#allocator_arena_count" class="hash-link" aria-label="Direct link to allocator_arena_count" title="Direct link to allocator_arena_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_arena_count"><code>nethermind_allocator_arena_count</code><a href="#allocator_arena_count" class="hash-link" aria-label="Direct link to allocator_arena_count" title="Direct link to allocator_arena_count" translate="no">​</a></h4>
 <p>Arena count</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_chunk_size"><code>nethermind_allocator_chunk_size</code><a href="#allocator_chunk_size" class="hash-link" aria-label="Direct link to allocator_chunk_size" title="Direct link to allocator_chunk_size" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_chunk_size"><code>nethermind_allocator_chunk_size</code><a href="#allocator_chunk_size" class="hash-link" aria-label="Direct link to allocator_chunk_size" title="Direct link to allocator_chunk_size" translate="no">​</a></h4>
 <p>Chunk size of the allocator</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_used_direct_memory"><code>nethermind_allocator_used_direct_memory</code><a href="#allocator_used_direct_memory" class="hash-link" aria-label="Direct link to allocator_used_direct_memory" title="Direct link to allocator_used_direct_memory" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_used_direct_memory"><code>nethermind_allocator_used_direct_memory</code><a href="#allocator_used_direct_memory" class="hash-link" aria-label="Direct link to allocator_used_direct_memory" title="Direct link to allocator_used_direct_memory" translate="no">​</a></h4>
 <p>Used direct memory</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="allocator_used_heap_memory"><code>nethermind_allocator_used_heap_memory</code><a href="#allocator_used_heap_memory" class="hash-link" aria-label="Direct link to allocator_used_heap_memory" title="Direct link to allocator_used_heap_memory" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="allocator_used_heap_memory"><code>nethermind_allocator_used_heap_memory</code><a href="#allocator_used_heap_memory" class="hash-link" aria-label="Direct link to allocator_used_heap_memory" title="Direct link to allocator_used_heap_memory" translate="no">​</a></h4>
 <p>Used heap memory</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="shutter">Shutter<a href="#shutter" class="hash-link" aria-label="Direct link to Shutter" title="Direct link to Shutter" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter">Shutter<a href="#shutter" class="hash-link" aria-label="Direct link to Shutter" title="Direct link to Shutter" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_bad_transactions"><code>nethermind_shutter_bad_transactions</code><a href="#shutter_bad_transactions" class="hash-link" aria-label="Direct link to shutter_bad_transactions" title="Direct link to shutter_bad_transactions" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_bad_transactions"><code>nethermind_shutter_bad_transactions</code><a href="#shutter_bad_transactions" class="hash-link" aria-label="Direct link to shutter_bad_transactions" title="Direct link to shutter_bad_transactions" translate="no">​</a></h4>
 <p>Number of invalid transactions that could not be included.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_encrypted_gas_used"><code>nethermind_shutter_encrypted_gas_used</code><a href="#shutter_encrypted_gas_used" class="hash-link" aria-label="Direct link to shutter_encrypted_gas_used" title="Direct link to shutter_encrypted_gas_used" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_encrypted_gas_used"><code>nethermind_shutter_encrypted_gas_used</code><a href="#shutter_encrypted_gas_used" class="hash-link" aria-label="Direct link to shutter_encrypted_gas_used" title="Direct link to shutter_encrypted_gas_used" translate="no">​</a></h4>
 <p>Amount of encrypted gas used.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_eon"><code>nethermind_shutter_eon</code><a href="#shutter_eon" class="hash-link" aria-label="Direct link to shutter_eon" title="Direct link to shutter_eon" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_eon"><code>nethermind_shutter_eon</code><a href="#shutter_eon" class="hash-link" aria-label="Direct link to shutter_eon" title="Direct link to shutter_eon" translate="no">​</a></h4>
 <p>Eon of the latest block.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_keypers"><code>nethermind_shutter_keypers</code><a href="#shutter_keypers" class="hash-link" aria-label="Direct link to shutter_keypers" title="Direct link to shutter_keypers" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_keypers"><code>nethermind_shutter_keypers</code><a href="#shutter_keypers" class="hash-link" aria-label="Direct link to shutter_keypers" title="Direct link to shutter_keypers" translate="no">​</a></h4>
 <p>Size of keyper set in current eon.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_keys_missed"><code>nethermind_shutter_keys_missed</code><a href="#shutter_keys_missed" class="hash-link" aria-label="Direct link to shutter_keys_missed" title="Direct link to shutter_keys_missed" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_keys_missed"><code>nethermind_shutter_keys_missed</code><a href="#shutter_keys_missed" class="hash-link" aria-label="Direct link to shutter_keys_missed" title="Direct link to shutter_keys_missed" translate="no">​</a></h4>
 <p>Number of keys not received.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_keys_received_time_offset"><code>nethermind_shutter_keys_received_time_offset</code><a href="#shutter_keys_received_time_offset" class="hash-link" aria-label="Direct link to shutter_keys_received_time_offset" title="Direct link to shutter_keys_received_time_offset" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_keys_received_time_offset"><code>nethermind_shutter_keys_received_time_offset</code><a href="#shutter_keys_received_time_offset" class="hash-link" aria-label="Direct link to shutter_keys_received_time_offset" title="Direct link to shutter_keys_received_time_offset" translate="no">​</a></h4>
 <p>Relative time offset (ms) from slot boundary that keys were received.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_threshold"><code>nethermind_shutter_threshold</code><a href="#shutter_threshold" class="hash-link" aria-label="Direct link to shutter_threshold" title="Direct link to shutter_threshold" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_threshold"><code>nethermind_shutter_threshold</code><a href="#shutter_threshold" class="hash-link" aria-label="Direct link to shutter_threshold" title="Direct link to shutter_threshold" translate="no">​</a></h4>
 <p>Number of keypers assumed to be honest and online for current eon.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_transactions"><code>nethermind_shutter_transactions</code><a href="#shutter_transactions" class="hash-link" aria-label="Direct link to shutter_transactions" title="Direct link to shutter_transactions" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_transactions"><code>nethermind_shutter_transactions</code><a href="#shutter_transactions" class="hash-link" aria-label="Direct link to shutter_transactions" title="Direct link to shutter_transactions" translate="no">​</a></h4>
 <p>Number of transactions included.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="shutter_tx_pointer"><code>nethermind_shutter_tx_pointer</code><a href="#shutter_tx_pointer" class="hash-link" aria-label="Direct link to shutter_tx_pointer" title="Direct link to shutter_tx_pointer" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shutter_tx_pointer"><code>nethermind_shutter_tx_pointer</code><a href="#shutter_tx_pointer" class="hash-link" aria-label="Direct link to shutter_tx_pointer" title="Direct link to shutter_tx_pointer" translate="no">​</a></h4>
 <p>Number of transactions since Shutter genesis.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="synchronization">Synchronization<a href="#synchronization" class="hash-link" aria-label="Direct link to Synchronization" title="Direct link to Synchronization" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="synchronization">Synchronization<a href="#synchronization" class="hash-link" aria-label="Direct link to Synchronization" title="Direct link to Synchronization" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="snap_range_result"><code>nethermind_snap_range_result</code><a href="#snap_range_result" class="hash-link" aria-label="Direct link to snap_range_result" title="Direct link to snap_range_result" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="snap_range_result"><code>nethermind_snap_range_result</code><a href="#snap_range_result" class="hash-link" aria-label="Direct link to snap_range_result" title="Direct link to snap_range_result" translate="no">​</a></h4>
 <p>Snap range result</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="sync_peers"><code>nethermind_sync_peers</code><a href="#sync_peers" class="hash-link" aria-label="Direct link to sync_peers" title="Direct link to sync_peers" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sync_peers"><code>nethermind_sync_peers</code><a href="#sync_peers" class="hash-link" aria-label="Direct link to sync_peers" title="Direct link to sync_peers" translate="no">​</a></h4>
 <p>Number of sync peers.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="trie">Trie<a href="#trie" class="hash-link" aria-label="Direct link to Trie" title="Direct link to Trie" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="trie">Trie<a href="#trie" class="hash-link" aria-label="Direct link to Trie" title="Direct link to Trie" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tree_node_hash_calculations"><code>nethermind_tree_node_hash_calculations</code><a href="#tree_node_hash_calculations" class="hash-link" aria-label="Direct link to tree_node_hash_calculations" title="Direct link to tree_node_hash_calculations" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tree_node_hash_calculations"><code>nethermind_tree_node_hash_calculations</code><a href="#tree_node_hash_calculations" class="hash-link" aria-label="Direct link to tree_node_hash_calculations" title="Direct link to tree_node_hash_calculations" translate="no">​</a></h4>
 <p>Number of trie node hash calculations.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tree_node_rlp_decodings"><code>nethermind_tree_node_rlp_decodings</code><a href="#tree_node_rlp_decodings" class="hash-link" aria-label="Direct link to tree_node_rlp_decodings" title="Direct link to tree_node_rlp_decodings" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tree_node_rlp_decodings"><code>nethermind_tree_node_rlp_decodings</code><a href="#tree_node_rlp_decodings" class="hash-link" aria-label="Direct link to tree_node_rlp_decodings" title="Direct link to tree_node_rlp_decodings" translate="no">​</a></h4>
 <p>Number of trie node RLP decodings.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tree_node_rlp_encodings"><code>nethermind_tree_node_rlp_encodings</code><a href="#tree_node_rlp_encodings" class="hash-link" aria-label="Direct link to tree_node_rlp_encodings" title="Direct link to tree_node_rlp_encodings" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tree_node_rlp_encodings"><code>nethermind_tree_node_rlp_encodings</code><a href="#tree_node_rlp_encodings" class="hash-link" aria-label="Direct link to tree_node_rlp_encodings" title="Direct link to tree_node_rlp_encodings" translate="no">​</a></h4>
 <p>Number of trie node RLP encodings.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="txpool">TxPool<a href="#txpool" class="hash-link" aria-label="Direct link to TxPool" title="Direct link to TxPool" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="txpool">TxPool<a href="#txpool" class="hash-link" aria-label="Direct link to TxPool" title="Direct link to TxPool" translate="no">​</a></h3>
 <ul>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blob_transaction_count"><code>nethermind_blob_transaction_count</code><a href="#blob_transaction_count" class="hash-link" aria-label="Direct link to blob_transaction_count" title="Direct link to blob_transaction_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blob_transaction_count"><code>nethermind_blob_transaction_count</code><a href="#blob_transaction_count" class="hash-link" aria-label="Direct link to blob_transaction_count" title="Direct link to blob_transaction_count" translate="no">​</a></h4>
 <p>Number of blob transactions in pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blob_transactions_in_block"><code>nethermind_blob_transactions_in_block</code><a href="#blob_transactions_in_block" class="hash-link" aria-label="Direct link to blob_transactions_in_block" title="Direct link to blob_transactions_in_block" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blob_transactions_in_block"><code>nethermind_blob_transactions_in_block</code><a href="#blob_transactions_in_block" class="hash-link" aria-label="Direct link to blob_transactions_in_block" title="Direct link to blob_transactions_in_block" translate="no">​</a></h4>
 <p>Number of blob transactions in the block.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="blobs_in_block"><code>nethermind_blobs_in_block</code><a href="#blobs_in_block" class="hash-link" aria-label="Direct link to blobs_in_block" title="Direct link to blobs_in_block" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="blobs_in_block"><code>nethermind_blobs_in_block</code><a href="#blobs_in_block" class="hash-link" aria-label="Direct link to blobs_in_block" title="Direct link to blobs_in_block" translate="no">​</a></h4>
 <p>Number of blobs in the block.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="dark_pool_ratio_level1"><code>nethermind_dark_pool_ratio_level1</code><a href="#dark_pool_ratio_level1" class="hash-link" aria-label="Direct link to dark_pool_ratio_level1" title="Direct link to dark_pool_ratio_level1" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dark_pool_ratio_level1"><code>nethermind_dark_pool_ratio_level1</code><a href="#dark_pool_ratio_level1" class="hash-link" aria-label="Direct link to dark_pool_ratio_level1" title="Direct link to dark_pool_ratio_level1" translate="no">​</a></h4>
 <p>Ratio of transactions in the block absent in hashCache.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="dark_pool_ratio_level2"><code>nethermind_dark_pool_ratio_level2</code><a href="#dark_pool_ratio_level2" class="hash-link" aria-label="Direct link to dark_pool_ratio_level2" title="Direct link to dark_pool_ratio_level2" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dark_pool_ratio_level2"><code>nethermind_dark_pool_ratio_level2</code><a href="#dark_pool_ratio_level2" class="hash-link" aria-label="Direct link to dark_pool_ratio_level2" title="Direct link to dark_pool_ratio_level2" translate="no">​</a></h4>
 <p>Ratio of transactions in the block absent in pending transactions.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="eip1559_transactions_ratio"><code>nethermind_eip1559_transactions_ratio</code><a href="#eip1559_transactions_ratio" class="hash-link" aria-label="Direct link to eip1559_transactions_ratio" title="Direct link to eip1559_transactions_ratio" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="eip1559_transactions_ratio"><code>nethermind_eip1559_transactions_ratio</code><a href="#eip1559_transactions_ratio" class="hash-link" aria-label="Direct link to eip1559_transactions_ratio" title="Direct link to eip1559_transactions_ratio" translate="no">​</a></h4>
 <p>Ratio of 1559-type transactions in the block.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="eip7702_transactions_in_block"><code>nethermind_eip7702_transactions_in_block</code><a href="#eip7702_transactions_in_block" class="hash-link" aria-label="Direct link to eip7702_transactions_in_block" title="Direct link to eip7702_transactions_in_block" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="eip7702_transactions_in_block"><code>nethermind_eip7702_transactions_in_block</code><a href="#eip7702_transactions_in_block" class="hash-link" aria-label="Direct link to eip7702_transactions_in_block" title="Direct link to eip7702_transactions_in_block" translate="no">​</a></h4>
 <p>Number of 7702-type transactions in the block.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending1559_transactions_added"><code>nethermind_pending1559_transactions_added</code><a href="#pending1559_transactions_added" class="hash-link" aria-label="Direct link to pending1559_transactions_added" title="Direct link to pending1559_transactions_added" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending1559_transactions_added"><code>nethermind_pending1559_transactions_added</code><a href="#pending1559_transactions_added" class="hash-link" aria-label="Direct link to pending1559_transactions_added" title="Direct link to pending1559_transactions_added" translate="no">​</a></h4>
 <p>Number of pending 1559-type transactions added to transaction pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_blob_transactions_added"><code>nethermind_pending_blob_transactions_added</code><a href="#pending_blob_transactions_added" class="hash-link" aria-label="Direct link to pending_blob_transactions_added" title="Direct link to pending_blob_transactions_added" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_blob_transactions_added"><code>nethermind_pending_blob_transactions_added</code><a href="#pending_blob_transactions_added" class="hash-link" aria-label="Direct link to pending_blob_transactions_added" title="Direct link to pending_blob_transactions_added" translate="no">​</a></h4>
 <p>Number of pending blob-type transactions added to transaction pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_balance_below_value"><code>nethermind_pending_transactions_balance_below_value</code><a href="#pending_transactions_balance_below_value" class="hash-link" aria-label="Direct link to pending_transactions_balance_below_value" title="Direct link to pending_transactions_balance_below_value" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_balance_below_value"><code>nethermind_pending_transactions_balance_below_value</code><a href="#pending_transactions_balance_below_value" class="hash-link" aria-label="Direct link to pending_transactions_balance_below_value" title="Direct link to pending_transactions_balance_below_value" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because balance is less than txn value.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_conflicting_tx_type"><code>nethermind_pending_transactions_conflicting_tx_type</code><a href="#pending_transactions_conflicting_tx_type" class="hash-link" aria-label="Direct link to pending_transactions_conflicting_tx_type" title="Direct link to pending_transactions_conflicting_tx_type" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_conflicting_tx_type"><code>nethermind_pending_transactions_conflicting_tx_type</code><a href="#pending_transactions_conflicting_tx_type" class="hash-link" aria-label="Direct link to pending_transactions_conflicting_tx_type" title="Direct link to pending_transactions_conflicting_tx_type" translate="no">​</a></h4>
 <p>Number of transactions rejected because of already pending tx of other type (allowed blob txs or others, not both at once).</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_discarded"><code>nethermind_pending_transactions_discarded</code><a href="#pending_transactions_discarded" class="hash-link" aria-label="Direct link to pending_transactions_discarded" title="Direct link to pending_transactions_discarded" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_discarded"><code>nethermind_pending_transactions_discarded</code><a href="#pending_transactions_discarded" class="hash-link" aria-label="Direct link to pending_transactions_discarded" title="Direct link to pending_transactions_discarded" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_evicted"><code>nethermind_pending_transactions_evicted</code><a href="#pending_transactions_evicted" class="hash-link" aria-label="Direct link to pending_transactions_evicted" title="Direct link to pending_transactions_evicted" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_evicted"><code>nethermind_pending_transactions_evicted</code><a href="#pending_transactions_evicted" class="hash-link" aria-label="Direct link to pending_transactions_evicted" title="Direct link to pending_transactions_evicted" translate="no">​</a></h4>
 <p>Number of pending transactions evicted from transaction pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_gas_limit_too_high"><code>nethermind_pending_transactions_gas_limit_too_high</code><a href="#pending_transactions_gas_limit_too_high" class="hash-link" aria-label="Direct link to pending_transactions_gas_limit_too_high" title="Direct link to pending_transactions_gas_limit_too_high" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_gas_limit_too_high"><code>nethermind_pending_transactions_gas_limit_too_high</code><a href="#pending_transactions_gas_limit_too_high" class="hash-link" aria-label="Direct link to pending_transactions_gas_limit_too_high" title="Direct link to pending_transactions_gas_limit_too_high" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because the gas limit was to high for the block.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_hashes_received"><code>nethermind_pending_transactions_hashes_received</code><a href="#pending_transactions_hashes_received" class="hash-link" aria-label="Direct link to pending_transactions_hashes_received" title="Direct link to pending_transactions_hashes_received" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_hashes_received"><code>nethermind_pending_transactions_hashes_received</code><a href="#pending_transactions_hashes_received" class="hash-link" aria-label="Direct link to pending_transactions_hashes_received" title="Direct link to pending_transactions_hashes_received" translate="no">​</a></h4>
 <p>Number of hashes of pending transactions received from peers.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_hashes_sent"><code>nethermind_pending_transactions_hashes_sent</code><a href="#pending_transactions_hashes_sent" class="hash-link" aria-label="Direct link to pending_transactions_hashes_sent" title="Direct link to pending_transactions_hashes_sent" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_hashes_sent"><code>nethermind_pending_transactions_hashes_sent</code><a href="#pending_transactions_hashes_sent" class="hash-link" aria-label="Direct link to pending_transactions_hashes_sent" title="Direct link to pending_transactions_hashes_sent" translate="no">​</a></h4>
 <p>Number of hashes of pending transactions broadcasted to peers.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_known"><code>nethermind_pending_transactions_known</code><a href="#pending_transactions_known" class="hash-link" aria-label="Direct link to pending_transactions_known" title="Direct link to pending_transactions_known" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_known"><code>nethermind_pending_transactions_known</code><a href="#pending_transactions_known" class="hash-link" aria-label="Direct link to pending_transactions_known" title="Direct link to pending_transactions_known" translate="no">​</a></h4>
 <p>Number of already known pending transactions.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_low_nonce"><code>nethermind_pending_transactions_low_nonce</code><a href="#pending_transactions_low_nonce" class="hash-link" aria-label="Direct link to pending_transactions_low_nonce" title="Direct link to pending_transactions_low_nonce" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_low_nonce"><code>nethermind_pending_transactions_low_nonce</code><a href="#pending_transactions_low_nonce" class="hash-link" aria-label="Direct link to pending_transactions_low_nonce" title="Direct link to pending_transactions_low_nonce" translate="no">​</a></h4>
 <p>Number of transactions with already used nonce.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_malformed"><code>nethermind_pending_transactions_malformed</code><a href="#pending_transactions_malformed" class="hash-link" aria-label="Direct link to pending_transactions_malformed" title="Direct link to pending_transactions_malformed" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_malformed"><code>nethermind_pending_transactions_malformed</code><a href="#pending_transactions_malformed" class="hash-link" aria-label="Direct link to pending_transactions_malformed" title="Direct link to pending_transactions_malformed" translate="no">​</a></h4>
 <p>Number of malformed transactions.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_nonce_gap"><code>nethermind_pending_transactions_nonce_gap</code><a href="#pending_transactions_nonce_gap" class="hash-link" aria-label="Direct link to pending_transactions_nonce_gap" title="Direct link to pending_transactions_nonce_gap" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_nonce_gap"><code>nethermind_pending_transactions_nonce_gap</code><a href="#pending_transactions_nonce_gap" class="hash-link" aria-label="Direct link to pending_transactions_nonce_gap" title="Direct link to pending_transactions_nonce_gap" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because of not having preceding nonce of this sender in TxPool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_nonce_too_far_in_future"><code>nethermind_pending_transactions_nonce_too_far_in_future</code><a href="#pending_transactions_nonce_too_far_in_future" class="hash-link" aria-label="Direct link to pending_transactions_nonce_too_far_in_future" title="Direct link to pending_transactions_nonce_too_far_in_future" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_nonce_too_far_in_future"><code>nethermind_pending_transactions_nonce_too_far_in_future</code><a href="#pending_transactions_nonce_too_far_in_future" class="hash-link" aria-label="Direct link to pending_transactions_nonce_too_far_in_future" title="Direct link to pending_transactions_nonce_too_far_in_future" translate="no">​</a></h4>
 <p>Number of transactions with nonce too far in future.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_not_supported_tx_type"><code>nethermind_pending_transactions_not_supported_tx_type</code><a href="#pending_transactions_not_supported_tx_type" class="hash-link" aria-label="Direct link to pending_transactions_not_supported_tx_type" title="Direct link to pending_transactions_not_supported_tx_type" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_not_supported_tx_type"><code>nethermind_pending_transactions_not_supported_tx_type</code><a href="#pending_transactions_not_supported_tx_type" class="hash-link" aria-label="Direct link to pending_transactions_not_supported_tx_type" title="Direct link to pending_transactions_not_supported_tx_type" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because of not supported transaction type.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_null_hash"><code>nethermind_pending_transactions_null_hash</code><a href="#pending_transactions_null_hash" class="hash-link" aria-label="Direct link to pending_transactions_null_hash" title="Direct link to pending_transactions_null_hash" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_null_hash"><code>nethermind_pending_transactions_null_hash</code><a href="#pending_transactions_null_hash" class="hash-link" aria-label="Direct link to pending_transactions_null_hash" title="Direct link to pending_transactions_null_hash" translate="no">​</a></h4>
 <p>Number of pending transactions rejected with a null hash.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_passed_filters_but_cannot_compete_on_fees"><code>nethermind_pending_transactions_passed_filters_but_cannot_compete_on_fees</code><a href="#pending_transactions_passed_filters_but_cannot_compete_on_fees" class="hash-link" aria-label="Direct link to pending_transactions_passed_filters_but_cannot_compete_on_fees" title="Direct link to pending_transactions_passed_filters_but_cannot_compete_on_fees" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_passed_filters_but_cannot_compete_on_fees"><code>nethermind_pending_transactions_passed_filters_but_cannot_compete_on_fees</code><a href="#pending_transactions_passed_filters_but_cannot_compete_on_fees" class="hash-link" aria-label="Direct link to pending_transactions_passed_filters_but_cannot_compete_on_fees" title="Direct link to pending_transactions_passed_filters_but_cannot_compete_on_fees" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored after passing early rejections as balance is too low to compete with lowest effective fee in transaction pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_passed_filters_but_cannot_replace"><code>nethermind_pending_transactions_passed_filters_but_cannot_replace</code><a href="#pending_transactions_passed_filters_but_cannot_replace" class="hash-link" aria-label="Direct link to pending_transactions_passed_filters_but_cannot_replace" title="Direct link to pending_transactions_passed_filters_but_cannot_replace" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_passed_filters_but_cannot_replace"><code>nethermind_pending_transactions_passed_filters_but_cannot_replace</code><a href="#pending_transactions_passed_filters_but_cannot_replace" class="hash-link" aria-label="Direct link to pending_transactions_passed_filters_but_cannot_replace" title="Direct link to pending_transactions_passed_filters_but_cannot_replace" translate="no">​</a></h4>
 <p>Number of pending transactions received that were trying to replace tx with the same sender and nonce and failed.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_received"><code>nethermind_pending_transactions_received</code><a href="#pending_transactions_received" class="hash-link" aria-label="Direct link to pending_transactions_received" title="Direct link to pending_transactions_received" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_received"><code>nethermind_pending_transactions_received</code><a href="#pending_transactions_received" class="hash-link" aria-label="Direct link to pending_transactions_received" title="Direct link to pending_transactions_received" translate="no">​</a></h4>
 <p>Number of pending transactions received from peers.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_sent"><code>nethermind_pending_transactions_sent</code><a href="#pending_transactions_sent" class="hash-link" aria-label="Direct link to pending_transactions_sent" title="Direct link to pending_transactions_sent" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_sent"><code>nethermind_pending_transactions_sent</code><a href="#pending_transactions_sent" class="hash-link" aria-label="Direct link to pending_transactions_sent" title="Direct link to pending_transactions_sent" translate="no">​</a></h4>
 <p>Number of pending transactions broadcasted to peers.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_size_too_large"><code>nethermind_pending_transactions_size_too_large</code><a href="#pending_transactions_size_too_large" class="hash-link" aria-label="Direct link to pending_transactions_size_too_large" title="Direct link to pending_transactions_size_too_large" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_size_too_large"><code>nethermind_pending_transactions_size_too_large</code><a href="#pending_transactions_size_too_large" class="hash-link" aria-label="Direct link to pending_transactions_size_too_large" title="Direct link to pending_transactions_size_too_large" translate="no">​</a></h4>
 <p>Number of pending transactions rejected due to excessive size.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_too_low_balance"><code>nethermind_pending_transactions_too_low_balance</code><a href="#pending_transactions_too_low_balance" class="hash-link" aria-label="Direct link to pending_transactions_too_low_balance" title="Direct link to pending_transactions_too_low_balance" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_too_low_balance"><code>nethermind_pending_transactions_too_low_balance</code><a href="#pending_transactions_too_low_balance" class="hash-link" aria-label="Direct link to pending_transactions_too_low_balance" title="Direct link to pending_transactions_too_low_balance" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because balance too low for fee to be higher than the lowest fee in transaction pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_too_low_fee"><code>nethermind_pending_transactions_too_low_fee</code><a href="#pending_transactions_too_low_fee" class="hash-link" aria-label="Direct link to pending_transactions_too_low_fee" title="Direct link to pending_transactions_too_low_fee" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_too_low_fee"><code>nethermind_pending_transactions_too_low_fee</code><a href="#pending_transactions_too_low_fee" class="hash-link" aria-label="Direct link to pending_transactions_too_low_fee" title="Direct link to pending_transactions_too_low_fee" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because of fee lower than the lowest fee in transaction pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_too_low_priority_fee"><code>nethermind_pending_transactions_too_low_priority_fee</code><a href="#pending_transactions_too_low_priority_fee" class="hash-link" aria-label="Direct link to pending_transactions_too_low_priority_fee" title="Direct link to pending_transactions_too_low_priority_fee" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_too_low_priority_fee"><code>nethermind_pending_transactions_too_low_priority_fee</code><a href="#pending_transactions_too_low_priority_fee" class="hash-link" aria-label="Direct link to pending_transactions_too_low_priority_fee" title="Direct link to pending_transactions_too_low_priority_fee" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because of priority fee lower than minimal requirement.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_unresolvable_sender"><code>nethermind_pending_transactions_unresolvable_sender</code><a href="#pending_transactions_unresolvable_sender" class="hash-link" aria-label="Direct link to pending_transactions_unresolvable_sender" title="Direct link to pending_transactions_unresolvable_sender" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_unresolvable_sender"><code>nethermind_pending_transactions_unresolvable_sender</code><a href="#pending_transactions_unresolvable_sender" class="hash-link" aria-label="Direct link to pending_transactions_unresolvable_sender" title="Direct link to pending_transactions_unresolvable_sender" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because the sender couldn&#x27;t be resolved.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_with_expensive_filtering"><code>nethermind_pending_transactions_with_expensive_filtering</code><a href="#pending_transactions_with_expensive_filtering" class="hash-link" aria-label="Direct link to pending_transactions_with_expensive_filtering" title="Direct link to pending_transactions_with_expensive_filtering" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_with_expensive_filtering"><code>nethermind_pending_transactions_with_expensive_filtering</code><a href="#pending_transactions_with_expensive_filtering" class="hash-link" aria-label="Direct link to pending_transactions_with_expensive_filtering" title="Direct link to pending_transactions_with_expensive_filtering" translate="no">​</a></h4>
 <p>Number of pending transactions that reached filters which are resource expensive</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pending_transactions_zero_balance"><code>nethermind_pending_transactions_zero_balance</code><a href="#pending_transactions_zero_balance" class="hash-link" aria-label="Direct link to pending_transactions_zero_balance" title="Direct link to pending_transactions_zero_balance" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pending_transactions_zero_balance"><code>nethermind_pending_transactions_zero_balance</code><a href="#pending_transactions_zero_balance" class="hash-link" aria-label="Direct link to pending_transactions_zero_balance" title="Direct link to pending_transactions_zero_balance" translate="no">​</a></h4>
 <p>Number of pending transactions received that were ignored because balance is zero and cannot pay gas.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="transaction_count"><code>nethermind_transaction_count</code><a href="#transaction_count" class="hash-link" aria-label="Direct link to transaction_count" title="Direct link to transaction_count" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="transaction_count"><code>nethermind_transaction_count</code><a href="#transaction_count" class="hash-link" aria-label="Direct link to transaction_count" title="Direct link to transaction_count" translate="no">​</a></h4>
 <p>Number of transactions in pool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="transactions_reorged"><code>nethermind_transactions_reorged</code><a href="#transactions_reorged" class="hash-link" aria-label="Direct link to transactions_reorged" title="Direct link to transactions_reorged" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="transactions_reorged"><code>nethermind_transactions_reorged</code><a href="#transactions_reorged" class="hash-link" aria-label="Direct link to transactions_reorged" title="Direct link to transactions_reorged" translate="no">​</a></h4>
 <p>Number of transactions reorganized during chain reorg.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="transactions_sourced_mem_pool"><code>nethermind_transactions_sourced_mem_pool</code><a href="#transactions_sourced_mem_pool" class="hash-link" aria-label="Direct link to transactions_sourced_mem_pool" title="Direct link to transactions_sourced_mem_pool" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="transactions_sourced_mem_pool"><code>nethermind_transactions_sourced_mem_pool</code><a href="#transactions_sourced_mem_pool" class="hash-link" aria-label="Direct link to transactions_sourced_mem_pool" title="Direct link to transactions_sourced_mem_pool" translate="no">​</a></h4>
 <p>Number of transactions sourced from the mempool.</p>
 </li>
-<li>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="transactions_sourced_private_order_flow"><code>nethermind_transactions_sourced_private_order_flow</code><a href="#transactions_sourced_private_order_flow" class="hash-link" aria-label="Direct link to transactions_sourced_private_order_flow" title="Direct link to transactions_sourced_private_order_flow" translate="no">​</a></h4>
+<li class="">
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="transactions_sourced_private_order_flow"><code>nethermind_transactions_sourced_private_order_flow</code><a href="#transactions_sourced_private_order_flow" class="hash-link" aria-label="Direct link to transactions_sourced_private_order_flow" title="Direct link to transactions_sourced_private_order_flow" translate="no">​</a></h4>
 <p>Number of transactions sourced from private order flow.</p>
 </li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/NethermindEth/docs/tree/main/versioned_docs/version-1.34.0/monitoring/metrics/metrics.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-10-21T14:15:12.000Z" itemprop="dateModified">Oct 21, 2025</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/1.34.0/interacting/json-rpc-ns/web3"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">web3</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/1.34.0/monitoring/metrics/grafana-and-prometheus"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Grafana and Prometheus</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#parameters-by-namespace" class="table-of-contents__link toc-highlight">Parameters by namespace</a><ul><li><a href="#aura" class="table-of-contents__link toc-highlight">Aura</a></li><li><a href="#blockchain" class="table-of-contents__link toc-highlight">Blockchain</a></li><li><a href="#db" class="table-of-contents__link toc-highlight">Db</a></li><li><a href="#evm" class="table-of-contents__link toc-highlight">Evm</a></li><li><a href="#evmprecompiles" class="table-of-contents__link toc-highlight">Evm.Precompiles</a></li><li><a href="#history" class="table-of-contents__link toc-highlight">History</a></li><li><a href="#jsonrpc" class="table-of-contents__link toc-highlight">JsonRpc</a></li><li><a href="#merge" class="table-of-contents__link toc-highlight">Merge</a></li><li><a href="#network" class="table-of-contents__link toc-highlight">Network</a></li><li><a href="#pruning" class="table-of-contents__link toc-highlight">Pruning</a></li><li><a href="#runner" class="table-of-contents__link toc-highlight">Runner</a></li><li><a href="#serializationrlp" class="table-of-contents__link toc-highlight">Serialization.Rlp</a></li><li><a href="#shutter" class="table-of-contents__link toc-highlight">Shutter</a></li><li><a href="#synchronization" class="table-of-contents__link toc-highlight">Synchronization</a></li><li><a href="#trie" class="table-of-contents__link toc-highlight">Trie</a></li><li><a href="#txpool" class="table-of-contents__link toc-highlight">TxPool</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/NethermindEth/docs/tree/main/versioned_docs/version-1.34.0/monitoring/metrics/metrics.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-10-28T20:54:46.000Z" itemprop="dateModified">Oct 28, 2025</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/1.34.0/interacting/json-rpc-ns/web3"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">web3</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/1.34.0/monitoring/metrics/grafana-and-prometheus"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Grafana and Prometheus</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#parameters-by-namespace" class="table-of-contents__link toc-highlight">Parameters by namespace</a><ul><li><a href="#aura" class="table-of-contents__link toc-highlight">Aura</a></li><li><a href="#blockchain" class="table-of-contents__link toc-highlight">Blockchain</a></li><li><a href="#db" class="table-of-contents__link toc-highlight">Db</a></li><li><a href="#evm" class="table-of-contents__link toc-highlight">Evm</a></li><li><a href="#evmprecompiles" class="table-of-contents__link toc-highlight">Evm.Precompiles</a></li><li><a href="#history" class="table-of-contents__link toc-highlight">History</a></li><li><a href="#jsonrpc" class="table-of-contents__link toc-highlight">JsonRpc</a></li><li><a href="#merge" class="table-of-contents__link toc-highlight">Merge</a></li><li><a href="#network" class="table-of-contents__link toc-highlight">Network</a></li><li><a href="#pruning" class="table-of-contents__link toc-highlight">Pruning</a></li><li><a href="#runner" class="table-of-contents__link toc-highlight">Runner</a></li><li><a href="#serializationrlp" class="table-of-contents__link toc-highlight">Serialization.Rlp</a></li><li><a href="#shutter" class="table-of-contents__link toc-highlight">Shutter</a></li><li><a href="#synchronization" class="table-of-contents__link toc-highlight">Synchronization</a></li><li><a href="#trie" class="table-of-contents__link toc-highlight">Trie</a></li><li><a href="#txpool" class="table-of-contents__link toc-highlight">TxPool</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
