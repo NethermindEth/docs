@@ -84,7 +84,7 @@ To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#
 **Supported networks**
 
 - [Taiko Alethia](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-alethia) - configurations: `taiko-alethia`
-- [Taiko Hekla](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hekla) (testnet) - configurations: `taiko-hekla`
+- [Taiko Hoodi](https://docs.taiko.xyz/network-reference/rpc-configuration#taiko-hoodi) (testnet) - configurations: `taiko-hoodi`
 
 To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
 
@@ -117,4 +117,3 @@ As the Energy Web Chain is an Aura-based network, running a node does not requir
 :::
 
 To run Nethermind on the Energy Web Chain, see the [Energy Web Chain documentation](https://energy-web-foundation.gitbook.io/energy-web/ew-dos-technology-components-2023/trust-layer-energy-web-chain/ewc-guides-and-tutorials/running-a-local-node).
-

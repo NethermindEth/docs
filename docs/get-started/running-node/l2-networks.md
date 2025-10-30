@@ -148,7 +148,7 @@ nethermind \
 
 ## Taiko
 
-A [Taiko node](https://docs.taiko.xyz/taiko-alethia-protocol/taiko-alethia-nodes) consists of two parts: taiko-client, analogous to a consensus client in Ethereum paired with an L2 execution client.
+A [Taiko node](https://docs.taiko.xyz/taiko-alethia-protocol/protocol-architecture/taiko-alethia-nodes) consists of two parts: [taiko-client](https://github.com/taikoxyz/taiko-mono/tree/main/packages/taiko-client#readme), analogous to a consensus client in Ethereum paired with an L2 execution client.
 
 :::warning Important
 Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate to taiko-client.
@@ -180,27 +180,28 @@ taiko-client driver \
   --l1.ws $L1_WS_URL \
   --l1.beacon $L1_BEACON_URL \
   --l2.ws ws://localhost:8545 \
-  --taikoL1 0x06a9Ab27c7e2255df1815E6CC0168d7755Feb19a \
-  --taikoL2 0x1670000000000000000000000000000000010001 \
-  --jwtSecret path/to/jwt.hex \
   --l2.auth http://localhost:8551 \
-  --verbosity 3 \
+  --taikoInbox 0x06a9Ab27c7e2255df1815E6CC0168d7755Feb19a \
+  --taikoAnchor 0x1670000000000000000000000000000000010001 \
+  --jwtSecret path/to/jwt.hex \
   --p2p.sync \
   --p2p.checkPointSyncUrl https://rpc.mainnet.taiko.xyz
 ```
 
+For more information, see [Run a node for Taiko Alethia](https://docs.taiko.xyz/guides/node-operators/run-a-node-for-taiko-alethia/).
+
 </TabItem>
-<TabItem value="taiko-hekla" label="Taiko Hekla">
+<TabItem value="taiko-hoodi" label="Taiko Hoodi">
 
 :::info Note
-For Taiko Hekla, the L1 node must be running on Holesky.
+For Taiko Hoodi, the L1 node must be running on Hoodi.
 :::
 
-To run Nethermind on Taiko Hekla, use the following command:
+To run Nethermind on Taiko Hoodi, use the following command:
 
 ```bash
 nethermind \
-  -c taiko-hekla \
+  -c taiko-hoodi \
   --data-dir path/to/data/dir \
   --jsonrpc-jwtsecretfile path/to/jwt.hex
 ```
@@ -215,20 +216,19 @@ taiko-client driver \
   --l1.ws $L1_WS_URL \
   --l1.beacon $L1_BEACON_URL \
   --l2.ws ws://localhost:8545 \
-  --taikoL1 0x79C9109b764609df928d16fC4a91e9081F7e87DB \
-  --taikoL2 0x1670090000000000000000000000000000010001 \
-  --jwtSecret path/to/jwt.hex \
   --l2.auth http://localhost:8551 \
-  --verbosity 3 \
+  --taikoInbox 0x50A576435E2D9c179124D657d804eb56A10b6999 \
+  --taikoAnchor 0x1670090000000000000000000000000000010001 \
+  --jwtSecret path/to/jwt.hex \
   --p2p.sync \
-  --p2p.checkPointSyncUrl https://rpc.hekla.taiko.xyz
+  --p2p.checkPointSyncUrl https://rpc.hoodi.taiko.xyz
 ```
+
+For more information, see [Run a node for Taiko Hoodi](https://docs.taiko.xyz/guides/node-operators/run-a-node-for-taiko-hoodi/).
 
 </TabItem>
 </Tabs>
 
-For more information about the taiko-client, see its [README](https://github.com/taikoxyz/taiko-mono/tree/main/packages/taiko-client#readme).
-
 **See also**
 
-- [Run a Taiko proposer](https://docs.taiko.xyz/guides/node-operators/enable-a-proposer/)
+- [Enable a prover](https://docs.taiko.xyz/guides/node-operators/enable-a-prover/)
