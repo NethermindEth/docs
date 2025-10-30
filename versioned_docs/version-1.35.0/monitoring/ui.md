@@ -7,15 +7,14 @@ To provide a richer and more user-friendly experience, Nethermind is bundled wit
 
 ![Nethermind UI](/images/ui.png)
 
-Disabled by default, the UI can be enabled together with the [health check](./health-check.md) UI using the [`HealthChecks.Enabled`](../fundamentals/configuration.md#healthchecks-enabled) and [`HealthChecks.UIEnabled`](../fundamentals/configuration.md#healthchecks-uienabled) configuration options as follows:
+Disabled by default, the UI can be enabled together with the [health check](./health-check.md) using the [`HealthChecks.Enabled`](../fundamentals/configuration.md#healthchecks-enabled) configuration option as follows:
 
 ```bash
 nethermind \
   -c mainnet \
   --data-dir path/to/data/dir \
   # highlight-start
-  --healthchecks-enabled \
-  --healthchecks-uienabled
+  --healthchecks-enabled
   # highlight-end
 ```
 
@@ -26,8 +25,7 @@ nethermind \
   -c mainnet \
   --data-dir path/to/data/dir \
   # highlight-start
-  --jsonrpc-additionalrpcurls "http://203.0.113.5:80|http" \
+  --jsonrpc-additionalrpcurls "http://203.0.113.5:80|http|health" \
   # highlight-end
-  --healthchecks-enabled \
-  --healthchecks-uienabled
+  --healthchecks-enabled
 ```
