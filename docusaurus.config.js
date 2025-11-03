@@ -111,7 +111,7 @@ const config = {
           {
             'aria-label': 'Discord',
             className: 'header-social-link header-discord-icon',
-            href: 'https://discord.com/invite/PaCMRFdvWT',
+            href: 'https://discord.gg/GXJFaYk',
             position: 'right'
           },
           {
