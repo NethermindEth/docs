@@ -218,7 +218,7 @@ taiko-client driver \
   --l2.ws ws://localhost:8545 \
   --l2.auth http://localhost:8551 \
   --taikoInbox 0x50A576435E2D9c179124D657d804eb56A10b6999 \
-  --taikoAnchor 0x1670090000000000000000000000000000010001 \
+  --taikoAnchor 0x1670130000000000000000000000000000010001 \
   --jwtSecret path/to/jwt.hex \
   --p2p.sync \
   --p2p.checkPointSyncUrl https://rpc.hoodi.taiko.xyz
