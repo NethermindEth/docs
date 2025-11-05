@@ -3,7 +3,6 @@ title: Plugins
 sidebar_position: 1
 ---
 
-import ReactPlayer from "react-player";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -269,8 +268,11 @@ Before attaching the debugger to the Nethermind process, we need to ensure Nethe
 
 Either of the above approaches will ensure Nethermind loads our plugin with the latest changes automatically. The following video demonstrates what the debugging process looks like:
 
-<p align="center">
-  <ReactPlayer controls url='https://github.com/user-attachments/assets/267904d4-444e-4eac-91c2-bd76c796c6f3' />
+<p>
+  <video disablePictureInPicture controls controlsList="nodownload noremoteplayback" preload="metadata" width="100%">
+    <source media="(prefers-color-scheme: dark)" src="https://github.com/user-attachments/assets/267904d4-444e-4eac-91c2-bd76c796c6f3" type="video/mp4" />
+    <source media="(prefers-color-scheme: light)" src="https://github.com/user-attachments/assets/625fabe1-d1cc-4c3d-bd37-1435b096b0f4" type="video/mp4" />
+  </video>
 </p>
 
 ### Debugging with Nethermind codebase \{#debug-codebase\}
