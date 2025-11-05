@@ -7,7 +7,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 Nethermind uses the [RocksDB](https://rocksdb.org) database to store the state. By default, the database is located in the
-same directory where the Nethermind executable is. You can change the database location using the [`-d, --baseDbPath`](configuration.md#db-dir) command line option.
+same directory where the Nethermind executable is. You can change the database location using the [`--db-dir`](configuration.md#db-dir) command line option.
 
 ## Database directory structure
 
