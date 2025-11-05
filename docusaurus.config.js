@@ -86,9 +86,16 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: true
       },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       image:
         'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Nethermind',
           src: 'images/logo_dark.svg',
