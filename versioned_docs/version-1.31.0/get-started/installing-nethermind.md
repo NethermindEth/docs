@@ -76,13 +76,13 @@ On macOS, Nethermind can be installed via Homebrew.
 
 First, add the Nethermind repository:
 
-```sh
+```bash
 brew tap nethermindeth/nethermind
 ```
 
 Then, install Nethermind as follows:
 
-```sh
+```bash
 brew install nethermind
 ```
 
@@ -95,7 +95,7 @@ For further instructions, see [Running a node](running-node/running-node.md).
 
 Standalone downloads give users more flexibility by allowing them to install a specific version of Nethermind, choose the installation location, and prevent automatic updates.
 
-Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) and at [downloads.nethermind.io](https://downloads.nethermind.io) as ZIP archives for x64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
+Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) as ZIP archives for x64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
 
 ### Configuring as a Linux service
 
