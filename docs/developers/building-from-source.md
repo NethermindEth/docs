@@ -113,7 +113,7 @@ docker build . -t nethermind
 An even faster approach is to build the image directly from the repository. The following command builds the version 1.27.0:
 
 ```bash
-docker build https://github.com/nethermindeth/nethermind.git#1.27.0 -t nethermind
+docker build "https://github.com/nethermindeth/nethermind.git#1.27.0" -t nethermind
 ```
 
 The above optional arguments can be specified as well if needed.
