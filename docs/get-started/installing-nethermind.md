@@ -95,7 +95,7 @@ For further instructions, see [Running a node](running-node/running-node.md).
 
 Standalone downloads give users more flexibility by allowing them to install a specific version of Nethermind, choose the installation location, and prevent automatic updates.
 
-Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) as ZIP archives for x64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
+Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) as ZIP archives for x86-64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
 
 ### Configuring as a Linux service
 
@@ -188,7 +188,7 @@ For further instructions, see [Running a node](running-node/running-node.md).
 
 The Docker images of Nethermind are available on [Docker Hub](https://hub.docker.com/r/nethermind/nethermind).
 
-The Docker images are based on Ubuntu 24.04 and support x64 and AArch64 (ARM64) CPU architectures. They are tagged as follows:
+The Docker images are based on Ubuntu 24.04 and support x86-64 and AArch64 (ARM64) CPU architectures. They are tagged as follows:
 
 - `latest`: the latest version of Nethermind (the default tag).
 - `latest-chiseled`: a _rootless_ and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) image of the latest version of Nethermind.\
