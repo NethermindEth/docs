@@ -19,13 +19,12 @@ dotnet tool install -g dotnet-counters
 
 Once installed, you can run the tool from the command line by typing `dotnet-counters`.
 
-
 ### Installing in a Docker container
 
 To install dotnet-counters in a Docker container, create a Dockerfile with the following content:
 
 ```docker title="Dockerfile"
-FROM mcr.microsoft.com/dotnet/sdk:9.0
+FROM mcr.microsoft.com/dotnet/sdk:10.0
 
 RUN dotnet tool install -g dotnet-counters
 
