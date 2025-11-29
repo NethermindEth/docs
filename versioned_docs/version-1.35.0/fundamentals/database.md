@@ -145,7 +145,7 @@ The current options to reduce the database size are as follows:
 The table below presents a short comparison of these methods including possible fine-tuning of each method. Data was
 fetched from a node running on a machine with the below specifications:
 
-- **Node.js**: v1.18.0
+- **Nethermind**: v1.18.0
 - **Consensus client**: Lighthouse
 - **CPU**: AMD EPYC 7713 (16 cores allocated for the VM)
 - **RAM**: 64 GB
