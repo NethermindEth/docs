@@ -1,6 +1,6 @@
 ---
 title: Performance tuning
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 By default, Nethermind is configured for general use cases that fit well for most users. However, to improve various aspects of Nethermind performance, there are options for different subsystems that can be configured for your specific needs.
@@ -31,12 +31,12 @@ At the moment, the best test case sync time is 1 hour 50 minutes for all phases 
 - Network: 1 Gbps Internet with TorGuard VPN with WireGuard protocol. Both execution and consensus clients port forwarding are set up manually.
 - Command line options:
 
-    ```
-    --network-enableupnp
-    --network-maxoutgoingconnectpersec 50
-    --network-processingthreadcount 32
-    --sync-tunedbmode HeavyWrite
-    ```
+  ```
+  --network-enableupnp
+  --network-maxoutgoingconnectpersec 50
+  --network-processingthreadcount 32
+  --sync-tunedbmode HeavyWrite
+  ```
 
 ## Snap sync
 
@@ -69,7 +69,7 @@ For systems with at least 32 GB of memory, the following configuration is recomm
 
 - `Pruning.CacheMb: 2000`
 
-  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) increased from 1 GB to 2 GB, reducing total SSD writes by roughly a factor of 3 (note that ~500 MB of cache is retained for snap serving).
+  The [pruning cache](../fundamentals/state-pruning.md#in-memory-cache-size) increased from 1 GB to 2 GB, reducing total SSD writes by roughly a factor of 3 (note that ~500 MB of cache is retained for snap serving).
 
 - `Db.StateDbWriteBufferSize: 100000000`
 
@@ -85,7 +85,7 @@ For systems with at least 128 GB of memory, the following configuration is recom
 
 - `Pruning.CacheMb: 4000`
 
-  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) is increased to 4 GB, and the write buffer size to 200 MB.
+  The [pruning cache](../fundamentals/state-pruning.md#in-memory-cache-size) is increased to 4 GB, and the write buffer size to 200 MB.
 
 - `Db.StateDbWriteBufferSize: 200000000`
 - `Db.StateDbAdditionalRocksDbOptions: "block_based_table_factory={index_type=kBinarySearch;partition_filters=0;};"`
@@ -99,7 +99,7 @@ For systems with at least 350 GB of memory, where the entire state can be loaded
 
 - `Pruning.CacheMb: 4000`
 
-  The [pruning cache](../fundamentals/pruning.md#in-memory-cache-size) is increased to 4 GB, and the write buffer size to 200 MB.
+  The [pruning cache](../fundamentals/state-pruning.md#in-memory-cache-size) is increased to 4 GB, and the write buffer size to 200 MB.
 
 - `Db.StateDbWriteBufferSize: 200000000`
 

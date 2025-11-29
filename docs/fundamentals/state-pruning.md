@@ -1,5 +1,5 @@
 ---
-title: Pruning
+title: State pruning
 sidebar_position: 6
 ---
 

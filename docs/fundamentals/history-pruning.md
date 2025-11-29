@@ -1,12 +1,12 @@
 ---
-title: History expiry
-sidebar_position: 9
+title: History pruning
+sidebar_position: 7
 ---
 
-History expiry is a feature set that aims to reduce storage space requirements for a node by removing old historical data. The goal is to remove the requirement from nodes to store all the historical data but ensure the old data is preserved and accessible for anyone who needs it. For details, see [EIP-4444][eip444].
+History pruning is a feature set that aims to reduce storage space requirements for a node by removing old historical data. The goal is to remove the requirement from nodes to store all the historical data but ensure the old data is preserved and accessible for anyone who needs it. For details, see [EIP-4444][eip444].
 
 :::info
-History expiry is enabled by default for the networks supporting it. To disable, set [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) and [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) to `0`.
+History pruning is enabled by default for the networks supporting it. To disable, set [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) and [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) to `0`.
 :::
 
 ## Era1 format
