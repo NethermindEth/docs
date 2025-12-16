@@ -97,6 +97,22 @@ Standalone downloads give users more flexibility by allowing them to install a s
 
 Standalone downloads are available on [GitHub Releases](https://github.com/NethermindEth/nethermind/releases) as ZIP archives for x86-64 and AArch64 (ARM64) CPU architectures for Linux, Windows, and macOS.
 
+### Signatures
+
+For security guarantees, Nethermind provides an OpenPGP signature for each package as a separate .asc file (detached signature), signed with the following key: [`AD12 7976 5093 C675 9CD8  A400 24A7 7461 6F1E 617E`](https://keyserver.ubuntu.com/pks/lookup?search=24A774616F1E617E&fingerprint=on&op=index)
+
+To begin with verification, import the above signing key as follows:
+
+```bash
+gpg --keyserver keyserver.ubuntu.com --recv-keys 24A774616F1E617E
+```
+
+Then, download the corresponding .asc file to verify the package of your choice. For instance:
+
+```bash
+gpg --verify nethermind-1.37.0-0048e77d-linux-x64.zip.asc nethermind-1.37.0-0048e77d-linux-x64.zip
+```
+
 ### Configuring as a Linux service
 
 Installing Nethermind as a Linux `systemd` service takes just a few simple steps:
