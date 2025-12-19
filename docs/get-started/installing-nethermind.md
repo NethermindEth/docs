@@ -110,7 +110,7 @@ gpg --keyserver keyserver.ubuntu.com --recv-keys 24A774616F1E617E
 Then, download the corresponding .asc file to verify the package of your choice. For instance:
 
 ```bash
-gpg --verify nethermind-1.37.0-0048e77d-linux-x64.zip.asc nethermind-1.37.0-0048e77d-linux-x64.zip
+gpg --verify nethermind-1.35.8-c066aee2-linux-x64.zip.asc nethermind-1.35.8-c066aee2-linux-x64.zip
 ```
 
 ### Configuring as a Linux service
