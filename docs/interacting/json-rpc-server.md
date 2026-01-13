@@ -60,7 +60,7 @@ The Engine API uses JWT authentication and requires a JWT secret. By default, Ne
 As per the JSON-RPC 2.0 specification, Nethermind supports batch requests. Specifics depend on the JSON-RPC client used.
 :::
 
-Multiple options are available for JSON-RPC interaction from generic utilities like [curl](https://curl.se) and [Postman](https://www.postman.com) for raw requests to tailored tools like [Cast](https://book.getfoundry.sh/cast), to dedicated libraries such as [Ethers.js](https://ethers.org) and [Viem](https://viem.sh), to name a few.
+Multiple options are available for JSON-RPC interaction from generic utilities like [curl](https://curl.se) and [Postman](https://www.postman.com) for raw requests to tailored tools like [Cast](https://getfoundry.sh/cast/overview), to dedicated libraries such as [Ethers.js](https://ethers.org) and [Viem](https://viem.sh), to name a few.
 
 The following examples demonstrate how to make JSON-RPC requests with some of the abovementioned options.
 
@@ -88,7 +88,7 @@ cast rpc --rpc-url http://localhost:8545 eth_getBlockByNumber latest true
 cast block latest --rpc-url http://localhost:8545
 ```
 
-For more information, see [Cast documentation](https://book.getfoundry.sh/reference/cast/).
+For more information, see [Cast documentation](https://getfoundry.sh/cast/reference/cast).
 
 </TabItem>
 <TabItem value="ethers" label="Ethers.js">
