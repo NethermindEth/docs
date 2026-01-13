@@ -182,7 +182,7 @@ const redirects = {
     },
     {
       from: '/nethermind/guides-and-helpers/how-to-reduce-database-size/full-pruning',
-      to: '/fundamentals/pruning'
+      to: '/fundamentals/state-pruning'
     },
     {
       from: '/nethermind/guides-and-helpers/known-issues',
