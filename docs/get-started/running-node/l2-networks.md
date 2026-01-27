@@ -232,3 +232,75 @@ For more information, see [Run a node for Taiko Hoodi](https://docs.taiko.xyz/gu
 **See also**
 
 - [Enable a prover](https://docs.taiko.xyz/guides/node-operators/enable-a-prover/)
+
+## Arbitrum
+
+An [Arbitrum node](https://docs.arbitrum.io/run-arbitrum-node/overview) consists of two parts: [Nitro](https://github.com/OffchainLabs/nitro), the rollup node developed by Offchain Labs, paired with an L2 execution client.
+
+<Tabs groupId="network">
+<TabItem value="arb-mainnet" label="Arbitrum One">
+
+:::info Note
+For Arbitrum One, the L1 node must be running on Ethereum Mainnet.
+:::
+
+To run Nethermind on Arbitrum One, use the following command:
+
+```bash
+nethermind \
+  -c arbitrum-mainnet \
+  --data-dir path/to/data/dir
+```
+
+Below is a sample command to run Nitro paired with Nethermind, assuming they both are running on the same machine:
+
+```bash
+export L1_RPC_URL=... # The URL of the L1 node RPC interface
+export L1_BEACON_URL=... # The URL of the L1 node Beacon interface
+
+nitro \
+  --parent-chain.connection.url=$L1_RPC_URL \
+  --parent-chain.blob-client.beacon-url=$L1_BEACON_URL \
+  --chain.id=42161 \
+  --execution.forwarding-target="" \
+  --node.feed.input.url=wss://arb1.arbitrum.io/feed
+```
+
+</TabItem>
+<TabItem value="arb-sepolia" label="Arbitrum Sepolia">
+
+:::info Note
+For Arbitrum Sepolia, the L1 node must be running on Sepolia.
+:::
+
+To run Nethermind on Arbitrum Sepolia, use the following command:
+
+```bash
+nethermind \
+  -c arbitrum-sepolia \
+  --data-dir path/to/data/dir
+```
+
+Below is a sample command to run Nitro paired with Nethermind, assuming they both are running on the same machine:
+
+```bash
+export L1_RPC_URL=... # The URL of the L1 Sepolia node RPC interface
+export L1_BEACON_URL=... # The URL of the L1 Sepolia node Beacon interface
+
+nitro \
+  --parent-chain.connection.url=$L1_RPC_URL \
+  --parent-chain.blob-client.beacon-url=$L1_BEACON_URL \
+  --chain.id=421614 \
+  --execution.forwarding-target="" \
+  --node.feed.input.url=wss://sepolia-rollup.arbitrum.io/feed
+```
+
+</TabItem>
+</Tabs>
+
+For available Nitro settings, see [Nitro configuration options](https://docs.arbitrum.io/run-arbitrum-node/nitro/reference/configuration).
+
+**See also**
+
+- [Arbitrum configuration](../../fundamentals/configuration.md#arbitrum)
+- [Run an Arbitrum node](https://docs.arbitrum.io/run-arbitrum-node/overview)

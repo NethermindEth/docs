@@ -258,6 +258,171 @@ The configuration options are case-sensitive and can be defined only once unless
   The address of the transaction priority contract to use when selecting transactions from the transaction pool. Defaults to `null`.
 
 
+### Arbitrum
+
+- #### `Arbitrum.SafeBlockWaitForValidator` \{#arbitrum-safeblockwaitforvalidator\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-safeblockwaitforvalidator [true|false]
+  --Arbitrum.SafeBlockWaitForValidator [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SAFEBLOCKWAITFORVALIDATOR=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SafeBlockWaitForValidator": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether safe blocks should wait for validator. Defaults to `false`.
+
+- #### `Arbitrum.FinalizedBlockWaitForValidator` \{#arbitrum-finalizedblockwaitforvalidator\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-finalizedblockwaitforvalidator [true|false]
+  --Arbitrum.FinalizedBlockWaitForValidator [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_FINALIZEDBLOCKWAITFORVALIDATOR=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "FinalizedBlockWaitForValidator": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether finalized blocks should wait for validator. Defaults to `false`.
+
+- #### `Arbitrum.BlockProcessingTimeout` \{#arbitrum-blockprocessingtimeout\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-blockprocessingtimeout <value>
+  --Arbitrum.BlockProcessingTimeout <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_BLOCKPROCESSINGTIMEOUT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "BlockProcessingTimeout": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Timeout in seconds for block processing operations. Defaults to `1`.
+
+- #### `Arbitrum.RebuildLocalWasm` \{#arbitrum-rebuildlocalwasm\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-rebuildlocalwasm <value>
+  --Arbitrum.RebuildLocalWasm <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_REBUILDLOCALWASM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "RebuildLocalWasm": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Rebuild local WASM store mode: `false` to disable, `force` to force rebuild, or `auto` to continue from last position. Defaults to `auto`.
+
+- #### `Arbitrum.MessageLagMs` \{#arbitrum-messagelagms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-messagelagms <value>
+  --Arbitrum.MessageLagMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_MESSAGELAGMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "MessageLagMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Allowed message lag in milliseconds while still considered in sync. Defaults to `1000`.
+
+- #### `Arbitrum.ExposeMultiGas` \{#arbitrum-exposemultigas\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-exposemultigas [true|false]
+  --Arbitrum.ExposeMultiGas [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_EXPOSEMULTIGAS=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ExposeMultiGas": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Experimental: Expose multi-dimensional gas in transaction receipts. Defaults to `false`.
+
+
 ### Blocks
 
 - #### `Blocks.BlockProductionBlobLimit` \{#blocks-blockproductionbloblimit\}
