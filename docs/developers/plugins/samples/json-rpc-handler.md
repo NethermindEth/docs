@@ -73,6 +73,7 @@ public class DemoRpcPlugin : INethermindPlugin
     public string Name => "Demo JSON-RPC plugin";
     public string Description => "A sample plugin for demo";
     public string Author => "Anonymous";
+    public bool Enabled => true;
 
     public Task Init(INethermindApi nethermindApi)
     {
@@ -80,8 +81,6 @@ public class DemoRpcPlugin : INethermindPlugin
 
         return Task.CompletedTask;
     }
-
-    public Task InitNetworkProtocol() => Task.CompletedTask;
 
 // highlight-start
     public Task InitRpcModules()
@@ -91,9 +90,6 @@ public class DemoRpcPlugin : INethermindPlugin
         return Task.CompletedTask;
     }
 // highlight-end
-
-    public void InitTxTypesAndRlpDecoders(INethermindApi api) { }
-    public ValueTask DisposeAsync() => default;
 }
 ```
 
