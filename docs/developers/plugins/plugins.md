@@ -258,7 +258,7 @@ Options:
 
 Nethermind uses [Autofac](https://autofac.org/) as its dependency injection (DI) container. Plugins can participate in DI by providing an Autofac `Module` through the `Module` property of `INethermindPlugin`. This is used to register services, override default implementations, and register initialization steps.
 
-Here is an example of a plugin that registers a custom service and an initialization step:
+Here is an example of a plugin that registers an initialization step:
 
 ```csharp title="DemoPlugin.cs" showLineNumbers
 using Autofac;
@@ -294,7 +294,7 @@ public class DemoModule : Module
 
 ### Initialization steps (IStep) {#steps}
 
-Initialization steps allow plugins to hook into Nethermind's startup sequence. Each step implements the [`IStep`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Steps/IEthereumRunnerStep.cs) interface and is resolved through Autofac, so its dependencies are injected automatically via the constructor:
+Initialization steps allow plugins to hook into Nethermind's startup sequence. Each step implements the `IStep` interface (defined in [`IEthereumRunnerStep.cs`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Steps/IEthereumRunnerStep.cs)) and is resolved through Autofac, so its dependencies are injected automatically via the constructor:
 
 ```csharp title="DemoStep.cs" showLineNumbers
 using System.Threading;
