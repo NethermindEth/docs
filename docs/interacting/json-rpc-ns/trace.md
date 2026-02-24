@@ -89,6 +89,7 @@ curl localhost:8545 \
 1. `call`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -202,6 +203,7 @@ Performs multiple traces on top of a block
   - `transaction`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -752,6 +754,7 @@ Returns parity like traces for simulated blocks
       - `calls`: array of _object_
         - `blockHash`: _string_ (hash)
         - `blockNumber`: _string_ (hex integer)
+        - `blockTimestamp`: _string_ (hex integer)
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)

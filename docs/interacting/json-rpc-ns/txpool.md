@@ -42,6 +42,7 @@ curl localhost:8545 \
 map of _object_
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
+  - `blockTimestamp`: _string_ (hex integer)
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -50,6 +51,7 @@ map of _object_
 map of _object_
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
+  - `blockTimestamp`: _string_ (hex integer)
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)

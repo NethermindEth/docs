@@ -50,6 +50,7 @@ curl localhost:8545 \
   - `transaction`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)

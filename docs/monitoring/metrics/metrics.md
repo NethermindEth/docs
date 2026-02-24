@@ -156,9 +156,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Database writes per database
 
+- #### `nethermind_detailed_metrics_enabled` \{#detailed_metrics_enabled\}
+- #### `nethermind_prewarmer_get_time` \{#prewarmer_get_time\}
+  
+  Prewarmer get operation times
+
 - #### `nethermind_state_db_pruning` \{#state_db_pruning\}
   
-  Indicator if StadeDb is being pruned.
+  Indicator if StateDb is being pruned.
 
 - #### `nethermind_state_reader_reads` \{#state_reader_reads\}
   

@@ -461,7 +461,7 @@ curl localhost:8545 \
 
 ### debug_getSyncStage
 
-Retrives Nethermind Sync Stage, With extra Metadata
+Retrieves Nethermind Sync Stage, With extra Metadata
 
 <Tabs>
 <TabItem value="request" label="Request" default>
@@ -670,6 +670,7 @@ Retrieves geth like traces of the simulated blocks
       - `calls`: array of _object_
         - `blockHash`: _string_ (hash)
         - `blockNumber`: _string_ (hex integer)
+        - `blockTimestamp`: _string_ (hex integer)
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)
@@ -689,6 +690,14 @@ Retrieves geth like traces of the simulated blocks
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -788,6 +797,14 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
 1. `blockHash`: _string_ (hash)
 
 2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -851,6 +868,14 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
 1. `blockHash`: _string_ (hash)
 
 2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -914,6 +939,14 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
 1. `blockRlp`: _string_ (hex data)
 
 2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -994,6 +1027,14 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 1. `blockHash`: _string_ (hash)
 
 2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1074,6 +1115,14 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
 1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1154,6 +1203,7 @@ This method lets you run an eth_call within the context of the given block execu
 1. `call`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -1162,6 +1212,14 @@ This method lets you run an eth_call within the context of the given block execu
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1258,6 +1316,7 @@ Executes a list of bundles of transactions without creating transactions on the 
   - `transactions`: array of _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -1266,6 +1325,14 @@ Executes a list of bundles of transactions without creating transactions on the 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1346,6 +1413,14 @@ This method will attempt to run the transaction in the exact same manner as it w
 1. `transactionHash`: _string_ (hash)
 
 2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1426,6 +1501,14 @@ curl localhost:8545 \
 2. `txIndex`: _string_ (hex integer)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1506,6 +1589,14 @@ curl localhost:8545 \
 2. `txIndex`: _string_ (hex integer)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1586,6 +1677,14 @@ curl localhost:8545 \
 2. `transactionHash`: _string_ (hash)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1666,6 +1765,14 @@ curl localhost:8545 \
 2. `txIndex`: _string_ (hex integer)
 
 3. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_

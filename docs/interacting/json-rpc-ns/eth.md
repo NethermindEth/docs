@@ -87,6 +87,7 @@ Executes a tx call (does not create a transaction)
 1. `transactionCall`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -226,6 +227,7 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
 1. `transactionCall`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -280,6 +282,7 @@ Executes a tx call and returns gas used (does not create a transaction)
 1. `transactionCall`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -1253,6 +1256,7 @@ curl localhost:8545 \
 `result`: _object_
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
+  - `blockTimestamp`: _string_ (hex integer)
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -1302,6 +1306,7 @@ curl localhost:8545 \
 `result`: _object_
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
+  - `blockTimestamp`: _string_ (hex integer)
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -1349,6 +1354,7 @@ curl localhost:8545 \
 `result`: _object_
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
+  - `blockTimestamp`: _string_ (hex integer)
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -1359,7 +1365,7 @@ curl localhost:8545 \
 
 ### eth_getTransactionCount
 
-Returns account nonce (number of trnsactions from the account since genesis) at the given block number
+Returns account nonce (number of transactions from the account since genesis) at the given block number
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -1856,6 +1862,7 @@ curl localhost:8545 \
 `result`: array of _object_
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
+  - `blockTimestamp`: _string_ (hex integer)
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -1950,6 +1957,7 @@ Send a transaction to the tx pool and broadcasting
 1. `rpcTx`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
@@ -2007,6 +2015,7 @@ Executes a simulation across multiple blocks (does not create a transaction or b
       - `calls`: array of _object_
         - `blockHash`: _string_ (hash)
         - `blockNumber`: _string_ (hex integer)
+        - `blockTimestamp`: _string_ (hex integer)
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)

@@ -1522,7 +1522,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  An escaped JSON paylod to be sent to the web hook on failure.
+  An escaped JSON payload to be sent to the web hook on failure.
   Defaults to:
 
   ```json
@@ -1574,7 +1574,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  An escaped JSON paylod to be sent to the web hook on recovery.
+  An escaped JSON payload to be sent to the web hook on recovery.
   Defaults to:
 
   ```json
@@ -4295,6 +4295,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to publish metrics using .NET diagnostics that can be collected with dotnet-counters. Allowed values: `true` `false`. Defaults to `false`.
 
+- #### `Metrics.DbMetricIntervalSeconds` \{#metrics-dbmetricintervalseconds\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-dbmetricintervalseconds <value>
+  --Metrics.DbMetricIntervalSeconds <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_DBMETRICINTERVALSECONDS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "DbMetricIntervalSeconds": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The frequency of updating db metrics, in seconds. Defaults to `60`.
+
 - #### `Metrics.EnableDbSizeMetrics` \{#metrics-enabledbsizemetrics\}
 
   <Tabs groupId="usage">
@@ -4537,6 +4564,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The name to display on the Grafana dashboard. Defaults to `Nethermind`.
+
+- #### `Metrics.PauseDbMetricDuringBlockProcessing` \{#metrics-pausedbmetricduringblockprocessing\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-pausedbmetricduringblockprocessing [true|false]
+  --Metrics.PauseDbMetricDuringBlockProcessing [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_PAUSEDBMETRICDURINGBLOCKPROCESSING=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "PauseDbMetricDuringBlockProcessing": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Pause db metric collection during block processing to prevent overhead. Allowed values: `true` `false`. Defaults to `true`.
 
 - #### `Metrics.PushGatewayUrl` \{#metrics-pushgatewayurl\}
 
@@ -5115,7 +5169,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The in-memory cache size, in MB. Bigger size tend to improve performance. Defaults to `1280`.
+  The in-memory cache size, in MB. Bigger size tend to improve performance. Defaults to `1792`.
 
 - #### `Pruning.DirtyCacheMb` \{#pruning-dirtycachemb\}
 
@@ -5142,7 +5196,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The in-memory cache size for dirty nodes, in MB. Increasing this reduces pruning interval but cause increased pruning time. Defaults to `1024`.
+  The in-memory cache size for dirty nodes, in MB. Increasing this reduces pruning interval but cause increased pruning time. Defaults to `1536`.
 
 - #### `Pruning.DirtyNodeShardBit` \{#pruning-dirtynodeshardbit\}
 
@@ -6626,6 +6680,90 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The address of the TaikoInbox contract. Defaults to `null`.
+
+- #### `Surge.TdxEnabled` \{#surge-tdxenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --surge-tdxenabled [true|false]
+  --Surge.TdxEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SURGECONFIG_TDXENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Surge": {
+      "TdxEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Enable TDX attestation support. Allowed values: `true` `false`. Defaults to `false`.
+
+
+### SurgeTdx
+
+- #### `SurgeTdx.ConfigPath` \{#surgetdx-configpath\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --surgetdx-configpath <value>
+  --SurgeTdx.ConfigPath <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SURGETDXCONFIG_CONFIGPATH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "SurgeTdx": {
+      "ConfigPath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Path to store TDX bootstrap data and keys. Defaults to `~/.config/nethermind/tdx`.
+
+- #### `SurgeTdx.SocketPath` \{#surgetdx-socketpath\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --surgetdx-socketpath <value>
+  --SurgeTdx.SocketPath <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SURGETDXCONFIG_SOCKETPATH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "SurgeTdx": {
+      "SocketPath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Path to the tdxs Unix socket. Defaults to `/var/tdxs.sock`.
 
 
 ### Sync
