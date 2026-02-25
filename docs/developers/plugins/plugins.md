@@ -294,7 +294,7 @@ public class DemoModule : Module
 
 ### Initialization steps {#steps}
 
-Initialization steps allow plugins to hook into Nethermind's startup sequence. Each step implements the [`IStep`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Steps/IEthereumRunnerStep.cs) interface and is resolved through Autofac, so its dependencies are injected automatically via the constructor:
+Initialization steps allow plugins to hook into Nethermind's startup sequence. Each step implements the [`IStep`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Steps/IStep.cs) interface and is resolved through Autofac, so its dependencies are injected automatically via the constructor:
 
 ```csharp title="DemoStep.cs" showLineNumbers
 using System.Threading;
