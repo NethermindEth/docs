@@ -143,7 +143,7 @@ public class DemoConfig : IDemoConfig
 }
 ```
 
-That's it for the configuration. Now, let's update our `DemoPlugin` class to use the configuration. Nethermind uses [Autofac](https://autofac.org/) for dependency injection. This means we can inject our configuration interface directly into the plugin's constructor:
+That's it for the configuration. Now, let's update our `DemoPlugin` class to use the configuration. Nethermind uses Autofac for [dependency injection](#dependency-injection-and-modules). This means we can inject our configuration interface directly into the plugin's constructor:
 
 ```csharp title="DemoPlugin.cs" showLineNumbers
 using Nethermind.Api;
@@ -292,9 +292,9 @@ public class DemoModule : Module
 // highlight-end
 ```
 
-### Initialization steps (IStep) {#steps}
+### Initialization steps {#steps}
 
-Initialization steps allow plugins to hook into Nethermind's startup sequence. Each step implements the `IStep` interface (defined in [`IEthereumRunnerStep.cs`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Steps/IEthereumRunnerStep.cs)) and is resolved through Autofac, so its dependencies are injected automatically via the constructor:
+Initialization steps allow plugins to hook into Nethermind's startup sequence. Each step implements the [`IStep`](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Api/Steps/IEthereumRunnerStep.cs) interface and is resolved through Autofac, so its dependencies are injected automatically via the constructor:
 
 ```csharp title="DemoStep.cs" showLineNumbers
 using System.Threading;
@@ -485,18 +485,18 @@ Nethermind defines the following plugin types derived from [`INethermindPlugin`]
 
 The [`INethermindPlugin`][inethermindplugin] interface has the following members. Properties `Name`, `Description`, `Author`, and `Enabled` are required. All methods have default (empty) implementations.
 
-| Member | Description |
-|---|---|
-| `Name` | The display name of the plugin. |
-| `Description` | A brief description of the plugin. |
-| `Author` | The author of the plugin. |
-| `Enabled` | Whether the plugin is enabled. Only enabled plugins are initialized. |
-| `MustInitialize` | If `true`, Nethermind will not start if this plugin's initialization fails. Defaults to `false`. |
-| `Module` | An optional Autofac [`IModule`](https://autofac.readthedocs.io/en/latest/configuration/modules.html) for registering services and [initialization steps](#steps) with the DI container. Defaults to `null`. |
-| `Init(INethermindApi)` | The main initialization entry point. Called after the DI container is built. |
-| `InitNetworkProtocol()` | Initializes the network stack. |
-| `InitRpcModules()` | Initializes the JSON-RPC modules. |
-| `InitTxTypesAndRlpDecoders(INethermindApi)` | Registers custom transaction types and RLP decoders. |
+| Member                                      | Description                                                                                                                                                                                                 |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Name`                                      | The display name of the plugin.                                                                                                                                                                             |
+| `Description`                               | A brief description of the plugin.                                                                                                                                                                          |
+| `Author`                                    | The author of the plugin.                                                                                                                                                                                   |
+| `Enabled`                                   | Whether the plugin is enabled. Only enabled plugins are initialized.                                                                                                                                        |
+| `MustInitialize`                            | If `true`, Nethermind will not start if this plugin's initialization fails. Defaults to `false`.                                                                                                            |
+| `Module`                                    | An optional Autofac [`IModule`](https://autofac.readthedocs.io/en/latest/configuration/modules.html) for registering services and [initialization steps](#steps) with the DI container. Defaults to `null`. |
+| `Init(INethermindApi)`                      | The main initialization entry point. Called after the DI container is built.                                                                                                                                |
+| `InitNetworkProtocol()`                     | Initializes the network stack.                                                                                                                                                                              |
+| `InitRpcModules()`                          | Initializes the JSON-RPC modules.                                                                                                                                                                           |
+| `InitTxTypesAndRlpDecoders(INethermindApi)` | Registers custom transaction types and RLP decoders.                                                                                                                                                        |
 
 ## Samples
 
