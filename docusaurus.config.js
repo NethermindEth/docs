@@ -10,7 +10,7 @@ import redirects from './redirects.js';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Nethermind documentation',
-  tagline: 'A robust execution client for Ethereum node operators.',
+  tagline: 'A robust, high-performance execution client for Ethereum node operators.',
   favicon: 'images/favicon.png',
 
   url: 'https://docs.nethermind.io',
