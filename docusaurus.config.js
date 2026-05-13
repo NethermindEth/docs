@@ -11,7 +11,7 @@ import redirects from './redirects.js';
 const config = {
   title: 'Nethermind documentation',
   tagline: 'A robust execution client for Ethereum node operators.',
-  favicon: 'images/favicon.svg',
+  favicon: 'images/favicon.png',
 
   url: 'https://docs.nethermind.io',
   baseUrl: '/',
