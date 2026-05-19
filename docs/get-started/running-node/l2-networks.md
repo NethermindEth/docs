@@ -232,3 +232,126 @@ For more information, see [Run a node for Taiko Hoodi](https://docs.taiko.xyz/gu
 **See also**
 
 - [Enable a prover](https://docs.taiko.xyz/guides/node-operators/enable-a-prover/)
+
+## Arbitrum
+
+An [Arbitrum node](https://docs.arbitrum.io/run-arbitrum-node/overview) consists of two parts: [Nitro](https://github.com/OffchainLabs/nitro), the rollup node developed and maintained by Offchain Labs, paired with an L2 execution client. Nitro drives sequencing and validation; Nethermind owns the execution layer - chain state, EVM and Stylus VM, and user-facing JSON-RPC. The two communicate over a JWT-authenticated Engine API.
+
+The supported launch path is Docker Compose, which runs Nethermind and Nitro side by side with JWT authentication wired up automatically. The compose file and `.env.example` template live in the [`nethermind-arbitrum` repository](https://github.com/NethermindEth/nethermind-arbitrum).
+
+:::warning Important
+Similar to the L1 node, the L2 instance of Nethermind also requires a [properly configured](consensus-clients.md#configuring-json-rpc-interface) Engine API to communicate with Nitro. The shipped Docker Compose wires JWT authentication up automatically; if you run Nethermind outside Docker Compose you must configure the JWT secret yourself.
+:::
+
+### Prerequisites
+
+- Docker and Docker Compose.
+- An Ethereum L1 RPC endpoint with archive access for blob data, and an L1 Beacon API endpoint. Nitro reads L1 batches from these. If you don't already run an L1 node, the Arbitrum docs list [recommended Arbitrum node providers](https://docs.arbitrum.io/build-decentralized-apps/reference/node-providers) that expose both.
+- Disk and memory budget. Mainnet pruned: ~2 TB disk, 24+ GiB RAM. Mainnet archive: 4+ TB. Sepolia is roughly half the size.
+- A modern host with a fast NVMe drive - RocksDB is I/O-sensitive.
+
+### Setup
+
+1. **Clone the repository.**
+
+   ```bash
+   git clone https://github.com/NethermindEth/nethermind-arbitrum.git
+   cd nethermind-arbitrum
+   ```
+
+2. **Copy the environment template.**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. **Configure `.env`** with your L1 endpoints and target network:
+
+   <Tabs groupId="network">
+   <TabItem value="arb-mainnet" label="Arbitrum One">
+
+   :::info Note
+   For Arbitrum One, the L1 node must be running on Ethereum Mainnet.
+   :::
+
+   ```bash
+   PARENT_CHAIN_RPC_URL=https://your-l1-rpc.example.com
+   PARENT_CHAIN_BEACON_URL=https://your-l1-beacon.example.com
+
+   NETWORK=arbitrum-mainnet
+   CHAIN_ID=42161
+   ```
+
+   </TabItem>
+   <TabItem value="arb-sepolia" label="Arbitrum Sepolia">
+
+   :::info Note
+   For Arbitrum Sepolia, the L1 node must be running on Sepolia.
+   :::
+
+   ```bash
+   PARENT_CHAIN_RPC_URL=https://your-l1-rpc.example.com
+   PARENT_CHAIN_BEACON_URL=https://your-l1-beacon.example.com
+
+   NETWORK=arbitrum-sepolia
+   CHAIN_ID=421614
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   For the full list of shipped configs (archive variants, validator profiles, local development), see the [Arbitrum config inventory](../../fundamentals/configuration.md#arbitrum-config-inventory).
+
+4. **Start the stack.**
+
+   ```bash
+   docker compose up -d
+   ```
+
+   On startup, Nethermind auto-generates a JWT secret at `./nethermind-data/jwt.hex` if one is missing, then exposes the Engine API on port `20551` and the public RPC on port `20545`. Nitro waits for Nethermind's TCP healthcheck on port `20551`, then mounts the JWT secret read-only and connects.
+
+### Verification
+
+The node is healthy when:
+
+- Nethermind's logs stop printing `Waiting for connection from consensus layer...` (this happens once the first message from Nitro arrives).
+- Block height advances in steady state (Arbitrum's 250 ms slot time).
+
+Sample checks against the public RPC port:
+
+```bash
+# Block height
+curl -s http://localhost:20545 -H 'Content-Type: application/json' \
+  -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+
+# Sync state (false = synced; otherwise sync object)
+curl -s http://localhost:20545 -H 'Content-Type: application/json' \
+  -d '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
+
+# Chain ID - should match the CHAIN_ID set in .env
+curl -s http://localhost:20545 -H 'Content-Type: application/json' \
+  -d '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
+```
+
+### Overriding settings
+
+To override individual settings without editing the JSON config, pass `NETHERMIND_*` environment variables or extra CLI flags through the `command:` section of `docker-compose.yml`. For example, to enable [block-hash verification](../../fundamentals/configuration.md#verifyblockhash-enabled):
+
+```yaml
+services:
+  nethermind-arbitrum:
+    environment:
+      NETHERMIND_VERIFYBLOCKHASHCONFIG_ENABLED: "true"
+      NETHERMIND_VERIFYBLOCKHASHCONFIG_VERIFYEVERYNBLOCKS: 10000
+```
+
+### Going further
+
+The pages above cover the default external-execution setup. For deeper topics, refer to the [`nethermind-arbitrum` repository documentation](https://github.com/NethermindEth/nethermind-arbitrum/tree/0.2.0/docs):
+
+- [Architecture](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/architecture.md) - operational mental model of the Nitro/Nethermind boundary, block production, validation, and sequencer flows.
+- [External execution role](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/roles/external-execution.md) - production hardening for a regular node.
+- [Validator role](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/roles/validator.md) (Beta) - stateless validation against the Arbitrum protocol.
+- [Sequencer role](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/roles/sequencer.md) (Experimental) - Nethermind as a block-producing sequencer with Timeboost express-lane support.
+- [Troubleshooting](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/troubleshooting.md) - symptom-first index covering FD exhaustion, JWT mismatch, sync stalls, and Stylus binary incompatibilities.
+- [RPC API reference](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/rpc-api.md) - `nitroexecution` and `arbitrum` JSON-RPC namespaces (contributor-facing).

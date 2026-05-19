@@ -8742,6 +8742,953 @@ The configuration options are case-sensitive and can be defined only once unless
 
 <!--[end autogen]-->
 
+### Arbitrum
+
+Options that govern the [Arbitrum execution client](../get-started/running-node/l2-networks.md#arbitrum). For deeper background on each setting, see the [Arbitrum configuration reference](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/configuration.md).
+
+**Block tags and finality**
+
+- #### `Arbitrum.SafeBlockWaitForValidator` \{#arbitrum-safeblockwaitforvalidator\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-safeblockwaitforvalidator [true|false]
+  --Arbitrum.SafeBlockWaitForValidator [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SAFEBLOCKWAITFORVALIDATOR=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SafeBlockWaitForValidator": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether the `safe` block tag waits for validator confirmation. Defaults to `false`.
+
+- #### `Arbitrum.FinalizedBlockWaitForValidator` \{#arbitrum-finalizedblockwaitforvalidator\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-finalizedblockwaitforvalidator [true|false]
+  --Arbitrum.FinalizedBlockWaitForValidator [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_FINALIZEDBLOCKWAITFORVALIDATOR=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "FinalizedBlockWaitForValidator": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether the `finalized` block tag waits for validator confirmation. Defaults to `false`.
+
+- #### `Arbitrum.MessageLagMs` \{#arbitrum-messagelagms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-messagelagms <value>
+  --Arbitrum.MessageLagMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_MESSAGELAGMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "MessageLagMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Allowed lag in milliseconds behind the consensus node while still reporting in sync. Defaults to `1000`.
+
+**Block processing**
+
+- #### `Arbitrum.BlockProcessingTimeout` \{#arbitrum-blockprocessingtimeout\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-blockprocessingtimeout <value>
+  --Arbitrum.BlockProcessingTimeout <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_BLOCKPROCESSINGTIMEOUT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "BlockProcessingTimeout": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Timeout in milliseconds for block processing operations. Defaults to `1000`. All shipped configs raise this to `10000` (10 seconds); the timeout is auto-extended to 5 minutes when a debugger is attached.
+
+- #### `Arbitrum.RebuildLocalWasm` \{#arbitrum-rebuildlocalwasm\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-rebuildlocalwasm <value>
+  --Arbitrum.RebuildLocalWasm <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_REBUILDLOCALWASM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "RebuildLocalWasm": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Rebuild mode for the Stylus local WASM store: `false` to skip, `force` to fully rebuild, `auto` to resume. Defaults to `auto`.
+
+- #### `Arbitrum.ExposeMultiGas` \{#arbitrum-exposemultigas\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-exposemultigas [true|false]
+  --Arbitrum.ExposeMultiGas [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_EXPOSEMULTIGAS=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ExposeMultiGas": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Experimental - expose multi-dimensional gas in transaction receipts. Defaults to `false`.
+
+**Stateless validation** - used when running Nethermind as an [Arbitrum stateless validator](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/roles/validator.md). Enable through one of the `*-with-validation` shipped configs (see [config inventory](#arbitrum-config-inventory)).
+
+- #### `Arbitrum.ValidationEnabled` \{#arbitrum-validationenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-validationenabled [true|false]
+  --Arbitrum.ValidationEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_VALIDATIONENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ValidationEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Master switch for stateless validation. Defaults to `false`. The `*-with-validation` configs set this to `true`.
+
+- #### `Arbitrum.ValidatorMaxStateRootsInMem` \{#arbitrum-validatormaxstaterootsinmem\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-validatormaxstaterootsinmem <value>
+  --Arbitrum.ValidatorMaxStateRootsInMem <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_VALIDATORMAXSTATEROOTSINMEM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ValidatorMaxStateRootsInMem": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum state roots pinned simultaneously in the reconstructed-state memory overlay. Defaults to `1000`.
+
+- #### `Arbitrum.ValidatorReconstructedStateMemDBMaxSizeMb` \{#arbitrum-validatorreconstructedstatememdbmaxsizemb\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-validatorreconstructedstatememdbmaxsizemb <value>
+  --Arbitrum.ValidatorReconstructedStateMemDBMaxSizeMb <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_VALIDATORRECONSTRUCTEDSTATEMEMDBMAXSIZEMB=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ValidatorReconstructedStateMemDBMaxSizeMb": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum size in megabytes of the reconstructed-state memory overlay before the oldest roots spill to disk. Defaults to `1024`.
+
+**Sequencer** - used when running Nethermind as an [Arbitrum sequencer](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/roles/sequencer.md). The sequencer role is experimental - see the workspace docs for status and caveats.
+
+- #### `Arbitrum.SequencerEnabled` \{#arbitrum-sequencerenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencerenabled [true|false]
+  --Arbitrum.SequencerEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Enables the sequencer role (Nethermind produces blocks instead of receiving them via `digestMessage`). Defaults to `false`.
+
+- #### `Arbitrum.SequencerNonceCacheSize` \{#arbitrum-sequencernoncecachesize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencernoncecachesize <value>
+  --Arbitrum.SequencerNonceCacheSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERNONCECACHESIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerNonceCacheSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Nonce cache size for sender addresses. Defaults to `1024`.
+
+- #### `Arbitrum.SequencerMaxTxQueueSize` \{#arbitrum-sequencermaxtxqueuesize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencermaxtxqueuesize <value>
+  --Arbitrum.SequencerMaxTxQueueSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERMAXTXQUEUESIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerMaxTxQueueSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum items in the bounded transaction channel. Defaults to `1024`.
+
+- #### `Arbitrum.SequencerMaxTxDataSize` \{#arbitrum-sequencermaxtxdatasize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencermaxtxdatasize <value>
+  --Arbitrum.SequencerMaxTxDataSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERMAXTXDATASIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerMaxTxDataSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum transaction data size in bytes accepted by the sequencer (mirrors Nitro's `MaxTxDataSize`). Defaults to `95000`.
+
+- #### `Arbitrum.SequencerMaxAcceptableTimestampDelta` \{#arbitrum-sequencermaxacceptabletimestampdelta\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencermaxacceptabletimestampdelta <value>
+  --Arbitrum.SequencerMaxAcceptableTimestampDelta <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERMAXACCEPTABLETIMESTAMPDELTA=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerMaxAcceptableTimestampDelta": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum allowed difference, in seconds, between the local clock and the L1 block timestamp. Defaults to `3600`.
+
+- #### `Arbitrum.SequencerMaxBlockSpeedMs` \{#arbitrum-sequencermaxblockspeedms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencermaxblockspeedms <value>
+  --Arbitrum.SequencerMaxBlockSpeedMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERMAXBLOCKSPEEDMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerMaxBlockSpeedMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum wait, in milliseconds, when there is nothing to sequence (block-build cadence ceiling). Defaults to `250`.
+
+- #### `Arbitrum.SequencerInactiveWaitMs` \{#arbitrum-sequencerinactivewaitms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencerinactivewaitms <value>
+  --Arbitrum.SequencerInactiveWaitMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERINACTIVEWAITMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerInactiveWaitMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Wait in milliseconds when the sequencer is paused or forwarding. Defaults to `50`.
+
+- #### `Arbitrum.SequencerAwaitTxResult` \{#arbitrum-sequencerawaittxresult\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencerawaittxresult [true|false]
+  --Arbitrum.SequencerAwaitTxResult [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERAWAITTXRESULT=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerAwaitTxResult": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  When `true`, `eth_sendRawTransaction` blocks until the transaction is sequenced. Defaults to `false`.
+
+- #### `Arbitrum.SequencerQueueTimeoutMs` \{#arbitrum-sequencerqueuetimeoutms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencerqueuetimeoutms <value>
+  --Arbitrum.SequencerQueueTimeoutMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERQUEUETIMEOUTMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerQueueTimeoutMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Per-transaction queue-wait timeout in milliseconds. Defaults to `12000`. Extended by [`Arbitrum.TimeboostExpressLaneAdvantageMs`](#arbitrum-timeboostexpresslaneadvantagems) when Timeboost is enabled.
+
+- #### `Arbitrum.SequencerSenderWhitelist` \{#arbitrum-sequencersenderwhitelist\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-sequencersenderwhitelist <value>
+  --Arbitrum.SequencerSenderWhitelist <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_SEQUENCERSENDERWHITELIST=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "SequencerSenderWhitelist": "<value>"
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Comma-separated list of allowed sender addresses. Empty means all senders are allowed. Defaults to `""`.
+
+**Timeboost (express-lane auctions)**
+
+- #### `Arbitrum.TimeboostEnabled` \{#arbitrum-timeboostenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostenabled [true|false]
+  --Arbitrum.TimeboostEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Master switch for express-lane priority. Defaults to `false`. Requires [`Arbitrum.TimeboostAuctionContractAddress`](#arbitrum-timeboostauctioncontractaddress) when enabled - startup fails otherwise.
+
+- #### `Arbitrum.TimeboostExpressLaneAdvantageMs` \{#arbitrum-timeboostexpresslaneadvantagems\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostexpresslaneadvantagems <value>
+  --Arbitrum.TimeboostExpressLaneAdvantageMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTEXPRESSLANEADVANTAGEMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostExpressLaneAdvantageMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Delay in milliseconds applied to non-express-lane transactions at enqueue time when a controller exists. Defaults to `200`.
+
+- #### `Arbitrum.TimeboostQueueTimeoutInBlocks` \{#arbitrum-timeboostqueuetimeoutinblocks\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostqueuetimeoutinblocks <value>
+  --Arbitrum.TimeboostQueueTimeoutInBlocks <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTQUEUETIMEOUTINBLOCKS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostQueueTimeoutInBlocks": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Block-based expiry for timeboosted queue items. Defaults to `5`.
+
+- #### `Arbitrum.TimeboostAuctionContractAddress` \{#arbitrum-timeboostauctioncontractaddress\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostauctioncontractaddress <value>
+  --Arbitrum.TimeboostAuctionContractAddress <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTAUCTIONCONTRACTADDRESS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostAuctionContractAddress": "<value>"
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  ExpressLaneAuction proxy contract address. Required when Timeboost is enabled. Defaults to `""`.
+
+- #### `Arbitrum.TimeboostAuctionContractPollIntervalMs` \{#arbitrum-timeboostauctioncontractpollintervalms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostauctioncontractpollintervalms <value>
+  --Arbitrum.TimeboostAuctionContractPollIntervalMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTAUCTIONCONTRACTPOLLINTERVALMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostAuctionContractPollIntervalMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Polling interval in milliseconds for resolved-round queries against the auction contract. Defaults to `1000`.
+
+- #### `Arbitrum.TimeboostAuctioneerAddress` \{#arbitrum-timeboostauctioneeraddress\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostauctioneeraddress <value>
+  --Arbitrum.TimeboostAuctioneerAddress <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTAUCTIONEERADDRESS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostAuctioneerAddress": "<value>"
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Authorized auctioneer address (sender of resolution transactions). Defaults to `""`.
+
+- #### `Arbitrum.TimeboostEarlySubmissionGraceMs` \{#arbitrum-timeboostearlysubmissiongracems\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostearlysubmissiongracems <value>
+  --Arbitrum.TimeboostEarlySubmissionGraceMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTEARLYSUBMISSIONGRACEMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostEarlySubmissionGraceMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Grace period in milliseconds before the next round during which next-round submissions are accepted. Defaults to `2000`.
+
+- #### `Arbitrum.TimeboostRoundDurationSeconds` \{#arbitrum-timeboostrounddurationseconds\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostrounddurationseconds <value>
+  --Arbitrum.TimeboostRoundDurationSeconds <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTROUNDDURATIONSECONDS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostRoundDurationSeconds": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Round duration in seconds. Defaults to `60`.
+
+- #### `Arbitrum.TimeboostAuctionClosingWindowSeconds` \{#arbitrum-timeboostauctionclosingwindowseconds\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-timeboostauctionclosingwindowseconds <value>
+  --Arbitrum.TimeboostAuctionClosingWindowSeconds <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_TIMEBOOSTAUCTIONCLOSINGWINDOWSECONDS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "TimeboostAuctionClosingWindowSeconds": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Auction-closing window in seconds at the end of each round. Defaults to `15`.
+
+**Consensus-node RPC (block metadata fetch)**
+
+- #### `Arbitrum.ConsensusNodeRpcEnabled` \{#arbitrum-consensusnoderpcenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-consensusnoderpcenabled [true|false]
+  --Arbitrum.ConsensusNodeRpcEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_CONSENSUSNODERPCENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ConsensusNodeRpcEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Enable fetching block metadata (e.g., timeboosted bitmap) from the Nitro consensus node. When disabled, transaction receipts omit the `timeboosted` field. Defaults to `false`.
+
+- #### `Arbitrum.ConsensusNodeRpcUrl` \{#arbitrum-consensusnoderpcurl\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-consensusnoderpcurl <value>
+  --Arbitrum.ConsensusNodeRpcUrl <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_CONSENSUSNODERPCURL=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ConsensusNodeRpcUrl": "<value>"
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  URL of the Nitro consensus node RPC. Defaults to `""`.
+
+- #### `Arbitrum.ConsensusNodeRpcTimeoutMs` \{#arbitrum-consensusnoderpctimeoutms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --arbitrum-consensusnoderpctimeoutms <value>
+  --Arbitrum.ConsensusNodeRpcTimeoutMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_ARBITRUMCONFIG_CONSENSUSNODERPCTIMEOUTMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Arbitrum": {
+      "ConsensusNodeRpcTimeoutMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Timeout in milliseconds for consensus-node RPC calls. Defaults to `10000`.
+
+**Block-hash verification** - optional safety net that periodically cross-checks block hashes against an external Arbitrum RPC. Mainnet and Sepolia shipped configs pre-populate `ArbNodeRpcUrl` (public Arbitrum endpoints) but leave `Enabled = false`.
+
+- #### `VerifyBlockHash.Enabled` \{#verifyblockhash-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --verifyblockhash-enabled [true|false]
+  --VerifyBlockHash.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_VERIFYBLOCKHASHCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "VerifyBlockHash": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Turn on periodic block-hash verification. Defaults to `false`.
+
+- #### `VerifyBlockHash.VerifyEveryNBlocks` \{#verifyblockhash-verifyeverynblocks\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --verifyblockhash-verifyeverynblocks <value>
+  --VerifyBlockHash.VerifyEveryNBlocks <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_VERIFYBLOCKHASHCONFIG_VERIFYEVERYNBLOCKS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "VerifyBlockHash": {
+      "VerifyEveryNBlocks": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Check every Nth block. Defaults to `10000`.
+
+- #### `VerifyBlockHash.ArbNodeRpcUrl` \{#verifyblockhash-arbnoderpcurl\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --verifyblockhash-arbnoderpcurl <value>
+  --VerifyBlockHash.ArbNodeRpcUrl <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_VERIFYBLOCKHASHCONFIG_ARBNODERPCURL=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "VerifyBlockHash": {
+      "ArbNodeRpcUrl": "<value>"
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  External Arbitrum RPC to verify against. Defaults to `""`.
+
+#### Config inventory \{#arbitrum-config-inventory\}
+
+The Arbitrum execution client ships with the following pre-built configurations. Pick one with `-c <name>` (or set `NETWORK=<name>` in the Docker Compose `.env` - see [Running an Arbitrum node](../get-started/running-node/l2-networks.md#arbitrum)):
+
+- `arbitrum-mainnet` `arbitrum-mainnet-archive` `arbitrum-mainnet-with-validation` - Arbitrum One (pruned, archive, and validator profiles).
+- `arbitrum-sepolia` `arbitrum-sepolia-archive` `arbitrum-sepolia-with-validation` - Arbitrum Sepolia (pruned, archive, and validator profiles).
+- `arbitrum-local` - local development paired with the Nitro testnode.
+- `arbitrum-local-sequencer` - local sequencer role with Timeboost.
+
+For the per-config diff against base Nethermind defaults (custom `TxPool`, `JsonRpc`, `Sync`, `Pruning`, `Snapshot` settings), see the [shipped configurations reference](https://github.com/NethermindEth/nethermind-arbitrum/blob/0.2.0/docs/configuration.md#shipped-configs) in the workspace repository.
+
 ## Environment variables
 
 All configuration options have their environment variable counterparts, so Nethermind can be configured with environment variables the same way as with command line options. The environment variables follow this naming convention:
