@@ -88,6 +88,15 @@ To run Nethermind on an OP Stack network, see [Layer 2 networks](l2-networks.md#
 
 To run Nethermind on Taiko, see [Layer 2 networks](l2-networks.md#taiko).
 
+## Arbitrum
+
+**Supported networks**
+
+- [Arbitrum One](https://docs.arbitrum.io/build-decentralized-apps/public-chains#arbitrum-one) - configurations: `arbitrum-mainnet` `arbitrum-mainnet-archive` `arbitrum-mainnet-with-validation`
+- [Arbitrum Sepolia](https://docs.arbitrum.io/build-decentralized-apps/public-chains#arbitrum-sepolia) (testnet) - configurations: `arbitrum-sepolia` `arbitrum-sepolia-archive` `arbitrum-sepolia-with-validation`
+
+To run Nethermind on Arbitrum, see [Layer 2 networks](l2-networks.md#arbitrum).
+
 ## Linea
 
 **Supported networks**
