@@ -62,7 +62,7 @@ curl localhost:8545 \
 
 ### proof_getTransactionReceipt
 
-This function should return the same result as `eth_call` and also proofs of all used accounts and their storages and serialized block headers.
+This function returns the same data as `eth_getTransactionReceipt` plus Merkle-Patricia proofs of the transaction's inclusion in the block's `transactionsRoot` and of the receipt's inclusion in the block's `receiptsRoot`. When `includeHeader` is `true`, the RLP-encoded block header is also returned, allowing the proofs to be verified against the block's roots.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -134,4 +134,3 @@ curl localhost:8545 \
 
 </TabItem>
 </Tabs>
-
