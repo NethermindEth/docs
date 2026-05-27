@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 
 ### proof_getTransactionByHash
 
-This function returns the same result as `eth_getTransactionReceipt` and also a tx proof, receipt proof and serialized block headers.
+This function returns the same data as `eth_getTransactionByHash` plus a Merkle-Patricia proof of the transaction's inclusion in the block's `transactionsRoot`. When `includeHeader` is `true`, the RLP-encoded block header is also returned, allowing the proof to be verified against the block's `transactionsRoot`.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -46,7 +46,7 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `blockHeader`: _string_ (hex data)
+  - `blockHeader`: optional _string_ (hex data), returned when `includeHeader` is `true`
   - `transaction`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
@@ -99,7 +99,7 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `blockHeader`: _string_ (hex data)
+  - `blockHeader`: optional _string_ (hex data), returned when `includeHeader` is `true`
   - `receipt`: _object_
     - `blobGasPrice`: _string_ (hex integer)
     - `blobGasUsed`: _string_ (hex integer)
