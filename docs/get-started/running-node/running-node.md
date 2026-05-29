@@ -70,9 +70,6 @@ To run Nethermind on the Gnosis Chain, see the [Gnosis Chain documentation](http
 - Optimism
   - [OP Mainnet](https://docs.optimism.io/chain/networks#op-mainnet) - configurations: `op-mainnet` `op-mainnet_archive`
   - [OP Sepolia](https://docs.optimism.io/chain/networks#op-sepolia) (testnet) - configurations: `op-sepolia` `op-sepolia_archive`
-- Base
-  - [Base Mainnet](https://docs.base.org/network-information/#base-mainnet) - configurations: `base-mainnet` `base-mainnet_archive`
-  - [Base Sepolia](https://docs.base.org/network-information/#base-testnet-sepolia) (testnet) - configurations: `base-sepolia` `base-sepolia_archive`
 - World Chain
   - [World Chain Mainnet](https://docs.world.org/world-chain/quick-start/info#world-chain-mainnet) - configurations: `worldchain-mainnet` `worldchain-mainnet_archive`
   - [World Chain Sepolia](https://docs.world.org/world-chain/quick-start/info#world-chain-sepolia-testnet) (testnet) - configurations: `worldchain-sepolia` `worldchain-sepolia_archive`

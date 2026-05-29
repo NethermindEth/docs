@@ -38,9 +38,6 @@ The configuration options are case-sensitive and can be defined only once unless
   <summary>Available configurations</summary>
 
   Nethermind provides the following pre-built configurations named as the networks they are for. Their respective versions for archive nodes are suffixed `_archive`.
-
-  - `base-mainnet` `base-mainnet_archive`
-  - `base-sepolia` `base-sepolia_archive`
   - `chiado` `chiado_archive`
   - `energyweb` `energyweb_archive`
   - `gnosis` `gnosis_archive`
