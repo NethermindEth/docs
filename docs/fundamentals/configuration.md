@@ -91,6 +91,10 @@ The configuration options are case-sensitive and can be defined only once unless
   The path to the Nethermind database directory. Defaults to `db`.\
   Deprecates `--baseDbPath` `-d`.
 
+- #### `--force-resync` \{#force-resync\}
+
+  Deletes all database files except peer and discovery data, forcing a full resync on startup.
+
 - #### `-?, -h, --help` \{#help\}
 
   Shows the full list of available command line options.
@@ -108,6 +112,10 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The path to the Nethermind plugins directory. Defaults to `plugins`.\
   Deprecates `--pluginsDirectory` `-pd`.
+
+- #### `--purge-db` \{#purge-db\}
+
+  Deletes the entire database directory, including peer and discovery data.
 
 - #### `--version` \{#version\}
 
