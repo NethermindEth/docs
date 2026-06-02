@@ -204,7 +204,7 @@ For further instructions, see [Running a node](running-node/running-node.md).
 
 The Docker images of Nethermind are available on [Docker Hub](https://hub.docker.com/r/nethermind/nethermind).
 
-The Docker images are based on Ubuntu 24.04 and support x86-64 and AArch64 (ARM64) CPU architectures. They are tagged as follows:
+The Docker images are based on Ubuntu 26.04 and support x86-64 and AArch64 (ARM64) CPU architectures. They are tagged as follows:
 
 - `latest`: the latest version of Nethermind (the default tag).
 - `latest-chiseled`: a _rootless_ and [chiseled](https://ubuntu.com/engage/chiselled-ubuntu-images-for-containers) image of the latest version of Nethermind.\
