@@ -242,6 +242,9 @@ The following volume mount points are available by default:
 
 To mount separate volumes for each directory listed above, run:
 
+<Tabs groupId="os">
+<TabItem value="linux" label="Linux">
+
 ```bash
 docker run -it \
   --mount type=bind,source=path/to/db,target=/nethermind/nethermind_db \
@@ -250,13 +253,73 @@ docker run -it \
   nethermind/nethermind
 ```
 
-Alternatively, a single volume can be specified as the Nethermind data directory as follows:
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+:::info
+Docker Desktop on Windows requires WSL2. Ensure WSL2 is enabled 
+before proceeding.
+:::
+
+On Windows, Docker volume mount paths must use forward slash notation
+with the drive letter in lowercase. For example, `C:\nethermind\data`
+becomes `/c/nethermind/data`. PowerShell uses a backtick (`` ` ``) for
+line continuation instead of a backslash.
+
+```powershell
+docker run -it `
+  --mount type=bind,source=/c/nethermind/db,target=/nethermind/nethermind_db `
+  --mount type=bind,source=/c/nethermind/logs,target=/nethermind/logs `
+  --mount type=bind,source=/c/nethermind/keystore,target=/nethermind/keystore `
+  nethermind/nethermind
+```
+
+</TabItem>
+<TabItem value="macos" label="macOS">
+
+```bash
+docker run -it \
+  --mount type=bind,source=path/to/db,target=/nethermind/nethermind_db \
+  --mount type=bind,source=path/to/logs,target=/nethermind/logs \
+  --mount type=bind,source=path/to/keystore,target=/nethermind/keystore \
+  nethermind/nethermind
+```
+
+</TabItem>
+</Tabs>
+
+Alternatively, a single volume can be specified as the Nethermind data
+directory as follows:
+
+<Tabs groupId="os">
+<TabItem value="linux" label="Linux">
 
 ```bash
 docker run -it \
   --mount type=bind,source=path/to/data_dir,target=/nethermind/data_dir \
   nethermind/nethermind --data-dir /nethermind/data_dir
 ```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```powershell
+docker run -it `
+  --mount type=bind,source=/c/nethermind/data,target=/nethermind/data_dir `
+  nethermind/nethermind --data-dir /nethermind/data_dir
+```
+
+</TabItem>
+<TabItem value="macos" label="macOS">
+
+```bash
+docker run -it \
+  --mount type=bind,source=path/to/data_dir,target=/nethermind/data_dir \
+  nethermind/nethermind --data-dir /nethermind/data_dir
+```
+
+</TabItem>
+</Tabs>
 
 Note that any Nethermind-specific configuration option can be specified at the end. For instance, the `--data-dir` option in this case. For further instructions, see [Running a node](running-node/running-node.md).
 
