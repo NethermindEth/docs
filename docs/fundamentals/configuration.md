@@ -3943,7 +3943,7 @@ The configuration options are case-sensitive and can be defined only once unless
   The max number of concurrent in-flight requests on the shared (sharable) singleton handler.
   Caps heavy methods promoted to sharable — `eth_call`, `eth_estimateGas`,
   `eth_createAccessList` — preventing unbounded concurrency from exhausting memory.
-  Light sharable methods (e.g. `eth_blockNumber`, `eth_getBalance`) complete in <1 ms and
+  Light sharable methods (e.g. `eth_blockNumber`, `eth_getBalance`) complete in &lt;1 ms and
   effectively never approach this limit. `0` to lift the limit. Defaults to `10000`.
 
 - #### `JsonRpc.MaxLoggedRequestParametersCharacters` \{#jsonrpc-maxloggedrequestparameterscharacters\}
