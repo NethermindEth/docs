@@ -28,7 +28,7 @@ For reproducible builds, the following conditions must be met:
 
 ### Prerequisites
 
-To build Nethermind from source, install [.NET SDK](https://aka.ms/dotnet/download) 10 or later.
+To build Nethermind from source, install [.NET SDK](https://get.dot.net) 10 or later.
 
 ### Building
 

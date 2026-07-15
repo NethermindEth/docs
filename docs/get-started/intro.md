@@ -5,7 +5,7 @@ sidebar_position: 0
 slug: /
 ---
 
-Nethermind is a high-performance Ethereum execution client built on [.NET](https://aka.ms/dotnet). It provides fast sync, high-throughput JSON-RPC, and a plugin system for extending the client without forking. In production since 2017.
+Nethermind is a high-performance Ethereum execution client built on [.NET](https://dot.net). It provides fast sync, high-throughput JSON-RPC, and a plugin system for extending the client without forking. In production since 2017.
 
 Runs on Linux, Windows, and macOS.
 
