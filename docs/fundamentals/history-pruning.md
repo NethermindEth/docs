@@ -16,7 +16,7 @@ Removing history that is already stored is a separate, opt-in step controlled by
 [`History.Pruning`](./configuration.md#history-pruning) selects how stored historical blocks and receipts are removed as the node runs.
 
 - `Disabled` (default) — nothing already stored is removed.
-- `UseAncientBarriers` — prunes everything below the ancient barriers cutoff, matching what a fresh sync would have downloaded.
+- `UseAncientBarriers` — removes stored block bodies and receipts below the lower of the two ancient barriers.
 - `Rolling` — keeps a moving window of the most recent [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) epochs and prunes below it as the head advances. The configured window must be at least the `minHistoryRetentionEpochs` chainspec parameter of the network, and a node that has just synced only starts pruning once its stored history grows past the window.
 
 Pruning never removes the genesis block or anything at or above the sync pivot. Use [`History.PruningInterval`](./configuration.md#history-pruninginterval) and [`History.PruningTimeoutSeconds`](./configuration.md#history-pruningtimeoutseconds) to control how often it runs and how long a single pass may take.
@@ -37,23 +37,23 @@ Block headers, bodies, and receipts are compressed using the [Snappy framing fo
 
 ## EraE format
 
-EraE is the post-Merge archival format, specified in [ere.md](https://github.com/eth-clients/e2store-format-specs/blob/main/formats/ere.md). An EraE file holds up to 8192 blocks and is laid out as follows:
+EraE is the archival format used for post-Merge history, as specified in [ere.md](https://github.com/eth-clients/e2store-format-specs/blob/main/formats/ere.md). An EraE file holds up to 8192 blocks and is laid out as follows:
 
 ```
 Version | CompressedHeader* | CompressedBody* | CompressedSlimReceipts* | TotalDifficulty* | AccumulatorRoot? | ComponentIndex
 ```
 
-Receipts are stored slim, as `rlp([txType, postStateOrStatus, cumulativeGas, logs])` with no bloom filter; readers recompute it from the logs. Exported files use the `.ere` extension and carry the `noproofs` profile postfix, since Nethermind does not write `Proof` entries. The older `.erae` extension is still accepted on import.
+Receipts are stored slim, as `rlp([txType, postStateOrStatus, cumulativeGas, logs])` with no bloom filter; readers recompute it from the logs. Exported files use the `.ere` extension and carry the `noproofs` profile suffix, since Nethermind does not write `Proof` entries. The older `.erae` extension is still accepted on import.
 
 The `Era.*` options and `admin_importHistory`/`admin_exportHistory` described below apply to Era1. EraE has its own equivalents:
 
 - Import: [`EraE.ImportDirectory`](./configuration.md#erae-importdirectory), or the `admin_importEraHistory` JSON-RPC method.
-- Export: [`EraE.ExportDirectory`](./configuration.md#erae-exportdirectory), or the `admin_exportEraHistory` JSON-RPC method. Exporting post-Merge blocks requires [`EraE.BeaconNodeUrl`](./configuration.md#erae-beaconnodeurl), which supplies the beacon block and state roots.
-- Range and verification: [`EraE.From`](./configuration.md#erae-from), [`EraE.To`](./configuration.md#erae-to) (`0` means head), and [`EraE.TrustedAccumulatorFile`](./configuration.md#erae-trustedaccumulatorfile).
+- Export: [`EraE.ExportDirectory`](./configuration.md#erae-exportdirectory), or the `admin_exportEraHistory` JSON-RPC method. Set [`EraE.BeaconNodeUrl`](./configuration.md#erae-beaconnodeurl) to supply beacon block and state roots during post-Merge export.
+- Range and verification: [`EraE.From`](./configuration.md#erae-from), [`EraE.To`](./configuration.md#erae-to), and [`EraE.TrustedAccumulatorFile`](./configuration.md#erae-trustedaccumulatorfile). For export, `EraE.To` set to `0` means the node's current head; for import, it means the last block available in the archive.
 
 ### Remote archives
 
-Set [`EraE.RemoteBaseUrl`](./configuration.md#erae-remotebaseurl) to a remote EraE server to download missing epoch files on demand instead of providing them locally. Downloads are checksummed against the server's `checksums_sha256.txt` manifest and cached in [`EraE.RemoteDownloadDirectory`](./configuration.md#erae-remotedownloaddirectory), which defaults to the import directory.
+When importing, set [`EraE.RemoteBaseUrl`](./configuration.md#erae-remotebaseurl) to download archive files that are missing from the import directory. You must still provide a local source directory through `EraE.ImportDirectory` or the `admin_importEraHistory` method. Downloaded files are verified against the SHA-256 hashes in the server's `checksums_sha256.txt` manifest and cached in [`EraE.RemoteDownloadDirectory`](./configuration.md#erae-remotedownloaddirectory), which defaults to the import directory.
 
 ## Import
 
