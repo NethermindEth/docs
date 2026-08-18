@@ -47,8 +47,8 @@ Receipts are stored slim, as `rlp([txType, postStateOrStatus, cumulativeGas, log
 
 The `Era.*` options and `admin_importHistory`/`admin_exportHistory` described below apply to Era1. EraE has its own equivalents:
 
-- Import: [`EraE.ImportDirectory`](./configuration.md#erae-importdirectory), or the [`admin_importEraHistory`](../interacting/json-rpc-ns/admin.md#admin_importerahistory) JSON-RPC method.
-- Export: [`EraE.ExportDirectory`](./configuration.md#erae-exportdirectory), or the [`admin_exportEraHistory`](../interacting/json-rpc-ns/admin.md#admin_exporterahistory) JSON-RPC method. Exporting post-Merge blocks requires [`EraE.BeaconNodeUrl`](./configuration.md#erae-beaconnodeurl), which supplies the beacon block and state roots.
+- Import: [`EraE.ImportDirectory`](./configuration.md#erae-importdirectory), or the `admin_importEraHistory` JSON-RPC method.
+- Export: [`EraE.ExportDirectory`](./configuration.md#erae-exportdirectory), or the `admin_exportEraHistory` JSON-RPC method. Exporting post-Merge blocks requires [`EraE.BeaconNodeUrl`](./configuration.md#erae-beaconnodeurl), which supplies the beacon block and state roots.
 - Range and verification: [`EraE.From`](./configuration.md#erae-from), [`EraE.To`](./configuration.md#erae-to) (`0` means head), and [`EraE.TrustedAccumulatorFile`](./configuration.md#erae-trustedaccumulatorfile).
 
 ### Remote archives
