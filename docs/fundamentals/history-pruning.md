@@ -6,8 +6,20 @@ sidebar_position: 7
 History pruning is a feature set that aims to reduce storage space requirements for a node by removing old historical data. The goal is to remove the requirement from nodes to store all the historical data but ensure the old data is preserved and accessible for anyone who needs it. For details, see [EIP-4444][eip444].
 
 :::info
-History pruning is enabled by default for the networks supporting it. To disable, set [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) and [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) to `0`.
+On networks that support it, a fresh sync stops downloading bodies and receipts below the ancient barriers, so the node holds history only from that point onwards. To download the entire history instead, set [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) and [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) to `0`.
+
+Removing history that is already stored is a separate, opt-in step controlled by [`History.Pruning`](./configuration.md#history-pruning).
 :::
+
+## Pruning modes
+
+[`History.Pruning`](./configuration.md#history-pruning) selects how stored historical blocks and receipts are removed as the node runs.
+
+- `Disabled` (default) — nothing already stored is removed.
+- `UseAncientBarriers` — prunes everything below the ancient barriers cutoff, matching what a fresh sync would have downloaded.
+- `Rolling` — keeps a moving window of the most recent [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) epochs and prunes below it as the head advances. The configured window must be at least the `minHistoryRetentionEpochs` chainspec parameter of the network, and a node that has just synced only starts pruning once its stored history grows past the window.
+
+Pruning never removes the genesis block or anything at or above the sync pivot. Use [`History.PruningInterval`](./configuration.md#history-pruninginterval) and [`History.PruningTimeoutSeconds`](./configuration.md#history-pruningtimeoutseconds) to control how often it runs and how long a single pass may take.
 
 ## Era1 format
 
@@ -22,6 +34,26 @@ block-index := starting-number | index | index | index ... | count
 ```
 
 Block headers, bodies, and receipts are compressed using the [Snappy framing format](https://github.com/google/snappy/blob/main/framing_format.txt). Each file contains a block index for fast lookup and an [epoch accumulator](https://github.com/ethereum/portal-network-specs/blob/master/history/history-network.md#the-historical-hashes-accumulator) for verification. The epoch accumulator can verify the entire archive with accumulators from a trusted source. It also allows a node to download a block header with a Merkle proof, proving it belongs to a particular epoch.
+
+## EraE format
+
+EraE is the post-Merge archival format, specified in [ere.md](https://github.com/eth-clients/e2store-format-specs/blob/main/formats/ere.md). An EraE file holds up to 8192 blocks and is laid out as follows:
+
+```
+Version | CompressedHeader* | CompressedBody* | CompressedSlimReceipts* | TotalDifficulty* | AccumulatorRoot? | ComponentIndex
+```
+
+Receipts are stored slim, as `rlp([txType, postStateOrStatus, cumulativeGas, logs])` with no bloom filter; readers recompute it from the logs. Exported files use the `.ere` extension and carry the `noproofs` profile postfix, since Nethermind does not write `Proof` entries. The older `.erae` extension is still accepted on import.
+
+The `Era.*` options and `admin_importHistory`/`admin_exportHistory` described below apply to Era1. EraE has its own equivalents:
+
+- Import: [`EraE.ImportDirectory`](./configuration.md#erae-importdirectory), or the [`admin_importEraHistory`](../interacting/json-rpc-ns/admin.md#admin_importerahistory) JSON-RPC method.
+- Export: [`EraE.ExportDirectory`](./configuration.md#erae-exportdirectory), or the [`admin_exportEraHistory`](../interacting/json-rpc-ns/admin.md#admin_exporterahistory) JSON-RPC method. Exporting post-Merge blocks requires [`EraE.BeaconNodeUrl`](./configuration.md#erae-beaconnodeurl), which supplies the beacon block and state roots.
+- Range and verification: [`EraE.From`](./configuration.md#erae-from), [`EraE.To`](./configuration.md#erae-to) (`0` means head), and [`EraE.TrustedAccumulatorFile`](./configuration.md#erae-trustedaccumulatorfile).
+
+### Remote archives
+
+Set [`EraE.RemoteBaseUrl`](./configuration.md#erae-remotebaseurl) to a remote EraE server to download missing epoch files on demand instead of providing them locally. Downloads are checksummed against the server's `checksums_sha256.txt` manifest and cached in [`EraE.RemoteDownloadDirectory`](./configuration.md#erae-remotedownloaddirectory), which defaults to the import directory.
 
 ## Import
 

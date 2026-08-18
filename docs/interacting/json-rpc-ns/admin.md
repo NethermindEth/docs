@@ -134,6 +134,51 @@ The data directory path as a string.
 </TabItem>
 </Tabs>
 
+### admin_exportEraHistory
+
+Exports a range of historic blocks in erae format.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `destinationPath`: _string_
+
+2. `from`: _string_ (hex integer)
+
+3. `to`: _string_ (hex integer)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_exportEraHistory",
+      "params": [destinationPath, from, to]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
+
+</TabItem>
+</Tabs>
+
 ### admin_exportHistory
 
 Exports a range of historic block in era1 format.
@@ -160,6 +205,53 @@ curl localhost:8545 \
       "id": 0,
       "method": "admin_exportHistory",
       "params": [destinationPath, from, to]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
+
+</TabItem>
+</Tabs>
+
+### admin_importEraHistory
+
+Imports a range of historic blocks from an erae directory.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `sourcePath`: _string_
+
+2. `from`: _string_ (hex integer)
+
+3. `to`: _string_ (hex integer)
+
+4. `accumulatorFile`: _string_
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_importEraHistory",
+      "params": [sourcePath, from, to, accumulatorFile]
     }'
 ```
 
