@@ -18,18 +18,20 @@ Two independent groups of configuration options compose:
 
 ## Configuration
 
-| Setting | Full archive | Windowed archive | Address-slice archive | What it controls |
+Each option is documented in its own section of the [configuration reference](./configuration.md); this page is the archive-node view of them. The table shows which options make up each shape - follow the links for what every option does.
+
+| Setting | Full archive | Windowed archive | Address-slice archive | Role |
 |---|---|---|---|---|
-| [`FlatDb.Enabled`](./configuration.md#flatdb-enabled) | `true` | `true` | `true` | The flat database; everything below builds on it. |
-| [`FlatDb.HistoryEnabled`](./configuration.md#flatdb-historyenabled) | `true` | `true` | `true` | Captures per-block state changesets - historical state queries answer from these. |
-| [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) | `0` (default) | the window size, in blocks | the window size, in blocks | The state-history window, in blocks below the tip. `0` keeps state history from genesis. |
-| [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) | unset | unset | the sliced addresses | Contracts kept queryable beyond the general window: their state rows survive pruning, and every block one of these addresses appears in keeps its receipts and full body, so logs and transactions stay answerable. `address` retains forever; `address:N` retains while a height is within `N` blocks of the head. |
-| [`History.Pruning`](./configuration.md#history-pruning) | `Disabled` (default) | `Rolling` | `Rolling` | Block-and-receipt expiry. Independent of state history, but a windowed node normally rolls both. |
-| [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | the retention window, in epochs | the retention window, in epochs | How many epochs of bodies and receipts the rolling pruner keeps. Must be at least the chain's `minHistoryRetentionEpochs` chainspec parameter. |
-| [`LogIndex.Enabled`](./configuration.md#logindex-enabled) | recommended | recommended | recommended | The address/topic to block-number index behind fast `eth_getLogs`. Builds over whatever receipts the node stores. |
-| [`Receipt.TxLookupLimit`](./configuration.md#receipt-txlookuplimit) | `0` | `0` | `0` | `0` keeps the transaction-hash lookup index for every stored height; retained sliced heights keep their entries either way. |
-| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional | - | - | The receiptless variant: receipts are derived from state instead of persisted. See [Receiptless archive](#receiptless-archive). |
-| [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) / [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) | `0` | - | - | A full archive that should serve receipts from genesis must also download them; see [History pruning](./history-pruning.md). |
+| [`FlatDb.Enabled`](./configuration.md#flatdb-enabled) | `true` | `true` | `true` | The flat database itself. |
+| [`FlatDb.HistoryEnabled`](./configuration.md#flatdb-historyenabled) | `true` | `true` | `true` | Captures the per-block state changesets. |
+| [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) | `0` (default) | the window size, in blocks | the window size, in blocks | The state-history window; `0` keeps state history from genesis. |
+| [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) | unset | unset | the sliced addresses | Contracts kept queryable beyond the general window. |
+| [`History.Pruning`](./configuration.md#history-pruning) | `Disabled` (default) | `Rolling` | `Rolling` | Block-and-receipt expiry; see [History pruning](./history-pruning.md). |
+| [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | the retention window, in epochs | the retention window, in epochs | How much block-and-receipt history the rolling pruner keeps. |
+| [`LogIndex.Enabled`](./configuration.md#logindex-enabled) | recommended | recommended | recommended | The index behind fast `eth_getLogs`. |
+| [`Receipt.TxLookupLimit`](./configuration.md#receipt-txlookuplimit) | `0` | `0` | `0` | `0` keeps the transaction-hash lookup index for every stored height. |
+| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional | - | - | The receiptless variant; see [Receiptless archive](#receiptless-archive). |
+| [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) / [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) | `0` | - | - | A full archive that should serve receipts from genesis must also download them. |
 
 Every archive setting is default-off: a node that configures none of them behaves exactly as before.
 
