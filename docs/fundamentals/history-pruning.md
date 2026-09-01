@@ -23,7 +23,7 @@ Pruning publishes the new retention boundary first and reclaims the space below 
 
 Pruning never removes the genesis block or anything at or above the sync pivot. Use [`History.PruningInterval`](./configuration.md#history-pruninginterval) and [`History.PruningTimeoutSeconds`](./configuration.md#history-pruningtimeoutseconds) to control how often it runs and how long a single pass may take.
 
-Blocks in which an address listed in [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) appears keep their receipts and bodies beyond the rolling window, so logs and transactions for those contracts stay answerable; see [Archive nodes](./archive-nodes.md).
+Blocks containing any address in [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) retain their receipts and bodies beyond the rolling window, so logs and transactions for those contracts stay answerable; see [Archive nodes](./archive-nodes.md).
 
 `eth_getLogs` over a range covering pruned heights returns an error rather than silently returning fewer logs than the range holds, and block queries below the earliest block the node still serves answer with a pruned-history error.
 
