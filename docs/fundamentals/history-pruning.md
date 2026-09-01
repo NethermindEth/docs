@@ -25,7 +25,7 @@ Pruning never removes the genesis block or anything at or above the sync pivot. 
 
 Blocks in which an address listed in [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) appears keep their receipts and bodies beyond the rolling window, so logs and transactions for those contracts stay answerable; see [Archive nodes](./archive-nodes.md).
 
-`eth_getLogs` over a range whose receipts have been pruned returns an error rather than silently returning fewer logs than the range holds, and block queries below the earliest block the node still serves answer with a pruned-history error.
+`eth_getLogs` over a range covering pruned heights returns an error rather than silently returning fewer logs than the range holds, and block queries below the earliest block the node still serves answer with a pruned-history error.
 
 `History.Pruning` removes blocks and receipts only. Historical state has its own, independent retention; see [Archive nodes](./archive-nodes.md).
 

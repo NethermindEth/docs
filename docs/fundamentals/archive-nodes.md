@@ -48,7 +48,7 @@ Do not turn on [full state pruning](./state-pruning.md) on an archive node, as t
 Within the window, the node answers historical RPC exactly like a full archive. Below it, queries fail closed rather than answering wrongly:
 
 - Historical state reads (`eth_call`, `eth_getBalance`, `eth_getStorageAt`) below the window return a pruned-history error instead of resolving against live state.
-- `eth_getLogs` over heights whose receipts were pruned returns an error instead of silently returning fewer logs than the range holds.
+- `eth_getLogs` over a range covering pruned heights returns an error rather than silently returning fewer logs than the range holds.
 - Block and receipt queries below the earliest block the node still serves return a pruned-history error, consistent with the block range the node advertises to its peers.
 
 On an address-slice node, reads below the general window serve only the sliced addresses and fail closed for everything else. Log queries filtered to sliced addresses keep answering below the general boundary, served from the log index at the cost of the matches rather than the size of the range. Answering sliced logs below a previously pruned boundary requires `History.Pruning` to stay enabled: at startup, the pruner validates from which depth each slice's logs are provably retained, and without it those reads fail closed.
