@@ -57,8 +57,7 @@ Old bodies and receipts are mainly limited by your Internet connection. With a 1
 
 Block processing time is primarily limited by SSD performance. In practice, it is the SSD's _response time_, not just its IOPS, that matters. However, since most SSDs don't advertise response times, IOPS often serves as a useful approximation.
 
-Nethermind includes a _prewarming_ feature that parallelizes state reads by executing transactions concurrently, warming up state reads for the main block processing. This effectively hides SSD latency, although it increases CPU usage. For non-validator nodes, where RPC throughput is more important, you can turn off this optimization by setting the [`Blocks.PreWarmStateOnBlockProcessing`](../fundamentals/configuration.md#blocks-prewarmstateonblockprocessing) option to `false`. While disabling prewarming may conserve CPU resources, the benefits are typically minor.
-
+Nethermind includes a _prewarming_ feature that parallelizes state reads by executing transactions concurrently, warming up state reads for the main block processing. This effectively hides SSD latency, although it increases CPU usage.
 ## Memory
 
 Ethereum aims to be maximally decentralized, so the default Nethermind configuration minimizes system resource usage. However, several tunable parameters are available if your system has large enough memory.
