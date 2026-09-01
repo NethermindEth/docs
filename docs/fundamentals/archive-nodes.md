@@ -28,6 +28,7 @@ Two independent groups of configuration options compose:
 | [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | default `82125` | default `82125` | How many epochs (32 blocks each) of bodies and receipts the rolling pruner keeps. Must be at least the chain's `minHistoryRetentionEpochs` chainspec parameter. |
 | [`LogIndex.Enabled`](./configuration.md#logindex-enabled) | recommended | recommended | recommended | The address/topic to block-number index behind fast `eth_getLogs`. Builds over whatever receipts the node stores. |
 | [`Receipt.TxLookupLimit`](./configuration.md#receipt-txlookuplimit) | `0` | `0` | `0` | `0` keeps the transaction-hash lookup index for every stored height; retained sliced heights keep their entries either way. |
+| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional | - | - | The receiptless variant: receipts are derived from state instead of persisted. See [Receiptless archive](#receiptless-archive). |
 | [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) / [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) | `0` | - | - | A full archive that should serve receipts from genesis must also download them; see [History pruning](./history-pruning.md). |
 
 Every archive setting is default-off: a node that configures none of them behaves exactly as before.
@@ -45,6 +46,15 @@ Do not turn on [full state pruning](./state-pruning.md) on an archive node, as t
 Within the window, the node answers historical RPC exactly like a full archive. Below it, queries fail closed: historical state reads (`eth_call`, `eth_getBalance`, `eth_getStorageAt`) below the window return a pruned-history error instead of resolving against live state.
 
 On an address-slice node, reads below the general window serve only the sliced addresses and fail closed for everything else. Answering sliced logs below a previously pruned boundary requires `History.Pruning` to stay enabled: at startup, the pruner validates from which depth each slice's logs are provably retained, and without it those reads fail closed.
+
+## Receiptless archive
+
+[`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) trades the receipt store for computation: receipt writes are skipped, and a receipt query re-executes the block over its parent state, serving the result only when it reproduces the block header's receipts root. It requires state history for the queried block, so it pairs with a full archive.
+
+- Receipts already on disk are still served, and pre-Byzantium receipts and the transaction index are always written.
+- A skipped receipt is retained in memory until history capture durably covers its block, and is persisted if capture permanently stops, so a capture breakdown does not lose receipts.
+- A query that misses the cache costs a full block execution, so a public endpoint should be rate limited; concurrency is bounded by [`JsonRpc.EthModuleConcurrentInstances`](./configuration.md#jsonrpc-ethmoduleconcurrentinstances).
+- Peers are told no receipts are available.
 
 ## Notes
 
