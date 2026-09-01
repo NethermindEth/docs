@@ -1,6 +1,6 @@
 ---
 title: Performance tuning
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 By default, Nethermind is configured for general use cases that fit well for most users. However, to improve various aspects of Nethermind performance, there are options for different subsystems that can be configured for your specific needs.

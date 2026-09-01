@@ -21,6 +21,10 @@ Removing history that is already stored is a separate, opt-in step controlled by
 
 Pruning never removes the genesis block or anything at or above the sync pivot. Use [`History.PruningInterval`](./configuration.md#history-pruninginterval) and [`History.PruningTimeoutSeconds`](./configuration.md#history-pruningtimeoutseconds) to control how often it runs and how long a single pass may take.
 
+Blocks in which an address listed in [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) appears keep their receipts and bodies beyond the rolling window, so logs and transactions for those contracts stay answerable; see [Archive nodes](./archive-nodes.md).
+
+`History.Pruning` removes blocks and receipts only. Historical state has its own, independent retention; see [Archive nodes](./archive-nodes.md).
+
 ## Era1 format
 
 The pre-Merge historical data is serviced in [Era1](https://github.com/status-im/nimbus-eth2/blob/stable/docs/e2store.md#era-files) format, which is an archival format initially designed for the consensus layer by Nimbus.
