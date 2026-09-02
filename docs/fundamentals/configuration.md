@@ -262,7 +262,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The address of the transaction priority contract to use when selecting transactions from the transaction pool. Defaults to `null`.
 
-
 ### BalRecorder
 
 - #### `BalRecorder.Path` \{#balrecorder-path\}
@@ -345,7 +344,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to replay recorded block access lists during block processing. Allowed values: `true` `false`. Defaults to `false`.
-
 
 ### Blocks
 
@@ -565,32 +563,39 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Use parallel state reads when Block Level Access Lists are available. Experimental Amsterdam/BAL path; disabling falls back to sequential reads and the option is ignored for blocks without BAL bodies. Allowed values: `true` `false`. Defaults to `true`.
 
-- #### `Blocks.PreWarmStateOnBlockProcessing` \{#blocks-prewarmstateonblockprocessing\}
+- #### `Blocks.PreWarming` \{#blocks-prewarming\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --blocks-prewarmstateonblockprocessing [true|false]
-  --Blocks.PreWarmStateOnBlockProcessing [true|false]
+  --blocks-prewarming <value>
+  --Blocks.PreWarming <value>
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_BLOCKSCONFIG_PREWARMSTATEONBLOCKPROCESSING=true|false
+  NETHERMIND_BLOCKSCONFIG_PREWARMING=<value>
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Blocks": {
-      "PreWarmStateOnBlockProcessing": true|false
+      "PreWarming": <value>
     }
   }
   ```
   </TabItem>
   </Tabs>
 
-  Whether to pre-warm the state when processing blocks. This can lead to an up to 2x speed-up in the main loop block processing. Allowed values: `true` `false`. Defaults to `True`.
+  State pre-warming level while processing blocks: `None`, `Block` (warm the block's own transactions), or `BlockAndMempool` (also speculatively warm from the mempool between blocks).
+
+  Allowed values:
+  - `None`
+  - `Block`
+  - `BlockAndMempool`
+
+  Defaults to `BlockAndMempool`.
 
 - #### `Blocks.RandomizedBlocks` \{#blocks-randomizedblocks\}
 
@@ -727,7 +732,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The block gas limit that the block producer should try to reach in the fastest possible way based on the protocol rules. If not specified, then the block producer should follow others. Defaults to `null`.
 
-
 ### CensorshipDetector
 
 - #### `CensorshipDetector.AddressesForCensorshipDetection` \{#censorshipdetector-addressesforcensorshipdetection\}
@@ -811,9 +815,7 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to enable censorship detection. Allowed values: `true` `false`. Defaults to `false`.
 
-
 ### Clique
-
 
 ### Era
 
@@ -952,7 +954,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Accumulator file to be used for trusting era files. Defaults to `null`.
 
-
 ### EraE
 
 - #### `EraE.BeaconNodeUrl` \{#erae-beaconnodeurl\}
@@ -1088,7 +1089,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Base URL of a remote EraE archive server (e.g. https://data.ethpandaops.io/erae/{network}/). When set, missing local epoch files are downloaded on demand. Defaults to `null`.
+  Base URL of a remote EraE archive server (e.g. https://data.ethpandaops.io/erae/\{network}/). When set, missing local epoch files are downloaded on demand. Defaults to `null`.
 
 - #### `EraE.RemoteDownloadDirectory` \{#erae-remotedownloaddirectory\}
 
@@ -1170,7 +1171,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Accumulator file for trusting EraE archives. Defaults to `null`.
-
 
 ### EthStats
 
@@ -1335,7 +1335,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The Ethstats server URL. Defaults to `ws://localhost:3000/api`.
-
 
 ### Flashbots
 
@@ -1502,8 +1501,34 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to calculate the proposer payment as a balance difference of the fee recipient. Allowed values: `true` `false`. Defaults to `false`.
 
-
 ### FlatDb
+
+- #### `FlatDb.ArenaFileSizeBytes` \{#flatdb-arenafilesizebytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-arenafilesizebytes <value>
+  --FlatDb.ArenaFileSizeBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_ARENAFILESIZEBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "ArenaFileSizeBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum size in bytes for a single arena file before a new one is started. Defaults to `1073741824`.
 
 - #### `FlatDb.BlockCacheSizeBudget` \{#flatdb-blockcachesizebudget\}
 
@@ -1586,6 +1611,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Fixed compaction schedule offset in blocks. When 0 or greater, overrides the per-instance offset in the metadata DB, which is neither read nor updated. Only the value modulo CompactSize matters. -1 to use the stored offset, generating a random one when absent. Defaults to `-1`.
 
+- #### `FlatDb.EnableLongFinality` \{#flatdb-enablelongfinality\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-enablelongfinality [true|false]
+  --FlatDb.EnableLongFinality [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_ENABLELONGFINALITY=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "EnableLongFinality": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Enable long finality support with persisted snapshots Allowed values: `true` `false`. Defaults to `true`.
+
 - #### `FlatDb.EnablePreimageRecording` \{#flatdb-enablepreimagerecording\}
 
   <Tabs groupId="usage">
@@ -1639,6 +1691,222 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Enabled Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.HistoryEnabled` \{#flatdb-historyenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historyenabled [true|false]
+  --FlatDb.HistoryEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Capture finalized per-block account/storage changesets into the history columns for archival queries. Off by default; when off the persist path does no extra work. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.HistoryPruneIntervalBlocks` \{#flatdb-historypruneintervalblocks\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historypruneintervalblocks <value>
+  --FlatDb.HistoryPruneIntervalBlocks <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYPRUNEINTERVALBLOCKS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryPruneIntervalBlocks": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  How many blocks the watermark must advance before an idle history window pruner wakes and re-evaluates the floor. A pruner still owing sweep work paces itself on its pass budget instead. Only consulted when HistoryRetentionBlocks is set. Defaults to `1024`.
+
+- #### `FlatDb.HistoryPrunePassBudgetSeconds` \{#flatdb-historyprunepassbudgetseconds\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historyprunepassbudgetseconds <value>
+  --FlatDb.HistoryPrunePassBudgetSeconds <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYPRUNEPASSBUDGETSECONDS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryPrunePassBudgetSeconds": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Per-pass wall-clock budget, in seconds, for the history window pruner's incremental scan-and-delete. A pass yields at the budget and resumes from its persisted cursor on the next pass rather than running unbounded. Must exceed the longest historical query the node serves: deletes wait for in-flight historical reads, and a read that outlives every pass blocks reclamation until it finishes. Defaults to `5`.
+
+- #### `FlatDb.HistoryRetentionBlocks` \{#flatdb-historyretentionblocks\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historyretentionblocks <value>
+  --FlatDb.HistoryRetentionBlocks <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYRETENTIONBLOCKS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryRetentionBlocks": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Bounded rolling-window retention for flat history, in blocks below the watermark. 0 disables windowing: history is retained unbounded from genesis/pivot, today's shipped behavior. Defaults to `0`.
+
+- #### `FlatDb.HistorySliceAddresses` \{#flatdb-historysliceaddresses\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historysliceaddresses <value>
+  --FlatDb.HistorySliceAddresses <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYSLICEADDRESSES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistorySliceAddresses": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  A comma-separated list of contract addresses to retain unbounded (or far deeper than HistoryRetentionBlocks) flat history for, independent of the general rolling window. Static allow-list only - an address is never added or removed except by editing this config and restarting. Both the receipts and the whole block body are retained for every block one of these addresses appears in, so those heights keep their transactions queryable and not just their logs. The cost is body disk: a contract busy enough to match most blocks means most of those bodies are kept, and history pruning stops reclaiming body space over that range. An entry with a retention suffix keeps bodies and receipts only while a height is within that many blocks of the head; a cleanup cursor reclaims them after they fall out. An entry without a retention suffix retains forever and pins the whole clears column and the per-block markers (~40 bytes per block the window never reclaims). Answering below a previously pruned boundary requires History.Pruning to stay enabled: the pruner is what validates, at startup, from which depth each slice's logs are provably retained, and without it those reads fail closed. Defaults to `null`.
+
+- #### `FlatDb.HistoryVerifyEveryBlock` \{#flatdb-historyverifyeveryblock\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historyverifyeveryblock [true|false]
+  --FlatDb.HistoryVerifyEveryBlock [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYVERIFYEVERYBLOCK=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryVerifyEveryBlock": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Rebuild the state root from flat history rows at every covered block and compare against this node's own headers, once, in the background. Unwindowed archives only; memory-heavy on large ranges. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.HistoryVerifyMaxRows` \{#flatdb-historyverifymaxrows\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historyverifymaxrows <value>
+  --FlatDb.HistoryVerifyMaxRows <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYVERIFYMAXROWS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryVerifyMaxRows": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Rows the every-block history verification may hold in memory before it declines the run. Its working set follows state size rather than range length, so a full archive needs a large value and a machine to match. 0 uses the built-in ceiling. Defaults to `0`.
+
+- #### `FlatDb.HistoryVerifySegments` \{#flatdb-historyverifysegments\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historyverifysegments <value>
+  --FlatDb.HistoryVerifySegments <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYVERIFYSEGMENTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryVerifySegments": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Concurrent segments the every-block history verification splits its range into. Each segment is independently anchored to its own start header, so segments share nothing but the read-only columns. 0 means half the processor count. Defaults to `0`.
 
 - #### `FlatDb.ImportFromPruningTrieState` \{#flatdb-importfrompruningtriestate\}
 
@@ -1722,12 +1990,39 @@ The configuration options are case-sensitive and can be defined only once unless
   Flat db layout
 
   Allowed values:
-
-    - `Flat`
-    - `FlatInTrie`
-    - `PreimageFlat`
+  - `Flat`
+  - `FlatInTrie`
+  - `PreimageFlatV1`
+  - `PreimageFlat`
 
   Defaults to `Flat`.
+
+- #### `FlatDb.LongFinalityMaxReorgDepth` \{#flatdb-longfinalitymaxreorgdepth\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-longfinalitymaxreorgdepth <value>
+  --FlatDb.LongFinalityMaxReorgDepth <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_LONGFINALITYMAXREORGDEPTH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "LongFinalityMaxReorgDepth": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Force-persist backstop used when EnableLongFinality is on, in place of MaxReorgDepth. The persisted-snapshot tier serves deep reorgs, so this is much larger than the non-long-finality backstop. Defaults to `90000`.
 
 - #### `FlatDb.MaxInFlightCompactJob` \{#flatdb-maxinflightcompactjob\}
 
@@ -1756,6 +2051,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Max in flight compact job Defaults to `32`.
 
+- #### `FlatDb.MaxInMemoryBaseSnapshotCount` \{#flatdb-maxinmemorybasesnapshotcount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-maxinmemorybasesnapshotcount <value>
+  --FlatDb.MaxInMemoryBaseSnapshotCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_MAXINMEMORYBASESNAPSHOTCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "MaxInMemoryBaseSnapshotCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum number of in-memory base snapshots before conversion to the persisted-snapshot tier kicks in. Counted as `SnapshotCount` of the in-memory repository, not a block-distance depth. Sized as a ~128 target plus one CompactSize of headroom, since a bulk (CompactSize-wide) conversion drops the in-memory count by up to CompactSize at a boundary — so the tier still retains ~128 base snapshots after each conversion. Defaults to `160`.
+
 - #### `FlatDb.MaxReorgDepth` \{#flatdb-maxreorgdepth\}
 
   <Tabs groupId="usage">
@@ -1781,7 +2103,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Max reorg depth Defaults to `256`.
+  Max reorg depth — the force-persist backstop used when EnableLongFinality is off: once the in-memory depth exceeds it while finality is stalled, persistence is forced to bound memory. Defaults to `256`.
 
 - #### `FlatDb.MinReorgDepth` \{#flatdb-minreorgdepth\}
 
@@ -1809,6 +2131,168 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Minimum reorg depth Defaults to `128`.
+
+- #### `FlatDb.PersistedSnapshotArenaPageCacheBytes` \{#flatdb-persistedsnapshotarenapagecachebytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-persistedsnapshotarenapagecachebytes <value>
+  --FlatDb.PersistedSnapshotArenaPageCacheBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_PERSISTEDSNAPSHOTARENAPAGECACHEBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "PersistedSnapshotArenaPageCacheBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Page-cache budget (bytes) for the persisted-snapshot arena. Backs the PageResidencyTracker that drives madvise(DONTNEED) eviction on mmap'd arena files. 0 disables the tracker. Defaults to `4294967296`.
+
+- #### `FlatDb.PersistedSnapshotBloomBitsPerKey` \{#flatdb-persistedsnapshotbloombitsperkey\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-persistedsnapshotbloombitsperkey <value>
+  --FlatDb.PersistedSnapshotBloomBitsPerKey <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_PERSISTEDSNAPSHOTBLOOMBITSPERKEY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "PersistedSnapshotBloomBitsPerKey": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Bits per key for the per-snapshot in-memory bloom filter. One unified filter covers address/slot/self-destruct keys plus state-trie and storage-trie node paths. Higher = lower false-positive rate but more RAM. 0 disables the filter (lookups behave as full sweeps). Defaults to `14.0`.
+
+- #### `FlatDb.PersistedSnapshotDedicatedArenaThresholdBytes` \{#flatdb-persistedsnapshotdedicatedarenathresholdbytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-persistedsnapshotdedicatedarenathresholdbytes <value>
+  --FlatDb.PersistedSnapshotDedicatedArenaThresholdBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_PERSISTEDSNAPSHOTDEDICATEDARENATHRESHOLDBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "PersistedSnapshotDedicatedArenaThresholdBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Estimated-size threshold (bytes) at or above which a persisted-snapshot arena write goes to its own dedicated file instead of being packed into a shared arena. Defaults to `1073741824`.
+
+- #### `FlatDb.PersistedSnapshotMaxCompactSize` \{#flatdb-persistedsnapshotmaxcompactsize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-persistedsnapshotmaxcompactsize <value>
+  --FlatDb.PersistedSnapshotMaxCompactSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_PERSISTEDSNAPSHOTMAXCOMPACTSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "PersistedSnapshotMaxCompactSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Max persisted snapshot compaction size (hierarchical compaction ceiling for persisted layer), in blocks Defaults to `1048576`.
+
+- #### `FlatDb.PersistedSnapshotPunchHoleOnReclaim` \{#flatdb-persistedsnapshotpunchholeonreclaim\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-persistedsnapshotpunchholeonreclaim [true|false]
+  --FlatDb.PersistedSnapshotPunchHoleOnReclaim [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_PERSISTEDSNAPSHOTPUNCHHOLEONRECLAIM=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "PersistedSnapshotPunchHoleOnReclaim": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  When reclaiming dead persisted-snapshot arena ranges — metadata reservation cleanup and blob-file frontier reset — call fallocate(FALLOC_FL_PUNCH_HOLE) to free the underlying disk blocks. Linux-only; automatically and permanently disabled per arena pool if the filesystem reports the operation unsupported. Set false to skip hole-punching entirely (the page-cache posix_fadvise still runs). Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `FlatDb.PersistenceWriteBufferFloor` \{#flatdb-persistencewritebufferfloor\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-persistencewritebufferfloor <value>
+  --FlatDb.PersistenceWriteBufferFloor <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_PERSISTENCEWRITEBUFFERFLOOR=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "PersistenceWriteBufferFloor": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Lower bound, in bytes, for the RocksDB write buffer (memtable) size of the flat-state columns. The per-batch adjuster never shrinks a column's memtable below this value. Raising it lets frequent small persistence batches (small CompactSize) coalesce and deduplicate in the memtable instead of churning L0, decoupling write amplification from CompactSize. Defaults to `16777216`.
 
 - #### `FlatDb.RegenerateCompactionOffset` \{#flatdb-regeneratecompactionoffset\}
 
@@ -1889,7 +2373,34 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Trie warmer worker count (-1 for processor count - 1, 0 to disable) Defaults to `-1`.
+  Trie warmer worker count (-1 for 3/4 of processor count, 0 to disable) Defaults to `-1`.
+
+- #### `FlatDb.ValidatePersistedSnapshot` \{#flatdb-validatepersistedsnapshot\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-validatepersistedsnapshot [true|false]
+  --FlatDb.ValidatePersistedSnapshot [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_VALIDATEPERSISTEDSNAPSHOT=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "ValidatePersistedSnapshot": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Validate persisted snapshots against in-memory snapshots after conversion (debug/diagnostic only) Allowed values: `true` `false`. Defaults to `false`.
 
 - #### `FlatDb.VerifyWithTrie` \{#flatdb-verifywithtrie\}
 
@@ -1918,6 +2429,32 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Verify with trie Allowed values: `true` `false`. Defaults to `false`.
 
+- #### `FlatDb.WarmReadConcurrency` \{#flatdb-warmreadconcurrency\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-warmreadconcurrency <value>
+  --FlatDb.WarmReadConcurrency <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_WARMREADCONCURRENCY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "WarmReadConcurrency": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Persistent dedicated reader threads used to resolve hinted BAL read sets into the pre-block cache. -1 for 4x logical processor count capped at 64. Values below 1 are clamped to 1. Use --Blocks.ParallelExecutionBatchRead=false to disable BAL warming entirely. Defaults to `-1`.
 
 ### HealthChecks
 
@@ -2349,7 +2886,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The web hook URL. Defaults to `null`.
 
-
 ### History
 
 - #### `History.Pruning` \{#history-pruning\}
@@ -2380,10 +2916,9 @@ The configuration options are case-sensitive and can be defined only once unless
   Pruning mode.
 
   Allowed values:
-
-    - `Disabled`: No history pruning.
-    - `Rolling`: Prune outside of rolling window.
-    - `UseAncientBarriers`: Prune up to ancient barriers.
+  - `Disabled`: No history pruning.
+  - `Rolling`: Prune outside of rolling window.
+  - `UseAncientBarriers`: Prune up to ancient barriers.
 
   Defaults to `Disabled`.
 
@@ -2466,8 +3001,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of epochs to retain historical blocks and receipts when using 'Rolling' pruning mode. For mainnet this must be at least 82125. Defaults to `82125`.
-
+  The number of epochs to retain historical blocks and receipts when using 'Rolling' pruning mode. Must be at least the chain's minHistoryRetentionEpochs chainspec parameter. Defaults to `82125`.
 
 ### Hive
 
@@ -2606,7 +3140,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The path to the keystore directory. Defaults to `/keys`.
 
-
 ### Init
 
 - #### `Init.AutoDump` \{#init-autodump\}
@@ -2637,15 +3170,14 @@ The configuration options are case-sensitive and can be defined only once unless
   Auto-dump on bad blocks for diagnostics.
 
   Allowed values:
-
-    - `None`: None.
-    - `Receipts`: Dumps block receipts traces.
-    - `Parity`: Dumps Parity-like traces.
-    - `Geth`: Dumps Geth-like traces.
-    - `Rlp`: Dumps RLP data to a `.rlp` file with the block hash in the file name.
-    - `RlpLog`: Dumps RLP data to the log output.
-    - `Default`: Combines the `Receipts` `Rlp` options.
-    - `All`: Combines the `Geth` `Parity` `Receipts` `Rlp` options.
+  - `None`: None.
+  - `Receipts`: Dumps block receipts traces.
+  - `Parity`: Dumps Parity-like traces.
+  - `Geth`: Dumps Geth-like traces.
+  - `Rlp`: Dumps RLP data to a `.rlp` file with the block hash in the file name.
+  - `RlpLog`: Dumps RLP data to the log output.
+  - `Default`: Combines the `Receipts` `Rlp` options.
+  - `All`: Combines the `Geth` `Parity` `Receipts` `Rlp` options.
 
   Defaults to `Default`.
 
@@ -2758,14 +3290,13 @@ The configuration options are case-sensitive and can be defined only once unless
   The diagnostic mode.
 
   Allowed values:
-
-    - `None`: None.
-    - `MemDb`: Uses an in-memory DB.
-    - `RpcDb`: Uses a remote DB.
-    - `ReadOnlyDb`: Uses a read-only DB.
-    - `VerifyRewards`: Scans rewards for blocks and genesis.
-    - `VerifySupply`: Scans and sums supply on all accounts.
-    - `VerifyTrie`: Verifies if full state trie is stored.
+  - `None`: None.
+  - `MemDb`: Uses an in-memory DB.
+  - `RpcDb`: Uses a remote DB.
+  - `ReadOnlyDb`: Uses a read-only DB.
+  - `VerifyRewards`: Scans rewards for blocks and genesis.
+  - `VerifySupply`: Scans and sums supply on all accounts.
+  - `VerifyTrie`: Verifies if full state trie is stored.
 
   Defaults to `None`.
 
@@ -3173,7 +3704,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to enable WebSocket service for the default JSON-RPC port on startup. Allowed values: `true` `false`. Defaults to `true`.
-
 
 ### JsonRpc
 
@@ -3943,7 +4473,7 @@ The configuration options are case-sensitive and can be defined only once unless
   The max number of concurrent in-flight requests on the shared (sharable) singleton handler.
   Caps heavy methods promoted to sharable — `eth_call`, `eth_estimateGas`,
   `eth_createAccessList` — preventing unbounded concurrency from exhausting memory.
-  Light sharable methods (e.g. `eth_blockNumber`, `eth_getBalance`) complete in &lt;1 ms and
+  Light sharable methods (e.g. `eth_blockNumber`, `eth_getBalance`) complete in \<1 ms and
   effectively never approach this limit. `0` to lift the limit. Defaults to `10000`.
 
 - #### `JsonRpc.MaxLoggedRequestParametersCharacters` \{#jsonrpc-maxloggedrequestparameterscharacters\}
@@ -4306,11 +4836,10 @@ The configuration options are case-sensitive and can be defined only once unless
   The diagnostic recording mode.
 
   Allowed values:
-
-    - `None`: None.
-    - `Request`: Records requests.
-    - `Response`: Records responses.
-    - `All`: Records both requests and responses.
+  - `None`: None.
+  - `Request`: Records requests.
+  - `Response`: Records responses.
+  - `All`: Records both requests and responses.
 
   Defaults to `None`.
 
@@ -4502,7 +5031,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Concurrency level of websocket connection. Defaults to `1`.
-
 
 ### KeyStore
 
@@ -5019,7 +5547,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   An array of accounts to unlock on startup using passwords either in `PasswordFiles` and `Passwords`. Defaults to `[]`.
 
-
 ### LogIndex
 
 - #### `LogIndex.Enabled` \{#logindex-enabled\}
@@ -5075,7 +5602,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Log index is reset on startup if enabled. Allowed values: `true` `false`. Defaults to `false`.
-
 
 ### Merge
 
@@ -5169,10 +5695,9 @@ The configuration options are case-sensitive and can be defined only once unless
   The memory compaction mode. When set to `Full`, compacts the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
   Allowed values:
-
-    - `No`: Disables memory compaction.
-    - `Yes`: Enables memory compaction.
-    - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
+  - `No`: Disables memory compaction.
+  - `Yes`: Enables memory compaction.
+  - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
   Defaults to `Yes`.
 
@@ -5285,11 +5810,10 @@ The configuration options are case-sensitive and can be defined only once unless
   The garbage collection (GC) mode between Engine API calls.
 
   Allowed values:
-
-    - `NoGC`: Disables garbage collection.
-    - `Gen0`: Enables garbage collection of generation 0.
-    - `Gen1`: Enables garbage collection of generation 1.
-    - `Gen2`: Enables garbage collection of generation 2.
+  - `NoGC`: Disables garbage collection.
+  - `Gen0`: Enables garbage collection of generation 0.
+  - `Gen1`: Enables garbage collection of generation 1.
+  - `Gen2`: Enables garbage collection of generation 2.
 
   Defaults to `Gen1`.
 
@@ -5373,7 +5897,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The terminal total difficulty (TTD) used for the transition. Defaults to `null`.
-
 
 ### Metrics
 
@@ -5699,7 +6222,34 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Pause db metric collection during block processing to prevent overhead. Allowed values: `true` `false`. Defaults to `true`.
+  Defer db metric collection while blocks are being processed to prevent overhead. A deferred update still runs once the data is older than 10 times DbMetricIntervalSeconds. Set EnableDbSizeMetrics to false to disable collection entirely. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Metrics.PushGatewayPassword` \{#metrics-pushgatewaypassword\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-pushgatewaypassword <value>
+  --Metrics.PushGatewayPassword <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_PUSHGATEWAYPASSWORD=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "PushGatewayPassword": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The Pushgateway basic authentication password. Both the username and password must be set to enable authentication.
 
 - #### `Metrics.PushGatewayUrl` \{#metrics-pushgatewayurl\}
 
@@ -5728,6 +6278,32 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The Prometheus Pushgateway instance URL.
 
+- #### `Metrics.PushGatewayUsername` \{#metrics-pushgatewayusername\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --metrics-pushgatewayusername <value>
+  --Metrics.PushGatewayUsername <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_METRICSCONFIG_PUSHGATEWAYUSERNAME=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Metrics": {
+      "PushGatewayUsername": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The Pushgateway basic authentication username. Both the username and password must be set to enable authentication.
 
 ### Mining
 
@@ -5784,7 +6360,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The URL of an external signer like [Clef](https://github.com/ethereum/go-ethereum/blob/master/cmd/clef/tutorial.md). Defaults to `null`.
-
 
 ### Network
 
@@ -5949,6 +6524,60 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The external IP. Use only when the external IP cannot be resolved automatically. Defaults to `null`.
+
+- #### `Network.ExternalIpV4` \{#network-externalipv4\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --network-externalipv4 <value>
+  --Network.ExternalIpV4 <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_NETWORKCONFIG_EXTERNALIPV4=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Network": {
+      "ExternalIpV4": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The external IPv4 address to advertise. Use with `ExternalIpV6` when the node should advertise both IPv4 and IPv6 addresses. Defaults to `null`.
+
+- #### `Network.ExternalIpV6` \{#network-externalipv6\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --network-externalipv6 <value>
+  --Network.ExternalIpV6 <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_NETWORKCONFIG_EXTERNALIPV6=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Network": {
+      "ExternalIpV6": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The external IPv6 address to advertise. Use with `ExternalIpV4` when the node should advertise both IPv4 and IPv6 addresses. Defaults to `null`.
 
 - #### `Network.FilterDiscoveryNodesByRecentIp` \{#network-filterdiscoverynodesbyrecentip\}
 
@@ -6272,7 +6901,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  A template string for the public client id provided to external clients. Allowed placeholders: `{name}` `{version}` `{os}` `{runtime}`. Defaults to `{name}/{version}/{os}/{runtime}`.
+  A template string for the public client id provided to external clients. Allowed placeholders: `{name}` `{version}` `{versionPostfix}` `{os}` `{runtime}`. Defaults to `{name}/{version}{versionPostfix}/{os}/{runtime}`.
 
 - #### `Network.StaticPeers` \{#network-staticpeers\}
 
@@ -6300,7 +6929,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   A list of peers to keep connection for. Static peers are affected by `MaxActivePeers`. Defaults to `null`.
-
 
 ### OpcodeTracing
 
@@ -6493,7 +7121,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Start block number for tracing (inclusive). Used with EndBlock to define explicit range. Defaults to `null`.
 
-
 ### Optimism
 
 - #### `Optimism.SequencerUrl` \{#optimism-sequencerurl\}
@@ -6523,6 +7150,61 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The Optimism sequencer URL. Defaults to `null`.
 
+### PortfolioViewer
+
+- #### `PortfolioViewer.Enabled` \{#portfolioviewer-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --portfolioviewer-enabled [true|false]
+  --PortfolioViewer.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_PORTFOLIOVIEWERCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "PortfolioViewer": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to serve the portfolio viewer UI (balances + NFTs) at the `/portfolio` path of the JSON-RPC HTTP endpoint. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `PortfolioViewer.SiblingProbePorts` \{#portfolioviewer-siblingprobeports\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --portfolioviewer-siblingprobeports <value>
+  --PortfolioViewer.SiblingProbePorts <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_PORTFOLIOVIEWERCONFIG_SIBLINGPROBEPORTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "PortfolioViewer": {
+      "SiblingProbePorts": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Comma-separated localhost ports probed to discover sibling Nethermind nodes on other chains for the multi-chain portfolio viewer. Defaults to `8545,8546,8547,8548,8549,8550`.
 
 ### Pruning
 
@@ -6632,7 +7314,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Dirty node shard count Defaults to `8`.
+  Number of dirty node shards as a base-2 exponent; the shard count is 2^DirtyNodeShardBit. Must be between 1 and 30. Defaults to `8`.
 
 - #### `Pruning.FullPruningCompletionBehavior` \{#pruning-fullpruningcompletionbehavior\}
 
@@ -6662,10 +7344,9 @@ The configuration options are case-sensitive and can be defined only once unless
   The action to take on pruning completion.
 
   Allowed values:
-
-    - `None`: No action.
-    - `ShutdownOnSuccess`: Shuts Nethermind down when pruning succeeds but leaves it running when fails.
-    - `AlwaysShutdown`: Shuts Nethermind down when pruning completes, regardless of its status.
+  - `None`: No action.
+  - `ShutdownOnSuccess`: Shuts Nethermind down when pruning succeeds but leaves it running when fails.
+  - `AlwaysShutdown`: Shuts Nethermind down when pruning completes, regardless of its status.
 
   Defaults to `None`.
 
@@ -6844,10 +7525,9 @@ The configuration options are case-sensitive and can be defined only once unless
   The full pruning trigger.
 
   Allowed values:
-
-    - `Manual`: Does not trigger. Pruning can be triggered manually.
-    - `StateDbSize`: Triggers when the state DB size is above the specified threshold.
-    - `VolumeFreeSpace`: Triggers when the free disk space where the state DB is stored is below the specified threshold.
+  - `Manual`: Does not trigger. Pruning can be triggered manually.
+  - `StateDbSize`: Triggers when the state DB size is above the specified threshold.
+  - `VolumeFreeSpace`: Triggers when the free disk space where the state DB is stored is below the specified threshold.
 
   Defaults to `Manual`.
 
@@ -6933,11 +7613,10 @@ The configuration options are case-sensitive and can be defined only once unless
   The pruning mode.
 
   Allowed values:
-
-    - `None`: No pruning (archive).
-    - `Memory`: In-memory pruning.
-    - `Full`: Full pruning.
-    - `Hybrid`: Combined in-memory and full pruning.
+  - `None`: No pruning (archive).
+  - `Memory`: In-memory pruning.
+  - `Full`: Full pruning.
+  - `Hybrid`: Combined in-memory and full pruning.
 
   Defaults to `Hybrid`.
 
@@ -7076,7 +7755,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Enable tracking of past key to reduce database and pruning cache growth Allowed values: `true` `false`. Defaults to `true`.
 
-
 ### Receipt
 
 - #### `Receipt.CompactReceiptStore` \{#receipt-compactreceiptstore\}
@@ -7132,6 +7810,89 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to compact receipts transaction index database size at the expense of RPC performance. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Receipt.DeferredPersistence` \{#receipt-deferredpersistence\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --receipt-deferredpersistence [true|false]
+  --Receipt.DeferredPersistence [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_RECEIPTCONFIG_DEFERREDPERSISTENCE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Receipt": {
+      "DeferredPersistence": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether receipt, canonical transaction-index, block-body, and block-access-list writes are persisted by a background writer instead of synchronously on the block-processing and engine API paths. Reads are served from an in-memory overlay until flushed, and a state-persistence barrier makes a block's data durable before its state, so an unclean shutdown never leaves persisted state without it. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Receipt.DeriveFromState` \{#receipt-derivefromstate\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --receipt-derivefromstate [true|false]
+  --Receipt.DeriveFromState [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_RECEIPTCONFIG_DERIVEFROMSTATE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Receipt": {
+      "DeriveFromState": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether receipt bodies are derived from state instead of persisted: their write is skipped, and a query re-executes the block over its parent state, serving the result only when it reproduces the block header's receipts root. Bodies already on disk are still served; pre-Byzantium bodies and the transaction index are always written. A skipped body is retained in memory until history capture durably covers its block, and is persisted if capture permanently stops (see the error log then), so a capture breakdown does not lose receipts. Intended for archive nodes: requires state history for the queried block, and peers are told no receipts are available. A query that misses the cache costs a full block execution, so a public endpoint should be rate limited; concurrency is bounded by JsonRpc.EthModuleConcurrentInstances. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Receipt.MaxBlockDepth` \{#receipt-maxblockdepth\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --receipt-maxblockdepth <value>
+  --Receipt.MaxBlockDepth <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_RECEIPTCONFIG_MAXBLOCKDEPTH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Receipt": {
+      "MaxBlockDepth": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum block range (toBlock - fromBlock + 1) allowed in a single `eth_getLogs` request.
+  Requests exceeding this range are rejected with an "invalid params" (-32602) error.
+  Set to 0 to disable the limit. Value is ignored (no limits) if log index is enabled. Defaults to `1000`.
 
 - #### `Receipt.ReceiptsMigration` \{#receipt-receiptsmigration\}
 
@@ -7212,8 +7973,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of recent blocks to maintain transaction index for. `0` to never remove indices, `-1` to never index. Defaults to `2350000`.
-
+  The number of recent blocks to maintain transaction index for. `0` to never remove indices, `18446744073709551615` to never index. Defaults to `2350000`.
 
 ### Seq
 
@@ -7297,7 +8057,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The Seq instance URL. Defaults to `http://localhost:5341`.
-
 
 ### Shutter
 
@@ -7571,7 +8330,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The address of the Shutter validator registry contract. Defaults to `null`.
 
-
 ### Snapshot
 
 - #### `Snapshot.Checksum` \{#snapshot-checksum\}
@@ -7709,6 +8467,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The name of the snapshot file. Defaults to `snapshot.zip`.
 
+- #### `Snapshot.Streaming` \{#snapshot-streaming\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --snapshot-streaming [true|false]
+  --Snapshot.Streaming [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SNAPSHOTCONFIG_STREAMING=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Snapshot": {
+      "Streaming": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to stream the snapshot directly into the database directory without storing the archive file, reducing peak disk usage to the extracted size. Interrupted connections are resumed automatically within a run, but a node restart discards all progress and starts the download over, since no archive is kept on disk. Supported for tar-based archives only. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Snapshot.StreamingConnections` \{#snapshot-streamingconnections\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --snapshot-streamingconnections <value>
+  --Snapshot.StreamingConnections <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SNAPSHOTCONFIG_STREAMINGCONNECTIONS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Snapshot": {
+      "StreamingConnections": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of parallel connections the streaming snapshot download uses when the server supports range requests. Peak buffer memory is (connections + 1) x 64 MiB. Allowed range: 1-16. Defaults to `4`.
+
 - #### `Snapshot.StripComponents` \{#snapshot-stripcomponents\}
 
   <Tabs groupId="usage">
@@ -7736,27 +8548,26 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Number of leading path components to strip when extracting a tar archive (passed as --strip-components to tar). Must be non-negative. Set this to match the depth of the snapshot path embedded in the archive. Defaults to `1`.
 
+### StateDiffsWriter
 
-### StateComposition
-
-- #### `StateComposition.Enabled` \{#statecomposition-enabled\}
+- #### `StateDiffsWriter.Enabled` \{#statediffswriter-enabled\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --statecomposition-enabled [true|false]
-  --StateComposition.Enabled [true|false]
+  --statediffswriter-enabled [true|false]
+  --StateDiffsWriter.Enabled [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_ENABLED=true|false
+  NETHERMIND_STATEDIFFSWRITERCONFIG_ENABLED=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
-    "StateComposition": {
+    "StateDiffsWriter": {
       "Enabled": true|false
     }
   }
@@ -7764,224 +8575,61 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Enable state composition plugin Allowed values: `true` `false`. Defaults to `false`.
+  Enable the per-block state-diff writer. Allowed values: `true` `false`. Defaults to `false`.
 
-- #### `StateComposition.ExcludeStorage` \{#statecomposition-excludestorage\}
+- #### `StateDiffsWriter.KeepLastNBlocks` \{#statediffswriter-keeplastnblocks\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --statecomposition-excludestorage [true|false]
-  --StateComposition.ExcludeStorage [true|false]
+  --statediffswriter-keeplastnblocks <value>
+  --StateDiffsWriter.KeepLastNBlocks <value>
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_EXCLUDESTORAGE=true|false
+  NETHERMIND_STATEDIFFSWRITERCONFIG_KEEPLASTNBLOCKS=<value>
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
-    "StateComposition": {
-      "ExcludeStorage": true|false
+    "StateDiffsWriter": {
+      "KeepLastNBlocks": <value>
     }
   }
   ```
   </TabItem>
   </Tabs>
 
-  Skip storage trie traversal during scans Allowed values: `true` `false`. Defaults to `false`.
+  Number of most-recent blocks to retain in the BlockDiffs column family. Older entries are pruned by the background pruner. A consumer's catch-up should never need a window larger than this; lower for tighter disk budgets, raise if catch-up windows can exceed the default. Must be >= 0 (0 keeps nothing); a negative value disables pruning entirely. Defaults to `1000000`.
 
-- #### `StateComposition.InspectContractTimeoutSeconds` \{#statecomposition-inspectcontracttimeoutseconds\}
+- #### `StateDiffsWriter.PruneIntervalSeconds` \{#statediffswriter-pruneintervalseconds\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --statecomposition-inspectcontracttimeoutseconds <value>
-  --StateComposition.InspectContractTimeoutSeconds <value>
+  --statediffswriter-pruneintervalseconds <value>
+  --StateDiffsWriter.PruneIntervalSeconds <value>
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_INSPECTCONTRACTTIMEOUTSECONDS=<value>
+  NETHERMIND_STATEDIFFSWRITERCONFIG_PRUNEINTERVALSECONDS=<value>
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
-    "StateComposition": {
-      "InspectContractTimeoutSeconds": <value>
+    "StateDiffsWriter": {
+      "PruneIntervalSeconds": <value>
     }
   }
   ```
   </TabItem>
   </Tabs>
 
-  Timeout in seconds for a single statecomp_inspectContract RPC call. Long storage-trie walks that exceed this deadline are cancelled so the RPC worker is not pinned indefinitely. 0 or negative disables the timeout. Defaults to `30`.
-
-- #### `StateComposition.PersistSnapshots` \{#statecomposition-persistsnapshots\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --statecomposition-persistsnapshots [true|false]
-  --StateComposition.PersistSnapshots [true|false]
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_PERSISTSNAPSHOTS=true|false
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "StateComposition": {
-      "PersistSnapshots": true|false
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Persist incremental stats snapshots to disk for warm restart Allowed values: `true` `false`. Defaults to `true`.
-
-- #### `StateComposition.ScanMemoryBudgetBytes` \{#statecomposition-scanmemorybudgetbytes\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --statecomposition-scanmemorybudgetbytes <value>
-  --StateComposition.ScanMemoryBudgetBytes <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_SCANMEMORYBUDGETBYTES=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "StateComposition": {
-      "ScanMemoryBudgetBytes": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Memory budget for baseline scan in raw bytes (no suffix parsing). Minimum useful value ~1 MiB (1048576). Default 1 GB. Defaults to `1000000000`.
-
-- #### `StateComposition.ScanParallelism` \{#statecomposition-scanparallelism\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --statecomposition-scanparallelism <value>
-  --StateComposition.ScanParallelism <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_SCANPARALLELISM=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "StateComposition": {
-      "ScanParallelism": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Max parallel threads for baseline trie scan. Clamped to [1, 16]. Defaults to `ProcessorCount/2`.
-
-- #### `StateComposition.ScanQueueTimeoutSeconds` \{#statecomposition-scanqueuetimeoutseconds\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --statecomposition-scanqueuetimeoutseconds <value>
-  --StateComposition.ScanQueueTimeoutSeconds <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_SCANQUEUETIMEOUTSECONDS=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "StateComposition": {
-      "ScanQueueTimeoutSeconds": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Timeout in seconds to wait for a queued scan to acquire the lock. 0 or negative means fail-fast (no wait). Defaults to `5`.
-
-- #### `StateComposition.TopNContracts` \{#statecomposition-topncontracts\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --statecomposition-topncontracts <value>
-  --StateComposition.TopNContracts <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_TOPNCONTRACTS=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "StateComposition": {
-      "TopNContracts": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Number of top contracts to track per ranking category. Clamped to [1, 10000]. Defaults to `20`.
-
-- #### `StateComposition.TrackDepthIncrementally` \{#statecomposition-trackdepthincrementally\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --statecomposition-trackdepthincrementally [true|false]
-  --StateComposition.TrackDepthIncrementally [true|false]
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_STATECOMPOSITIONCONFIG_TRACKDEPTHINCREMENTALLY=true|false
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "StateComposition": {
-      "TrackDepthIncrementally": true|false
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Track per-depth trie distribution incrementally on every new head block Allowed values: `true` `false`. Defaults to `true`.
-
+  Interval in seconds between background pruner sweeps. The pruner removes BlockDiffs rows whose block number is older than (currentHead - KeepLastNBlocks). 0 or negative disables pruning. Defaults to `600`.
 
 ### Surge
 
@@ -8444,7 +9092,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Enable TDX attestation support. Allowed values: `true` `false`. Defaults to `false`.
 
-
 ### SurgeTdx
 
 - #### `SurgeTdx.ConfigPath` \{#surgetdx-configpath\}
@@ -8500,7 +9147,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Path to the tdxs Unix socket. Defaults to `/var/tdxs.sock`.
-
 
 ### Sync
 
@@ -8815,7 +9461,61 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Whether to enable receipts validation that checks for receipts that might be missing because of a bug. If needed, receipts are downloaded from the network. If `true`, the pivot number must be same one used originally as it's used as a cut-off point. Allowed values: `true` `false`. Defaults to `false`.
+  Whether to enable receipts validation that checks for receipts that might be missing because of a bug. If needed, receipts are downloaded from the network. The range to verify is `FixReceiptsStartingBlock`..`FixReceiptsLastBlock`. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Sync.FixReceiptsLastBlock` \{#sync-fixreceiptslastblock\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sync-fixreceiptslastblock <value>
+  --Sync.FixReceiptsLastBlock <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SYNCCONFIG_FIXRECEIPTSLASTBLOCK=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Sync": {
+      "FixReceiptsLastBlock": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The last block (inclusive) to verify/fix receipts for. When not set, defaults to the chain head minus 2, to which it's always clamped. Defaults to `null`.
+
+- #### `Sync.FixReceiptsStartingBlock` \{#sync-fixreceiptsstartingblock\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sync-fixreceiptsstartingblock <value>
+  --Sync.FixReceiptsStartingBlock <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SYNCCONFIG_FIXRECEIPTSSTARTINGBLOCK=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Sync": {
+      "FixReceiptsStartingBlock": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The first block (inclusive) to verify/fix receipts for. When not set, defaults to the ancient receipts barrier, which depends on the pivot number; in that case the pivot number must be the same one used originally as it's the cut-off point. Defaults to `null`.
 
 - #### `Sync.FixTotalDifficulty` \{#sync-fixtotaldifficulty\}
 
@@ -9223,7 +9923,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to make smaller requests, in Fast Blocks mode, to avoid Geth from disconnecting. On the Geth-heavy networks (e.g., Mainnet), it's  a desired behavior while on Nethermind- or OpenEthereum-heavy networks (Aura), it slows down the sync by a factor of ~4. Allowed values: `true` `false`. Defaults to `true`.
 
-
 ### TraceStore
 
 - #### `TraceStore.BlocksToKeep` \{#tracestore-blockstokeep\}
@@ -9335,16 +10034,14 @@ The configuration options are case-sensitive and can be defined only once unless
   The type of traces to store.
 
   Allowed values:
-
-    - `None`: None.
-    - `VmTrace`: Provides a full trace of the EVM state throughout the execution of transactions at each op-code, including subcalls.
-    - `StateDiff`: Provides Ethereum state difference detailing all altered portions of the state made due to the execution of transactions.
-    - `Trace`: Provides transaction trace, including subcalls.
-    - `Rewards`: Includes block rewards in the trace when tracing full blocks.
-    - `All`: Combines the `Rewards` `StateDiff` `Trace` `VmTrace` options.
+  - `None`: None.
+  - `VmTrace`: Provides a full trace of the EVM state throughout the execution of transactions at each op-code, including subcalls.
+  - `StateDiff`: Provides Ethereum state difference detailing all altered portions of the state made due to the execution of transactions.
+  - `Trace`: Provides transaction trace, including subcalls.
+  - `Rewards`: Includes block rewards in the trace when tracing full blocks.
+  - `All`: Combines the `Rewards` `StateDiff` `Trace` `VmTrace` options.
 
   Defaults to `Trace, Rewards`.
-
 
 ### TxPool
 
@@ -9430,11 +10127,10 @@ The configuration options are case-sensitive and can be defined only once unless
   The blobs support mode.
 
   Allowed values:
-
-    - `Disabled`: Disables support for blob transactions.
-    - `InMemory`: Stores the blob transactions in memory only.
-    - `Storage`: Stores the blob transactions in the permanent storage.
-    - `StorageWithReorgs`: Stores the blob transactions in the permanent storage with support for restoring reorganized transactions to the blob pool.
+  - `Disabled`: Disables support for blob transactions.
+  - `InMemory`: Stores the blob transactions in memory only.
+  - `Storage`: Stores the blob transactions in the permanent storage.
+  - `StorageWithReorgs`: Stores the blob transactions in the permanent storage with support for restoring reorganized transactions to the blob pool.
 
   Defaults to `StorageWithReorgs`.
 
@@ -9843,6 +10539,32 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The max number of transactions held in the mempool (the more transactions in the mempool, the more memory used). Defaults to `2048`.
 
+- #### `TxPool.SparseBlobProviderProbabilityPercent` \{#txpool-sparseblobproviderprobabilitypercent\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-sparseblobproviderprobabilitypercent <value>
+  --TxPool.SparseBlobProviderProbabilityPercent <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_SPARSEBLOBPROVIDERPROBABILITYPERCENT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "SparseBlobProviderProbabilityPercent": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The EIP-8070 full-provider selection probability for normal sparse blob-pool nodes, in percent. Values are clamped to the protocol-compliant range `15..100`. Nodes with at least 64 custody columns act as supernodes and request every announced cell. Defaults to `15`.
 
 ### Wallet
 
@@ -9872,7 +10594,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of autogenerated developer accounts to work with. Developer accounts have private keys from `00...01` to `00...n`. Defaults to `10`.
-
 
 <!--[end autogen]-->
 

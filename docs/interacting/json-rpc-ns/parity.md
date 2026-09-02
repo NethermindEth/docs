@@ -138,7 +138,9 @@ curl localhost:8545 \
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -174,9 +176,9 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `active`: _string_ (hex integer)
-  - `connected`: _string_ (hex integer)
-  - `max`: _string_ (hex integer)
+  - `active`: _integer_
+  - `connected`: _integer_
+  - `max`: _integer_
   - `peers`: array of _object_
     - `caps`: array of _string_
     - `id`: _string_
@@ -186,8 +188,8 @@ curl localhost:8545 \
       - `remoteAddress`: _string_
     - `protocols`: map of _object_
       - `difficulty`: _string_ (hex integer)
-      - `headHash`: _string_ (hash)
-      - `version`: _string_ (hex data)
+      - `head`: _string_ (hash)
+      - `version`: _integer_
 
 </TabItem>
 </Tabs>
@@ -240,26 +242,10 @@ curl localhost:8545 \
   - `hash`: _string_ (hash)
   - `input`: _string_ (hex data)
   - `nonce`: _string_ (hex integer)
-  - `publicKey`: _object_
-    - `address`: _string_ (address)
-    - `bytes`: _string_ (hex data)
-    - `hash`: _string_ (hash)
-    - `prefixedBytes`: _string_ (hex data)
-  - `r`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
+  - `publicKey`: _string_ (hex data)
+  - `r`: _string_ (hex data)
   - `raw`: _string_ (hex data)
-  - `s`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
+  - `s`: _string_ (hex data)
   - `standardV`: _string_ (hex integer)
   - `to`: _string_ (address)
   - `transactionIndex`: _string_ (hex integer)

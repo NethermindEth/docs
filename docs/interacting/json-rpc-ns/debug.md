@@ -45,7 +45,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_ (hex integer)
+`result`: _integer_
 
 </TabItem>
 </Tabs>
@@ -130,13 +130,6 @@ curl localhost:8545 \
     - `author`: _string_ (address)
     - `baseFeePerGas`: _string_ (hex integer)
     - `blobGasUsed`: _string_ (hex integer)
-    - `blockAccessList`: _object_
-      - `accountChanges`: _object_
-        - `count`: _string_ (hex integer)
-      - `itemCount`: _string_ (hex integer)
-      - `totalStorageChangeEvents`: _string_ (hex integer)
-      - `totalStorageReads`: _string_ (hex integer)
-      - `wireHash`: _string_ (hash)
     - `blockAccessListHash`: _string_ (hash)
     - `difficulty`: _string_ (hex integer)
     - `excessBlobGas`: _string_ (hex integer)
@@ -147,7 +140,7 @@ curl localhost:8545 \
     - `logsBloom`: _string_ (hex data)
     - `miner`: _string_ (address)
     - `mixHash`: _string_ (hash)
-    - `nonce`: _string_ (hex data)
+    - `nonce`: _string_ (8-byte hex data)
     - `number`: _string_ (hex integer)
     - `parentBeaconBlockRoot`: _string_ (hash)
     - `parentHash`: _string_ (hash)
@@ -158,7 +151,7 @@ curl localhost:8545 \
     - `size`: _string_ (hex integer)
     - `slotNumber`: _string_ (hex integer)
     - `stateRoot`: _string_ (hash)
-    - `step`: _string_ (hex integer)
+    - `step`: _integer_
     - `timestamp`: _string_ (hex integer)
     - `totalDifficulty`: _string_ (hex integer)
     - `transactions`: array of _object_
@@ -166,15 +159,31 @@ curl localhost:8545 \
     - `uncles`: array of _string_ (hash)
     - `withdrawals`: array of _object_
       - `address`: _string_ (address)
-      - `amountInGwei`: _string_ (hex integer)
-      - `amountInWei`: _string_ (hex integer)
+      - `amount`: _string_ (hex integer)
       - `index`: _string_ (hex integer)
       - `validatorIndex`: _string_ (hex integer)
     - `withdrawalsRoot`: _string_ (hash)
   - `generatedBlockAccessList`: _object_
-    - `accountChanges`: _object_
-      - `count`: _string_ (hex integer)
-    - `itemCount`: _string_ (hex integer)
+    - `accountChanges`: array of _object_
+      - `address`: _string_ (address)
+      - `balanceChanges`: array of _object_
+        - `index`: _integer_
+        - `value`: _string_ (hex integer)
+      - `codeChanges`: array of _object_
+        - `code`: _string_ (hex data)
+        - `codeHash`: _string_ (hash)
+        - `index`: _integer_
+      - `nonceChanges`: array of _object_
+        - `index`: _integer_
+        - `value`: _string_ (hex integer)
+      - `storageChanges`: array of _object_
+        - `changes`: array of _object_
+          - `index`: _integer_
+          - `value`: _object_
+            - `item`: _integer_
+        - `key`: _string_ (hex integer)
+      - `storageReads`: array of _string_ (hex integer)
+    - `itemCount`: _integer_
   - `hash`: _string_ (hash)
   - `rlp`: _string_ (hex data)
 
@@ -268,6 +277,8 @@ curl localhost:8545 \
 
 `result`: _object_
 
+`result` may be `null` in a successful response.
+
 </TabItem>
 </Tabs>
 
@@ -349,13 +360,7 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `memory`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
+  - `memory`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -437,7 +442,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _string_ (hex data)
+`result`: _object_
 
 </TabItem>
 </Tabs>
@@ -478,7 +483,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_
+`result`: _string_ (hex data)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -555,7 +562,7 @@ Insert receipts for the block after verifying receipts root correctness.
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
 
 
 </TabItem>
@@ -611,39 +618,19 @@ Replays a block and returns the world-state root after each transaction in execu
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -786,10 +773,11 @@ Retrieves geth like traces of the simulated blocks
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)
-        - `type`: _integer_
+        - `type`: _string_ (transaction type)
       - `stateOverrides`: map of _object_
         - `balance`: _string_ (hex integer)
         - `code`: _string_ (hex data)
+        - `hasStateChanges`: _boolean_
         - `movePrecompileToAddress`: _string_ (address)
         - `nonce`: _string_ (hex integer)
         - `state`: map of _string_ (hash)
@@ -814,39 +802,19 @@ Retrieves geth like traces of the simulated blocks
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -877,42 +845,80 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
+  - `author`: _string_ (address)
+  - `baseFeePerGas`: _string_ (hex integer)
+  - `blobGasUsed`: _string_ (hex integer)
+  - `blockAccessListHash`: _string_ (hash)
   - `calls`: array of _object_
     - `customTracerResult`: _object_
       - `value`: _object_
     - `entries`: array of _object_
-      - `depth`: _string_ (hex integer)
+      - `depth`: _integer_
       - `error`: _string_
-      - `gas`: _string_ (hex integer)
-      - `gasCost`: _string_ (hex integer)
-      - `memory`: array of _string_
-      - `opcode`: _string_
-      - `programCounter`: _string_ (hex integer)
-      - `stack`: array of _string_
-      - `storage`: map of _string_
+      - `gas`: _integer_
+      - `gasCost`: _integer_
+      - `memory`: array of _string_ (32-byte hex data)
+      - `op`: _string_
+      - `pc`: _integer_
+      - `refund`: _integer_
+      - `returnData`: _string_
+      - `stack`: array of _string_ (hex integer)
+      - `storage`: map of _string_ (32-byte hex data)
     - `failed`: _boolean_
     - `gas`: _string_ (hex integer)
     - `returnValue`: _string_ (hex data)
-    - `storagesByDepth`: array of map of _string_
     - `txHash`: _string_ (hash)
+  - `difficulty`: _string_ (hex integer)
+  - `excessBlobGas`: _string_ (hex integer)
+  - `extraData`: _string_ (hex data)
+  - `gasLimit`: _string_ (hex integer)
+  - `gasUsed`: _string_ (hex integer)
+  - `hash`: _string_ (hash)
+  - `logsBloom`: _string_ (hex data)
+  - `miner`: _string_ (address)
+  - `mixHash`: _string_ (hash)
+  - `nonce`: _string_ (8-byte hex data)
+  - `number`: _string_ (hex integer)
+  - `parentBeaconBlockRoot`: _string_ (hash)
+  - `parentHash`: _string_ (hash)
+  - `receiptsRoot`: _string_ (hash)
+  - `requestsHash`: _string_ (hash)
+  - `sha3Uncles`: _string_ (hash)
+  - `signature`: _string_ (hex data)
+  - `size`: _string_ (hex integer)
+  - `slotNumber`: _string_ (hex integer)
+  - `stateRoot`: _string_ (hash)
+  - `step`: _integer_
+  - `timestamp`: _string_ (hex integer)
+  - `totalDifficulty`: _string_ (hex integer)
   - `traces`: array of _object_
     - `customTracerResult`: _object_
       - `value`: _object_
     - `entries`: array of _object_
-      - `depth`: _string_ (hex integer)
+      - `depth`: _integer_
       - `error`: _string_
-      - `gas`: _string_ (hex integer)
-      - `gasCost`: _string_ (hex integer)
-      - `memory`: array of _string_
-      - `opcode`: _string_
-      - `programCounter`: _string_ (hex integer)
-      - `stack`: array of _string_
-      - `storage`: map of _string_
+      - `gas`: _integer_
+      - `gasCost`: _integer_
+      - `memory`: array of _string_ (32-byte hex data)
+      - `op`: _string_
+      - `pc`: _integer_
+      - `refund`: _integer_
+      - `returnData`: _string_
+      - `stack`: array of _string_ (hex integer)
+      - `storage`: map of _string_ (32-byte hex data)
     - `failed`: _boolean_
     - `gas`: _string_ (hex integer)
     - `returnValue`: _string_ (hex data)
-    - `storagesByDepth`: array of map of _string_
     - `txHash`: _string_ (hash)
+  - `transactions`: array of _object_
+  - `transactionsRoot`: _string_ (hash)
+  - `uncles`: array of _string_ (hash)
+  - `withdrawals`: array of _object_
+    - `address`: _string_ (address)
+    - `amount`: _string_ (hex integer)
+    - `index`: _string_ (hex integer)
+    - `validatorIndex`: _string_ (hex integer)
+  - `withdrawalsRoot`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -939,39 +945,19 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1028,39 +1014,19 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1117,39 +1083,19 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1183,19 +1129,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1223,39 +1170,19 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1289,19 +1216,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1329,39 +1257,19 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1395,19 +1303,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1427,7 +1336,7 @@ This method lets you run an eth_call within the context of the given block execu
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -1444,39 +1353,19 @@ This method lets you run an eth_call within the context of the given block execu
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1510,19 +1399,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1547,6 +1437,7 @@ Executes a list of bundles of transactions without creating transactions on the 
   - `stateOverrides`: map of _object_
     - `balance`: _string_ (hex integer)
     - `code`: _string_ (hex data)
+    - `hasStateChanges`: _boolean_
     - `movePrecompileToAddress`: _string_ (address)
     - `nonce`: _string_ (hex integer)
     - `state`: map of _string_ (hash)
@@ -1558,7 +1449,7 @@ Executes a list of bundles of transactions without creating transactions on the 
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -1575,39 +1466,19 @@ Executes a list of bundles of transactions without creating transactions on the 
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1641,19 +1512,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1681,39 +1553,19 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1747,19 +1599,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1772,7 +1625,7 @@ curl localhost:8545 \
 
 1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-2. `txIndex`: _string_ (hex integer)
+2. `txIndex`: _integer_
 
 3. `options`: _object_
     - `blockOverrides`: _object_
@@ -1787,39 +1640,19 @@ curl localhost:8545 \
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1853,19 +1686,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1878,7 +1712,7 @@ curl localhost:8545 \
 
 1. `blockHash`: _string_ (hash)
 
-2. `txIndex`: _string_ (hex integer)
+2. `txIndex`: _integer_
 
 3. `options`: _object_
     - `blockOverrides`: _object_
@@ -1893,39 +1727,19 @@ curl localhost:8545 \
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -1959,19 +1773,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1999,39 +1814,19 @@ curl localhost:8545 \
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -2065,19 +1860,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -2090,7 +1886,7 @@ curl localhost:8545 \
 
 1. `blockRlp`: _string_ (hex data)
 
-2. `txIndex`: _string_ (hex integer)
+2. `txIndex`: _integer_
 
 3. `options`: _object_
     - `blockOverrides`: _object_
@@ -2105,39 +1901,19 @@ curl localhost:8545 \
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
+      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
       - `stateDiff`: map of _string_ (hash)
     - `streamMode`: _boolean_
-    - `timeout`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
+    - `timeout`: _string_ (duration)
     - `tracer`: _string_
     - `tracerConfig`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `item`: _object_
-          <!--[circular ref]-->
-        - `valueKind`: _integer_
     - `txHash`: _string_ (hash)
 
 
@@ -2171,19 +1947,20 @@ curl localhost:8545 \
   - `customTracerResult`: _object_
     - `value`: _object_
   - `entries`: array of _object_
-    - `depth`: _string_ (hex integer)
+    - `depth`: _integer_
     - `error`: _string_
-    - `gas`: _string_ (hex integer)
-    - `gasCost`: _string_ (hex integer)
-    - `memory`: array of _string_
-    - `opcode`: _string_
-    - `programCounter`: _string_ (hex integer)
-    - `stack`: array of _string_
-    - `storage`: map of _string_
+    - `gas`: _integer_
+    - `gasCost`: _integer_
+    - `memory`: array of _string_ (32-byte hex data)
+    - `op`: _string_
+    - `pc`: _integer_
+    - `refund`: _integer_
+    - `returnData`: _string_
+    - `stack`: array of _string_ (hex integer)
+    - `storage`: map of _string_ (32-byte hex data)
   - `failed`: _boolean_
   - `gas`: _string_ (hex integer)
   - `returnValue`: _string_ (hex data)
-  - `storagesByDepth`: array of map of _string_
   - `txHash`: _string_ (hash)
 
 </TabItem>

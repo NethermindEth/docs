@@ -21,7 +21,7 @@ Executes a call against the state at the given block (analogous to `eth_call`) a
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -54,10 +54,9 @@ curl localhost:8545 \
 
 `result`: _object_
   - `error`: _object_
-    - `code`: _string_ (hex integer)
+    - `code`: _integer_
     - `data`: _object_
     - `message`: _string_
-    - `suppressWarning`: _boolean_
   - `result`: _string_ (hex data)
   - `witness`: _object_
     - `codes`: array of _string_ (hex data)
@@ -77,7 +76,8 @@ Returns the same payload as `eth_getProof` plus per-call diagnostics: `nodeLooku
 
 1. `accountAddress`: _string_ (address)
 
-2. `storageKeys`: array of _string_ (hex integer)
+2. `storageKeys`: _object_
+    - `count`: _integer_
 
 3. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -111,7 +111,7 @@ curl localhost:8545 \
 `result`: _object_
   - `meta`: _object_
     - `cacheHits`: _string_ (hex integer)
-    - `maxDepth`: _string_ (hex integer)
+    - `maxDepth`: _integer_
     - `nodeLookups`: _string_ (hex integer)
   - `proof`: _object_
     - `address`: _string_ (address)
@@ -122,15 +122,7 @@ curl localhost:8545 \
     - `storageProofs`: array of _object_
       - `key`: _string_
       - `proof`: array of _string_ (hex data)
-      - `value`: _object_
-        - `hasValue`: _boolean_
-        - `value`: _object_
-          - `isEmpty`: _boolean_
-          - `length`: _string_ (hex integer)
-          - `span`: _object_
-            - `isEmpty`: _boolean_
-            - `item`: _object_
-            - `length`: _string_ (hex integer)
+      - `value`: _string_ (hex data)
     - `storageRoot`: _string_ (hash)
 
 </TabItem>
@@ -183,7 +175,7 @@ curl localhost:8545 \
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
   - `txProof`: array of _string_ (hex data)
 
 </TabItem>
@@ -256,7 +248,7 @@ curl localhost:8545 \
     - `to`: _string_ (address)
     - `transactionHash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
   - `receiptProof`: array of _string_ (hex data)
   - `txProof`: array of _string_ (hex data)
 

@@ -52,16 +52,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -72,39 +63,21 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
+  - `blockNumber`: _integer_
   - `error`: _string_
   - `result`: _object_
     - `address`: _string_ (address)
     - `code`: _string_ (hex data)
     - `gasUsed`: _string_ (hex integer)
     - `output`: _string_ (hex data)
-  - `subtraces`: _string_ (hex integer)
-  - `traceAddress`: _object_
-    - `isNotNull`: _boolean_
-    - `isNotNullOrEmpty`: _boolean_
-    - `isNull`: _boolean_
-    - `isNullOrEmpty`: _boolean_
-    - `isUncapped`: _boolean_
-    - `item`: _string_ (hex integer)
-    - `length`: _string_ (hex integer)
-    - `underlyingArray`: array of _string_ (hex integer)
-    - `underlyingLength`: _string_ (hex integer)
+  - `subtraces`: _integer_
+  - `traceAddress`: array of _integer_
   - `transactionHash`: _string_ (hash)
-  - `transactionPosition`: _string_ (hex integer)
+  - `transactionPosition`: _integer_
   - `type`: _string_
 
 </TabItem>
@@ -122,7 +95,7 @@ curl localhost:8545 \
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `traceTypes`: array of _string_
 
@@ -131,6 +104,7 @@ curl localhost:8545 \
 4. `stateOverride`: map of _object_
   - `balance`: _string_ (hex integer)
   - `code`: _string_ (hex data)
+  - `hasStateChanges`: _boolean_
   - `movePrecompileToAddress`: _string_ (address)
   - `nonce`: _string_ (hex integer)
   - `state`: map of _string_ (hash)
@@ -172,16 +146,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -192,20 +157,11 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
-  - `stateChanges`: map of _object_
+  - `stateDiff`: map of _object_
     - `balance`: _object_
       - `after`: _string_ (hex integer)
       - `before`: _string_ (hex integer)
@@ -226,7 +182,7 @@ curl localhost:8545 \
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
-      - `pc`: _string_ (hex integer)
+      - `pc`: _integer_
       - `push`: array of _string_ (hex data)
       - `store`: _object_
         - `key`: _string_ (hex data)
@@ -255,7 +211,7 @@ Performs multiple traces on top of a block
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)
-        - `type`: _integer_
+        - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -295,16 +251,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -315,20 +262,11 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
-  - `stateChanges`: map of _object_
+  - `stateDiff`: map of _object_
     - `balance`: _object_
       - `after`: _string_ (hex integer)
       - `before`: _string_ (hex integer)
@@ -349,7 +287,7 @@ curl localhost:8545 \
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
-      - `pc`: _string_ (hex integer)
+      - `pc`: _integer_
       - `push`: array of _string_ (hex data)
       - `store`: _object_
         - `key`: _string_ (hex data)
@@ -367,8 +305,8 @@ curl localhost:8545 \
 <TabItem value="params" label="Parameters">
 
 1. `traceFilterForRpc`: _object_
-    - `after`: _string_ (hex integer)
-    - `count`: _string_ (hex integer)
+    - `after`: _integer_
+    - `count`: _integer_
     - `fromAddress`: array of _string_ (address)
     - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
     - `toAddress`: array of _string_ (address)
@@ -410,16 +348,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -430,39 +359,21 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
+  - `blockNumber`: _integer_
   - `error`: _string_
   - `result`: _object_
     - `address`: _string_ (address)
     - `code`: _string_ (hex data)
     - `gasUsed`: _string_ (hex integer)
     - `output`: _string_ (hex data)
-  - `subtraces`: _string_ (hex integer)
-  - `traceAddress`: _object_
-    - `isNotNull`: _boolean_
-    - `isNotNullOrEmpty`: _boolean_
-    - `isNull`: _boolean_
-    - `isNullOrEmpty`: _boolean_
-    - `isUncapped`: _boolean_
-    - `item`: _string_ (hex integer)
-    - `length`: _string_ (hex integer)
-    - `underlyingArray`: array of _string_ (hex integer)
-    - `underlyingLength`: _string_ (hex integer)
+  - `subtraces`: _integer_
+  - `traceAddress`: array of _integer_
   - `transactionHash`: _string_ (hash)
-  - `transactionPosition`: _string_ (hex integer)
+  - `transactionPosition`: _integer_
   - `type`: _string_
 
 </TabItem>
@@ -515,16 +426,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -535,39 +437,21 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
+  - `blockNumber`: _integer_
   - `error`: _string_
   - `result`: _object_
     - `address`: _string_ (address)
     - `code`: _string_ (hex data)
     - `gasUsed`: _string_ (hex integer)
     - `output`: _string_ (hex data)
-  - `subtraces`: _string_ (hex integer)
-  - `traceAddress`: _object_
-    - `isNotNull`: _boolean_
-    - `isNotNullOrEmpty`: _boolean_
-    - `isNull`: _boolean_
-    - `isNullOrEmpty`: _boolean_
-    - `isUncapped`: _boolean_
-    - `item`: _string_ (hex integer)
-    - `length`: _string_ (hex integer)
-    - `underlyingArray`: array of _string_ (hex integer)
-    - `underlyingLength`: _string_ (hex integer)
+  - `subtraces`: _integer_
+  - `traceAddress`: array of _integer_
   - `transactionHash`: _string_ (hash)
-  - `transactionPosition`: _string_ (hex integer)
+  - `transactionPosition`: _integer_
   - `type`: _string_
 
 </TabItem>
@@ -620,16 +504,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -640,20 +515,11 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
-  - `stateChanges`: map of _object_
+  - `stateDiff`: map of _object_
     - `balance`: _object_
       - `after`: _string_ (hex integer)
       - `before`: _string_ (hex integer)
@@ -674,7 +540,7 @@ curl localhost:8545 \
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
-      - `pc`: _string_ (hex integer)
+      - `pc`: _integer_
       - `push`: array of _string_ (hex data)
       - `store`: _object_
         - `key`: _string_ (hex data)
@@ -731,16 +597,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -751,20 +608,11 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
-  - `stateChanges`: map of _object_
+  - `stateDiff`: map of _object_
     - `balance`: _object_
       - `after`: _string_ (hex integer)
       - `before`: _string_ (hex integer)
@@ -785,7 +633,7 @@ curl localhost:8545 \
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
-      - `pc`: _string_ (hex integer)
+      - `pc`: _integer_
       - `push`: array of _string_ (hex data)
       - `store`: _object_
         - `key`: _string_ (hex data)
@@ -844,16 +692,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -864,20 +703,11 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
-  - `stateChanges`: map of _object_
+  - `stateDiff`: map of _object_
     - `balance`: _object_
       - `after`: _string_ (hex integer)
       - `before`: _string_ (hex integer)
@@ -898,7 +728,7 @@ curl localhost:8545 \
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
-      - `pc`: _string_ (hex integer)
+      - `pc`: _integer_
       - `push`: array of _string_ (hex data)
       - `store`: _object_
         - `key`: _string_ (hex data)
@@ -934,10 +764,11 @@ Returns parity like traces for simulated blocks
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)
-        - `type`: _integer_
+        - `type`: _string_ (transaction type)
       - `stateOverrides`: map of _object_
         - `balance`: _string_ (hex integer)
         - `code`: _string_ (hex data)
+        - `hasStateChanges`: _boolean_
         - `movePrecompileToAddress`: _string_ (address)
         - `nonce`: _string_ (hex integer)
         - `state`: map of _string_ (hash)
@@ -979,6 +810,10 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
+  - `author`: _string_ (address)
+  - `baseFeePerGas`: _string_ (hex integer)
+  - `blobGasUsed`: _string_ (hex integer)
+  - `blockAccessListHash`: _string_ (hash)
   - `calls`: array of _object_
     - `action`: _object_
       - `author`: _string_ (address)
@@ -988,16 +823,7 @@ curl localhost:8545 \
       - `from`: _string_ (address)
       - `gas`: _string_ (hex integer)
       - `includeInTrace`: _boolean_
-      - `input`: _object_
-        - `isNotNull`: _boolean_
-        - `isNotNullOrEmpty`: _boolean_
-        - `isNull`: _boolean_
-        - `isNullOrEmpty`: _boolean_
-        - `isUncapped`: _boolean_
-        - `item`: _string_ (hex data)
-        - `length`: _string_ (hex integer)
-        - `underlyingArray`: _string_ (hex data)
-        - `underlyingLength`: _string_ (hex integer)
+      - `input`: _string_ (hex data)
       - `isPrecompiled`: _boolean_
       - `result`: _object_
         - `address`: _string_ (address)
@@ -1008,22 +834,13 @@ curl localhost:8545 \
       - `subtraces`: array of _object_
         <!--[circular ref]-->
       - `to`: _string_ (address)
-      - `traceAddress`: _object_
-        - `isNotNull`: _boolean_
-        - `isNotNullOrEmpty`: _boolean_
-        - `isNull`: _boolean_
-        - `isNullOrEmpty`: _boolean_
-        - `isUncapped`: _boolean_
-        - `item`: _string_ (hex integer)
-        - `length`: _string_ (hex integer)
-        - `underlyingArray`: array of _string_ (hex integer)
-        - `underlyingLength`: _string_ (hex integer)
+      - `traceAddress`: array of _integer_
       - `type`: _string_
       - `value`: _string_ (hex integer)
     - `blockHash`: _string_ (hash)
-    - `blockNumber`: _string_ (hex integer)
+    - `blockNumber`: _integer_
     - `output`: _string_ (hex data)
-    - `stateChanges`: map of _object_
+    - `stateDiff`: map of _object_
       - `balance`: _object_
         - `after`: _string_ (hex integer)
         - `before`: _string_ (hex integer)
@@ -1037,7 +854,7 @@ curl localhost:8545 \
         - `after`: _string_ (hex data)
         - `before`: _string_ (hex data)
     - `transactionHash`: _string_ (hash)
-    - `transactionPosition`: _string_ (hex integer)
+    - `transactionPosition`: _integer_
     - `vmTrace`: _object_
       - `code`: _string_ (hex data)
       - `operations`: array of _object_
@@ -1045,7 +862,7 @@ curl localhost:8545 \
         - `memory`: _object_
           - `data`: _string_ (hex data)
           - `offset`: _string_ (hex integer)
-        - `pc`: _string_ (hex integer)
+        - `pc`: _integer_
         - `push`: array of _string_ (hex data)
         - `store`: _object_
           - `key`: _string_ (hex data)
@@ -1053,6 +870,29 @@ curl localhost:8545 \
         - `sub`: _object_
           <!--[circular ref]-->
         - `used`: _string_ (hex integer)
+  - `difficulty`: _string_ (hex integer)
+  - `excessBlobGas`: _string_ (hex integer)
+  - `extraData`: _string_ (hex data)
+  - `gasLimit`: _string_ (hex integer)
+  - `gasUsed`: _string_ (hex integer)
+  - `hash`: _string_ (hash)
+  - `logsBloom`: _string_ (hex data)
+  - `miner`: _string_ (address)
+  - `mixHash`: _string_ (hash)
+  - `nonce`: _string_ (8-byte hex data)
+  - `number`: _string_ (hex integer)
+  - `parentBeaconBlockRoot`: _string_ (hash)
+  - `parentHash`: _string_ (hash)
+  - `receiptsRoot`: _string_ (hash)
+  - `requestsHash`: _string_ (hash)
+  - `sha3Uncles`: _string_ (hash)
+  - `signature`: _string_ (hex data)
+  - `size`: _string_ (hex integer)
+  - `slotNumber`: _string_ (hex integer)
+  - `stateRoot`: _string_ (hash)
+  - `step`: _integer_
+  - `timestamp`: _string_ (hex integer)
+  - `totalDifficulty`: _string_ (hex integer)
   - `traces`: array of _object_
     - `action`: _object_
       - `author`: _string_ (address)
@@ -1062,16 +902,7 @@ curl localhost:8545 \
       - `from`: _string_ (address)
       - `gas`: _string_ (hex integer)
       - `includeInTrace`: _boolean_
-      - `input`: _object_
-        - `isNotNull`: _boolean_
-        - `isNotNullOrEmpty`: _boolean_
-        - `isNull`: _boolean_
-        - `isNullOrEmpty`: _boolean_
-        - `isUncapped`: _boolean_
-        - `item`: _string_ (hex data)
-        - `length`: _string_ (hex integer)
-        - `underlyingArray`: _string_ (hex data)
-        - `underlyingLength`: _string_ (hex integer)
+      - `input`: _string_ (hex data)
       - `isPrecompiled`: _boolean_
       - `result`: _object_
         - `address`: _string_ (address)
@@ -1082,22 +913,13 @@ curl localhost:8545 \
       - `subtraces`: array of _object_
         <!--[circular ref]-->
       - `to`: _string_ (address)
-      - `traceAddress`: _object_
-        - `isNotNull`: _boolean_
-        - `isNotNullOrEmpty`: _boolean_
-        - `isNull`: _boolean_
-        - `isNullOrEmpty`: _boolean_
-        - `isUncapped`: _boolean_
-        - `item`: _string_ (hex integer)
-        - `length`: _string_ (hex integer)
-        - `underlyingArray`: array of _string_ (hex integer)
-        - `underlyingLength`: _string_ (hex integer)
+      - `traceAddress`: array of _integer_
       - `type`: _string_
       - `value`: _string_ (hex integer)
     - `blockHash`: _string_ (hash)
-    - `blockNumber`: _string_ (hex integer)
+    - `blockNumber`: _integer_
     - `output`: _string_ (hex data)
-    - `stateChanges`: map of _object_
+    - `stateDiff`: map of _object_
       - `balance`: _object_
         - `after`: _string_ (hex integer)
         - `before`: _string_ (hex integer)
@@ -1111,7 +933,7 @@ curl localhost:8545 \
         - `after`: _string_ (hex data)
         - `before`: _string_ (hex data)
     - `transactionHash`: _string_ (hash)
-    - `transactionPosition`: _string_ (hex integer)
+    - `transactionPosition`: _integer_
     - `vmTrace`: _object_
       - `code`: _string_ (hex data)
       - `operations`: array of _object_
@@ -1119,7 +941,7 @@ curl localhost:8545 \
         - `memory`: _object_
           - `data`: _string_ (hex data)
           - `offset`: _string_ (hex integer)
-        - `pc`: _string_ (hex integer)
+        - `pc`: _integer_
         - `push`: array of _string_ (hex data)
         - `store`: _object_
           - `key`: _string_ (hex data)
@@ -1127,6 +949,15 @@ curl localhost:8545 \
         - `sub`: _object_
           <!--[circular ref]-->
         - `used`: _string_ (hex integer)
+  - `transactions`: array of _object_
+  - `transactionsRoot`: _string_ (hash)
+  - `uncles`: array of _string_ (hash)
+  - `withdrawals`: array of _object_
+    - `address`: _string_ (address)
+    - `amount`: _string_ (hex integer)
+    - `index`: _string_ (hex integer)
+    - `validatorIndex`: _string_ (hex integer)
+  - `withdrawalsRoot`: _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -1176,16 +1007,7 @@ curl localhost:8545 \
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
     - `includeInTrace`: _boolean_
-    - `input`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex data)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: _string_ (hex data)
-      - `underlyingLength`: _string_ (hex integer)
+    - `input`: _string_ (hex data)
     - `isPrecompiled`: _boolean_
     - `result`: _object_
       - `address`: _string_ (address)
@@ -1196,39 +1018,21 @@ curl localhost:8545 \
     - `subtraces`: array of _object_
       <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: _object_
-      - `isNotNull`: _boolean_
-      - `isNotNullOrEmpty`: _boolean_
-      - `isNull`: _boolean_
-      - `isNullOrEmpty`: _boolean_
-      - `isUncapped`: _boolean_
-      - `item`: _string_ (hex integer)
-      - `length`: _string_ (hex integer)
-      - `underlyingArray`: array of _string_ (hex integer)
-      - `underlyingLength`: _string_ (hex integer)
+    - `traceAddress`: array of _integer_
     - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
+  - `blockNumber`: _integer_
   - `error`: _string_
   - `result`: _object_
     - `address`: _string_ (address)
     - `code`: _string_ (hex data)
     - `gasUsed`: _string_ (hex integer)
     - `output`: _string_ (hex data)
-  - `subtraces`: _string_ (hex integer)
-  - `traceAddress`: _object_
-    - `isNotNull`: _boolean_
-    - `isNotNullOrEmpty`: _boolean_
-    - `isNull`: _boolean_
-    - `isNullOrEmpty`: _boolean_
-    - `isUncapped`: _boolean_
-    - `item`: _string_ (hex integer)
-    - `length`: _string_ (hex integer)
-    - `underlyingArray`: array of _string_ (hex integer)
-    - `underlyingLength`: _string_ (hex integer)
+  - `subtraces`: _integer_
+  - `traceAddress`: array of _integer_
   - `transactionHash`: _string_ (hash)
-  - `transactionPosition`: _string_ (hex integer)
+  - `transactionPosition`: _integer_
   - `type`: _string_
 
 </TabItem>

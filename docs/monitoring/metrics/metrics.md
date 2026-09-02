@@ -109,6 +109,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Total number of chain reorganizations
 
+- #### `nethermind_retained_receipt_bodies` \{#retained_receipt_bodies\}
+  
+  Number of receipt bodies retained in memory while awaiting durable state-history capture (receipt derivation only).
+
+- #### `nethermind_retained_receipt_body_bytes` \{#retained_receipt_body_bytes\}
+  
+  Estimated bytes held by the receipt bodies retained while awaiting durable state-history capture (receipt derivation only).
+
 - #### `nethermind_state_merkleization_time` \{#state_merkleization_time\}
   
   State root calculation time
@@ -157,6 +165,30 @@ Currently, Nethermind provides the following options to monitor and collect metr
   Database writes per database
 
 - #### `nethermind_detailed_metrics_enabled` \{#detailed_metrics_enabled\}
+- #### `nethermind_full_pruning_count` \{#full_pruning_count\}
+  
+  Number of full prunings completed since the node started.
+
+- #### `nethermind_full_pruning_last_duration_seconds` \{#full_pruning_last_duration_seconds\}
+  
+  Duration of the last full pruning's trie copy and commit (excludes waiting for a suitable state root), in seconds.
+
+- #### `nethermind_pre_block_cache_account_hits` \{#pre_block_cache_account_hits\}
+  
+  Number of pre-block (prewarmer-shared) cache hits for accounts, counted on the consumer scope only (populator probes excluded); first-in-block touches, so hits/(hits+misses) = prewarm coverage.
+
+- #### `nethermind_pre_block_cache_account_misses` \{#pre_block_cache_account_misses\}
+  
+  Number of pre-block (prewarmer-shared) cache misses for accounts, counted on the consumer scope only (populator probes excluded).
+
+- #### `nethermind_pre_block_cache_storage_hits` \{#pre_block_cache_storage_hits\}
+  
+  Number of pre-block (prewarmer-shared) cache hits for storage slots, counted on the consumer scope only (populator probes excluded); first-in-block touches, so hits/(hits+misses) = prewarm coverage.
+
+- #### `nethermind_pre_block_cache_storage_misses` \{#pre_block_cache_storage_misses\}
+  
+  Number of pre-block (prewarmer-shared) cache misses for storage slots, counted on the consumer scope only (populator probes excluded).
+
 - #### `nethermind_prewarmer_get_time` \{#prewarmer_get_time\}
   
   Prewarmer get operation times
@@ -264,10 +296,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of EVM exceptions thrown by contracts.
 
-- #### `nethermind_exp_opcode` \{#exp_opcode\}
-  
-  Number of EXP opcodes executed.
-
 - #### `nethermind_gas_price_ave` \{#gas_price_ave\}
   
   Mean tx gas price in block
@@ -283,10 +311,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_gas_price_min` \{#gas_price_min\}
   
   Minimum tx gas price in block
-
-- #### `nethermind_m_copy_opcode` \{#m_copy_opcode\}
-  
-  Number of MCOPY opcodes executed.
 
 - #### `nethermind_main_thread_calls` \{#main_thread_calls\}
   
@@ -368,10 +392,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of storage slot writes during execution.
 
-- #### `nethermind_tload_opcode` \{#tload_opcode\}
-  
-  Number of TLOAD opcodes executed.
-
 - #### `nethermind_total_background_tasks_dropped` \{#total_background_tasks_dropped\}
   
   Total number of background tasks dropped because queue was full.
@@ -383,10 +403,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_total_background_tasks_queued` \{#total_background_tasks_queued\}
   
   Total number of tasks queued for background execution.
-
-- #### `nethermind_tstore_opcode` \{#tstore_opcode\}
-  
-  Number of TSTORE opcodes executed.
 
 
 ### Evm.Precompiles
@@ -458,17 +474,17 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### History
 
+- #### `nethermind_block_access_list_heights_reclaimed` \{#block_access_list_heights_reclaimed\}
+  
+  The number of historical block access list heights reclaimed by pruning (since restart). Heights, not stored access lists - see BlockHeightsReclaimed.
+
 - #### `nethermind_block_access_list_pruning_cutoff_blocknumber` \{#block_access_list_pruning_cutoff_blocknumber\}
   
   The cutoff block number from which historical block access lists will be pruned.
 
-- #### `nethermind_block_access_lists_pruned` \{#block_access_lists_pruned\}
+- #### `nethermind_block_heights_reclaimed` \{#block_heights_reclaimed\}
   
-  The number of the historical block access lists that have been pruned (since restart).
-
-- #### `nethermind_blocks_pruned` \{#blocks_pruned\}
-  
-  The number of the historical blocks that have been pruned (since restart).
+  The number of historical block heights reclaimed by pruning (since restart). Heights, not stored blocks: a range is dropped in one operation and never learns how many of its heights held one.
 
 - #### `nethermind_oldest_stored_block_access_list_block_number` \{#oldest_stored_block_access_list_block_number\}
   
@@ -481,6 +497,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_pruning_cutoff_blocknumber` \{#pruning_cutoff_blocknumber\}
   
   The cutoff block number from which historical blocks will be pruned.
+
+- #### `nethermind_sliced_receipts_retained` \{#sliced_receipts_retained\}
+  
+  The number of historical heights kept past the pruning cutoff, with both their receipts and their body, because a configured slice address appeared in them (since restart). Counted from the bloom candidates, so a false positive is included.
+
+- #### `nethermind_transaction_index_entries_pruned` \{#transaction_index_entries_pruned\}
+  
+  The number of transaction index entries dropped because the block they name is no longer retained (since restart).
 
 
 ### JsonRpc
@@ -500,6 +524,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_json_rpc_invalid_requests` \{#json_rpc_invalid_requests\}
   
   Number of JSON RPC requests that were invalid.
+
+- #### `nethermind_json_rpc_overload_rejections` \{#json_rpc_overload_rejections\}
+  
+  Number of JSON RPC requests rejected or timed out at a concurrency cap (module pool or override-environment limit). A nonzero rate means callers receive 'Too many requests' — consider raising JsonRpc.EthModuleConcurrentInstances.
 
 - #### `nethermind_json_rpc_request_deserialization_failures` \{#json_rpc_request_deserialization_failures\}
   
@@ -595,6 +623,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of sent discovery message
 
+- #### `nethermind_discovery_messages_sent_by_protocol` \{#discovery_messages_sent_by_protocol\}
+  
+  Number of sent discovery messages by protocol
+
 - #### `nethermind_handshake_timeouts` \{#handshake_timeouts\}
   
   Number of devp2p handshake timeouts
@@ -658,9 +690,9 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Nodes that have been committed since the session start. These nodes may have been pruned, persisted or replaced.
 
-- #### `nethermind_deep_pruning_time` \{#deep_pruning_time\}
+- #### `nethermind_deep_pruning_time_ms` \{#deep_pruning_time_ms\}
   
-  Time taken by the last deep pruning.
+  Time taken by the last deep pruning, in milliseconds.
 
 - #### `nethermind_dirty_memory_used_by_cache` \{#dirty_memory_used_by_cache\}
   
@@ -694,17 +726,17 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Nodes that have been persisted since the session start.
 
-- #### `nethermind_persisted_node_pruning_time` \{#persisted_node_pruning_time\}
+- #### `nethermind_persisted_node_pruning_time_ms` \{#persisted_node_pruning_time_ms\}
   
-  Time taken by the last persisted node pruning.
+  Time taken by the last persisted node pruning, in milliseconds.
 
 - #### `nethermind_pruned_transient_nodes_count` \{#pruned_transient_nodes_count\}
   
   Nodes that have been removed from the cache during pruning because they were no longer needed.
 
-- #### `nethermind_pruning_time` \{#pruning_time\}
+- #### `nethermind_pruning_time_ms` \{#pruning_time_ms\}
   
-  Time taken by the last pruning.
+  Time taken by the last pruning, in milliseconds.
 
 - #### `nethermind_removed_node_count` \{#removed_node_count\}
   
@@ -714,9 +746,9 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of nodes that have been exactly the same as other nodes in the cache when committing.
 
-- #### `nethermind_snapshot_persistence_time` \{#snapshot_persistence_time\}
+- #### `nethermind_snapshot_persistence_time_ms` \{#snapshot_persistence_time_ms\}
   
-  Time taken by the last snapshot persistence.
+  Time taken by the last snapshot persistence, in milliseconds.
 
 
 ### Runner
@@ -798,6 +830,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### State.Flat
 
+- #### `nethermind_active_persisted_snapshot_count` \{#active_persisted_snapshot_count\}
+  
+  Number of live PersistedSnapshot instances (refcount > 0), by tier
+
 - #### `nethermind_active_pooled_resource` \{#active_pooled_resource\}
   
   Active pooled resources by category and type
@@ -805,6 +841,30 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_active_snapshot_bundle` \{#active_snapshot_bundle\}
   
   Active snapshot bundles
+
+- #### `nethermind_arena_allocated_bytes` \{#arena_allocated_bytes\}
+  
+  Allocated bytes in arena files (sum of per-file Frontier)
+
+- #### `nethermind_arena_file_count` \{#arena_file_count\}
+  
+  Number of arena (mmap metadata) files backing persisted snapshots
+
+- #### `nethermind_arena_reservation_bytes` \{#arena_reservation_bytes\}
+  
+  Live arena reservation bytes
+
+- #### `nethermind_arena_reservation_count` \{#arena_reservation_count\}
+  
+  Live arena reservations
+
+- #### `nethermind_blob_allocated_bytes` \{#blob_allocated_bytes\}
+  
+  Allocated bytes in blob files (sum of per-file Frontier)
+
+- #### `nethermind_blob_file_count` \{#blob_file_count\}
+  
+  Number of blob (pread RLP) files backing persisted snapshots
 
 - #### `nethermind_cached_pooled_resource` \{#cached_pooled_resource\}
   
@@ -822,9 +882,37 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Estimated memory used by compacted snapshot dictionaries in bytes
 
+- #### `nethermind_compactor_stall_time` \{#compactor_stall_time\}
+  
+  Time block processing stalled waiting for the compactor job channel to drain (Stopwatch ticks)
+
 - #### `nethermind_created_pooled_resource` \{#created_pooled_resource\}
   
   Created pooled resources by category and type
+
+- #### `nethermind_flat_history_capture_disabled` \{#flat_history_capture_disabled\}
+  
+  1 when history capture has self-disabled (permanent gap, reorged capture, or repeated write failures); as-of reads above the watermark are refused until the flatHistory DB is resynced
+
+- #### `nethermind_flat_history_floor` \{#flat_history_floor\}
+  
+  Lowest block still answerable from flat history (the retention floor); 0 when no window is configured or none has been pruned yet
+
+- #### `nethermind_flat_history_poisoned_destructs` \{#flat_history_poisoned_destructs\}
+  
+  Number of accounts whose storage history was poisoned because a self-destruct exceeded the per-slot enumeration cap; storage reads below those blocks fail closed for that account
+
+- #### `nethermind_flat_history_prune_passes_yielded` \{#flat_history_prune_passes_yielded\}
+  
+  Number of history window pruner passes that left work for the next pass - the wall-clock budget expired mid-sweep, a floor drain did not finish inside it, or a completed cycle found the floor had advanced under it and queued the next cycle
+
+- #### `nethermind_flat_history_pruned_rows` \{#flat_history_pruned_rows\}
+  
+  Number of rows deleted by the history window pruner
+
+- #### `nethermind_flat_history_watermark` \{#flat_history_watermark\}
+  
+  Highest block whose state history is captured (the contiguous-from-genesis watermark); 0 when history is disabled or empty
 
 - #### `nethermind_flat_persistence_snapshot_size` \{#flat_persistence_snapshot_size\}
   
@@ -842,9 +930,85 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Importer entries count flat
 
+- #### `nethermind_page_tracker_evictions_dispatched` \{#page_tracker_evictions_dispatched\}
+  
+  Page-tracker evictions dispatched off the drain ring (madvise issued)
+
+- #### `nethermind_page_tracker_evictions_inline_fallback` \{#page_tracker_evictions_inline_fallback\}
+  
+  Page-tracker evictions dispatched inline because the drain ring was full
+
+- #### `nethermind_page_tracker_metadata_bytes` \{#page_tracker_metadata_bytes\}
+  
+  Unmanaged metadata bytes used by the page-residency tracker (slot + meta arrays)
+
+- #### `nethermind_page_tracker_pages_refreshed` \{#page_tracker_pages_refreshed\}
+  
+  Page-tracker resident pages re-touched by the keep-warm hand to hold their page-cache position
+
+- #### `nethermind_page_tracker_resident_bytes` \{#page_tracker_resident_bytes\}
+  
+  Currently-bounded resident bytes in the page-residency tracker
+
+- #### `nethermind_persisted_snapshot_bloom_count` \{#persisted_snapshot_bloom_count\}
+  
+  Number of live persisted-snapshot bloom filters (one per RefCountedBloomFilter; a bloom shared across snapshots counts once)
+
+- #### `nethermind_persisted_snapshot_bloom_memory` \{#persisted_snapshot_bloom_memory\}
+  
+  Memory used by per-snapshot blooms (address/slot/self-destruct/trie) in bytes
+
+- #### `nethermind_persisted_snapshot_compact_time` \{#persisted_snapshot_compact_time\}
+  
+  Persisted-snapshot compaction wall-clock time, by compact size
+
+- #### `nethermind_persisted_snapshot_compacted_size` \{#persisted_snapshot_compacted_size\}
+  
+  Persisted-snapshot compaction output size, by compact size
+
+- #### `nethermind_persisted_snapshot_compactions` \{#persisted_snapshot_compactions\}
+  
+  Number of persisted snapshot compactions performed
+
+- #### `nethermind_persisted_snapshot_convert_time` \{#persisted_snapshot_convert_time\}
+  
+  Time to convert one in-memory snapshot into a persisted snapshot
+
+- #### `nethermind_persisted_snapshot_count` \{#persisted_snapshot_count\}
+  
+  Number of persisted snapshots on disk, by tier
+
+- #### `nethermind_persisted_snapshot_memory` \{#persisted_snapshot_memory\}
+  
+  Estimated memory used by persisted snapshots in bytes, by tier
+
+- #### `nethermind_persisted_snapshot_prunes` \{#persisted_snapshot_prunes\}
+  
+  Number of persisted snapshot prunes
+
+- #### `nethermind_persisted_snapshot_size` \{#persisted_snapshot_size\}
+  
+  Persisted-snapshot byte size
+
+- #### `nethermind_read_only_snapshot_bundle_skip_time` \{#read_only_snapshot_bundle_skip_time\}
+  
+  Time spent skipping accounts/slots/state-rlp/storage-rlp on a read-only snapshot bundle access, by part
+
 - #### `nethermind_read_only_snapshot_bundle_times` \{#read_only_snapshot_bundle_times\}
   
   Readonly snapshot bundle times
+
+- #### `nethermind_snapshot_bundle_block_number_depth` \{#snapshot_bundle_block_number_depth\}
+  
+  Snapshot-bundle depth in blocks, by part (in_memory / persisted)
+
+- #### `nethermind_snapshot_bundle_persisted_snapshot_memory` \{#snapshot_bundle_persisted_snapshot_memory\}
+  
+  Total persisted-snapshot reservation bytes in the most recently assembled read-only snapshot bundle (the bytes a tip reader pays for)
+
+- #### `nethermind_snapshot_bundle_persisted_snapshot_size` \{#snapshot_bundle_persisted_snapshot_size\}
+  
+  Number of persisted snapshots in the most recently assembled snapshot bundle
 
 - #### `nethermind_snapshot_bundle_size` \{#snapshot_bundle_size\}
   
@@ -863,135 +1027,35 @@ Currently, Nethermind provides the following options to monitor and collect metr
   Total estimated snapshot memory in bytes
 
 
-### StateComposition
+### StateDiffsWriter
 
-- #### `nethermind_state_comp_account_branch_occupancy` \{#state_comp_account_branch_occupancy\}
+- #### `nethermind_state_diffs_writer_blocks_written_total` \{#state_diffs_writer_blocks_written_total\}
   
-  Account trie branch nodes grouped by child count
+  Total blocks for which a BlockDiffRecord was successfully written
 
-- #### `nethermind_state_comp_account_trie_branches` \{#state_comp_account_trie_branches\}
+- #### `nethermind_state_diffs_writer_encode_errors_total` \{#state_diffs_writer_encode_errors_total\}
   
-  Branch nodes in account trie
+  BlockDiffRecord encode/write failures, broken down by reason
 
-- #### `nethermind_state_comp_account_trie_bytes` \{#state_comp_account_trie_bytes\}
+- #### `nethermind_state_diffs_writer_head_lag_blocks` \{#state_diffs_writer_head_lag_blocks\}
   
-  Total bytes of account trie nodes
+  Difference between chain head and last block written by the diffs writer
 
-- #### `nethermind_state_comp_account_trie_extensions` \{#state_comp_account_trie_extensions\}
+- #### `nethermind_state_diffs_writer_last_block` \{#state_diffs_writer_last_block\}
   
-  Extension nodes in account trie
+  Highest block number written to the BlockDiffs CF
 
-- #### `nethermind_state_comp_account_trie_leaves` \{#state_comp_account_trie_leaves\}
+- #### `nethermind_state_diffs_writer_payload_bytes_total` \{#state_diffs_writer_payload_bytes_total\}
   
-  Leaf nodes in account trie
+  Cumulative bytes of BlockDiffRecord payloads written to RocksDB
 
-- #### `nethermind_state_comp_accounts_total` \{#state_comp_accounts_total\}
+- #### `nethermind_state_diffs_writer_pruner_rows_removed_total` \{#state_diffs_writer_pruner_rows_removed_total\}
   
-  Total accounts in state
+  Total BlockDiffs CF rows removed by the background pruner
 
-- #### `nethermind_state_comp_avg_account_path_depth` \{#state_comp_avg_account_path_depth\}
+- #### `nethermind_state_diffs_writer_reorgs_total` \{#state_diffs_writer_reorgs_total\}
   
-  Weighted average depth of account trie leaf paths
-
-- #### `nethermind_state_comp_avg_branch_occupancy` \{#state_comp_avg_branch_occupancy\}
-  
-  Average children per account-trie branch node
-
-- #### `nethermind_state_comp_avg_storage_path_depth` \{#state_comp_avg_storage_path_depth\}
-  
-  Weighted average depth of storage trie leaf paths
-
-- #### `nethermind_state_comp_baseline_invalidations` \{#state_comp_baseline_invalidations\}
-  
-  Times the incremental baseline was detected as stale (prevRoot missing from DB) and auto-rescan was scheduled
-
-- #### `nethermind_state_comp_code_bytes_total` \{#state_comp_code_bytes_total\}
-  
-  Aggregate contract bytecode size, deduplicated by code hash
-
-- #### `nethermind_state_comp_contracts_total` \{#state_comp_contracts_total\}
-  
-  Total contracts (accounts with code)
-
-- #### `nethermind_state_comp_contracts_with_storage` \{#state_comp_contracts_with_storage\}
-  
-  Contracts with non-empty storage
-
-- #### `nethermind_state_comp_diff_errors` \{#state_comp_diff_errors\}
-  
-  Total diff computation errors
-
-- #### `nethermind_state_comp_diffs_applied` \{#state_comp_diffs_applied\}
-  
-  Total incremental diffs applied
-
-- #### `nethermind_state_comp_diffs_since_baseline` \{#state_comp_diffs_since_baseline\}
-  
-  Diffs applied since last full scan
-
-- #### `nethermind_state_comp_empty_accounts` \{#state_comp_empty_accounts\}
-  
-  Accounts with no code and no storage
-
-- #### `nethermind_state_comp_incremental_block` \{#state_comp_incremental_block\}
-  
-  Block number of latest incremental update
-
-- #### `nethermind_state_comp_max_account_depth` \{#state_comp_max_account_depth\}
-  
-  Deepest occupied level of the account trie
-
-- #### `nethermind_state_comp_max_storage_depth` \{#state_comp_max_storage_depth\}
-  
-  Deepest occupied level across all storage tries (Geth convention: raw depth + 1)
-
-- #### `nethermind_state_comp_scan_block` \{#state_comp_scan_block\}
-  
-  Block number of last completed full scan
-
-- #### `nethermind_state_comp_scan_duration_seconds` \{#state_comp_scan_duration_seconds\}
-  
-  Duration of last completed full scan in seconds
-
-- #### `nethermind_state_comp_scan_missing_nodes` \{#state_comp_scan_missing_nodes\}
-  
-  Times a full or contract scan encountered a missing trie node (pruned/corrupt DB); the resulting stats are incomplete
-
-- #### `nethermind_state_comp_scans_completed` \{#state_comp_scans_completed\}
-  
-  Total full scans completed
-
-- #### `nethermind_state_comp_slot_count_histogram` \{#state_comp_slot_count_histogram\}
-  
-  Contracts grouped by log2 storage slot count bucket
-
-- #### `nethermind_state_comp_storage_slots_total` \{#state_comp_storage_slots_total\}
-  
-  Total storage slots across all contracts
-
-- #### `nethermind_state_comp_storage_trie_branches` \{#state_comp_storage_trie_branches\}
-  
-  Branch nodes in all storage tries
-
-- #### `nethermind_state_comp_storage_trie_bytes` \{#state_comp_storage_trie_bytes\}
-  
-  Total bytes of all storage trie nodes
-
-- #### `nethermind_state_comp_storage_trie_extensions` \{#state_comp_storage_trie_extensions\}
-  
-  Extension nodes in all storage tries
-
-- #### `nethermind_state_comp_storage_trie_leaves` \{#state_comp_storage_trie_leaves\}
-  
-  Leaf nodes in all storage tries
-
-- #### `nethermind_state_comp_trie_depth_bytes` \{#state_comp_trie_depth_bytes\}
-  
-  Trie bytes per depth
-
-- #### `nethermind_state_comp_trie_depth_nodes` \{#state_comp_trie_depth_nodes\}
-  
-  Trie nodes per depth, by trie and node kind
+  New-head events that did not build on the last-written block (reorg or non-contiguous jump)
 
 
 ### Synchronization
@@ -1003,6 +1067,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_sync_peers` \{#sync_peers\}
   
   Number of sync peers.
+
+- #### `nethermind_sync_time_in_mode_seconds` \{#sync_time_in_mode_seconds\}
+  
+  Cumulative wall-clock seconds spent with each sync mode active. Modes can overlap, so the sum across modes may exceed the total sync time; retained after sync completes.
 
 
 ### Trie

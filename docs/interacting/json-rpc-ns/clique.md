@@ -325,7 +325,7 @@ curl localhost:8545 \
   - `signers`: map of _string_ (hex integer)
   - `tally`: map of _object_
     - `authorize`: _boolean_
-    - `votes`: _string_ (hex integer)
+    - `votes`: _integer_
   - `votes`: array of _object_
     - `address`: _string_ (address)
     - `authorize`: _boolean_
@@ -378,7 +378,7 @@ curl localhost:8545 \
   - `signers`: map of _string_ (hex integer)
   - `tally`: map of _object_
     - `authorize`: _boolean_
-    - `votes`: _string_ (hex integer)
+    - `votes`: _integer_
   - `votes`: array of _object_
     - `address`: _string_ (address)
     - `authorize`: _boolean_
@@ -459,7 +459,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _boolean_
+`result`: map of _boolean_
 
 </TabItem>
 </Tabs>

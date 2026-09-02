@@ -18,10 +18,10 @@ Calculate the state root on top of the state trie at specified block given a set
 
 2. `accountDiff`: map of _object_
   - `balance`: _string_ (hex integer)
-  - `changedSlots`: map of _string_ (hex integer)
-  - `codeHash`: _string_ (hash)
+  - `changed_slots`: map of _string_ (hex integer)
+  - `code_hash`: _string_ (hash)
   - `nonce`: _string_ (hex integer)
-  - `selfDestructed`: _boolean_
+  - `self_destructed`: _boolean_
 
 
 </TabItem>
@@ -95,8 +95,10 @@ curl localhost:8545 \
 
 `result`: _object_
   - `balance`: _string_ (hex integer)
-  - `codeHash`: _string_ (hash)
+  - `code_hash`: _string_ (hash)
   - `nonce`: _string_ (hex integer)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
