@@ -19,7 +19,15 @@ Removing history that is already stored is a separate, opt-in step controlled by
 - `UseAncientBarriers` — removes stored block bodies and receipts below the lower of the two ancient barriers.
 - `Rolling` — keeps a moving window of the most recent [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) epochs and prunes below it as the head advances. The configured window must be at least the `minHistoryRetentionEpochs` chainspec parameter of the network, and a node that has just synced only starts pruning once its stored history grows past the window.
 
+Pruning publishes the new retention boundary first and reclaims the space below it in the background, in bounded passes that do not block block processing. Disk space returns gradually as the database rewrites its files.
+
 Pruning never removes the genesis block or anything at or above the sync pivot. Use [`History.PruningInterval`](./configuration.md#history-pruninginterval) and [`History.PruningTimeoutSeconds`](./configuration.md#history-pruningtimeoutseconds) to control how often it runs and how long a single pass may take.
+
+Blocks containing any address in [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) retain their receipts and bodies beyond the rolling window, so logs and transactions for those contracts stay answerable; see [Archive nodes](./archive-nodes.md).
+
+`eth_getLogs` over a range covering pruned heights returns an error rather than silently returning fewer logs than the range holds, and block queries below the earliest block the node still serves answer with a pruned-history error.
+
+`History.Pruning` removes blocks and receipts only. Historical state has its own, independent retention; see [Archive nodes](./archive-nodes.md).
 
 ## Era1 format
 
