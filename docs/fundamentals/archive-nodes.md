@@ -13,7 +13,7 @@ Two independent groups of configuration options compose:
 ## Archive shapes
 
 - **Full archive** answers every historical query at every height, state and receipts, from genesis.
-- **Windowed archive** answers everything a full archive does, but only for the last [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) blocks. Older queries are refused with a pruned-history error - never answered wrongly from live state. Disk stays bounded: the pruner reclaims continuously as the window rolls.
+- **Windowed archive** answers everything a full archive does, but only for the last [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) blocks, with [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) set to `Rolling`. Older queries are refused with a pruned-history error - never answered wrongly from live state. Disk stays bounded: the pruner reclaims continuously as the window rolls.
 - **Address-slice archive** is a windowed node whose named contracts additionally answer to their full slice depth - state, logs, and transactions - while everything else rolls with the window.
 
 ## Configuration
@@ -24,7 +24,8 @@ Each option is documented in its own section of the [configuration reference](./
 |---|---|---|---|---|
 | [`FlatDb.Enabled`](./configuration.md#flatdb-enabled) | `true` | `true` | `true` | The flat database itself. |
 | [`FlatDb.HistoryEnabled`](./configuration.md#flatdb-historyenabled) | `true` | `true` | `true` | Captures the per-block state changesets. |
-| [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) | `0` (default) | the window size, in blocks | the window size, in blocks | The state-history window; `0` keeps state history from genesis. |
+| [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) | `None` (default) | `Rolling` | `Rolling` | Whether flat history is kept unbounded or in a rolling window. |
+| [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) | - | the window size, in blocks | the window size, in blocks | Size of the rolling window. Required with `Rolling`, rejected otherwise. |
 | [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) | unset | unset | the sliced addresses | Contracts kept queryable beyond the general window. |
 | [`History.Pruning`](./configuration.md#history-pruning) | `Disabled` (default) | `Rolling` | `Rolling` | Block-and-receipt expiry; see [History pruning](./history-pruning.md). |
 | [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | the retention window, in epochs | the retention window, in epochs | How much block-and-receipt history the rolling pruner keeps. |
@@ -36,7 +37,7 @@ Each option is documented in its own section of the [configuration reference](./
 Every archive setting is default-off: a node that configures none of them behaves exactly as before.
 
 :::warning Important
-Setting `FlatDb.HistoryRetentionBlocks` to a non-zero value selects the windowed row format and requires fresh flat history: enabling it on an existing unwindowed flat-history database is refused, and there is no in-place conversion. Start with a fresh sync.
+`FlatDb.HistoryRetention=Rolling` selects the windowed row format and requires fresh flat history: enabling it on an existing unwindowed flat-history database is refused, and there is no in-place conversion. Start with a fresh sync.
 :::
 
 :::warning Important
