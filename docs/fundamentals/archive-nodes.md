@@ -30,7 +30,7 @@ Each option is documented in its own section of the [configuration reference](./
 | [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | the retention window, in epochs | the retention window, in epochs | How much block-and-receipt history the rolling pruner keeps. |
 | [`LogIndex.Enabled`](./configuration.md#logindex-enabled) | recommended | recommended | recommended | The index behind fast `eth_getLogs`. |
 | [`Receipt.TxLookupLimit`](./configuration.md#receipt-txlookuplimit) | `0` | `0` | `0` | `0` keeps the transaction-hash lookup index for every stored height. |
-| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional | - | - | The receiptless variant; see [Receiptless archive](#receiptless-archive). |
+| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional; not indexable | - | - | The receiptless variant; see [Receiptless archive](#receiptless-archive). |
 | [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) / [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) | `0` | - | - | A full archive that should serve receipts from genesis must also download them. |
 
 Every archive setting is default-off: a node that configures none of them behaves exactly as before.
@@ -61,6 +61,7 @@ On an address-slice node, reads below the general window serve only the sliced a
 - A skipped receipt is retained in memory until history capture durably covers its block, and is persisted if capture permanently stops, so a capture breakdown does not lose receipts.
 - A query that misses the cache costs a full block execution, so a public endpoint should be rate limited; concurrency is bounded by [`JsonRpc.EthModuleConcurrentInstances`](./configuration.md#jsonrpc-ethmoduleconcurrentinstances).
 - Peers are told no receipts are available.
+- The log index does not cover blocks whose receipts were skipped: its builder reads stored receipts without regenerating them, so it stops advancing where they are absent. `eth_getLogs` over those heights falls back to scanning block blooms and re-executing every candidate block, bloom false positives included. Keep receipts on nodes where `eth_getLogs` matters.
 
 ## Notes
 
