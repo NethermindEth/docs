@@ -15,26 +15,26 @@ Two independent groups of configuration options compose:
 - **Full archive** answers every historical query at every height, state and receipts, from genesis.
 - **Windowed archive** answers everything a full archive does, but only for the last [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) blocks, with [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) set to `Rolling`. Older queries are refused with a pruned-history error - never answered wrongly from live state. Disk stays bounded: the pruner reclaims continuously as the window rolls.
 - **Address-slice archive** is a windowed node whose named contracts additionally answer to their full slice depth - state, logs, and transactions - while everything else rolls with the window.
-- **Since-block archive** keeps everything from a fixed block onward, forever: set [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) to `SinceBlock` and [`FlatDb.HistoryRetentionSinceBlock`](./configuration.md#flatdb-historyretentionsinceblock) to that block. Nothing below it is captured and queries there fail closed; nothing above it is ever pruned. For blocks and receipts from the same point, use `History.Pruning=UseAncientBarriers` with the ancient barriers set to that block; see [History pruning](./history-pruning.md). Slices (`FlatDb.HistorySliceAddresses`) keep their block-and-receipt retention in this mode; their flat-history side has nothing to keep, since nothing is ever pruned. This suits operators whose indexers only need history from a known starting point that never moves.
+- **Since-block archive** keeps everything from a fixed block onward, forever: set [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) to `SinceBlock` and [`FlatDb.HistoryRetentionSinceBlock`](./configuration.md#flatdb-historyretentionsinceblock) to that block. Nothing below it is captured and queries there fail closed; nothing above it is ever pruned. Tracing a block replays it over the state of its parent, so a node that must trace from a given block sets the floor one block below it. For blocks and receipts from the same point, use `History.Pruning=UseAncientBarriers` with the ancient barriers set to that block; see [History pruning](./history-pruning.md). Slices (`FlatDb.HistorySliceAddresses`) keep their block-and-receipt retention in this mode; their flat-history side has nothing to keep, since nothing is ever pruned. This suits operators whose indexers only need history from a known starting point that never moves.
 
 ## Configuration
 
 Each option is documented in its own section of the [configuration reference](./configuration.md); this page is the archive-node view of them. The table shows which options make up each shape - follow the links for what every option does.
 
-| Setting | Full archive | Windowed archive | Address-slice archive | Role |
-|---|---|---|---|---|
-| [`FlatDb.Enabled`](./configuration.md#flatdb-enabled) | `true` | `true` | `true` | The flat database itself. |
-| [`FlatDb.HistoryEnabled`](./configuration.md#flatdb-historyenabled) | `true` | `true` | `true` | Captures the per-block state changesets. |
-| [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) | `None` (default) | `Rolling` | `Rolling` | Whether flat history is kept unbounded, in a rolling window, or from a fixed block onward (`SinceBlock`, see below). |
-| [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) | - | the window size, in blocks | the window size, in blocks | Size of the rolling window. Required with `Rolling`, rejected otherwise. |
-| [`FlatDb.HistoryRetentionSinceBlock`](./configuration.md#flatdb-historyretentionsinceblock) | - | - | - | First block to keep. Required with `SinceBlock`, rejected otherwise. |
-| [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) | unset | unset | the sliced addresses | Contracts kept queryable beyond the general window. |
-| [`History.Pruning`](./configuration.md#history-pruning) | `Disabled` (default) | `Rolling` | `Rolling` | Block-and-receipt expiry; see [History pruning](./history-pruning.md). |
-| [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | the retention window, in epochs | the retention window, in epochs | How much block-and-receipt history the rolling pruner keeps. |
-| [`LogIndex.Enabled`](./configuration.md#logindex-enabled) | recommended | recommended | recommended | The index behind fast `eth_getLogs`. |
-| [`Receipt.TxLookupLimit`](./configuration.md#receipt-txlookuplimit) | `0` | `0` | `0` | `0` keeps the transaction-hash lookup index for every stored height. |
-| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional; not indexable | - | - | The receiptless variant; see [Receiptless archive](#receiptless-archive). |
-| [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) / [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) | `0` | - | - | A full archive that should serve receipts from genesis must also download them. |
+| Setting | Full archive | Windowed archive | Address-slice archive | Since-block archive | Role |
+|---|---|---|---|---|---|
+| [`FlatDb.Enabled`](./configuration.md#flatdb-enabled) | `true` | `true` | `true` | `true` | The flat database itself. |
+| [`FlatDb.HistoryEnabled`](./configuration.md#flatdb-historyenabled) | `true` | `true` | `true` | `true` | Captures the per-block state changesets. |
+| [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) | `None` (default) | `Rolling` | `Rolling` | `SinceBlock` | Whether flat history is kept unbounded, in a rolling window, or from a fixed block onward. |
+| [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) | - | the window size, in blocks | the window size, in blocks | - | Size of the rolling window. Required with `Rolling`, rejected otherwise. |
+| [`FlatDb.HistoryRetentionSinceBlock`](./configuration.md#flatdb-historyretentionsinceblock) | - | - | - | the first block to keep | First block to keep. Required with `SinceBlock`, rejected otherwise. |
+| [`FlatDb.HistorySliceAddresses`](./configuration.md#flatdb-historysliceaddresses) | unset | unset | the sliced addresses | optional | Contracts kept queryable beyond the general window. |
+| [`History.Pruning`](./configuration.md#history-pruning) | `Disabled` (default) | `Rolling` | `Rolling` | `UseAncientBarriers` | Block-and-receipt expiry; see [History pruning](./history-pruning.md). |
+| [`History.RetentionEpochs`](./configuration.md#history-retentionepochs) | - | the retention window, in epochs | the retention window, in epochs | - | How much block-and-receipt history the rolling pruner keeps. |
+| [`LogIndex.Enabled`](./configuration.md#logindex-enabled) | recommended | recommended | recommended | recommended | The index behind fast `eth_getLogs`. |
+| [`Receipt.TxLookupLimit`](./configuration.md#receipt-txlookuplimit) | `0` | `0` | `0` | `0` | `0` keeps the transaction-hash lookup index for every stored height. |
+| [`Receipt.DeriveFromState`](./configuration.md#receipt-derivefromstate) | optional; not indexable | - | - | - | The receiptless variant; see [Receiptless archive](#receiptless-archive). |
+| [`Sync.AncientBodiesBarrier`](./configuration.md#sync-ancientbodiesbarrier) / [`Sync.AncientReceiptsBarrier`](./configuration.md#sync-ancientreceiptsbarrier) | `0` | - | - | the same block | A full archive that should serve receipts from genesis must also download them; a since-block archive downloads and keeps them from its first block. |
 
 Every archive setting is default-off: a node that configures none of them behaves exactly as before.
 
