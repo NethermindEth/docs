@@ -3,7 +3,7 @@ title: Archive nodes
 sidebar_position: 8
 ---
 
-Starting with Nethermind 2.0, archive functionality is built on the flat database: per-block state changesets captured during ordinary syncing answer historical queries, with no extra database and no special sync mode. Three archive shapes are available, all reached the same two ways - a full sync from genesis, or a snap sync to the tip that captures history from the pivot onwards.
+Starting with Nethermind 2.0, archive functionality is built on the flat database: per-block state changesets captured during ordinary syncing answer historical queries, with no extra database and no special sync mode. Four archive shapes are available, all reached the same two ways - a full sync from genesis, or a snap sync to the tip that captures history from the pivot onwards.
 
 Two independent groups of configuration options compose:
 
@@ -65,6 +65,51 @@ On an address-slice node, reads below the general window serve only the sliced a
 - A query that misses the cache costs a full block execution, so a public endpoint should be rate limited; concurrency is bounded by [`JsonRpc.EthModuleConcurrentInstances`](./configuration.md#jsonrpc-ethmoduleconcurrentinstances).
 - Peers are told no receipts are available.
 - The log index does not cover blocks whose receipts were skipped: its builder reads stored receipts without regenerating them, so it stops advancing where they are absent. `eth_getLogs` over those heights falls back to scanning block blooms and re-executing every candidate block, bloom false positives included. Keep receipts on nodes where `eth_getLogs` matters.
+
+## Historical proofs
+
+A full archive can also answer `eth_getProof` (and the `proof` namespace) at historical heights, from a commitment layer written next to the flat history rows. It is off by default and has two independent switches:
+
+- [`FlatDb.ArchiveProofBuildEnabled`](./configuration.md#flatdb-archiveproofbuildenabled) writes the commitments. A node syncing from genesis builds them at the tip as blocks are captured, with nothing else to run. An already synced archive is retrofitted by the every-block walk: with [`FlatDb.HistoryVerifyEveryBlock`](./configuration.md#flatdb-historyverifyeveryblock) also on, the walk emits commitments while it verifies, and publishes coverage only behind a passing verdict. The walk resumes across restarts.
+- [`FlatDb.ArchiveProofServeEnabled`](./configuration.md#flatdb-archiveproofserveenabled) answers `eth_getProof` below the flat state boundary from them. Heights the commitments do not cover are refused with a pruned-history error, never answered from live state.
+
+Historical proofs need unwindowed flat history: [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) must be `None`. On a `Rolling` or `SinceBlock` node the rows are pre-values behind a retention floor, which a proof cannot replay, so both switches are ignored there and a warning is logged.
+
+### How a proof is checked
+
+The commitment layer is a cache over the history rows, not a second source of truth. Every trie node a proof uses is verified against the reference its parent commits to, starting from the state root in the block header. A node that fails that check is rebuilt from the history rows; a second failure refuses the proof. A proof that would have to scan more than [`FlatDb.ArchiveProofMaxScannedRows`](./configuration.md#flatdb-archiveproofmaxscannedrows) history rows is also refused, because that means the commitments do not really cover the height. The commitments can therefore be partial, stale, or damaged and a proof is still either correct or refused, never wrong.
+
+Inside one proof, [`FlatDb.ArchiveProofFanOut`](./configuration.md#flatdb-archiveprooffanout) bounds how many child nodes are resolved concurrently. The number of proofs served at once is bounded by the JSON-RPC module pool, not by this option.
+
+### Shapes
+
+Commitment rows are grouped by epoch, so a whole epoch can be kept or dropped as a unit. Two options choose the shape; both are off by default, which keeps every epoch in full:
+
+- [`FlatDb.ArchiveProofFineEpochs`](./configuration.md#flatdb-archiveprooffineepochs) keeps the per-block rows only for that many most recent epochs. Older epochs keep their checkpoint rows, so proofs there are still served and still verified, at the cost of more rebuilding per proof. The per-block rows are most of the layer's size, so this is the option that trades disk for older-proof latency.
+- [`FlatDb.ArchiveProofRecentEpochs`](./configuration.md#flatdb-archiveproofrecentepochs) keeps only that many most recent epochs and deletes the rest. Proofs below the retained floor are refused. This is the one shape that stops serving old heights rather than serving them more slowly, and a retrofit on such a node walks only the range it will serve.
+
+Before an epoch is dropped, the node carries every node that has no newer row into the epoch that survives, so the retained range stays self-contained whatever built it. The served floor moves first and only ever rises; a read that lands between the floor moving and the space being reclaimed resolves from what is still on disk.
+
+### Layout
+
+[`FlatDb.ArchiveProofCheckpointIntervalLog2`](./configuration.md#flatdb-archiveproofcheckpointintervallog2) (window width) and [`FlatDb.ArchiveProofEpochLog2`](./configuration.md#flatdb-archiveproofepochlog2) (epoch length) are stamped into the commitment columns. Changing either invalidates commitments already built: by default the node refuses to build over a mismatched layout and keeps the rows; with [`FlatDb.ArchiveProofDiscardMismatchedLayout`](./configuration.md#flatdb-archiveproofdiscardmismatchedlayout) it deletes them and rebuilds. Nothing is deleted while the layout matches.
+
+| Setting | Role |
+|---|---|
+| [`FlatDb.ArchiveProofBuildEnabled`](./configuration.md#flatdb-archiveproofbuildenabled) | Writes the commitments, at the tip and, with `FlatDb.HistoryVerifyEveryBlock`, along the retrofit walk. |
+| [`FlatDb.ArchiveProofServeEnabled`](./configuration.md#flatdb-archiveproofserveenabled) | Serves historical `eth_getProof` from them. |
+| [`FlatDb.HistoryVerifyEveryBlock`](./configuration.md#flatdb-historyverifyeveryblock) | Retrofits an already synced archive; not needed when syncing from genesis. |
+| [`FlatDb.ArchiveProofFineEpochs`](./configuration.md#flatdb-archiveprooffineepochs) | Fast proofs for recent epochs, slower but still served below. |
+| [`FlatDb.ArchiveProofRecentEpochs`](./configuration.md#flatdb-archiveproofrecentepochs) | Proofs for recent epochs only; older heights refused. |
+| [`FlatDb.ArchiveProofFanOut`](./configuration.md#flatdb-archiveprooffanout) | Concurrent child resolutions inside one proof. |
+| [`FlatDb.ArchiveProofMaxScannedRows`](./configuration.md#flatdb-archiveproofmaxscannedrows) | Rows one proof may read from history before it is refused. |
+| [`FlatDb.ArchiveProofCheckpointIntervalLog2`](./configuration.md#flatdb-archiveproofcheckpointintervallog2) | Window width; stamped into the columns. |
+| [`FlatDb.ArchiveProofEpochLog2`](./configuration.md#flatdb-archiveproofepochlog2) | Epoch length; stamped into the columns. |
+| [`FlatDb.ArchiveProofDiscardMismatchedLayout`](./configuration.md#flatdb-archiveproofdiscardmismatchedlayout) | Rebuild instead of refusing when the stored layout differs. |
+
+:::warning Important
+Historical proofs are served only where the commitments cover the height. A node that enables serving without having built, or whose build has not yet reached a height, refuses proofs there rather than answering from live state.
+:::
 
 ## Notes
 
