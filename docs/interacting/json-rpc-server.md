@@ -210,4 +210,22 @@ For more information, see [Viem documentation](https://viem.sh/docs/getting-star
 </TabItem>
 </Tabs>
 
+## Streaming responses
+
+Some methods can return a response far larger than the request that asked for it: a block trace, or a log query over a wide range. Nethermind writes those responses to the transport as it produces them, instead of building the whole response in memory first. The memory a request costs is then bounded by the stream rather than by the size of its result, and the first bytes reach the caller before the node has finished the work.
+
+### Traces
+
+[`JsonRpc.EnableTracingStreamMode`](../fundamentals/configuration.md#jsonrpc-enabletracingstreammode) streams the `debug_trace*` and `trace_*` responses as the transaction executes. It is enabled by default. A `debug_trace*` call can override it for that request with the `streamMode` option, for example:
+
+```bash
+cast rpc --rpc-url http://localhost:8545 debug_traceBlockByNumber latest '{"tracer":"callTracer","streamMode":false}'
+```
+
+Streaming bounds the memory of a trace and lowers the time to the first byte. It does not change how long the trace takes to produce, since tracing re-executes the block.
+
+### Logs
+
+[`JsonRpc.EnableLogsStreamMode`](../fundamentals/configuration.md#jsonrpc-enablelogsstreammode) streams the `eth_getLogs` and `eth_getFilterLogs` responses as matching logs are found. It is disabled by default, because it changes what a caller receives when a query is too large: instead of buffering the whole result and returning a limit error, a streamed response stops at [`JsonRpc.MaxLogsPerResponse`](../fundamentals/configuration.md#jsonrpc-maxlogsperresponse) or [`JsonRpc.MaxLogsResponseBodySize`](../fundamentals/configuration.md#jsonrpc-maxlogsresponsebodysize) and ends there. Authenticated requests are not subject to those limits.
+
 The exhaustive list of supported JSON-RPC methods can be found under the JSON-RPC namespaces.
