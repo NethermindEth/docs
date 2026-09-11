@@ -263,6 +263,63 @@ The configuration options are case-sensitive and can be defined only once unless
   The address of the transaction priority contract to use when selecting transactions from the transaction pool. Defaults to `null`.
 
 
+### BalanceViewer
+
+- #### `BalanceViewer.Enabled` \{#balanceviewer-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --balanceviewer-enabled [true|false]
+  --BalanceViewer.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BALANCEVIEWERCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BalanceViewer": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to serve the balance viewer UI at the `/balances` path of the JSON-RPC HTTP endpoint. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `BalanceViewer.SiblingProbePorts` \{#balanceviewer-siblingprobeports\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --balanceviewer-siblingprobeports <value>
+  --BalanceViewer.SiblingProbePorts <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BALANCEVIEWERCONFIG_SIBLINGPROBEPORTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BalanceViewer": {
+      "SiblingProbePorts": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Comma-separated localhost ports probed to discover sibling Nethermind nodes on other chains for the multi-chain balance view. Defaults to `8545,8546,8547,8548,8549,8550`.
+
+
 ### BalRecorder
 
 - #### `BalRecorder.Path` \{#balrecorder-path\}
