@@ -15,11 +15,11 @@ import TabItem from "@theme/TabItem";
 <TabItem value="params" label="Parameters">
 
 1. `params`: _object_
-    - `blobsBundle`: _object_
+    - `blobs_bundle`: _object_
       - `blobs`: array of _string_ (hex data)
       - `commitments`: array of _string_ (hex data)
       - `proofs`: array of _string_ (hex data)
-    - `executionPayload`: _object_
+    - `execution_payload`: _object_
       - `base_fee_per_gas`: _string_ (hex integer)
       - `blob_gas_used`: _string_ (hex integer)
       - `block_hash`: _string_ (hash)
@@ -38,29 +38,21 @@ import TabItem from "@theme/TabItem";
       - `transactions`: array of _string_ (hex data)
       - `withdrawals`: array of _object_
         - `address`: _string_ (address)
-        - `amount_in_gwei`: _string_ (hex integer)
+        - `amount`: _string_ (hex integer)
         - `index`: _string_ (hex integer)
         - `validator_index`: _string_ (hex integer)
     - `message`: _object_
-      - `blockHash`: _string_ (hash)
-      - `builderPublicKey`: _object_
-        - `address`: _string_ (address)
-        - `bytes`: _string_ (hex data)
-        - `hash`: _string_ (hash)
-        - `prefixedBytes`: _string_ (hex data)
-      - `gasLimit`: _string_ (hex integer)
-      - `gasUsed`: _string_ (hex integer)
-      - `parentHash`: _string_ (hash)
-      - `proposerFeeRecipient`: _string_ (address)
-      - `proposerPublicKey`: _object_
-        - `address`: _string_ (address)
-        - `bytes`: _string_ (hex data)
-        - `hash`: _string_ (hash)
-        - `prefixedBytes`: _string_ (hex data)
+      - `block_hash`: _string_ (hash)
+      - `builder_public_key`: _string_ (hex data)
+      - `gas_limit`: _string_ (hex integer)
+      - `gas_used`: _string_ (hex integer)
+      - `parent_hash`: _string_ (hash)
+      - `proposer_fee_recipient`: _string_ (address)
+      - `proposer_public_key`: _string_ (hex data)
       - `slot`: _string_ (hex integer)
       - `value`: _string_ (hex integer)
-    - `parentBeaconBlockRoot`: _string_ (hash)
-    - `registeredGasLimit`: _string_ (hex integer)
+    - `parent_beacon_block_root`: _string_ (hash)
+    - `registered_gas_limit`: _string_ (hex integer)
     - `signature`: _string_ (hex data)
 
 

@@ -74,6 +74,8 @@ curl localhost:8545 \
 
 `result`: _string_ (hex integer)
 
+`result` may be `null` in a successful response.
+
 </TabItem>
 </Tabs>
 
@@ -108,6 +110,8 @@ curl localhost:8545 \
 ```
 
 `result`: _string_ (hex integer)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -161,13 +165,14 @@ Executes a tx call (does not create a transaction)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 3. `stateOverride`: map of _object_
   - `balance`: _string_ (hex integer)
   - `code`: _string_ (hex data)
+  - `hasStateChanges`: _boolean_
   - `movePrecompileToAddress`: _string_ (address)
   - `nonce`: _string_ (hex integer)
   - `state`: map of _string_ (hash)
@@ -209,14 +214,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `bytes`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -254,10 +252,8 @@ curl localhost:8545 \
 `result`: _object_
   - `blocks`: _object_
     - `deleteStrategy`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `retentionBlocks`: _string_ (hex integer)
-        - `type`: _string_
+      - `retentionBlocks`: _string_ (hex integer)
+      - `type`: _string_
     - `disabled`: _boolean_
     - `oldestBlock`: _string_ (hex integer)
   - `head`: _object_
@@ -265,42 +261,32 @@ curl localhost:8545 \
     - `number`: _string_ (hex integer)
   - `logs`: _object_
     - `deleteStrategy`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `retentionBlocks`: _string_ (hex integer)
-        - `type`: _string_
+      - `retentionBlocks`: _string_ (hex integer)
+      - `type`: _string_
     - `disabled`: _boolean_
     - `oldestBlock`: _string_ (hex integer)
   - `receipts`: _object_
     - `deleteStrategy`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `retentionBlocks`: _string_ (hex integer)
-        - `type`: _string_
+      - `retentionBlocks`: _string_ (hex integer)
+      - `type`: _string_
     - `disabled`: _boolean_
     - `oldestBlock`: _string_ (hex integer)
   - `state`: _object_
     - `deleteStrategy`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `retentionBlocks`: _string_ (hex integer)
-        - `type`: _string_
+      - `retentionBlocks`: _string_ (hex integer)
+      - `type`: _string_
     - `disabled`: _boolean_
     - `oldestBlock`: _string_ (hex integer)
   - `stateproofs`: _object_
     - `deleteStrategy`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `retentionBlocks`: _string_ (hex integer)
-        - `type`: _string_
+      - `retentionBlocks`: _string_ (hex integer)
+      - `type`: _string_
     - `disabled`: _boolean_
     - `oldestBlock`: _string_ (hex integer)
   - `tx`: _object_
     - `deleteStrategy`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `retentionBlocks`: _string_ (hex integer)
-        - `type`: _string_
+      - `retentionBlocks`: _string_ (hex integer)
+      - `type`: _string_
     - `disabled`: _boolean_
     - `oldestBlock`: _string_ (hex integer)
 
@@ -373,18 +359,6 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `item`: _object_
-    <!--[circular ref]-->
-  - `item`: _object_
-    <!--[circular ref]-->
-  - `options`: _object_
-    - `hasValue`: _boolean_
-    - `value`: _object_
-      - `propertyNameCaseInsensitive`: _boolean_
-  - `parent`: _object_
-    <!--[circular ref]-->
-  - `root`: _object_
-    <!--[circular ref]-->
 
 </TabItem>
 </Tabs>
@@ -403,13 +377,14 @@ Creates an [EIP2930](https://eips.ethereum.org/EIPS/eip-2930) type AccessList fo
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 3. `stateOverride`: map of _object_
   - `balance`: _string_ (hex integer)
   - `code`: _string_ (hex data)
+  - `hasStateChanges`: _boolean_
   - `movePrecompileToAddress`: _string_ (address)
   - `nonce`: _string_ (hex integer)
   - `state`: map of _string_ (hash)
@@ -466,13 +441,14 @@ Executes a tx call and returns gas used (does not create a transaction)
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 3. `stateOverride`: map of _object_
   - `balance`: _string_ (hex integer)
   - `code`: _string_ (hex data)
+  - `hasStateChanges`: _boolean_
   - `movePrecompileToAddress`: _string_ (address)
   - `nonce`: _string_ (hex integer)
   - `state`: map of _string_ (hash)
@@ -530,7 +506,7 @@ Returns block fee history.
 
 2. `newestBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
-3. `rewardPercentiles`: array of _object_
+3. `rewardPercentiles`: array of _number_
 
 
 </TabItem>
@@ -562,10 +538,66 @@ curl localhost:8545 \
 `result`: _object_
   - `baseFeePerBlobGas`: array of _string_ (hex integer)
   - `baseFeePerGas`: array of _string_ (hex integer)
-  - `blobGasUsedRatio`: array of _object_
-  - `gasUsedRatio`: array of _object_
+  - `blobGasUsedRatio`: array of _number_
+  - `gasUsedRatio`: array of _number_
   - `oldestBlock`: _string_ (hex integer)
   - `reward`: array of array of _string_ (hex integer)
+
+</TabItem>
+</Tabs>
+
+### eth_fillTransaction
+
+Fills in the missing fields of a transaction (nonce, gas, fees and chain id) and returns the unsigned transaction, ready to be signed and submitted.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `rpcTx`: _object_
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
+    - `gas`: _string_ (hex integer)
+    - `hash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+    - `type`: _string_ (transaction type)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "eth_fillTransaction",
+      "params": [rpcTx]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _object_
+  - `tx`: _object_
+    - `blockHash`: _string_ (hash)
+    - `blockNumber`: _string_ (hex integer)
+    - `blockTimestamp`: _string_ (hex integer)
+    - `gas`: _string_ (hex integer)
+    - `hash`: _string_ (hash)
+    - `transactionIndex`: _string_ (hex integer)
+    - `type`: _string_ (transaction type)
 
 </TabItem>
 </Tabs>
@@ -645,25 +677,11 @@ curl localhost:8545 \
 
 `result`: _object_
   - `balance`: _string_ (hex integer)
-  - `codeHash`: _object_
-    - `bytes`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
-    - `bytesAsSpan`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
+  - `codeHash`: _string_ (hash)
   - `nonce`: _string_ (hex integer)
-  - `storageRoot`: _object_
-    - `bytes`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
-    - `bytesAsSpan`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
+  - `storageRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -757,14 +775,14 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
-### eth_getBlockAccessListByHash
+### eth_getBlockAccessList
 
-Retrieves block access list for a block by hash.
+Returns the block access list for a given block.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockHash`: _string_ (hash)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
 
 </TabItem>
@@ -777,8 +795,8 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "eth_getBlockAccessListByHash",
-      "params": [blockHash]
+      "method": "eth_getBlockAccessList",
+      "params": [blockParameter]
     }'
 ```
 
@@ -793,60 +811,25 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `accountChanges`: _object_
-    - `count`: _string_ (hex integer)
-  - `itemCount`: _string_ (hex integer)
-  - `totalStorageChangeEvents`: _string_ (hex integer)
-  - `totalStorageReads`: _string_ (hex integer)
-  - `wireHash`: _string_ (hash)
+`result`: array of _object_
+  - `address`: _string_ (address)
+  - `balanceChanges`: array of _object_
+    - `index`: _string_ (hex integer)
+    - `value`: _string_ (hex integer)
+  - `codeChanges`: array of _object_
+    - `code`: _string_ (hex data)
+    - `index`: _string_ (hex integer)
+  - `nonceChanges`: array of _object_
+    - `index`: _string_ (hex integer)
+    - `value`: _string_ (hex integer)
+  - `storageChanges`: array of _object_
+    - `changes`: array of _object_
+      - `index`: _string_ (hex integer)
+      - `value`: _string_ (hash)
+    - `key`: _string_ (hash)
+  - `storageReads`: array of _string_ (hash)
 
-</TabItem>
-</Tabs>
-
-### eth_getBlockAccessListByNumber
-
-Retrieves block access list for a block by number.
-
-<Tabs>
-<TabItem value="params" label="Parameters">
-
-1. `number`: _string_ (hex integer)
-
-
-</TabItem>
-<TabItem value="request" label="Request" default>
-
-```bash
-curl localhost:8545 \
-  -X POST \
-  -H "Content-Type: application/json" \
-  --data '{
-      "jsonrpc": "2.0",
-      "id": 0,
-      "method": "eth_getBlockAccessListByNumber",
-      "params": [number]
-    }'
-```
-
-</TabItem>
-<TabItem value="response" label="Response">
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": result
-}
-```
-
-`result`: _object_
-  - `accountChanges`: _object_
-    - `count`: _string_ (hex integer)
-  - `itemCount`: _string_ (hex integer)
-  - `totalStorageChangeEvents`: _string_ (hex integer)
-  - `totalStorageReads`: _string_ (hex integer)
-  - `wireHash`: _string_ (hash)
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -893,13 +876,6 @@ curl localhost:8545 \
   - `author`: _string_ (address)
   - `baseFeePerGas`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
-  - `blockAccessList`: _object_
-    - `accountChanges`: _object_
-      - `count`: _string_ (hex integer)
-    - `itemCount`: _string_ (hex integer)
-    - `totalStorageChangeEvents`: _string_ (hex integer)
-    - `totalStorageReads`: _string_ (hex integer)
-    - `wireHash`: _string_ (hash)
   - `blockAccessListHash`: _string_ (hash)
   - `difficulty`: _string_ (hex integer)
   - `excessBlobGas`: _string_ (hex integer)
@@ -910,7 +886,7 @@ curl localhost:8545 \
   - `logsBloom`: _string_ (hex data)
   - `miner`: _string_ (address)
   - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (hex data)
+  - `nonce`: _string_ (8-byte hex data)
   - `number`: _string_ (hex integer)
   - `parentBeaconBlockRoot`: _string_ (hash)
   - `parentHash`: _string_ (hash)
@@ -921,7 +897,7 @@ curl localhost:8545 \
   - `size`: _string_ (hex integer)
   - `slotNumber`: _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _string_ (hex integer)
+  - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
   - `transactions`: array of _object_
@@ -929,11 +905,12 @@ curl localhost:8545 \
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
     - `address`: _string_ (address)
-    - `amountInGwei`: _string_ (hex integer)
-    - `amountInWei`: _string_ (hex integer)
+    - `amount`: _string_ (hex integer)
     - `index`: _string_ (hex integer)
     - `validatorIndex`: _string_ (hex integer)
   - `withdrawalsRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -980,13 +957,6 @@ curl localhost:8545 \
   - `author`: _string_ (address)
   - `baseFeePerGas`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
-  - `blockAccessList`: _object_
-    - `accountChanges`: _object_
-      - `count`: _string_ (hex integer)
-    - `itemCount`: _string_ (hex integer)
-    - `totalStorageChangeEvents`: _string_ (hex integer)
-    - `totalStorageReads`: _string_ (hex integer)
-    - `wireHash`: _string_ (hash)
   - `blockAccessListHash`: _string_ (hash)
   - `difficulty`: _string_ (hex integer)
   - `excessBlobGas`: _string_ (hex integer)
@@ -997,7 +967,7 @@ curl localhost:8545 \
   - `logsBloom`: _string_ (hex data)
   - `miner`: _string_ (address)
   - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (hex data)
+  - `nonce`: _string_ (8-byte hex data)
   - `number`: _string_ (hex integer)
   - `parentBeaconBlockRoot`: _string_ (hash)
   - `parentHash`: _string_ (hash)
@@ -1008,7 +978,7 @@ curl localhost:8545 \
   - `size`: _string_ (hex integer)
   - `slotNumber`: _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _string_ (hex integer)
+  - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
   - `transactions`: array of _object_
@@ -1016,11 +986,12 @@ curl localhost:8545 \
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
     - `address`: _string_ (address)
-    - `amountInGwei`: _string_ (hex integer)
-    - `amountInWei`: _string_ (hex integer)
+    - `amount`: _string_ (hex integer)
     - `index`: _string_ (hex integer)
     - `validatorIndex`: _string_ (hex integer)
   - `withdrawalsRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1088,7 +1059,9 @@ curl localhost:8545 \
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1131,6 +1104,8 @@ curl localhost:8545 \
 
 `result`: _string_ (hex integer)
 
+`result` may be `null` in a successful response.
+
 </TabItem>
 </Tabs>
 
@@ -1171,6 +1146,8 @@ curl localhost:8545 \
 ```
 
 `result`: _string_ (hex integer)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1360,7 +1337,7 @@ curl localhost:8545 \
   - `logsBloom`: _string_ (hex data)
   - `miner`: _string_ (address)
   - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (hex data)
+  - `nonce`: _string_ (8-byte hex data)
   - `number`: _string_ (hex integer)
   - `parentBeaconBlockRoot`: _string_ (hash)
   - `parentHash`: _string_ (hash)
@@ -1370,10 +1347,12 @@ curl localhost:8545 \
   - `signature`: _string_ (hex data)
   - `slotNumber`: _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _string_ (hex integer)
+  - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `transactionsRoot`: _string_ (hash)
   - `withdrawalsRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1428,7 +1407,7 @@ curl localhost:8545 \
   - `logsBloom`: _string_ (hex data)
   - `miner`: _string_ (address)
   - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (hex data)
+  - `nonce`: _string_ (8-byte hex data)
   - `number`: _string_ (hex integer)
   - `parentBeaconBlockRoot`: _string_ (hash)
   - `parentHash`: _string_ (hash)
@@ -1438,10 +1417,12 @@ curl localhost:8545 \
   - `signature`: _string_ (hex data)
   - `slotNumber`: _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _string_ (hex integer)
+  - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `transactionsRoot`: _string_ (hash)
   - `withdrawalsRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1454,8 +1435,7 @@ Reads logs
 <TabItem value="params" label="Parameters">
 
 1. `filter`: _object_
-    - `address`: array of _object_
-      - `value`: _string_ (address)
+    - `address`: array of _string_ (address)
     - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
     - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
     - `topics`: array of array of _string_ (hash)
@@ -1512,7 +1492,8 @@ https://github.com/ethereum/EIPs/issues/1186
 
 1. `accountAddress`: _string_ (address)
 
-2. `storageKeys`: array of _string_ (hex integer)
+2. `storageKeys`: _object_
+    - `count`: _integer_
 
 3. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -1552,15 +1533,7 @@ curl localhost:8545 \
   - `storageProofs`: array of _object_
     - `key`: _string_
     - `proof`: array of _string_ (hex data)
-    - `value`: _object_
-      - `hasValue`: _boolean_
-      - `value`: _object_
-        - `isEmpty`: _boolean_
-        - `length`: _string_ (hex integer)
-        - `span`: _object_
-          - `isEmpty`: _boolean_
-          - `item`: _object_
-          - `length`: _string_ (hex integer)
+    - `value`: _string_ (hex data)
   - `storageRoot`: _string_ (hash)
 
 </TabItem>
@@ -1604,7 +1577,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_
+`result`: _string_ (hex data)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1647,7 +1622,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_
+`result`: _string_ (hex data)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1688,7 +1665,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_
+`result`: _string_ (hex data)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1702,7 +1681,8 @@ Returns storage data at address. storage_index
 
 1. `address`: _string_ (address)
 
-2. `positionIndex`: _string_ (hex integer)
+2. `positionIndex`: _object_
+    - `value`: _string_ (hex integer)
 
 3. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -1748,7 +1728,7 @@ Returns storage values for multiple slots across multiple accounts in a single r
 1. `requests`: _object_
     - `entries`: map of array of _string_ (hex integer)
     - `tooManySlots`: _boolean_
-    - `totalSlots`: _string_ (hex integer)
+    - `totalSlots`: _integer_
 
 2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -1780,14 +1760,7 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `slots`: map of array of _object_
-array of _object_
-  - `isEmpty`: _boolean_
-  - `length`: _string_ (hex integer)
-  - `span`: _object_
-    - `isEmpty`: _boolean_
-    - `item`: _object_
-    - `length`: _string_ (hex integer)
+  - `slots`: map of array of _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -1837,7 +1810,9 @@ curl localhost:8545 \
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1887,7 +1862,9 @@ curl localhost:8545 \
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -1935,7 +1912,9 @@ curl localhost:8545 \
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -2046,7 +2025,9 @@ curl localhost:8545 \
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -2093,13 +2074,6 @@ curl localhost:8545 \
   - `author`: _string_ (address)
   - `baseFeePerGas`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
-  - `blockAccessList`: _object_
-    - `accountChanges`: _object_
-      - `count`: _string_ (hex integer)
-    - `itemCount`: _string_ (hex integer)
-    - `totalStorageChangeEvents`: _string_ (hex integer)
-    - `totalStorageReads`: _string_ (hex integer)
-    - `wireHash`: _string_ (hash)
   - `blockAccessListHash`: _string_ (hash)
   - `difficulty`: _string_ (hex integer)
   - `excessBlobGas`: _string_ (hex integer)
@@ -2110,7 +2084,7 @@ curl localhost:8545 \
   - `logsBloom`: _string_ (hex data)
   - `miner`: _string_ (address)
   - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (hex data)
+  - `nonce`: _string_ (8-byte hex data)
   - `number`: _string_ (hex integer)
   - `parentBeaconBlockRoot`: _string_ (hash)
   - `parentHash`: _string_ (hash)
@@ -2121,7 +2095,7 @@ curl localhost:8545 \
   - `size`: _string_ (hex integer)
   - `slotNumber`: _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _string_ (hex integer)
+  - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
   - `transactions`: array of _object_
@@ -2129,11 +2103,12 @@ curl localhost:8545 \
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
     - `address`: _string_ (address)
-    - `amountInGwei`: _string_ (hex integer)
-    - `amountInWei`: _string_ (hex integer)
+    - `amount`: _string_ (hex integer)
     - `index`: _string_ (hex integer)
     - `validatorIndex`: _string_ (hex integer)
   - `withdrawalsRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -2180,13 +2155,6 @@ curl localhost:8545 \
   - `author`: _string_ (address)
   - `baseFeePerGas`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
-  - `blockAccessList`: _object_
-    - `accountChanges`: _object_
-      - `count`: _string_ (hex integer)
-    - `itemCount`: _string_ (hex integer)
-    - `totalStorageChangeEvents`: _string_ (hex integer)
-    - `totalStorageReads`: _string_ (hex integer)
-    - `wireHash`: _string_ (hash)
   - `blockAccessListHash`: _string_ (hash)
   - `difficulty`: _string_ (hex integer)
   - `excessBlobGas`: _string_ (hex integer)
@@ -2197,7 +2165,7 @@ curl localhost:8545 \
   - `logsBloom`: _string_ (hex data)
   - `miner`: _string_ (address)
   - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (hex data)
+  - `nonce`: _string_ (8-byte hex data)
   - `number`: _string_ (hex integer)
   - `parentBeaconBlockRoot`: _string_ (hash)
   - `parentHash`: _string_ (hash)
@@ -2208,7 +2176,7 @@ curl localhost:8545 \
   - `size`: _string_ (hex integer)
   - `slotNumber`: _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _string_ (hex integer)
+  - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
   - `transactions`: array of _object_
@@ -2216,11 +2184,12 @@ curl localhost:8545 \
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
     - `address`: _string_ (address)
-    - `amountInGwei`: _string_ (hex integer)
-    - `amountInWei`: _string_ (hex integer)
+    - `amount`: _string_ (hex integer)
     - `index`: _string_ (hex integer)
     - `validatorIndex`: _string_ (hex integer)
   - `withdrawalsRoot`: _string_ (hash)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -2263,6 +2232,8 @@ curl localhost:8545 \
 
 `result`: _string_ (hex integer)
 
+`result` may be `null` in a successful response.
+
 </TabItem>
 </Tabs>
 
@@ -2303,6 +2274,8 @@ curl localhost:8545 \
 ```
 
 `result`: _string_ (hex integer)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -2350,8 +2323,7 @@ Creates an update filter
 <TabItem value="params" label="Parameters">
 
 1. `filter`: _object_
-    - `address`: array of _object_
-      - `value`: _string_ (address)
+    - `address`: array of _string_ (address)
     - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
     - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
     - `topics`: array of array of _string_ (hash)
@@ -2461,7 +2433,7 @@ curl localhost:8545 \
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
 
 </TabItem>
 </Tabs>
@@ -2607,7 +2579,7 @@ curl localhost:8545 \
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
 
 </TabItem>
 </Tabs>
@@ -2626,7 +2598,7 @@ Send a transaction to the tx pool and broadcasting
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 
 </TabItem>
@@ -2698,44 +2670,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `bytes`: _object_
-    - `isEmpty`: _boolean_
-    - `item`: _object_
-    - `length`: _string_ (hex integer)
-  - `bytesWithRecovery`: _string_ (hex data)
-  - `chainId`: _string_ (hex integer)
-  - `memory`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
-  - `r`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
-  - `rAsSpan`: _object_
-    - `isEmpty`: _boolean_
-    - `item`: _object_
-    - `length`: _string_ (hex integer)
-  - `recoveryId`: _string_ (hex data)
-  - `s`: _object_
-    - `isEmpty`: _boolean_
-    - `length`: _string_ (hex integer)
-    - `span`: _object_
-      - `isEmpty`: _boolean_
-      - `item`: _object_
-      - `length`: _string_ (hex integer)
-  - `sAsSpan`: _object_
-    - `isEmpty`: _boolean_
-    - `item`: _object_
-    - `length`: _string_ (hex integer)
-  - `v`: _string_ (hex integer)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -2754,7 +2689,7 @@ Signs the transaction using the unlocked sender account and returns the RLP-enco
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 
 </TabItem>
@@ -2784,7 +2719,7 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `raw`: array of _string_ (hex data)
+  - `raw`: _string_ (hex data)
   - `tx`: _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
@@ -2792,7 +2727,7 @@ curl localhost:8545 \
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 </TabItem>
 </Tabs>
@@ -2821,10 +2756,11 @@ Executes a simulation across multiple blocks (does not create a transaction or b
         - `gas`: _string_ (hex integer)
         - `hash`: _string_ (hash)
         - `transactionIndex`: _string_ (hex integer)
-        - `type`: _integer_
+        - `type`: _string_ (transaction type)
       - `stateOverrides`: map of _object_
         - `balance`: _string_ (hex integer)
         - `code`: _string_ (hex data)
+        - `hasStateChanges`: _boolean_
         - `movePrecompileToAddress`: _string_ (address)
         - `nonce`: _string_ (hex integer)
         - `state`: map of _string_ (hash)
@@ -2864,11 +2800,14 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
+  - `author`: _string_ (address)
+  - `baseFeePerGas`: _string_ (hex integer)
+  - `blobGasUsed`: _string_ (hex integer)
+  - `blockAccessListHash`: _string_ (hash)
   - `calls`: array of _object_
     - `error`: _object_
-      - `code`: _string_ (hex integer)
+      - `code`: _integer_
       - `data`: _string_ (hex data)
-      - `evmException`: _integer_
       - `message`: _string_
     - `gasUsed`: _string_ (hex integer)
     - `logs`: array of _object_
@@ -2885,11 +2824,33 @@ curl localhost:8545 \
     - `maxUsedGas`: _string_ (hex integer)
     - `returnData`: _string_ (hex data)
     - `status`: _string_ (hex integer)
+  - `difficulty`: _string_ (hex integer)
+  - `excessBlobGas`: _string_ (hex integer)
+  - `extraData`: _string_ (hex data)
+  - `gasLimit`: _string_ (hex integer)
+  - `gasUsed`: _string_ (hex integer)
+  - `hash`: _string_ (hash)
+  - `logsBloom`: _string_ (hex data)
+  - `miner`: _string_ (address)
+  - `mixHash`: _string_ (hash)
+  - `nonce`: _string_ (8-byte hex data)
+  - `number`: _string_ (hex integer)
+  - `parentBeaconBlockRoot`: _string_ (hash)
+  - `parentHash`: _string_ (hash)
+  - `receiptsRoot`: _string_ (hash)
+  - `requestsHash`: _string_ (hash)
+  - `sha3Uncles`: _string_ (hash)
+  - `signature`: _string_ (hex data)
+  - `size`: _string_ (hex integer)
+  - `slotNumber`: _string_ (hex integer)
+  - `stateRoot`: _string_ (hash)
+  - `step`: _integer_
+  - `timestamp`: _string_ (hex integer)
+  - `totalDifficulty`: _string_ (hex integer)
   - `traces`: array of _object_
     - `error`: _object_
-      - `code`: _string_ (hex integer)
+      - `code`: _integer_
       - `data`: _string_ (hex data)
-      - `evmException`: _integer_
       - `message`: _string_
     - `gasUsed`: _string_ (hex integer)
     - `logs`: array of _object_
@@ -2906,6 +2867,15 @@ curl localhost:8545 \
     - `maxUsedGas`: _string_ (hex integer)
     - `returnData`: _string_ (hex data)
     - `status`: _string_ (hex integer)
+  - `transactions`: array of _object_
+  - `transactionsRoot`: _string_ (hash)
+  - `uncles`: array of _string_ (hash)
+  - `withdrawals`: array of _object_
+    - `address`: _string_ (address)
+    - `amount`: _string_ (hex integer)
+    - `index`: _string_ (hex integer)
+    - `validatorIndex`: _string_ (hex integer)
+  - `withdrawalsRoot`: _string_ (hash)
 
 </TabItem>
 </Tabs>

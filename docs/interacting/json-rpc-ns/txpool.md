@@ -46,7 +46,7 @@ map of _object_
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
   - `queued`: map of map of _object_
 map of _object_
   - `blockHash`: _string_ (hash)
@@ -55,7 +55,7 @@ map of _object_
   - `gas`: _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
-  - `type`: _integer_
+  - `type`: _string_ (transaction type)
 
 </TabItem>
 </Tabs>
@@ -104,7 +104,7 @@ curl localhost:8545 \
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
   - `queued`: map of _object_
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
@@ -112,7 +112,7 @@ curl localhost:8545 \
     - `gas`: _string_ (hex integer)
     - `hash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
-    - `type`: _integer_
+    - `type`: _string_ (transaction type)
 
 </TabItem>
 </Tabs>

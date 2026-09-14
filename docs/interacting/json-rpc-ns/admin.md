@@ -134,9 +134,9 @@ The data directory path as a string.
 </TabItem>
 </Tabs>
 
-### admin_exportHistory
+### admin_exportEraHistory
 
-Exports a range of historic block in era1 format.
+Exports a range of historic blocks in erae format.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -146,6 +146,51 @@ Exports a range of historic block in era1 format.
 2. `from`: _string_ (hex integer)
 
 3. `to`: _string_ (hex integer)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_exportEraHistory",
+      "params": [destinationPath, from, to]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
+
+</TabItem>
+</Tabs>
+
+### admin_exportHistory
+
+Exports a range of historic block in era1 format.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `destinationPath`: _string_
+
+2. `from`: _integer_
+
+3. `to`: _integer_
 
 
 </TabItem>
@@ -179,9 +224,9 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
-### admin_importHistory
+### admin_importEraHistory
 
-Import a range of historic block from era1 directory.
+Imports a range of historic blocks from an erae directory.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -191,6 +236,53 @@ Import a range of historic block from era1 directory.
 2. `from`: _string_ (hex integer)
 
 3. `to`: _string_ (hex integer)
+
+4. `accumulatorFile`: _string_
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_importEraHistory",
+      "params": [sourcePath, from, to, accumulatorFile]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _string_
+
+</TabItem>
+</Tabs>
+
+### admin_importHistory
+
+Import a range of historic block from era1 directory.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `sourcePath`: _string_
+
+2. `from`: _integer_
+
+3. `to`: _integer_
 
 4. `accumulatorFile`: _string_
 
@@ -222,6 +314,43 @@ curl localhost:8545 \
 ```
 
 `result`: _string_
+
+</TabItem>
+</Tabs>
+
+### admin_isBlockProcessingPaused
+
+Returns whether local block processing is currently paused.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_isBlockProcessingPaused",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+`true` if block processing is paused, `false` if running.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
@@ -301,13 +430,14 @@ Information about this node
 
 `result`: _object_
   - `enode`: _string_
+  - `enr`: _string_
   - `id`: _string_
   - `ip`: _string_
   - `listenAddress`: _string_
   - `name`: _string_
   - `ports`: _object_
-    - `discovery`: _string_ (hex integer)
-    - `listener`: _string_ (hex integer)
+    - `discovery`: _integer_
+    - `listener`: _integer_
   - `protocols`: map of _object_
     - `chainId`: _string_ (hex integer)
     - `config`: _object_
@@ -352,10 +482,12 @@ Information about this node
       - `eip2537Transition`: _string_ (hex integer)
       - `eip2537TransitionTimestamp`: _string_ (hex integer)
       - `eip2565Transition`: _string_ (hex integer)
+      - `eip2780TransitionTimestamp`: _string_ (hex integer)
       - `eip2929Transition`: _string_ (hex integer)
       - `eip2930Transition`: _string_ (hex integer)
       - `eip2935ContractAddress`: _string_ (address)
       - `eip2935RingBufferSize`: _string_ (hex integer)
+      - `eip2935Transition`: _string_ (hex integer)
       - `eip2935TransitionTimestamp`: _string_ (hex integer)
       - `eip3198Transition`: _string_ (hex integer)
       - `eip3529Transition`: _string_ (hex integer)
@@ -386,17 +518,20 @@ Information about this node
       - `eip7251ContractAddress`: _string_ (address)
       - `eip7251TransitionTimestamp`: _string_ (hex integer)
       - `eip7594TransitionTimestamp`: _string_ (hex integer)
+      - `eip7623Transition`: _string_ (hex integer)
       - `eip7623TransitionTimestamp`: _string_ (hex integer)
+      - `eip7702Transition`: _string_ (hex integer)
       - `eip7702TransitionTimestamp`: _string_ (hex integer)
       - `eip7708TransitionTimestamp`: _string_ (hex integer)
       - `eip7778TransitionTimestamp`: _string_ (hex integer)
+      - `eip7805TransitionTimestamp`: _string_ (hex integer)
       - `eip7823TransitionTimestamp`: _string_ (hex integer)
       - `eip7825TransitionTimestamp`: _string_ (hex integer)
       - `eip7843TransitionTimestamp`: _string_ (hex integer)
       - `eip7883TransitionTimestamp`: _string_ (hex integer)
       - `eip7918TransitionTimestamp`: _string_ (hex integer)
       - `eip7928TransitionTimestamp`: _string_ (hex integer)
-      - `eip7934MaxRlpBlockSize`: _string_ (hex integer)
+      - `eip7934MaxRlpBlockSize`: _integer_
       - `eip7934TransitionTimestamp`: _string_ (hex integer)
       - `eip7939TransitionTimestamp`: _string_ (hex integer)
       - `eip7951TransitionTimestamp`: _string_ (hex integer)
@@ -406,6 +541,9 @@ Information about this node
       - `eip7Transition`: _string_ (hex integer)
       - `eip8024TransitionTimestamp`: _string_ (hex integer)
       - `eip8037TransitionTimestamp`: _string_ (hex integer)
+      - `eip8038TransitionTimestamp`: _string_ (hex integer)
+      - `eip8246TransitionTimestamp`: _string_ (hex integer)
+      - `eip8282TransitionTimestamp`: _string_ (hex integer)
       - `feeCollector`: _string_ (address)
       - `forkBlock`: _string_ (hex integer)
       - `forkCanonHash`: _string_ (hash)
@@ -434,9 +572,46 @@ Information about this node
 </TabItem>
 </Tabs>
 
+### admin_pauseBlockProcessing
+
+Pauses local block processing. Blocks received from the network or consensus client are still queued but not processed; call `admin_resumeBlockProcessing` to process the accumulated backlog. Use `admin_isBlockProcessingPaused` to query the state. Intended for testing and diagnostics.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_pauseBlockProcessing",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+`true` if block processing is paused after the call (the request succeeded); `false` if it did not take effect.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _boolean_
+
+</TabItem>
+</Tabs>
+
 ### admin_peers
 
-Displays a list of connected peers including information about them (`clientId`, `host`, `port`, `address`, `isBootnode`, `isStatic`, `enode`).
+Displays a list of connected peers including information about them.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -473,57 +648,17 @@ List of connected peers including information
 ```
 
 `result`: array of _object_
-  - `caps`: array of _object_
-    - `protocolCode`: _string_
-    - `version`: _string_ (hex integer)
+  - `caps`: array of _string_ (protocol/version)
   - `clientType`: _integer_
   - `enode`: _string_
   - `enr`: _string_
   - `ethDetails`: _string_
-  - `id`: _object_
-    - `address`: _string_ (address)
-    - `bytes`: _string_ (hex data)
-    - `hash`: _string_ (hash)
-    - `prefixedBytes`: _string_ (hex data)
-  - `lastSignal`: _object_
-    - `hasValue`: _boolean_
-    - `value`: _object_
-      - `date`: _object_
-        <!--[circular ref]-->
-      - `day`: _string_ (hex integer)
-      - `dayOfWeek`: _integer_
-      - `dayOfYear`: _string_ (hex integer)
-      - `hour`: _string_ (hex integer)
-      - `kind`: _integer_
-      - `microsecond`: _string_ (hex integer)
-      - `millisecond`: _string_ (hex integer)
-      - `minute`: _string_ (hex integer)
-      - `month`: _string_ (hex integer)
-      - `nanosecond`: _string_ (hex integer)
-      - `second`: _string_ (hex integer)
-      - `ticks`: _string_ (hex integer)
-      - `timeOfDay`: _object_
-        - `days`: _string_ (hex integer)
-        - `hours`: _string_ (hex integer)
-        - `microseconds`: _string_ (hex integer)
-        - `milliseconds`: _string_ (hex integer)
-        - `minutes`: _string_ (hex integer)
-        - `nanoseconds`: _string_ (hex integer)
-        - `seconds`: _string_ (hex integer)
-        - `ticks`: _string_ (hex integer)
-        - `totalDays`: _object_
-        - `totalHours`: _object_
-        - `totalMicroseconds`: _object_
-        - `totalMilliseconds`: _object_
-        - `totalMinutes`: _object_
-        - `totalNanoseconds`: _object_
-        - `totalSeconds`: _object_
-      - `year`: _string_ (hex integer)
+  - `id`: _string_ (node id, no "0x" prefix)
+  - `lastSignal`: _string_ (date-time)
   - `name`: _string_
   - `network`: _object_
     - `inbound`: _boolean_
     - `localAddress`: _string_
-    - `localHost`: _string_
     - `remoteAddress`: _string_
     - `static`: _boolean_
     - `trusted`: _boolean_
@@ -562,7 +697,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _integer_
+`result`: _string_
 
 </TabItem>
 </Tabs>
@@ -657,6 +792,43 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### admin_resumeBlockProcessing
+
+Resumes local block processing previously paused via `admin_pauseBlockProcessing`, processing any blocks accumulated in the queue. Intended for testing and diagnostics.
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "admin_resumeBlockProcessing",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+`true` when the resume request was accepted.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _boolean_
+
+</TabItem>
+</Tabs>
+
 ### admin_subscribe
 
 Subscribes to a particular event over WebSocket. For every event that matches the subscription, a notification with event details and subscription id is sent to a client.
@@ -702,7 +874,7 @@ curl localhost:8545 \
 
 ### admin_unsubscribe
 
-Unsubscribes from a subscription.
+Unsubscribes from a subscription. Returns true on success; if the subscription does not exist, a 'subscription not found' error is returned.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
