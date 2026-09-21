@@ -222,7 +222,9 @@ Some methods can return a response far larger than the request that asked for it
 cast rpc --rpc-url http://localhost:8545 debug_traceBlockByNumber latest '{"tracer":"callTracer","streamMode":false}'
 ```
 
-Streaming bounds the memory of a trace and lowers the time to the first byte. It does not change how long the trace takes to produce, since tracing re-executes the block.
+Streaming bounds the memory of a trace and lowers the time to the first byte. It does not by itself change how long the trace takes to produce, since tracing re-executes the block.
+
+On an archive node with the [per-transaction changeset index](../fundamentals/archive-nodes.md#per-transaction-changeset-index), a trace of an indexed block does not replay the transactions ahead of its target, and a whole-block trace runs its transactions concurrently and emits them in block order as they finish. Streamed, such a trace starts arriving with the first transaction that finishes rather than the first in the block. A `debug_trace*` call with a JavaScript tracer keeps the sequential replay.
 
 ### Logs
 

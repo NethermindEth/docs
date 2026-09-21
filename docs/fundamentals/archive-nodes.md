@@ -111,6 +111,51 @@ Before an epoch is dropped, the node carries every node that has no newer row in
 Historical proofs are served only where the commitments cover the height. A node that enables serving without having built, or whose build has not yet reached a height, refuses proofs there rather than answering from live state.
 :::
 
+## Per-transaction changeset index
+
+An archive node re-executes a block to trace it: a trace of the last transaction of a block first runs every transaction before it, and a whole-block trace runs the transactions in order because each needs the state the previous one left behind. The per-transaction changeset index removes that cost. For every transaction of an indexed block it records what the transaction wrote, in a column family of its own next to the flat history rows, so the state before any transaction is known without executing the ones ahead of it.
+
+The index is off by default and requires flat history. It is turned on with [`FlatDb.HistoryTransactionIndexEnabled`](./configuration.md#flatdb-historytransactionindexenabled); everything else about it has a default that works.
+
+### What it speeds up
+
+- **Single-transaction traces** (`debug_traceTransaction`, `trace_transaction`, `trace_replayTransaction`) of an indexed block start at their target. The writes of the transactions before it are laid over the parent state on the read path of the trace, and only the target executes.
+- **Whole-block traces** (`debug_traceBlockByNumber`, `debug_traceBlockByHash`, `trace_block`, `trace_replayBlockTransactions`, `trace_filter`) of an indexed block trace their transactions concurrently, one per worker, each from its own seeded prefix, and return or stream the results in block order. Native and struct-log tracers take this path; a JavaScript tracer keeps the sequential replay, since it owns a script engine. [`FlatDb.HistoryTransactionIndexTraceParallelism`](./configuration.md#flatdb-historytransactionindextraceparallelism) bounds the workers, and the bound is shared by the `debug` and `trace` namespaces.
+- **Consecutive indexed blocks.** Once a block has been traced whole, its final writes are kept in memory and the next block's workers read through them before the parent state, so `trace_filter` over a range, or a client walking blocks one by one, reads a key the earlier blocks touched from memory and goes to disk only for keys they never touched.
+
+Whatever the index cannot serve falls back to the replay the node did before, never to a wrong answer: a block whose hash is not the one the rows were built from, a prefix with a row missing, a request with a state or block override, a block whose access list is being constructed, a target at index zero.
+
+### How it is built
+
+- **Inline while syncing.** A node syncing from genesis executes every block once anyway; the capture rides along on that execution and writes each block's rows, once the block is far enough below the best header that no reorg reaches it. Rows written this way are claimed only once the block is confirmed canonical, so a block that is later rejected never leaves a claim behind.
+- **At the tip.** A builder thread follows the flat-history watermark and re-executes each newly captured block on a processing environment of its own, never on the one processing the chain. Coverage is one contiguous range of blocks and survives restarts.
+- **Backwards, for an archive that already exists.** [`FlatDb.HistoryTransactionIndexRetrofitFromBlock`](./configuration.md#flatdb-historytransactionindexretrofitfromblock) tells the builder to also index down to that block once it has caught up with the tip; `1` covers the whole chain. Two mechanisms can do it:
+  - **Retrofit workers**, sized by [`FlatDb.HistoryTransactionIndexWorkers`](./configuration.md#flatdb-historytransactionindexworkers), take chunks of blocks downward from the coverage edge and re-execute each block against the flat history. Coverage grows downward as chunks complete, so recent blocks become traceable first. Every block costs the random history reads of the state it touches, which is what bounds the rate on a disk-bound archive.
+  - **Bulk fill**, with [`FlatDb.HistoryTransactionIndexBulkFillEnabled`](./configuration.md#flatdb-historytransactionindexbulkfillenabled), replaces the workers with one ascending replay from the retrofit block over an isolated, disk-backed scratch state. The state at the starting block is imported from the history rows, or seeded from the chain-spec allocations when the start is genesis, verified against that block's state root, and then carried forward block by block, so nothing is read from history twice. The replay checkpoints after every block and resumes from the checkpoint after a restart. Coverage joins the existing range only when the replay reaches it, and the scratch is released afterwards. [`FlatDb.HistoryTransactionIndexBulkFillMaxGiB`](./configuration.md#flatdb-historytransactionindexbulkfillmaxgib) caps the scratch: reaching it pauses the replay with its checkpoint kept. Bulk fill is experimental and currently limited to mainnet with unwindowed flat history.
+
+The builder and the bulk replay pace themselves with [`FlatDb.HistoryTransactionIndexDutyCyclePercent`](./configuration.md#flatdb-historytransactionindexdutycyclepercent), the share of wall clock they may spend working; they sleep out the rest so re-execution stays invisible to the RPC the node is serving.
+
+### Configuration
+
+| Setting | Role |
+|---|---|
+| [`FlatDb.HistoryTransactionIndexEnabled`](./configuration.md#flatdb-historytransactionindexenabled) | Build and serve the index. Requires `FlatDb.HistoryEnabled`. |
+| [`FlatDb.HistoryTransactionIndexDutyCyclePercent`](./configuration.md#flatdb-historytransactionindexdutycyclepercent) | Share of wall clock the builder and the bulk replay may spend working. |
+| [`FlatDb.HistoryTransactionIndexRetrofitFromBlock`](./configuration.md#flatdb-historytransactionindexretrofitfromblock) | Also index backwards down to this block; `1` covers the whole chain. Never below the flat-history floor. |
+| [`FlatDb.HistoryTransactionIndexWorkers`](./configuration.md#flatdb-historytransactionindexworkers) | Threads for the chunked backwards retrofit. |
+| [`FlatDb.HistoryTransactionIndexBulkFillEnabled`](./configuration.md#flatdb-historytransactionindexbulkfillenabled) | Backwards retrofit on an isolated scratch state instead of the workers. Mainnet with unwindowed flat history only. |
+| [`FlatDb.HistoryTransactionIndexBulkFillMaxGiB`](./configuration.md#flatdb-historytransactionindexbulkfillmaxgib) | Cap on the scratch database; reaching it pauses the replay and keeps its checkpoint. |
+| [`FlatDb.HistoryTransactionIndexTraceParallelism`](./configuration.md#flatdb-historytransactionindextraceparallelism) | Workers for whole-block traces of indexed blocks, shared by `debug` and `trace`. |
+| [`JsonRpc.TraceModuleConcurrentInstances`](./configuration.md#jsonrpc-tracemoduleconcurrentinstances) | Concurrent instances of the `trace` namespace. Each holds block-processing environments for the life of the process, so raise it only where the memory is available. |
+
+- On a windowed node the index follows the flat-history floor: rows below it are deleted as the window rolls, and a trace there fails closed like any other historical query.
+- The lowest and highest indexed block, and the count of index rows that could not be read, are exported as metrics.
+- The column is small next to the history rows themselves, and its size follows the number of transactions, so recent blocks cost far more per block than early ones.
+
+:::warning Important
+Coverage is contiguous by design. Until a backwards retrofit reaches a block, traces there use the ordinary replay; with bulk fill that means nothing below the existing coverage is served faster until the whole replay from the retrofit block has finished.
+:::
+
 ## Notes
 
 - A slice retention shallower than the general window is refused at startup, because it would delete an address's rows inside the advertised window.
