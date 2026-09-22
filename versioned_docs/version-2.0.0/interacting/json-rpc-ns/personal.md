@@ -1,27 +1,20 @@
 ---
-title: rbuilder namespace
-sidebar_label: rbuilder
-sidebar_position: 11
+title: personal namespace
+sidebar_label: personal
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-### rbuilder_calculateStateRoot
-
-Calculate the state root on top of the state trie at specified block given a set of change.
+### personal_importRawKey
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `keyData`: _string_ (hex data)
 
-2. `accountDiff`: map of _object_
-  - `balance`: _string_ (hex integer)
-  - `changed_slots`: map of _string_ (hex integer)
-  - `code_hash`: _string_ (hash)
-  - `nonce`: _string_ (hex integer)
-  - `self_destructed`: _boolean_
+2. `passphrase`: _string_
 
 
 </TabItem>
@@ -34,8 +27,8 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "rbuilder_calculateStateRoot",
-      "params": [block, accountDiff]
+      "method": "personal_importRawKey",
+      "params": [keyData, passphrase]
     }'
 ```
 
@@ -50,22 +43,51 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_ (hash)
+`result`: _string_ (address)
 
 </TabItem>
 </Tabs>
 
-### rbuilder_getAccount
+### personal_listAccounts
 
-Get account data
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "personal_listAccounts",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of _string_ (address)
+
+</TabItem>
+</Tabs>
+
+### personal_lockAccount
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `address`: _string_ (address)
 
-2. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -77,8 +99,8 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "rbuilder_getAccount",
-      "params": [address, block]
+      "method": "personal_lockAccount",
+      "params": [address]
     }'
 ```
 
@@ -93,24 +115,17 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `balance`: _string_ (hex integer)
-  - `code_hash`: _string_ (hash)
-  - `nonce`: _string_ (hex integer)
-
-`result` may be `null` in a successful response.
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
 
-### rbuilder_getBlockHash
-
-Gets block hash
+### personal_newAccount
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `passphrase`: _string_
 
 
 </TabItem>
@@ -123,8 +138,8 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "rbuilder_getBlockHash",
-      "params": [block]
+      "method": "personal_newAccount",
+      "params": [passphrase]
     }'
 ```
 
@@ -139,19 +154,19 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_ (hash)
+`result`: _string_ (address)
 
 </TabItem>
 </Tabs>
 
-### rbuilder_getCodeByHash
-
-Returns bytecode based on hash.
+### personal_unlockAccount
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `hash`: _string_ (hash)
+1. `address`: _string_ (address)
+
+2. `passphrase`: _string_
 
 
 </TabItem>
@@ -164,8 +179,8 @@ curl localhost:8545 \
   --data '{
       "jsonrpc": "2.0",
       "id": 0,
-      "method": "rbuilder_getCodeByHash",
-      "params": [hash]
+      "method": "personal_unlockAccount",
+      "params": [address, passphrase]
     }'
 ```
 
@@ -180,7 +195,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _string_ (hex data)
+`result`: _boolean_
 
 </TabItem>
 </Tabs>
