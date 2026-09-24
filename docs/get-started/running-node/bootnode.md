@@ -68,6 +68,69 @@ The bootnode targets 100,000 retained node identities. Repeat observations updat
 
 ## Monitor the bootnode
 
-Prometheus metrics are available at `http://127.0.0.1:6060/metrics`. They include discovery message and traffic rates, routing-table buckets, CPU, and memory. A local Prometheus and Grafana setup is available in the [Bootnode observability directory](https://github.com/NethermindEth/nethermind/tree/master/tools/Bootnode/observability).
+Prometheus metrics are available at `http://127.0.0.1:6060/metrics` when the port is published as shown above. They include discovery message and traffic rates, routing-table buckets, CPU, and memory.
+
+### Run Bootnode, Prometheus, and Grafana together
+
+The Nethermind repository includes a [Grafana dashboard and provisioning files](https://github.com/NethermindEth/nethermind/tree/master/tools/Bootnode/observability). This Compose setup runs its own bootnode, so stop any instance started with the standalone `docker run` command above before continuing. Clone the repository if you do not already have it, then enter the observability directory:
+
+```bash
+git clone --depth 1 https://github.com/NethermindEth/nethermind.git
+cd nethermind/tools/Bootnode/observability
+```
+
+Save the following as `docker-compose.full.yml` in that directory. It adds the bootnode to the existing Prometheus and Grafana Compose stack and keeps the API and metrics ports on host loopback:
+
+```yaml
+services:
+  bootnode:
+    image: nethermind/nethermind-bootnode:bootnode-2.0.0
+    ports:
+      - '30303:30303/udp'
+      - '127.0.0.1:8546:8546'
+      - '127.0.0.1:6060:6060'
+    volumes:
+      - bootnode-data:/nethermind-bootnode/data
+
+  prometheus:
+    volumes:
+      - ./prometheus.full.yml:/etc/prometheus/prometheus.yml:ro
+
+volumes:
+  bootnode-data:
+    name: bootnode-data
+```
+
+The explicit volume name lets this setup reuse the key and routing data from the standalone `docker run` example if you followed it first.
+
+Save this as `prometheus.full.yml` alongside it:
+
+```yaml
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: nethermind-bootnode
+    metrics_path: /metrics
+    static_configs:
+      - targets: [bootnode:6060]
+```
+
+Set a Grafana admin password and start the stack:
+
+```bash
+export GRAFANA_ADMIN_PASSWORD='choose-a-password'
+docker compose -f docker-compose.yml -f docker-compose.full.yml up -d
+```
+
+Open [Prometheus targets](http://127.0.0.1:9090/targets) and check that `nethermind-bootnode` is **UP**. Then open [Grafana](http://127.0.0.1:3000) and go to **Dashboards → Nethermind → Nethermind Bootnode**. The dashboard is viewable without signing in; use `admin` and the password you set if you need to manage it. It includes discovered-node counts, discovery traffic, CPU, and memory. The 100,000-record target described above is not a network-size estimate.
+
+The bootnode API remains available at `http://127.0.0.1:8546`. If `/identity` reports an address that peers cannot reach, add `command: ["--external-ip", "YOUR_PUBLIC_IP"]` under the `bootnode` service and run the `docker compose ... up -d` command again. Allow inbound UDP traffic to port `30303`.
+
+To stop the stack without deleting the bootnode's data volume, run:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.full.yml down
+```
 
 For more command-line options and a source-build example, see the Bootnode README's [options](https://github.com/NethermindEth/nethermind/blob/master/tools/Bootnode/README.md#options) and [run](https://github.com/NethermindEth/nethermind/blob/master/tools/Bootnode/README.md#run) sections. For Docker, use the published image tag shown above.
