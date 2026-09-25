@@ -158,16 +158,16 @@ const redirects = {
     },
     {
       from: '/nethermind/first-steps-with-nethermind/running-nethermind-post-merge',
-      to: '/get-started/consensus-clients'
+      to: '/get-started/running-node/consensus-clients'
     },
     {
       from: '/nethermind/first-steps-with-nethermind/system-requirements',
       to: '/get-started/system-requirements'
     },
-    {
-      from: '/nethermind/guides-and-helpers/faq',
-      to: '/faq'
-    },
+    // {
+    //   from: '/nethermind/guides-and-helpers/faq',
+    //   to: '/faq'
+    // },
     {
       from: '/nethermind/guides-and-helpers/validator-setup/aura-validator',
       to: '/validators/aura'
@@ -182,7 +182,7 @@ const redirects = {
     },
     {
       from: '/nethermind/guides-and-helpers/how-to-reduce-database-size/full-pruning',
-      to: '/fundamentals/pruning'
+      to: '/fundamentals/state-pruning'
     },
     {
       from: '/nethermind/guides-and-helpers/known-issues',

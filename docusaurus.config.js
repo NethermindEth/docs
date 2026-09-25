@@ -4,14 +4,14 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 import redirects from './redirects.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Nethermind documentation',
-  tagline: 'A robust execution client for Ethereum node operators.',
-  favicon: 'img/favicon.svg',
+  tagline: 'A robust, high-performance execution client for Ethereum node operators.',
+  favicon: 'images/favicon.png',
 
   url: 'https://docs.nethermind.io',
   baseUrl: '/',
@@ -20,11 +20,16 @@ const config = {
   projectName: 'docs',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    hooks:{
+      onBrokenMarkdownLinks: 'warn'
+    }
+  },
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en']
   },
 
   presets: [
@@ -36,16 +41,18 @@ const config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
-          editUrl:
-            'https://github.com/NethermindEth/docs/tree/main',
+          editUrl: 'https://github.com/NethermindEth/docs/tree/main',
           exclude: ['interacting/json-rpc-ns/eth_*.md']
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/css/custom.css'
         },
-      }),
-    ],
+        gtag: {
+          trackingID: 'G-4JDCNMPQ22'
+        }
+      })
+    ]
   ],
 
   headTags: [
@@ -76,12 +83,23 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'https://repository-images.githubusercontent.com/101194285/a1da1e24-03c7-4596-b34a-96a57366a606',
+      colorMode: {
+        respectPrefersColorScheme: true
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+      image:
+        'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Nethermind',
-          src: 'img/logo_dark.svg',
-          srcDark: 'img/logo_light.svg',
+          src: 'images/logo_dark.svg',
+          srcDark: 'images/logo_light.svg',
           href: '/',
           target: '_self'
         },
@@ -93,20 +111,20 @@ const config = {
           },
           {
             'aria-label': 'GitHub',
-            className: 'header-github-link',
+            className: 'header-social-link header-github-icon',
             href: 'https://github.com/NethermindEth/nethermind',
             position: 'right'
           },
           {
             'aria-label': 'Discord',
-            className: 'header-discord-link',
-            href: 'https://discord.com/invite/PaCMRFdvWT',
+            className: 'header-social-link header-discord-icon',
+            href: 'https://discord.gg/GXJFaYk',
             position: 'right'
           },
           {
             'aria-label': 'X',
-            className: 'header-x-link',
-            href: 'https://twitter.com/NethermindEth',
+            className: 'header-social-link header-x-icon',
+            href: 'https://x.com/nethermind',
             position: 'right'
           }
         ]
@@ -117,18 +135,13 @@ const config = {
         indexName: 'nethermind'
       },
       prism: {
-        additionalLanguages: ['bash', 'csharp', 'json', 'powershell'],
+        additionalLanguages: ['bash', 'csharp', 'docker', 'ini', 'json', 'powershell'],
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
+        darkTheme: prismThemes.dracula
+      }
     }),
 
-    plugins: [
-      [
-        '@docusaurus/plugin-client-redirects',
-        { ...redirects }
-      ]
-    ]
+  plugins: [['@docusaurus/plugin-client-redirects', { ...redirects }]]
 };
 
 export default config;
