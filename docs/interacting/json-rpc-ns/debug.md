@@ -179,8 +179,7 @@ curl localhost:8545 \
       - `storageChanges`: array of _object_
         - `changes`: array of _object_
           - `index`: _integer_
-          - `value`: _object_
-            - `item`: _integer_
+          - `value`: _string_ (hex integer)
         - `key`: _string_ (hex integer)
       - `storageReads`: array of _string_ (hex integer)
     - `itemCount`: _integer_
@@ -710,7 +709,7 @@ curl localhost:8545 \
 
 ### debug_resetHead
 
-Updates / resets head block - use only when the node got stuck due to DB / memory corruption (Nethermind specific).
+Moves the head to the given block and drops state kept for other branches; returns false when the block is unknown or cannot be made the head (Nethermind specific).
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -1620,6 +1619,8 @@ curl localhost:8545 \
 
 ### debug_traceTransactionByBlockAndIndex
 
+Returns the full stack trace of the transaction at the given index of the block specified by number, tag or hash. The block that the parameter resolves to is the one traced, so a hash that is not on the canonical chain traces that block rather than the canonical one at the same height.
+
 <Tabs>
 <TabItem value="params" label="Parameters">
 
@@ -1706,6 +1707,8 @@ curl localhost:8545 \
 </Tabs>
 
 ### debug_traceTransactionByBlockhashAndIndex
+
+Returns the full stack trace of the transaction at the given index of the block with the specified hash. The block need not be on the canonical chain.
 
 <Tabs>
 <TabItem value="params" label="Parameters">

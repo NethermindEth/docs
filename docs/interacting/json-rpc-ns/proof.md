@@ -130,7 +130,7 @@ curl localhost:8545 \
 
 ### proof_getTransactionByHash
 
-Returns the same data as `eth_getTransactionByHash` plus a Merkle-Patricia proof of the transaction's inclusion in the block's `transactionsRoot`. When `includeHeader` is `true`, the RLP-encoded block header is also returned, allowing the proof to be verified against the block's `transactionsRoot`.
+Returns the same data as `eth_getTransactionByHash` plus a Merkle-Patricia proof of the transaction's inclusion in the block's `transactionsRoot`. When `includeHeader` is `true`, the RLP-encoded block header is also returned, allowing the proof to be verified against the block's `transactionsRoot`. Returns `null` when the transaction is unknown, or when the block it is stored against cannot be resolved or no longer carries it.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -178,12 +178,14 @@ curl localhost:8545 \
     - `type`: _string_ (transaction type)
   - `txProof`: array of _string_ (hex data)
 
+`result` may be `null` in a successful response.
+
 </TabItem>
 </Tabs>
 
 ### proof_getTransactionReceipt
 
-Returns the same data as `eth_getTransactionReceipt` plus Merkle-Patricia proofs of the transaction's inclusion in the block's `transactionsRoot` and of the receipt's inclusion in the block's `receiptsRoot`. When `includeHeader` is `true`, the RLP-encoded block header is also returned, allowing proofs to be verified against the block's roots.
+Returns the same data as `eth_getTransactionReceipt` plus Merkle-Patricia proofs of the transaction's inclusion in the block's `transactionsRoot` and of the receipt's inclusion in the block's `receiptsRoot`. When `includeHeader` is `true`, the RLP-encoded block header is also returned, allowing proofs to be verified against the block's roots. Returns `null` when the transaction is unknown, when the block it is stored against cannot be resolved or no longer carries it, or when the block's stored receipts do not include one for it.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -251,6 +253,8 @@ curl localhost:8545 \
     - `type`: _string_ (transaction type)
   - `receiptProof`: array of _string_ (hex data)
   - `txProof`: array of _string_ (hex data)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
