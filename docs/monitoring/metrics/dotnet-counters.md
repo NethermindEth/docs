@@ -64,7 +64,6 @@ The easiest way of collecting metrics in a Docker container is to use Docker Com
 
 ```yaml title="docker-compose.yml"
 services:
-
   dotnet-counters:
     image: dotnet-counters
     container_name: dotnet-counters

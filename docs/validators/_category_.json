@@ -2,6 +2,7 @@
   "position": 5,
   "label": "Validators",
   "link": {
-    "type": "doc", "id": "validators"
+    "type": "doc",
+    "id": "validators"
   }
 }

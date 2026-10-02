@@ -192,7 +192,7 @@ const redirects = {
   createRedirects: existingPath => {
     if (existingPath.includes('/interacting/json-rpc-ns')) {
       return [
-        existingPath.replace('/interacting/json-rpc-ns/', '/nethermind/ethereum-client/json-rpc/'),
+        existingPath.replace('/interacting/json-rpc-ns/', '/nethermind/ethereum-client/json-rpc/')
       ];
     }
 

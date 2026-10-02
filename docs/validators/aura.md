@@ -49,7 +49,7 @@ Here is an example of recommended settings for a validator. The most convenient 
 - `Init.MemoryHint`: Can be left unspecified. It's recommended to configure it accordingly to the machine specification(for Eneergy Web, 768000000 is enough).
 - `EthStats` namespace parameters if you want to report node status to Ethstats for your network.
 - `Metrics` namespace parameters to enable node monitoring.
-- `KeyStore.PasswordFiles`: The  path to the file containing the password for the mining private key.
+- `KeyStore.PasswordFiles`: The path to the file containing the password for the mining private key.
 - `KeyStore.UnlockAccounts`: An array of accounts. Provide the miner public address here.
 - `KeyStore.BlockAuthorAccount`: The miner public address should be provided here as well.
 - `Aura.ForceSealing`: `true`
@@ -99,7 +99,7 @@ Here's an example of above settings in the Energy Web configuration file:
     "PasswordFiles": ["keystore/password"],
     "UnlockAccounts": ["0x..."],
     "BlockAuthorAccount": "0x..."
-  },
+  }
 }
 ```
 

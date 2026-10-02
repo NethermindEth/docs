@@ -22,7 +22,8 @@ The right choice of transport depends on the specific use case.
 - HTTP is a familiar and idempotent transport that closes connections between requests and can, therefore, have lower overall overhead for a relatively low number of requests.
 - WebSocket provides a continuous open channel that enables event subscriptions and streaming and handles large volumes of requests with more negligible per-message overhead.
 - IPC is generally the most secure as it is limited to local interactions and cannot be exposed to external traffic. It can also be used for event subscriptions.
-  :::
+
+:::
 
 ### HTTP
 
@@ -114,10 +115,7 @@ console.log('Balance:', formatEther(balance));
 
 // Use the high-level API to send the request.
 // Note that the return type may differ from the one of the low-level API.
-balance = await provider.getBalance(
-  '0x00000000219ab540356cbb839cbe05303d7705fa',
-  'latest'
-);
+balance = await provider.getBalance('0x00000000219ab540356cbb839cbe05303d7705fa', 'latest');
 console.log('Balance:', formatEther(balance));
 ```
 

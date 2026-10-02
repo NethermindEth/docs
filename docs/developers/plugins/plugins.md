@@ -352,7 +352,8 @@ You may want to check out the following before moving on:
 
 - [Attach to process with Visual Studio](https://learn.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger)
 - [Attach to process with JetBrains Rider](https://www.jetbrains.com/help/rider/attach-to-process.html)
-  :::
+
+:::
 
 Before attaching the debugger to the Nethermind process, we need to ensure Nethermind will pick up our plugin. There are two ways:
 

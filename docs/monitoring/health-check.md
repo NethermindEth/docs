@@ -62,7 +62,7 @@ or similar to the following if unhealthy:
     "node-health": {
       "data": {
         "IsSyncing": false,
-        "Errors": [ "NoPeers" ]
+        "Errors": ["NoPeers"]
       },
       "description": "The node is now fully synced with a network. Node is not connected to any peers.",
       "duration": "00:00:00.0001356",

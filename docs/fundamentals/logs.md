@@ -41,7 +41,7 @@ The Nethermind processing logs are a comprehensive resource for understanding Et
 #### Fork and sync events
 
 - **Received New Block**: Block received with number, hash and extra data `21288296 (0xb61f74...cbfbe7), Extra Data: Titan (titanbuilder.xyz)`
-- **Processed**: Block or block range processed, e.g., or `x4 21288291 .. 21288295` or  `21288296`
+- **Processed**: Block or block range processed, e.g., or `x4 21288291 .. 21288295` or `21288296`
 - **Received ForkChoice**: Updates on the blockchain's canonical chain; with safe and finalized block, e.g., `21288296 (0xb61f74...cbfbe7), Safe: 21288252 (0x46906d...7777b8), Finalized: 21288221 (0x22a7d2...ebeae9)`
 - **Synced Chain Head**: Latest synced block number and hash on the chain, e.g., `21288296 (0xb61f74...cbfbe7)`
 

@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "trailingComma": "none",
+  "sortImports": {
+    "newlinesBetween": false
+  },
+  "ignorePatterns": [
+    "docs/fundamentals/configuration.md",
+    "docs/interacting/json-rpc-ns/**",
+    "docs/monitoring/metrics/metrics.md",
+    "versioned_docs/**",
+    "versioned_sidebars/**",
+    "versions.json"
+  ]
+}

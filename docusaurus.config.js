@@ -22,7 +22,7 @@ const config = {
   onBrokenLinks: 'throw',
 
   markdown: {
-    hooks:{
+    hooks: {
       onBrokenMarkdownLinks: 'warn'
     }
   },
@@ -89,8 +89,8 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: true,
-        },
+          autoCollapseCategories: true
+        }
       },
       image:
         'https://github.com/NethermindEth/docs/assets/35319980/163ba000-69b1-45c6-86eb-e8c53109839f',

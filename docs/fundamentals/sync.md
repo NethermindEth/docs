@@ -19,7 +19,7 @@ Do not enable snap sync on a previously synced node. Only do so when syncing to 
 
 The sync speed and download size has to do with the specific way in which network's state is stored in a node—[Merkle trees](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/).
 
-![](</images/snap_sync.png>)
+![](/images/snap_sync.png)
 
 With fast sync, a node downloads the headers of each block and retrieves all the nodes beneath it until it reaches the
 leaves. By contrast, snap sync only downloads the leaf nodes, generating the remaining nodes locally which saves time
@@ -371,7 +371,7 @@ network connection, and the size of the chain.
 
 - Stop Nethermind if it's running.
 - In the Nethermind database directory, `nethermind_db`, by default, look for a directory named after the network you want to resync and _delete that directory_. For instance, it's `mainnet` for the Ethereum Mainnet. Normally, the database directory can be found at one of the following locations:
-    - `nethermind_db` in the Nethermind's directory (by default)
-    - `nethermind_db` in the Nethermind data directory specified by [`--data-dir`](./configuration.md#data-dir) command line option (recommended approach)
-    - The directory specified by [`--db-dir`](./configuration.md#db-dir) command line option
+  - `nethermind_db` in the Nethermind's directory (by default)
+  - `nethermind_db` in the Nethermind data directory specified by [`--data-dir`](./configuration.md#data-dir) command line option (recommended approach)
+  - The directory specified by [`--db-dir`](./configuration.md#db-dir) command line option
 - Start Nethermind again and monitor its logs to ensure sync is progressing.

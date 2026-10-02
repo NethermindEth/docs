@@ -32,6 +32,7 @@ Execution and consensus clients communicate via an authenticated endpoint specif
 ```bash
 openssl rand -hex 32 > path/to/jwt.hex
 ```
+
 :::note
 Since the JWT secret is simply a 64-character hex value, there are many other ways of generating it, including online resources. However, for security reasons, we recommend using OpenSSL.
 :::

@@ -36,8 +36,7 @@
   content: '';
   height: 24px;
   display: flex;
-  transition: background-color var(--ifm-transition-fast)
-    var(--ifm-transition-timing-default);
+  transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
   width: 24px;
 }
 
