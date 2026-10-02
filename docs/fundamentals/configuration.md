@@ -1390,7 +1390,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Whether to enable validation. Allowed values: `true` `false`. Defaults to `false`.
+  Whether to validate the submitted block against its execution (state root, receipts root, gas used, logs bloom). When disabled, a block whose header does not match the execution outcome is still reported as valid. Allowed values: `true` `false`. Defaults to `true`.
 
 - #### `Flashbots.Enabled` \{#flashbots-enabled\}
 
@@ -1854,6 +1854,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Fixed compaction schedule offset in blocks. When 0 or greater, overrides the per-instance offset in the metadata DB, which is neither read nor updated. Only the value modulo CompactSize matters. -1 to use the stored offset, generating a random one when absent. Defaults to `-1`.
 
+- #### `FlatDb.DropPruningTrieState` \{#flatdb-droppruningtriestate\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-droppruningtriestate [true|false]
+  --FlatDb.DropPruningTrieState [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_DROPPRUNINGTRIESTATE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "DropPruningTrieState": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Delete the patricia-trie state DB on start once the flat DB owns the state, reclaiming its disk space. The kept trie is what a switch back to the patricia backend restarts from, replaying from the conversion block, so this is irreversible: switching back afterwards requires a resync. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.EnableCarryForwardCache` \{#flatdb-enablecarryforwardcache\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-enablecarryforwardcache [true|false]
+  --FlatDb.EnableCarryForwardCache [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_ENABLECARRYFORWARDCACHE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "EnableCarryForwardCache": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Cache flat account and slot reads across heads in the persistence layer, so a new head does not re-read the working set from the database. `false` reads every persistence miss from the database. Allowed values: `true` `false`. Defaults to `true`.
+
 - #### `FlatDb.EnableLongFinality` \{#flatdb-enablelongfinality\}
 
   <Tabs groupId="usage">
@@ -1880,33 +1934,6 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Enable long finality support with persisted snapshots Allowed values: `true` `false`. Defaults to `true`.
-
-- #### `FlatDb.EnablePreimageRecording` \{#flatdb-enablepreimagerecording\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --flatdb-enablepreimagerecording [true|false]
-  --FlatDb.EnablePreimageRecording [true|false]
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_FLATDBCONFIG_ENABLEPREIMAGERECORDING=true|false
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "FlatDb": {
-      "EnablePreimageRecording": true|false
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Enable recording of preimages (address/slot hash to original bytes) Allowed values: `true` `false`. Defaults to `false`.
 
 - #### `FlatDb.Enabled` \{#flatdb-enabled\}
 
@@ -2130,6 +2157,195 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   A comma-separated list of contract addresses to retain unbounded (or far deeper than HistoryRetentionBlocks) flat history for, independent of the general rolling window. Needs the windowed row format (HistoryRetention Rolling or SinceBlock); under SinceBlock only the body and receipt retention described here applies, since flat history there is never pruned. Static allow-list only - an address is never added or removed except by editing this config and restarting. Both the receipts and the whole block body are retained for every block one of these addresses appears in, so those heights keep their transactions queryable and not just their logs. The cost is body disk: a contract busy enough to match most blocks means most of those bodies are kept, and history pruning stops reclaiming body space over that range. An entry with a retention suffix keeps bodies and receipts only while a height is within that many blocks of the head; a cleanup cursor reclaims them after they fall out. An entry without a retention suffix retains forever and pins the whole clears column and the per-block markers (~40 bytes per block the window never reclaims). Answering below a previously pruned boundary requires History.Pruning to stay enabled: the pruner is what validates, at startup, from which depth each slice's logs are provably retained, and without it those reads fail closed. Defaults to `null`.
+
+- #### `FlatDb.HistoryTransactionIndexBulkFillEnabled` \{#flatdb-historytransactionindexbulkfillenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindexbulkfillenabled [true|false]
+  --FlatDb.HistoryTransactionIndexBulkFillEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXBULKFILLENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexBulkFillEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Experimental mainnet v2 archive retrofit using one isolated disk-backed replay state. Replaces retrofit workers, not tip following. Requires a nonzero HistoryTransactionIndexRetrofitFromBlock; coverage joins only after the ascending range completes. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.HistoryTransactionIndexBulkFillMaxGiB` \{#flatdb-historytransactionindexbulkfillmaxgib\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindexbulkfillmaxgib <value>
+  --FlatDb.HistoryTransactionIndexBulkFillMaxGiB <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXBULKFILLMAXGIB=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexBulkFillMaxGiB": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum scratch database size in GiB for bulk transaction-index replay. Reaching the limit pauses replay without dropping its checkpoint. Defaults to `1024`.
+
+- #### `FlatDb.HistoryTransactionIndexDutyCyclePercent` \{#flatdb-historytransactionindexdutycyclepercent\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindexdutycyclepercent <value>
+  --FlatDb.HistoryTransactionIndexDutyCyclePercent <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXDUTYCYCLEPERCENT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexDutyCyclePercent": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Share of its wall clock the transaction index builder may spend working; it sleeps out the rest so that re-executing blocks stays invisible to the RPC the node is serving. 100 lets it run flat out. Defaults to `25`.
+
+- #### `FlatDb.HistoryTransactionIndexEnabled` \{#flatdb-historytransactionindexenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindexenabled [true|false]
+  --FlatDb.HistoryTransactionIndexEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Index, per transaction, what each transaction of a block wrote, so that a trace of one transaction resolves the state before it instead of replaying the transactions ahead of it. Captured inline while syncing, when the node executes each block anyway, and re-executed in the background behind the history watermark at the tip and for the retrofit; never on the tip's processing path. Pre-Amsterdam only: BAL-enabled blocks are neither indexed nor seeded. Kept in its own column. Off by default; a node that leaves it off pays nothing. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.HistoryTransactionIndexRetrofitFromBlock` \{#flatdb-historytransactionindexretrofitfromblock\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindexretrofitfromblock <value>
+  --FlatDb.HistoryTransactionIndexRetrofitFromBlock <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXRETROFITFROMBLOCK=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexRetrofitFromBlock": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Once the transaction index has caught up with the tip, also index backwards down to this block, so an archive that already exists gains coverage without a resync. 0 indexes forward from the moment the index is turned on and nothing older; 1 covers the whole chain, since genesis carries no transactions. Never goes below the flat-history floor. Defaults to `0`.
+
+- #### `FlatDb.HistoryTransactionIndexTraceParallelism` \{#flatdb-historytransactionindextraceparallelism\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindextraceparallelism <value>
+  --FlatDb.HistoryTransactionIndexTraceParallelism <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXTRACEPARALLELISM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexTraceParallelism": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum active indexed block-tracing workers shared by debug and trace RPC. 0 uses the processor count capped at 16; 1 disables parallel block tracing. Explicit values are clamped to 1-16. Each namespace keeps its own environment pool and up to twice this many background workers. Defaults to `0`.
+
+- #### `FlatDb.HistoryTransactionIndexWorkers` \{#flatdb-historytransactionindexworkers\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-historytransactionindexworkers <value>
+  --FlatDb.HistoryTransactionIndexWorkers <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXWORKERS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "HistoryTransactionIndexWorkers": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Threads re-executing blocks for the backwards retrofit of the transaction index, each on its own block range with its own processing environment. The tip is always followed by one thread regardless. 1 runs the retrofit on that same thread. Each worker holds the state its current 128-block chunk wrote, a few hundred thousand entries on mainnet, so the count is a memory knob as well as a throughput one. Defaults to `1`.
 
 - #### `FlatDb.HistoryVerifyEveryBlock` \{#flatdb-historyverifyeveryblock\}
 
@@ -2435,6 +2651,39 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Minimum reorg depth Defaults to `128`.
+
+- #### `FlatDb.OnRepair` \{#flatdb-onrepair\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-onrepair <value>
+  --FlatDb.OnRepair <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_ONREPAIR=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "OnRepair": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  What happens after a RocksDB repair of the flat DB. Resync wipes flat columns (headers, bodies, and receipts are kept) and re-enters state sync. Ignore keeps the repaired DB (escape hatch; may diverge). Ignore acknowledges the repair on the first start, so switching to Resync afterwards has no effect; a resync then requires wiping the flat DB directory. Resync refills state only through snap/state sync (Sync.FastSync with peers that serve it); a node that cannot state-sync, e.g. an archive synced from genesis, is left without state for its head, so set Ignore there or plan a resync from scratch. The flatHistory DB is not wiped: with HistoryEnabled and a windowed HistoryRetention (Rolling or SinceBlock), the resync fails to finish when its pivot falls inside the already-captured history window, so wipe the flatHistory directory too.
+
+  Allowed values:
+  - `Resync`
+  - `Ignore`
+
+  Defaults to `Resync`.
 
 - #### `FlatDb.PersistedSnapshotArenaPageCacheBytes` \{#flatdb-persistedsnapshotarenapagecachebytes\}
 
@@ -4173,7 +4422,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of concurrent instances of the Debug RPC module (`debug_trace*`, `debug_getRawBlock`, etc.). Calls beyond this cap return `LimitExceeded`. Defaults to the number of logical processors.
+  The number of concurrent instances of the Debug RPC module (`debug_trace*`, `debug_getRawBlock`, etc.). Calls beyond this cap return `LimitExceeded`. Defaults to the number of logical processors capped at 16.
 
 - #### `JsonRpc.EnableEthSignTransaction` \{#jsonrpc-enableethsigntransaction\}
 
@@ -5282,6 +5531,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The request timeout, in milliseconds. Defaults to `20000`.
 
+- #### `JsonRpc.TraceModuleConcurrentInstances` \{#jsonrpc-tracemoduleconcurrentinstances\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-tracemoduleconcurrentinstances <value>
+  --JsonRpc.TraceModuleConcurrentInstances <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_TRACEMODULECONCURRENTINSTANCES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "TraceModuleConcurrentInstances": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of concurrent instances of the Trace RPC module (`trace_block`, `trace_transaction`, `trace_replay*`, etc.). Calls beyond this cap return `LimitExceeded`. Each instance holds block-processing environments for the life of the process, so raise it only where the memory is available. Defaults to 2.
+
 - #### `JsonRpc.WebSocketsPort` \{#jsonrpc-websocketsport\}
 
   <Tabs groupId="usage">
@@ -5961,13 +6237,13 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of requests to the garbage collector (GC) to release the process memory.
+  The number of eligible newPayload calls between compacting collections that release process memory. Decommit waits for at least three seconds after payload completion (or PostBlockGcDelayMs, if longer); a new payload cancels the wait without clearing the count.
   
   Allowed values:
   
   - `-1`: No requests.
   - `0`: Requests every time.
-  - A positive number: Requests after that many Engine API calls.
+  - A positive number: Requests after that many eligible newPayload calls, including calls whose entry was skipped or pending collection was cancelled. Calls made while the no-GC strategy is disabled (such as during sync) do not count.
   
   Defaults to `25`.
 
@@ -5996,14 +6272,14 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The memory compaction mode. When set to `Full`, compacts the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
+  The compaction mode for ordinary post-block collections; periodic decommit collections always fully compact. No requests non-blocking collection, which may be skipped during background GC and may increase steady-state memory usage. When set to `Full`, compacts the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
   Allowed values:
   - `No`: Disables memory compaction.
   - `Yes`: Enables memory compaction.
   - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
-  Defaults to `Yes`.
+  Defaults to `No`.
 
 - #### `Merge.Enabled` \{#merge-enabled\}
 
@@ -6775,6 +7051,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The UDP port number for incoming discovery connections. It's recommended to keep it the same as the TCP port (`P2PPort`) because other values have not been tested yet. Defaults to `30303`.
 
+- #### `Network.EnableExternalIpResolution` \{#network-enableexternalipresolution\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --network-enableexternalipresolution [true|false]
+  --Network.EnableExternalIpResolution [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_NETWORKCONFIG_ENABLEEXTERNALIPRESOLUTION=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Network": {
+      "EnableExternalIpResolution": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to resolve missing external IPv4 and IPv6 addresses available on active local interfaces through public HTTPS services. Disable this for restricted networks; explicit external IP overrides are still used. Allowed values: `true` `false`. Defaults to `true`.
+
 - #### `Network.EnableUPnP` \{#network-enableupnp\}
 
   <Tabs groupId="usage">
@@ -6827,7 +7130,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The external IP. Use only when the external IP cannot be resolved automatically. Defaults to `null`.
+  The primary external IP address used for the legacy enode string, discovery, and peer filtering. Missing IPv4 or IPv6 addresses are resolved independently when `EnableExternalIpResolution` is enabled; use this only to override the preferred primary address. An address family is advertised in the ENR only when every currently bound inbound transport serves it; only bound transports get port entries. Defaults to `null`.
 
 - #### `Network.ExternalIpV4` \{#network-externalipv4\}
 
@@ -6854,7 +7157,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The external IPv4 address to advertise. Use with `ExternalIpV6` when the node should advertise both IPv4 and IPv6 addresses. Defaults to `null`.
+  The external IPv4 address to advertise. When unset and `EnableExternalIpResolution` is enabled, it is resolved automatically. Its ENR entry is published only when every currently bound inbound transport serves IPv4; only bound transports get port entries. Defaults to `null`.
 
 - #### `Network.ExternalIpV6` \{#network-externalipv6\}
 
@@ -6881,7 +7184,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The external IPv6 address to advertise. Use with `ExternalIpV4` when the node should advertise both IPv4 and IPv6 addresses. Defaults to `null`.
+  The external IPv6 address to advertise in the ENR. When unset and `EnableExternalIpResolution` is enabled, it is resolved automatically. Its entry is published only when every currently bound inbound transport serves IPv6; only bound transports get port entries. Defaults to `null`.
 
 - #### `Network.FilterDiscoveryNodesByRecentIp` \{#network-filterdiscoverynodesbyrecentip\}
 
@@ -7016,7 +7319,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The local IP. Use only when the local IP cannot be resolved automatically. Defaults to `null`.
+  The local IP for inbound listeners. When unset, listeners try a dual-stack wildcard on supported platforms and fall back to IPv4 if it cannot bind; macOS uses IPv4 by default. Set to `0.0.0.0` for IPv4-only, `::` for a dual-stack wildcard, or a specific address to restrict listeners to that address and family. Defaults to `null`.
 
 - #### `Network.MaxActivePeers` \{#network-maxactivepeers\}
 
@@ -8194,9 +8497,10 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The maximum block range (toBlock - fromBlock + 1) allowed in a single `eth_getLogs` request.
-  Requests exceeding this range are rejected with an "invalid params" (-32602) error.
-  Set to 0 to disable the limit. Value is ignored (no limits) if log index is enabled. Defaults to `1000`.
+  The maximum number of blocks a single `eth_getLogs` or `eth_getFilterLogs` request may read receipts of
+  one by one. Blocks the log index can answer for do not count towards it, so on an indexed node the limit
+  only bounds what falls back to a sequential read. Requests exceeding it are rejected with an
+  "invalid params" (-32602) error. Set to 0 to disable the limit. Defaults to `10000`.
 
 - #### `Receipt.ReceiptsMigration` \{#receipt-receiptsmigration\}
 
@@ -9955,7 +10259,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max number of threads used for syncing. `0` to use the number of logical processors. Defaults to `0`.
+  The max number of threads used for syncing. `0` to use the number of logical processors. Snap and state sync allow up to twice this many in-flight requests while limiting concurrent response processing to this value. Defaults to `0`.
 
 - #### `Sync.NetworkingEnabled` \{#sync-networkingenabled\}
 

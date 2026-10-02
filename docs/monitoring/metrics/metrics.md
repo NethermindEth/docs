@@ -858,6 +858,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Live arena reservations
 
+- #### `nethermind_bal_healing_bals_applied` \{#bal_healing_bals_applied\}
+  
+  Block access lists replayed onto the reassembled state by BAL healing
+
+- #### `nethermind_bal_healing_reassembled_nodes` \{#bal_healing_reassembled_nodes\}
+  
+  Trie nodes created by the trie reassembly that precedes BAL healing
+
 - #### `nethermind_blob_allocated_bytes` \{#blob_allocated_bytes\}
   
   Allocated bytes in blob files (sum of per-file Frontier)
@@ -1025,6 +1033,18 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_total_snapshot_memory` \{#total_snapshot_memory\}
   
   Total estimated snapshot memory in bytes
+
+- #### `nethermind_transaction_changeset_index_from` \{#transaction_changeset_index_from\}
+  
+  Lowest block the per-transaction changeset index covers; 0 when the index is disabled or has indexed nothing yet
+
+- #### `nethermind_transaction_changeset_index_to` \{#transaction_changeset_index_to\}
+  
+  Highest block the per-transaction changeset index covers; 0 when the index is disabled or has indexed nothing yet
+
+- #### `nethermind_unreadable_transaction_changeset_rows` \{#unreadable_transaction_changeset_rows\}
+  
+  Times a transaction changeset row could not be read. Repeated attempts on the same damaged row count separately; tracing falls back to replay.
 
 
 ### StateDiffsWriter
