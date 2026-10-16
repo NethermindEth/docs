@@ -50,13 +50,13 @@ Do not turn on [full state pruning](./state-pruning.md) on an archive node, as t
 
 The row format of flat history is chosen when the database is created, and it never changes. Unwindowed history answers a read that finds no change with "unchanged since genesis", so it has to start at genesis. Windowed history reads the live state when nothing changed after the queried block, so it can start at any block. A node that snap syncs never executes the blocks below its pivot, so its history can only start there.
 
-| `FlatDb.HistoryRetention` | How the node gets its state | Row format | Historical state | Historical `eth_getProof` |
-|---|---|---|---|---|
-| `None` | Full sync from genesis (`Sync.FastSync=false`) | Unwindowed | From genesis | Yes, with `FlatDb.ArchiveProofBuildEnabled` and `FlatDb.ArchiveProofServeEnabled` |
-| `None` | Restored from an archive snapshot | Unwindowed | From genesis | Yes, if the snapshot includes the commitments, or after the retrofit walk |
-| `None` | Snap sync into an empty database | Windowed | From the sync pivot, never pruned | No |
-| `Rolling` | Any | Windowed | The last `FlatDb.HistoryRetentionBlocks` blocks | No |
-| `SinceBlock` | Any | Windowed | From `FlatDb.HistoryRetentionSinceBlock` or the sync pivot, whichever is higher | No |
+| `FlatDb.HistoryRetention` | How the node gets its state                    | Row format | Historical state                                                                | Historical `eth_getProof`                                                         |
+| ------------------------- | ---------------------------------------------- | ---------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `None`                    | Full sync from genesis (`Sync.FastSync=false`) | Unwindowed | From genesis                                                                    | Yes, with `FlatDb.ArchiveProofBuildEnabled` and `FlatDb.ArchiveProofServeEnabled` |
+| `None`                    | Restored from an archive snapshot              | Unwindowed | From genesis                                                                    | Yes, if the snapshot includes the commitments, or after the retrofit walk         |
+| `None`                    | Snap sync into an empty database               | Windowed   | From the sync pivot, never pruned                                               | No                                                                                |
+| `Rolling`                 | Any                                            | Windowed   | The last `FlatDb.HistoryRetentionBlocks` blocks                                 | No                                                                                |
+| `SinceBlock`              | Any                                            | Windowed   | From `FlatDb.HistoryRetentionSinceBlock` or the sync pivot, whichever is higher | No                                                                                |
 
 Notes:
 
