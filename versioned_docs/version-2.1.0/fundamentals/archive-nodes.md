@@ -3,7 +3,7 @@ title: Archive nodes
 sidebar_position: 8
 ---
 
-Starting with Nethermind 2.0, archive functionality is built on the flat database: per-block state changesets captured during ordinary syncing answer historical queries, with no extra database and no special sync mode. Four archive shapes are available, all reached the same two ways - a full sync from genesis, or a snap sync to the tip that captures history from the pivot onwards.
+Starting with Nethermind 2.0, archive functionality is built on the flat database: per-block state changesets captured during ordinary syncing answer historical queries, with no extra database and no special sync mode. Four archive shapes are available. Each is reached by a full sync from genesis or by a snap sync to the tip, and a snap-synced node captures history from its sync pivot onwards, which needs a windowed shape; see [How the sync shapes history](#how-the-sync-shapes-history).
 
 Two independent groups of configuration options compose:
 
@@ -12,7 +12,7 @@ Two independent groups of configuration options compose:
 
 ## Archive shapes
 
-- **Full archive** answers every historical query at every height, state and receipts, from genesis.
+- **Full archive** answers every historical query at every height, state and receipts, from genesis. It has to sync from genesis or be restored from an archive snapshot; for history from a snap-sync pivot, use a since-block archive.
 - **Windowed archive** answers everything a full archive does, but only for the last [`FlatDb.HistoryRetentionBlocks`](./configuration.md#flatdb-historyretentionblocks) blocks, with [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) set to `Rolling`. Older queries are refused with a pruned-history error - never answered wrongly from live state. Disk stays bounded: the pruner reclaims continuously as the window rolls.
 - **Address-slice archive** is a windowed node whose named contracts additionally answer to their full slice depth - state, logs, and transactions - while everything else rolls with the window.
 - **Since-block archive** keeps everything from a fixed block onward, forever: set [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) to `SinceBlock` and [`FlatDb.HistoryRetentionSinceBlock`](./configuration.md#flatdb-historyretentionsinceblock) to that block. Nothing below it is captured and queries there fail closed; nothing above it is ever pruned. Tracing a block replays it over the state of its parent, so a node that must trace from a given block sets the floor one block below it. For blocks and receipts from the same point, use `History.Pruning=UseAncientBarriers` with the ancient barriers set to that block; see [History pruning](./history-pruning.md). Slices (`FlatDb.HistorySliceAddresses`) keep their block-and-receipt retention in this mode; their flat-history side has nothing to keep, since nothing is ever pruned. This suits operators whose indexers only need history from a known starting point that never moves.
@@ -46,6 +46,22 @@ Every archive setting is default-off: a node that configures none of them behave
 Do not turn on [full state pruning](./state-pruning.md) on an archive node, as these are two opposing features. Set [`Pruning.Mode`](./configuration.md#pruning-mode) to `None`.
 :::
 
+## How the sync shapes history
+
+The row format of flat history is chosen when the database is created, and it never changes. Unwindowed history (`None`) answers a read that finds no change with "unchanged since genesis", so it has to start at genesis. Windowed history (`Rolling`, `SinceBlock`) reads the live state when nothing changed after the queried block, so it can start at any block. A node that snap syncs never executes the blocks below its pivot, so its history can only start there.
+
+| `FlatDb.HistoryRetention` | How the node gets its state | Historical state | Historical `eth_getProof` |
+|---|---|---|---|
+| `None` | Full sync from genesis (`Sync.FastSync=false`) | From genesis | Yes, with `FlatDb.ArchiveProofBuildEnabled` and `FlatDb.ArchiveProofServeEnabled` |
+| `None` | Restored from an archive snapshot | From genesis | Yes, if the snapshot includes the commitments, or after the retrofit walk |
+| `None` | Snap sync | **None.** Capture stops after the sync, and only the most recent in-memory blocks answer | No |
+| `Rolling` | Any | The last `FlatDb.HistoryRetentionBlocks` blocks | No |
+| `SinceBlock` | Any | From `FlatDb.HistoryRetentionSinceBlock` or the sync pivot, whichever is higher | No |
+
+:::warning Important
+Do not combine `FlatDb.HistoryRetention=None` with snap sync. For history from the sync pivot onwards, use `SinceBlock`, with `FlatDb.HistoryRetentionSinceBlock` at or below the pivot. A node that already synced this way has no usable history: resync its flatHistory database.
+:::
+
 ## Historical queries and the window
 
 Within the window, the node answers historical RPC exactly like a full archive. Below it, queries fail closed rather than answering wrongly:
@@ -73,7 +89,7 @@ A full archive can also answer `eth_getProof` (and the `proof` namespace) at his
 - [`FlatDb.ArchiveProofBuildEnabled`](./configuration.md#flatdb-archiveproofbuildenabled) writes the commitments. A node syncing from genesis builds them at the tip as blocks are captured, with nothing else to run. An already synced archive is retrofitted by the every-block walk: with [`FlatDb.HistoryVerifyEveryBlock`](./configuration.md#flatdb-historyverifyeveryblock) also on, the walk emits commitments while it verifies, and publishes coverage only behind a passing verdict. The walk resumes across restarts.
 - [`FlatDb.ArchiveProofServeEnabled`](./configuration.md#flatdb-archiveproofserveenabled) answers `eth_getProof` below the flat state boundary from them. Heights the commitments do not cover are refused with a pruned-history error, never answered from live state.
 
-Historical proofs need unwindowed flat history: [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) must be `None`. On a `Rolling` or `SinceBlock` node the rows are pre-values behind a retention floor, which a proof cannot replay, so both switches are ignored there and a warning is logged.
+Historical proofs need unwindowed flat history that starts at genesis: [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) must be `None`, and the node must sync from genesis or be restored from an archive snapshot. On a `Rolling` or `SinceBlock` node the rows are pre-values behind a retention floor, which a proof cannot replay, so both switches are ignored there and a warning is logged.
 
 ### How a proof is checked
 
