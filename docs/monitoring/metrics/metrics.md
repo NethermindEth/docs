@@ -49,10 +49,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### Blockchain
 
-- #### `nethermind_best_known_block_number` \{#best_known_block_number\}
-  
-  The estimated highest block available.
-
 - #### `nethermind_block_m_gas_per_sec` \{#block_m_gas_per_sec\}
   
   Histogram of block MGas per second
@@ -60,14 +56,6 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_block_processing_time_micros` \{#block_processing_time_micros\}
   
   Histogram of block processing time
-
-- #### `nethermind_blockchain_height` \{#blockchain_height\}
-  
-  The current height of the canonical chain.
-
-- #### `nethermind_blocks` \{#blocks\}
-  
-  Total number of blocks processed
 
 - #### `nethermind_blocks_sealed` \{#blocks_sealed\}
   
@@ -96,6 +84,58 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_mgas_per_sec` \{#mgas_per_sec\}
   
   MGas processed per second
+
+- #### `nethermind_prewarm_handoff_failures` \{#prewarm_handoff_failures\}
+  
+  Transactions executed after their pre-warm run failed to apply
+
+- #### `nethermind_prewarm_handoffs` \{#prewarm_handoffs\}
+  
+  Transactions block processing took over from their pre-warm run
+
+- #### `nethermind_prewarm_handoffs_missing` \{#prewarm_handoffs_missing\}
+  
+  Transactions executed for lack of a usable pre-warm run
+
+- #### `nethermind_prewarm_handoffs_rejected` \{#prewarm_handoffs_rejected\}
+  
+  Transactions executed because state their pre-warm run read had changed
+
+- #### `nethermind_prewarm_mempool_runs_stored` \{#prewarm_mempool_runs_stored\}
+  
+  Pre-warm runs of the mempool pass stored for block processing to take over
+
+- #### `nethermind_prewarm_mempool_runs_taken_over` \{#prewarm_mempool_runs_taken_over\}
+  
+  Transactions block processing took over from a pre-warm run of the mempool pass
+
+- #### `nethermind_prewarm_refreshes` \{#prewarm_refreshes\}
+  
+  Pre-warm runs taken to be refreshed because an earlier transaction leaves a slot they read at another value
+
+- #### `nethermind_prewarm_refreshes_cancelled` \{#prewarm_refreshes_cancelled\}
+  
+  Refreshes stopped because block processing reached their transaction
+
+- #### `nethermind_prewarm_refreshes_failed` \{#prewarm_refreshes_failed\}
+  
+  Refreshes whose run left no footprint
+
+- #### `nethermind_prewarm_refreshes_skipped` \{#prewarm_refreshes_skipped\}
+  
+  Refreshes not run: a slot the run read is not tracked, or none of them moved
+
+- #### `nethermind_prewarm_refreshes_stored` \{#prewarm_refreshes_stored\}
+  
+  Refreshed pre-warm runs stored for block processing to take over
+
+- #### `nethermind_prewarm_refreshes_taken_over` \{#prewarm_refreshes_taken_over\}
+  
+  Transactions block processing took over from a refreshed pre-warm run
+
+- #### `nethermind_prewarm_speculative_stops_without_waiting` \{#prewarm_speculative_stops_without_waiting\}
+  
+  Mempool pre-warm sessions a block stopped between passes, without waiting for them to end
 
 - #### `nethermind_processing_queue_size` \{#processing_queue_size\}
   
@@ -216,6 +256,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_state_tree_writes` \{#state_tree_writes\}
   
   Number of state trie writes.
+
+- #### `nethermind_storage_cleared` \{#storage_cleared\}
+  
+  Number of contracts whose non-empty persisted storage was explicitly cleared during a committed tree write, including trace/debug RPC state-override commits.
 
 - #### `nethermind_storage_reader_reads` \{#storage_reader_reads\}
   
@@ -527,7 +571,7 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 - #### `nethermind_json_rpc_overload_rejections` \{#json_rpc_overload_rejections\}
   
-  Number of JSON RPC requests rejected or timed out at a concurrency cap (module pool or override-environment limit). A nonzero rate means callers receive 'Too many requests' — consider raising JsonRpc.EthModuleConcurrentInstances.
+  Number of JSON RPC requests rejected or timed out at a module, shared-request, execution-environment, or synchronous-transaction concurrency limit.
 
 - #### `nethermind_json_rpc_request_deserialization_failures` \{#json_rpc_request_deserialization_failures\}
   
@@ -543,6 +587,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 
 ### Merge
+
+- #### `nethermind_bal_catch_up_blocks` \{#bal_catch_up_blocks\}
+  
+  Number of finalized blocks caught up by applying their block access list instead of executing them
 
 - #### `nethermind_forkchoice_updated_execution_time` \{#forkchoice_updated_execution_time\}
   
@@ -878,6 +926,38 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Cached pooled resources by category and type
 
+- #### `nethermind_carry_forward_account_count` \{#carry_forward_account_count\}
+  
+  Accounts currently held by the carry-forward cache
+
+- #### `nethermind_carry_forward_account_hits` \{#carry_forward_account_hits\}
+  
+  Carry-forward account cache hits
+
+- #### `nethermind_carry_forward_account_misses` \{#carry_forward_account_misses\}
+  
+  Carry-forward account cache misses
+
+- #### `nethermind_carry_forward_account_wipes` \{#carry_forward_account_wipes\}
+  
+  Times the carry-forward account cache was cleared wholesale because its entry cap was reached
+
+- #### `nethermind_carry_forward_slot_count` \{#carry_forward_slot_count\}
+  
+  Slots currently held by the carry-forward cache
+
+- #### `nethermind_carry_forward_slot_evictions` \{#carry_forward_slot_evictions\}
+  
+  Carry-forward slot cache entries replaced to make room in a full set
+
+- #### `nethermind_carry_forward_slot_hits` \{#carry_forward_slot_hits\}
+  
+  Carry-forward slot cache hits
+
+- #### `nethermind_carry_forward_slot_misses` \{#carry_forward_slot_misses\}
+  
+  Carry-forward slot cache misses
+
 - #### `nethermind_compact_time` \{#compact_time\}
   
   Time spend compacting snapshots
@@ -937,6 +1017,22 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_importer_entries_count_flat` \{#importer_entries_count_flat\}
   
   Importer entries count flat
+
+- #### `nethermind_in_memory_slot_filter_build_failures` \{#in_memory_slot_filter_build_failures\}
+  
+  Negative filters over the in-memory snapshots' slots that failed to build; their bundles read slots without a filter
+
+- #### `nethermind_in_memory_slot_filter_build_time` \{#in_memory_slot_filter_build_time\}
+  
+  Time to build the negative filter over the in-memory snapshots' slots (Stopwatch ticks)
+
+- #### `nethermind_in_memory_slot_filter_builds` \{#in_memory_slot_filter_builds\}
+  
+  Negative filters built over the in-memory snapshots' slots
+
+- #### `nethermind_in_memory_slot_filter_memory` \{#in_memory_slot_filter_memory\}
+  
+  Memory held by the negative filters over the in-memory snapshots' slots in bytes; one filter per read-only snapshot bundle that served a read-only execution slot read
 
 - #### `nethermind_page_tracker_evictions_dispatched` \{#page_tracker_evictions_dispatched\}
   
@@ -1162,6 +1258,50 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of pending transactions evicted from transaction pool.
 
+- #### `nethermind_pending_transactions_frame_tx_expired` \{#pending_transactions_frame_tx_expired\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because their expiry deadline is already behind the current head.
+
+- #### `nethermind_pending_transactions_frame_tx_misplaced_expiry_frame` \{#pending_transactions_frame_tx_misplaced_expiry_frame\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because their expiry verifier frame does not lead the frame list.
+
+- #### `nethermind_pending_transactions_frame_tx_misplaced_recent_root_frame` \{#pending_transactions_frame_tx_misplaced_recent_root_frame\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because their EIP-8272 recent_root_verify frame is malformed or misplaced.
+
+- #### `nethermind_pending_transactions_frame_tx_missing_sidecar` \{#pending_transactions_frame_tx_missing_sidecar\}
+  
+  Number of pending EIP-8141 blob-carrying frame transactions received that were ignored because they carry no blob sidecar.
+
+- #### `nethermind_pending_transactions_frame_tx_no_payer` \{#pending_transactions_frame_tx_no_payer\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because their validation prefix never approves a payer.
+
+- #### `nethermind_pending_transactions_frame_tx_recent_root_with_persistent_blobs` \{#pending_transactions_frame_tx_recent_root_with_persistent_blobs\}
+  
+  Number of pending blob-carrying EIP-8141 frame transactions received that were ignored because they carry an EIP-8272 recent_root_verify frame and the blob pool is persistent.
+
+- #### `nethermind_pending_transactions_frame_tx_signature_invalid` \{#pending_transactions_frame_tx_signature_invalid\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because one of their protocol-validated signatures does not verify.
+
+- #### `nethermind_pending_transactions_frame_tx_unrecognized_prefix` \{#pending_transactions_frame_tx_unrecognized_prefix\}
+  
+  Number of pending EIP-8141 frame transactions ignored because their validation prefix is outside the public-mempool grammar.
+
+- #### `nethermind_pending_transactions_frame_tx_verify_after_prefix` \{#pending_transactions_frame_tx_verify_after_prefix\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because they carry a VERIFY frame after their validation prefix.
+
+- #### `nethermind_pending_transactions_frame_tx_verify_gas_too_high` \{#pending_transactions_frame_tx_verify_gas_too_high\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because their validation prefix exceeds MAX_VERIFY_GAS.
+
+- #### `nethermind_pending_transactions_frame_tx_verify_state_gas_too_high` \{#pending_transactions_frame_tx_verify_state_gas_too_high\}
+  
+  Number of pending EIP-8141 frame transactions received that were ignored because their validation prefix exceeds MAX_VERIFY_STATE_GAS.
+
 - #### `nethermind_pending_transactions_gas_limit_too_high` \{#pending_transactions_gas_limit_too_high\}
   
   Number of pending transactions received that were ignored because the gas limit was to high for the block.
@@ -1173,6 +1313,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_pending_transactions_hashes_sent` \{#pending_transactions_hashes_sent\}
   
   Number of hashes of pending transactions broadcasted to peers.
+
+- #### `nethermind_pending_transactions_keyed_nonce_unmet` \{#pending_transactions_keyed_nonce_unmet\}
+  
+  Number of pending EIP-8250 transactions received that were ignored because a selected nonce key is not at the declared sequence.
 
 - #### `nethermind_pending_transactions_known` \{#pending_transactions_known\}
   

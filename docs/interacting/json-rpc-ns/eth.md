@@ -900,7 +900,16 @@ curl localhost:8545 \
   - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
-  - `transactions`: array of _object_
+  - `transactions`: _object_
+    - `full`: array of _object_
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
@@ -981,7 +990,16 @@ curl localhost:8545 \
   - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
-  - `transactions`: array of _object_
+  - `transactions`: _object_
+    - `full`: array of _object_
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
@@ -1035,11 +1053,29 @@ curl localhost:8545 \
 `result`: array of _object_
   - `blobGasPrice`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
+  - `blockGasUsed`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
   - `contractAddress`: _string_ (address)
   - `cumulativeGasUsed`: _string_ (hex integer)
   - `effectiveGasPrice`: _string_ (hex integer)
+  - `executionGasUsed`: _string_ (hex integer)
+  - `frameReceipts`: array of _object_
+    - `executionGasUsed`: _string_ (hex integer)
+    - `gasUsed`: _string_ (hex integer)
+    - `logs`: array of _object_
+      - `address`: _string_ (address)
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `data`: _string_ (hex data)
+      - `logIndex`: _string_ (hex integer)
+      - `removed`: _boolean_
+      - `topics`: array of _string_ (hash)
+      - `transactionHash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+    - `stateGasUsed`: _string_ (hex integer)
+    - `status`: _integer_
   - `from`: _string_ (address)
   - `gasUsed`: _string_ (hex integer)
   - `logs`: array of _object_
@@ -1054,8 +1090,10 @@ curl localhost:8545 \
     - `transactionHash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
   - `logsBloom`: _string_ (hex data)
+  - `payer`: _string_ (address)
   - `root`: _string_ (hash)
   - `status`: _string_ (hex integer)
+  - `storageGasUsed`: _string_ (hex integer)
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -2001,11 +2039,29 @@ curl localhost:8545 \
 `result`: _object_
   - `blobGasPrice`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
+  - `blockGasUsed`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
   - `contractAddress`: _string_ (address)
   - `cumulativeGasUsed`: _string_ (hex integer)
   - `effectiveGasPrice`: _string_ (hex integer)
+  - `executionGasUsed`: _string_ (hex integer)
+  - `frameReceipts`: array of _object_
+    - `executionGasUsed`: _string_ (hex integer)
+    - `gasUsed`: _string_ (hex integer)
+    - `logs`: array of _object_
+      - `address`: _string_ (address)
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `data`: _string_ (hex data)
+      - `logIndex`: _string_ (hex integer)
+      - `removed`: _boolean_
+      - `topics`: array of _string_ (hash)
+      - `transactionHash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+    - `stateGasUsed`: _string_ (hex integer)
+    - `status`: _integer_
   - `from`: _string_ (address)
   - `gasUsed`: _string_ (hex integer)
   - `logs`: array of _object_
@@ -2020,8 +2076,10 @@ curl localhost:8545 \
     - `transactionHash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
   - `logsBloom`: _string_ (hex data)
+  - `payer`: _string_ (address)
   - `root`: _string_ (hash)
   - `status`: _string_ (hex integer)
+  - `storageGasUsed`: _string_ (hex integer)
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -2098,7 +2156,16 @@ curl localhost:8545 \
   - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
-  - `transactions`: array of _object_
+  - `transactions`: _object_
+    - `full`: array of _object_
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
@@ -2179,7 +2246,16 @@ curl localhost:8545 \
   - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
-  - `transactions`: array of _object_
+  - `transactions`: _object_
+    - `full`: array of _object_
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
@@ -2555,11 +2631,29 @@ curl localhost:8545 \
 `result`: _object_
   - `blobGasPrice`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
+  - `blockGasUsed`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
   - `contractAddress`: _string_ (address)
   - `cumulativeGasUsed`: _string_ (hex integer)
   - `effectiveGasPrice`: _string_ (hex integer)
+  - `executionGasUsed`: _string_ (hex integer)
+  - `frameReceipts`: array of _object_
+    - `executionGasUsed`: _string_ (hex integer)
+    - `gasUsed`: _string_ (hex integer)
+    - `logs`: array of _object_
+      - `address`: _string_ (address)
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `data`: _string_ (hex data)
+      - `logIndex`: _string_ (hex integer)
+      - `removed`: _boolean_
+      - `topics`: array of _string_ (hash)
+      - `transactionHash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+    - `stateGasUsed`: _string_ (hex integer)
+    - `status`: _integer_
   - `from`: _string_ (address)
   - `gasUsed`: _string_ (hex integer)
   - `logs`: array of _object_
@@ -2574,8 +2668,10 @@ curl localhost:8545 \
     - `transactionHash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
   - `logsBloom`: _string_ (hex data)
+  - `payer`: _string_ (address)
   - `root`: _string_ (hash)
   - `status`: _string_ (hex integer)
+  - `storageGasUsed`: _string_ (hex integer)
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -2809,6 +2905,23 @@ curl localhost:8545 \
       - `code`: _integer_
       - `data`: _string_ (hex data)
       - `message`: _string_
+    - `frameResults`: array of _object_
+      - `executionGasUsed`: _string_ (hex integer)
+      - `gasUsed`: _string_ (hex integer)
+      - `logs`: array of _object_
+        - `address`: _string_ (address)
+        - `blockHash`: _string_ (hash)
+        - `blockNumber`: _string_ (hex integer)
+        - `blockTimestamp`: _string_ (hex integer)
+        - `data`: _string_ (hex data)
+        - `logIndex`: _string_ (hex integer)
+        - `removed`: _boolean_
+        - `topics`: array of _string_ (hash)
+        - `transactionHash`: _string_ (hash)
+        - `transactionIndex`: _string_ (hex integer)
+      - `returnData`: _string_ (hex data)
+      - `stateGasUsed`: _string_ (hex integer)
+      - `status`: _string_ (hex integer)
     - `gasUsed`: _string_ (hex integer)
     - `logs`: array of _object_
       - `address`: _string_ (address)
@@ -2847,27 +2960,16 @@ curl localhost:8545 \
   - `step`: _integer_
   - `timestamp`: _string_ (hex integer)
   - `totalDifficulty`: _string_ (hex integer)
-  - `traces`: array of _object_
-    - `error`: _object_
-      - `code`: _integer_
-      - `data`: _string_ (hex data)
-      - `message`: _string_
-    - `gasUsed`: _string_ (hex integer)
-    - `logs`: array of _object_
-      - `address`: _string_ (address)
+  - `transactions`: _object_
+    - `full`: array of _object_
       - `blockHash`: _string_ (hash)
       - `blockNumber`: _string_ (hex integer)
       - `blockTimestamp`: _string_ (hex integer)
-      - `data`: _string_ (hex data)
-      - `logIndex`: _string_ (hex integer)
-      - `removed`: _boolean_
-      - `topics`: array of _string_ (hash)
-      - `transactionHash`: _string_ (hash)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
       - `transactionIndex`: _string_ (hex integer)
-    - `maxUsedGas`: _string_ (hex integer)
-    - `returnData`: _string_ (hex data)
-    - `status`: _string_ (hex integer)
-  - `transactions`: array of _object_
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
