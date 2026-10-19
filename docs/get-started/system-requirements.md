@@ -19,7 +19,7 @@ Nethermind supports a broad range of modern operating systems (64-bit-only) incl
 - **Windows**
   - Windows 10+
   - Windows Server 2012+
-- **macOS** 13+
+- **macOS** 14+
 
 ## Hardware requirements
 

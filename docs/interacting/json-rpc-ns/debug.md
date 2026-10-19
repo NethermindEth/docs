@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 
 ### debug_deleteChainSlice
 
-Deletes a slice of a chain from the tree on all branches (Nethermind specific).
+Deletes chain levels on all branches (Nethermind specific). Requires paused, drained processing, no active initial synchronization, and preserves historical sync progress, including when forced. Deletion at or below the sync pivot requires completed historical sync; a deleted pivot is moved to the surviving head. When replacing the head, the preceding block must be canonical with its body and processing state available. Returns invalid-params for an invalid range or resource-unavailable when maintenance is unsafe.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -154,7 +154,16 @@ curl localhost:8545 \
     - `step`: _integer_
     - `timestamp`: _string_ (hex integer)
     - `totalDifficulty`: _string_ (hex integer)
-    - `transactions`: array of _object_
+    - `transactions`: _object_
+      - `full`: array of _object_
+        - `blockHash`: _string_ (hash)
+        - `blockNumber`: _string_ (hex integer)
+        - `blockTimestamp`: _string_ (hex integer)
+        - `gas`: _string_ (hex integer)
+        - `hash`: _string_ (hash)
+        - `transactionIndex`: _string_ (hex integer)
+        - `type`: _string_ (transaction type)
+      - `hashes`: array of _string_ (hash)
     - `transactionsRoot`: _string_ (hash)
     - `uncles`: array of _string_ (hash)
     - `withdrawals`: array of _object_
@@ -537,11 +546,29 @@ Insert receipts for the block after verifying receipts root correctness.
 2. `receiptForRpc`: array of _object_
   - `blobGasPrice`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
+  - `blockGasUsed`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
   - `contractAddress`: _string_ (address)
   - `cumulativeGasUsed`: _string_ (hex integer)
   - `effectiveGasPrice`: _string_ (hex integer)
+  - `executionGasUsed`: _string_ (hex integer)
+  - `frameReceipts`: array of _object_
+    - `executionGasUsed`: _string_ (hex integer)
+    - `gasUsed`: _string_ (hex integer)
+    - `logs`: array of _object_
+      - `address`: _string_ (address)
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `data`: _string_ (hex data)
+      - `logIndex`: _string_ (hex integer)
+      - `removed`: _boolean_
+      - `topics`: array of _string_ (hash)
+      - `transactionHash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+    - `stateGasUsed`: _string_ (hex integer)
+    - `status`: _integer_
   - `from`: _string_ (address)
   - `gasUsed`: _string_ (hex integer)
   - `logs`: array of _object_
@@ -556,8 +583,10 @@ Insert receipts for the block after verifying receipts root correctness.
     - `transactionHash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)
   - `logsBloom`: _string_ (hex data)
+  - `payer`: _string_ (address)
   - `root`: _string_ (hash)
   - `status`: _string_ (hex integer)
+  - `storageGasUsed`: _string_ (hex integer)
   - `to`: _string_ (address)
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
@@ -618,6 +647,7 @@ Replays a block and returns the world-state root after each transaction in execu
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -631,6 +661,7 @@ Replays a block and returns the world-state root after each transaction in execu
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -709,7 +740,7 @@ curl localhost:8545 \
 
 ### debug_resetHead
 
-Moves the head to the given block and drops state kept for other branches; returns false when the block is unknown or cannot be made the head (Nethermind specific).
+Rewinds to a canonical block with state available for block processing and prunes abandoned flat-state snapshots; returns false for an unknown hash or a refused rewind (Nethermind specific). Requires paused, drained block processing and no active initial synchronization. A target below the sync pivot is refused unless historical downloads are complete and retained progress is at or below the target; the pivot then moves with the head. Ancient backfill permits rewinds at or above the pivot.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -729,6 +760,47 @@ curl localhost:8545 \
       "id": 0,
       "method": "debug_resetHead",
       "params": [blockHash]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _boolean_
+
+</TabItem>
+</Tabs>
+
+### debug_setHead
+
+Rewinds the head to a canonical block with state available for block processing, given by number, tag or hash, and prunes abandoned flat-state snapshots. Returns false for an unknown target or a refused rewind (Nethermind specific). Requires paused, drained block processing and no active initial synchronization. A target below the sync pivot is refused unless historical downloads are complete and retained progress is at or below the target; the pivot then moves with the head. Ancient backfill permits rewinds at or above the pivot.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_setHead",
+      "params": [blockParameter]
     }'
 ```
 
@@ -802,6 +874,7 @@ Retrieves geth like traces of the simulated blocks
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -815,6 +888,7 @@ Retrieves geth like traces of the simulated blocks
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -848,25 +922,6 @@ curl localhost:8545 \
   - `baseFeePerGas`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
   - `blockAccessListHash`: _string_ (hash)
-  - `calls`: array of _object_
-    - `customTracerResult`: _object_
-      - `value`: _object_
-    - `entries`: array of _object_
-      - `depth`: _integer_
-      - `error`: _string_
-      - `gas`: _integer_
-      - `gasCost`: _integer_
-      - `memory`: array of _string_ (32-byte hex data)
-      - `op`: _string_
-      - `pc`: _integer_
-      - `refund`: _integer_
-      - `returnData`: _string_
-      - `stack`: array of _string_ (hex integer)
-      - `storage`: map of _string_ (32-byte hex data)
-    - `failed`: _boolean_
-    - `gas`: _string_ (hex integer)
-    - `returnValue`: _string_ (hex data)
-    - `txHash`: _string_ (hash)
   - `difficulty`: _string_ (hex integer)
   - `excessBlobGas`: _string_ (hex integer)
   - `extraData`: _string_ (hex data)
@@ -909,7 +964,16 @@ curl localhost:8545 \
     - `gas`: _string_ (hex integer)
     - `returnValue`: _string_ (hex data)
     - `txHash`: _string_ (hash)
-  - `transactions`: array of _object_
+  - `transactions`: _object_
+    - `full`: array of _object_
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
@@ -945,6 +1009,7 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -958,6 +1023,7 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1014,6 +1080,7 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1027,6 +1094,7 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1083,6 +1151,7 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1096,6 +1165,7 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1170,6 +1240,7 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1183,6 +1254,7 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1257,6 +1329,7 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1270,6 +1343,7 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1353,6 +1427,7 @@ This method lets you run an eth_call within the context of the given block execu
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1366,6 +1441,7 @@ This method lets you run an eth_call within the context of the given block execu
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1466,6 +1542,7 @@ Executes a list of bundles of transactions without creating transactions on the 
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1479,6 +1556,7 @@ Executes a list of bundles of transactions without creating transactions on the 
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1553,6 +1631,7 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1566,6 +1645,7 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1642,6 +1722,7 @@ Returns the full stack trace of the transaction at the given index of the block 
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1655,6 +1736,7 @@ Returns the full stack trace of the transaction at the given index of the block 
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1731,6 +1813,7 @@ Returns the full stack trace of the transaction at the given index of the block 
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1744,6 +1827,7 @@ Returns the full stack trace of the transaction at the given index of the block 
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1818,6 +1902,7 @@ curl localhost:8545 \
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1831,6 +1916,7 @@ curl localhost:8545 \
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
@@ -1905,6 +1991,7 @@ curl localhost:8545 \
     - `disableStorage`: _boolean_
     - `enableMemory`: _boolean_
     - `enableReturnData`: _boolean_
+    - `limit`: _integer_
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
@@ -1918,6 +2005,7 @@ curl localhost:8545 \
     - `tracer`: _string_
     - `tracerConfig`: _object_
     - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
 
 
 </TabItem>
