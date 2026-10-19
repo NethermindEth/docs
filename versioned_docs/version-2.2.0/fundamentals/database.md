@@ -19,11 +19,12 @@ same directory where the Nethermind executable is. You can change the database l
 | canonicalHashTrie | LES protocol related data                                                                                                                |
 | code              | Contract bytecodes                                                                                                                       |
 | discoveryNodes    | Peers discovered via discovery protocol - used for quick peering after restarts (you can copy this DB between nodes to speed up peering) |
+| flat              | Blockchain state including accounts and contract storage in the flat layout, the default since 2.0.0                                     |
 | headers           | Block headers only                                                                                                                       |
 | pendingTx         | The second level cache of pending transactions/mempool (the first level is in memory). Wiped out on each restart.                        |
 | peers             | Additional sync peers information (like peer reputation) - you can copy this DB between nodes to speed up peering on fresh sync          |
 | receipts          | Transaction receipts                                                                                                                     |
-| state             | Blockchain state including accounts and contract storage (Patricia trie nodes)                                                           |
+| state             | Blockchain state as Patricia trie nodes, used instead of `flat` when `FlatDb.Enabled` is `false`                                         |
 
 You can use `rsync` between your nodes to clone the database (One of our users copied the entire 4.5TB archive state this
 way while the node was running and only stopped the node for the very last stage of `rsync` ). You can also copy
@@ -31,87 +32,45 @@ the database between Linux, Windows, and macOS.
 
 ## Database size
 
-Below is a comprehensive list of the supported chains, along with a detailed breakdown of their respective database directories. For reference, the database sizes listed have been determined using the standard configurations provided.
+Below are the database sizes of the supported chains, broken down by database directory. Mainnet and Sepolia were measured on Nethermind 2.2.0 nodes snap-synced with the default configuration, which keeps block bodies and receipts only from the [ancient barrier](configuration.md#sync-ancientbodiesbarrier) onward (block 24,600,000 on Mainnet). The Gnosis node runs with `Sync.DownloadBodiesInFastSync` and `Sync.DownloadReceiptsInFastSync` set to `false`, so its `blocks` and `receipts` hold only the blocks since the sync.
 
 <!--[start autogen]-->
 
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
 
-- `state`: 161 GB
-- `receipts`: 217 GB
-- `blocks`: 607 GB
-- `bloom`: 6.5 GB
-- `headers`: 9.1 GB
-- `code`: 4.9 GB
-- `blobTransactions`: 917 MB
+- `flat`: 304 GB
+- `receipts`: 78 GB
+- `blocks`: 115 GB
+- `headers`: 12 GB
+- `code`: 8.6 GB
+- `blobTransactions`: 478 MB
 - ...
-- **Total: 1007 GB**
+- **Total: 519 GB**
 
 </TabItem>
 <TabItem value="sepolia" label="Sepolia">
 
-- `state`: 45 GB
-- `receipts`: 42 GB
-- `blocks`: 311 GB
-- `bloom`: 2.2 GB
-- `headers`: 2.5 GB
-- `code`: 7.0 GB
-- `blobTransactions`: 178 MB
+- `flat`: 181 GB
+- `receipts`: 132 GB
+- `blocks`: 548 GB
+- `headers`: 5.1 GB
+- `code`: 24 GB
+- `blobTransactions`: 1.3 GB
 - ...
-- **Total: 409 GB**
+- **Total: 893 GB**
 
 </TabItem>
 <TabItem value="gnosis" label="Gnosis">
 
-- `state`: 66 GB
-- `receipts`: 218 GB
-- `blocks`: 202 GB
-- `bloom`: 9.4 GB
-- `headers`: 11 GB
-- `code`: 683 MB
-- `blobTransactions`: 75 MB
+- `flat`: 189 GB
+- `receipts`: 333 MB
+- `blocks`: 425 MB
+- `headers`: 17 GB
+- `code`: 1021 MB
+- `blobTransactions`: 43 MB
 - ...
-- **Total: 509 GB**
-
-</TabItem>
-<TabItem value="chiado" label="Chiado">
-
-- `state`: 2.6 GB
-- `receipts`: 1.5 GB
-- `blocks`: 9.7 GB
-- `bloom`: 3.3 GB
-- `headers`: 2.5 GB
-- `code`: 72 MB
-- `blobTransactions`: 407 MB
-- ...
-- **Total: 22 GB**
-
-</TabItem>
-<TabItem value="energyweb" label="Energyweb">
-
-- `state`: 27 GB
-- `receipts`: 4.6 GB
-- `blocks`: 25 GB
-- `bloom`: 11 GB
-- `headers`: 7.2 GB
-- `code`: 14 MB
-- `blobTransactions`:
-- ...
-- **Total: 76 GB**
-
-</TabItem>
-<TabItem value="volta" label="Volta">
-
-- `state`: 34 GB
-- `receipts`: 8.5 GB
-- `blocks`: 33 GB
-- `bloom`: 9.2 GB
-- `headers`: 7.0 GB
-- `code`: 96 MB
-- `blobTransactions`:
-- ...
-- **Total: 95 GB**
+- **Total: 211 GB**
 
 </TabItem>
 </Tabs>
