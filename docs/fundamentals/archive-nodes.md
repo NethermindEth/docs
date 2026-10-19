@@ -6,7 +6,7 @@ sidebar_position: 8
 Starting with Nethermind 2.0, archive functionality is built on the flat database: per-block state changesets captured during ordinary syncing answer historical queries, with no extra database and no special sync mode. Four archive shapes are available, all reached the same two ways - a full sync from genesis, or a snap sync to the tip that captures history from the pivot onwards.
 
 :::tip
-For Mainnet and Gnosis, you can skip the sync entirely and restore a full archive from an [archive snapshot](../get-started/snapshots.md), with or without historical proofs.
+For Mainnet and Gnosis, you can skip the sync entirely and restore a full archive from an [archive snapshot](./archive-snapshots.md), with or without historical proofs.
 :::
 
 Two independent groups of configuration options compose:
@@ -77,7 +77,7 @@ A full archive can also answer `eth_getProof` (and the `proof` namespace) at his
 - [`FlatDb.ArchiveProofBuildEnabled`](./configuration.md#flatdb-archiveproofbuildenabled) writes the commitments. A node syncing from genesis builds them at the tip as blocks are captured, with nothing else to run. An already synced archive is retrofitted by the every-block walk: with [`FlatDb.HistoryVerifyEveryBlock`](./configuration.md#flatdb-historyverifyeveryblock) also on, the walk emits commitments while it verifies, and publishes coverage only behind a passing verdict. The walk resumes across restarts.
 - [`FlatDb.ArchiveProofServeEnabled`](./configuration.md#flatdb-archiveproofserveenabled) answers `eth_getProof` below the flat state boundary from them. Heights the commitments do not cover are refused with a pruned-history error, never answered from live state.
 
-[Archive snapshots](../get-started/snapshots.md) with the commitments already built are available for Mainnet and Gnosis.
+[Archive snapshots](./archive-snapshots.md) with the commitments already built are available for Mainnet and Gnosis.
 
 Historical proofs need unwindowed flat history: [`FlatDb.HistoryRetention`](./configuration.md#flatdb-historyretention) must be `None`. On a `Rolling` or `SinceBlock` node the rows are pre-values behind a retention floor, which a proof cannot replay, so both switches are ignored there and a warning is logged.
 

@@ -56,7 +56,7 @@ Archive sync is the heaviest and slowest sync mode but can answer questions like
 While archive sync can be completed very quickly (in minutes or hours) for some small networks, the Ethereum Mainnet sync would take several days, depending on the speed of your disk and network connection. The database size in archive sync is the biggest of all sync modes, as it stores all the historical data.
 
 :::tip
-For Mainnet and Gnosis, restoring an [archive snapshot](../get-started/snapshots.md) gets you a full archive in hours instead of an archive sync from genesis.
+For Mainnet and Gnosis, restoring an [archive snapshot](./archive-snapshots.md) gets you a full archive in hours instead of an archive sync from genesis.
 :::
 
 Explanation of some logs during archive sync:

@@ -1,12 +1,12 @@
 ---
 title: Archive snapshots
-sidebar_position: 5
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Nethermind publishes archive database snapshots for Ethereum Mainnet and Gnosis. Restoring one gives you a full [flat archive](../fundamentals/archive-nodes.md) at a recent block in hours, instead of re-executing every block since genesis. The node then syncs the remaining blocks to the head as usual.
+Nethermind publishes archive database snapshots for Ethereum Mainnet and Gnosis. Restoring one gives you a full [flat archive](./archive-nodes.md) at a recent block in hours, instead of re-executing every block since genesis. The node then syncs the remaining blocks to the head as usual.
 
 The snapshots are flat archive databases with history. The full Mainnet archive is about 2.2 TB on disk.
 
@@ -14,7 +14,7 @@ The snapshots are flat archive databases with history. The full Mainnet archive 
 The snapshots require Nethermind 2.1.0 or later. Earlier versions cannot open them.
 :::
 
-There are no full or pruned snapshots. For a non-archive node, [snap sync](../fundamentals/sync.md#snap-sync) reaches the head faster than downloading and extracting a snapshot.
+There are no full or pruned snapshots. For a non-archive node, [snap sync](./sync.md#snap-sync) reaches the head faster than downloading and extracting a snapshot.
 
 ## Available snapshots
 
@@ -33,28 +33,28 @@ Each snapshot was checked before publishing: every block from genesis to the sna
 
 ## Choosing a snapshot
 
-- **Archive** is a [full archive](../fundamentals/archive-nodes.md#archive-shapes): historical state at every block from genesis (`eth_call`, `eth_getBalance`, `eth_getStorageAt`, `eth_getCode`), blocks and receipts from genesis (`eth_getBlockBy*`, `eth_getTransactionReceipt`, `eth_getLogs`), and traces of any block (`debug_trace*`, `trace_*`).
-- **Archive + historical proofs** adds the commitment layer for [historical proofs](../fundamentals/archive-nodes.md#historical-proofs), so `eth_getProof` answers at any height, not only near the head. Pick it only if you need old proofs: on Mainnet it is nearly twice the size of the plain archive.
+- **Archive** is a [full archive](./archive-nodes.md#archive-shapes): historical state at every block from genesis (`eth_call`, `eth_getBalance`, `eth_getStorageAt`, `eth_getCode`), blocks and receipts from genesis (`eth_getBlockBy*`, `eth_getTransactionReceipt`, `eth_getLogs`), and traces of any block (`debug_trace*`, `trace_*`).
+- **Archive + historical proofs** adds the commitment layer for [historical proofs](./archive-nodes.md#historical-proofs), so `eth_getProof` answers at any height, not only near the head. Pick it only if you need old proofs: on Mainnet it is nearly twice the size of the plain archive.
 
 ## Restoring with the Snapshot plugin
 
-The built-in Snapshot plugin downloads the archive, verifies its checksum, and extracts it into the database directory before the node starts. With [`Snapshot.Streaming`](../fundamentals/configuration.md#snapshot-streaming) enabled, it extracts while it downloads, over several parallel connections, without storing the archive on disk. Use it for these snapshots.
+The built-in Snapshot plugin downloads the archive, verifies its checksum, and extracts it into the database directory before the node starts. With [`Snapshot.Streaming`](./configuration.md#snapshot-streaming) enabled, it extracts while it downloads, over several parallel connections, without storing the archive on disk. Use it for these snapshots.
 
-The options below are the ones we use to restore these snapshots. The full list, with defaults, is in the [configuration reference](../fundamentals/configuration.md#snapshot-checksum).
+The options below are the ones we use to restore these snapshots. The full list, with defaults, is in the [configuration reference](./configuration.md#snapshot-checksum).
 
-| Option                                                                                            | Value                  | Why                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Snapshot.Enabled`](../fundamentals/configuration.md#snapshot-enabled)                           | `true`                 | Turns the plugin on.                                                                                                                     |
-| [`Snapshot.DownloadUrl`](../fundamentals/configuration.md#snapshot-downloadurl)                   | the snapshot URL       | Where to download the archive from.                                                                                                      |
-| [`Snapshot.Checksum`](../fundamentals/configuration.md#snapshot-checksum)                         | `0x` + the SHA-256     | Checked against the downloaded bytes. On a mismatch the extracted database is deleted.                                                   |
-| [`Snapshot.SnapshotFileName`](../fundamentals/configuration.md#snapshot-snapshotfilename)         | the snapshot file name | The plugin picks the archive format from this name. The default, `snapshot.zip`, makes streaming fail, so set it to the `.tar.zst` name. |
-| [`Snapshot.Streaming`](../fundamentals/configuration.md#snapshot-streaming)                       | `true`                 | Extracts while downloading, so the archive is never stored.                                                                              |
-| [`Snapshot.StreamingConnections`](../fundamentals/configuration.md#snapshot-streamingconnections) | `8`                    | Parallel connections, 1 to 16. Default `4`. Peak buffer memory is (connections + 1) x 64 MiB.                                            |
-| [`Snapshot.StripComponents`](../fundamentals/configuration.md#snapshot-stripcomponents)           | `1`                    | Each archive has one top-level directory, for example `gnosis_archive/`. `1` is the default; it is set here to be explicit.              |
+| Option                                                                              | Value                  | Why                                                                                                                                      |
+| ----------------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Snapshot.Enabled`](./configuration.md#snapshot-enabled)                           | `true`                 | Turns the plugin on.                                                                                                                     |
+| [`Snapshot.DownloadUrl`](./configuration.md#snapshot-downloadurl)                   | the snapshot URL       | Where to download the archive from.                                                                                                      |
+| [`Snapshot.Checksum`](./configuration.md#snapshot-checksum)                         | `0x` + the SHA-256     | Checked against the downloaded bytes. On a mismatch the extracted database is deleted.                                                   |
+| [`Snapshot.SnapshotFileName`](./configuration.md#snapshot-snapshotfilename)         | the snapshot file name | The plugin picks the archive format from this name. The default, `snapshot.zip`, makes streaming fail, so set it to the `.tar.zst` name. |
+| [`Snapshot.Streaming`](./configuration.md#snapshot-streaming)                       | `true`                 | Extracts while downloading, so the archive is never stored.                                                                              |
+| [`Snapshot.StreamingConnections`](./configuration.md#snapshot-streamingconnections) | `8`                    | Parallel connections, 1 to 16. Default `4`. Peak buffer memory is (connections + 1) x 64 MiB.                                            |
+| [`Snapshot.StripComponents`](./configuration.md#snapshot-stripcomponents)           | `1`                    | Each archive has one top-level directory, for example `gnosis_archive/`. `1` is the default; it is set here to be explicit.              |
 
 Use `--config mainnet_archive` or `--config gnosis_archive`. These configurations already enable `FlatDb.Enabled` and `FlatDb.HistoryEnabled`; the examples set them explicitly anyway, since the snapshots are flat archives with history and the node must open them that way.
 
-Always set [`--data-dir`](../fundamentals/configuration.md#data-dir). The database is extracted to `<data-dir>/nethermind_db/mainnet_archive` or `<data-dir>/nethermind_db/gnosis_archive`, and the plugin keeps its progress file in `<data-dir>/snapshot`. Both must be on persistent storage; with Docker, that means a mounted volume.
+Always set [`--data-dir`](./configuration.md#data-dir). The database is extracted to `<data-dir>/nethermind_db/mainnet_archive` or `<data-dir>/nethermind_db/gnosis_archive`, and the plugin keeps its progress file in `<data-dir>/snapshot`. Both must be on persistent storage; with Docker, that means a mounted volume.
 
 :::warning Important
 Only enable the plugin on an empty database directory. If the database directory has data but there is no completed restore recorded in `<data-dir>/snapshot`, the plugin assumes an interrupted restore, deletes the database, and starts over. Remove the `Snapshot.*` options once the restore is done.
@@ -64,16 +64,16 @@ Only enable the plugin on an empty database directory. If the database directory
 
 To serve historical proofs from a proofs snapshot, also set:
 
-- [`FlatDb.ArchiveProofServeEnabled`](../fundamentals/configuration.md#flatdb-archiveproofserveenabled) `true` to answer `eth_getProof` below the head from the commitments.
-- [`FlatDb.ArchiveProofBuildEnabled`](../fundamentals/configuration.md#flatdb-archiveproofbuildenabled) `true` to keep writing commitments for new blocks, from the snapshot head onwards.
+- [`FlatDb.ArchiveProofServeEnabled`](./configuration.md#flatdb-archiveproofserveenabled) `true` to answer `eth_getProof` below the head from the commitments.
+- [`FlatDb.ArchiveProofBuildEnabled`](./configuration.md#flatdb-archiveproofbuildenabled) `true` to keep writing commitments for new blocks, from the snapshot head onwards.
 
-Leave [`FlatDb.ArchiveProofRecentEpochs`](../fundamentals/configuration.md#flatdb-archiveproofrecentepochs) at its default, `0`, which keeps every epoch. A non-zero value deletes the older epochs the snapshot ships with.
+Leave [`FlatDb.ArchiveProofRecentEpochs`](./configuration.md#flatdb-archiveproofrecentepochs) at its default, `0`, which keeps every epoch. A non-zero value deletes the older epochs the snapshot ships with.
 
-`eth_getProof` is in the `eth` namespace, and the `proof` namespace is enabled by default too. If you set [`JsonRpc.EnabledModules`](../fundamentals/configuration.md#jsonrpc-enabledmodules) yourself, keep `eth` in it, and `proof` if you use its methods.
+`eth_getProof` is in the `eth` namespace, and the `proof` namespace is enabled by default too. If you set [`JsonRpc.EnabledModules`](./configuration.md#jsonrpc-enabledmodules) yourself, keep `eth` in it, and `proof` if you use its methods.
 
 ### Examples
 
-The examples only show the snapshot-related options. Add the options you already use for the consensus client connection (JWT secret, Engine API) and JSON-RPC. A [consensus client](./running-node/consensus-clients.md) is needed once the restore finishes and the node starts syncing.
+The examples only show the snapshot-related options. Add the options you already use for the consensus client connection (JWT secret, Engine API) and JSON-RPC. A [consensus client](../get-started/running-node/consensus-clients.md) is needed once the restore finishes and the node starts syncing.
 
 <Tabs groupId="snapshot">
 <TabItem value="mainnet-archive" label="Mainnet archive">
@@ -266,7 +266,7 @@ nethermind \
 </TabItem>
 </Tabs>
 
-The same options can go in a [configuration file](../fundamentals/configuration.md#configuration-file):
+The same options can go in a [configuration file](./configuration.md#configuration-file):
 
 ```json
 {
