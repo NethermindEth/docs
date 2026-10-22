@@ -11,11 +11,16 @@ This method is enabled by adding `subscribe` to [`JsonRpc.EnabledModules`](../..
 
 1. `subscriptionName`: _string_
 
-2. `filter`: _object_
-   - `address`: _string_ (address)
-   - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-   - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-   - `topics`: array of _string_ (hex data)
+2. `args`: depends on `subscriptionName`:
+
+   - For `logs`, `filter`: _object_
+     - `address`: _string_ (address)
+     - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+     - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+     - `topics`: array of _string_ (hex data)
+
+   - For `newHeads` and `newPendingTransactions`, `includeTransactions`: _boolean_ or _object_ (optional)
+     - `true` or `false`, or an object `{"includeTransactions": true}` or `{"includeTransactions": false}`. The default is `false`. See the subscription topics below for the effect.
 
 </TabItem>
 <TabItem value="request" label="Request" default>
@@ -102,7 +107,7 @@ Notification `payload`: _object_
 - `step`: _string_ (hex integer)
 - `timestamp`: _string_ (hex integer)
 - `totalDifficulty`: _string_ (hex integer)
-- `transactions`: array of _object_
+- `transactions`: array of _string_ (hash). If `includeTransactions` is `true`, array of _object_ (full transactions, as in `eth_getBlockByHash` with full transactions)
 - `transactionsRoot`: _string_ (hash)
 - `uncles`: array of _string_ (hash)
 - `withdrawals`: array of _object_
@@ -145,9 +150,12 @@ Notification `payload`: _object_
 
 </summary>
 
-Subscribes to incoming pending transactions. Returns the transaction hash.
+Subscribes to incoming pending transactions. By default, returns the transaction hash. If `includeTransactions` is `true`, returns the full transaction.
 
-Notification `payload`: _string_ (hash)
+Notification `payload`:
+
+- by default: _string_ (hash)
+- if `includeTransactions` is `true`: _object_ (the same fields as `eth_getTransactionByHash` returns for a pending transaction)
 
 </details>
 
