@@ -19,7 +19,7 @@ Not all of the JSON-RPC namespaces are enabled by default. Instead, they must be
 :::tip
 The right choice of transport depends on the specific use case.
 
-- HTTP is a familiar and idempotent transport that closes connections between requests and can, therefore, have lower overall overhead for a relatively low number of requests.
+- HTTP provides a familiar request-response interface and is convenient for occasional RPC calls. Connections may be reused between requests. HTTP does not make JSON-RPC methods idempotent; after a timeout, check whether a state-changing call such as `eth_sendTransaction` succeeded before retrying it.
 - WebSocket provides a continuous open channel that enables event subscriptions and streaming and handles large volumes of requests with more negligible per-message overhead.
 - IPC is generally the most secure as it is limited to local interactions and cannot be exposed to external traffic. It can also be used for event subscriptions.
 
