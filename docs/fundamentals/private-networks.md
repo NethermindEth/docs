@@ -6,6 +6,10 @@ sidebar_position: 11
 
 This guide will walk you through using [Kurtosis `ethereum-package`](https://github.com/ethpandaops/ethereum-package) to spin up a private, proof-of-stake (PoS) Ethereum devnet with three full Ethereum nodes locally over Docker. At the end of the guide, you will learn how to scale up your testnet on Kubernetes as well as enable optional services for your local testnet, such as network observability tools (e.g., Grafana, Prometheus) and Flashbot's `mev-boost` infrastructure to simulate MEV workflows.
 
+:::tip
+To run one node for local development without a consensus client, see [Local development node](../developers/local-development-node.md).
+:::
+
 ## Step 1: Prerequisites
 
 Before you begin, ensure you have [Kurtosis CLI](https://docs.kurtosis.com/install) and [Docker](https://docs.docker.com/get-docker) installed. The [`ethereum-package`](https://github.com/ethpandaops/ethereum-package) is a Kurtosis environment definition known as a [package](https://docs.kurtosis.com/concepts-reference/packages). For more info about Kurtosis, see the [Kurtosis docs](https://docs.kurtosis.com).
