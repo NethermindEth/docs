@@ -29,6 +29,8 @@ Suggested requirements can be found below.
 | ------------------- | :----: | :-------: |
 | **Mainnet**         | 16 GB  |     4     |
 | **Mainnet archive** | 128 GB |     8     |
+| **Sepolia**         | 16 GB  |     4     |
+| **Hoodi**           | 16 GB  |     4     |
 | **Gnosis**          | 16 GB  |     2     |
 | **Energy Web**      |  8 GB  |     2     |
 | **Volta**           |  8 GB  |     2     |
@@ -36,6 +38,8 @@ Suggested requirements can be found below.
 ### Disk requirements
 
 As of October 2024, running an Ethereum Mainnet node with Nethermind's default configuration requires at least 2 TB of storage space. Nethermind itself takes around 1 TB, leaving the rest for the needs of the consensus client. Choosing a 2 TB disk is a comfortable option for most common Mainnet node usage patterns, including staking. Nonetheless, we recommend delving further into the topic to gain a comprehensive understanding of disk growth and usage.
+
+For the testnets, as of October 2026, a Sepolia node with Nethermind's default configuration uses approximately 1 TB, and a Hoodi node uses approximately 115 GB. Thus, we recommend at least 2 TB of storage space for Sepolia and 500 GB for Hoodi, including the needs of the consensus client.
 
 #### Database growth
 
