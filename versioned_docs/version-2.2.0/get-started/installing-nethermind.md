@@ -66,7 +66,7 @@ sudo apt-get install nethermind
 On Windows, Nethermind can be installed via Windows Package Manager as follows:
 
 ```powershell
-winget install --id Nethermind.Nethermind
+winget install --id Nethermind.Nethermind -e
 ```
 
 </TabItem>
