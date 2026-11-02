@@ -226,11 +226,29 @@ curl localhost:8545 \
   - `receipt`: _object_
     - `blobGasPrice`: _string_ (hex integer)
     - `blobGasUsed`: _string_ (hex integer)
+    - `blockGasUsed`: _string_ (hex integer)
     - `blockHash`: _string_ (hash)
     - `blockNumber`: _string_ (hex integer)
     - `contractAddress`: _string_ (address)
     - `cumulativeGasUsed`: _string_ (hex integer)
     - `effectiveGasPrice`: _string_ (hex integer)
+    - `executionGasUsed`: _string_ (hex integer)
+    - `frameReceipts`: array of _object_
+      - `executionGasUsed`: _string_ (hex integer)
+      - `gasUsed`: _string_ (hex integer)
+      - `logs`: array of _object_
+        - `address`: _string_ (address)
+        - `blockHash`: _string_ (hash)
+        - `blockNumber`: _string_ (hex integer)
+        - `blockTimestamp`: _string_ (hex integer)
+        - `data`: _string_ (hex data)
+        - `logIndex`: _string_ (hex integer)
+        - `removed`: _boolean_
+        - `topics`: array of _string_ (hash)
+        - `transactionHash`: _string_ (hash)
+        - `transactionIndex`: _string_ (hex integer)
+      - `stateGasUsed`: _string_ (hex integer)
+      - `status`: _integer_
     - `from`: _string_ (address)
     - `gasUsed`: _string_ (hex integer)
     - `logs`: array of _object_
@@ -245,8 +263,10 @@ curl localhost:8545 \
       - `transactionHash`: _string_ (hash)
       - `transactionIndex`: _string_ (hex integer)
     - `logsBloom`: _string_ (hex data)
+    - `payer`: _string_ (address)
     - `root`: _string_ (hash)
     - `status`: _string_ (hex integer)
+    - `storageGasUsed`: _string_ (hex integer)
     - `to`: _string_ (address)
     - `transactionHash`: _string_ (hash)
     - `transactionIndex`: _string_ (hex integer)

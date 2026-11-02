@@ -347,6 +347,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
 ### Blocks
 
+- #### `Blocks.BlockProcessingTimeoutMs` \{#blocks-blockprocessingtimeoutms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --blocks-blockprocessingtimeoutms <value>
+  --Blocks.BlockProcessingTimeoutMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BLOCKSCONFIG_BLOCKPROCESSINGTIMEOUTMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Blocks": {
+      "BlockProcessingTimeoutMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The longest a single block may take to process, in milliseconds. It is checked between transactions and as the next block starts, so a single long transaction or the final commit can run past it. A block that runs out of time is abandoned without being marked invalid, and each retry of it gets twice the time, up to 16 times this value. `0` or a negative value disables it. Defaults to `180000`.
+
 - #### `Blocks.BlockProductionBlobLimit` \{#blocks-blockproductionbloblimit\}
 
   <Tabs groupId="usage">
@@ -1503,6 +1530,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
 ### FlatDb
 
+- #### `FlatDb.ApplyStorageWritesOnIdleThread` \{#flatdb-applystoragewritesonidlethread\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-applystoragewritesonidlethread [true|false]
+  --FlatDb.ApplyStorageWritesOnIdleThread [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_APPLYSTORAGEWRITESONIDLETHREAD=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "ApplyStorageWritesOnIdleThread": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Apply committed storage writes to the storage tries on an idle-priority thread during execution. Ignored with VerifyWithTrie. Allowed values: `true` `false`. Defaults to `true`.
+
 - #### `FlatDb.ArchiveProofBuildEnabled` \{#flatdb-archiveproofbuildenabled\}
 
   <Tabs groupId="usage">
@@ -1853,6 +1907,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Fixed compaction schedule offset in blocks. When 0 or greater, overrides the per-instance offset in the metadata DB, which is neither read nor updated. Only the value modulo CompactSize matters. -1 to use the stored offset, generating a random one when absent. Defaults to `-1`.
+
+- #### `FlatDb.DeferStorageTrieCommit` \{#flatdb-deferstoragetriecommit\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-deferstoragetriecommit [true|false]
+  --FlatDb.DeferStorageTrieCommit [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_DEFERSTORAGETRIECOMMIT=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "DeferStorageTrieCommit": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Only hash the storage tries before a block is reported valid, and write their nodes when the block commits, as the state trie already does. `false` writes each storage trie's nodes before the block is reported valid. Allowed values: `true` `false`. Defaults to `true`.
 
 - #### `FlatDb.DropPruningTrieState` \{#flatdb-droppruningtriestate\}
 
@@ -2293,33 +2374,6 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Once the transaction index has caught up with the tip, also index backwards down to this block, so an archive that already exists gains coverage without a resync. 0 indexes forward from the moment the index is turned on and nothing older; 1 covers the whole chain, since genesis carries no transactions. Never goes below the flat-history floor. Defaults to `0`.
 
-- #### `FlatDb.HistoryTransactionIndexTraceParallelism` \{#flatdb-historytransactionindextraceparallelism\}
-
-  <Tabs groupId="usage">
-  <TabItem value="cli" label="CLI">
-  ```
-  --flatdb-historytransactionindextraceparallelism <value>
-  --FlatDb.HistoryTransactionIndexTraceParallelism <value>
-  ```
-  </TabItem>
-  <TabItem value="env" label="Environment variable">
-  ```
-  NETHERMIND_FLATDBCONFIG_HISTORYTRANSACTIONINDEXTRACEPARALLELISM=<value>
-  ```
-  </TabItem>
-  <TabItem value="config" label="Configuration file">
-  ```json
-  {
-    "FlatDb": {
-      "HistoryTransactionIndexTraceParallelism": <value>
-    }
-  }
-  ```
-  </TabItem>
-  </Tabs>
-
-  Maximum active indexed block-tracing workers shared by debug and trace RPC. 0 uses the processor count capped at 16; 1 disables parallel block tracing. Explicit values are clamped to 1-16. Each namespace keeps its own environment pool and up to twice this many background workers. Defaults to `0`.
-
 - #### `FlatDb.HistoryTransactionIndexWorkers` \{#flatdb-historytransactionindexworkers\}
 
   <Tabs groupId="usage">
@@ -2453,7 +2507,34 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Import from pruning trie state db Allowed values: `true` `false`. Defaults to `false`.
+  Import from pruning trie state db. When enabled, the node runs the import and exits instead of starting, as with the `import-flat-db` command, and fails if there is nothing to import. Remove the setting once the import has finished. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.InMemorySnapshotBloomBitsPerKey` \{#flatdb-inmemorysnapshotbloombitsperkey\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-inmemorysnapshotbloombitsperkey <value>
+  --FlatDb.InMemorySnapshotBloomBitsPerKey <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_INMEMORYSNAPSHOTBLOOMBITSPERKEY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "InMemorySnapshotBloomBitsPerKey": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Bits per key for the negative filter over the slots written by the in-memory snapshots. It is built once per read-only snapshot bundle, on the first slot read of read-only execution (eth_call, eth_estimateGas, eth_createAccessList, eth_simulateV1, eth_getProof, debug and trace calls, Flashbots block validation, receipt regeneration and the transaction changeset index), and lets those reads skip the per-snapshot lookups for a slot no in-memory snapshot wrote. Block processing never uses it. Higher = lower false-positive rate but more RAM. 0 disables the filter. Defaults to `14.0`.
 
 - #### `FlatDb.InlineCompaction` \{#flatdb-inlinecompaction\}
 
@@ -2597,6 +2678,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Maximum number of in-memory base snapshots before conversion to the persisted-snapshot tier kicks in. Counted as `SnapshotCount` of the in-memory repository, not a block-distance depth. Sized as a ~128 target plus one CompactSize of headroom, since a bulk (CompactSize-wide) conversion drops the in-memory count by up to CompactSize at a boundary — so the tier still retains ~128 base snapshots after each conversion. Defaults to `160`.
+
+- #### `FlatDb.MaxInMemorySnapshotBytes` \{#flatdb-maxinmemorysnapshotbytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-maxinmemorysnapshotbytes <value>
+  --FlatDb.MaxInMemorySnapshotBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_MAXINMEMORYSNAPSHOTBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "MaxInMemorySnapshotBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Byte budget for the in-memory snapshot window. When positive and the estimated in-memory snapshot bytes exceed it, conversion to the persisted-snapshot tier is attempted and persistence is forced even when finality stalls, always leaving at least MinReorgDepth blocks above the persisted base — bounding memory by size rather than block count, so heavy blocks shrink the retained window instead of exhausting memory. Only in-memory snapshots are flushed for byte pressure, so with EnableLongFinality the persisted-snapshot tier is kept and the in-memory window does not shrink below MaxInMemoryBaseSnapshotCount blocks once that tier holds the oldest state. 0 disables. Defaults to `0`.
 
 - #### `FlatDb.MaxReorgDepth` \{#flatdb-maxreorgdepth\}
 
@@ -3849,7 +3957,7 @@ The configuration options are case-sensitive and can be defined only once unless
   - `ReadOnlyDb`: Uses a read-only DB.
   - `VerifyRewards`: Scans rewards for blocks and genesis.
   - `VerifySupply`: Scans and sums supply on all accounts.
-  - `VerifyTrie`: Verifies if full state trie is stored.
+  - `VerifyTrie`: Verifies if full state trie is stored, then exits. Equivalent to the `verify-trie` command.
 
   Defaults to `None`.
 
@@ -4122,6 +4230,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to connect to newly discovered peers. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Init.PipelineWarmupEnabled` \{#init-pipelinewarmupenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --init-pipelinewarmupenabled [true|false]
+  --Init.PipelineWarmupEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_INITCONFIG_PIPELINEWARMUPENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Init": {
+      "PipelineWarmupEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to warm the block processing pipeline before RPC and Engine API startup. Cancellation is requested after 30 seconds, then startup waits for cleanup. Skipped when JSON-RPC is disabled, without the standard Merge plugin, or with custom spec providers, custom processing pipelines, or database diagnostic modes. Allowed values: `true` `false`. Defaults to `true`.
 
 - #### `Init.ProcessingEnabled` \{#init-processingenabled\}
 
@@ -4755,6 +4890,60 @@ The configuration options are case-sensitive and can be defined only once unless
   overrides: calls beyond this cap fail with a `LimitExceeded` JSON-RPC error. Defaults
   to the number of logical processors.
 
+- #### `JsonRpc.FeeHistoryMaxBlockCount` \{#jsonrpc-feehistorymaxblockcount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-feehistorymaxblockcount <value>
+  --JsonRpc.FeeHistoryMaxBlockCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_FEEHISTORYMAXBLOCKCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "FeeHistoryMaxBlockCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of blocks one `eth_feeHistory` call returns, from 1 to 1024. A larger `blockCount` is lowered to it, which the API allows, so the response then covers fewer blocks than requested. Defaults to `1024`.
+
+- #### `JsonRpc.FeeHistoryMaxConcurrentRequests` \{#jsonrpc-feehistorymaxconcurrentrequests\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-feehistorymaxconcurrentrequests <value>
+  --JsonRpc.FeeHistoryMaxConcurrentRequests <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_FEEHISTORYMAXCONCURRENTREQUESTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "FeeHistoryMaxConcurrentRequests": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of `eth_feeHistory` calls that read blocks and receipts from the database at once. Calls whose blocks are all among the recent ones the node keeps fee data for are not limited. Calls beyond the cap return `LimitExceeded` at once instead of waiting. `0` to lift the limit. Defaults to a quarter of the number of logical processors, at least 1.
+
 - #### `JsonRpc.FiltersTimeout` \{#jsonrpc-filterstimeout\}
 
   <Tabs groupId="usage">
@@ -4861,7 +5050,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Concurrency level of IPC connection. Defaults to `1`.
+  The number of requests one IPC connection processes at a time. Requests pipelined on one connection are processed and answered in any order; each response carries its request id, and a batch is still processed and answered in order as one message. When `JsonRpc.EnabledModules` includes the Engine module, IPC always processes its requests one by one. Set to 1 if a client relies on the order, for example when it pipelines dependent transactions such as blob transactions with consecutive nonces. Defaults to `16`.
 
 - #### `JsonRpc.IpcUnixDomainSocketPath` \{#jsonrpc-ipcunixdomainsocketpath\}
 
@@ -4998,6 +5187,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The max number of JSON-RPC requests in a batch. Defaults to `1024`.
 
+- #### `JsonRpc.MaxBufferedTraceLogSize` \{#jsonrpc-maxbufferedtracelogsize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxbufferedtracelogsize <value>
+  --JsonRpc.MaxBufferedTraceLogSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXBUFFEREDTRACELOGSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxBufferedTraceLogSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max opcode log size, in bytes, per transaction of a `debug_trace*` or `debug_simulateV1` trace held in memory rather than streamed. Larger or unlimited `limit` trace options are lowered to it. `0` or negative to lift the limit. Defaults to `268435456`.
+
 - #### `JsonRpc.MaxConcurrentSharedRequests` \{#jsonrpc-maxconcurrentsharedrequests\}
 
   <Tabs groupId="usage">
@@ -5027,7 +5243,8 @@ The configuration options are case-sensitive and can be defined only once unless
   Caps heavy methods promoted to sharable — `eth_call`, `eth_estimateGas`,
   `eth_createAccessList` — preventing unbounded concurrency from exhausting memory.
   Light sharable methods (e.g. `eth_blockNumber`, `eth_getBalance`) complete in \<1 ms and
-  effectively never approach this limit. `0` to lift the limit. Defaults to `10000`.
+  effectively never approach this limit. `eth_sendRawTransactionSync` holds a slot for as long
+  as it waits for inclusion; see `RpcTxSyncMaxConcurrentRequests`. `0` to lift the limit. Defaults to `10000`.
 
 - #### `JsonRpc.MaxLoggedRequestParametersCharacters` \{#jsonrpc-maxloggedrequestparameterscharacters\}
 
@@ -5450,6 +5667,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Default server-side wait, in milliseconds, for eth_sendRawTransactionSync when the caller omits the timeout argument. Defaults to `20000`.
 
+- #### `JsonRpc.RpcTxSyncMaxConcurrentRequests` \{#jsonrpc-rpctxsyncmaxconcurrentrequests\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-rpctxsyncmaxconcurrentrequests <value>
+  --JsonRpc.RpcTxSyncMaxConcurrentRequests <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_RPCTXSYNCMAXCONCURRENTREQUESTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "RpcTxSyncMaxConcurrentRequests": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum number of concurrent eth_sendRawTransactionSync calls, independent of EthModuleConcurrentInstances. Excess calls are rejected before submitting the transaction. Each pending call also counts against MaxConcurrentSharedRequests for up to RpcTxSyncMaxTimeoutMs, so keep this well below MaxConcurrentSharedRequests. 0 disables this limit; MaxConcurrentSharedRequests then remains the only bound (none if it is 0 too). Defaults to `128`.
+
 - #### `JsonRpc.RpcTxSyncMaxTimeoutMs` \{#jsonrpc-rpctxsyncmaxtimeoutms\}
 
   <Tabs groupId="usage">
@@ -5531,6 +5775,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The request timeout, in milliseconds. Defaults to `20000`.
 
+- #### `JsonRpc.TraceBlockParallelism` \{#jsonrpc-traceblockparallelism\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-traceblockparallelism <value>
+  --JsonRpc.TraceBlockParallelism <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_TRACEBLOCKPARALLELISM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "TraceBlockParallelism": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of workers tracing block transactions at once across the whole node in `debug_traceBlock*` and `trace_block`, for blocks whose transactions can each be traced alone on the state before it: blocks that carry an access list, and, with `FlatDb.HistoryTransactionIndexEnabled`, blocks covered by the transaction index. Debug and trace, and both kinds of block, share this one budget. `0` or `1` traces such blocks sequentially; larger values are capped at the number of logical processors and at 16. Once a block has been traced in parallel, the node keeps up to this many processing environments and twice this many background threads for debug, and as many again for trace. The deprecated `FlatDb.HistoryTransactionIndexTraceParallelism`, when set to anything but `0`, sizes this budget instead. Defaults to `4`.
+
 - #### `JsonRpc.TraceModuleConcurrentInstances` \{#jsonrpc-tracemoduleconcurrentinstances\}
 
   <Tabs groupId="usage">
@@ -5610,7 +5881,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Concurrency level of websocket connection. Defaults to `1`.
+  The number of requests one public WebSocket connection processes at a time. Requests pipelined on one connection are processed and answered in any order; each response carries its request id, and a batch is still processed and answered in order as one message. Connections that are authenticated or enable the Engine module always process their requests one by one. Set to 1 if a client relies on the order, for example when it pipelines dependent transactions such as blob transactions with consecutive nonces. Defaults to `16`.
 
 ### KeyStore
 
@@ -7022,7 +7293,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Use tree is available through a DNS name. For the default of `<chain name>.ethdisco.net`, leave unspecified. Defaults to `null`.
+  The EIP-1459 node list to discover peers from, as `enrtree://<signer public key>@<domain>`. A bare domain is also accepted, but then the list signature is not verified. For the default of `all.<chain name>.ethdisco.net`, leave unspecified. Defaults to `null`.
 
 - #### `Network.DiscoveryPort` \{#network-discoveryport\}
 
@@ -8582,6 +8853,116 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The number of recent blocks to maintain transaction index for. `0` to never remove indices, `18446744073709551615` to never index. Defaults to `2350000`.
+
+### SendPolicy
+
+- #### `SendPolicy.Enabled` \{#sendpolicy-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sendpolicy-enabled [true|false]
+  --SendPolicy.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SENDPOLICYCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "SendPolicy": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to check transactions submitted through this node's JSON-RPC against the rule file. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `SendPolicy.JournalPath` \{#sendpolicy-journalpath\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sendpolicy-journalpath <value>
+  --SendPolicy.JournalPath <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SENDPOLICYCONFIG_JOURNALPATH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "SendPolicy": {
+      "JournalPath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The path to the journal of transactions submitted by guarded senders. Defaults to the rule file path with `.journal` appended. Defaults to `null`.
+
+- #### `SendPolicy.RulesPath` \{#sendpolicy-rulespath\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sendpolicy-rulespath <value>
+  --SendPolicy.RulesPath <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SENDPOLICYCONFIG_RULESPATH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "SendPolicy": {
+      "RulesPath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The path to the rule file. The file is re-read when it changes. Defaults to `null`.
+
+- #### `SendPolicy.WarnOnly` \{#sendpolicy-warnonly\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sendpolicy-warnonly [true|false]
+  --SendPolicy.WarnOnly [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SENDPOLICYCONFIG_WARNONLY=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "SendPolicy": {
+      "WarnOnly": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to log a transaction that breaks a rule and submit it anyway. Allowed values: `true` `false`. Defaults to `false`.
 
 ### Seq
 
@@ -10369,6 +10750,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The total difficulty of the pivot block for the Fast sync mode. Defaults to `null`.
 
+- #### `Sync.ReconstructFinalizedStateFromBlockAccessLists` \{#sync-reconstructfinalizedstatefromblockaccesslists\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --sync-reconstructfinalizedstatefromblockaccesslists [true|false]
+  --Sync.ReconstructFinalizedStateFromBlockAccessLists [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_SYNCCONFIG_RECONSTRUCTFINALIZEDSTATEFROMBLOCKACCESSLISTS=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Sync": {
+      "ReconstructFinalizedStateFromBlockAccessLists": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to catch up consensus-finalized blocks by applying their EIP-7928 block access lists instead of executing them. State and receipts roots are verified; unfinalized blocks, and blocks whose data is unavailable or mismatched, execute normally. Allowed values: `true` `false`. Defaults to `true`.
+
 - #### `Sync.SnapServingMaxDepth` \{#sync-snapservingmaxdepth\}
 
   <Tabs groupId="usage">
@@ -10639,7 +11047,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The type of traces to store.
+  The types of traces to store. Requests for unrecorded types fall back to live tracing and require available historical state. `trace_block` and `trace_filter` require both `Trace` and `Rewards` to use the store. Transaction replays requesting `Rewards` always trace live because stored transaction traces omit block rewards.
 
   Allowed values:
   - `None`: None.
@@ -10768,6 +11176,249 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Whether to require the max fee per blob gas to be greater than or equal to the current blob base fee when adding a blob transaction to the pool. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `TxPool.FrameTxEvictionRetryBudget` \{#txpool-frametxevictionretrybudget\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxevictionretrybudget <value>
+  --TxPool.FrameTxEvictionRetryBudget <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXEVICTIONRETRYBUDGET=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxEvictionRetryBudget": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141: the number of distinct chain heads a frame transaction may fail to approve any payment across, during block production, before the pool evicts it. Some failures turn on head state that only a new head can clear (an out-of-range recent-root reference, a SENDER frame reached before its approval), so the budget is counted per head: repeated production passes against the same head spend a single unit. A value above `1` keeps a transiently-failing transaction for that many heads at the cost of re-simulating its validation prefix once per head; `1` (or below) evicts on the first failed attempt, the pre-budget behaviour. The budget is counted per pool residency, not per transaction: an evicted transaction may be resubmitted, and a resubmitted one is granted a fresh budget, because the failures it buys heads for turn on chain state that the time out of the pool may have cleared. Raising it therefore multiplies by that factor the production-time simulation a peer can provoke by re-gossiping a transaction that keeps failing. Defaults to `1`.
+
+- #### `TxPool.FrameTxMaxVerifyGas` \{#txpool-frametxmaxverifygas\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxmaxverifygas <value>
+  --TxPool.FrameTxMaxVerifyGas <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXMAXVERIFYGAS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxMaxVerifyGas": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141 `MAX_VERIFY_GAS`: the max gas a frame transaction's validation prefix and signature verification may cost for it to be accepted into the public mempool. `0` lifts the static admission limit. The validation-prefix simulation budget is this value, and never less than `Eip8141Constants.MaxVerifyGas`. Raise it only on a test network. Defaults to `300000`.
+
+- #### `TxPool.FrameTxMaxVerifyStateGas` \{#txpool-frametxmaxverifystategas\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxmaxverifystategas <value>
+  --TxPool.FrameTxMaxVerifyStateGas <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXMAXVERIFYSTATEGAS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxMaxVerifyStateGas": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141 `MAX_VERIFY_STATE_GAS`: the max state gas a frame transaction's validation prefix may budget across its `limits.state` for it to be accepted into the public mempool. EIP-8250 charges a first use of each keyed nonce key 97,920 state gas, so at the default value a first-use set of more than five keys does not propagate. `0` to lift the limit. Raise it only on a test network. Defaults to `500000`.
+
+- #### `TxPool.FrameTxRevalidationDeferralBudget` \{#txpool-frametxrevalidationdeferralbudget\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxrevalidationdeferralbudget <value>
+  --TxPool.FrameTxRevalidationDeferralBudget <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXREVALIDATIONDEFERRALBUDGET=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxRevalidationDeferralBudget": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141: the number of *consecutive* chain heads a pending frame transaction the pool deferred rather than judged may be carried across before it stops re-queuing it. Any head that revalidates it without deferring it again resets the count. `0` stops re-queuing entirely. Defaults to `2`.
+
+- #### `TxPool.FrameTxSimulationBudgetPerHeadMs` \{#txpool-frametxsimulationbudgetperheadms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxsimulationbudgetperheadms <value>
+  --TxPool.FrameTxSimulationBudgetPerHeadMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXSIMULATIONBUDGETPERHEADMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxSimulationBudgetPerHeadMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The total time, in milliseconds, spent simulating EIP-8141 validation prefixes per chain head. Once spent, opaque frame transactions are rejected until the next head. `0` to lift the limit. Defaults to `1000`.
+
+- #### `TxPool.FrameTxSimulationTimeoutMs` \{#txpool-frametxsimulationtimeoutms\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxsimulationtimeoutms <value>
+  --TxPool.FrameTxSimulationTimeoutMs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXSIMULATIONTIMEOUTMS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxSimulationTimeoutMs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max time, in milliseconds, one EIP-8141 validation-prefix simulation may run before the transaction is rejected. A local submission may also wait this long for a busy simulator, so its ceiling is twice this value. `0` to lift the limit. Defaults to `250`.
+
+- #### `TxPool.FrameTxWidthCap` \{#txpool-frametxwidthcap\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxwidthcap <value>
+  --TxPool.FrameTxWidthCap <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXWIDTHCAP=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxWidthCap": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141 MATCHA `width_cap`: the max width, in gas, a sender or a paymaster may hold. Newly finalized gas earns width only up to this cap; lowering it never shrinks width already earned. `0` lifts the cap. Used only when `FrameTxWidthEnabled` is set. Defaults to `0`.
+
+- #### `TxPool.FrameTxWidthEnabled` \{#txpool-frametxwidthenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxwidthenabled [true|false]
+  --TxPool.FrameTxWidthEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXWIDTHENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxWidthEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether each pending EIP-8250 keyed-nonce frame transaction a sender admits beyond the single EIP-8141 baseline transaction must spend sender width, earned from the gas the sender's finalized keyed-nonce frame transactions paid. Also rejects a keyed-nonce frame transaction whose nonce keys overlap a pending one of the same sender. The same rule applies to a code-carrying paymaster in place of the EIP-8141 cap on its pending sponsored frame transactions: each one beyond the single baseline transaction must spend paymaster width, earned from the gas of the finalized frame transactions the paymaster paid for. Experimental. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `TxPool.FrameTxWidthSafetyFactorPermille` \{#txpool-frametxwidthsafetyfactorpermille\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxwidthsafetyfactorpermille <value>
+  --TxPool.FrameTxWidthSafetyFactorPermille <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXWIDTHSAFETYFACTORPERMILLE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxWidthSafetyFactorPermille": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141 MATCHA `safety_factor`, in permille of a keyed-nonce frame transaction's `admission_gas`, that fixes the width its admission and each revalidation spends: `charge = ceil(safety_factor * admission_gas)`. `admission_gas` is declared work: the transaction's intrinsic gas, which prices its data, signatures and recent-root references, plus the validation prefix's execution gas limits and one cold SLOAD per nonce key, not the gas the prefix actually burns. `1000` charges exactly that declared gas; a higher value adds headroom for client work EVM gas does not measure. Values below `1000` are raised to `1000`. Spent width is never returned. Used only when `FrameTxWidthEnabled` is set. Defaults to `1000`.
 
 - #### `TxPool.GasLimit` \{#txpool-gaslimit\}
 

@@ -45,26 +45,18 @@ curl localhost:8545 \
 
 `result`: array of _object_
   - `action`: _object_
+    - `address`: _string_ (address)
     - `author`: _string_ (address)
+    - `balance`: _string_ (hex integer)
     - `callType`: _string_
     - `creationMethod`: _string_
-    - `error`: _string_
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
+    - `init`: _string_ (hex data)
     - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
+    - `refundAddress`: _string_ (address)
     - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _integer_
@@ -138,28 +130,6 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `action`: _object_
-    - `author`: _string_ (address)
-    - `callType`: _string_
-    - `creationMethod`: _string_
-    - `error`: _string_
-    - `from`: _string_ (address)
-    - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
-    - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
-    - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
-    - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
-    - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
   - `stateDiff`: map of _object_
     - `balance`: _object_
@@ -174,11 +144,36 @@ curl localhost:8545 \
     - `storage`: map of _object_
       - `after`: _string_ (hex data)
       - `before`: _string_ (hex data)
+  - `trace`: array of _object_
+    - `action`: _object_
+      - `address`: _string_ (address)
+      - `author`: _string_ (address)
+      - `balance`: _string_ (hex integer)
+      - `callType`: _string_
+      - `creationMethod`: _string_
+      - `from`: _string_ (address)
+      - `gas`: _string_ (hex integer)
+      - `init`: _string_ (hex data)
+      - `input`: _string_ (hex data)
+      - `refundAddress`: _string_ (address)
+      - `rewardType`: _string_
+      - `to`: _string_ (address)
+      - `value`: _string_ (hex integer)
+    - `error`: _string_
+    - `result`: _object_
+      - `address`: _string_ (address)
+      - `code`: _string_ (hex data)
+      - `gasUsed`: _string_ (hex integer)
+      - `output`: _string_ (hex data)
+    - `subtraces`: _integer_
+    - `traceAddress`: array of _integer_
+    - `type`: _string_
   - `transactionHash`: _string_ (hash)
   - `vmTrace`: _object_
     - `code`: _string_ (hex data)
     - `operations`: array of _object_
       - `cost`: _string_ (hex integer)
+      - `halted`: _boolean_
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
@@ -243,28 +238,6 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
-  - `action`: _object_
-    - `author`: _string_ (address)
-    - `callType`: _string_
-    - `creationMethod`: _string_
-    - `error`: _string_
-    - `from`: _string_ (address)
-    - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
-    - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
-    - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
-    - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
-    - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
   - `stateDiff`: map of _object_
     - `balance`: _object_
@@ -279,11 +252,36 @@ curl localhost:8545 \
     - `storage`: map of _object_
       - `after`: _string_ (hex data)
       - `before`: _string_ (hex data)
+  - `trace`: array of _object_
+    - `action`: _object_
+      - `address`: _string_ (address)
+      - `author`: _string_ (address)
+      - `balance`: _string_ (hex integer)
+      - `callType`: _string_
+      - `creationMethod`: _string_
+      - `from`: _string_ (address)
+      - `gas`: _string_ (hex integer)
+      - `init`: _string_ (hex data)
+      - `input`: _string_ (hex data)
+      - `refundAddress`: _string_ (address)
+      - `rewardType`: _string_
+      - `to`: _string_ (address)
+      - `value`: _string_ (hex integer)
+    - `error`: _string_
+    - `result`: _object_
+      - `address`: _string_ (address)
+      - `code`: _string_ (hex data)
+      - `gasUsed`: _string_ (hex integer)
+      - `output`: _string_ (hex data)
+    - `subtraces`: _integer_
+    - `traceAddress`: array of _integer_
+    - `type`: _string_
   - `transactionHash`: _string_ (hash)
   - `vmTrace`: _object_
     - `code`: _string_ (hex data)
     - `operations`: array of _object_
       - `cost`: _string_ (hex integer)
+      - `halted`: _boolean_
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
@@ -301,14 +299,18 @@ curl localhost:8545 \
 
 ### trace_filter
 
+Returns traces matching the filter, in the range fromBlock to toBlock (block numbers or tags, each defaulting to latest), or in the single canonical block named by blockHash, which excludes the range. Any address in fromAddress or toAddress matches that list; an omitted, null or empty list does not restrict. mode "intersection" (default) requires a match in every list that is set; "union" requires a match in any of them.
+
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `traceFilterForRpc`: _object_
-    - `after`: _integer_
-    - `count`: _integer_
+    - `after`: _string_ (hex integer)
+    - `blockHash`: _string_ (hash)
+    - `count`: _string_ (hex integer)
     - `fromAddress`: array of _string_ (address)
     - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+    - `mode`: _string_
     - `toAddress`: array of _string_ (address)
     - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
 
@@ -341,26 +343,18 @@ curl localhost:8545 \
 
 `result`: array of _object_
   - `action`: _object_
+    - `address`: _string_ (address)
     - `author`: _string_ (address)
+    - `balance`: _string_ (hex integer)
     - `callType`: _string_
     - `creationMethod`: _string_
-    - `error`: _string_
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
+    - `init`: _string_ (hex data)
     - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
+    - `refundAddress`: _string_ (address)
     - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _integer_
@@ -381,14 +375,14 @@ curl localhost:8545 \
 
 ### trace_get
 
-Returns trace at given position.
+Returns the trace at the given traceAddress path: [] selects the root, ["0x0"] its first child. Returns null if the transaction is not found or has no trace at that path.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
 1. `txHash`: _string_ (hash)
 
-2. `positions`: array of _string_ (hex integer)
+2. `traceAddress`: array of _string_ (hex integer)
 
 
 </TabItem>
@@ -402,7 +396,7 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "trace_get",
-      "params": [txHash, positions]
+      "params": [txHash, traceAddress]
     }'
 ```
 
@@ -417,28 +411,20 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _object_
+`result`: _object_
   - `action`: _object_
+    - `address`: _string_ (address)
     - `author`: _string_ (address)
+    - `balance`: _string_ (hex integer)
     - `callType`: _string_
     - `creationMethod`: _string_
-    - `error`: _string_
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
+    - `init`: _string_ (hex data)
     - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
+    - `refundAddress`: _string_ (address)
     - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _integer_
@@ -453,6 +439,8 @@ curl localhost:8545 \
   - `transactionHash`: _string_ (hash)
   - `transactionPosition`: _integer_
   - `type`: _string_
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -496,28 +484,6 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `action`: _object_
-    - `author`: _string_ (address)
-    - `callType`: _string_
-    - `creationMethod`: _string_
-    - `error`: _string_
-    - `from`: _string_ (address)
-    - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
-    - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
-    - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
-    - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
-    - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
   - `stateDiff`: map of _object_
     - `balance`: _object_
@@ -532,11 +498,36 @@ curl localhost:8545 \
     - `storage`: map of _object_
       - `after`: _string_ (hex data)
       - `before`: _string_ (hex data)
+  - `trace`: array of _object_
+    - `action`: _object_
+      - `address`: _string_ (address)
+      - `author`: _string_ (address)
+      - `balance`: _string_ (hex integer)
+      - `callType`: _string_
+      - `creationMethod`: _string_
+      - `from`: _string_ (address)
+      - `gas`: _string_ (hex integer)
+      - `init`: _string_ (hex data)
+      - `input`: _string_ (hex data)
+      - `refundAddress`: _string_ (address)
+      - `rewardType`: _string_
+      - `to`: _string_ (address)
+      - `value`: _string_ (hex integer)
+    - `error`: _string_
+    - `result`: _object_
+      - `address`: _string_ (address)
+      - `code`: _string_ (hex data)
+      - `gasUsed`: _string_ (hex integer)
+      - `output`: _string_ (hex data)
+    - `subtraces`: _integer_
+    - `traceAddress`: array of _integer_
+    - `type`: _string_
   - `transactionHash`: _string_ (hash)
   - `vmTrace`: _object_
     - `code`: _string_ (hex data)
     - `operations`: array of _object_
       - `cost`: _string_ (hex integer)
+      - `halted`: _boolean_
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
@@ -589,28 +580,6 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
-  - `action`: _object_
-    - `author`: _string_ (address)
-    - `callType`: _string_
-    - `creationMethod`: _string_
-    - `error`: _string_
-    - `from`: _string_ (address)
-    - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
-    - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
-    - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
-    - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
-    - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
   - `stateDiff`: map of _object_
     - `balance`: _object_
@@ -625,11 +594,36 @@ curl localhost:8545 \
     - `storage`: map of _object_
       - `after`: _string_ (hex data)
       - `before`: _string_ (hex data)
+  - `trace`: array of _object_
+    - `action`: _object_
+      - `address`: _string_ (address)
+      - `author`: _string_ (address)
+      - `balance`: _string_ (hex integer)
+      - `callType`: _string_
+      - `creationMethod`: _string_
+      - `from`: _string_ (address)
+      - `gas`: _string_ (hex integer)
+      - `init`: _string_ (hex data)
+      - `input`: _string_ (hex data)
+      - `refundAddress`: _string_ (address)
+      - `rewardType`: _string_
+      - `to`: _string_ (address)
+      - `value`: _string_ (hex integer)
+    - `error`: _string_
+    - `result`: _object_
+      - `address`: _string_ (address)
+      - `code`: _string_ (hex data)
+      - `gasUsed`: _string_ (hex integer)
+      - `output`: _string_ (hex data)
+    - `subtraces`: _integer_
+    - `traceAddress`: array of _integer_
+    - `type`: _string_
   - `transactionHash`: _string_ (hash)
   - `vmTrace`: _object_
     - `code`: _string_ (hex data)
     - `operations`: array of _object_
       - `cost`: _string_ (hex integer)
+      - `halted`: _boolean_
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
@@ -646,6 +640,8 @@ curl localhost:8545 \
 </Tabs>
 
 ### trace_replayTransaction
+
+Replays a transaction and returns the requested traces. Returns null if the transaction is not found.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -684,28 +680,6 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `action`: _object_
-    - `author`: _string_ (address)
-    - `callType`: _string_
-    - `creationMethod`: _string_
-    - `error`: _string_
-    - `from`: _string_ (address)
-    - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
-    - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
-    - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
-    - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
-    - `value`: _string_ (hex integer)
   - `output`: _string_ (hex data)
   - `stateDiff`: map of _object_
     - `balance`: _object_
@@ -720,11 +694,36 @@ curl localhost:8545 \
     - `storage`: map of _object_
       - `after`: _string_ (hex data)
       - `before`: _string_ (hex data)
+  - `trace`: array of _object_
+    - `action`: _object_
+      - `address`: _string_ (address)
+      - `author`: _string_ (address)
+      - `balance`: _string_ (hex integer)
+      - `callType`: _string_
+      - `creationMethod`: _string_
+      - `from`: _string_ (address)
+      - `gas`: _string_ (hex integer)
+      - `init`: _string_ (hex data)
+      - `input`: _string_ (hex data)
+      - `refundAddress`: _string_ (address)
+      - `rewardType`: _string_
+      - `to`: _string_ (address)
+      - `value`: _string_ (hex integer)
+    - `error`: _string_
+    - `result`: _object_
+      - `address`: _string_ (address)
+      - `code`: _string_ (hex data)
+      - `gasUsed`: _string_ (hex integer)
+      - `output`: _string_ (hex data)
+    - `subtraces`: _integer_
+    - `traceAddress`: array of _integer_
+    - `type`: _string_
   - `transactionHash`: _string_ (hash)
   - `vmTrace`: _object_
     - `code`: _string_ (hex data)
     - `operations`: array of _object_
       - `cost`: _string_ (hex integer)
+      - `halted`: _boolean_
       - `memory`: _object_
         - `data`: _string_ (hex data)
         - `offset`: _string_ (hex integer)
@@ -736,6 +735,8 @@ curl localhost:8545 \
       - `sub`: _object_
         <!--[circular ref]-->
       - `used`: _string_ (hex integer)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -814,62 +815,6 @@ curl localhost:8545 \
   - `baseFeePerGas`: _string_ (hex integer)
   - `blobGasUsed`: _string_ (hex integer)
   - `blockAccessListHash`: _string_ (hash)
-  - `calls`: array of _object_
-    - `action`: _object_
-      - `author`: _string_ (address)
-      - `callType`: _string_
-      - `creationMethod`: _string_
-      - `error`: _string_
-      - `from`: _string_ (address)
-      - `gas`: _string_ (hex integer)
-      - `includeInTrace`: _boolean_
-      - `input`: _string_ (hex data)
-      - `isPrecompiled`: _boolean_
-      - `result`: _object_
-        - `address`: _string_ (address)
-        - `code`: _string_ (hex data)
-        - `gasUsed`: _string_ (hex integer)
-        - `output`: _string_ (hex data)
-      - `rewardType`: _string_
-      - `subtraces`: array of _object_
-        <!--[circular ref]-->
-      - `to`: _string_ (address)
-      - `traceAddress`: array of _integer_
-      - `type`: _string_
-      - `value`: _string_ (hex integer)
-    - `blockHash`: _string_ (hash)
-    - `blockNumber`: _integer_
-    - `output`: _string_ (hex data)
-    - `stateDiff`: map of _object_
-      - `balance`: _object_
-        - `after`: _string_ (hex integer)
-        - `before`: _string_ (hex integer)
-      - `code`: _object_
-        - `after`: _string_ (hex data)
-        - `before`: _string_ (hex data)
-      - `nonce`: _object_
-        - `after`: _string_ (hex integer)
-        - `before`: _string_ (hex integer)
-      - `storage`: map of _object_
-        - `after`: _string_ (hex data)
-        - `before`: _string_ (hex data)
-    - `transactionHash`: _string_ (hash)
-    - `transactionPosition`: _integer_
-    - `vmTrace`: _object_
-      - `code`: _string_ (hex data)
-      - `operations`: array of _object_
-        - `cost`: _string_ (hex integer)
-        - `memory`: _object_
-          - `data`: _string_ (hex data)
-          - `offset`: _string_ (hex integer)
-        - `pc`: _integer_
-        - `push`: array of _string_ (hex data)
-        - `store`: _object_
-          - `key`: _string_ (hex data)
-          - `value`: _string_ (hex data)
-        - `sub`: _object_
-          <!--[circular ref]-->
-        - `used`: _string_ (hex integer)
   - `difficulty`: _string_ (hex integer)
   - `excessBlobGas`: _string_ (hex integer)
   - `extraData`: _string_ (hex data)
@@ -938,6 +883,7 @@ curl localhost:8545 \
       - `code`: _string_ (hex data)
       - `operations`: array of _object_
         - `cost`: _string_ (hex integer)
+        - `halted`: _boolean_
         - `memory`: _object_
           - `data`: _string_ (hex data)
           - `offset`: _string_ (hex integer)
@@ -949,7 +895,16 @@ curl localhost:8545 \
         - `sub`: _object_
           <!--[circular ref]-->
         - `used`: _string_ (hex integer)
-  - `transactions`: array of _object_
+  - `transactions`: _object_
+    - `full`: array of _object_
+      - `blockHash`: _string_ (hash)
+      - `blockNumber`: _string_ (hex integer)
+      - `blockTimestamp`: _string_ (hex integer)
+      - `gas`: _string_ (hex integer)
+      - `hash`: _string_ (hash)
+      - `transactionIndex`: _string_ (hex integer)
+      - `type`: _string_ (transaction type)
+    - `hashes`: array of _string_ (hash)
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
   - `withdrawals`: array of _object_
@@ -963,6 +918,8 @@ curl localhost:8545 \
 </Tabs>
 
 ### trace_transaction
+
+Returns the traces of a transaction. Returns null if the transaction is not found.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -1000,26 +957,18 @@ curl localhost:8545 \
 
 `result`: array of _object_
   - `action`: _object_
+    - `address`: _string_ (address)
     - `author`: _string_ (address)
+    - `balance`: _string_ (hex integer)
     - `callType`: _string_
     - `creationMethod`: _string_
-    - `error`: _string_
     - `from`: _string_ (address)
     - `gas`: _string_ (hex integer)
-    - `includeInTrace`: _boolean_
+    - `init`: _string_ (hex data)
     - `input`: _string_ (hex data)
-    - `isPrecompiled`: _boolean_
-    - `result`: _object_
-      - `address`: _string_ (address)
-      - `code`: _string_ (hex data)
-      - `gasUsed`: _string_ (hex integer)
-      - `output`: _string_ (hex data)
+    - `refundAddress`: _string_ (address)
     - `rewardType`: _string_
-    - `subtraces`: array of _object_
-      <!--[circular ref]-->
     - `to`: _string_ (address)
-    - `traceAddress`: array of _integer_
-    - `type`: _string_
     - `value`: _string_ (hex integer)
   - `blockHash`: _string_ (hash)
   - `blockNumber`: _integer_
@@ -1034,6 +983,8 @@ curl localhost:8545 \
   - `transactionHash`: _string_ (hash)
   - `transactionPosition`: _integer_
   - `type`: _string_
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
