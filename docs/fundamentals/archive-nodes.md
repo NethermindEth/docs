@@ -61,7 +61,7 @@ The row format of flat history is chosen when the database is created, and it ne
 Notes:
 
 - A database that already holds history keeps the format it was created with. Changing the sync mode or the retention later does not convert it.
-- Unwindowed history from a sync pivot needs [`FlatDb.Layout`](./configuration.md#flatdb-layout) set to `Flat`. On another layout, the node logs a warning at startup, and history capture stops at the pivot.
+- Unwindowed history from a sync pivot needs [`FlatDb.Layout`](./configuration.md#flatdb-layout) set to `Flat`. On another layout, history capture stops at the pivot and the log gives the reason. With `Pruning.Mode=None`, the node also warns at startup.
 - A node that snap synced with `None` on an earlier release has no usable history: capture stopped after the sync. Resync its flatHistory database.
 
 ### After a snap sync
