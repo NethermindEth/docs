@@ -28,7 +28,7 @@ For reproducible builds, the following conditions must be met:
 
 ### Prerequisites
 
-To build Nethermind from source, install [.NET SDK](https://get.dot.net) 10 or later.
+To build Nethermind from source, install [.NET SDK](https://get.dot.net) 11 or later.
 
 ### Building
 
@@ -111,10 +111,10 @@ For quick testing images, the above arguments can be omitted if not needed:
 docker build . -t nethermind
 ```
 
-An even faster approach is to build the image directly from the repository. The following command builds the version 1.27.0:
+An even faster approach is to build the image directly from the repository. The following command builds the version 2.0.0:
 
 ```bash
-docker build "https://github.com/nethermindeth/nethermind.git#1.27.0" -t nethermind
+docker build "https://github.com/nethermindeth/nethermind.git#2.0.0" -t nethermind
 ```
 
 The above optional arguments can be specified as well if needed.
