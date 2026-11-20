@@ -18,7 +18,7 @@ There are no full or pruned snapshots. For a non-archive node, [snap sync](./syn
 
 ## Available snapshots
 
-All files are served from `https://mainnet-archive-snapshot.nethermind.dev/`, which supports range requests. Every snapshot has a `.sha256` file next to it in `sha256sum` format.
+All files are served from `https://mainnet-archive-snapshot.nethermind.dev/`, which supports range requests. Every snapshot has a `.sha256` file next to it in `sha256sum` format, and a `.manifest.json` that describes it (see [Latest snapshot for automation](#latest-snapshot-for-automation)).
 
 | Network | Type                        | Head block | Download | Extracted | Free space to restore | Files                                                                                                                                                                                                                                                                                |
 | ------- | --------------------------- | ---------- | -------- | --------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -30,6 +30,40 @@ All files are served from `https://mainnet-archive-snapshot.nethermind.dev/`, wh
 Sizes are in decimal units (1 TB = 10<sup>12</sup> bytes). "Free space to restore" is what the Snapshot plugin checks for before it starts: 1.5 times the download size, on the drive that holds the database. Leave room on top of the extracted size for the database to grow as the node follows the chain.
 
 Each snapshot was checked before publishing: every block from genesis to the snapshot head was replayed on Nethermind 2.1.0 and matched its block header, with no mismatches. The historical proofs in the proofs snapshots were verified against the state roots in the block headers.
+
+## Latest snapshot for automation
+
+Each network and type has a `latest.json` at a fixed URL that always describes the newest snapshot of that type. Deployment scripts can read it instead of hard-coding a file name that changes with every new snapshot.
+
+| Network | Type                        | URL                                                                                  |
+| ------- | --------------------------- | ------------------------------------------------------------------------------------ |
+| Mainnet | Archive                     | `https://mainnet-archive-snapshot.nethermind.dev/mainnet/archive/latest.json`        |
+| Mainnet | Archive + historical proofs | `https://mainnet-archive-snapshot.nethermind.dev/mainnet/archive-proofs/latest.json` |
+| Gnosis  | Archive                     | `https://mainnet-archive-snapshot.nethermind.dev/gnosis/archive/latest.json`         |
+| Gnosis  | Archive + historical proofs | `https://mainnet-archive-snapshot.nethermind.dev/gnosis/archive-proofs/latest.json`  |
+
+`latest.json` is a copy of the newest snapshot's `.manifest.json`. The fields a script usually needs:
+
+| Field                        | Value                                                                                     |
+| ---------------------------- | ----------------------------------------------------------------------------------------- |
+| `url`                        | Download URL of the archive.                                                              |
+| `sha256`                     | SHA-256 of the archive with a `0x` prefix, the value for `Snapshot.Checksum`.             |
+| `sizeBytes`                  | Download size in bytes. The restore needs 1.5 times this free.                            |
+| `headBlock`, `headBlockHash` | The block the database is at.                                                             |
+| `minNethermindVersion`       | The oldest Nethermind version that can open the database.                                 |
+| `snapshotConfig`             | The `Snapshot.*` options for this archive, the same ones as in the [examples](#examples). |
+| `requiredNodeFlags`          | The other options the node needs to open the database, including `--config`.              |
+
+For example, to print the download details and every option a restore needs, one per line:
+
+```bash
+curl -fsS -o manifest.json https://mainnet-archive-snapshot.nethermind.dev/mainnet/archive-proofs/latest.json
+
+jq -r '.url, .sha256, .headBlock, .minNethermindVersion' manifest.json
+jq -r '.requiredNodeFlags[], (.snapshotConfig | to_entries[] | "--\(.key)=\(.value)")' manifest.json
+```
+
+Read `latest.json` once and take the URL and checksum from that same copy. It changes when a newer snapshot is published, and a checksum from a newer snapshot fails the download of an older one. Changes show up within a minute; the file is served with `Cache-Control: max-age=60`.
 
 ## Choosing a snapshot
 
