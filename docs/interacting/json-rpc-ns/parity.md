@@ -1,7 +1,7 @@
 ---
 title: parity namespace
 sidebar_label: parity
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 import Tabs from "@theme/Tabs";
@@ -82,7 +82,7 @@ Get receipts from all transactions from particular block, more efficient than fe
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -112,50 +112,50 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
-  - `blobGasPrice`: _string_ (hex integer)
-  - `blobGasUsed`: _string_ (hex integer)
-  - `blockGasUsed`: _string_ (hex integer)
-  - `blockHash`: _string_ (hash)
+  - `blobGasPrice`: optional _string_ (hex integer)
+  - `blobGasUsed`: optional _string_ (hex integer)
+  - `blockGasUsed`: optional _string_ (hex integer)
+  - `blockHash`: optional _string_ (hash)
   - `blockNumber`: _string_ (hex integer)
-  - `contractAddress`: _string_ (address)
+  - `contractAddress`: _string_ (address) or `null`
   - `cumulativeGasUsed`: _string_ (hex integer)
-  - `effectiveGasPrice`: _string_ (hex integer)
-  - `executionGasUsed`: _string_ (hex integer)
-  - `frameReceipts`: array of _object_
+  - `effectiveGasPrice`: optional _string_ (hex integer)
+  - `executionGasUsed`: optional _string_ (hex integer)
+  - `frameReceipts`: optional array of _object_
     - `executionGasUsed`: _string_ (hex integer)
     - `gasUsed`: _string_ (hex integer)
-    - `logs`: array of _object_
+    - `logs`: optional array of _object_
       - `address`: _string_ (address)
       - `blockHash`: _string_ (hash)
-      - `blockNumber`: _string_ (hex integer)
-      - `blockTimestamp`: _string_ (hex integer)
+      - `blockNumber`: optional _string_ (hex integer)
+      - `blockTimestamp`: optional _string_ (hex integer)
       - `data`: _string_ (hex data)
-      - `logIndex`: _string_ (hex integer)
-      - `removed`: _boolean_
+      - `logIndex`: optional _string_ (hex integer)
+      - `removed`: optional _boolean_
       - `topics`: array of _string_ (hash)
       - `transactionHash`: _string_ (hash)
-      - `transactionIndex`: _string_ (hex integer)
+      - `transactionIndex`: optional _string_ (hex integer)
     - `stateGasUsed`: _string_ (hex integer)
     - `status`: _integer_
   - `from`: _string_ (address)
   - `gasUsed`: _string_ (hex integer)
-  - `logs`: array of _object_
+  - `logs`: optional array of _object_
     - `address`: _string_ (address)
     - `blockHash`: _string_ (hash)
-    - `blockNumber`: _string_ (hex integer)
-    - `blockTimestamp`: _string_ (hex integer)
+    - `blockNumber`: optional _string_ (hex integer)
+    - `blockTimestamp`: optional _string_ (hex integer)
     - `data`: _string_ (hex data)
-    - `logIndex`: _string_ (hex integer)
-    - `removed`: _boolean_
+    - `logIndex`: optional _string_ (hex integer)
+    - `removed`: optional _boolean_
     - `topics`: array of _string_ (hash)
     - `transactionHash`: _string_ (hash)
-    - `transactionIndex`: _string_ (hex integer)
-  - `logsBloom`: _string_ (hex data)
-  - `payer`: _string_ (address)
-  - `root`: _string_ (hash)
-  - `status`: _string_ (hex integer)
-  - `storageGasUsed`: _string_ (hex integer)
-  - `to`: _string_ (address)
+    - `transactionIndex`: optional _string_ (hex integer)
+  - `logsBloom`: optional _string_ (hex data)
+  - `payer`: optional _string_ (address)
+  - `root`: optional _string_ (hash)
+  - `status`: optional _string_ (hex integer)
+  - `storageGasUsed`: optional _string_ (hex integer)
+  - `to`: _string_ (address) or `null`
   - `transactionHash`: _string_ (hash)
   - `transactionIndex`: _string_ (hex integer)
   - `type`: _string_ (transaction type)
@@ -207,7 +207,7 @@ curl localhost:8545 \
       - `localAddress`: _string_
       - `remoteAddress`: _string_
     - `protocols`: map of _object_
-      - `difficulty`: _string_ (hex integer)
+      - `difficulty`: optional _string_ (hex integer)
       - `head`: _string_ (hash)
       - `version`: _integer_
 
@@ -251,26 +251,26 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
-  - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
-  - `chainId`: _string_ (hex integer)
-  - `condition`: _object_
-  - `creates`: _string_ (address)
+  - `blockHash`: _string_ (hash) or `null`
+  - `blockNumber`: _string_ (hex integer) or `null`
+  - `chainId`: optional _string_ (hex integer)
+  - `condition`: _object_ or `null`
+  - `creates`: _string_ (address) or `null`
   - `from`: _string_ (address)
-  - `gas`: _string_ (hex integer)
-  - `gasPrice`: _string_ (hex integer)
+  - `gas`: optional _string_ (hex integer)
+  - `gasPrice`: optional _string_ (hex integer)
   - `hash`: _string_ (hash)
   - `input`: _string_ (hex data)
-  - `nonce`: _string_ (hex integer)
+  - `nonce`: optional _string_ (hex integer)
   - `publicKey`: _string_ (hex data)
-  - `r`: _string_ (hex data)
+  - `r`: _string_ (hex data) or `null`
   - `raw`: _string_ (hex data)
-  - `s`: _string_ (hex data)
+  - `s`: _string_ (hex data) or `null`
   - `standardV`: _string_ (hex integer)
-  - `to`: _string_ (address)
-  - `transactionIndex`: _string_ (hex integer)
+  - `to`: _string_ (address) or `null`
+  - `transactionIndex`: _string_ (hex integer) or `null`
   - `v`: _string_ (hex integer)
-  - `value`: _string_ (hex integer)
+  - `value`: optional _string_ (hex integer)
 
 </TabItem>
 </Tabs>

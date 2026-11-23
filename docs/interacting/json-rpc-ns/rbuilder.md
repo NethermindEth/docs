@@ -1,7 +1,7 @@
 ---
 title: rbuilder namespace
 sidebar_label: rbuilder
-sidebar_position: 11
+sidebar_position: 12
 ---
 
 import Tabs from "@theme/Tabs";
@@ -14,7 +14,7 @@ Calculate the state root on top of the state trie at specified block given a set
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 2. `accountDiff`: map of _object_
   - `balance`: _string_ (hex integer)
@@ -64,7 +64,7 @@ Get account data
 
 1. `address`: _string_ (address)
 
-2. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -110,7 +110,7 @@ Gets block hash
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `block`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>

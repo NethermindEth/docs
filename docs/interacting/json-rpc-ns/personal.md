@@ -1,7 +1,7 @@
 ---
 title: personal namespace
 sidebar_label: personal
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 import Tabs from "@theme/Tabs";

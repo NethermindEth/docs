@@ -15,10 +15,11 @@ Retrieves log index block number for the given filter.
 <TabItem value="params" label="Parameters">
 
 1. `filter`: _object_
-    - `address`: array of _string_ (address)
-    - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-    - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
-    - `topics`: array of array of _string_ (hash)
+    - `address`: _string_ (address), array of _string_ (address), or `null`
+    - `blockHash`: _string_ (hash, not allowed with `fromBlock` or `toBlock`)
+    - `fromBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`) or _integer_ (block number)
+    - `toBlock`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`) or _integer_ (block number)
+    - `topics`: array of (_string_ (hash), array of _string_ (hash), or `null`)
     - `useIndex`: _boolean_
 
 
@@ -85,15 +86,15 @@ curl localhost:8545 \
 
 `result`: _object_
   - `current`: _object_
-    - `fromBlock`: _string_ (hex integer)
-    - `toBlock`: _string_ (hex integer)
+    - `fromBlock`: optional _string_ (hex integer)
+    - `toBlock`: optional _string_ (hex integer)
   - `dbSize`: _string_
   - `isRunning`: _boolean_
-  - `lastError`: _string_
-  - `lastUpdate`: _string_ (date-time)
+  - `lastError`: optional _string_
+  - `lastUpdate`: optional _string_ (date-time)
   - `target`: _object_
-    - `fromBlock`: _string_ (hex integer)
-    - `toBlock`: _string_ (hex integer)
+    - `fromBlock`: optional _string_ (hex integer)
+    - `toBlock`: optional _string_ (hex integer)
 
 </TabItem>
 </Tabs>

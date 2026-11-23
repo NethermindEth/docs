@@ -47,6 +47,133 @@ Currently, Nethermind provides the following options to monitor and collect metr
   Number of current AuRa validators
 
 
+### BeaconChain
+
+- #### `nethermind_beacon_chain_blocks_imported` \{#beacon_chain_blocks_imported\}
+  
+  Beacon blocks imported through the state transition.
+
+- #### `nethermind_beacon_chain_column_gossip_dropped_by_reason` \{#beacon_chain_column_gossip_dropped_by_reason\}
+  
+  Data column gossip messages dropped, by validation reason.
+
+- #### `nethermind_beacon_chain_dial_attempts` \{#beacon_chain_dial_attempts\}
+  
+  Outbound dials attempted toward discovered beacon chain peers.
+
+- #### `nethermind_beacon_chain_driver_stopped` \{#beacon_chain_driver_stopped\}
+  
+  Embedded driver stopped after a fault (1) or external consensus client takeover (2); zero until either event, reset by a restart.
+
+- #### `nethermind_beacon_chain_el_in_sync` \{#beacon_chain_el_in_sync\}
+  
+  Whether the execution layer is in sync with the embedded driver's head (1) or still syncing (0).
+
+- #### `nethermind_beacon_chain_finalized_epoch` \{#beacon_chain_finalized_epoch\}
+  
+  Finalized epoch tracked by the embedded beacon chain driver.
+
+- #### `nethermind_beacon_chain_fork_choice_rejections` \{#beacon_chain_fork_choice_rejections\}
+  
+  Operations refused by fork choice, by source: attestations and attester slashings the state transition or gossip validation accepted, from block bodies (tolerated, the block still imports) or gossip (dropped); and execution payload envelopes that failed verification or that the execution layer found invalid.
+
+- #### `nethermind_beacon_chain_forkchoice_updated_calls` \{#beacon_chain_forkchoice_updated_calls\}
+  
+  In-process engine_forkchoiceUpdated calls issued by the embedded driver.
+
+- #### `nethermind_beacon_chain_gossip_accepted` \{#beacon_chain_gossip_accepted\}
+  
+  Gossip messages accepted across the beacon chain topics.
+
+- #### `nethermind_beacon_chain_gossip_dropped` \{#beacon_chain_gossip_dropped\}
+  
+  Gossip messages dropped during validation.
+
+- #### `nethermind_beacon_chain_gossip_forwarded` \{#beacon_chain_gossip_forwarded\}
+  
+  Deferred gossip messages the pubsub router forwarded once their validation accepted them.
+
+- #### `nethermind_beacon_chain_gossip_received_by_topic` \{#beacon_chain_gossip_received_by_topic\}
+  
+  Gossip messages received per beacon chain topic, before validation.
+
+- #### `nethermind_beacon_chain_gossip_rejected_by_topic` \{#beacon_chain_gossip_rejected_by_topic\}
+  
+  Gossip messages dropped during decode-level validation, per topic and drop reason.
+
+- #### `nethermind_beacon_chain_gossip_throttled` \{#beacon_chain_gossip_throttled\}
+  
+  Gossip messages refused for validation because the messages or bytes awaiting a verdict reached their bound or the delivering peer's share of it.
+
+- #### `nethermind_beacon_chain_gossip_verdicts_abandoned` \{#beacon_chain_gossip_verdicts_abandoned\}
+  
+  Deferred gossip messages whose verdict was not given before the pending validation timeout or shutdown.
+
+- #### `nethermind_beacon_chain_gossip_verdicts_late` \{#beacon_chain_gossip_verdicts_late\}
+  
+  Gossip verdicts given after the message was abandoned or expired from the router, so neither forwarded nor charged to its sender.
+
+- #### `nethermind_beacon_chain_gossip_votes_refused_after_rejection` \{#beacon_chain_gossip_votes_refused_after_rejection\}
+  
+  Aggregates and payload attestations refused for validation because a vote their delivering peer sent was rejected in the same slot.
+
+- #### `nethermind_beacon_chain_head_slot` \{#beacon_chain_head_slot\}
+  
+  Head slot of the embedded beacon chain driver.
+
+- #### `nethermind_beacon_chain_head_slot_delay` \{#beacon_chain_head_slot_delay\}
+  
+  Slots between the wall clock and the embedded driver's head.
+
+- #### `nethermind_beacon_chain_held_blocks_dropped` \{#beacon_chain_held_blocks_dropped\}
+  
+  Blocks held for a parent or a deferred block that were dropped because it could not import.
+
+- #### `nethermind_beacon_chain_justified_epoch` \{#beacon_chain_justified_epoch\}
+  
+  Justified epoch tracked by the embedded beacon chain driver.
+
+- #### `nethermind_beacon_chain_last_block_import_ms` \{#beacon_chain_last_block_import_ms\}
+  
+  Milliseconds spent importing the most recent beacon block.
+
+- #### `nethermind_beacon_chain_new_payload_calls` \{#beacon_chain_new_payload_calls\}
+  
+  In-process engine_newPayload calls issued by the embedded driver.
+
+- #### `nethermind_beacon_chain_new_payload_milliseconds` \{#beacon_chain_new_payload_milliseconds\}
+  
+  Milliseconds the embedded driver spent waiting on in-process engine_newPayload calls.
+
+- #### `nethermind_beacon_chain_peer_count` \{#beacon_chain_peer_count\}
+  
+  Connected, status-exchanged beacon chain peers.
+
+- #### `nethermind_beacon_chain_peer_failures_by_reason` \{#beacon_chain_peer_failures_by_reason\}
+  
+  Beacon chain peer failures reported by range-sync/backfill callers, by closed-cardinality reason.
+
+- #### `nethermind_beacon_chain_peers_connected` \{#beacon_chain_peers_connected\}
+  
+  Beacon chain peer connections established.
+
+- #### `nethermind_beacon_chain_peers_dropped` \{#beacon_chain_peers_dropped\}
+  
+  Beacon chain peers dropped.
+
+- #### `nethermind_beacon_chain_peers_dropped_by_reason` \{#beacon_chain_peers_dropped_by_reason\}
+  
+  Beacon chain peers dropped, by goodbye reason.
+
+- #### `nethermind_beacon_chain_req_resp_failures` \{#beacon_chain_req_resp_failures\}
+  
+  Eth2 req/resp failures per protocol id and reason: timeouts, peer-attributable invalid messages, limit violations (chunk cap, concurrent-request cap), and peer error responses.
+
+- #### `nethermind_beacon_chain_worker_faults` \{#beacon_chain_worker_faults\}
+  
+  Work items the embedded driver's import worker skipped because handling them threw.
+
+
 ### Blockchain
 
 - #### `nethermind_block_m_gas_per_sec` \{#block_m_gas_per_sec\}
@@ -101,6 +228,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Transactions executed because state their pre-warm run read had changed
 
+- #### `nethermind_prewarm_in_flight_late_misses` \{#prewarm_in_flight_late_misses\}
+  
+  Reads past the pre-block caches block processing made in a transaction after its in-flight discovery started
+
+- #### `nethermind_prewarm_in_flight_started` \{#prewarm_in_flight_started\}
+  
+  Transactions whose reads past the pre-block caches started a storage discovery while block processing executed them
+
 - #### `nethermind_prewarm_mempool_runs_stored` \{#prewarm_mempool_runs_stored\}
   
   Pre-warm runs of the mempool pass stored for block processing to take over
@@ -147,7 +282,7 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 - #### `nethermind_reorganizations` \{#reorganizations\}
   
-  Total number of chain reorganizations
+  Total number of chain reorganizations: each time the canonical head stops being canonical, so a pure rewind counts once
 
 - #### `nethermind_retained_receipt_bodies` \{#retained_receipt_bodies\}
   
@@ -229,6 +364,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Number of pre-block (prewarmer-shared) cache misses for storage slots, counted on the consumer scope only (populator probes excluded).
 
+- #### `nethermind_prefetched_keys` \{#prefetched_keys\}
+  
+  Number of keys whose reads were started ahead of use by an asynchronous prefetch.
+
+- #### `nethermind_prefetches_skipped_cached` \{#prefetches_skipped_cached\}
+  
+  Number of state prefetches skipped because every sampled key was already in memory.
+
 - #### `nethermind_prewarmer_get_time` \{#prewarmer_get_time\}
   
   Prewarmer get operation times
@@ -291,6 +434,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_account_writes` \{#account_writes\}
   
   Number of account writes during execution.
+
+- #### `nethermind_bal_adopted_code_missing` \{#bal_adopted_code_missing\}
+  
+  EIP-8298 code adoptions applied from a block access list whose bytecode was neither in the code database nor deposited in the block.
 
 - #### `nethermind_blooms_time` \{#blooms_time\}
   
@@ -451,69 +598,34 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### Evm.Precompiles
 
-- #### `nethermind_bls12381_fp2_to_g2_precompile` \{#bls12381_fp2_to_g2_precompile\}
+- #### `nethermind_detailed_metrics_enabled` \{#detailed_metrics_enabled\}
+- #### `nethermind_precompile_cache_entries` \{#precompile_cache_entries\}
   
-  Number of BLS12_MAP_FP2_TO_G2 precompile calls.
+  Entries held by the per-block precompile result cache, by precompile, as they stood at the end of the last block.
 
-- #### `nethermind_bls12381_fp_to_g1_precompile` \{#bls12381_fp_to_g1_precompile\}
+- #### `nethermind_precompile_cache_partition_max_bytes` \{#precompile_cache_partition_max_bytes\}
   
-  Number of BLS12_MAP_FP_TO_G1 precompile calls.
+  Weighted byte budget of one precompile's per-block cache partition. Shares are equal for now. A precompile without a partition reports nothing, so nothing is reported at all while precompile caching is disabled.
 
-- #### `nethermind_bls12381_g1_add_precompile` \{#bls12381_g1_add_precompile\}
+- #### `nethermind_precompile_cache_probes` \{#precompile_cache_probes\}
   
-  Number of BLS12_G1ADD precompile calls.
+  Precompile result cache probes, by precompile and probe result (block_hit, surviving_hit, miss). Counted only with detailed metrics enabled, since every probe pays for it.
 
-- #### `nethermind_bls12381_g1_msm_precompile` \{#bls12381_g1_msm_precompile\}
+- #### `nethermind_precompile_cache_rejected_full` \{#precompile_cache_rejected_full\}
   
-  Number of BLS12_G1MSM precompile calls.
+  Results the per-block precompile result cache refused because the precompile's byte budget was exhausted, by precompile. Non-zero means a larger budget would hold more; zero means raising it changes nothing.
 
-- #### `nethermind_bls12381_g2_add_precompile` \{#bls12381_g2_add_precompile\}
+- #### `nethermind_precompile_cache_surviving_entries` \{#precompile_cache_surviving_entries\}
   
-  Number of BLS12_G2ADD precompile calls.
+  Entries held by the surviving precompile result cache, which is shared by every precompile.
 
-- #### `nethermind_bls12381_g2_msm_precompile` \{#bls12381_g2_msm_precompile\}
+- #### `nethermind_precompile_cache_used_bytes` \{#precompile_cache_used_bytes\}
   
-  Number of BLS12_G2MSM precompile calls.
+  Accounted weight held by the per-block precompile result cache, by precompile, as it stood at the end of the last block.
 
-- #### `nethermind_bls12381_pairing_check_precompile` \{#bls12381_pairing_check_precompile\}
+- #### `nethermind_precompile_runs` \{#precompile_runs\}
   
-  Number of BLS12_PAIRING_CHECK precompile calls.
-
-- #### `nethermind_bn254_add_precompile` \{#bn254_add_precompile\}
-  
-  Number of BN254_ADD precompile calls.
-
-- #### `nethermind_bn254_mul_precompile` \{#bn254_mul_precompile\}
-  
-  Number of BN254_MUL precompile calls.
-
-- #### `nethermind_bn254_pairing_precompile` \{#bn254_pairing_precompile\}
-  
-  Number of BN254_PAIRING precompile calls.
-
-- #### `nethermind_e_c_recover_precompile` \{#e_c_recover_precompile\}
-  
-  Number of ECREC precompile calls.
-
-- #### `nethermind_kzg_point_evaluation_precompile` \{#kzg_point_evaluation_precompile\}
-  
-  Number of KZG_POINT_EVALUATION precompile calls.
-
-- #### `nethermind_mod_exp_precompile` \{#mod_exp_precompile\}
-  
-  Number of MODEXP precompile calls.
-
-- #### `nethermind_ripemd160_precompile` \{#ripemd160_precompile\}
-  
-  Number of RIPEMD160 precompile calls.
-
-- #### `nethermind_sec_p256r1_precompile` \{#sec_p256r1_precompile\}
-  
-  Number of P256VERIFY precompile calls.
-
-- #### `nethermind_sha256_precompile` \{#sha256_precompile\}
-  
-  Number of SHA256 precompile calls.
+  Number of precompile runs, by precompile, in every execution context including RPC and tracing. Excludes cache hits and precompiles that do not support caching.
 
 
 ### History
@@ -553,6 +665,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### JsonRpc
 
+- #### `nethermind_json_rpc_abandoned_requests` \{#json_rpc_abandoned_requests\}
+  
+  Number of JSON RPC requests abandoned while queued for a module because their client went away. They are counted as neither successes nor errors.
+
 - #### `nethermind_json_rpc_bytes_received` \{#json_rpc_bytes_received\}
   
   Number of JSON RPC bytes received.
@@ -591,6 +707,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_bal_catch_up_blocks` \{#bal_catch_up_blocks\}
   
   Number of finalized blocks caught up by applying their block access list instead of executing them
+
+- #### `nethermind_bal_catch_up_fallbacks` \{#bal_catch_up_fallbacks\}
+  
+  Number of finalized blocks executed after all because they could not be caught up from their block access list, by reason
 
 - #### `nethermind_forkchoice_updated_execution_time` \{#forkchoice_updated_execution_time\}
   
@@ -801,6 +921,10 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 ### Runner
 
+- #### `nethermind_invalid_blocks_valid_on_rerun` \{#invalid_blocks_valid_on_rerun\}
+  
+  Rejected blocks that were valid when re-executed for their diagnostics dump
+
 - #### `nethermind_version` \{#version\}
   
   Version number
@@ -978,6 +1102,7 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Created pooled resources by category and type
 
+- #### `nethermind_detailed_metrics_enabled` \{#detailed_metrics_enabled\}
 - #### `nethermind_flat_history_capture_disabled` \{#flat_history_capture_disabled\}
   
   1 when history capture has self-disabled (permanent gap, reorged capture, or repeated write failures); as-of reads above the watermark are refused until the flatHistory DB is resynced
@@ -1010,6 +1135,14 @@ Currently, Nethermind provides the following options to monitor and collect metr
   
   Time for persistence job
 
+- #### `nethermind_half_path_fallback_walks` \{#half_path_fallback_walks\}
+  
+  Account and slot reads that walked the trie because the online migration from the pruning trie state has not copied them yet
+
+- #### `nethermind_half_path_migrated_nodes` \{#half_path_migrated_nodes\}
+  
+  Trie nodes the online migration from the pruning trie state has copied into the flat DB
+
 - #### `nethermind_importer_entries_count` \{#importer_entries_count\}
   
   Importer entries count
@@ -1033,6 +1166,22 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_in_memory_slot_filter_memory` \{#in_memory_slot_filter_memory\}
   
   Memory held by the negative filters over the in-memory snapshots' slots in bytes; one filter per read-only snapshot bundle that served a read-only execution slot read
+
+- #### `nethermind_node_record_buffer_compressed_generations` \{#node_record_buffer_compressed_generations\}
+  
+  Number of compacted trie node buffer generations held.
+
+- #### `nethermind_node_record_buffer_compressed_memory` \{#node_record_buffer_compressed_memory\}
+  
+  Bytes of the records and tables kept by compacted trie node buffer generations.
+
+- #### `nethermind_node_record_buffer_generations` \{#node_record_buffer_generations\}
+  
+  Number of trie node buffer generations readable in place.
+
+- #### `nethermind_node_record_buffer_memory` \{#node_record_buffer_memory\}
+  
+  Bytes of trie node buffer generations readable in place.
 
 - #### `nethermind_page_tracker_evictions_dispatched` \{#page_tracker_evictions_dispatched\}
   
@@ -1137,6 +1286,66 @@ Currently, Nethermind provides the following options to monitor and collect metr
 - #### `nethermind_transaction_changeset_index_to` \{#transaction_changeset_index_to\}
   
   Highest block the per-transaction changeset index covers; 0 when the index is disabled or has indexed nothing yet
+
+- #### `nethermind_trie_node_log_backpressure_time` \{#trie_node_log_backpressure_time\}
+  
+  Time a trie node log shard waited for a merge before starting a new generation because its backlog of unmerged generations was full; persistence stalls for this long
+
+- #### `nethermind_trie_node_log_bytes` \{#trie_node_log_bytes\}
+  
+  Bytes of trie node log generation files not yet merged into RocksDB
+
+- #### `nethermind_trie_node_log_commit_time` \{#trie_node_log_commit_time\}
+  
+  Time to commit one batch to the trie node log: buffer flush, fsync and index publish
+
+- #### `nethermind_trie_node_log_flushed_bytes` \{#trie_node_log_flushed_bytes\}
+  
+  Key and value bytes merged from the trie node log into RocksDB (the latest record per key of each generation), by column (state, storage)
+
+- #### `nethermind_trie_node_log_flushed_generation` \{#trie_node_log_flushed_generation\}
+  
+  Newest trie node log generation merged into RocksDB, by shard
+
+- #### `nethermind_trie_node_log_generation_count` \{#trie_node_log_generation_count\}
+  
+  Trie node log generations by state: active (being appended to), sealed (waiting for or being merged), merged_pinned (merged into RocksDB but still held open by a reader)
+
+- #### `nethermind_trie_node_log_index_bytes` \{#trie_node_log_index_bytes\}
+  
+  Native memory held by trie node log generation indexes, including merged generations still pinned by readers
+
+- #### `nethermind_trie_node_log_index_false_matches` \{#trie_node_log_index_false_matches\}
+  
+  Trie node log index probes whose slot tag matched but whose record held another key, so the record was read for nothing
+
+- #### `nethermind_trie_node_log_merge_time` \{#trie_node_log_merge_time\}
+  
+  Time to merge one trie node log generation into RocksDB
+
+- #### `nethermind_trie_node_log_reads` \{#trie_node_log_reads\}
+  
+  Trie node reads answered by the trie node log: hit (served from the log), chain (served after walking to an older version), miss (fell through to the second-level log if enabled, else RocksDB), and the same outcomes of the second-level log prefixed second_level_
+
+- #### `nethermind_trie_node_log_second_level_stored_bytes` \{#trie_node_log_second_level_stored_bytes\}
+  
+  Bytes copied from merged first-level generations into second-level trie node log files (records with their headers), by column (state, storage)
+
+- #### `nethermind_trie_node_log_stored_bytes` \{#trie_node_log_stored_bytes\}
+  
+  Bytes written to first-level trie node log files (records with their headers), by column (state, storage)
+
+- #### `nethermind_trie_node_log_undeleted_files` \{#trie_node_log_undeleted_files\}
+  
+  Merged trie node log files whose deletion failed; deletion is retried on later merges and at startup
+
+- #### `nethermind_trie_node_log_version` \{#trie_node_log_version\}
+  
+  Version of the last batch committed to the trie node log, by shard
+
+- #### `nethermind_trie_node_publish_time` \{#trie_node_publish_time\}
+  
+  Time to publish the trie nodes a bulk set wrote into the snapshot bundle (Stopwatch ticks)
 
 - #### `nethermind_unreadable_transaction_changeset_rows` \{#unreadable_transaction_changeset_rows\}
   
@@ -1296,7 +1505,7 @@ Currently, Nethermind provides the following options to monitor and collect metr
 
 - #### `nethermind_pending_transactions_frame_tx_verify_gas_too_high` \{#pending_transactions_frame_tx_verify_gas_too_high\}
   
-  Number of pending EIP-8141 frame transactions received that were ignored because their validation prefix exceeds MAX_VERIFY_GAS.
+  Number of pending EIP-8141 frame transactions received that were ignored because their validation prefix exceeds the node verification budget.
 
 - #### `nethermind_pending_transactions_frame_tx_verify_state_gas_too_high` \{#pending_transactions_frame_tx_verify_state_gas_too_high\}
   

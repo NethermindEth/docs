@@ -1,7 +1,7 @@
 ---
 title: web3 namespace
 sidebar_label: web3
-sidebar_position: 14
+sidebar_position: 15
 ---
 
 import Tabs from "@theme/Tabs";

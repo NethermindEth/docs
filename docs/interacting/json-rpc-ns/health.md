@@ -38,10 +38,10 @@ curl localhost:8545 \
 ```
 
 `result`: _object_
-  - `errors`: array of _string_
+  - `errors`: optional array of _string_
   - `healthy`: _boolean_
   - `isSyncing`: _boolean_
-  - `messages`: array of _string_
+  - `messages`: optional array of _string_
 
 </TabItem>
 </Tabs>

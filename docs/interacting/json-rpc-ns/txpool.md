@@ -1,7 +1,7 @@
 ---
 title: txpool namespace
 sidebar_label: txpool
-sidebar_position: 13
+sidebar_position: 14
 ---
 
 import Tabs from "@theme/Tabs";
@@ -37,25 +37,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `pending`: map of map of _object_
-map of _object_
-  - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
-  - `blockTimestamp`: _string_ (hex integer)
-  - `gas`: _string_ (hex integer)
-  - `hash`: _string_ (hash)
-  - `transactionIndex`: _string_ (hex integer)
-  - `type`: _string_ (transaction type)
-  - `queued`: map of map of _object_
-map of _object_
-  - `blockHash`: _string_ (hash)
-  - `blockNumber`: _string_ (hex integer)
-  - `blockTimestamp`: _string_ (hex integer)
-  - `gas`: _string_ (hex integer)
-  - `hash`: _string_ (hash)
-  - `transactionIndex`: _string_ (hex integer)
-  - `type`: _string_ (transaction type)
+`result`: _object_ with `pending` and `queued`, each a map of sender address to a map of nonce (decimal, or hash for an EIP-8250 keyed transaction) to _object_ (transaction)
 
 </TabItem>
 </Tabs>
@@ -98,20 +80,20 @@ curl localhost:8545 \
 
 `result`: _object_
   - `pending`: map of _object_
-    - `blockHash`: _string_ (hash)
-    - `blockNumber`: _string_ (hex integer)
-    - `blockTimestamp`: _string_ (hex integer)
+    - `blockHash`: _string_ (hash) or `null`
+    - `blockNumber`: _string_ (hex integer) or `null`
+    - `blockTimestamp`: _string_ (hex integer) or `null`
     - `gas`: _string_ (hex integer)
-    - `hash`: _string_ (hash)
-    - `transactionIndex`: _string_ (hex integer)
+    - `hash`: _string_ (hash) or `null`
+    - `transactionIndex`: _string_ (hex integer) or `null`
     - `type`: _string_ (transaction type)
   - `queued`: map of _object_
-    - `blockHash`: _string_ (hash)
-    - `blockNumber`: _string_ (hex integer)
-    - `blockTimestamp`: _string_ (hex integer)
+    - `blockHash`: _string_ (hash) or `null`
+    - `blockNumber`: _string_ (hex integer) or `null`
+    - `blockTimestamp`: _string_ (hex integer) or `null`
     - `gas`: _string_ (hex integer)
-    - `hash`: _string_ (hash)
-    - `transactionIndex`: _string_ (hex integer)
+    - `hash`: _string_ (hash) or `null`
+    - `transactionIndex`: _string_ (hex integer) or `null`
     - `type`: _string_ (transaction type)
 
 </TabItem>
@@ -147,9 +129,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `pending`: map of map of _string_
-  - `queued`: map of map of _string_
+`result`: _object_ with `pending` and `queued`, each a map of sender address to a map of nonce (decimal, or hash for an EIP-8250 keyed transaction) to _string_ (`sender: value wei + gas × gasPrice gas`)
 
 </TabItem>
 </Tabs>

@@ -7,6 +7,41 @@ sidebar_position: 2
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+### debug_config
+
+Returns the complete fork configuration (Nethermind specific).
+
+<Tabs>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_config",
+      "params": []
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _object_
+
+</TabItem>
+</Tabs>
+
 ### debug_deleteChainSlice
 
 Deletes chain levels on all branches (Nethermind specific). Requires paused, drained processing, no active initial synchronization, and preserves historical sync progress, including when forced. Deletion at or below the sync pivot requires completed historical sync; a deleted pivot is moved to the surviving head. When replacing the head, the preceding block must be canonical with its body and processing state available. Returns invalid-params for an invalid range or resource-unavailable when maintenance is unsafe.
@@ -57,7 +92,7 @@ Reprocesses the existing block with the parameters specified and returns the gen
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -97,9 +132,15 @@ curl localhost:8545 \
 
 ### debug_getBadBlocks
 
-Return list of invalid blocks.
+Return list of invalid blocks. If an absolute local file path is given, writes the list to that new file and returns null.
 
 <Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `file`: _string_
+
+
+</TabItem>
 <TabItem value="request" label="Request" default>
 
 ```bash
@@ -110,12 +151,14 @@ curl localhost:8545 \
       "jsonrpc": "2.0",
       "id": 0,
       "method": "debug_getBadBlocks",
-      "params": []
+      "params": [file]
     }'
 ```
 
 </TabItem>
 <TabItem value="response" label="Response">
+
+Each `block` carries full transaction objects.
 
 ```json
 {
@@ -127,71 +170,44 @@ curl localhost:8545 \
 
 `result`: array of _object_
   - `block`: _object_
-    - `author`: _string_ (address)
-    - `baseFeePerGas`: _string_ (hex integer)
-    - `blobGasUsed`: _string_ (hex integer)
-    - `blockAccessListHash`: _string_ (hash)
+    - `author`: optional _string_ (address)
+    - `baseFeePerGas`: optional _string_ (hex integer)
+    - `blobGasUsed`: optional _string_ (hex integer)
+    - `blockAccessListHash`: optional _string_ (hash)
     - `difficulty`: _string_ (hex integer)
-    - `excessBlobGas`: _string_ (hex integer)
+    - `excessBlobGas`: optional _string_ (hex integer)
     - `extraData`: _string_ (hex data)
     - `gasLimit`: _string_ (hex integer)
     - `gasUsed`: _string_ (hex integer)
-    - `hash`: _string_ (hash)
-    - `logsBloom`: _string_ (hex data)
-    - `miner`: _string_ (address)
-    - `mixHash`: _string_ (hash)
-    - `nonce`: _string_ (8-byte hex data)
-    - `number`: _string_ (hex integer)
-    - `parentBeaconBlockRoot`: _string_ (hash)
+    - `hash`: _string_ (hash) or `null`
+    - `logsBloom`: _string_ (hex data) or `null`
+    - `miner`: _string_ (address) or `null`
+    - `mixHash`: optional _string_ (hash)
+    - `nonce`: _string_ (8-byte hex data) or `null`
+    - `number`: _string_ (hex integer) or `null`
+    - `parentBeaconBlockRoot`: optional _string_ (hash)
     - `parentHash`: _string_ (hash)
     - `receiptsRoot`: _string_ (hash)
-    - `requestsHash`: _string_ (hash)
+    - `requestsHash`: optional _string_ (hash)
     - `sha3Uncles`: _string_ (hash)
-    - `signature`: _string_ (hex data)
+    - `signature`: optional _string_ (hex data)
     - `size`: _string_ (hex integer)
-    - `slotNumber`: _string_ (hex integer)
+    - `slotNumber`: optional _string_ (hex integer)
     - `stateRoot`: _string_ (hash)
-    - `step`: _integer_
+    - `step`: optional _integer_
     - `timestamp`: _string_ (hex integer)
-    - `totalDifficulty`: _string_ (hex integer)
-    - `transactions`: _object_
-      - `full`: array of _object_
-        - `blockHash`: _string_ (hash)
-        - `blockNumber`: _string_ (hex integer)
-        - `blockTimestamp`: _string_ (hex integer)
-        - `gas`: _string_ (hex integer)
-        - `hash`: _string_ (hash)
-        - `transactionIndex`: _string_ (hex integer)
-        - `type`: _string_ (transaction type)
-      - `hashes`: array of _string_ (hash)
+    - `totalDifficulty`: optional _string_ (hex integer)
+    - `transactions`: optional array of _string_ (hash), or array of _object_ (transaction, same as `result` in `eth_getTransactionByHash`) when full transactions are requested
     - `transactionsRoot`: _string_ (hash)
     - `uncles`: array of _string_ (hash)
-    - `withdrawals`: array of _object_
+    - `withdrawals`: optional array of _object_
       - `address`: _string_ (address)
       - `amount`: _string_ (hex integer)
       - `index`: _string_ (hex integer)
       - `validatorIndex`: _string_ (hex integer)
-    - `withdrawalsRoot`: _string_ (hash)
-  - `generatedBlockAccessList`: _object_
-    - `accountChanges`: array of _object_
-      - `address`: _string_ (address)
-      - `balanceChanges`: array of _object_
-        - `index`: _integer_
-        - `value`: _string_ (hex integer)
-      - `codeChanges`: array of _object_
-        - `code`: _string_ (hex data)
-        - `codeHash`: _string_ (hash)
-        - `index`: _integer_
-      - `nonceChanges`: array of _object_
-        - `index`: _integer_
-        - `value`: _string_ (hex integer)
-      - `storageChanges`: array of _object_
-        - `changes`: array of _object_
-          - `index`: _integer_
-          - `value`: _string_ (hex integer)
-        - `key`: _string_ (hex integer)
-      - `storageReads`: array of _string_ (hex integer)
-    - `itemCount`: _integer_
+    - `withdrawalsRoot`: optional _string_ (hash)
+  - `blockAccessList`: optional _string_ (hex data)
+  - `generatedBlockAccessList`: optional _string_ (hex data)
   - `hash`: _string_ (hash)
   - `rlp`: _string_ (hex data)
 
@@ -297,7 +313,7 @@ Get Raw Block format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -338,7 +354,7 @@ Get raw block access list format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -367,8 +383,7 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `memory`: _string_ (hex data)
+`result`: _string_ (hex data)
 
 </TabItem>
 </Tabs>
@@ -380,7 +395,7 @@ Get Raw Header format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -421,7 +436,7 @@ Get Raw Receipt format.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -450,7 +465,9 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
+`result`: array of _string_ (hex data)
+
+`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -492,8 +509,6 @@ curl localhost:8545 \
 ```
 
 `result`: _string_ (hex data)
-
-`result` may be `null` in a successful response.
 
 </TabItem>
 </Tabs>
@@ -541,7 +556,7 @@ Insert receipts for the block after verifying receipts root correctness.
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 2. `receiptForRpc`: array of _object_
   - `blobGasPrice`: _string_ (hex integer)
@@ -636,12 +651,18 @@ Replays a block and returns the world-state root after each transaction in execu
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -651,7 +672,6 @@ Replays a block and returns the world-state root after each transaction in execu
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -786,7 +806,7 @@ Rewinds the head to a canonical block with state available for block processing,
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 
 </TabItem>
@@ -831,12 +851,18 @@ Retrieves geth like traces of the simulated blocks
     - `blockStateCalls`: array of _object_
       - `blockOverrides`: _object_
         - `baseFeePerGas`: _string_ (hex integer)
+        - `beaconRoot`: _string_ (hash)
         - `blobBaseFee`: _string_ (hex integer)
         - `feeRecipient`: _string_ (address)
         - `gasLimit`: _string_ (hex integer)
         - `number`: _string_ (hex integer)
         - `prevRandao`: _string_ (hash)
         - `time`: _string_ (hex integer)
+        - `withdrawals`: array of _object_
+          - `address`: _string_ (address)
+          - `amount`: _string_ (hex integer)
+          - `index`: _string_ (hex integer)
+          - `validatorIndex`: _string_ (hex integer)
       - `calls`: array of _object_
         - `blockHash`: _string_ (hash)
         - `blockNumber`: _string_ (hex integer)
@@ -848,7 +874,6 @@ Retrieves geth like traces of the simulated blocks
       - `stateOverrides`: map of _object_
         - `balance`: _string_ (hex integer)
         - `code`: _string_ (hex data)
-        - `hasStateChanges`: _boolean_
         - `movePrecompileToAddress`: _string_ (address)
         - `nonce`: _string_ (hex integer)
         - `state`: map of _string_ (hash)
@@ -858,17 +883,23 @@ Retrieves geth like traces of the simulated blocks
     - `traceTransfers`: _boolean_
     - `validation`: _boolean_
 
-2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -878,7 +909,6 @@ Retrieves geth like traces of the simulated blocks
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -918,70 +948,58 @@ curl localhost:8545 \
 ```
 
 `result`: array of _object_
-  - `author`: _string_ (address)
-  - `baseFeePerGas`: _string_ (hex integer)
-  - `blobGasUsed`: _string_ (hex integer)
-  - `blockAccessListHash`: _string_ (hash)
+  - `author`: optional _string_ (address)
+  - `baseFeePerGas`: optional _string_ (hex integer)
+  - `blobGasUsed`: optional _string_ (hex integer)
+  - `blockAccessListHash`: optional _string_ (hash)
   - `difficulty`: _string_ (hex integer)
-  - `excessBlobGas`: _string_ (hex integer)
+  - `excessBlobGas`: optional _string_ (hex integer)
   - `extraData`: _string_ (hex data)
   - `gasLimit`: _string_ (hex integer)
   - `gasUsed`: _string_ (hex integer)
-  - `hash`: _string_ (hash)
-  - `logsBloom`: _string_ (hex data)
-  - `miner`: _string_ (address)
-  - `mixHash`: _string_ (hash)
-  - `nonce`: _string_ (8-byte hex data)
-  - `number`: _string_ (hex integer)
-  - `parentBeaconBlockRoot`: _string_ (hash)
+  - `hash`: _string_ (hash) or `null`
+  - `logsBloom`: _string_ (hex data) or `null`
+  - `miner`: _string_ (address) or `null`
+  - `mixHash`: optional _string_ (hash)
+  - `nonce`: _string_ (8-byte hex data) or `null`
+  - `number`: _string_ (hex integer) or `null`
+  - `parentBeaconBlockRoot`: optional _string_ (hash)
   - `parentHash`: _string_ (hash)
   - `receiptsRoot`: _string_ (hash)
-  - `requestsHash`: _string_ (hash)
+  - `requestsHash`: optional _string_ (hash)
   - `sha3Uncles`: _string_ (hash)
-  - `signature`: _string_ (hex data)
+  - `signature`: optional _string_ (hex data)
   - `size`: _string_ (hex integer)
-  - `slotNumber`: _string_ (hex integer)
+  - `slotNumber`: optional _string_ (hex integer)
   - `stateRoot`: _string_ (hash)
-  - `step`: _integer_
+  - `step`: optional _integer_
   - `timestamp`: _string_ (hex integer)
-  - `totalDifficulty`: _string_ (hex integer)
-  - `traces`: array of _object_
-    - `customTracerResult`: _object_
-      - `value`: _object_
-    - `entries`: array of _object_
+  - `totalDifficulty`: optional _string_ (hex integer)
+  - `traces`: array of _object_ (the tracer's own result instead when `tracer` is set)
+    - `failed`: _boolean_
+    - `gas`: _integer_
+    - `returnValue`: _string_ (hex data)
+    - `structLogs`: array of _object_
       - `depth`: _integer_
-      - `error`: _string_
+      - `error`: optional _string_
       - `gas`: _integer_
       - `gasCost`: _integer_
-      - `memory`: array of _string_ (32-byte hex data)
-      - `op`: _string_
+      - `memory`: optional array of _string_ (32-byte hex data)
+      - `op`: optional _string_
       - `pc`: _integer_
-      - `refund`: _integer_
-      - `returnData`: _string_
-      - `stack`: array of _string_ (hex integer)
-      - `storage`: map of _string_ (32-byte hex data)
-    - `failed`: _boolean_
-    - `gas`: _string_ (hex integer)
-    - `returnValue`: _string_ (hex data)
-    - `txHash`: _string_ (hash)
-  - `transactions`: _object_
-    - `full`: array of _object_
-      - `blockHash`: _string_ (hash)
-      - `blockNumber`: _string_ (hex integer)
-      - `blockTimestamp`: _string_ (hex integer)
-      - `gas`: _string_ (hex integer)
-      - `hash`: _string_ (hash)
-      - `transactionIndex`: _string_ (hex integer)
-      - `type`: _string_ (transaction type)
-    - `hashes`: array of _string_ (hash)
+      - `refund`: optional _integer_
+      - `returnData`: optional _string_ (hex data)
+      - `stack`: optional array of _string_ (hex integer)
+      - `storage`: optional map of _string_ (32-byte hex data)
+  - `transactions`: optional array of _string_ (hash), or array of _object_ (transaction, same as `result` in `eth_getTransactionByHash`) when full transactions are requested
   - `transactionsRoot`: _string_ (hash)
   - `uncles`: array of _string_ (hash)
-  - `withdrawals`: array of _object_
+  - `withdrawals`: optional array of _object_
     - `address`: _string_ (address)
     - `amount`: _string_ (hex integer)
     - `index`: _string_ (hex integer)
     - `validatorIndex`: _string_ (hex integer)
-  - `withdrawalsRoot`: _string_ (hash)
+  - `withdrawalsRoot`: optional _string_ (hash)
 
 </TabItem>
 </Tabs>
@@ -998,12 +1016,18 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1013,7 +1037,6 @@ This method is similar to the `debug_standardTraceBlockToFile` method, but can b
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1069,12 +1092,18 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1084,7 +1113,6 @@ Writes to a file the full stack trace of all invoked opcodes of the transaction 
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1128,6 +1156,152 @@ curl localhost:8545 \
 </TabItem>
 </Tabs>
 
+### debug_storageRangeAt
+
+Returns up to maxResult storage slots of an account as they are before the transaction at the given index of the block runs. Slots are in hashed-key order from the hashed key keyStart. nextKey is the hashed key to continue from, or null when no slots follow. Slot key preimages are not kept, so each key is null. At most 1024 slots are returned per call. Not supported on chains whose block processor cannot stop before a transaction, such as AuRa and Taiko.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
+
+2. `txIndex`: _integer_
+
+3. `address`: _string_ (address)
+
+4. `keyStart`: _string_ (hex data)
+
+5. `maxResult`: _integer_
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_storageRangeAt",
+      "params": [blockParameter, txIndex, address, keyStart, maxResult]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: _object_
+  - `nextKey`: _string_ (hash) or `null`
+  - `storage`: map of _object_ or `null`
+    - `key`: _string_ (hash) or `null`
+    - `value`: _string_ (hash)
+
+</TabItem>
+</Tabs>
+
+### debug_traceBadBlock
+
+Similar to debug_traceBlockByHash, but replays a block that has been rejected as invalid and is held in the bad-block store.
+
+<Tabs>
+<TabItem value="params" label="Parameters">
+
+1. `blockHash`: _string_ (hash)
+
+2. `options`: _object_
+    - `blockOverrides`: _object_
+      - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
+      - `blobBaseFee`: _string_ (hex integer)
+      - `feeRecipient`: _string_ (address)
+      - `gasLimit`: _string_ (hex integer)
+      - `number`: _string_ (hex integer)
+      - `prevRandao`: _string_ (hash)
+      - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
+    - `disableMemory`: _boolean_
+    - `disableStack`: _boolean_
+    - `disableStorage`: _boolean_
+    - `enableMemory`: _boolean_
+    - `enableReturnData`: _boolean_
+    - `limit`: _integer_
+    - `stateOverrides`: map of _object_
+      - `balance`: _string_ (hex integer)
+      - `code`: _string_ (hex data)
+      - `movePrecompileToAddress`: _string_ (address)
+      - `nonce`: _string_ (hex integer)
+      - `state`: map of _string_ (hash)
+      - `stateDiff`: map of _string_ (hash)
+    - `streamMode`: _boolean_
+    - `timeout`: _string_ (duration)
+    - `tracer`: _string_
+    - `tracerConfig`: _object_
+    - `txHash`: _string_ (hash)
+    - `txIndex`: _string_ (hex integer)
+
+
+</TabItem>
+<TabItem value="request" label="Request" default>
+
+```bash
+curl localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "debug_traceBadBlock",
+      "params": [blockHash, options]
+    }'
+```
+
+</TabItem>
+<TabItem value="response" label="Response">
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": result
+}
+```
+
+`result`: array of _object_ (`error` _string_ in place of `result` when a JavaScript tracer fails)
+  - `result`: _object_ (the tracer's own result instead when `tracer` is set)
+    - `failed`: _boolean_
+    - `gas`: _integer_
+    - `returnValue`: _string_ (hex data)
+    - `structLogs`: array of _object_
+      - `depth`: _integer_
+      - `error`: optional _string_
+      - `gas`: _integer_
+      - `gasCost`: _integer_
+      - `memory`: optional array of _string_ (32-byte hex data)
+      - `op`: optional _string_
+      - `pc`: _integer_
+      - `refund`: optional _integer_
+      - `returnData`: optional _string_ (hex data)
+      - `stack`: optional array of _string_ (hex integer)
+      - `storage`: optional map of _string_ (32-byte hex data)
+  - `txHash`: _string_ (hash)
+
+</TabItem>
+</Tabs>
+
 ### debug_traceBlock
 
 Returns the full stack trace of all invoked opcodes of all transactions that were included in the block specified. The parent of the block must be present or it will fail.
@@ -1140,12 +1314,18 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1155,7 +1335,6 @@ Returns the full stack trace of all invoked opcodes of all transactions that wer
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1194,24 +1373,23 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
-    - `depth`: _integer_
-    - `error`: _string_
+`result`: array of _object_ (`error` _string_ in place of `result` when a JavaScript tracer fails)
+  - `result`: _object_ (the tracer's own result instead when `tracer` is set)
+    - `failed`: _boolean_
     - `gas`: _integer_
-    - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
-    - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
+    - `returnValue`: _string_ (hex data)
+    - `structLogs`: array of _object_
+      - `depth`: _integer_
+      - `error`: optional _string_
+      - `gas`: _integer_
+      - `gasCost`: _integer_
+      - `memory`: optional array of _string_ (32-byte hex data)
+      - `op`: optional _string_
+      - `pc`: _integer_
+      - `refund`: optional _integer_
+      - `returnData`: optional _string_ (hex data)
+      - `stack`: optional array of _string_ (hex integer)
+      - `storage`: optional map of _string_ (32-byte hex data)
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1229,12 +1407,18 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1244,7 +1428,6 @@ Similar to debug_traceBlock, this method accepts a block hash and replays the bl
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1283,24 +1466,23 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
-    - `depth`: _integer_
-    - `error`: _string_
+`result`: array of _object_ (`error` _string_ in place of `result` when a JavaScript tracer fails)
+  - `result`: _object_ (the tracer's own result instead when `tracer` is set)
+    - `failed`: _boolean_
     - `gas`: _integer_
-    - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
-    - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
+    - `returnValue`: _string_ (hex data)
+    - `structLogs`: array of _object_
+      - `depth`: _integer_
+      - `error`: optional _string_
+      - `gas`: _integer_
+      - `gasCost`: _integer_
+      - `memory`: optional array of _string_ (32-byte hex data)
+      - `op`: optional _string_
+      - `pc`: _integer_
+      - `refund`: optional _integer_
+      - `returnData`: optional _string_ (hex data)
+      - `stack`: optional array of _string_ (hex integer)
+      - `storage`: optional map of _string_ (32-byte hex data)
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1313,17 +1495,23 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1333,7 +1521,6 @@ Similar to debug_traceBlock, this method accepts a block number as well as "late
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1372,24 +1559,23 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
-    - `depth`: _integer_
-    - `error`: _string_
+`result`: array of _object_ (`error` _string_ in place of `result` when a JavaScript tracer fails)
+  - `result`: _object_ (the tracer's own result instead when `tracer` is set)
+    - `failed`: _boolean_
     - `gas`: _integer_
-    - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
-    - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
+    - `returnValue`: _string_ (hex data)
+    - `structLogs`: array of _object_
+      - `depth`: _integer_
+      - `error`: optional _string_
+      - `gas`: _integer_
+      - `gasCost`: _integer_
+      - `memory`: optional array of _string_ (32-byte hex data)
+      - `op`: optional _string_
+      - `pc`: _integer_
+      - `refund`: optional _integer_
+      - `returnData`: optional _string_ (hex data)
+      - `stack`: optional array of _string_ (hex integer)
+      - `storage`: optional map of _string_ (32-byte hex data)
   - `txHash`: _string_ (hash)
 
 </TabItem>
@@ -1397,7 +1583,7 @@ curl localhost:8545 \
 
 ### debug_traceCall
 
-This method lets you run an eth_call within the context of the given block execution using the final state of parent block as the base. The block can be specified either by hash or by number. It takes the same input object as a eth_call. It returns the same output as debug_traceTransaction.
+This method lets you run an eth_call within the context of the given block execution using the final state of parent block as the base. The block can be specified either by hash or by number. It takes the same input object as a eth_call. It returns the same output as debug_traceTransaction. A non-null `input` takes precedence over `data`. Blob versioned hashes are decoded as byte arrays; invalid lengths are rejected during Blob transaction conversion, not JSON decoding. For duplicate fields, the last value is used.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -1411,17 +1597,23 @@ This method lets you run an eth_call within the context of the given block execu
     - `transactionIndex`: _string_ (hex integer)
     - `type`: _string_ (transaction type)
 
-2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1431,7 +1623,6 @@ This method lets you run an eth_call within the context of the given block execu
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1470,32 +1661,29 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>
 
 ### debug_traceCallMany
 
-Executes a list of bundles of transactions without creating transactions on the blockchain and returns their traces
+Executes a list of bundles of transactions without creating transactions on the blockchain and returns their traces. Unless any bundle has state or block overrides, each call is traced independently against the state of the selected block; to let later calls see the effects of earlier ones, set state or block overrides on a bundle or use debug_simulateV1. Non-empty options.stateOverrides or options.blockOverrides cannot be combined with state or block overrides on any bundle.
 
 <Tabs>
 <TabItem value="params" label="Parameters">
@@ -1503,16 +1691,21 @@ Executes a list of bundles of transactions without creating transactions on the 
 1. `bundles`: array of _object_
   - `blockOverride`: _object_
     - `baseFeePerGas`: _string_ (hex integer)
+    - `beaconRoot`: _string_ (hash)
     - `blobBaseFee`: _string_ (hex integer)
     - `feeRecipient`: _string_ (address)
     - `gasLimit`: _string_ (hex integer)
     - `number`: _string_ (hex integer)
     - `prevRandao`: _string_ (hash)
     - `time`: _string_ (hex integer)
+    - `withdrawals`: array of _object_
+      - `address`: _string_ (address)
+      - `amount`: _string_ (hex integer)
+      - `index`: _string_ (hex integer)
+      - `validatorIndex`: _string_ (hex integer)
   - `stateOverrides`: map of _object_
     - `balance`: _string_ (hex integer)
     - `code`: _string_ (hex data)
-    - `hasStateChanges`: _boolean_
     - `movePrecompileToAddress`: _string_ (address)
     - `nonce`: _string_ (hex integer)
     - `state`: map of _string_ (hash)
@@ -1526,17 +1719,23 @@ Executes a list of bundles of transactions without creating transactions on the 
     - `transactionIndex`: _string_ (hex integer)
     - `type`: _string_ (transaction type)
 
-2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+2. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1546,7 +1745,6 @@ Executes a list of bundles of transactions without creating transactions on the 
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1585,25 +1783,22 @@ curl localhost:8545 \
 }
 ```
 
-`result`: array of array of _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: array of array of _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>
@@ -1620,12 +1815,18 @@ This method will attempt to run the transaction in the exact same manner as it w
 2. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1635,7 +1836,6 @@ This method will attempt to run the transaction in the exact same manner as it w
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1674,25 +1874,22 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>
@@ -1704,19 +1901,25 @@ Returns the full stack trace of the transaction at the given index of the block 
 <Tabs>
 <TabItem value="params" label="Parameters">
 
-1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`)
+1. `blockParameter`: _string_ (block number or hash or either of `earliest`, `finalized`, `latest`, `pending`, or `safe`), _object_ (EIP-1898 `{blockHash, requireCanonical}` or `{blockNumber}`), or _integer_ (block number, if `JsonRpc.StrictHexFormat` is `false`)
 
 2. `txIndex`: _integer_
 
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1726,7 +1929,6 @@ Returns the full stack trace of the transaction at the given index of the block 
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1765,25 +1967,22 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>
@@ -1802,12 +2001,18 @@ Returns the full stack trace of the transaction at the given index of the block 
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1817,7 +2022,6 @@ Returns the full stack trace of the transaction at the given index of the block 
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1856,25 +2060,22 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>
@@ -1891,12 +2092,18 @@ curl localhost:8545 \
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1906,7 +2113,6 @@ curl localhost:8545 \
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -1945,25 +2151,22 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>
@@ -1980,12 +2183,18 @@ curl localhost:8545 \
 3. `options`: _object_
     - `blockOverrides`: _object_
       - `baseFeePerGas`: _string_ (hex integer)
+      - `beaconRoot`: _string_ (hash)
       - `blobBaseFee`: _string_ (hex integer)
       - `feeRecipient`: _string_ (address)
       - `gasLimit`: _string_ (hex integer)
       - `number`: _string_ (hex integer)
       - `prevRandao`: _string_ (hash)
       - `time`: _string_ (hex integer)
+      - `withdrawals`: array of _object_
+        - `address`: _string_ (address)
+        - `amount`: _string_ (hex integer)
+        - `index`: _string_ (hex integer)
+        - `validatorIndex`: _string_ (hex integer)
     - `disableMemory`: _boolean_
     - `disableStack`: _boolean_
     - `disableStorage`: _boolean_
@@ -1995,7 +2204,6 @@ curl localhost:8545 \
     - `stateOverrides`: map of _object_
       - `balance`: _string_ (hex integer)
       - `code`: _string_ (hex data)
-      - `hasStateChanges`: _boolean_
       - `movePrecompileToAddress`: _string_ (address)
       - `nonce`: _string_ (hex integer)
       - `state`: map of _string_ (hash)
@@ -2034,25 +2242,22 @@ curl localhost:8545 \
 }
 ```
 
-`result`: _object_
-  - `customTracerResult`: _object_
-    - `value`: _object_
-  - `entries`: array of _object_
+`result`: _object_ (the tracer's own result instead when `tracer` is set)
+  - `failed`: _boolean_
+  - `gas`: _integer_
+  - `returnValue`: _string_ (hex data)
+  - `structLogs`: array of _object_
     - `depth`: _integer_
-    - `error`: _string_
+    - `error`: optional _string_
     - `gas`: _integer_
     - `gasCost`: _integer_
-    - `memory`: array of _string_ (32-byte hex data)
-    - `op`: _string_
+    - `memory`: optional array of _string_ (32-byte hex data)
+    - `op`: optional _string_
     - `pc`: _integer_
-    - `refund`: _integer_
-    - `returnData`: _string_
-    - `stack`: array of _string_ (hex integer)
-    - `storage`: map of _string_ (32-byte hex data)
-  - `failed`: _boolean_
-  - `gas`: _string_ (hex integer)
-  - `returnValue`: _string_ (hex data)
-  - `txHash`: _string_ (hash)
+    - `refund`: optional _integer_
+    - `returnData`: optional _string_ (hex data)
+    - `stack`: optional array of _string_ (hex integer)
+    - `storage`: optional map of _string_ (32-byte hex data)
 
 </TabItem>
 </Tabs>

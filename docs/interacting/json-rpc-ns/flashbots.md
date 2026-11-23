@@ -84,7 +84,7 @@ curl localhost:8545 \
 
 `result`: _object_
   - `status`: _string_
-  - `validationError`: _string_
+  - `validationError`: _string_ or `null`
 
 </TabItem>
 </Tabs>

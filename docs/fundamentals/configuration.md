@@ -345,6 +345,793 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to replay recorded block access lists during block processing. Allowed values: `true` `false`. Defaults to `false`.
 
+### BeaconApi
+
+- #### `BeaconApi.Enabled` \{#beaconapi-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-enabled [true|false]
+  --BeaconApi.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to serve the Beacon API (REST/SSE) surface. Requires BeaconChain.Enabled. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `BeaconApi.Host` \{#beaconapi-host\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-host <value>
+  --BeaconApi.Host <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_HOST=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "Host": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The host the Beacon API Kestrel listener binds to. Loopback listeners accept only loopback IP or localhost Host headers and same-origin browser requests. Defaults to `"127.0.0.1"`.
+
+- #### `BeaconApi.MaxConcurrentStateRequests` \{#beaconapi-maxconcurrentstaterequests\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-maxconcurrentstaterequests <value>
+  --BeaconApi.MaxConcurrentStateRequests <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_MAXCONCURRENTSTATEREQUESTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "MaxConcurrentStateRequests": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum concurrent Beacon API state requests in each of three independent pools: block/envelope/blob and debug/fork_choice responses, state downloads (/eth/v2/debug/beacon/states and the registry-sized /eth/v1/beacon/states routes validators, validator_balances, validator_identities, committees and sync_committees, plus non-head validators/\{validator_id}, pending_deposits, pending_partial_withdrawals, pending_consolidations and proposer_lookahead) and other /eth/v1/beacon/states queries, which exclude root and fork. Each pool refuses excess requests with 503 without queuing; per-client limits return 429. Defaults to `2`.
+
+- #### `BeaconApi.MaxConcurrentStateRequestsPerClient` \{#beaconapi-maxconcurrentstaterequestsperclient\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-maxconcurrentstaterequestsperclient <value>
+  --BeaconApi.MaxConcurrentStateRequestsPerClient <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_MAXCONCURRENTSTATEREQUESTSPERCLIENT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "MaxConcurrentStateRequestsPerClient": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of requests in each independent pool (as counted by `MaxConcurrentStateRequests`) one client address may have in flight at once; an IPv6 client is counted by its /64 prefix, and loopback is limited like any other address. Raise it for tooling or a proxy that fronts several clients from one address. Requests beyond it are refused with 429. Must be at least 1. Defaults to `1`.
+
+- #### `BeaconApi.Port` \{#beaconapi-port\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-port <value>
+  --BeaconApi.Port <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_PORT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "Port": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The port the Beacon API listens on. Defaults to `5052`.
+
+- #### `BeaconApi.StateDownloadsPerMinutePerClient` \{#beaconapi-statedownloadsperminuteperclient\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-statedownloadsperminuteperclient <value>
+  --BeaconApi.StateDownloadsPerMinutePerClient <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_STATEDOWNLOADSPERMINUTEPERCLIENT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "StateDownloadsPerMinutePerClient": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of downloads (as counted by `MaxConcurrentStateRequests`) per minute from one client address (an IPv6 client is counted by its /64 prefix). Requests beyond it are refused with 429. `0` disables the limit. Defaults to `30`.
+
+- #### `BeaconApi.StateQueriesPerMinutePerClient` \{#beaconapi-statequeriesperminuteperclient\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-statequeriesperminuteperclient <value>
+  --BeaconApi.StateQueriesPerMinutePerClient <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_STATEQUERIESPERMINUTEPERCLIENT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "StateQueriesPerMinutePerClient": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of /eth/v1/beacon/states queries other than downloads, root and fork (as counted by `MaxConcurrentStateRequests`) per minute from one client address (an IPv6 client is counted by its /64 prefix). Requests beyond it are refused with 429. `0` disables the limit. Defaults to `600`.
+
+- #### `BeaconApi.StateResponseIdleTimeoutSeconds` \{#beaconapi-stateresponseidletimeoutseconds\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-stateresponseidletimeoutseconds <value>
+  --BeaconApi.StateResponseIdleTimeoutSeconds <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_STATERESPONSEIDLETIMEOUTSECONDS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "StateResponseIdleTimeoutSeconds": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum idle time in seconds between response writes. POST requests are also bounded from admission through their first write. GET preparation is bounded by StateResponseTimeoutSeconds. HTTP/1.x responses additionally require 64 KiB/s after a ten-second grace period. Expiry aborts the request and releases its permits. Must be between 1 and 4294967 and large enough for one 64 KiB chunk at the total timeout's minimum throughput. Defaults to `120`.
+
+- #### `BeaconApi.StateResponseTimeoutSeconds` \{#beaconapi-stateresponsetimeoutseconds\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconapi-stateresponsetimeoutseconds <value>
+  --BeaconApi.StateResponseTimeoutSeconds <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONAPICONFIG_STATERESPONSETIMEOUTSECONDS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconApi": {
+      "StateResponseTimeoutSeconds": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The most time, in seconds, one limited request may take in total, however steadily its response is written. When it passes, the response is aborted and the request's permits are released. Set it generously: a slow but steady download of a large state must finish inside it. Must be between 1 and 4294967. Defaults to `3600`.
+
+### BeaconChain
+
+- #### `BeaconChain.Bootnodes` \{#beaconchain-bootnodes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-bootnodes <value>
+  --BeaconChain.Bootnodes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_BOOTNODES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "Bootnodes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Comma-separated beacon chain bootnode ENRs. When empty, the built-in bootnodes of the network selected via the execution layer's chain id are used. Defaults to `null`.
+
+- #### `BeaconChain.CheckpointStateFile` \{#beaconchain-checkpointstatefile\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-checkpointstatefile <value>
+  --BeaconChain.CheckpointStateFile <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_CHECKPOINTSTATEFILE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "CheckpointStateFile": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  A local SSZ-encoded beacon state file to bootstrap from. Requires a sibling block file with the extension replaced by .block.ssz. For a state advanced beyond its block, also requires the block's post-state in a sibling file with the extension replaced by .post-state.ssz. Defaults to `null`.
+
+- #### `BeaconChain.CheckpointSyncUrl` \{#beaconchain-checkpointsyncurl\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-checkpointsyncurl <value>
+  --BeaconChain.CheckpointSyncUrl <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_CHECKPOINTSYNCURL=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "CheckpointSyncUrl": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The beacon API URL to checkpoint-sync the finalized beacon state and block from. When unset, defaults to a provider for the network selected via the execution layer's chain id. Defaults to `null`.
+
+- #### `BeaconChain.CustodyGroupCount` \{#beaconchain-custodygroupcount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-custodygroupcount <value>
+  --BeaconChain.CustodyGroupCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_CUSTODYGROUPCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "CustodyGroupCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Number of PeerDAS custody groups, from 4 to 128. Use at least 64 to reconstruct blobs for the Beacon API, or 128 to serve all columns. Default: 4 groups. Defaults to `4`.
+
+- #### `BeaconChain.DisableOnExternalCl` \{#beaconchain-disableonexternalcl\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-disableonexternalcl [true|false]
+  --BeaconChain.DisableOnExternalCl [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_DISABLEONEXTERNALCL=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "DisableOnExternalCl": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  A successful external engine progression call disables the embedded driver until process restart, including a transient caller. Whether to permanently disable the embedded driver when an external consensus client calls the engine API. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `BeaconChain.Discv5Port` \{#beaconchain-discv5port\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-discv5port <value>
+  --BeaconChain.Discv5Port <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_DISCV5PORT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "Discv5Port": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The UDP port for the beacon chain discv5 discovery. Defaults to `9060`.
+
+- #### `BeaconChain.EnableFastConfirmation` \{#beaconchain-enablefastconfirmation\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-enablefastconfirmation [true|false]
+  --BeaconChain.EnableFastConfirmation [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_ENABLEFASTCONFIRMATION=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "EnableFastConfirmation": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Use the Fast Confirmation Rule for the execution layer's safe block tag, as required by consensus-specs v1.7.0-beta.4. Assumes slot synchrony and at most 25% Byzantine stake; falls back to finalized when confirmation conditions fail. Enabled by default; when disabled, safe follows the justified checkpoint. Does not change finalized. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `BeaconChain.Enabled` \{#beaconchain-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-enabled [true|false]
+  --BeaconChain.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to enable the embedded beacon chain consensus driver. Supports Mainnet, Sepolia, Hoodi, Gnosis and Chiado, selected by the execution layer's configured network, without an external consensus client. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `BeaconChain.FaultDisconnectsBeforeBan` \{#beaconchain-faultdisconnectsbeforeban\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-faultdisconnectsbeforeban <value>
+  --BeaconChain.FaultDisconnectsBeforeBan <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_FAULTDISCONNECTSBEFOREBAN=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "FaultDisconnectsBeforeBan": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Recent fault disconnects from the same peer id before it is added to the in-memory ban list, which then refuses every further dial or reconnection attempt for that id regardless of the address it is next seen at. Defaults to `3`.
+
+- #### `BeaconChain.GloasForkVersion` \{#beaconchain-gloasforkversion\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-gloasforkversion <value>
+  --BeaconChain.GloasForkVersion <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_GLOASFORKVERSION=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "GloasForkVersion": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The Gloas fork version, as 4 bytes of hex (for example 0x90000076), for a network whose chainspec schedules Amsterdam before this release knows its published Gloas version. The Gloas epoch always follows the Amsterdam timestamp of the chainspec (see Init.ChainSpecPath). Must differ from every earlier fork version of the network. When unset, the published version is used. Defaults to `null`.
+
+- #### `BeaconChain.GossipMaxPendingValidationBytes` \{#beaconchain-gossipmaxpendingvalidationbytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-gossipmaxpendingvalidationbytes <value>
+  --BeaconChain.GossipMaxPendingValidationBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_GOSSIPMAXPENDINGVALIDATIONBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "GossipMaxPendingValidationBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The most bytes of gossip messages that may await a validation verdict at once, the messages of one received RPC aside. A message received past it is not validated, forwarded or charged to its sender. Must be at least 1. Defaults to `16777216`.
+
+- #### `BeaconChain.GossipMaxPendingValidations` \{#beaconchain-gossipmaxpendingvalidations\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-gossipmaxpendingvalidations <value>
+  --BeaconChain.GossipMaxPendingValidations <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_GOSSIPMAXPENDINGVALIDATIONS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "GossipMaxPendingValidations": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The most gossip messages that may await a validation verdict at once. A message received past it is not validated, forwarded or charged to its sender, so a later copy can still be. Must be at least 1. Defaults to `128`.
+
+- #### `BeaconChain.MaxConcurrentOutboundDials` \{#beaconchain-maxconcurrentoutbounddials\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-maxconcurrentoutbounddials <value>
+  --BeaconChain.MaxConcurrentOutboundDials <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_MAXCONCURRENTOUTBOUNDDIALS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "MaxConcurrentOutboundDials": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max number of outbound dials the peer manager will have in flight at once, static and discovered peers combined. Defaults to `8`.
+
+- #### `BeaconChain.MaxPeerCount` \{#beaconchain-maxpeercount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-maxpeercount <value>
+  --BeaconChain.MaxPeerCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_MAXPEERCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "MaxPeerCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The high watermark. Above this many connected peers, the peer manager trims the worst peers back down to this many. Defaults to `80`.
+
+- #### `BeaconChain.MinPeerCount` \{#beaconchain-minpeercount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-minpeercount <value>
+  --BeaconChain.MinPeerCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_MINPEERCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "MinPeerCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The low watermark: below this many connected peers the node is under-peered, and the peer manager runs its maintenance round (static-peer reconnect, health checks) on a shorter cadence. Candidate discovery pacing is still BeaconDiscovery's own concern, not this config's. Defaults to `20`.
+
+- #### `BeaconChain.P2PPort` \{#beaconchain-p2pport\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-p2pport <value>
+  --BeaconChain.P2PPort <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_P2PPORT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "P2PPort": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The TCP port for the beacon chain libp2p host. Defaults to `9060`.
+
+- #### `BeaconChain.PeerBanMinutes` \{#beaconchain-peerbanminutes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-peerbanminutes <value>
+  --BeaconChain.PeerBanMinutes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_PEERBANMINUTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "PeerBanMinutes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  How long, in minutes, a banned peer id is refused before it may connect again. Fault history expires after this duration without another fault. Defaults to `30`.
+
+- #### `BeaconChain.StaticPeers` \{#beaconchain-staticpeers\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-staticpeers <value>
+  --BeaconChain.StaticPeers <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_STATICPEERS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "StaticPeers": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Comma-separated static beacon chain peer multiaddrs to keep persistent connections to. Each multiaddr must name an /ip4 or /ip6 address, or a /dns, /dns4 or /dns6 TCP endpoint, and include the /p2p/\<peer-id> component. Defaults to `null`.
+
+- #### `BeaconChain.TargetPeerCount` \{#beaconchain-targetpeercount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-targetpeercount <value>
+  --BeaconChain.TargetPeerCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_TARGETPEERCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "TargetPeerCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The target number of beacon chain peers. Defaults to `50`.
+
+- #### `BeaconChain.WeakSubjectivityCheckpoint` \{#beaconchain-weaksubjectivitycheckpoint\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --beaconchain-weaksubjectivitycheckpoint <value>
+  --BeaconChain.WeakSubjectivityCheckpoint <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_BEACONCHAINCONFIG_WEAKSUBJECTIVITYCHECKPOINT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "BeaconChain": {
+      "WeakSubjectivityCheckpoint": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  An independently trusted weak subjectivity checkpoint as block_root:epoch_number, for example 0x8584188b86a9296932785cc2827b925f9deebacce6d72ad8d53171fa046b43d9:9544. Checkpoint sync fails unless its anchor block is this checkpoint's block at the start of the epoch, so supply the checkpoint's state with CheckpointStateFile or a source serving it as finalized; a proven checkpoint stays accepted for the same database, and any other fails startup. When unset, checkpoint sync trusts the configured checkpoint source, or the default provider for the network when CheckpointSyncUrl is also unset. Defaults to `null`.
+
 ### Blocks
 
 - #### `Blocks.BlockProcessingTimeoutMs` \{#blocks-blockprocessingtimeoutms\}
@@ -871,7 +1658,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Directory of archive export.
+  Directory of archive export. Defaults to `null`.
 
 - #### `Era.From` \{#era-from\}
 
@@ -925,7 +1712,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Directory of era1 archives to be imported.
+  Directory of era1 archives to be imported. Defaults to `null`.
 
 - #### `Era.To` \{#era-to\}
 
@@ -1035,7 +1822,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Directory for EraE archive export.
+  Directory for EraE archive export. Defaults to `null`.
 
 - #### `EraE.From` \{#erae-from\}
 
@@ -1089,7 +1876,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Directory of EraE archives to be imported.
+  Directory of EraE archives to be imported. Defaults to `null`.
 
 - #### `EraE.RemoteBaseUrl` \{#erae-remotebaseurl\}
 
@@ -1908,6 +2695,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Fixed compaction schedule offset in blocks. When 0 or greater, overrides the per-instance offset in the metadata DB, which is neither read nor updated. Only the value modulo CompactSize matters. -1 to use the stored offset, generating a random one when absent. Defaults to `-1`.
 
+- #### `FlatDb.CompressedNodeRecordBufferMemoryBudget` \{#flatdb-compressednoderecordbuffermemorybudget\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-compressednoderecordbuffermemorybudget <value>
+  --FlatDb.CompressedNodeRecordBufferMemoryBudget <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_COMPRESSEDNODERECORDBUFFERMEMORYBUDGET=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "CompressedNodeRecordBufferMemoryBudget": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Memory budget, in bytes, for the compacted generations of the trie node buffer; the oldest are freed beyond it. 0 disables compaction, freeing dropped generations at once; it is also disabled while TrieNodeLogEnabled is set. It also sizes the buffer's storage root index. Defaults to `524288000`.
+
 - #### `FlatDb.DeferStorageTrieCommit` \{#flatdb-deferstoragetriecommit\}
 
   <Tabs groupId="usage">
@@ -1933,7 +2747,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Only hash the storage tries before a block is reported valid, and write their nodes when the block commits, as the state trie already does. `false` writes each storage trie's nodes before the block is reported valid. Allowed values: `true` `false`. Defaults to `true`.
+  Publish the storage trie roots when the block commits, after it is reported valid, as the state trie already does; their nodes are written as each write batch completes either way. `false` publishes each storage trie's root before the block is reported valid. Allowed values: `true` `false`. Defaults to `true`.
 
 - #### `FlatDb.DropPruningTrieState` \{#flatdb-droppruningtriestate\}
 
@@ -2534,7 +3348,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Bits per key for the negative filter over the slots written by the in-memory snapshots. It is built once per read-only snapshot bundle, on the first slot read of read-only execution (eth_call, eth_estimateGas, eth_createAccessList, eth_simulateV1, eth_getProof, debug and trace calls, Flashbots block validation, receipt regeneration and the transaction changeset index), and lets those reads skip the per-snapshot lookups for a slot no in-memory snapshot wrote. Block processing never uses it. Higher = lower false-positive rate but more RAM. 0 disables the filter. Defaults to `14.0`.
+  Bits per key for the negative filter over the slots written by the in-memory snapshots. It is built once per read-only snapshot bundle, on the first slot read of read-only execution (eth_call, eth_estimateGas, eth_createAccessList, eth_simulateV1, eth_getProof, debug and trace calls, Flashbots block validation, receipt regeneration and the transaction changeset index), and lets those reads skip the per-snapshot lookups for a slot no in-memory snapshot wrote. Block processing never uses it. Higher = lower false-positive rate but more RAM. 0 disables the filter. Defaults to `14`.
 
 - #### `FlatDb.InlineCompaction` \{#flatdb-inlinecompaction\}
 
@@ -2588,15 +3402,16 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Flat db layout
+  Flat db layout. `Auto` keeps the layout of an existing flat DB, and creates a new one as `FlatInTrie` below 16 GB of memory available to .NET (75% of a container's memory limit) and as `Flat` otherwise.
 
   Allowed values:
   - `Flat`
   - `FlatInTrie`
   - `PreimageFlatV1`
   - `PreimageFlat`
+  - `Auto`
 
-  Defaults to `Flat`.
+  Defaults to `Auto`.
 
 - #### `FlatDb.LongFinalityMaxReorgDepth` \{#flatdb-longfinalitymaxreorgdepth\}
 
@@ -2733,6 +3548,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Max reorg depth — the force-persist backstop used when EnableLongFinality is off: once the in-memory depth exceeds it while finality is stalled, persistence is forced to bound memory. Defaults to `256`.
 
+- #### `FlatDb.MigrateFromPruningTrieState` \{#flatdb-migratefrompruningtriestate\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-migratefrompruningtriestate [true|false]
+  --FlatDb.MigrateFromPruningTrieState [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_MIGRATEFROMPRUNINGTRIESTATE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "MigrateFromPruningTrieState": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Migrate an existing pruning trie state DB to the flat DB while the node runs: the node switches to flat at once, serving what is not copied yet from the trie DB, which it keeps until the copy completes. Supported by the Flat and FlatInTrie layouts. Once started, the migration continues on every restart until it completes, whether or not this is still set. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.MigrationChunkNodes` \{#flatdb-migrationchunknodes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-migrationchunknodes <value>
+  --FlatDb.MigrationChunkNodes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_MIGRATIONCHUNKNODES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "MigrationChunkNodes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Number of trie nodes the online migration from the pruning trie state copies per write, between which block processing takes over. Defaults to `1000`.
+
 - #### `FlatDb.MinReorgDepth` \{#flatdb-minreorgdepth\}
 
   <Tabs groupId="usage">
@@ -2845,7 +3714,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Bits per key for the per-snapshot in-memory bloom filter. One unified filter covers address/slot/self-destruct keys plus state-trie and storage-trie node paths. Higher = lower false-positive rate but more RAM. 0 disables the filter (lookups behave as full sweeps). Defaults to `14.0`.
+  Bits per key for the per-snapshot in-memory bloom filter. One unified filter covers address/slot/self-destruct keys plus state-trie and storage-trie node paths. Higher = lower false-positive rate but more RAM. 0 disables the filter (lookups behave as full sweeps). Defaults to `14`.
 
 - #### `FlatDb.PersistedSnapshotDedicatedArenaThresholdBytes` \{#flatdb-persistedsnapshotdedicatedarenathresholdbytes\}
 
@@ -2982,32 +3851,275 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Regenerate the per-instance compaction offset on startup instead of loading from metadata DB. Use when restoring one backup to multiple instances. Flag is sticky across restarts — toggle off after first restart. Allowed values: `true` `false`. Defaults to `false`.
 
-- #### `FlatDb.TrieCacheMemoryBudget` \{#flatdb-triecachememorybudget\}
+- #### `FlatDb.TrieNodeLogDrainOnShutdown` \{#flatdb-trienodelogdrainonshutdown\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --flatdb-triecachememorybudget <value>
-  --FlatDb.TrieCacheMemoryBudget <value>
+  --flatdb-trienodelogdrainonshutdown [true|false]
+  --FlatDb.TrieNodeLogDrainOnShutdown [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_FLATDBCONFIG_TRIECACHEMEMORYBUDGET=<value>
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGDRAINONSHUTDOWN=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "FlatDb": {
-      "TrieCacheMemoryBudget": <value>
+      "TrieNodeLogDrainOnShutdown": true|false
     }
   }
   ```
   </TabItem>
   </Tabs>
 
-  Trie cache memory target Defaults to `536870912`.
+  Merge the whole trie node log into RocksDB at shutdown. The log otherwise persists across restarts, keeping its deduplication window; mainly for debugging. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.TrieNodeLogEnabled` \{#flatdb-trienodelogenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogenabled [true|false]
+  --FlatDb.TrieNodeLogEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Write trie nodes (StateTopNodes, StateNodes and StorageNodes; FallbackNodes stays direct) through an append-only trie node log (with an in-memory index) that is merged into RocksDB one generation at a time, so nodes rewritten within a generation are written to RocksDB once. Experimental: a self-destruct only removes the storage trie nodes already in RocksDB, nodes still in the log are left as unreachable orphans. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `FlatDb.TrieNodeLogMaxConcurrentMerges` \{#flatdb-trienodelogmaxconcurrentmerges\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogmaxconcurrentmerges <value>
+  --FlatDb.TrieNodeLogMaxConcurrentMerges <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGMAXCONCURRENTMERGES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogMaxConcurrentMerges": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum number of trie node log generation merges (across all shards) running at the same time; each merge is one RocksDB write batch. Defaults to `2`.
+
+- #### `FlatDb.TrieNodeLogMergeBacklogMargin` \{#flatdb-trienodelogmergebacklogmargin\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogmergebacklogmargin <value>
+  --FlatDb.TrieNodeLogMergeBacklogMargin <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGMERGEBACKLOGMARGIN=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogMergeBacklogMargin": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Sealed trie node log generations a shard may accumulate beyond TrieNodeLogMergeLag before starting a new generation waits for a merge to finish, which stalls persistence until the merges catch up. Defaults to `2`.
+
+- #### `FlatDb.TrieNodeLogMergeLag` \{#flatdb-trienodelogmergelag\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogmergelag <value>
+  --FlatDb.TrieNodeLogMergeLag <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGMERGELAG=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogMergeLag": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Number of sealed trie node log generations kept unmerged behind the newest one. A generation is merged into RocksDB only once this many newer generations are sealed, and keys rewritten in those are skipped, so the effective deduplication window is (1 + this) generations at the cost of that many extra generation files and in-memory indexes. Defaults to `1`.
+
+- #### `FlatDb.TrieNodeLogSecondLevelMergeLag` \{#flatdb-trienodelogsecondlevelmergelag\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogsecondlevelmergelag <value>
+  --FlatDb.TrieNodeLogSecondLevelMergeLag <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGSECONDLEVELMERGELAG=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogSecondLevelMergeLag": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  TrieNodeLogMergeLag of the second-level trie node log, or -1 to disable it. Each merged trie node log generation is copied, deduplicated, into the second-level log instead of RocksDB; it has the same size and backlog settings as the first, an in-memory index of 1/16 of its size for both partitions, and merges its own generations into RocksDB once this many newer ones are sealed. The surviving nodes are less likely to be rewritten, and the log's index answers their reads faster than RocksDB. Defaults to `1`.
+
+- #### `FlatDb.TrieNodeLogStateBytes` \{#flatdb-trienodelogstatebytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogstatebytes <value>
+  --FlatDb.TrieNodeLogStateBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGSTATEBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogStateBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Byte budget of the state partition of the trie node log (StateTopNodes and StateNodes), split evenly over its shards: each shard's generation, i.e. its deduplication window before it is merged into RocksDB, is this divided by the partition's shard count. Each live generation also keeps an in-memory index of 1/64 of its size (1/32 for the storage partition). Defaults to `524288000`.
+
+- #### `FlatDb.TrieNodeLogStateShardCount` \{#flatdb-trienodelogstateshardcount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogstateshardcount <value>
+  --FlatDb.TrieNodeLogStateShardCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGSTATESHARDCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogStateShardCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Number of shards of the state partition of the trie node log, a power of two. Nodes are sharded by the first byte of their column key (the first path nibbles for state nodes, the first byte of the address hash for storage nodes); shards are appended to and merged in parallel. Defaults to `2`.
+
+- #### `FlatDb.TrieNodeLogStorageBytes` \{#flatdb-trienodelogstoragebytes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogstoragebytes <value>
+  --FlatDb.TrieNodeLogStorageBytes <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGSTORAGEBYTES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogStorageBytes": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Byte budget of the storage partition of the trie node log (StorageNodes), split evenly over its shards like TrieNodeLogStateBytes. Defaults to `524288000`.
+
+- #### `FlatDb.TrieNodeLogStorageShardCount` \{#flatdb-trienodelogstorageshardcount\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --flatdb-trienodelogstorageshardcount <value>
+  --FlatDb.TrieNodeLogStorageShardCount <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_FLATDBCONFIG_TRIENODELOGSTORAGESHARDCOUNT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "FlatDb": {
+      "TrieNodeLogStorageShardCount": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Number of shards of the storage partition of the trie node log, a power of two. Defaults to `2`.
 
 - #### `FlatDb.TrieWarmerWorkerCount` \{#flatdb-triewarmerworkercount\}
 
@@ -3034,7 +4146,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Trie warmer worker count (-1 for 3/4 of processor count, 0 to disable) Defaults to `-1`.
+  Trie warmer worker count (-1 for the larger of 3/4 of the processor count and 1.5 per processor up to 12, 0 to disable) Defaults to `-1`.
 
 - #### `FlatDb.ValidatePersistedSnapshot` \{#flatdb-validatepersistedsnapshot\}
 
@@ -3549,6 +4661,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
 ### History
 
+- #### `History.BalRetentionEpochs` \{#history-balretentionepochs\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --history-balretentionepochs <value>
+  --History.BalRetentionEpochs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_HISTORYCONFIG_BALRETENTIONEPOCHS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "History": {
+      "BalRetentionEpochs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of epochs to retain block access lists (BALs). Must be at least the chain's minBalRetentionEpochs chainspec parameter. Defaults to that minimum, including on archive nodes. Set to 4294967295 to keep all BALs when history pruning is disabled. Defaults to `null`.
+
+- #### `History.CompactBlocksOnPrune` \{#history-compactblocksonprune\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --history-compactblocksonprune [true|false]
+  --History.CompactBlocksOnPrune [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_HISTORYCONFIG_COMPACTBLOCKSONPRUNE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "History": {
+      "CompactBlocksOnPrune": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to run a store-wide compaction of the blocks database after pruning reclaims history up to the ancient bodies barrier, reclaiming stale RocksDB blob files that pruning alone leaves behind. Applies only to 'UseAncientBarriers' pruning and is ignored under 'Rolling', whose advancing cutoff would owe a new compaction on every pass. Expensive: heavy I/O that can take hours on a large database, so it runs once per barrier and again only after a raised barrier reclaims more history. It rewrites every retained body, and RocksDB deletes an old blob file only after all files that reference it are rewritten, so the compaction can temporarily need free disk space close to the size of the retained bodies. Only history reclaimed by this version or later arms it: a database whose pruning finished on an earlier version is not compacted. Most effective when history slices ('HistorySliceAddresses') retain scattered bodies across the pruned range, leaving partially-referenced blob files a plain compaction cannot reclaim; under a plain contiguous prune the reclamation is marginal. Allowed values: `true` `false`. Defaults to `false`.
+
 - #### `History.Pruning` \{#history-pruning\}
 
   <Tabs groupId="usage">
@@ -3662,7 +4828,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of epochs to retain historical blocks and receipts when using 'Rolling' pruning mode. Must be at least the chain's minHistoryRetentionEpochs chainspec parameter. Defaults to `82125`.
+  The number of epochs to retain historical blocks and receipts when using 'Rolling' pruning mode. Must be at least the chain's minHistoryRetentionEpochs chainspec parameter, which is the default: 33024 on Mainnet, 14299 on Sepolia. Defaults to `null`.
 
 ### Hive
 
@@ -4177,32 +5343,59 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The logs format as `LogPath:LogLevel;*` Defaults to `null`.
 
-- #### `Init.MemoryHint` \{#init-memoryhint\}
+- #### `Init.MaskIpsInLogs` \{#init-maskipsinlogs\}
 
   <Tabs groupId="usage">
   <TabItem value="cli" label="CLI">
   ```
-  --init-memoryhint <value>
-  --Init.MemoryHint <value>
+  --init-maskipsinlogs [true|false]
+  --Init.MaskIpsInLogs [true|false]
   ```
   </TabItem>
   <TabItem value="env" label="Environment variable">
   ```
-  NETHERMIND_INITCONFIG_MEMORYHINT=<value>
+  NETHERMIND_INITCONFIG_MASKIPSINLOGS=true|false
   ```
   </TabItem>
   <TabItem value="config" label="Configuration file">
   ```json
   {
     "Init": {
-      "MemoryHint": <value>
+      "MaskIpsInLogs": true|false
     }
   }
   ```
   </TabItem>
   </Tabs>
 
-  The hint on the max memory limit, in bytes, to configure the database and networking memory allocations. Defaults to `null`.
+  Whether to mask IP addresses, enode URLs and ENR records in logs. Loopback and unspecified addresses are not masked. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Init.MaskSensitiveData` \{#init-masksensitivedata\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --init-masksensitivedata [true|false]
+  --Init.MaskSensitiveData [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_INITCONFIG_MASKSENSITIVEDATA=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Init": {
+      "MaskSensitiveData": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to mask :hide fields in interpolated logs and marked configuration values in startup diagnostics. Allowed values: `true` `false`. Defaults to `false`.
 
 - #### `Init.PeerManagerEnabled` \{#init-peermanagerenabled\}
 
@@ -4229,7 +5422,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Whether to connect to newly discovered peers. Allowed values: `true` `false`. Defaults to `true`.
+  Whether to start the peer manager. If disabled, Nethermind doesn't initiate connections to any peers, including static and trusted nodes, `Network.StaticPeers`, and peers added via `admin_addPeer`, and doesn't persist peers to the peer database. Allowed values: `true` `false`. Defaults to `true`.
 
 - #### `Init.PipelineWarmupEnabled` \{#init-pipelinewarmupenabled\}
 
@@ -4451,6 +5644,60 @@ The configuration options are case-sensitive and can be defined only once unless
   Loopback and RFC1918 ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) are always trusted.
   Invalid entries are logged and ignored. Defaults to `[]`.
 
+- #### `JsonRpc.AllowedHosts` \{#jsonrpc-allowedhosts\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-allowedhosts <value>
+  --JsonRpc.AllowedHosts <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_ALLOWEDHOSTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "AllowedHosts": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The `Host` header values the JSON-RPC server accepts on URLs without authentication, as host names without a port, for example `localhost` or `*.example.com`. Matching ignores the port and case. Requests with other host names get HTTP 403. Requests with an IP address or without a `Host` header are always accepted. `*` accepts all hosts. To stop web pages from calling the server, also limit `CorsOrigins`. Defaults to `*`.
+
+- #### `JsonRpc.BatchProcessingConcurrency` \{#jsonrpc-batchprocessingconcurrency\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-batchprocessingconcurrency <value>
+  --JsonRpc.BatchProcessingConcurrency <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_BATCHPROCESSINGCONCURRENCY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "BatchProcessingConcurrency": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of consecutive `eth_call`, `eth_estimateGas` and `eth_createAccessList` requests of one batch that execute at a time, capped at `JsonRpc.EthModuleConcurrentInstances`. `debug_traceCall` and `debug_traceTransaction` with a native tracer join them while the batch window (this number, capped at `JsonRpc.EthModuleConcurrentInstances` and the batch length) is at most `JsonRpc.DebugModuleConcurrentInstances`, and `trace_transaction` joins them while the window is at most `JsonRpc.TraceModuleConcurrentInstances` and `JsonRpc.EnableTracingStreamMode` is off. Responses keep the request order, and any other request in the batch waits for the ones before it and executes alone. Set to 1 to execute batch requests one by one. Defaults to `4`.
+
 - #### `JsonRpc.BufferResponses` \{#jsonrpc-bufferresponses\}
 
   <Tabs groupId="usage">
@@ -4530,7 +5777,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The JSON-RPC server CORS origins. Defaults to `*`.
+  The JSON-RPC server CORS origins. Also limits WebSocket connections: a handshake with an `Origin` header not in this list is refused with HTTP 403; handshakes without an `Origin` header are accepted. Defaults to `*`.
 
 - #### `JsonRpc.DebugModuleConcurrentInstances` \{#jsonrpc-debugmoduleconcurrentinstances\}
 
@@ -4742,6 +5989,33 @@ The configuration options are case-sensitive and can be defined only once unless
   
   Defaults to `[Eth,Subscribe,Trace,TxPool,Web3,Proof,Net,Parity,Health,Rpc]`.
 
+- #### `JsonRpc.EngineAllowedHosts` \{#jsonrpc-engineallowedhosts\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-engineallowedhosts <value>
+  --JsonRpc.EngineAllowedHosts <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_ENGINEALLOWEDHOSTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "EngineAllowedHosts": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The `Host` header values the JSON-RPC server accepts on authenticated (Engine API) URLs. The rules are the same as for `AllowedHosts`. Defaults to `*`.
+
 - #### `JsonRpc.EngineEnabledModules` \{#jsonrpc-engineenabledmodules\}
 
   <Tabs groupId="usage">
@@ -4850,6 +6124,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The error margin used in the `eth_estimateGas` JSON-RPC method, in basis points. Defaults to `150`.
 
+- #### `JsonRpc.EthCallMaxConcurrentRequests` \{#jsonrpc-ethcallmaxconcurrentrequests\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-ethcallmaxconcurrentrequests <value>
+  --JsonRpc.EthCallMaxConcurrentRequests <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_ETHCALLMAXCONCURRENTREQUESTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "EthCallMaxConcurrentRequests": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of `eth_call`, `eth_estimateGas` and `eth_createAccessList` requests that execute at a time, with or without overrides. A request above this number waits for a free slot for up to `JsonRpc.Timeout` and then fails with a `ModuleTimeout` JSON-RPC error. Waiting requests do not hold a thread and count toward `JsonRpc.RequestQueueLimit`; a request that would exceed it fails at once with a `LimitExceeded` JSON-RPC error. `0` or negative disables the limit. Defaults to four times the number of logical processors.
+
 - #### `JsonRpc.EthModuleConcurrentInstances` \{#jsonrpc-ethmoduleconcurrentinstances\}
 
   <Tabs groupId="usage">
@@ -4915,7 +6216,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The maximum number of blocks one `eth_feeHistory` call returns, from 1 to 1024. A larger `blockCount` is lowered to it, which the API allows, so the response then covers fewer blocks than requested. Defaults to `1024`.
+  The maximum number of blocks one `eth_feeHistory` call returns, from 1 to 1024; `0`, negative values and values above 1024 mean 1024. A larger `blockCount` is lowered to it, so the response then covers fewer blocks than requested. Defaults to `1024`.
 
 - #### `JsonRpc.FeeHistoryMaxConcurrentRequests` \{#jsonrpc-feehistorymaxconcurrentrequests\}
 
@@ -4942,7 +6243,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The maximum number of `eth_feeHistory` calls that read blocks and receipts from the database at once. Calls whose blocks are all among the recent ones the node keeps fee data for are not limited. Calls beyond the cap return `LimitExceeded` at once instead of waiting. `0` to lift the limit. Defaults to a quarter of the number of logical processors, at least 1.
+  The maximum number of `eth_feeHistory` calls at once that need blocks missing from the fee cache of recent blocks. Calls served from that cache take no slot; one successful read of a cached block's reward data is shared by the calls that ask for it. Calls beyond the cap return `LimitExceeded` at once instead of waiting; a newest block whose header is not found gets the usual not-found error instead. Right after a restart, recent blocks count until each has been read once. `0` or negative to lift the limit. Defaults to a quarter of the number of logical processors, at least 1.
 
 - #### `JsonRpc.FiltersTimeout` \{#jsonrpc-filterstimeout\}
 
@@ -5024,6 +6325,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   The JSON-RPC service host. Defaults to `127.0.0.1`.
+
+- #### `JsonRpc.IpcEnabledModules` \{#jsonrpc-ipcenabledmodules\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-ipcenabledmodules <value>
+  --JsonRpc.IpcEnabledModules <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_IPCENABLEDMODULES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "IpcEnabledModules": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  An array of JSON-RPC namespaces to enable over the IPC socket, for instance `[engine,eth]`. If not set or empty, the IPC socket uses `JsonRpc.EnabledModules`.
 
 - #### `JsonRpc.IpcProcessingConcurrency` \{#jsonrpc-ipcprocessingconcurrency\}
 
@@ -5212,7 +6540,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max opcode log size, in bytes, per transaction of a `debug_trace*` or `debug_simulateV1` trace held in memory rather than streamed. Larger or unlimited `limit` trace options are lowered to it. `0` or negative to lift the limit. Defaults to `268435456`.
+  The max opcode log size, in bytes, per transaction of a `debug_trace*` or `debug_simulateV1` trace held in memory rather than streamed. Larger or unlimited `limit` trace options are lowered to it. It is also the max size, in bytes, of the trace data (call inputs, return data, code, memory, stack and storage changes) that a buffered `trace_*` request keeps over all the blocks it traces, and that a streamed `trace_*` request keeps per transaction; a larger trace fails. The transactions of a block streamed in parallel by `trace_block` or `trace_replayBlockTransactions` wait for room within it rather than fail, but for the earliest one not released yet, so together they keep at most twice as much; those of `trace_filter` fail when they do not fit together. `trace_simulateV1` keeps at most a third of it, as its response is serialized whole after the traces. `0` or negative to lift the limit. Defaults to `268435456`.
 
 - #### `JsonRpc.MaxConcurrentSharedRequests` \{#jsonrpc-maxconcurrentsharedrequests\}
 
@@ -5246,6 +6574,33 @@ The configuration options are case-sensitive and can be defined only once unless
   effectively never approach this limit. `eth_sendRawTransactionSync` holds a slot for as long
   as it waits for inclusion; see `RpcTxSyncMaxConcurrentRequests`. `0` to lift the limit. Defaults to `10000`.
 
+- #### `JsonRpc.MaxFilters` \{#jsonrpc-maxfilters\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxfilters <value>
+  --JsonRpc.MaxFilters <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXFILTERS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxFilters": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max number of filters installed at a time with the `eth_newFilter`, `eth_newBlockFilter`, and `eth_newPendingTransactionFilter` JSON-RPC methods. `0` to lift the limit. Defaults to `10000`.
+
 - #### `JsonRpc.MaxLoggedRequestParametersCharacters` \{#jsonrpc-maxloggedrequestparameterscharacters\}
 
   <Tabs groupId="usage">
@@ -5271,7 +6626,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max number of characters of a JSON-RPC request parameter printing to the log. Defaults to `null`.
+  Deprecated. JSON-RPC request parameters are omitted from logs. Defaults to `null`.
 
 - #### `JsonRpc.MaxLogsPerResponse` \{#jsonrpc-maxlogsperresponse\}
 
@@ -5352,7 +6707,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max length of HTTP request body, in bytes. Defaults to `30000000`.
+  The max length of an HTTP request body or a WebSocket message, in bytes. Defaults to `30000000`.
 
 - #### `JsonRpc.MaxSimulateBlocksCap` \{#jsonrpc-maxsimulateblockscap\}
 
@@ -5381,6 +6736,195 @@ The configuration options are case-sensitive and can be defined only once unless
 
   The max block count limit for the `eth_simulate` JSON-RPC method. Defaults to `256`.
 
+- #### `JsonRpc.MaxSimulateCallsCap` \{#jsonrpc-maxsimulatecallscap\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxsimulatecallscap <value>
+  --JsonRpc.MaxSimulateCallsCap <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXSIMULATECALLSCAP=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxSimulateCallsCap": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max total call count, across all blocks, for `eth_simulateV1`, `debug_simulateV1`, `trace_simulateV1` and, with bundle overrides, `debug_traceCallMany`. Defaults to `10000`.
+
+- #### `JsonRpc.MaxSimulateCallsPerBlockCap` \{#jsonrpc-maxsimulatecallsperblockcap\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxsimulatecallsperblockcap <value>
+  --JsonRpc.MaxSimulateCallsPerBlockCap <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXSIMULATECALLSPERBLOCKCAP=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxSimulateCallsPerBlockCap": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max call count per block (per bundle for `debug_traceCallMany`) for the methods that `MaxSimulateCallsCap` covers. Defaults to `5000`.
+
+- #### `JsonRpc.MaxSubscriptions` \{#jsonrpc-maxsubscriptions\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxsubscriptions <value>
+  --JsonRpc.MaxSubscriptions <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXSUBSCRIPTIONS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxSubscriptions": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max number of `eth_subscribe` and `admin_subscribe` subscriptions of all connections together. A call above this limit returns a `LimitExceeded` error. IPC and authenticated connections are not refused by this limit. `0` to lift the limit. Defaults to `10000`.
+
+- #### `JsonRpc.MaxSubscriptionsPerConnection` \{#jsonrpc-maxsubscriptionsperconnection\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxsubscriptionsperconnection <value>
+  --JsonRpc.MaxSubscriptionsPerConnection <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXSUBSCRIPTIONSPERCONNECTION=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxSubscriptionsPerConnection": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max number of `eth_subscribe` and `admin_subscribe` subscriptions of one WebSocket or IPC connection. A call above this limit returns a `LimitExceeded` error. `0` to lift the limit. Defaults to `1000`.
+
+- #### `JsonRpc.MaxUnsentResponsesPerAddress` \{#jsonrpc-maxunsentresponsesperaddress\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxunsentresponsesperaddress <value>
+  --JsonRpc.MaxUnsentResponsesPerAddress <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXUNSENTRESPONSESPERADDRESS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxUnsentResponsesPerAddress": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max number of HTTP JSON-RPC responses to unauthenticated URLs that one remote address, or one IPv6 /64 prefix, can have with more than 1 MiB written but not yet sent. Smaller responses, and responses still being written below that size, are not counted. A further response above 1 MiB is not sent and its connection is closed. Behind a reverse proxy all callers share the proxy's address, so rely on the proxy's limits or raise this value. `0` or negative to disable. Ignored when `MaxUnsentResponsesSize` is disabled. Defaults to `8`.
+
+- #### `JsonRpc.MaxUnsentResponsesSize` \{#jsonrpc-maxunsentresponsessize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxunsentresponsessize <value>
+  --JsonRpc.MaxUnsentResponsesSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXUNSENTRESPONSESSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxUnsentResponsesSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max total size, in bytes, of HTTP JSON-RPC responses to unauthenticated URLs that are written but not yet sent. One response alone can use all of it. While a remote address has other unsent responses, it can hold at most 1/16 of it. IPv6 addresses are grouped by their /64 prefix, and a connection without a known address counts alone. A response that would go above either limit is not sent and its connection is closed; responses already in progress are not affected. Streamed results are not counted when `BufferResponses` is off, and bytes that a streamed result flushes are released when the streamed result ends. A batch that reaches `MaxBatchResponseBodySize` first, when that value is not above the share of one address, ends with the batch limit errors instead. Behind a reverse proxy all callers share the proxy's address, so rely on the proxy's limits or raise this value. `0` or negative to disable this limit. Defaults to `536870912`.
+
+- #### `JsonRpc.MaxUnsentWebSocketResponseSize` \{#jsonrpc-maxunsentwebsocketresponsesize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-maxunsentwebsocketresponsesize <value>
+  --JsonRpc.MaxUnsentWebSocketResponseSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MAXUNSENTWEBSOCKETRESPONSESIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MaxUnsentWebSocketResponseSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max size, in bytes, of a written but not yet sent response on one WebSocket connection to an unauthenticated URL. A connection is closed when its response is larger, or when the send does not complete within `JsonRpc.Timeout` plus one second for each 64 KiB of the response, at most five minutes more. `0` or negative to disable both. Defaults to `67108864`.
+
 - #### `JsonRpc.MethodsLoggingFiltering` \{#jsonrpc-methodsloggingfiltering\}
 
   <Tabs groupId="usage">
@@ -5407,6 +6951,60 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   An array of the method names not to log. Defaults to `[engine_newPayloadV1,engine_newPayloadV2,engine_newPayloadV3,engine_forkchoiceUpdatedV1,engine_forkchoiceUpdatedV2,flashbots_validateBuilderSubmissionV3,eth_signTransaction]`.
+
+- #### `JsonRpc.MinResponseDataRate` \{#jsonrpc-minresponsedatarate\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-minresponsedatarate <value>
+  --JsonRpc.MinResponseDataRate <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_MINRESPONSEDATARATE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "MinResponseDataRate": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The min rate, in bytes per second, at which a caller of an unauthenticated HTTP JSON-RPC URL must read a response, after a grace period of 10 seconds. The server closes the connection of a caller that reads more slowly. `0` disables the rate, also the server default one. Defaults to `65536`.
+
+- #### `JsonRpc.OverlayMaxBlockRange` \{#jsonrpc-overlaymaxblockrange\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --jsonrpc-overlaymaxblockrange <value>
+  --JsonRpc.OverlayMaxBlockRange <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_JSONRPCCONFIG_OVERLAYMAXBLOCKRANGE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "JsonRpc": {
+      "OverlayMaxBlockRange": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The max number of blocks the `overlay_getLogs` JSON-RPC method re-executes in one call. `0` to lift the limit. Defaults to `1000`.
 
 - #### `JsonRpc.Port` \{#jsonrpc-port\}
 
@@ -6427,6 +8025,87 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether log index should be enabled. Allowed values: `true` `false`. Defaults to `false`.
 
+- #### `LogIndex.MaxAggregationParallelism` \{#logindex-maxaggregationparallelism\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --logindex-maxaggregationparallelism <value>
+  --LogIndex.MaxAggregationParallelism <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_LOGINDEXCONFIG_MAXAGGREGATIONPARALLELISM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "LogIndex": {
+      "MaxAggregationParallelism": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum degree of parallelism for aggregating batches, per backfill direction. The forward and backward directions run at the same time until the forward direction reaches the head. Lower it to reduce the CPU load of the log index backfill, at the cost of a longer backfill. Minimum `1`. Values above `MaxAggregationQueueSize` (default `16`) have no effect. Defaults to `Max(ProcessorCount / 4, 1)`.
+
+- #### `LogIndex.MaxCompressionParallelism` \{#logindex-maxcompressionparallelism\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --logindex-maxcompressionparallelism <value>
+  --LogIndex.MaxCompressionParallelism <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_LOGINDEXCONFIG_MAXCOMPRESSIONPARALLELISM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "LogIndex": {
+      "MaxCompressionParallelism": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum degree of parallelism for compressing overgrown key values, shared by both backfill directions. Lower it to reduce the CPU load of the log index backfill, at the cost of a longer backfill. Minimum `1`. Defaults to `Max(ProcessorCount / 4, 1)`.
+
+- #### `LogIndex.MaxReceiptsParallelism` \{#logindex-maxreceiptsparallelism\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --logindex-maxreceiptsparallelism <value>
+  --LogIndex.MaxReceiptsParallelism <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_LOGINDEXCONFIG_MAXRECEIPTSPARALLELISM=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "LogIndex": {
+      "MaxReceiptsParallelism": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum degree of parallelism for fetching receipts, per backfill direction. The forward and backward directions run at the same time until the forward direction reaches the head. Lower it to reduce the CPU load of the log index backfill, at the cost of a longer backfill. Minimum `1`. Defaults to `Max(ProcessorCount / 4, 1)`.
+
 - #### `LogIndex.Reset` \{#logindex-reset\}
 
   <Tabs groupId="usage">
@@ -6453,6 +8132,521 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   Log index is reset on startup if enabled. Allowed values: `true` `false`. Defaults to `false`.
+
+### Mcp
+
+- #### `Mcp.AllowedHosts` \{#mcp-allowedhosts\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-allowedhosts <value>
+  --Mcp.AllowedHosts <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_ALLOWEDHOSTS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "AllowedHosts": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  `Host` header values the MCP endpoint accepts, as host or host:port (for example `node.example.com` or `[2001:db8::1]:8555`, no scheme or path). An entry without a port matches any port. On a loopback `Host` they are accepted besides the loopback names; in remote mode only these (and the bound IP literal) are accepted, and at least one is required. Defaults to `[]`.
+
+- #### `Mcp.AllowedOrigins` \{#mcp-allowedorigins\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-allowedorigins <value>
+  --Mcp.AllowedOrigins <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_ALLOWEDORIGINS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "AllowedOrigins": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Browser origins (for example, `http://localhost:6274`) allowed to call the MCP endpoint. Requests without an `Origin` header are allowed; requests with any other origin are rejected with HTTP 403. Defaults to `[]`.
+
+- #### `Mcp.AuthTokenFile` \{#mcp-authtokenfile\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-authtokenfile <value>
+  --Mcp.AuthTokenFile <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_AUTHTOKENFILE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "AuthTokenFile": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Path to a file whose trimmed content is the bearer token MCP clients must send as `Authorization: Bearer <token>`. The token must be at least 32 characters. Mandatory in remote mode. If empty on a loopback `Host`, no authentication is required and access is limited to local processes. In remote mode, a client IP (IPv6: its /64) with 10 failed authentications within 60 seconds is answered with HTTP 429 until the window passes. Defaults to `null`.
+
+- #### `Mcp.EnableTracing` \{#mcp-enabletracing\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-enabletracing [true|false]
+  --Mcp.EnableTracing [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_ENABLETRACING=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "EnableTracing": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether `trace_transaction` and the call-trace parts of `explain_transaction` (internal transfers, the failing call frame) are enabled. They replay transactions through the debug module in-process and are offered only when `JsonRpc.Enabled` is true and `debug` or `trace` is also in `JsonRpc.EnabledModules`. When disabled, `trace_transaction` fails with `unavailable` and `explain_transaction` skips the trace with a note. Allowed values: `true` `false`. Defaults to `true`.
+
+- #### `Mcp.Enabled` \{#mcp-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-enabled [true|false]
+  --Mcp.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to start the MCP server. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `Mcp.Host` \{#mcp-host\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-host <value>
+  --Mcp.Host <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_HOST=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "Host": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The IP address literal the MCP listener binds to (host names are rejected). A loopback address (`127.0.0.1`, `::1`) serves local clients only. Any other address, including `0.0.0.0` and `::`, enables remote mode, which requires `TlsCertificatePath`, `TlsCertificateKeyPath`, `AuthTokenFile` and `AllowedHosts`; plain HTTP is never served on a non-loopback address. Defaults to `127.0.0.1`.
+
+- #### `Mcp.MaxCallDataSize` \{#mcp-maxcalldatasize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxcalldatasize <value>
+  --Mcp.MaxCallDataSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXCALLDATASIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxCallDataSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum size of the `call` tool input data, in bytes. Defaults to `131072`.
+
+- #### `Mcp.MaxCallGas` \{#mcp-maxcallgas\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxcallgas <value>
+  --Mcp.MaxCallGas <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXCALLGAS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxCallGas": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum gas one `call`, `call_function`, `estimate_gas` or `simulate_transaction` execution may use. Must not exceed `JsonRpc.GasCap`; the effective limit is the smaller of the two. Defaults to `50000000`.
+
+- #### `Mcp.MaxConcurrentToolCalls` \{#mcp-maxconcurrenttoolcalls\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxconcurrenttoolcalls <value>
+  --Mcp.MaxConcurrentToolCalls <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXCONCURRENTTOOLCALLS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxConcurrentToolCalls": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of tool calls executing concurrently. Further calls wait up to two seconds for a slot, then fail with a `resource_exhausted` error. Defaults to `4`.
+
+- #### `Mcp.MaxIndexedLogBlockRange` \{#mcp-maxindexedlogblockrange\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxindexedlogblockrange <value>
+  --Mcp.MaxIndexedLogBlockRange <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXINDEXEDLOGBLOCKRANGE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxIndexedLogBlockRange": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of blocks one `get_logs` page scans when the filter has an address or topic and the page starts inside the node's log index (`LogIndex.Enabled`); the page then stops at the last indexed block. Other pages use `MaxLogBlockRange`, and a value below it has no effect. Defaults to `1000000`.
+
+- #### `Mcp.MaxLogBlockRange` \{#mcp-maxlogblockrange\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxlogblockrange <value>
+  --Mcp.MaxLogBlockRange <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXLOGBLOCKRANGE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxLogBlockRange": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of blocks one `get_logs` page scans, inclusive. Queries over larger ranges are not rejected: they return the first page with a `nextCursor` to continue from. Defaults to `1000`.
+
+- #### `Mcp.MaxLogs` \{#mcp-maxlogs\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxlogs <value>
+  --Mcp.MaxLogs <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXLOGS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxLogs": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of logs one `get_logs` page returns; it is also the default and the upper bound of the tool's `limit` argument. Further matching logs are returned on the next page (`nextCursor`). Defaults to `10000`.
+
+- #### `Mcp.MaxRequestBodySize` \{#mcp-maxrequestbodysize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxrequestbodysize <value>
+  --Mcp.MaxRequestBodySize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXREQUESTBODYSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxRequestBodySize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum size of an MCP HTTP request body, in bytes. Defaults to `262144`.
+
+- #### `Mcp.MaxResultSize` \{#mcp-maxresultsize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxresultsize <value>
+  --Mcp.MaxResultSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXRESULTSIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxResultSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum size of a serialized tool result, in bytes. Larger results fail with a `resource_exhausted` error. Defaults to `4194304`.
+
+- #### `Mcp.MaxTraceCalls` \{#mcp-maxtracecalls\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-maxtracecalls <value>
+  --Mcp.MaxTraceCalls <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_MAXTRACECALLS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "MaxTraceCalls": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of call frames returned by `trace_transaction`; deeper or wider call trees are truncated and flagged. Defaults to `2000`.
+
+- #### `Mcp.Port` \{#mcp-port\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-port <value>
+  --Mcp.Port <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_PORT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "Port": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The TCP port of the MCP listener. The endpoint is served at `http(s)://<Host>:<Port>/mcp` (HTTPS when `TlsCertificatePath` is set). Must differ from every JSON-RPC, Engine API, WebSocket and metrics port. Defaults to `8555`.
+
+- #### `Mcp.TlsCertificateKeyPath` \{#mcp-tlscertificatekeypath\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-tlscertificatekeypath <value>
+  --Mcp.TlsCertificateKeyPath <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_TLSCERTIFICATEKEYPATH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "TlsCertificateKeyPath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Path to the PEM-encoded private key (PKCS#8, PKCS#1 or SEC1, unencrypted) of `TlsCertificatePath`. Required whenever `TlsCertificatePath` is set. Defaults to `null`.
+
+- #### `Mcp.TlsCertificatePath` \{#mcp-tlscertificatepath\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-tlscertificatepath <value>
+  --Mcp.TlsCertificatePath <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_TLSCERTIFICATEPATH=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "TlsCertificatePath": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Path to the PEM-encoded TLS certificate served by the MCP listener; further certificates in the file are sent as the chain. Required in remote mode; on a loopback `Host` it enables HTTPS. Loaded at startup: an unreadable file or a key mismatch aborts startup, and a certificate that is expired or expires within 14 days logs a warning. Defaults to `null`.
+
+- #### `Mcp.ToolTimeout` \{#mcp-tooltimeout\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --mcp-tooltimeout <value>
+  --Mcp.ToolTimeout <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MCPCONFIG_TOOLTIMEOUT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Mcp": {
+      "ToolTimeout": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The wall-clock limit for a single tool call, in milliseconds. Must not exceed `JsonRpc.Timeout`. Defaults to `10000`.
 
 ### Merge
 
@@ -6508,7 +8702,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The number of eligible newPayload calls between compacting collections that release process memory. Decommit waits for at least three seconds after payload completion (or PostBlockGcDelayMs, if longer); a new payload cancels the wait without clearing the count.
+  The number of eligible newPayload calls between compacting collections that release process memory. Once due, the decommit runs only while the memory load is at or above `DecommitMemoryLoadPercent`, or once `CollectionsPerUnconditionalDecommit` calls have been counted; until then it is checked again after every call. Decommit waits for at least three seconds after payload completion (or PostBlockGcDelayMs, if longer); a new payload cancels the wait without clearing the count.
   
   Allowed values:
   
@@ -6517,6 +8711,40 @@ The configuration options are case-sensitive and can be defined only once unless
   - A positive number: Requests after that many eligible newPayload calls, including calls whose entry was skipped or pending collection was cancelled. Calls made while the no-GC strategy is disabled (such as during sync) do not count.
   
   Defaults to `25`.
+
+- #### `Merge.CollectionsPerUnconditionalDecommit` \{#merge-collectionsperunconditionaldecommit\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --merge-collectionsperunconditionaldecommit <value>
+  --Merge.CollectionsPerUnconditionalDecommit <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MERGECONFIG_COLLECTIONSPERUNCONDITIONALDECOMMIT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Merge": {
+      "CollectionsPerUnconditionalDecommit": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of eligible newPayload calls after which a due decommit (see `CollectionsPerDecommit`) runs even below `DecommitMemoryLoadPercent`.
+  
+  Allowed values:
+  
+  - `-1`: Decommits only at or above `DecommitMemoryLoadPercent`.
+  - A positive number: Decommits after that many eligible newPayload calls since the last decommit. A number below `CollectionsPerDecommit` decommits whenever due.
+  
+  Defaults to `300`.
 
 - #### `Merge.CompactMemory` \{#merge-compactmemory\}
 
@@ -6551,6 +8779,40 @@ The configuration options are case-sensitive and can be defined only once unless
   - `Full`: Enables memory compaction with the large object heap (LOH) if `SweepMemory` is set to `Gen2`.
 
   Defaults to `No`.
+
+- #### `Merge.DecommitMemoryLoadPercent` \{#merge-decommitmemoryloadpercent\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --merge-decommitmemoryloadpercent <value>
+  --Merge.DecommitMemoryLoadPercent <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_MERGECONFIG_DECOMMITMEMORYLOADPERCENT=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Merge": {
+      "DecommitMemoryLoadPercent": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The memory load, in percent of physical memory or of the container's memory limit, at or above which a due decommit (see `CollectionsPerDecommit`) runs. The load is the one the runtime recorded at its last collection. Below it, the decommit waits for `CollectionsPerUnconditionalDecommit`. In a container with a memory limit, the load includes the container's active page cache (the runtime subtracts only inactive file pages), so a container with a warm cache, such as recently read database files, can stay at or above the threshold and then decommits whenever due, as before.
+  
+  Allowed values:
+  
+  - `0`: Decommits whenever due, whatever the memory load.
+  - A number from 1 to 100: Decommits when due and the memory load is at least that percentage.
+  
+  Defaults to `70`.
 
 - #### `Merge.Enabled` \{#merge-enabled\}
 
@@ -7401,7 +9663,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The primary external IP address used for the legacy enode string, discovery, and peer filtering. Missing IPv4 or IPv6 addresses are resolved independently when `EnableExternalIpResolution` is enabled; use this only to override the preferred primary address. An address family is advertised in the ENR only when every currently bound inbound transport serves it; only bound transports get port entries. Defaults to `null`.
+  The primary external IP address used for the legacy enode string, discovery, and peer filtering. Missing IPv4 or IPv6 addresses are resolved independently when `EnableExternalIpResolution` is enabled; use this only to override the preferred primary address. An address family is advertised in the ENR only when every currently bound inbound transport serves it; only bound transports get port entries. Public external addresses (configured or resolved) refuse discovered private targets; configure them as static or trusted peers if required. Defaults to `null`.
 
 - #### `Network.ExternalIpV4` \{#network-externalipv4\}
 
@@ -7590,7 +9852,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The local IP for inbound listeners. When unset, listeners try a dual-stack wildcard on supported platforms and fall back to IPv4 if it cannot bind; macOS uses IPv4 by default. Set to `0.0.0.0` for IPv4-only, `::` for a dual-stack wildcard, or a specific address to restrict listeners to that address and family. Defaults to `null`.
+  The local IP for inbound listeners. When unset, listeners try a dual-stack wildcard on supported platforms and fall back to IPv4 if it cannot bind; macOS uses IPv4 by default. Set to `0.0.0.0` for IPv4-only, `::` for a dual-stack wildcard, or a specific address to restrict listeners to that address and family. A private listener does not permit discovered private targets when the configured or resolved external address is public; configure them as static or trusted peers if required. Defaults to `null`.
 
 - #### `Network.MaxActivePeers` \{#network-maxactivepeers\}
 
@@ -7617,7 +9879,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max allowed number of connected peers. Defaults to `50`.
+  The max allowed number of connected peers. One third is reserved for outbound connections. After a dialable candidate has been selected and five minutes pass without dialable candidates, the reserve falls to at most two slots. Each accepted outbound Hello restores the reserve by disconnecting at most one newest excess ordinary inbound peer. Static and trusted peers are exempt. Defaults to `50`.
 
 - #### `Network.MaxNettyArenaCount` \{#network-maxnettyarenacount\}
 
@@ -7644,7 +9906,61 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The maximum DotNetty arena count. Increasing this on a high-core CPU without increasing the memory budget may reduce chunk size so much that it causes a huge memory allocation. Defaults to `8`.
+  The maximum DotNetty arena count. Each arena holds chunks of 4 KiB \<\< `NettyArenaOrder`. Defaults to `8`.
+
+- #### `Network.MaxPendingInboundConnections` \{#network-maxpendinginboundconnections\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --network-maxpendinginboundconnections <value>
+  --Network.MaxPendingInboundConnections <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_NETWORKCONFIG_MAXPENDINGINBOUNDCONNECTIONS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Network": {
+      "MaxPendingInboundConnections": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The maximum number of ordinary inbound connections awaiting an authenticated Hello. Privileged IPs have eight additional slots. Zero disables all inbound connections. Defaults to `50`.
+
+- #### `Network.MaxPendingInboundConnectionsPerSource` \{#network-maxpendinginboundconnectionspersource\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --network-maxpendinginboundconnectionspersource <value>
+  --Network.MaxPendingInboundConnectionsPerSource <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_NETWORKCONFIG_MAXPENDINGINBOUNDCONNECTIONSPERSOURCE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Network": {
+      "MaxPendingInboundConnectionsPerSource": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Maximum pending ordinary inbound connections per IPv4 address or IPv6 /64. Zero disables ordinary inbound connections. Defaults to `4`.
 
 - #### `Network.NettyArenaOrder` \{#network-nettyarenaorder\}
 
@@ -7671,7 +9987,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The size of the DotNetty arena order. `-1` to depend on the memory hint. Defaults to `-1`.
+  The size of the DotNetty arena order. The chunk size is 4 KiB \<\< order (8 MiB at 11). Negative values use the default. Defaults to `11`.
 
 - #### `Network.OnlyStaticPeers` \{#network-onlystaticpeers\}
 
@@ -8434,7 +10750,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Maximum number of blocks worth of unpersisted state in memory. Default is 297, which is the number of mainnet blocks per hour. Defaults to `297`.
+  Maximum number of blocks worth of unpersisted state in memory. Default is 300, which is about one hour of mainnet blocks. Defaults to `300`.
 
 - #### `Pruning.MinUnpersistedBlockCount` \{#pruning-minunpersistedblockcount\}
 
@@ -8550,7 +10866,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Minimum persisted cache prune target Defaults to `50000000`.
+  Minimum persisted cache prune target Defaults to `52428800`.
 
 - #### `Pruning.PrunePersistedNodePortion` \{#pruning-prunepersistednodeportion\}
 
@@ -8827,6 +11143,33 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to store receipts after a new block is processed. This setting is independent from downloading receipts in fast sync mode. Allowed values: `true` `false`. Defaults to `true`.
 
+- #### `Receipt.StoreTxHashes` \{#receipt-storetxhashes\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --receipt-storetxhashes [true|false]
+  --Receipt.StoreTxHashes [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_RECEIPTCONFIG_STORETXHASHES=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "Receipt": {
+      "StoreTxHashes": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to store the transaction hashes with compact receipts, so that `eth_getLogs` does not read block bodies. Older receipts get them in the background; the pass yields to block processing and continues after a restart. When disabled, receipts are written in the format that earlier versions read. Allowed values: `true` `false`. Defaults to `true`.
+
 - #### `Receipt.TxLookupLimit` \{#receipt-txlookuplimit\}
 
   <Tabs groupId="usage">
@@ -8935,7 +11278,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The path to the rule file. The file is re-read when it changes. Defaults to `null`.
+  The path to the rule file. The file is re-read when it changes. Update it by atomically replacing it with a fully written and closed temporary file in the same directory; in-place writes can expose incomplete rules. Defaults to `null`.
 
 - #### `SendPolicy.WarnOnly` \{#sendpolicy-warnonly\}
 
@@ -9074,7 +11417,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The p2p addresses of the Shutter Keyper network bootnodes.
+  The p2p addresses of the Shutter Keyper network bootnodes. Defaults to `[]`.
 
 - #### `Shutter.Enabled` \{#shutter-enabled\}
 
@@ -9263,7 +11606,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The filename to use for the Shutter P2P key. If this not specified, the key is autogenerated in `shutter.key.plain` file.
+  The filename to use for the Shutter P2P key. If this not specified, the key is autogenerated in `shutter.key.plain` file. Defaults to `shutter.key.plain`.
 
 - #### `Shutter.ValidatorInfoFile` \{#shutter-validatorinfofile\}
 
@@ -10775,7 +13118,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  Whether to catch up consensus-finalized blocks by applying their EIP-7928 block access lists instead of executing them. State and receipts roots are verified; unfinalized blocks, and blocks whose data is unavailable or mismatched, execute normally. Allowed values: `true` `false`. Defaults to `true`.
+  Whether to catch up consensus-finalized blocks by applying their EIP-7928 block access lists instead of executing them. State and receipts roots are verified; unfinalized blocks, and blocks whose data is unavailable or mismatched, execute normally. Allowed values: `true` `false`. Defaults to `false`.
 
 - #### `Sync.SnapServingMaxDepth` \{#sync-snapservingmaxdepth\}
 
@@ -10941,6 +13284,141 @@ The configuration options are case-sensitive and can be defined only once unless
 
 ### TraceStore
 
+- #### `TraceStore.AdditionalRocksDbOptions` \{#tracestore-additionalrocksdboptions\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-additionalrocksdboptions <value>
+  --TraceStore.AdditionalRocksDbOptions <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_ADDITIONALROCKSDBOPTIONS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "AdditionalRocksDbOptions": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Semicolon-terminated RocksDB options for stored traces, appended after the global additional RocksDB options.
+
+- #### `TraceStore.AddressIndexEnabled` \{#tracestore-addressindexenabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-addressindexenabled [true|false]
+  --TraceStore.AddressIndexEnabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_ADDRESSINDEXENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "AddressIndexEnabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to build a separate trace-address index for OTS history. Requires BlocksToKeep=0 and TraceTypes including Trace. Uncovered history is scanned. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `TraceStore.AddressIndexFromBlock` \{#tracestore-addressindexfromblock\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-addressindexfromblock <value>
+  --TraceStore.AddressIndexFromBlock <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_ADDRESSINDEXFROMBLOCK=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "AddressIndexFromBlock": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The first block to index. Earlier history is scanned, not assumed empty. Defaults to `1`.
+
+- #### `TraceStore.AddressIndexLag` \{#tracestore-addressindexlag\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-addressindexlag <value>
+  --TraceStore.AddressIndexLag <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_ADDRESSINDEXLAG=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "AddressIndexLag": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of blocks behind the head at which trace-address indexing stops. This is not a finality guarantee. Defaults to `64`.
+
+- #### `TraceStore.AddressIndexReset` \{#tracestore-addressindexreset\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-addressindexreset [true|false]
+  --TraceStore.AddressIndexReset [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_ADDRESSINDEXRESET=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "AddressIndexReset": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to reset only the trace-address index on startup. Use once after checkpoint invalidation, then disable it. Allowed values: `true` `false`. Defaults to `false`.
+
 - #### `TraceStore.BlocksToKeep` \{#tracestore-blockstokeep\}
 
   <Tabs groupId="usage">
@@ -11022,6 +13500,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   Whether to enable the TraceStore plugin. If enabled, traces come from the database whenever possible. Allowed values: `true` `false`. Defaults to `false`.
 
+- #### `TraceStore.OtsModuleConcurrentInstances` \{#tracestore-otsmoduleconcurrentinstances\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-otsmoduleconcurrentinstances <value>
+  --TraceStore.OtsModuleConcurrentInstances <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_OTSMODULECONCURRENTINSTANCES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "OtsModuleConcurrentInstances": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of concurrent instances of the OTS RPC module. Values below 1 use 1. Raising this limit increases concurrent historical scans and their CPU, I/O and memory load. Defaults to `2`.
+
+- #### `TraceStore.RocksDbOptions` \{#tracestore-rocksdboptions\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --tracestore-rocksdboptions <value>
+  --TraceStore.RocksDbOptions <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRACESTORECONFIG_ROCKSDBOPTIONS=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TraceStore": {
+      "RocksDbOptions": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Semicolon-terminated RocksDB options for stored traces, appended to the global RocksDB defaults.
+
 - #### `TraceStore.TraceTypes` \{#tracestore-tracetypes\}
 
   <Tabs groupId="usage">
@@ -11058,6 +13590,89 @@ The configuration options are case-sensitive and can be defined only once unless
   - `All`: Combines the `Rewards` `StateDiff` `Trace` `VmTrace` options.
 
   Defaults to `Trace, Rewards`.
+
+### TrustedInput
+
+- #### `TrustedInput.CacheSize` \{#trustedinput-cachesize\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --trustedinput-cachesize <value>
+  --TrustedInput.CacheSize <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRUSTEDINPUTCONFIG_CACHESIZE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TrustedInput": {
+      "CacheSize": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The number of most recent captured inputs kept in memory. Defaults to `64`.
+
+- #### `TrustedInput.Enabled` \{#trustedinput-enabled\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --trustedinput-enabled [true|false]
+  --TrustedInput.Enabled [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRUSTEDINPUTCONFIG_ENABLED=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TrustedInput": {
+      "Enabled": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  Whether to capture trusted zkVM guest inputs while processing blocks, and serve them over `trustedinput_getInput`. A capture runs in the background after the import: it recovers each sender's and ECRECOVER key once more for the hints and encodes the input, and the last `CacheSize` inputs stay in memory, each the size of the block's witness, transactions and codes. Capture skips blocks while busy; RPC regenerates missing inputs. Allowed values: `true` `false`. Defaults to `false`.
+
+- #### `TrustedInput.OutputDirectory` \{#trustedinput-outputdirectory\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --trustedinput-outputdirectory <value>
+  --TrustedInput.OutputDirectory <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TRUSTEDINPUTCONFIG_OUTPUTDIRECTORY=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TrustedInput": {
+      "OutputDirectory": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  The directory each captured input is also written to, as `<number>-<hash>.nti`. No files are written when unset. Defaults to `null`.
 
 ### TxPool
 
@@ -11204,6 +13819,60 @@ The configuration options are case-sensitive and can be defined only once unless
 
   EIP-8141: the number of distinct chain heads a frame transaction may fail to approve any payment across, during block production, before the pool evicts it. Some failures turn on head state that only a new head can clear (an out-of-range recent-root reference, a SENDER frame reached before its approval), so the budget is counted per head: repeated production passes against the same head spend a single unit. A value above `1` keeps a transiently-failing transaction for that many heads at the cost of re-simulating its validation prefix once per head; `1` (or below) evicts on the first failed attempt, the pre-budget behaviour. The budget is counted per pool residency, not per transaction: an evicted transaction may be resubmitted, and a resubmitted one is granted a fresh budget, because the failures it buys heads for turn on chain state that the time out of the pool may have cleared. Raising it therefore multiplies by that factor the production-time simulation a peer can provoke by re-gossiping a transaction that keeps failing. Defaults to `1`.
 
+- #### `TxPool.FrameTxMaxCodeDependencies` \{#txpool-frametxmaxcodedependencies\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxmaxcodedependencies <value>
+  --TxPool.FrameTxMaxCodeDependencies <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXMAXCODEDEPENDENCIES=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxMaxCodeDependencies": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8298: the max distinct accounts one frame transaction's validation prefix may rely on, counting accounts whose code can change through `DELEGATECALL` or `CALLCODE` and accounts EIP-8151 `ecRecover` returned. A prefix relying on more is rejected. `0` to reject all such transactions. Defaults to `8`.
+
+- #### `TxPool.FrameTxMaxPendingPerDelegatingCode` \{#txpool-frametxmaxpendingperdelegatingcode\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxmaxpendingperdelegatingcode <value>
+  --TxPool.FrameTxMaxPendingPerDelegatingCode <value>
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXMAXPENDINGPERDELEGATINGCODE=<value>
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxMaxPendingPerDelegatingCode": <value>
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8298: the max pending frame transactions whose validation prefix relies on the same account, when that account's code can change through `DELEGATECALL` or `CALLCODE`, or when EIP-8151 `ecRecover` returned that account. An account relied on only in the pay frame of a code-carrying paymaster other than the sender takes one slot per paymaster instead, in a separate set of this many slots, as that paymaster's own pending limit bounds its transactions. `0` to reject all such transactions. Defaults to `16`.
+
 - #### `TxPool.FrameTxMaxVerifyGas` \{#txpool-frametxmaxverifygas\}
 
   <Tabs groupId="usage">
@@ -11229,7 +13898,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  EIP-8141 `MAX_VERIFY_GAS`: the max gas a frame transaction's validation prefix and signature verification may cost for it to be accepted into the public mempool. `0` lifts the static admission limit. The validation-prefix simulation budget is this value, and never less than `Eip8141Constants.MaxVerifyGas`. Raise it only on a test network. Defaults to `300000`.
+  The node's execution-gas budget for a frame transaction's validation prefix plus signature verification. Positive values below the shared EIP-8141 `MAX_VERIFY_GAS` floor are raised to that floor. Higher values allow local headroom on any network. `0` lifts the static prefix admission limit while signature verification and prefix simulation retain the default 300,000-gas node budget. This setting does not affect block validity. Defaults to `300000`.
 
 - #### `TxPool.FrameTxMaxVerifyStateGas` \{#txpool-frametxmaxverifystategas\}
 
@@ -11257,6 +13926,33 @@ The configuration options are case-sensitive and can be defined only once unless
   </Tabs>
 
   EIP-8141 `MAX_VERIFY_STATE_GAS`: the max state gas a frame transaction's validation prefix may budget across its `limits.state` for it to be accepted into the public mempool. EIP-8250 charges a first use of each keyed nonce key 97,920 state gas, so at the default value a first-use set of more than five keys does not propagate. `0` to lift the limit. Raise it only on a test network. Defaults to `500000`.
+
+- #### `TxPool.FrameTxPeerSimulationFairShare` \{#txpool-frametxpeersimulationfairshare\}
+
+  <Tabs groupId="usage">
+  <TabItem value="cli" label="CLI">
+  ```
+  --txpool-frametxpeersimulationfairshare [true|false]
+  --TxPool.FrameTxPeerSimulationFairShare [true|false]
+  ```
+  </TabItem>
+  <TabItem value="env" label="Environment variable">
+  ```
+  NETHERMIND_TXPOOLCONFIG_FRAMETXPEERSIMULATIONFAIRSHARE=true|false
+  ```
+  </TabItem>
+  <TabItem value="config" label="Configuration file">
+  ```json
+  {
+    "TxPool": {
+      "FrameTxPeerSimulationFairShare": true|false
+    }
+  }
+  ```
+  </TabItem>
+  </Tabs>
+
+  EIP-8141: whether each peer gets a fair share of `FrameTxSimulationBudgetPerHeadMs` for frame transactions that fail validation. Once a peer has spent its share, its next frame transactions in that head are dropped unvalidated and count as rejections towards its flood limits. Ignored when `FrameTxSimulationBudgetPerHeadMs` is `0`. Allowed values: `true` `false`. Defaults to `false`.
 
 - #### `TxPool.FrameTxRevalidationDeferralBudget` \{#txpool-frametxrevalidationdeferralbudget\}
 
@@ -11418,7 +14114,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  EIP-8141 MATCHA `safety_factor`, in permille of a keyed-nonce frame transaction's `admission_gas`, that fixes the width its admission and each revalidation spends: `charge = ceil(safety_factor * admission_gas)`. `admission_gas` is declared work: the transaction's intrinsic gas, which prices its data, signatures and recent-root references, plus the validation prefix's execution gas limits and one cold SLOAD per nonce key, not the gas the prefix actually burns. `1000` charges exactly that declared gas; a higher value adds headroom for client work EVM gas does not measure. Values below `1000` are raised to `1000`. Spent width is never returned. Used only when `FrameTxWidthEnabled` is set. Defaults to `1000`.
+  EIP-8141 MATCHA `safety_factor`, in permille of a keyed-nonce frame transaction's `admission_gas`, that fixes the width its admission and each revalidation spends: `charge = ceil(safety_factor * admission_gas)`. `admission_gas` is declared work: the transaction's intrinsic gas, which prices its data, signatures, nonce key access and recent-root references, plus the validation prefix's execution gas limits, not the gas the prefix actually burns. `1000` charges exactly that declared gas; a higher value adds headroom for client work EVM gas does not measure. Values below `1000` are raised to `1000`. Spent width is never returned. Used only when `FrameTxWidthEnabled` is set. Defaults to `1000`.
 
 - #### `TxPool.GasLimit` \{#txpool-gaslimit\}
 
@@ -11472,7 +14168,7 @@ The configuration options are case-sensitive and can be defined only once unless
   </TabItem>
   </Tabs>
 
-  The max number of cached hashes of already known transactions. Set automatically by the memory hint. Defaults to `524288`.
+  The max number of cached hashes of already known transactions. Keep it well above `Size` + `PersistentBlobStorageSize`: a pooled transaction whose hash is evicted is fetched from peers again, and resubmitting it is rejected as an underpriced replacement. `0` disables the long-term cache, so hashes are only remembered until the next head. Defaults to `131072`.
 
 - #### `TxPool.InMemoryBlobPoolSize` \{#txpool-inmemoryblobpoolsize\}
 
